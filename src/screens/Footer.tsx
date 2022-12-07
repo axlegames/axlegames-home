@@ -155,7 +155,7 @@ const Footer = () => {
           </Flex>
         </Box>
       </Box>
-      <Text color={brandingColors.secondaryTextColor}>
+      <Text pb={{ base: "4" }} color={brandingColors.secondaryTextColor}>
         Copyright 2022 © Axle Games
       </Text>
     </Flex>
