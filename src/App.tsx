@@ -6,10 +6,12 @@ import { brandingColors } from "./config/brandingColors";
 import Why from "./screens/Why";
 import Footer from "./screens/Footer";
 import Team from "./screens/Team";
+import Main from "./screens/Main";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
     <Box fontWeight={"bold"} bg={brandingColors.bgColor}>
+      <Main />
       <About />
       <Products />
       <Why />
