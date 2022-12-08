@@ -77,14 +77,18 @@ const ProductDetail = (props: Props) => {
           fontSize={"3xl"}
           columnGap="1rem"
         >
-          <Text>{props.subTitle}</Text>
+          <Text color={brandingColors.secondaryTextColor}>
+            {props.subTitle}
+          </Text>
           <Text px={4} borderRadius="md" bg={brandingColors.fgColor}>
             {props.isLive ? `LIVE` : `COMING SOON`}
           </Text>
         </Flex>
       </Box>
       <Box>
-        <Text fontSize={"lg"}>{props.text}</Text>
+        <Text color={brandingColors.secondaryTextColor} fontSize={"lg"}>
+          {props.text}
+        </Text>
       </Box>
 
       <Flex columnGap={"1rem"}>
@@ -100,7 +104,7 @@ const ProductDetail = (props: Props) => {
           alignItems="center"
         >
           <ChevronRightIcon width={{ base: "8" }} height={{ base: "8" }} />
-          <Text>JOIN TELEGRAM</Text>
+          <Text color={brandingColors.secondaryTextColor}>JOIN TELEGRAM</Text>
           <Icon
             color="#3C90D0"
             width={{ base: "6" }}
@@ -152,7 +156,9 @@ const Product = (props: Props) => {
           {props.isLive ? <Text>LIVE</Text> : <Text>COMING SOON</Text>}
         </Box>
       </Box>
-      <Text p={{ base: "4" }}>{props.text}</Text>
+      <Text color={brandingColors.secondaryTextColor} p={{ base: "4" }}>
+        {props.text}
+      </Text>
 
       <Flex columnGap={"1rem"} p={{ base: "4" }}>
         <NeuButton

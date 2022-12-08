@@ -36,6 +36,7 @@ const About = () => {
           <Text
             fontSize={{ lg: "lg" }}
             textAlign={{ base: "center", xl: "start" }}
+            color={brandingColors.secondaryTextColor}
           >
             Battle infinity is a gaming platform where our ecosystem hosts
             multiple P2E battle games integrated with the Metaverse world called
@@ -105,7 +106,7 @@ const Telegram = () => {
       alignItems="center"
     >
       <ChevronRightIcon width={{ base: "8" }} height={{ base: "8" }} />
-      <Text>JOIN TELEGRAM</Text>
+      <Text color={brandingColors.secondaryTextColor}>JOIN TELEGRAM</Text>
       <Icon
         color="#3C90D0"
         width={{ base: "6" }}
@@ -119,7 +120,11 @@ const Telegram = () => {
 const SocialsRow = (props: any) => {
   return (
     <Flex columnGap={{ base: "1rem" }} justifyContent={{ base: "center" }}>
-      <Text fontSize={"3xl"} display={{ base: "none", xl: "flex" }}>
+      <Text
+        color={brandingColors.secondaryTextColor}
+        fontSize={"3xl"}
+        display={{ base: "none", xl: "flex" }}
+      >
         Join Us :
       </Text>
       <Flex columnGap={{ base: "1rem" }} alignItems="center">

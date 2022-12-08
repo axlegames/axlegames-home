@@ -23,7 +23,7 @@ const Why = () => {
   return (
     <Box p={{ base: "16" }}>
       <Heading title="WHY AXLE GAMES" />
-      <Text fontSize={"3xl"} p={4}>
+      <Text color={brandingColors.primaryTwoTextColor} fontSize={"3xl"} p={4}>
         some banner text
       </Text>
       <Flex
@@ -57,8 +57,14 @@ const WhyCard = (props: Props) => {
         <Image borderRadius={"md"} src={PlaceHolder} />
       </Box>
       <Box p={3}>
-        <Text fontSize={"2xl"}>{props.title} </Text>
-        <Text fontWeight={"normal"} fontSize={"lg"}>
+        <Text color={brandingColors.primaryTextColor} fontSize={"2xl"}>
+          {props.title}{" "}
+        </Text>
+        <Text
+          color={brandingColors.secondaryTextColor}
+          fontWeight={"normal"}
+          fontSize={"lg"}
+        >
           {props.text}
         </Text>
       </Box>

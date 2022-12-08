@@ -1,6 +1,6 @@
 import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
-import PlaceHolder from "../assets/placeholder.jpg";
+import PlaceHolder from "../assets/avatar.jpg";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 
@@ -47,9 +47,14 @@ const Team = () => {
       >
         {team.map((t, i) => (
           <Tilt>
-            <GridItem>
+            <GridItem
+              display={"flex"}
+              flexDirection="column"
+              justifyContent={"center"}
+              alignItems="center"
+            >
               <Box>
-                <Image maxW={"300px"} borderRadius={"150rem"} src={t.avatar} />
+                <Image maxW={"250px"} borderRadius={"150rem"} src={t.avatar} />
               </Box>
               <Box textAlign={"center"} py={4}>
                 <Text fontSize={"3xl"} color={brandingColors.primaryTextColor}>
