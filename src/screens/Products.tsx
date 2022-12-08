@@ -41,7 +41,6 @@ const Products = () => {
   return (
     <Box py={{ base: "12" }}>
       <Heading title="Products" />
-
       <Box
         flexDirection={"column"}
         display={{ base: "none", lg: "flex" }}
@@ -135,7 +134,7 @@ interface Props {
 
 const Product = (props: Props) => {
   return (
-    <Box>
+    <Box py={{ base: "4" }}>
       <Box position={"relative"}>
         <Image src={Placeholder} />
         <Box

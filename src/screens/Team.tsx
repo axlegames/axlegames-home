@@ -41,8 +41,8 @@ const Team = () => {
           lg: "1fr 1fr 1fr",
           "2xl": "1fr 1fr 1fr 1fr",
         }}
-        columnGap="1rem"
-        rowGap={"1rem"}
+        columnGap="3rem"
+        rowGap={"2rem"}
         p={{ base: "16" }}
       >
         {team.map((t, i) => (
@@ -54,7 +54,7 @@ const Team = () => {
               alignItems="center"
             >
               <Box>
-                <Image maxW={"250px"} borderRadius={"150rem"} src={t.avatar} />
+                <Image borderRadius={"150rem"} src={t.avatar} />
               </Box>
               <Box textAlign={"center"} py={4}>
                 <Text fontSize={"3xl"} color={brandingColors.primaryTextColor}>
