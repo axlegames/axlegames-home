@@ -38,8 +38,7 @@ const Team = () => {
         templateColumns={{
           base: "1fr",
           md: "1fr 1fr",
-          lg: "1fr 1fr 1fr",
-          "2xl": "1fr 1fr 1fr 1fr",
+          lg: "1fr 1fr 1fr 1fr",
         }}
         columnGap="3rem"
         rowGap={"2rem"}

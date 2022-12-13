@@ -1,13 +1,100 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import PlaceHolder from "../assets/placeholder.jpg";
+import { Box, Flex, Grid, Image, Text, Icon } from "@chakra-ui/react";
+import { ChevronRightIcon } from "@chakra-ui/icons";
+import {
+  FaTelegram,
+  FaDiscord,
+  FaTwitter,
+  FaYoutube,
+  FaFacebook,
+  FaInstagram,
+} from "react-icons/fa";
+
+import Slide1 from "../assets/slide1.png";
+import Slide2 from "../assets/slide2.png";
+import Slide3 from "../assets/slide3.png";
+
 import Carousel from "nuka-carousel";
 import NeuButton from "../components/NeuButton";
 import { brandingColors } from "../config/brandingColors";
 
 const Main = () => {
-  const map = [1, 2, 3, 4, 5];
+  const map = [
+    {
+      mainText: "AXLE GAMES.",
+      header: "A SKILL-BASED",
+      subHeader: "WEB3 GAMING PLATFORM",
+      image: Slide1,
+    },
+    {
+      mainText: "STAKING IS LIVE.",
+      header: "GET AN ATTRACTIVE",
+      subHeader: "APY OF 25%",
+      image: Slide2,
+    },
+    {
+      mainText: "SWAP IS HERE.",
+      header: "GET AN ATTRACTIVE",
+      subHeader: "APY OF 25%",
+      image: Slide3,
+    },
+  ];
+
+  const IconWrapper = (props: any) => (
+    <Icon
+      color={props.color}
+      height={{ base: "9" }}
+      width={{ base: "9" }}
+      as={props.icon}
+    />
+  );
+
+  const Telegram = () => {
+    return (
+      <Flex
+        columnGap={{ base: "1rem" }}
+        justifyContent={"space-evenly"}
+        alignItems="center"
+      >
+        <ChevronRightIcon width={{ base: "8" }} height={{ base: "8" }} />
+        <Text color={brandingColors.secondaryTextColor}>JOIN TELEGRAM</Text>
+        <Icon
+          color="#3C90D0"
+          width={{ base: "6" }}
+          height={{ base: "6" }}
+          as={FaTelegram}
+        />
+      </Flex>
+    );
+  };
+
+  const SocialsRow = (props: any) => {
+    return (
+      <Flex columnGap={{ base: "1rem" }} justifyContent={{ base: "center" }}>
+        <Text
+          color={brandingColors.secondaryTextColor}
+          fontSize={"3xl"}
+          display={{ base: "none", xl: "flex" }}
+        >
+          Join Us :
+        </Text>
+        <Flex columnGap={{ base: "1rem" }} alignItems="center">
+          <IconWrapper color="#3C90D0" icon={FaTelegram} />
+          <IconWrapper color="#ffffff" icon={FaDiscord} />
+          <IconWrapper color="#114D88" icon={FaTwitter} />
+          <IconWrapper color="#7BA4E0" icon={FaFacebook} />
+          <IconWrapper color="#FEBBBB" icon={FaYoutube} />
+          <IconWrapper color="#F5A2EC" icon={FaInstagram} />
+        </Flex>
+      </Flex>
+    );
+  };
+
   return (
-    <Box p={{ base: "0", md: "8", lg: "16" }}>
+    <Box
+      minH={{ lg: "90vh" }}
+      p={{ base: 0, lg: "8" }}
+      bg={brandingColors.bgColor}
+    >
       <Carousel
         wrapAround={true}
         autoplay={true}
@@ -18,6 +105,7 @@ const Main = () => {
             background: brandingColors.fgColor,
             borderRadius: "2vh",
             color: brandingColors.primaryTextColor,
+            marginBottom: "1rem",
           },
           nextButtonStyle: {
             fontWeight: "bold",
@@ -39,55 +127,95 @@ const Main = () => {
         slidesToShow={1}
       >
         {map.map((m, i) => (
-          <Box
-            position="relative"
-            display={"flex"}
-            justifyContent="center"
+          <Grid
+            m={5}
+            justifyContent="space-between"
             key={i}
+            bg={brandingColors.bgColor}
+            borderRadius="3xl"
+            alignItems={"center"}
+            maxW={{ lg: "70vw" }}
+            minH={{ lg: "70vh" }}
+            p={{ base: "8" }}
+            mx="auto"
+            gridTemplateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr" }}
+            columnGap={{ base: "2rem" }}
           >
             <Box
-              display={"flex"}
-              flexDirection="column"
-              rowGap={"3rem"}
-              left={"10%"}
-              top="40%"
-              position={"absolute"}
+              fontWeight={"bold"}
+              display="flex"
+              flexDirection={"column"}
+              rowGap="2rem"
+              position={"relative"}
             >
-              <Box>
+              <Box
+                zIndex={2}
+                display={"flex"}
+                flexDirection="column"
+                rowGap={".5rem"}
+              >
                 <Text
-                  lineHeight={"1"}
-                  fontSize={{ base: "xl", md: "3xl", xl: "5xl" }}
-                  color={brandingColors.primaryTextColor}
+                  lineHeight={"1.2"}
+                  fontSize={{ base: "sm", sm: "24px", lg: "32px" }}
+                  color={brandingColors.secondaryTextColor}
+                  fontFamily={`'Russo One', sans-serif`}
                 >
-                  SWAP IS LIVE
+                  {m.mainText}
                 </Text>
-                <Text
-                  fontSize={{ base: "md", md: "xl", xl: "3xl" }}
-                  color={brandingColors.primaryTwoTextColor}
-                >
-                  Use Battle Swap to swap with ease
-                </Text>
+                <Box>
+                  <Text
+                    fontFamily={`'Poppins', sans-serif`}
+                    lineHeight={"1"}
+                    fontSize={{ base: "md", sm: "24px", lg: "48px" }}
+                    fontWeight="900"
+                    color={brandingColors.secondaryTwoTextColor}
+                  >
+                    {m.header}
+                  </Text>
+                  <Text
+                    fontFamily={`'Poppins', sans-serif`}
+                    lineHeight={"1"}
+                    fontSize={{ base: "md", lg: "48px" }}
+                    fontWeight="900"
+                    color={brandingColors.secondaryTwoTextColor}
+                  >
+                    {m.subHeader}
+                  </Text>
+                </Box>
               </Box>
-              <Flex columnGap={"1rem"}>
-                <NeuButton
-                  label="GO TO SWAP"
-                  onClick={() => null}
-                  bg={brandingColors.neuPrimaryBg}
-                  shadow={brandingColors.newPrimaryShadow}
-                />
+              <Box display={"flex"} flexDirection="column" rowGap={"3rem"}>
+                <Flex columnGap={"1rem"}>
+                  <NeuButton
+                    label="GO TO SWAP"
+                    onClick={() => null}
+                    bg={brandingColors.neuPrimaryBg}
+                    shadow={brandingColors.newPrimaryShadow}
+                  />
 
-                <NeuButton
-                  label="BUY $AXLE"
-                  onClick={() => null}
-                  bg={brandingColors.neuPrimaryBg}
-                  shadow={brandingColors.newPrimaryShadow}
-                />
-              </Flex>
+                  <NeuButton
+                    label="BUY $AXLE"
+                    onClick={() => null}
+                    bg={brandingColors.neuPrimaryBg}
+                    shadow={brandingColors.newPrimaryShadow}
+                  />
+                </Flex>
+              </Box>
             </Box>
-            <Image src={PlaceHolder} />
-          </Box>
+
+            <Image src={m.image} />
+          </Grid>
         ))}
       </Carousel>
+      <Flex
+        display={{ base: "flex" }}
+        rowGap={{ base: "1rem" }}
+        alignItems={"center"}
+        flexDirection={{ base: "column" }}
+        justifyContent={{ base: "center" }}
+      >
+        <Telegram />
+        <SocialsRow />
+      </Flex>
     </Box>
   );
 };

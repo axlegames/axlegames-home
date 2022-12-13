@@ -6,16 +6,16 @@ import Tilt from "react-parallax-tilt";
 
 const whys = [
   {
-    title: "some title lorem ",
-    text: "some text lorem lorem lorem lorem lorem lorem lorem lofe lore loeme",
+    title: "Improve",
+    text: "Improves player's Cognitive and competitive",
   },
   {
-    title: "some title lorem ",
-    text: "some text lorem lorem lorem lorem lorem lorem lorem lofe lore loeme",
+    title: "Compete",
+    text: "A completely free platform to start your journey with WEB3/P2E space",
   },
   {
-    title: "some title lorem ",
-    text: "some text lorem lorem lorem lorem lorem lorem lorem lofe lore loeme",
+    title: "Win",
+    text: "Winning outcome is directly influenced by abilities and are wholly unrelated to the platform.",
   },
 ];
 

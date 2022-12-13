@@ -1,8 +1,11 @@
-import { Box, Grid, GridItem, Image, Progress, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import PlaceHoder from "../assets/avatar.jpg";
 
-import Pie from "../assets/pie.svg";
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4charts from "@amcharts/amcharts4/charts";
+import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+
 import { brandingColors } from "../config/brandingColors";
 
 const tokens = [
@@ -21,9 +24,58 @@ const tokens = [
   },
 ];
 
-const pie = [1, 2, 3, 4, 5, 6, 7];
-
 const Tokenomics = () => {
+  am4core.useTheme(am4themes_animated);
+  var chart = am4core.create("chartdiv", am4charts.PieChart);
+  chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+  chart.data = [
+    {
+      country: "Lithuania",
+      value: 401,
+    },
+    {
+      country: "Czech Republic",
+      value: 300,
+    },
+    {
+      country: "Ireland",
+      value: 200,
+    },
+    {
+      country: "Germany",
+      value: 165,
+    },
+    {
+      country: "Australia",
+      value: 139,
+    },
+    {
+      country: "Austria",
+      value: 128,
+    },
+  ];
+  chart.radius = am4core.percent(70);
+  chart.innerRadius = am4core.percent(40);
+  chart.startAngle = 180;
+  chart.endAngle = 360;
+
+  var series = chart.series.push(new am4charts.PieSeries());
+  series.dataFields.value = "value";
+  series.dataFields.category = "country";
+
+  series.slices.template.cornerRadius = 10;
+  series.slices.template.innerCornerRadius = 7;
+  series.slices.template.draggable = true;
+  series.slices.template.inert = true;
+
+  series.labels.template.radius = am4core.percent(-40);
+
+  series.hiddenState.properties.startAngle = 90;
+  series.hiddenState.properties.endAngle = 90;
+
+  chart.legend = new am4charts.Legend();
+
   return (
     <Box p={{ base: "4", lg: "16" }}>
       <Heading title="Tokenomics" />
@@ -70,30 +122,19 @@ const Tokenomics = () => {
         p={{ base: "4", lg: "16" }}
         alignItems="center"
         justifyContent="center"
-        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+        gridTemplateColumns={{ base: "1fr", lg: "1fr" }}
         columnGap={{ base: "8rem" }}
         rowGap={{ base: "2rem" }}
       >
         <Box display={"flex"} justifyContent="flex-end">
-          <Image src={Pie} />
-        </Box>
-        <Box
-          justifyContent={"flex-start"}
-          display={"flex"}
-          flexDirection="column"
-        >
-          {pie.map((p, i) => (
-            <Box my={1}>
-              <Text>hello</Text>
-              <Progress
-                hasStripe
-                borderRadius={"xl"}
-                value={(i + 1) * 10}
-                height={"12"}
-                color={"blue.100"}
-              />
-            </Box>
-          ))}
+          <Box
+            height={"70vh"}
+            width="100%"
+            bg={brandingColors.primaryButtonColor}
+            borderRadius="xl"
+            color={brandingColors.secondaryTextColor}
+            id="chartdiv"
+          ></Box>
         </Box>
       </Grid>
       <Box

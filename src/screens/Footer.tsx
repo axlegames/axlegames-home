@@ -60,7 +60,7 @@ const Footer = () => {
         color={brandingColors.highLightColor}
         mx={{ base: "4", md: "8", lg: "auto" }}
         my={{ base: "4", md: "16" }}
-        bg={brandingColors.fgColor}
+        bg={brandingColors.bgColor}
         p={{ base: "3" }}
         pb={{ lg: "8" }}
         width={{ lg: "70%", xl: "65%", "2xl": "60%" }}

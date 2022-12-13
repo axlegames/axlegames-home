@@ -9,20 +9,47 @@ import Team from "./screens/Team";
 import Main from "./screens/Main";
 import Tokenomics from "./screens/Tokenomics";
 import RoadMap from "./screens/RoadMap";
-// import Navbar from "./components/Navbar";
+import MobileNavbar from "./components/navbar/MobileNavbar";
+import Navbar from "./components/navbar/Navbar";
+import { Element } from "react-scroll";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box fontWeight={"bold"} bg={brandingColors.bgColor}>
-      {/* <Navbar /> */}
+    <MobileNavbar />
+    <Navbar />
+    <Element name="main" className="main">
       <Main />
-      <About />
-      <Products />
-      <Why />
-      <Tokenomics />
-      <RoadMap />
-      <Team />
-      <Footer />
+    </Element>
+
+    <Box
+      fontWeight={"bold"}
+      bg={brandingColors.bgColor}
+      margin="auto"
+      width={{ "2xl": "80%" }}
+    >
+      <Element name="about" className="about">
+        <About />
+      </Element>
+      <Element name="products" className="products">
+        <Products />
+      </Element>
+      <Element name="why" className="why">
+        <Why />
+      </Element>
+      <Element name="token" className="token">
+        <Tokenomics />
+      </Element>
+      <Element name="roadmap" className="roadmap">
+        <Box mb={{ base: "24" }}>
+          <RoadMap />
+        </Box>
+      </Element>
+      <Element name="team" className="team">
+        <Team />
+      </Element>
+      <Element name="footer" className="footer">
+        <Footer />
+      </Element>
     </Box>
   </ChakraProvider>
 );
