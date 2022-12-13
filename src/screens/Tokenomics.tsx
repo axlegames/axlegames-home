@@ -144,6 +144,7 @@ const Tokenomics = () => {
         flexDirection={"column"}
         textAlign="center"
         rowGap={{ base: "2rem", md: "0" }}
+        color={brandingColors.secondaryTextColor}
       >
         <Text>
           The total maximum supply of AXLE tokens is 10,000,000,000 (10

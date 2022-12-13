@@ -29,11 +29,12 @@ const About = () => {
               borderRadius="sm"
               fontSize={"3xl"}
               bg={brandingColors.secondaryTwoTextColor}
+              color={brandingColors.secondaryTextColor}
             >
               Mission
             </Text>
           </Box>
-          <Text>
+          <Text color={brandingColors.secondaryTextColor}>
             To create safe, regulated and responsible home of competition that
             has a postive and lasting infulence on people's lives.
           </Text>
@@ -76,11 +77,12 @@ const About = () => {
               borderRadius="sm"
               fontSize={"3xl"}
               bg={brandingColors.primaryTextColor}
+              color={brandingColors.secondaryTextColor}
             >
               Product
             </Text>
           </Box>
-          <Text>
+          <Text color={brandingColors.secondaryTextColor}>
             To be the most player-focused gaming platform in the world.
           </Text>
         </GridItem>
