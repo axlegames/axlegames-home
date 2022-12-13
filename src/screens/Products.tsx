@@ -47,7 +47,11 @@ const Products = () => {
         py={{ base: "12" }}
       >
         {products.map((p, i) => {
-          return <ProductDetail index={i} key={i} {...p} />;
+          return (
+            <Box key={i}>
+              <ProductDetail index={i} {...p} />
+            </Box>
+          );
         })}
       </Box>
 
@@ -57,7 +61,11 @@ const Products = () => {
         py={{ base: "12" }}
       >
         {products.map((p, i) => {
-          return <Product index={i} key={i} {...p} />;
+          return (
+            <Box key={i}>
+              <Product index={i} {...p} />;
+            </Box>
+          );
         })}
       </Box>
     </Box>

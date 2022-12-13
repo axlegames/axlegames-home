@@ -203,7 +203,7 @@ const RoadMap = () => {
         py={{ base: "16" }}
       >
         {phases.map((p, i) => (
-          <Flex flexDirection={"column"}>
+          <Flex key={i} flexDirection={"column"}>
             <MPhase
               phase={p.phase}
               milestones={p.milestones}
@@ -228,7 +228,7 @@ const RoadMap = () => {
         justifyContent={"center"}
       >
         {phases.map((p, i) => (
-          <Flex flexDirection={"column"}>
+          <Flex key={i} flexDirection={"column"}>
             <Phase
               phase={p.phase}
               milestones={p.milestones}

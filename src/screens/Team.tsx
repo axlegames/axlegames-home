@@ -45,7 +45,7 @@ const Team = () => {
         p={{ base: "16" }}
       >
         {team.map((t, i) => (
-          <Tilt>
+          <Tilt key={i}>
             <GridItem
               display={"flex"}
               flexDirection="column"

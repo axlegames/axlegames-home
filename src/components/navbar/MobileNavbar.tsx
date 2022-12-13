@@ -130,6 +130,7 @@ const MobileNavbar = () => {
               icon={<HiUser size={32} />}
             />
             <SideBarButton
+              link=""
               onClick={() => null}
               title={"Buy $AXLE"}
               icon={<MdStore size={32} />}
@@ -174,6 +175,7 @@ const MobileNavbar = () => {
                     >
                       {" "}
                       <SideBarButton
+                        link=""
                         title={"Pitch-Deck"}
                         icon={<HiDocument size={32} />}
                       />
@@ -186,6 +188,7 @@ const MobileNavbar = () => {
                     >
                       {" "}
                       <SideBarButton
+                        link=""
                         title={"Economics-Paper"}
                         icon={<HiDocument size={32} />}
                       />

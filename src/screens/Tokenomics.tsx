@@ -43,15 +43,15 @@ const Tokenomics = () => {
       value: 200,
     },
     {
-      country: "",
+      country: "Presale",
       value: 165,
     },
     {
-      country: "",
+      country: "Publicsale",
       value: 139,
     },
     {
-      country: "",
+      country: "Team",
       value: 128,
     },
   ];
@@ -86,6 +86,7 @@ const Tokenomics = () => {
       >
         {tokens.map((t, i) => (
           <GridItem
+            key={i}
             display={"flex"}
             flexDirection="column"
             alignItems={"center"}
