@@ -31,27 +31,27 @@ const Tokenomics = () => {
 
   chart.data = [
     {
-      country: "Lithuania",
+      country: "Presale",
       value: 401,
     },
     {
-      country: "Czech Republic",
+      country: "Public sale",
       value: 300,
     },
     {
-      country: "Ireland",
+      country: "Team",
       value: 200,
     },
     {
-      country: "Germany",
+      country: "",
       value: 165,
     },
     {
-      country: "Australia",
+      country: "",
       value: 139,
     },
     {
-      country: "Austria",
+      country: "",
       value: 128,
     },
   ];
@@ -68,8 +68,6 @@ const Tokenomics = () => {
   series.slices.template.innerCornerRadius = 7;
   series.slices.template.draggable = true;
   series.slices.template.inert = true;
-
-  series.labels.template.radius = am4core.percent(-40);
 
   series.hiddenState.properties.startAngle = 90;
   series.hiddenState.properties.endAngle = 90;
@@ -128,9 +126,9 @@ const Tokenomics = () => {
       >
         <Box display={"flex"} justifyContent="flex-end">
           <Box
-            height={"70vh"}
+            height={{ base: "50vh", lg: "70vh" }}
             width="100%"
-            bg={brandingColors.primaryButtonColor}
+            bg={brandingColors.fgColor}
             borderRadius="xl"
             color={brandingColors.secondaryTextColor}
             id="chartdiv"
