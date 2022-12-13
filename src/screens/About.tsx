@@ -69,7 +69,7 @@ const About = () => {
           flexDirection={"column"}
           display={"flex"}
         >
-          <Box display={"flex"} columnGap="1rem">
+          <Box justifyContent={"flex-end"} display={"flex"} columnGap="1rem">
             <Text fontSize={"3xl"}>Our</Text>
             <Text
               px={4}
