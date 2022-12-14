@@ -54,6 +54,7 @@ const Main = () => {
         columnGap={{ base: "1rem" }}
         justifyContent={"space-evenly"}
         alignItems="center"
+        fontWeight={"bold"}
       >
         <ChevronRightIcon width={{ base: "8" }} height={{ base: "8" }} />
         <Text color={brandingColors.secondaryTextColor}>JOIN TELEGRAM</Text>

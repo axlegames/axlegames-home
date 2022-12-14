@@ -1,10 +1,18 @@
 import { Box, Flex, Icon, Image, Text } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
-import Placeholder from "../assets/placeholder.jpg";
 import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { FaTelegram } from "react-icons/fa";
+import Stake from "../assets/icons/stake.svg";
+import Swap from "../assets/icons/swap.svg";
+import League from "../assets/icons/league.svg";
+import Games from "../assets/icons/games.svg";
+
+import StakeM from "../assets/products/stake.png";
+import SwapM from "../assets/products/swap.png";
+import LeagueM from "../assets/products/league.png";
+import GamesM from "../assets/products/games.png";
 
 const products = [
   {
@@ -13,6 +21,8 @@ const products = [
     subTitle: "Battle Staking",
     label: "STAKE $AXLE",
     text: "Users can stake their holdings by depositing and locking them for a period of time. Stakers will also receive extra benefits for other activities they perform on the platform.",
+    image: Stake,
+    mainImg: StakeM,
   },
   {
     isLive: true,
@@ -20,6 +30,8 @@ const products = [
     subTitle: "Battle Swap",
     label: "GO TO SWAP",
     text: "A decentralized exchange that works like a bank entity on our platform. It enables new users to buy AXLE tokens directly and also convert their winning rewards to another currency. Battle Swap is integrated with the marketplace, game store, and arena, which makes the platform’s overall in-game app experience smoother, faster, and hassle-free.",
+    image: Swap,
+    mainImg: SwapM,
   },
   {
     isLive: false,
@@ -27,6 +39,8 @@ const products = [
     subTitle: "AXLE Premier League",
     label: "BUY $AXLE",
     text: "AXLE Premier League is the world’s first decentralized blockchain NFT-Based fantasy sports game integrated with metaverse, where the user can build their own strategic team and battle with others all around the world and earn.",
+    image: League,
+    mainImg: LeagueM,
   },
   {
     isLive: false,
@@ -34,6 +48,8 @@ const products = [
     subTitle: "Battle Games",
     label: "BUY $AXLE",
     text: "AXLE Battle Games is a multiplayer game store where gamers on our platform can gain access to multiple NFT- based games to play and earn. Players can buy and sell their gaming assets and characters in the AXLE Battle Market and sell their winning NFTs as well.",
+    image: Games,
+    mainImg: GamesM,
   },
 ];
 
@@ -45,6 +61,7 @@ const Products = () => {
         flexDirection={"column"}
         display={{ base: "none", lg: "flex" }}
         py={{ base: "12" }}
+        rowGap="4rem"
       >
         {products.map((p, i) => {
           return (
@@ -75,22 +92,32 @@ const Products = () => {
 const ProductDetail = (props: Props) => {
   const Content = () => (
     <Flex rowGap={"2rem"} flexDirection={"column"}>
-      <Box>
-        <Text color={brandingColors.primaryTextColor} fontSize={"xl"}>
-          {props.title} {props.index}
-        </Text>
-        <Flex
-          color={brandingColors.secondaryTextColor}
-          fontSize={"3xl"}
-          columnGap="1rem"
-        >
-          <Text color={brandingColors.secondaryTextColor}>
-            {props.subTitle}
+      <Box display={"flex"} columnGap="1rem">
+        <Image width={"16"} src={props.image} />
+        <Box>
+          <Text color={brandingColors.primaryTextColor} fontSize={"xl"}>
+            {props.title}
           </Text>
-          <Text px={4} borderRadius="md" bg={brandingColors.fgColor}>
-            {props.isLive ? `LIVE` : `COMING SOON`}
-          </Text>
-        </Flex>
+          <Flex
+            color={brandingColors.secondaryTextColor}
+            fontSize={"3xl"}
+            columnGap="1rem"
+          >
+            <Text color={brandingColors.secondaryTextColor}>
+              {props.subTitle}
+            </Text>
+            <Box>
+              <Text
+                bg={brandingColors.fgColor}
+                fontSize="md"
+                px={2}
+                borderRadius="md"
+              >
+                {props.isLive ? `LIVE` : `COMING SOON`}
+              </Text>
+            </Box>
+          </Flex>
+        </Box>
       </Box>
       <Box>
         <Text color={brandingColors.secondaryTextColor} fontSize={"lg"}>
@@ -105,7 +132,7 @@ const ProductDetail = (props: Props) => {
           bg={brandingColors.neuPrimaryBg}
           shadow={brandingColors.newPrimaryShadow}
         />
-        <Flex
+        {/* <Flex
           columnGap={{ base: "1rem" }}
           justifyContent={"space-evenly"}
           alignItems="center"
@@ -118,14 +145,15 @@ const ProductDetail = (props: Props) => {
             height={{ base: "6" }}
             as={FaTelegram}
           />
-        </Flex>
+        </Flex> */}
       </Flex>
     </Flex>
   );
   return (
-    <Flex p={{ base: "16" }} alignItems={"center"} columnGap={"3rem"}>
+    <Flex width={"80%"} margin="auto" alignItems={"center"} columnGap={"3rem"}>
       {props.index % 2 === 0 ? <Content /> : null}
-      <Image borderRadius={"md"} src={Placeholder} />
+      <Image maxW={{ lg: "356px" }} borderRadius={"md"} src={props.mainImg} />
+
       {props.index % 2 !== 0 ? <Content /> : null}
     </Flex>
   );
@@ -138,13 +166,15 @@ interface Props {
   text: string;
   label: string;
   index: number;
+  image: string;
+  mainImg: string;
 }
 
 const Product = (props: Props) => {
   return (
     <Box py={{ base: "4" }}>
       <Box position={"relative"}>
-        <Image src={Placeholder} />
+        <Image src={props.mainImg} />
         <Box
           display={"flex"}
           flexDirection="column"

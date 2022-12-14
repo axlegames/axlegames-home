@@ -1,6 +1,9 @@
 import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
-import PlaceHoder from "../assets/avatar.jpg";
+
+import Bsc from "../assets/token/bsc.png";
+import Util from "../assets/token/util.png";
+import Supply from "../assets/token/supply.png";
 
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
@@ -12,15 +15,18 @@ const tokens = [
   {
     title: "BEP-20",
     sub: "BSC Token",
+    img: Bsc,
   },
 
   {
     title: "10 BILLION",
     sub: "Total Supply",
+    img: Supply,
   },
   {
     title: "$AXLE",
     sub: "Utility Token",
+    img: Util,
   },
 ];
 
@@ -93,11 +99,7 @@ const Tokenomics = () => {
             rowGap={"1rem"}
             textAlign={"center"}
           >
-            <Image
-              maxW={{ xl: "200px" }}
-              borderRadius={"xl"}
-              src={PlaceHoder}
-            />
+            <Image maxW={{ xl: "200px" }} borderRadius={"xl"} src={t.img} />
             <Box>
               <Text
                 lineHeight={"1"}
