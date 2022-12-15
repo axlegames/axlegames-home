@@ -10,6 +10,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 import { brandingColors } from "../config/brandingColors";
+import { useEffect } from "react";
 
 const tokens = [
   {
@@ -31,65 +32,67 @@ const tokens = [
 ];
 
 const Tokenomics = () => {
-  am4core.useTheme(am4themes_animated);
-  var chart = am4core.create("chartdiv", am4charts.PieChart);
-  chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+  useEffect(() => {
+    am4core.useTheme(am4themes_animated);
+    var chart = am4core.create("chartdiv", am4charts.PieChart);
+    chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-  chart.data = [
-    {
-      country: "Presale",
-      value: 401,
-      label: am4core.color("#ffffff"),
-    },
-    {
-      country: "Public sale",
-      value: 300,
-      label: am4core.color("#ffffff"),
-    },
-    {
-      country: "Team",
-      value: 200,
-      label: am4core.color("#ffffff"),
-    },
-    {
-      country: "test",
-      value: 165,
-      label: am4core.color("#ffffff"),
-    },
-    {
-      country: "test2",
-      value: 139,
-      label: am4core.color("#ffffff"),
-    },
-    {
-      country: "test4",
-      value: 128,
-      label: am4core.color("#ffffff"),
-    },
-  ];
-  chart.radius = am4core.percent(70);
-  chart.innerRadius = am4core.percent(40);
-  chart.startAngle = 180;
-  chart.endAngle = 360;
+    chart.data = [
+      {
+        country: "Presale",
+        value: 401,
+        label: am4core.color("#ffffff"),
+      },
+      {
+        country: "Public sale",
+        value: 300,
+        label: am4core.color("#ffffff"),
+      },
+      {
+        country: "Team",
+        value: 200,
+        label: am4core.color("#ffffff"),
+      },
+      {
+        country: "test",
+        value: 165,
+        label: am4core.color("#ffffff"),
+      },
+      {
+        country: "test2",
+        value: 139,
+        label: am4core.color("#ffffff"),
+      },
+      {
+        country: "test4",
+        value: 128,
+        label: am4core.color("#ffffff"),
+      },
+    ];
+    chart.radius = am4core.percent(70);
+    chart.innerRadius = am4core.percent(40);
+    chart.startAngle = 180;
+    chart.endAngle = 360;
 
-  var series = chart.series.push(new am4charts.PieSeries());
-  series.dataFields.value = "value";
-  series.dataFields.category = "country";
+    var series = chart.series.push(new am4charts.PieSeries());
+    series.dataFields.value = "value";
+    series.dataFields.category = "country";
 
-  // Disable ticks and labels
-  series.labels.template.disabled = true;
-  series.ticks.template.disabled = true;
+    // Disable ticks and labels
+    series.labels.template.disabled = true;
+    series.ticks.template.disabled = true;
 
-  series.slices.template.innerCornerRadius = 4;
-  series.slices.template.draggable = true;
-  series.slices.template.inert = true;
+    series.slices.template.innerCornerRadius = 4;
+    series.slices.template.draggable = true;
+    series.slices.template.inert = true;
 
-  series.hiddenState.properties.startAngle = 90;
-  series.hiddenState.properties.endAngle = 90;
+    series.hiddenState.properties.startAngle = 90;
+    series.hiddenState.properties.endAngle = 90;
 
-  chart.legend = new am4charts.Legend();
-  chart.legend.labels.template.fill = am4core.color("#ffffff");
-  chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
+    chart.legend = new am4charts.Legend();
+    chart.legend.labels.template.fill = am4core.color("#ffffff");
+    chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
+  }, []);
 
   return (
     <Box p={{ base: "4", lg: "16" }}>
