@@ -1,21 +1,21 @@
-import { Box, Flex, Grid, Image, Text, Icon } from "@chakra-ui/react";
+import { Box, Flex, Grid, Icon, Image, Text } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import {
-  FaTelegram,
-  FaDiscord,
-  FaTwitter,
-  FaYoutube,
-  FaFacebook,
-  FaInstagram,
-} from "react-icons/fa";
 
 import Slide1 from "../assets/slide1.png";
 import Slide2 from "../assets/slide2.png";
 import Slide3 from "../assets/slide3.png";
 
+import TelegramI from "../assets/main/fly.png";
+import Discord from "../assets/main/discord.png";
+import Twitter from "../assets/main/twitter.png";
+import Youtube from "../assets/main/youtube.png";
+import Facebook from "../assets/main/facebook.png";
+import Instagram from "../assets/main/instagram.png";
+
 import Carousel from "nuka-carousel";
 import NeuButton from "../components/NeuButton";
 import { brandingColors } from "../config/brandingColors";
+import { FaTelegram } from "react-icons/fa";
 
 const Main = () => {
   const map = [
@@ -40,11 +40,11 @@ const Main = () => {
   ];
 
   const IconWrapper = (props: any) => (
-    <Icon
+    <Image
       color={props.color}
       height={{ base: "9" }}
       width={{ base: "9" }}
-      as={props.icon}
+      src={props.icon}
     />
   );
 
@@ -79,12 +79,12 @@ const Main = () => {
           Join Us :
         </Text>
         <Flex columnGap={{ base: "1rem" }} alignItems="center">
-          <IconWrapper color="#3C90D0" icon={FaTelegram} />
-          <IconWrapper color="#ffffff" icon={FaDiscord} />
-          <IconWrapper color="#114D88" icon={FaTwitter} />
-          <IconWrapper color="#7BA4E0" icon={FaFacebook} />
-          <IconWrapper color="#FEBBBB" icon={FaYoutube} />
-          <IconWrapper color="#F5A2EC" icon={FaInstagram} />
+          <IconWrapper icon={TelegramI} />
+          <IconWrapper icon={Discord} />
+          <IconWrapper icon={Twitter} />
+          <IconWrapper icon={Facebook} />
+          <IconWrapper icon={Youtube} />
+          <IconWrapper icon={Instagram} />
         </Flex>
       </Flex>
     );

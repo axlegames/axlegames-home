@@ -39,26 +39,32 @@ const Tokenomics = () => {
     {
       country: "Presale",
       value: 401,
+      label: am4core.color("#ffffff"),
     },
     {
       country: "Public sale",
       value: 300,
+      label: am4core.color("#ffffff"),
     },
     {
       country: "Team",
       value: 200,
+      label: am4core.color("#ffffff"),
     },
     {
-      country: "Presale",
+      country: "test",
       value: 165,
+      label: am4core.color("#ffffff"),
     },
     {
-      country: "Publicsale",
+      country: "test2",
       value: 139,
+      label: am4core.color("#ffffff"),
     },
     {
-      country: "Team",
+      country: "test4",
       value: 128,
+      label: am4core.color("#ffffff"),
     },
   ];
   chart.radius = am4core.percent(70);
@@ -70,8 +76,11 @@ const Tokenomics = () => {
   series.dataFields.value = "value";
   series.dataFields.category = "country";
 
-  series.slices.template.cornerRadius = 10;
-  series.slices.template.innerCornerRadius = 7;
+  // Disable ticks and labels
+  series.labels.template.disabled = true;
+  series.ticks.template.disabled = true;
+
+  series.slices.template.innerCornerRadius = 4;
   series.slices.template.draggable = true;
   series.slices.template.inert = true;
 
@@ -79,6 +88,8 @@ const Tokenomics = () => {
   series.hiddenState.properties.endAngle = 90;
 
   chart.legend = new am4charts.Legend();
+  chart.legend.labels.template.fill = am4core.color("#ffffff");
+  chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
 
   return (
     <Box p={{ base: "4", lg: "16" }}>
@@ -131,7 +142,6 @@ const Tokenomics = () => {
           <Box
             height={{ base: "50vh", lg: "70vh" }}
             width="100%"
-            bg={brandingColors.fgColor}
             borderRadius="xl"
             color={brandingColors.secondaryTextColor}
             id="chartdiv"
