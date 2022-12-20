@@ -1,4 +1,4 @@
-import { Box, Grid, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
@@ -8,18 +8,31 @@ import Improve from "../assets/imgs/improve.png";
 
 const whys = [
   {
-    title: "Improve",
-    text: "Improves player's Cognitive and competitive.................... .......",
+    title: "DAO governance",
+    text: "Voting rights to every holder",
     img: Improve,
   },
   {
-    title: "Compete",
-    text: "A completely free platform to start your journey with WEB3/P2E space",
+    title: "Deflationary",
+    text: "50% of game fee will be burned",
     img: Compete,
   },
   {
-    title: "Win",
-    text: "Winning outcome is directly influenced by abilities and are wholly unrelated to the platform.",
+    title: "Exclusive Rewards",
+    text: "It get’s more and more to $AXLE token holders",
+    img: Win,
+  },
+];
+
+const whys2 = [
+  {
+    title: "Exclusive Rewards",
+    text: "It get’s more and more to $AXLE token holders",
+    img: Win,
+  },
+  {
+    title: "Exclusive Rewards",
+    text: "It get’s more and more to $AXLE token holders",
     img: Win,
   },
 ];
@@ -27,28 +40,38 @@ const whys = [
 const Why = () => {
   return (
     <Box
-      width={{ base: "100%", lg: "80%" }}
+      bg={brandingColors.bgColor}
       p={{ base: "4", lg: "16" }}
-      margin={{ base: 0, lg: "auto" }}
+      display="flex"
+      flexDirection={"column"}
+      rowGap="3rem"
     >
-      <Heading title="Why Axle Games" />
-      <Text
-        color={brandingColors.primaryTwoTextColor}
-        fontSize={{ base: "xl", lg: "3xl" }}
-        p={4}
-      >
-        some banner text
-      </Text>
-      <Grid
+      <Heading title="Why $AXLE ?" />
+      <Flex
+        pt={{ base: "16" }}
         columnGap={{ lg: "4rem" }}
         justifyContent={"space-evenly"}
         alignItems="center"
-        templateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
+        flexDirection={{ base: "column", "2xl": "row" }}
+        rowGap={{ base: "4rem" }}
       >
         {whys.map((why, index) => (
           <WhyCard {...why} key={index} />
         ))}
-      </Grid>
+      </Flex>
+
+      <Flex
+        pt={{ lg: "16" }}
+        columnGap={{ lg: "10rem" }}
+        justifyContent={"center"}
+        alignItems="center"
+        flexDirection={{ base: "column", "2xl": "row" }}
+        rowGap={{ base: "4rem" }}
+      >
+        {whys2.map((why, index) => (
+          <WhyCard {...why} key={index} />
+        ))}
+      </Flex>
     </Box>
   );
 };
@@ -61,23 +84,33 @@ interface Props {
 const WhyCard = (props: Props) => {
   return (
     <Tilt>
-      <Box borderRadius="md" display="flex">
+      <Box
+        minW={{ base: "340px", lg: "420px" }}
+        justifyContent={"center"}
+        alignItems="center"
+        borderRadius="md"
+        display="flex"
+        backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
+        flexDirection="column"
+      >
         <Image width={"56"} borderRadius={"md"} src={props.img} />
-      </Box>
-      <Box p={3}>
-        <Text
-          color={brandingColors.primaryTextColor}
-          fontSize={{ base: "lg", lg: "2xl" }}
-        >
-          {props.title}{" "}
-        </Text>
-        <Text
-          color={brandingColors.secondaryTextColor}
-          fontWeight={"normal"}
-          fontSize={{ base: "sm", lg: "md" }}
-        >
-          {props.text}
-        </Text>
+        <Box pb={5} px={4}>
+          <Text
+            color={brandingColors.primaryTextColor}
+            fontSize={{ base: "lg", lg: "2xl" }}
+            textAlign={"center"}
+          >
+            {props.title}{" "}
+          </Text>
+          <Text
+            color={brandingColors.secondaryTextColor}
+            fontWeight={"normal"}
+            fontSize={{ base: "sm", lg: "md" }}
+            textAlign={"center"}
+          >
+            {props.text}
+          </Text>
+        </Box>
       </Box>
     </Tilt>
   );

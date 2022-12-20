@@ -1,5 +1,7 @@
 import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
-import PlaceHolder from "../assets/slide1.png";
+import OurMission from "../assets/lottie/startup.png";
+import OurProduct from "../assets/lottie/brain.png";
+
 import { brandingColors } from "../config/brandingColors";
 
 const About = () => {
@@ -36,7 +38,11 @@ const About = () => {
           </Box>
           <Text color={brandingColors.secondaryTextColor}>
             To create safe, regulated and responsible home of competition that
-            has a postive and lasting infulence on people's lives.
+            has a postive and lasting infulence on people's lives. To create
+            safe, regulated and responsible home of competition that has a
+            postive and lasting infulence on people's lives. To create safe,
+            regulated and responsible home of competition that has a postive and
+            lasting infulence on people's lives.
           </Text>
         </GridItem>
         <GridItem
@@ -45,7 +51,7 @@ const About = () => {
           justifySelf="center"
           px={{ base: "8", lg: "16" }}
         >
-          <Image borderRadius={"md"} src={PlaceHolder} />
+          <Image borderRadius={"md"} src={OurMission} />
         </GridItem>
       </Grid>
 
@@ -63,7 +69,7 @@ const About = () => {
           justifySelf="center"
           px={{ base: "8", lg: "16" }}
         >
-          <Image borderRadius={"md"} src={PlaceHolder} />
+          <Image borderRadius={"md"} src={OurProduct} />
         </GridItem>
         <GridItem
           rowGap={{ base: "1rem", lg: "2rem" }}
@@ -83,7 +89,12 @@ const About = () => {
             </Text>
           </Box>
           <Text color={brandingColors.secondaryTextColor}>
-            To be the most player-focused gaming platform in the world.
+            To create safe, regulated and responsible home of competition that
+            has a postive and lasting infulence on people's lives. To create
+            safe, regulated and responsible home of competition that has a
+            postive and lasting infulence on people's lives. To create safe,
+            regulated and responsible home of competition that has a postive and
+            lasting infulence on people's lives.
           </Text>
         </GridItem>
         <GridItem
@@ -92,7 +103,7 @@ const About = () => {
           justifySelf="center"
           px={{ base: "8", lg: "16" }}
         >
-          <Image borderRadius={"md"} src={PlaceHolder} />
+          <Image borderRadius={"md"} src={OurMission} />
         </GridItem>
       </Grid>
     </Box>

@@ -1,6 +1,5 @@
-import { Button } from "@chakra-ui/react";
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from "react-scroll";
-import { brandingColors } from "../config/brandingColors";
 interface Props {
   shadow: string;
   bg: string;
@@ -11,8 +10,6 @@ interface Props {
 }
 
 const NeuLink = (props: Props) => {
-  const pushedEffect = `2px 2px 4px ${props.shadow}, -4px -4px 8px ${brandingColors.bgColor}`;
-
   return (
     <Link
       name={props.link}
@@ -22,25 +19,7 @@ const NeuLink = (props: Props) => {
       offset={50}
       duration={500}
     >
-      <Button
-        variant={"ghost"}
-        width={props.width || "auto"}
-        size={{ base: "sm", md: "md", lg: "lg" }}
-        color={brandingColors.secondaryTextColor}
-        onClick={() => props.onClick()}
-        _hover={{
-          boxShadow: pushedEffect,
-          transform: `scale(0.95)`,
-          transition: "200ms all ",
-        }}
-        _active={{
-          boxShadow: pushedEffect,
-          transform: `scale(0.95)`,
-          transition: "200ms all ",
-        }}
-      >
-        {props.label}
-      </Button>
+      <a className="nav-link nav-link-ltr">{props.label}</a>
     </Link>
   );
 };

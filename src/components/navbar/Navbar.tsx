@@ -1,17 +1,19 @@
 import { Box, Flex, Grid, Image } from "@chakra-ui/react";
 import Logo from "../../assets/logo.png";
 import { brandingColors } from "../../config/brandingColors";
+import NeuButton from "../NeuButton";
 import NeuLink from "../NeuLink";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
     <Box
       display={{ base: "none", lg: "block" }}
       minH={"10vh"}
-      bg={brandingColors.fgColor}
+      bg={brandingColors.bgColor}
     >
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
-        <Image maxW="120px" src={Logo} />
+        <Image ml={{ lg: "20" }} mt={{ lg: "6" }} maxW="120px" src={Logo} />
         <Flex columnGap={"1rem"} justifyContent={"center"}>
           <NeuLink
             label={"About"}
@@ -50,8 +52,7 @@ const Navbar = () => {
           />
         </Flex>
         <Flex columnGap={"1rem"} justifyContent={"center"}>
-          <NeuLink
-            link=""
+          <NeuButton
             label={"Buy $AXLE"}
             onClick={() => null}
             bg={brandingColors.neuPrimaryBg}

@@ -1,8 +1,6 @@
 import { Box, ChakraProvider } from "@chakra-ui/react";
-import About from "./screens/About";
 import { theme } from "./config/theme";
 import Products from "./screens/Products";
-import { brandingColors } from "./config/brandingColors";
 import Why from "./screens/Why";
 import Footer from "./screens/Footer";
 import Team from "./screens/Team";
@@ -12,6 +10,7 @@ import RoadMap from "./screens/RoadMap";
 import MobileNavbar from "./components/navbar/MobileNavbar";
 import Navbar from "./components/navbar/Navbar";
 import { Element } from "react-scroll";
+import PoweredBy from "./screens/PoweredBy";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -23,12 +22,10 @@ export const App = () => (
 
     <Box
       fontWeight={"bold"}
-      bg={brandingColors.bgColor}
-      margin="auto"
-      width={{ "2xl": "80%" }}
+      // width={{ "2xl": "80%" }}
     >
       <Element name="about" className="about">
-        <About />
+        {/* <About /> */}
       </Element>
       <Element name="products" className="products">
         <Products />
@@ -40,12 +37,15 @@ export const App = () => (
         <Tokenomics />
       </Element>
       <Element name="roadmap" className="roadmap">
-        <Box mb={{ base: "24" }}>
-          <RoadMap />
-        </Box>
+        <RoadMap />
       </Element>
       <Element name="team" className="team">
-        <Team />
+        <Box
+          backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
+        >
+          <Team />
+          <PoweredBy />
+        </Box>
       </Element>
       <Element name="footer" className="footer">
         <Footer />

@@ -4,58 +4,87 @@ import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { FaTelegram } from "react-icons/fa";
+
 import Stake from "../assets/icons/stake.svg";
 import Swap from "../assets/icons/swap.svg";
 import League from "../assets/icons/league.svg";
 import Games from "../assets/icons/games.svg";
+import Dao from "../assets/icons/dao.svg";
+import MarketPlace from "../assets/icons/marketplace.svg";
 
+import DaoM from "../assets/products/dao.png";
 import StakeM from "../assets/products/stake.png";
 import SwapM from "../assets/products/swap.png";
 import LeagueM from "../assets/products/league.png";
 import GamesM from "../assets/products/games.png";
+import MarketPlaceM from "../assets/products/marketplace.png";
+import { BsDot } from "react-icons/bs";
 
 const products = [
   {
     isLive: true,
     title: "$AXLE",
-    subTitle: "Battle Staking",
+    subTitle: "Axle Games",
+    label: "Play",
+    text: "A skill based web3 gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
+    image: Games,
+    mainImg: GamesM,
+  },
+  {
+    isLive: true,
+    title: "$AXLE",
+    subTitle: "Axle Staking",
     label: "STAKE $AXLE",
-    text: "Users can stake their holdings by depositing and locking them for a period of time. Stakers will also receive extra benefits for other activities they perform on the platform.",
+    text: "Users can stake their $AXLE tokens by locking in our staking pools for a period of time. Our stakers will have exclusive benefits to the AXLE platform and will receive $AXLE token rewards with a decent APY.",
     image: Stake,
     mainImg: StakeM,
   },
   {
     isLive: true,
     title: "$AXLE",
-    subTitle: "Battle Swap",
+    subTitle: "Axle DAO",
     label: "GO TO SWAP",
-    text: "A decentralized exchange that works like a bank entity on our platform. It enables new users to buy AXLE tokens directly and also convert their winning rewards to another currency. Battle Swap is integrated with the marketplace, game store, and arena, which makes the platform’s overall in-game app experience smoother, faster, and hassle-free.",
+    text: "Tokenised ownership of the AXLe games platform through AXLE DAO. All the token holders will be able to take part in the governance of the platform for increased transparency and trust. Every $AXLE token holder is an owner of the platform.",
+    image: Dao,
+    mainImg: DaoM,
+  },
+  {
+    isLive: false,
+    title: "Fantasy Sports",
+    subTitle: "Axle Arena",
+    label: "BUY $AXLE",
+    text: "In our Axle Arena, users can make/meet new friends and compete against each others by playing PvP games on the platform. In short, Axle Arena is a social media with wide range of offerings for our gamers on the platform.",
+    image: League,
+    mainImg: LeagueM,
+  },
+  {
+    isLive: true,
+    title: "$AXLE",
+    subTitle: "Axle Swap",
+    label: "GO TO SWAP",
+    text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
     image: Swap,
     mainImg: SwapM,
   },
   {
     isLive: false,
-    title: "Fantasy Sports",
-    subTitle: "AXLE Premier League",
+    title: "$AXLE",
+    subTitle: "Axle Marketplace",
     label: "BUY $AXLE",
-    text: "AXLE Premier League is the world’s first decentralized blockchain NFT-Based fantasy sports game integrated with metaverse, where the user can build their own strategic team and battle with others all around the world and earn.",
-    image: League,
-    mainImg: LeagueM,
-  },
-  {
-    isLive: false,
-    title: "PLAY-TO-EARN",
-    subTitle: "Battle Games",
-    label: "BUY $AXLE",
-    text: "AXLE Battle Games is a multiplayer game store where gamers on our platform can gain access to multiple NFT- based games to play and earn. Players can buy and sell their gaming assets and characters in the AXLE Battle Market and sell their winning NFTs as well.",
-    image: Games,
-    mainImg: GamesM,
+    text: "An NFT Marketplace to trade in-game NFTs used in our AXLE games platform. These NFTs will unlock special abilities/powers and boost the winning chances of the gamer. NFT holders will be eligible to receive exclusive rewards in the future.",
+    image: MarketPlace,
+    mainImg: MarketPlaceM,
   },
 ];
 
 const Products = () => {
   return (
-    <Box py={{ base: "12" }}>
+    <Box
+      // backgroundImage={`linear-gradient(to right top, #051937, #151d3c, #212140, #2c2544, #372948)`}
+      bg={brandingColors.bgColor}
+      py={{ base: "12" }}
+      width={{ base: "100%", lg: "100%" }}
+    >
       <Heading title="Products" />
       <Box
         flexDirection={"column"}
@@ -91,7 +120,19 @@ const Products = () => {
 
 const ProductDetail = (props: Props) => {
   const Content = () => (
-    <Flex rowGap={"2rem"} flexDirection={"column"}>
+    <Flex
+      bg={brandingColors.fgColor}
+      p={{ base: "4", lg: "8" }}
+      borderRadius="md"
+      boxShadow={"sm"}
+      rowGap={"2rem"}
+      flexDirection={"column"}
+      backgroundImage={
+        props.index % 2 === 0
+          ? `linear-gradient(to right, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+          : `linear-gradient(to left, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+      }
+    >
       <Box display={"flex"} columnGap="1rem">
         <Image width={"16"} src={props.image} />
         <Box>
@@ -112,6 +153,7 @@ const ProductDetail = (props: Props) => {
                 fontSize="md"
                 px={2}
                 borderRadius="md"
+                color={props.isLive ? "green.400" : "red.400"}
               >
                 {props.isLive ? `LIVE` : `COMING SOON`}
               </Text>
@@ -152,7 +194,11 @@ const ProductDetail = (props: Props) => {
   return (
     <Flex width={"80%"} margin="auto" alignItems={"center"} columnGap={"3rem"}>
       {props.index % 2 === 0 ? <Content /> : null}
-      <Image maxW={{ lg: "356px" }} borderRadius={"md"} src={props.mainImg} />
+      <Image
+        maxW={{ base: "256px", lg: "312px" }}
+        borderRadius={"md"}
+        src={props.mainImg}
+      />
 
       {props.index % 2 !== 0 ? <Content /> : null}
     </Flex>
@@ -190,13 +236,17 @@ const Product = (props: Props) => {
           <Text color={brandingColors.primaryTextColor} fontSize={"3xl"}>
             {props.subTitle}
           </Text>
-          {props.isLive ? <Text>LIVE</Text> : <Text>COMING SOON</Text>}
+          <Flex alignItems={"center"}>
+            <Icon color={props.isLive ? "green.400" : "red.400"} as={BsDot} />
+            <Text color={props.isLive ? "green.400" : "red.400"}>
+              {props.isLive ? `Live` : "Coming Soon"}
+            </Text>
+          </Flex>
         </Box>
       </Box>
       <Text color={brandingColors.secondaryTextColor} p={{ base: "4" }}>
         {props.text}
       </Text>
-
       <Flex columnGap={"1rem"} p={{ base: "4" }}>
         <NeuButton
           label={props.label}

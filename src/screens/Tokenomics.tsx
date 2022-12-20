@@ -1,7 +1,7 @@
 import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 
-import Bsc from "../assets/token/bsc.png";
+import Bsc from "../assets/token/util.png";
 import Util from "../assets/token/util.png";
 import Supply from "../assets/token/supply.png";
 
@@ -18,7 +18,6 @@ const tokens = [
     sub: "BSC Token",
     img: Bsc,
   },
-
   {
     title: "10 BILLION",
     sub: "Total Supply",
@@ -28,6 +27,11 @@ const tokens = [
     title: "$AXLE",
     sub: "Utility Token",
     img: Util,
+  },
+  {
+    title: "10 BILLION",
+    sub: "Total Supply",
+    img: Supply,
   },
 ];
 
@@ -69,6 +73,7 @@ const Tokenomics = () => {
         label: am4core.color("#ffffff"),
       },
     ];
+
     chart.radius = am4core.percent(70);
     chart.innerRadius = am4core.percent(40);
     chart.startAngle = 180;
@@ -94,26 +99,43 @@ const Tokenomics = () => {
     chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
   }, []);
 
+  const LeftAligner = (i: number) => {
+    if (i === 0 || i === 2) {
+      return "flex-end";
+    }
+    return "flex-start";
+  };
+
   return (
-    <Box p={{ base: "4", lg: "16" }}>
+    <Box
+      backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
+      p={{ base: "4", lg: "16" }}
+    >
       <Heading title="Tokenomics" />
       <Grid
-        alignItems={"center"}
-        justifyContent="space-evenly"
-        py={{ base: "16" }}
-        gridTemplateColumns="1fr 1fr 1fr"
-        columnGap={"1rem"}
+        pt={{ base: "16" }}
+        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+        columnGap={"6rem"}
+        rowGap={"3rem"}
+        justifyContent="center"
       >
         {tokens.map((t, i) => (
           <GridItem
             key={i}
             display={"flex"}
-            flexDirection="column"
-            alignItems={"center"}
-            rowGap={"1rem"}
+            flexDirection="row"
+            borderRadius="md"
             textAlign={"center"}
+            alignItems={"center"}
+            justifyContent={{ base: "center", lg: LeftAligner(i) }}
+            columnGap="1rem"
+            p={2}
           >
-            <Image maxW={{ xl: "200px" }} borderRadius={"xl"} src={t.img} />
+            <Image
+              maxW={{ base: "60px", xl: "80px" }}
+              borderRadius={"xl"}
+              src={t.img}
+            />
             <Box>
               <Text
                 lineHeight={"1"}
@@ -134,7 +156,7 @@ const Tokenomics = () => {
         ))}
       </Grid>
       <Grid
-        p={{ base: "4", lg: "16" }}
+        px={{ base: "4" }}
         alignItems="center"
         justifyContent="center"
         gridTemplateColumns={{ base: "1fr", lg: "1fr" }}
@@ -151,24 +173,6 @@ const Tokenomics = () => {
           ></Box>
         </Box>
       </Grid>
-      <Box
-        alignItems={"center"}
-        display={"flex"}
-        justifyContent="center"
-        flexDirection={"column"}
-        textAlign="center"
-        rowGap={{ base: "2rem", md: "0" }}
-        color={brandingColors.secondaryTextColor}
-      >
-        <Text>
-          The total maximum supply of AXLE tokens is 10,000,000,000 (10
-          Billion).
-        </Text>
-        <Text>
-          AXLE tokens are based on the BEP20 smart contract standard and run on
-          the Binance Smart Chain.
-        </Text>
-      </Box>
     </Box>
   );
 };

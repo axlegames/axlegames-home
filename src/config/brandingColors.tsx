@@ -26,4 +26,5 @@ export const brandingColors = {
   newPrimaryShadow: "#FF7C1F",
   neuSecondaryBg: "#40464F",
   newSecondaryShadow: "#535A65",
+  newHighlightColor: "#1442B5",
 };

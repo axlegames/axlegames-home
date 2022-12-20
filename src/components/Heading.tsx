@@ -16,6 +16,7 @@ const Heading = (props: Props) => {
         color={brandingColors.primaryTextColor}
         fontSize={{ base: "3xl", lg: "5xl" }}
         textAlign={"center"}
+        fontFamily={`'Russo One', sans-serif`}
       >
         {props.title}
       </Text>

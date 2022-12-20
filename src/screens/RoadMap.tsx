@@ -104,7 +104,8 @@ const RoadMap = () => {
     return (
       <Box display={"flex"} justifyContent="center" position={"relative"}>
         <Box
-          bg={brandingColors.bgColor}
+          display={{ base: "none" }}
+          bg={brandingColors.dangerColor}
           p={{ base: "4" }}
           borderRadius="xl"
           position={"absolute"}
@@ -185,12 +186,22 @@ const RoadMap = () => {
             see more
           </Button>
         </Box>
+        <Box
+          height={"90px"}
+          width="36px"
+          bg={brandingColors.fgColor}
+          borderRadius="md"
+          border={`3px dotted ${brandingColors.primaryTextColor}`}
+        ></Box>
       </Box>
     );
   };
 
   return (
-    <Box py={{ base: "16" }}>
+    <Box
+      backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
+      py={{ base: "16" }}
+    >
       <Heading title="Roadmap" />
 
       <Grid
@@ -212,6 +223,7 @@ const RoadMap = () => {
               current={i === 3 ? true : false}
               key={i}
             />
+
             {i === phases.length - 1 ? null : (
               <MLinker index={i} main={p.text} />
             )}
@@ -224,6 +236,7 @@ const RoadMap = () => {
         gridTemplateColumns={{ base: "1fr" }}
         columnGap={"2rem"}
         p={{ lg: "16" }}
+        pb={{ lg: "64" }}
         alignItems="center"
         justifyContent={"center"}
       >
@@ -264,7 +277,7 @@ const Linker = () => {
         boxShadow="xl"
         width={"6"}
         height="16"
-        border={`2px dotted ${brandingColors.primaryTextColor}`}
+        border={`2px dotted ${brandingColors.newHighlightColor}`}
         borderRadius="sm"
         position="relative"
       ></Box>
@@ -287,12 +300,12 @@ const Phase = (props: Props) => {
         <Text fontSize={"xl"} color={brandingColors.primaryTextColor}>
           {props.text}
         </Text>
-        <Divider my={4} />
-        <Box m={"4"} overflowY={"scroll"} maxH="48">
+        <Divider my={2} />
+        <Box mx={"2"} overflowY={"scroll"} maxH="48">
           {props.milestones.map((m, i) => (
             <Text
               key={i}
-              color={brandingColors.secondaryTwoTextColor}
+              color={brandingColors.secondaryTextColor}
               fontSize={"sm"}
             >
               {m}
@@ -305,12 +318,12 @@ const Phase = (props: Props) => {
         bg={brandingColors.bgColor}
         boxShadow={
           props.current
-            ? `0px 0px 32px ${brandingColors.primaryTextColor}`
+            ? `0px 0px 32px ${brandingColors.newHighlightColor}`
             : "xl"
         }
         boxSize={props.current ? "52" : "44"}
         borderRadius={"50vh"}
-        border={`4px solid ${brandingColors.primaryTextColor}`}
+        border={`4px solid ${brandingColors.newHighlightColor}`}
         position="relative"
         alignItems={"center"}
         justifyContent="center"
@@ -319,7 +332,7 @@ const Phase = (props: Props) => {
         <Text color={brandingColors.primaryTextColor} fontSize={"3xl"}>
           Phase {props.index + 1}
         </Text>
-        <Text color={brandingColors.secondaryTwoTextColor}>{props.phase} </Text>
+        <Text color={brandingColors.secondaryTextColor}>{props.phase} </Text>
       </Box>
     </Box>
   );
