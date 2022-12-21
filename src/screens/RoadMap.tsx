@@ -12,6 +12,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import NeuButton from "../components/NeuButton";
 
 const phases = [
   {
@@ -93,8 +94,11 @@ const RoadMap = () => {
         onClose={props.close}
       >
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader> {state?.text} </ModalHeader>
+        <ModalContent bg={brandingColors.bgColor}>
+          <ModalHeader color={brandingColors.primaryTextColor}>
+            {" "}
+            {state?.text}{" "}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Box m={"4"} overflowY={"scroll"} maxH="48">
@@ -102,7 +106,7 @@ const RoadMap = () => {
                 <Text
                   textAlign={"center"}
                   key={i}
-                  color={brandingColors.secondaryTwoTextColor}
+                  color={brandingColors.secondaryTextColor}
                   fontSize={"sm"}
                 >
                   {m}
@@ -112,9 +116,12 @@ const RoadMap = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={props.close}>
-              Close
-            </Button>
+            <NeuButton
+              label="Close"
+              onClick={props.close}
+              bg={brandingColors.neuPrimaryBg}
+              shadow={brandingColors.newPrimaryShadow}
+            />
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -122,8 +129,7 @@ const RoadMap = () => {
   };
 
   function changeState(props: Props) {
-    console.log(props);
-    // setOpen(!open);
+    setOpen(!open);
     setState(props);
   }
 
@@ -131,7 +137,6 @@ const RoadMap = () => {
     return (
       <Box display={"flex"} justifyContent="center" position={"relative"}>
         <Box
-          bg={brandingColors.bgColor}
           p={{ base: "4" }}
           borderRadius="xl"
           position={"absolute"}
@@ -197,7 +202,7 @@ const RoadMap = () => {
           height={"90px"}
           width="6"
           bg={brandingColors.bgColor}
-          border={`3px solid ${brandingColors.newHighlightColor}`}
+          border={`3px dotted ${brandingColors.newHighlightColor}`}
         ></Box>
       </Box>
     );
