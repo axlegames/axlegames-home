@@ -211,7 +211,7 @@ const Product = (props: Props) => {
   return (
     <Box py={{ base: "4" }}>
       <Box position={"relative"}>
-        <Image src={props.mainImg} />
+        <Image maxW={{ base: "360px", md: "100%" }} src={props.mainImg} />
         <Box
           display={"flex"}
           flexDirection="column"

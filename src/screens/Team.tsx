@@ -88,7 +88,7 @@ const Team = () => {
                   flexDirection="column"
                   justifyContent={"center"}
                   alignItems="center"
-                  borderRadius={"3vw"}
+                  borderRadius={"6vh"}
                   border={`5px solid ${brandingColors.newHighlightColor}`}
                 >
                   <Box>

@@ -187,10 +187,7 @@ const Footer = () => {
             justifyContent={"flex-end"}
             columnGap={{ base: "1rem" }}
             alignItems="center"
-          >
-            <IconWrapper icon={Instagram} />
-            <IconWrapper icon={Discord} />
-          </Flex>
+          ></Flex>
         </Grid>
       </Box>
       <Box

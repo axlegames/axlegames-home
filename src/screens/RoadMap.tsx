@@ -1,19 +1,23 @@
 import { Box, Button, Divider, Flex, Grid, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
+
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 
 const phases = [
   {
     text: "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
     phase: "completed",
     milestones: [
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
     ],
   },
@@ -23,21 +27,12 @@ const phases = [
     milestones: [
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
     ],
   },
   {
     text: "AXLE token smart contract, Mainnet Deployment, Website launch;",
     phase: "completed",
     milestones: [
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
@@ -51,16 +46,12 @@ const phases = [
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
     ],
   },
   {
     text: "Game Asset Minting on Battle market",
     phase: "up coming",
     milestones: [
-      "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
       "Research on Web3, Gaming & Metaverse; Idea and Conceptualisation…",
@@ -85,47 +76,68 @@ const phases = [
 ];
 
 const RoadMap = () => {
-  const [state, setState] = useState([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+  const [state, setState] = useState<Props>({
+    milestones: [],
+    phase: "",
+    index: 0,
+    text: "",
+    current: false,
+  });
+  const [open, setOpen] = useState<Boolean>(false);
 
-  function changeState(index: number) {
-    const copy = state;
-    copy[index] = !copy[index];
-    setState(copy);
-    console.log(copy);
+  const CModal = (props: any) => {
+    return (
+      <Modal
+        blockScrollOnMount={false}
+        isOpen={props.open}
+        onClose={props.close}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader> {state?.text} </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Box m={"4"} overflowY={"scroll"} maxH="48">
+              {state?.milestones.map((m: string, i: number) => (
+                <Text
+                  textAlign={"center"}
+                  key={i}
+                  color={brandingColors.secondaryTwoTextColor}
+                  fontSize={"sm"}
+                >
+                  {m}
+                </Text>
+              ))}
+            </Box>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="blue" mr={3} onClick={props.close}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    );
+  };
+
+  function changeState(props: Props) {
+    console.log(props);
+    // setOpen(!open);
+    setState(props);
   }
 
   const MPhase = (props: Props) => {
     return (
       <Box display={"flex"} justifyContent="center" position={"relative"}>
         <Box
-          display={state[props.index] ? "flex" : "none"}
           bg={brandingColors.bgColor}
           p={{ base: "4" }}
           borderRadius="xl"
           position={"absolute"}
           minW={{ base: "60%" }}
           zIndex={4}
-        >
-          <Box m={"4"} overflowY={"scroll"} maxH="48">
-            {props.milestones.map((m, i) => (
-              <Text
-                textAlign={"center"}
-                key={i}
-                color={brandingColors.secondaryTwoTextColor}
-                fontSize={"sm"}
-              >
-                {m}
-              </Text>
-            ))}
-          </Box>
-        </Box>
+        ></Box>
         <Box
           display={"flex"}
           bg={brandingColors.bgColor}
@@ -172,7 +184,7 @@ const RoadMap = () => {
             {props.main}
           </Text>
           <Button
-            onClick={() => changeState(props.index)}
+            onClick={() => changeState(props)}
             width={"100%"}
             size="md"
             textDecoration={"underline"}
@@ -197,7 +209,7 @@ const RoadMap = () => {
       py={{ base: "16" }}
     >
       <Heading title="Roadmap" />
-
+      <CModal open={open} close={() => setOpen(false)} />
       <Grid
         display={{ base: "grid", lg: "none" }}
         gridTemplateColumns={{ base: "1fr" }}
@@ -219,7 +231,15 @@ const RoadMap = () => {
             />
 
             {i === phases.length - 1 ? null : (
-              <MLinker index={i} main={p.text} />
+              <MLinker
+                phase={p.phase}
+                milestones={p.milestones}
+                text={p.text}
+                index={i}
+                current={i === 3 ? true : false}
+                key={i}
+                main={p.text}
+              />
             )}
           </Flex>
         ))}

@@ -10,10 +10,11 @@ import Binance from "../assets/powerdby/bnb.svg";
 import AWS from "../assets/powerdby/aws.svg";
 import Azure from "../assets/powerdby/azure.svg";
 import Blender from "../assets/powerdby/unreal.svg";
+import Node from "../assets/powerdby/node.png";
 
 import Sol from "../assets/powerdby/sol.svg";
 import React from "../assets/powerdby/react.png";
-import MongoDB from "../assets/powerdby/mongo.svg";
+import MongoDB from "../assets/powerdby/mongo.png";
 import Marquee from "react-fast-marquee";
 
 axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
@@ -48,8 +49,7 @@ const PoweredBy = (props: any) => {
       });
   }, []);
 
-  const images = [Binance, AWS, Azure, Blender];
-  const images1 = [Sol, React, MongoDB];
+  const images = [Binance, AWS, Azure, Blender, Sol, React, MongoDB, Node];
 
   const TwitterProfileCard = (props: Profile) => {
     return (
@@ -139,37 +139,26 @@ const PoweredBy = (props: any) => {
         gridTemplateColumns={{
           base: "1fr",
           sm: "1fr 1fr",
+          md: "1fr 1fr 1fr",
           lg: "1fr 1fr 1fr 1fr",
         }}
-        justifyContent="center"
         columnGap={"1rem"}
         rowGap={"1rem"}
-        alignItems="center"
+        justifyContent="flex-start"
       >
         {images.map((img, index) => (
-          <Box bg={brandingColors.fgColor} p={4} borderRadius="xl">
-            <Image height="120px" width={"100%"} src={img}></Image>
+          <Box
+            display={"flex"}
+            justifyContent="center"
+            alignItems="center"
+            p={4}
+            borderRadius="xl"
+          >
+            <Image height="60px" width={"150px"} src={img}></Image>
           </Box>
         ))}
       </Grid>
 
-      <Grid
-        gridTemplateColumns={{
-          base: "1fr",
-          sm: "1fr 1fr",
-          lg: "1fr 1fr 1fr 1fr",
-        }}
-        justifyContent="center"
-        columnGap={"1rem"}
-        rowGap={"1rem"}
-        alignItems="center"
-      >
-        {images1.map((img, index) => (
-          <Box bg={brandingColors.fgColor} p={4} borderRadius="xl">
-            <Image height="120px" width={"100%"} src={img}></Image>
-          </Box>
-        ))}
-      </Grid>
       <Heading title="Supporters" />
 
       <Marquee gradientWidth={0} speed={40}>
