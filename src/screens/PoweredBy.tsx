@@ -71,7 +71,12 @@ const PoweredBy = (props: any) => {
           src={props.profile_image_url}
         />
         <Flex justifyContent={"center"} alignItems="center" columnGap={".2rem"}>
-          <Text fontFamily={`'Russo One', sans-serif`}>{props.username}</Text>
+          <Text
+            color={brandingColors.secondaryTextColor}
+            fontFamily={`'Russo One', sans-serif`}
+          >
+            {props.username}
+          </Text>
           {props.verified ? (
             <Icon color={"blue.400"} as={GoVerified}></Icon>
           ) : null}
@@ -90,7 +95,9 @@ const PoweredBy = (props: any) => {
             >
               {props.public_metrics.followers_count}
             </Text>
-            <Text fontSize={"sm"}>Followers</Text>
+            <Text color={brandingColors.secondaryTextColor} fontSize={"sm"}>
+              Followers
+            </Text>
           </Flex>
           <Flex
             flexDirection={"column"}
@@ -104,7 +111,9 @@ const PoweredBy = (props: any) => {
             >
               {props.public_metrics.following_count}{" "}
             </Text>
-            <Text fontSize={"sm"}>Following</Text>
+            <Text color={brandingColors.secondaryTextColor} fontSize={"sm"}>
+              Following
+            </Text>
           </Flex>
           <Flex
             flexDirection={"column"}

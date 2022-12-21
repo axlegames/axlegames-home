@@ -128,7 +128,7 @@ const Footer = () => {
         alignItems="center"
       >
         <Text
-          color={brandingColors.newHighlightColor}
+          color={brandingColors.secondaryTextColor}
           fontSize={"3xl"}
           textAlign={"center"}
         >
