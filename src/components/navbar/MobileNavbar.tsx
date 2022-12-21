@@ -33,12 +33,16 @@ import { brandingColors } from "../../config/brandingColors";
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
 
+  function toggle() {
+    setOpen(!open);
+  }
+
   return (
     <Box
       width={"100%"}
       display={{ base: "flex", lg: "none" }}
       flexDirection="column"
-      boxShadow={`0px 2px 3px ${brandingColors.fgColor}`}
+      boxShadow={`0px 2px 3px ${brandingColors.bgColor}`}
     >
       <Box
         display={"flex"}
@@ -85,7 +89,7 @@ const MobileNavbar = () => {
         </Box>
       </Box>
 
-      <Box height={open ? "100vh" : "0"} position={"relative"}>
+      <Box height={open ? "100%" : "0"} position={"relative"}>
         <Box
           zIndex={100}
           transition={"all ease 500ms"}
@@ -101,37 +105,37 @@ const MobileNavbar = () => {
           <SideBarCard>
             <SideBarButton
               link="about"
-              onClick={() => null}
+              onClick={() => toggle()}
               title={"About"}
               icon={<HiHome size={32} />}
             />
             <SideBarButton
               link="products"
-              onClick={() => null}
+              onClick={() => toggle()}
               title={"Products"}
               icon={<AiOutlineDashboard size={32} />}
             />
             <SideBarButton
               link="token"
-              onClick={() => null}
+              onClick={() => toggle()}
               title={"Tokenomics"}
               icon={<HiCreditCard size={32} />}
             />
             <SideBarButton
               link="team"
-              onClick={() => null}
+              onClick={() => toggle()}
               title={"Team"}
               icon={<HiUsers size={32} />}
             />
             <SideBarButton
               link="roadmap"
-              onClick={() => null}
+              onClick={() => toggle()}
               title={"RoadMap"}
               icon={<HiUser size={32} />}
             />
             <SideBarButton
               link=""
-              onClick={() => null}
+              onClick={() => toggle()}
               title={"Buy $AXLE"}
               icon={<MdStore size={32} />}
             />

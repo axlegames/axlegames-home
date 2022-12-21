@@ -4,30 +4,33 @@ import { brandingColors } from "../../../config/brandingColors";
 
 const SideBarButton = (props: any) => {
   return (
-    <Link
-      name={props.link}
-      to={props.link}
-      spy={true}
-      smooth={true}
-      offset={50}
-      duration={500}
-    >
-      <Button
-        py={"5"}
-        bg={brandingColors.bgColor}
-        color={brandingColors.primaryTextColor}
-        variant={"outline"}
-        size={{ base: "sm" }}
-        justifyContent="flex-start"
-        position="relative"
-        width={"100%"}
+    <Box width={"100%"}>
+      <Link
+        name={props.link}
+        to={props.link}
+        spy={true}
+        smooth={true}
+        offset={50}
+        duration={500}
       >
-        <Flex alignItems={"center"} columnGap={"1rem"}>
-          <Box>{props.icon}</Box>
-          <Text>{props.title}</Text>
-        </Flex>
-      </Button>
-    </Link>
+        <Button
+          py={"5"}
+          bg={brandingColors.bgColor}
+          color={brandingColors.primaryTextColor}
+          variant={"outline"}
+          size={{ base: "sm" }}
+          justifyContent="flex-start"
+          position="relative"
+          width={"100%"}
+          onClick={props.onClick}
+        >
+          <Flex alignItems={"center"} columnGap={"1rem"}>
+            <Box>{props.icon}</Box>
+            <Text>{props.title}</Text>
+          </Flex>
+        </Button>
+      </Link>
+    </Box>
   );
 };
 
