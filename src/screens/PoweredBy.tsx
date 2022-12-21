@@ -146,6 +146,8 @@ const PoweredBy = (props: any) => {
       <Heading title="Powered By" />
       <Grid
         py={{ base: "16" }}
+        width={{ lg: "85%", xl: "75%", "2xl": "65%" }}
+        mx={{ lg: "auto" }}
         gridTemplateColumns={{
           base: "1fr",
           sm: "1fr 1fr",

@@ -146,7 +146,7 @@ const RoadMap = () => {
               ? `0px 0px 32px ${brandingColors.newHighlightColor}`
               : "xl"
           }
-          boxSize={props.current ? "52" : "44"}
+          boxSize={props.current ? "48" : "36"}
           borderRadius={"50vh"}
           border={`4px solid ${brandingColors.newHighlightColor}`}
           position="relative"
@@ -154,7 +154,7 @@ const RoadMap = () => {
           justifyContent="center"
           flexDirection={"column"}
         >
-          <Text color={brandingColors.primaryTextColor} fontSize={"3xl"}>
+          <Text color={brandingColors.primaryTextColor} fontSize={"2xl"}>
             Phase {props.index + 1}
           </Text>
           <Text color={brandingColors.secondaryTextColor}>{props.phase} </Text>
@@ -335,7 +335,7 @@ const Phase = (props: Props) => {
             ? `0px 0px 32px ${brandingColors.newHighlightColor}`
             : "xl"
         }
-        boxSize={props.current ? "48" : "44"}
+        boxSize={props.current ? "48" : "36"}
         borderRadius={"50vh"}
         border={`4px solid ${brandingColors.newHighlightColor}`}
         position="relative"
@@ -343,7 +343,7 @@ const Phase = (props: Props) => {
         justifyContent="center"
         flexDirection={"column"}
       >
-        <Text color={brandingColors.primaryTextColor} fontSize={"3xl"}>
+        <Text color={brandingColors.primaryTextColor} fontSize={"2xl"}>
           Phase {props.index + 1}
         </Text>
         <Text color={brandingColors.secondaryTextColor}>{props.phase} </Text>
