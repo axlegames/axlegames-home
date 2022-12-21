@@ -60,17 +60,13 @@ const Team = () => {
       <Heading title="Meet the team" />
       <Flex py={{ base: "16" }} flexDirection={"column"}>
         <Grid
-          gridTemplateColumns={{
-            base: "1fr",
-            xl: "1fr 1fr 1fr 1fr",
-          }}
-        ></Grid>
-        <Grid
           rowGap={"2rem"}
+          columnGap="2rem"
           justifyContent="center"
           alignItems={"center"}
           gridTemplateColumns={{
             base: "1fr",
+            md: "1fr 1fr",
             lg: "1fr 1fr 1fr",
           }}
         >
