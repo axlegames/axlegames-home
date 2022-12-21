@@ -23,7 +23,6 @@ import { BsDot } from "react-icons/bs";
 const products = [
   {
     isLive: true,
-    title: "$AXLE",
     subTitle: "Axle Games",
     label: "Play",
     text: "A skill based web3 gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
@@ -32,7 +31,6 @@ const products = [
   },
   {
     isLive: true,
-    title: "$AXLE",
     subTitle: "Axle Staking",
     label: "STAKE $AXLE",
     text: "Users can stake their $AXLE tokens by locking in our staking pools for a period of time. Our stakers will have exclusive benefits to the AXLE platform and will receive $AXLE token rewards with a decent APY.",
@@ -41,7 +39,6 @@ const products = [
   },
   {
     isLive: true,
-    title: "$AXLE",
     subTitle: "Axle DAO",
     label: "GO TO SWAP",
     text: "Tokenised ownership of the AXLe games platform through AXLE DAO. All the token holders will be able to take part in the governance of the platform for increased transparency and trust. Every $AXLE token holder is an owner of the platform.",
@@ -50,7 +47,6 @@ const products = [
   },
   {
     isLive: false,
-    title: "Fantasy Sports",
     subTitle: "Axle Arena",
     label: "BUY $AXLE",
     text: "In our Axle Arena, users can make/meet new friends and compete against each others by playing PvP games on the platform. In short, Axle Arena is a social media with wide range of offerings for our gamers on the platform.",
@@ -59,7 +55,6 @@ const products = [
   },
   {
     isLive: true,
-    title: "$AXLE",
     subTitle: "Axle Swap",
     label: "GO TO SWAP",
     text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
@@ -68,7 +63,6 @@ const products = [
   },
   {
     isLive: false,
-    title: "$AXLE",
     subTitle: "Axle Marketplace",
     label: "BUY $AXLE",
     text: "An NFT Marketplace to trade in-game NFTs used in our AXLE games platform. These NFTs will unlock special abilities/powers and boost the winning chances of the gamer. NFT holders will be eligible to receive exclusive rewards in the future.",
@@ -136,9 +130,6 @@ const ProductDetail = (props: Props) => {
       <Box display={"flex"} columnGap="1rem">
         <Image width={"16"} src={props.image} />
         <Box>
-          <Text color={brandingColors.primaryTextColor} fontSize={"xl"}>
-            {props.title}
-          </Text>
           <Flex
             color={brandingColors.secondaryTextColor}
             fontSize={"3xl"}
@@ -154,8 +145,9 @@ const ProductDetail = (props: Props) => {
                 px={2}
                 borderRadius="md"
                 color={props.isLive ? "green.400" : "red.400"}
+                fontWeight="bold"
               >
-                {props.isLive ? `LIVE` : `COMING SOON`}
+                {props.isLive ? `• LIVE` : `• COMING SOON`}
               </Text>
             </Box>
           </Flex>
@@ -206,7 +198,6 @@ const ProductDetail = (props: Props) => {
 };
 
 interface Props {
-  title: string;
   subTitle: string;
   isLive: boolean;
   text: string;
@@ -230,9 +221,6 @@ const Product = (props: Props) => {
           left="4"
           zIndex="4"
         >
-          <Text color={brandingColors.primaryTwoTextColor} fontSize={"xl"}>
-            {props.title}
-          </Text>
           <Text color={brandingColors.primaryTextColor} fontSize={"3xl"}>
             {props.subTitle}
           </Text>

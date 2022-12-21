@@ -4,14 +4,48 @@ import {
   Flex,
   FormControl,
   Grid,
+  Image,
   Input,
   Text,
   Textarea,
 } from "@chakra-ui/react";
 
+import Logo from "../assets/logo.png";
+
 import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
 import { brandingColors } from "../config/brandingColors";
+
+import TelegramI from "../assets/main/telegram.png";
+import Twitter from "../assets/main/twitter.png";
+import Instagram from "../assets/main/instagram.png";
+import Discord from "../assets/main/discord.png";
+import NeuLink from "../components/NeuLink";
+
+const IconWrapper = (props: any) => (
+  <Image
+    color={props.color}
+    height={{ base: "16" }}
+    width={{ base: "16" }}
+    _hover={{
+      transform: "scale(1.1)",
+      transition: "all 200ms ease-in",
+      cursor: "pointer",
+    }}
+    src={props.icon}
+  />
+);
+
+const SocialsRow = (props: any) => {
+  return (
+    <Flex columnGap={{ base: "1rem" }} alignItems="center">
+      <IconWrapper icon={TelegramI} />
+      <IconWrapper icon={Twitter} />
+      <IconWrapper icon={Instagram} />
+      <IconWrapper icon={Discord} />
+    </Flex>
+  );
+};
 
 const Footer = () => {
   return (
@@ -22,7 +56,7 @@ const Footer = () => {
       justifyContent={"center"}
       alignItems="center"
       flexDirection={"column"}
-      rowGap={{ base: "12rem", md: "5rem" }}
+      rowGap={{ base: "2rem" }}
     >
       <Heading title="Get in Touch" />
       <Box
@@ -87,12 +121,95 @@ const Footer = () => {
         />
       </Box>
 
+      <Box
+        display={"flex"}
+        justifyContent="center"
+        flexDirection={"column"}
+        alignItems="center"
+      >
+        <Text
+          color={brandingColors.newHighlightColor}
+          fontSize={"3xl"}
+          textAlign={"center"}
+        >
+          {" "}
+          Visit us on our social channels!
+        </Text>
+        <SocialsRow />
+      </Box>
       <Divider mx="auto" width="90%" />
-      <Box mx="auto" width={"90%"}></Box>
-
-      <Text pb={{ base: "4" }} color={brandingColors.secondaryTextColor}>
-        Copyright 2022 © Axle Games
-      </Text>
+      <Box
+        display={"flex"}
+        alignItems="center"
+        justifyContent={"center"}
+        columnGap={"2rem"}
+        mx="auto"
+        width={"90%"}
+      >
+        <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"}>
+          <Image maxW="120px" src={Logo} />
+          <Flex columnGap={"1rem"} justifyContent={"center"}>
+            <NeuLink
+              label={"About"}
+              link="about"
+              onClick={() => null}
+              bg={brandingColors.neuPrimaryBg}
+              shadow={brandingColors.newPrimaryShadow}
+            />
+            <NeuLink
+              link="products"
+              label={"Products"}
+              onClick={() => null}
+              bg={brandingColors.neuPrimaryBg}
+              shadow={brandingColors.newPrimaryShadow}
+            />
+            <NeuLink
+              link="token"
+              label={"Tokenomics"}
+              onClick={() => null}
+              bg={brandingColors.neuPrimaryBg}
+              shadow={brandingColors.newPrimaryShadow}
+            />
+            <NeuLink
+              link="team"
+              label={"Team"}
+              onClick={() => null}
+              bg={brandingColors.neuPrimaryBg}
+              shadow={brandingColors.newPrimaryShadow}
+            />
+            <NeuLink
+              label="Roadmap"
+              link="roadmap"
+              onClick={() => null}
+              bg={brandingColors.neuPrimaryBg}
+              shadow={brandingColors.newPrimaryShadow}
+            />
+          </Flex>
+          <Flex
+            justifyContent={"flex-end"}
+            columnGap={{ base: "1rem" }}
+            alignItems="center"
+          >
+            <IconWrapper icon={Instagram} />
+            <IconWrapper icon={Discord} />
+          </Flex>
+        </Grid>
+      </Box>
+      <Box
+        textAlign={"center"}
+        display="flex"
+        justifyContent={"center"}
+        flexDirection="column"
+        rowGap={".5rem"}
+      >
+        <Text color={brandingColors.secondaryTextColor}>
+          Disclaimer: Your investment may go down as well as up in value.
+          Cryptocurrency is not regulated in the UK.
+        </Text>
+        <Text pb={{ base: "4" }} color={brandingColors.secondaryTextColor}>
+          Copyright 2022 © Axle Games
+        </Text>
+      </Box>
     </Flex>
   );
 };

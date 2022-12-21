@@ -38,7 +38,7 @@ const PoweredBy = (props: any) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5001/axlegames/api/v1/users/twitter/profiles")
+      .get("https://api.axlegames.io/axlegames/api/v1/users/twitter/profiles")
       .then((res) => {
         setProfiles(res.data.data);
       })

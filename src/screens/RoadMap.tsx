@@ -134,12 +134,12 @@ const RoadMap = () => {
           bg={brandingColors.bgColor}
           boxShadow={
             props.current
-              ? `0px 0px 32px ${brandingColors.primaryTextColor}`
+              ? `0px 0px 32px ${brandingColors.newHighlightColor}`
               : "xl"
           }
           boxSize={props.current ? "52" : "44"}
           borderRadius={"50vh"}
-          border={`4px solid ${brandingColors.primaryTextColor}`}
+          border={`4px solid ${brandingColors.newHighlightColor}`}
           position="relative"
           alignItems={"center"}
           justifyContent="center"
@@ -148,9 +148,7 @@ const RoadMap = () => {
           <Text color={brandingColors.primaryTextColor} fontSize={"3xl"}>
             Phase {props.index + 1}
           </Text>
-          <Text color={brandingColors.secondaryTwoTextColor}>
-            {props.phase}{" "}
-          </Text>
+          <Text color={brandingColors.secondaryTextColor}>{props.phase} </Text>
         </Box>
       </Box>
     );
@@ -191,7 +189,7 @@ const RoadMap = () => {
           width="36px"
           bg={brandingColors.fgColor}
           borderRadius="md"
-          border={`3px dotted ${brandingColors.primaryTextColor}`}
+          border={`3px solid ${brandingColors.newHighlightColor}`}
         ></Box>
       </Box>
     );
