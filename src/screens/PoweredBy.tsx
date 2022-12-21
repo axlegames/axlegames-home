@@ -14,6 +14,7 @@ import Blender from "../assets/powerdby/unreal.svg";
 import Sol from "../assets/powerdby/sol.svg";
 import React from "../assets/powerdby/react.png";
 import MongoDB from "../assets/powerdby/mongo.svg";
+import Marquee from "react-fast-marquee";
 
 axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
 axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
@@ -53,6 +54,7 @@ const PoweredBy = (props: any) => {
   const TwitterProfileCard = (props: Profile) => {
     return (
       <Box
+        mx={4}
         bg={brandingColors.fgColor}
         boxShadow="2xl"
         p={{ base: "4" }}
@@ -169,20 +171,12 @@ const PoweredBy = (props: any) => {
         ))}
       </Grid>
       <Heading title="Supporters" />
-      <Grid
-        gridTemplateColumns={{
-          base: "1fr",
-          sm: "1fr 1fr",
-          xl: "1fr 1fr 1fr 1fr",
-          "2xl": "1fr 1fr 1fr 1fr 1fr",
-        }}
-        columnGap={"1rem"}
-        rowGap={"1rem"}
-      >
+
+      <Marquee gradientWidth={0} speed={40}>
         {profiles.map((profile, index) => (
           <TwitterProfileCard {...profile} />
         ))}
-      </Grid>
+      </Marquee>
     </Box>
   );
 };
