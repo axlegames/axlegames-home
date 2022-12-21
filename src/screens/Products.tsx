@@ -129,7 +129,7 @@ const ProductDetail = (props: Props) => {
     >
       <Box display={"flex"} columnGap="1rem">
         <Image width={"16"} src={props.image} />
-        <Box>
+        <Box display={"flex"} alignItems="center">
           <Flex
             color={brandingColors.secondaryTextColor}
             fontSize={"3xl"}

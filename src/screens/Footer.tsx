@@ -137,14 +137,12 @@ const Footer = () => {
         </Text>
         <SocialsRow />
       </Box>
-      <Divider mx="auto" width="90%" />
+      <Divider />
       <Box
-        display={"flex"}
+        display={{ base: "none", xl: "flex" }}
         alignItems="center"
         justifyContent={"center"}
         columnGap={"2rem"}
-        mx="auto"
-        width={"90%"}
       >
         <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"}>
           <Image maxW="120px" src={Logo} />
@@ -201,6 +199,7 @@ const Footer = () => {
         justifyContent={"center"}
         flexDirection="column"
         rowGap={".5rem"}
+        p={5}
       >
         <Text color={brandingColors.secondaryTextColor}>
           Disclaimer: Your investment may go down as well as up in value.

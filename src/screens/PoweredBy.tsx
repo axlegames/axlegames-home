@@ -134,7 +134,11 @@ const PoweredBy = (props: any) => {
     >
       <Heading title="Powered By" />
       <Grid
-        gridTemplateColumns={{ base: "1fr 1fr 1fr 1fr" }}
+        gridTemplateColumns={{
+          base: "1fr",
+          sm: "1fr 1fr",
+          lg: "1fr 1fr 1fr 1fr",
+        }}
         justifyContent="center"
         columnGap={"1rem"}
         rowGap={"1rem"}
@@ -148,7 +152,11 @@ const PoweredBy = (props: any) => {
       </Grid>
 
       <Grid
-        gridTemplateColumns={{ base: "1fr 1fr 1fr 1fr" }}
+        gridTemplateColumns={{
+          base: "1fr",
+          sm: "1fr 1fr",
+          lg: "1fr 1fr 1fr 1fr",
+        }}
         justifyContent="center"
         columnGap={"1rem"}
         rowGap={"1rem"}
@@ -164,7 +172,7 @@ const PoweredBy = (props: any) => {
       <Grid
         gridTemplateColumns={{
           base: "1fr",
-          md: "1fr 1fr",
+          sm: "1fr 1fr",
           xl: "1fr 1fr 1fr 1fr",
           "2xl": "1fr 1fr 1fr 1fr 1fr",
         }}

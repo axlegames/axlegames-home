@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Grid, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
@@ -19,7 +19,7 @@ const whys = [
   },
   {
     title: "Exclusive Rewards",
-    text: "It get’s more and more to $AXLE token holders",
+    text: "It get’s more and more to $AXLE token",
     img: Win,
   },
 ];
@@ -44,34 +44,33 @@ const Why = () => {
       p={{ base: "4", lg: "16" }}
       display="flex"
       flexDirection={"column"}
-      rowGap="3rem"
+      rowGap="4rem"
+      justifyContent={"center"}
+      alignItems="center"
     >
       <Heading title="Why $AXLE ?" />
-      <Flex
-        pt={{ base: "16" }}
-        columnGap={{ lg: "4rem" }}
+      <Grid
+        columnGap={{ base: "1rem", xl: "4rem" }}
         justifyContent={"space-evenly"}
         alignItems="center"
-        flexDirection={{ base: "column", "2xl": "row" }}
+        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
         rowGap={{ base: "4rem" }}
       >
         {whys.map((why, index) => (
           <WhyCard {...why} key={index} />
         ))}
-      </Flex>
+      </Grid>
 
-      <Flex
-        pt={{ lg: "16" }}
-        columnGap={{ lg: "10rem" }}
-        justifyContent={"center"}
-        alignItems="center"
-        flexDirection={{ base: "column", "2xl": "row" }}
+      <Grid
+        columnGap={{ base: "1rem", xl: "4rem" }}
         rowGap={{ base: "4rem" }}
+        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+        justifyContent={{ lg: "flex-start" }}
       >
         {whys2.map((why, index) => (
           <WhyCard {...why} key={index} />
         ))}
-      </Flex>
+      </Grid>
     </Box>
   );
 };
@@ -85,7 +84,8 @@ const WhyCard = (props: Props) => {
   return (
     <Tilt>
       <Box
-        minW={{ base: "340px", lg: "420px" }}
+        minW={{ base: "340px" }}
+        maxW={{ base: "340px" }}
         justifyContent={"center"}
         alignItems="center"
         borderRadius="md"
@@ -94,13 +94,13 @@ const WhyCard = (props: Props) => {
         flexDirection="column"
       >
         <Image width={"56"} borderRadius={"md"} src={props.img} />
-        <Box pb={5} px={4}>
+        <Box>
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "lg", lg: "2xl" }}
             textAlign={"center"}
           >
-            {props.title}{" "}
+            {props.title}
           </Text>
           <Text
             color={brandingColors.secondaryTextColor}

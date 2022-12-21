@@ -98,25 +98,22 @@ const RoadMap = () => {
     const copy = state;
     copy[index] = !copy[index];
     setState(copy);
+    console.log(copy);
   }
 
   const MPhase = (props: Props) => {
     return (
       <Box display={"flex"} justifyContent="center" position={"relative"}>
         <Box
-          display={{ base: "none" }}
-          bg={brandingColors.dangerColor}
+          display={state[props.index] ? "flex" : "none"}
+          bg={brandingColors.bgColor}
           p={{ base: "4" }}
           borderRadius="xl"
           position={"absolute"}
           minW={{ base: "60%" }}
+          zIndex={4}
         >
-          <Box
-            display={state[props.index] ? "flex" : "none"}
-            m={"4"}
-            overflowY={"scroll"}
-            maxH="48"
-          >
+          <Box m={"4"} overflowY={"scroll"} maxH="48">
             {props.milestones.map((m, i) => (
               <Text
                 textAlign={"center"}
@@ -186,9 +183,8 @@ const RoadMap = () => {
         </Box>
         <Box
           height={"90px"}
-          width="36px"
-          bg={brandingColors.fgColor}
-          borderRadius="md"
+          width="6"
+          bg={brandingColors.bgColor}
           border={`3px solid ${brandingColors.newHighlightColor}`}
         ></Box>
       </Box>
@@ -203,7 +199,7 @@ const RoadMap = () => {
       <Heading title="Roadmap" />
 
       <Grid
-        display={{ base: "grid", xl: "none" }}
+        display={{ base: "grid", lg: "none" }}
         gridTemplateColumns={{ base: "1fr" }}
         columnGap={"2rem"}
         p={{ lg: "16" }}
@@ -230,7 +226,7 @@ const RoadMap = () => {
       </Grid>
 
       <Grid
-        display={{ base: "none", xl: "grid" }}
+        display={{ base: "none", lg: "grid" }}
         gridTemplateColumns={{ base: "1fr" }}
         columnGap={"2rem"}
         p={{ lg: "16" }}
@@ -319,7 +315,7 @@ const Phase = (props: Props) => {
             ? `0px 0px 32px ${brandingColors.newHighlightColor}`
             : "xl"
         }
-        boxSize={props.current ? "52" : "44"}
+        boxSize={props.current ? "48" : "44"}
         borderRadius={"50vh"}
         border={`4px solid ${brandingColors.newHighlightColor}`}
         position="relative"

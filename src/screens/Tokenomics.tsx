@@ -28,11 +28,6 @@ const tokens = [
     sub: "Utility Token",
     img: Util,
   },
-  {
-    title: "10 BILLION",
-    sub: "Total Supply",
-    img: Supply,
-  },
 ];
 
 const Tokenomics = () => {
@@ -99,10 +94,9 @@ const Tokenomics = () => {
     chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
   }, []);
 
-  const LeftAligner = (i: number) => {
-    if (i === 0 || i === 2) {
-      return "flex-end";
-    }
+  const aligner = (index: number) => {
+    if (index === 0) return "flex-end";
+    if (index === 1) return "center";
     return "flex-start";
   };
 
@@ -114,10 +108,12 @@ const Tokenomics = () => {
       <Heading title="Tokenomics" />
       <Grid
         pt={{ base: "16" }}
-        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
-        columnGap={"6rem"}
+        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
+        columnGap={"3rem"}
         rowGap={"3rem"}
         justifyContent="center"
+        width={{ lg: "80%" }}
+        mx={{ lg: "auto" }}
       >
         {tokens.map((t, i) => (
           <GridItem
@@ -125,9 +121,8 @@ const Tokenomics = () => {
             display={"flex"}
             flexDirection="row"
             borderRadius="md"
-            textAlign={"center"}
             alignItems={"center"}
-            justifyContent={{ base: "center", lg: LeftAligner(i) }}
+            justifyContent={{ base: "center", lg: aligner(i) }}
             columnGap="1rem"
             p={2}
           >
@@ -136,7 +131,12 @@ const Tokenomics = () => {
               borderRadius={"xl"}
               src={t.img}
             />
-            <Box>
+            <Box
+              display={"flex"}
+              flexDirection="column"
+              alignItems={"center"}
+              justifyContent="flex-start"
+            >
               <Text
                 lineHeight={"1"}
                 fontSize={{ base: "md", lg: "3xl" }}
