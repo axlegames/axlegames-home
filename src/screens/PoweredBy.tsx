@@ -136,22 +136,21 @@ const PoweredBy = (props: any) => {
     >
       <Heading title="Powered By" />
       <Grid
+        py={{ base: "16" }}
         gridTemplateColumns={{
           base: "1fr",
           sm: "1fr 1fr",
           md: "1fr 1fr 1fr",
           lg: "1fr 1fr 1fr 1fr",
         }}
-        columnGap={"1rem"}
-        rowGap={"1rem"}
         justifyContent="flex-start"
+        rowGap={"2rem"}
       >
         {images.map((img, index) => (
           <Box
             display={"flex"}
             justifyContent="center"
             alignItems="center"
-            p={4}
             borderRadius="xl"
           >
             <Image height="60px" width={"150px"} src={img}></Image>
