@@ -32,3 +32,66 @@
 .nav-link-ltr:hover::before {
   width: 100%;
 }
+
+.btn {
+  border: 0 none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  height: 54px;
+  line-height: 54px;
+  padding: 0 25px;
+  position: relative;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  background-size: 200% auto;
+  background-image: -webkit-linear-gradient(
+    left,
+    #0a325c 0%,
+    #eb6612 51%,
+    #0a325c
+  );
+  background-image: linear-gradient(to right, #0a325c 0%, #eb6612 51%, #0a325c);
+  border: 0;
+  color: #fff;
+  outline: none;
+  text-transform: uppercase;
+  z-index: 2;
+  transition: all 0.5s ease 0s;
+}
+
+.btn:hover {
+  background-position: right center;
+}
+
+.btn-secondary {
+  border: 0 none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  height: 54px;
+  line-height: 54px;
+  padding: 0 25px;
+  position: relative;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  background-size: 200% auto;
+  background-color: #0a325c;
+  border: 0;
+  color: #fff;
+  outline: none;
+  text-transform: uppercase;
+  z-index: 2;
+  transition: all 0.25s ease 0s;
+}
+
+.btn-secondary:hover {
+  box-shadow: 0px 0px 4px #eb6612;
+  color: #eb6612;
+}

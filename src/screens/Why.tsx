@@ -5,7 +5,9 @@ import Tilt from "react-parallax-tilt";
 import Win from "../assets/imgs/win.png";
 import Compete from "../assets/imgs/compete.png";
 import Improve from "../assets/imgs/improve.png";
-import BG from "../assets/bg/token_countdown_bg.png";
+import BG from "../assets/bg/token_bg.png";
+import Blockchain from "../assets/imgs/blockchain.png";
+import Coin from "../assets/imgs/coin.png";
 
 const whys = [
   {
@@ -21,7 +23,7 @@ const whys = [
   {
     title: "Fully Decentralized",
     text: "It get’s more and more to $AXLE token",
-    img: Win,
+    img: Blockchain,
   },
 ];
 
@@ -29,7 +31,7 @@ const whys2 = [
   {
     title: "Zero fee",
     text: "It get’s more and more to $AXLE token holders",
-    img: Win,
+    img: Coin,
   },
   {
     title: "Exclusive Rewards",

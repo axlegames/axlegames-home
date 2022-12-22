@@ -337,7 +337,7 @@ const Phase = (props: Props) => {
         bg={brandingColors.bgColor}
         boxShadow={
           props.current
-            ? `0px 0px 32px ${brandingColors.newHighlightColor}`
+            ? `0px 0px 62px ${brandingColors.newHighlightColor}`
             : "xl"
         }
         boxSize={props.current ? "48" : "36"}

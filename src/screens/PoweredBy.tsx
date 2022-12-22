@@ -54,9 +54,9 @@ const PoweredBy = (props: any) => {
   const TwitterProfileCard = (props: Profile) => {
     return (
       <Box
-        mx={4}
-        bg={brandingColors.fgColor}
-        boxShadow="2xl"
+        m={4}
+        bg={brandingColors.bgColor}
+        boxShadow={`5px 5px 13px #05192d, -5px -5px 13px #072341`}
         p={{ base: "4" }}
         borderRadius="xl"
         minW="216px"
@@ -127,7 +127,9 @@ const PoweredBy = (props: any) => {
             >
               {props.public_metrics.tweet_count}
             </Text>
-            <Text fontSize={"sm"}>Tweets</Text>
+            <Text color={brandingColors.secondaryTextColor} fontSize={"sm"}>
+              Tweets
+            </Text>
           </Flex>
         </Flex>
       </Box>

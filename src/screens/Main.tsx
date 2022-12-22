@@ -11,27 +11,26 @@ import Discord from "../assets/main/discord.png";
 import BG from "../assets/bg/token_countdown_bg.png";
 
 import Carousel from "nuka-carousel";
-import NeuButton from "../components/NeuButton";
 import { brandingColors } from "../config/brandingColors";
 
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { useCallback, useEffect } from "react";
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles";
+// import { useCallback, useEffect } from "react";
 
 const Main = () => {
-  const particlesInit = useCallback(async (engine: any) => {
-    console.log(engine);
-    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(engine);
-  }, []);
+  // const particlesInit = useCallback(async (engine: any) => {
+  //   console.log(engine);
+  //   // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+  //   // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+  //   // starting from v2 you can add only the features you need reducing the bundle size
+  //   await loadFull(engine);
+  // }, []);
 
-  const particlesLoaded = useCallback(async (container: any) => {
-    console.log(container);
-  }, []);
+  // const particlesLoaded = useCallback(async (container: any) => {
+  //   console.log(container);
+  // }, []);
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   const map = [
     {
@@ -282,19 +281,12 @@ const Main = () => {
                 </Box>
                 <Box display={"flex"} flexDirection="column" rowGap={"3rem"}>
                   <Flex columnGap={"1rem"}>
-                    <NeuButton
-                      label="GO TO APP"
-                      onClick={() => null}
-                      bg={brandingColors.neuPrimaryBg}
-                      shadow={brandingColors.newPrimaryShadow}
-                    />
-
-                    <NeuButton
-                      label="BUY $AXLE"
-                      onClick={() => null}
-                      bg={brandingColors.neuPrimaryBg}
-                      shadow={brandingColors.newPrimaryShadow}
-                    />
+                    <a className="btn" href="login.html">
+                      GO TO APP
+                    </a>
+                    <a className="btn-secondary btn-4" href="login.html">
+                      Buy $AXLE
+                    </a>
                   </Flex>
                 </Box>
               </Box>
