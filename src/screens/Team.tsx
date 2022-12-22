@@ -1,48 +1,54 @@
 import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
-import PlaceHolder from "../assets/avatar.jpg";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 import BG from "../assets/bg/token_bg.png";
 
+import Praneeth from "../assets/team/praneeth.webp";
+import Chakri from "../assets/team/chakri.webp";
+import Akash from "../assets/team/akash.webp";
+import Roney from "../assets/team/roney.webp";
+import Lucas from "../assets/team/lucas.png";
+import Prashanth from "../assets/team/prashanth.webp";
+
 const Team = () => {
   const team1 = [
     {
-      name: "name",
-      avatar: PlaceHolder,
-      role: "role",
+      name: "Praneeth Nagu",
+      avatar: Praneeth,
+      role: "Founder / Marketing Lead",
       linkedIn: "linkedin",
     },
     {
-      name: "name",
-      avatar: PlaceHolder,
-      role: "role",
+      name: "D. C. R",
+      avatar: Chakri,
+      role: "Co-Founder / Project Lead",
       linkedIn: "linkedin",
     },
     {
-      name: "name",
-      avatar: PlaceHolder,
+      name: "Akash Madduru",
+      avatar: Akash,
       role: "role",
-      linkedIn: "linkedin",
+      linkedIn: "Product / Dev Lead",
     },
 
     {
-      name: "name",
-      avatar: PlaceHolder,
-      role: "role",
+      name: "Roney",
+      avatar: Roney,
+      role: "Product / Design Lead",
       linkedIn: "linkedin",
     },
     {
-      name: "name",
-      avatar: PlaceHolder,
-      role: "role",
+      name: "Prashanth",
+      avatar: Prashanth,
+      role: "Blockchain Developer",
       linkedIn: "linkedin",
     },
     {
-      name: "name",
-      avatar: PlaceHolder,
-      role: "role",
-      linkedIn: "linkedin",
+      name: "Lucas",
+      avatar: Lucas,
+      role: "Marketing",
+      linkedIn: "",
     },
   ];
 
@@ -105,13 +111,13 @@ const Team = () => {
                   </Box>
                   <Box textAlign={"center"} py={4}>
                     <Text
-                      fontSize={"3xl"}
+                      fontSize={"xl"}
                       color={brandingColors.primaryTextColor}
                     >
                       {t.name}
                     </Text>
                     <Text
-                      fontSize={"xl"}
+                      fontSize={"md"}
                       color={brandingColors.secondaryTextColor}
                     >
                       {t.role}

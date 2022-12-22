@@ -158,14 +158,21 @@ const PoweredBy = (props: any) => {
           lg: "1fr 1fr 1fr 1fr",
         }}
         justifyContent="flex-start"
-        rowGap={"2rem"}
       >
         {images.map((img, index) => (
           <Box
             display={"flex"}
             justifyContent="center"
             alignItems="center"
-            borderRadius="xl"
+            borderBottom={
+              index > 3 ? "none" : "1px solid rgba(255, 255, 255, 0.4)"
+            }
+            borderLeft={
+              index === 0 || index === 4
+                ? "none"
+                : "1px solid rgba(255, 255, 255, 0.4)"
+            }
+            p={6}
           >
             <Image height="60px" width={"150px"} src={img}></Image>
           </Box>
