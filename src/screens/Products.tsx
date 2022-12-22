@@ -33,7 +33,7 @@ const products = [
     isLive: true,
     subTitle: "Axle Staking",
     label: "STAKE $AXLE",
-    text: "Users can stake their $AXLE tokens by locking in our staking pools for a period of time. Our stakers will have exclusive benefits to the AXLE platform and will receive $AXLE token rewards with a decent APY.",
+    text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the AXLE platform and will receive $AXLE token rewards with a attractive APYs.",
     image: Stake,
     mainImg: StakeM,
   },

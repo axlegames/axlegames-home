@@ -19,7 +19,7 @@ const whys = [
     img: Compete,
   },
   {
-    title: "Exclusive Rewards",
+    title: "Fully Decentralized",
     text: "It get’s more and more to $AXLE token",
     img: Win,
   },
@@ -27,7 +27,7 @@ const whys = [
 
 const whys2 = [
   {
-    title: "Exclusive Rewards",
+    title: "Zero fee",
     text: "It get’s more and more to $AXLE token holders",
     img: Win,
   },
