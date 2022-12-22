@@ -184,7 +184,13 @@ const ProductDetail = (props: Props) => {
     </Flex>
   );
   return (
-    <Flex width={"80%"} margin="auto" alignItems={"center"} columnGap={"3rem"}>
+    <Flex
+      zIndex={100}
+      width={"80%"}
+      margin="auto"
+      alignItems={"center"}
+      columnGap={"3rem"}
+    >
       {props.index % 2 === 0 ? <Content /> : null}
       <Image
         maxW={{ base: "256px", lg: "312px" }}
