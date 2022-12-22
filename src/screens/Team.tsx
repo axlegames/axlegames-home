@@ -3,6 +3,7 @@ import Heading from "../components/Heading";
 import PlaceHolder from "../assets/avatar.jpg";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
+import BG from "../assets/bg/token_bg.png";
 
 const Team = () => {
   const team1 = [
@@ -56,7 +57,11 @@ const Team = () => {
   };
 
   return (
-    <Box width={{ base: "100%", md: "80%" }} mx={{ md: "auto" }}>
+    <Box
+      backgroundImage={BG}
+      width={{ base: "100%", md: "80%" }}
+      mx={{ md: "auto" }}
+    >
       <Heading title="Meet the team" />
       <Flex py={{ base: "16" }} flexDirection={"column"}>
         <Grid

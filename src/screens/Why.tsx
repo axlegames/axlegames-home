@@ -5,6 +5,7 @@ import Tilt from "react-parallax-tilt";
 import Win from "../assets/imgs/win.png";
 import Compete from "../assets/imgs/compete.png";
 import Improve from "../assets/imgs/improve.png";
+import BG from "../assets/bg/token_countdown_bg.png";
 
 const whys = [
   {
@@ -41,6 +42,7 @@ const Why = () => {
   return (
     <Box
       bg={brandingColors.bgColor}
+      backgroundImage={BG}
       p={{ base: "4", lg: "16" }}
       display="flex"
       flexDirection={"column"}

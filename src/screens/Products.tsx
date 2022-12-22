@@ -4,7 +4,7 @@ import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { FaTelegram } from "react-icons/fa";
-
+import BG from "../assets/bg/token_bg.png";
 import Stake from "../assets/icons/stake.svg";
 import Swap from "../assets/icons/swap.svg";
 import League from "../assets/icons/league.svg";
@@ -76,6 +76,7 @@ const Products = () => {
     <Box
       // backgroundImage={`linear-gradient(to right top, #051937, #151d3c, #212140, #2c2544, #372948)`}
       bg={brandingColors.bgColor}
+      backgroundImage={BG}
       py={{ base: "12" }}
       width={{ base: "100%", lg: "100%" }}
     >

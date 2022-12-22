@@ -138,6 +138,7 @@ const PoweredBy = (props: any) => {
     <Box
       display={"flex"}
       justifyContent="center"
+      // backgroundImage={BG}
       flexDirection={"column"}
       rowGap={{ base: "2rem" }}
       py={{ base: "16" }}

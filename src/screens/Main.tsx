@@ -8,12 +8,31 @@ import TelegramI from "../assets/main/telegram.png";
 import Twitter from "../assets/main/twitter.png";
 import Instagram from "../assets/main/instagram.png";
 import Discord from "../assets/main/discord.png";
+import BG from "../assets/bg/token_countdown_bg.png";
 
 import Carousel from "nuka-carousel";
 import NeuButton from "../components/NeuButton";
 import { brandingColors } from "../config/brandingColors";
 
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import { useCallback, useEffect } from "react";
+
 const Main = () => {
+  const particlesInit = useCallback(async (engine: any) => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container: any) => {
+    console.log(container);
+  }, []);
+
+  useEffect(() => {}, []);
+
   const map = [
     {
       mainText: "AXLE GAMES.",
@@ -63,9 +82,116 @@ const Main = () => {
   return (
     <Box
       minH={{ lg: "90vh" }}
-      backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
+      // backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
       position="relative"
+      zIndex={"10"}
+      bg={brandingColors.bgColor}
+      backgroundImage={BG}
     >
+      {/* <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={{
+          particles: {
+            number: {
+              value: 25,
+              density: {
+                enable: true,
+                value_area: 881.8766334760375,
+              },
+            },
+            color: {
+              value: ["#FFC56E", "#FF6CC6", "#4241B8", "#F69040", "#0EADC9"],
+            },
+            shape: {
+              type: "circle",
+              stroke: {
+                width: 4,
+                color: brandingColors.dangerColor,
+              },
+            },
+            opacity: {
+              value: 0,
+              random: true,
+              anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 1,
+                sync: true,
+              },
+            },
+            size: {
+              value: 1,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 10,
+                size_min: 40,
+                sync: true,
+              },
+            },
+            line_linked: {
+              enable: false,
+            },
+            move: {
+              enable: true,
+              speed: 10,
+              direction: "none",
+              random: true,
+              straight: false,
+              out_mode: "out",
+              bounce: false,
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200,
+              },
+            },
+          },
+          interactivity: {
+            detect_on: "window",
+            events: {
+              onhover: {
+                enable: true,
+                mode: "bubble",
+              },
+              onclick: {
+                enable: true,
+                mode: "push",
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 0.4,
+                },
+              },
+              bubble: {
+                distance: 1059.7607620532553,
+                size: 5,
+                duration: 2.273816194443766,
+                opacity: 1,
+                speed: 3,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+              push: {
+                particles_nb: 4,
+              },
+              remove: {
+                particles_nb: 2,
+              },
+            },
+          },
+          retina_detect: true,
+        }}
+      /> */}
+
       <Box zIndex={2}>
         <Carousel
           wrapAround={true}
