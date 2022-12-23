@@ -87,7 +87,7 @@ export const App = () => {
               velocityRate: -1,
             },
             number: {
-              value: 10,
+              value: 24,
               density: {
                 enable: true,
                 value_area: 800,
@@ -110,12 +110,11 @@ export const App = () => {
               },
             },
             opacity: {
-              value: 0,
               random: true,
               anim: {
                 enable: false,
                 speed: 1,
-                opacity_min: 1,
+                opacity_min: 0.2,
                 sync: true,
               },
             },
@@ -124,8 +123,8 @@ export const App = () => {
               random: true,
               anim: {
                 enable: true,
-                speed: 10,
-                size_min: 40,
+                speed: 6,
+                size_min: 12,
                 sync: true,
               },
             },
@@ -134,7 +133,7 @@ export const App = () => {
             },
             move: {
               enable: true,
-              speed: 10,
+              speed: 6,
               direction: "none",
               random: true,
               straight: false,
@@ -163,7 +162,7 @@ export const App = () => {
             modes: {
               bubble: {
                 distance: 100,
-                size: 30,
+                size: 20,
                 duration: 0.1,
                 opacity: 1,
                 speed: 4,
