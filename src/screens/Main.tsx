@@ -9,10 +9,15 @@ import Twitter from "../assets/main/twitter.png";
 import Instagram from "../assets/main/instagram.png";
 import Discord from "../assets/main/discord.png";
 import BG from "../assets/bg/token_countdown_bg.png";
+import J from "../assets/lottie/9.json";
 
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
-import { Link } from "react-router-dom";
+
+import { useEffect, useRef } from "react";
+
+import Lottie from "lottie-react";
+import lottieW from "lottie-web";
 
 const Main = () => {
   const map = [
@@ -60,6 +65,22 @@ const Main = () => {
       </Flex>
     );
   };
+
+  const container = useRef(null) as any;
+
+  useEffect(() => {
+    lottieW.loadAnimation({
+      container: container,
+      renderer: "svg",
+      loop: true,
+      autoplay: false,
+      animationData: J,
+    });
+
+    return () => {
+      lottieW.destroy();
+    };
+  }, [container]);
 
   return (
     <Box
@@ -161,14 +182,21 @@ const Main = () => {
                     >
                       GO TO APP
                     </a>
-                    <Link className="btn-secondary btn-4" to="/sale">
+                    <a
+                      href="http://sale.localhost:3000"
+                      className="btn-secondary btn-4"
+                    >
                       Buy $AXLE
-                    </Link>
+                    </a>
                   </Flex>
                 </Box>
               </Box>
-
-              <Image src={m.image} />
+              <Lottie
+                ref={container}
+                onMouseEnter={() => lottieW.play()}
+                onMouseLeave={() => lottieW.pause()}
+                animationData={J}
+              />
             </Grid>
           ))}
         </Carousel>

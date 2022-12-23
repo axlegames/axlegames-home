@@ -9,7 +9,6 @@ import { brandingColors } from "../../config/brandingColors";
 const Axle = () => {
   return (
     <Flex
-      borderRadius={"xl"}
       direction={"column"}
       rowGap="1rem"
       fontFamily={"quicksand"}
