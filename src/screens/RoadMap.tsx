@@ -348,7 +348,18 @@ const Phase = (props: Props) => {
         justifyContent="center"
         flexDirection={"column"}
       >
-        <Text color={brandingColors.primaryTextColor} fontSize={"2xl"}>
+        <Text
+          bg="transparent"
+          borderRadius={"xl"}
+          px={4}
+          boxShadow={
+            props.current
+              ? `0px 0px 62px ${brandingColors.newHighlightColor}`
+              : "xl"
+          }
+          color={brandingColors.primaryTextColor}
+          fontSize={"2xl"}
+        >
           Phase {props.index + 1}
         </Text>
         <Text color={brandingColors.secondaryTextColor}>{props.phase} </Text>

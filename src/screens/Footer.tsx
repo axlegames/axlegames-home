@@ -13,7 +13,6 @@ import {
 import Logo from "../assets/logo.png";
 
 import Heading from "../components/Heading";
-import NeuButton from "../components/NeuButton";
 import { brandingColors } from "../config/brandingColors";
 
 import TelegramI from "../assets/main/telegram.png";
@@ -69,7 +68,8 @@ const Footer = () => {
         justifyContent="center"
         alignItems={"center"}
         rowGap="2rem"
-        bg={brandingColors.fgColor}
+        bg={brandingColors.bgColor}
+        boxShadow={`5px 5px 13px #05192d, -5px -5px 13px #072341`}
       >
         <Grid
           width={"100%"}
@@ -113,12 +113,9 @@ const Footer = () => {
             />
           </FormControl>
         </Grid>
-        <NeuButton
-          label={"Submit"}
-          onClick={() => null}
-          bg={brandingColors.neuPrimaryBg}
-          shadow={brandingColors.newPrimaryShadow}
-        />
+        <a className="btn" href="login.html">
+          Submit
+        </a>
       </Box>
 
       <Box

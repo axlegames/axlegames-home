@@ -18,6 +18,7 @@ import LeagueM from "../assets/products/league.png";
 import GamesM from "../assets/products/games.png";
 import MarketPlaceM from "../assets/products/marketplace.png";
 import { BsDot } from "react-icons/bs";
+import { useNavigate } from "react-router";
 
 const products = [
   {
@@ -72,13 +73,7 @@ const products = [
 
 const Products = () => {
   return (
-    <Box
-      // backgroundImage={`linear-gradient(to right top, #051937, #151d3c, #212140, #2c2544, #372948)`}
-      bg={brandingColors.bgColor}
-      // backgroundImage={BG}
-      py={{ base: "12" }}
-      width={{ base: "100%", lg: "100%" }}
-    >
+    <Box py={{ base: "12" }} width={{ base: "100%", lg: "100%" }}>
       <Heading title="Products" />
       <Box
         flexDirection={"column"}
@@ -113,6 +108,7 @@ const Products = () => {
 };
 
 const ProductDetail = (props: Props) => {
+  const navigate = useNavigate();
   const Content = () => (
     <Flex
       bg={brandingColors.fgColor}
@@ -162,7 +158,7 @@ const ProductDetail = (props: Props) => {
       <Flex columnGap={"1rem"}>
         <NeuButton
           label={props.label}
-          onClick={() => null}
+          onClick={() => navigate("/coming-soon")}
           bg={brandingColors.neuPrimaryBg}
           shadow={brandingColors.newPrimaryShadow}
         />
@@ -214,6 +210,7 @@ interface Props {
 }
 
 const Product = (props: Props) => {
+  const navigate = useNavigate();
   return (
     <Box py={{ base: "4" }}>
       <Box position={"relative"}>
@@ -244,7 +241,7 @@ const Product = (props: Props) => {
       <Flex columnGap={"1rem"} p={{ base: "4" }}>
         <NeuButton
           label={props.label}
-          onClick={() => null}
+          onClick={() => navigate("/coming-soon")}
           bg={brandingColors.neuPrimaryBg}
           shadow={brandingColors.newPrimaryShadow}
         />

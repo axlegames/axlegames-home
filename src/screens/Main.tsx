@@ -12,6 +12,7 @@ import BG from "../assets/bg/token_countdown_bg.png";
 
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const map = [
@@ -64,11 +65,10 @@ const Main = () => {
     <Box
       minH={{ lg: "90vh" }}
       // backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
-      position="relative"
-      bg={brandingColors.bgColor}
       backgroundImage={BG}
+      position="relative"
     >
-      <Box zIndex={100}>
+      <Box>
         <Carousel
           wrapAround={true}
           autoplay={true}
@@ -121,12 +121,7 @@ const Main = () => {
                 rowGap="2rem"
                 position={"relative"}
               >
-                <Box
-                  zIndex={2}
-                  display={"flex"}
-                  flexDirection="column"
-                  rowGap={".5rem"}
-                >
+                <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>
                   <Text
                     lineHeight={"1.2"}
                     fontSize={{ base: "sm", sm: "24px", lg: "32px" }}
@@ -158,12 +153,17 @@ const Main = () => {
                 </Box>
                 <Box display={"flex"} flexDirection="column" rowGap={"3rem"}>
                   <Flex columnGap={"1rem"}>
-                    <a className="btn" href="login.html">
+                    <a
+                      className="btn"
+                      href="https://axlegames.io"
+                      target={"_blank"}
+                      rel="noreferrer"
+                    >
                       GO TO APP
                     </a>
-                    <a className="btn-secondary btn-4" href="login.html">
+                    <Link className="btn-secondary btn-4" to="/sale">
                       Buy $AXLE
-                    </a>
+                    </Link>
                   </Flex>
                 </Box>
               </Box>

@@ -89,6 +89,7 @@ const Tokenomics = () => {
 
     series.hiddenState.properties.startAngle = 90;
     series.hiddenState.properties.endAngle = 90;
+    series.slices.template.draggable = false;
 
     chart.legend = new am4charts.Legend();
     chart.legend.labels.template.fill = am4core.color("#ffffff");

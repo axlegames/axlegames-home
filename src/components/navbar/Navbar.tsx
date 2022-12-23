@@ -1,4 +1,5 @@
 import { Box, Flex, Grid, Image } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import { brandingColors } from "../../config/brandingColors";
 import NeuLink from "../NeuLink";
@@ -53,9 +54,9 @@ const Navbar = () => {
           />
         </Flex>
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
-          <a className="btn" href="login.html">
+          <Link className="btn" to="/sale">
             Buy $AXLE
-          </a>
+          </Link>
         </Flex>
       </Grid>
     </Box>

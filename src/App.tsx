@@ -17,6 +17,10 @@ import { loadFull } from "tsparticles";
 import { useCallback } from "react";
 import { brandingColors } from "./config/brandingColors";
 
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Axle from "./pages/Axle/Axle";
+import ComingSoon from "./pages/CommingSoon";
+
 export const App = () => {
   const particlesInit = useCallback(async (engine: any) => {
     console.log(engine);
@@ -29,14 +33,46 @@ export const App = () => {
   const particlesLoaded = useCallback(async (container: any) => {
     console.log(container);
   }, []);
+
+  const Home = () => {
+    return (
+      <Box zIndex={100} fontWeight={"bold"}>
+        <MobileNavbar />
+        <Navbar />
+        <Box bg={brandingColors.bgColor}>
+          <Element name="about" className="about">
+            <Main />
+          </Element>
+          <Element name="products" className="products">
+            <Products />
+          </Element>
+        </Box>
+        <Element name="why" className="why">
+          <Why />
+        </Element>
+        <Element name="token" className="token">
+          <Tokenomics />
+        </Element>
+        <Element name="roadmap" className="roadmap">
+          <RoadMap />
+        </Element>
+        <Element name="team" className="team">
+          <Box
+            backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
+          >
+            <Team />
+            <PoweredBy />
+          </Box>
+        </Element>
+        <Element name="footer" className="footer">
+          <Footer />
+        </Element>
+      </Box>
+    );
+  };
+
   return (
     <ChakraProvider theme={theme}>
-      <MobileNavbar />
-      <Navbar />
-
-      <Element name="main" className="main">
-        <Main />
-      </Element>
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -51,20 +87,26 @@ export const App = () => {
               velocityRate: -1,
             },
             number: {
-              value: 25,
+              value: 10,
               density: {
                 enable: true,
-                value_area: 881.8766334760375,
+                value_area: 800,
               },
             },
             color: {
-              value: ["#FFC56E", "#FF6CC6", "#4241B8", "#F69040", "#0EADC9"],
+              value: [
+                brandingColors.bgColor,
+                brandingColors.fgColor,
+                brandingColors.dangerColor,
+                brandingColors.primaryTextColor,
+                brandingColors.newHighlightColor,
+              ],
             },
             shape: {
               type: "circle",
               stroke: {
-                width: 4,
-                color: brandingColors.dangerColor,
+                width: 2,
+                color: brandingColors.primaryTextColor,
               },
             },
             opacity: {
@@ -119,25 +161,19 @@ export const App = () => {
               resize: true,
             },
             modes: {
-              grab: {
-                distance: 400,
-                line_linked: {
-                  opacity: 0.4,
-                },
-              },
               bubble: {
-                distance: 1059.7607620532553,
-                size: 5,
-                duration: 2.273816194443766,
+                distance: 100,
+                size: 30,
+                duration: 0.1,
                 opacity: 1,
-                speed: 3,
+                speed: 4,
               },
               repulse: {
                 distance: 200,
                 duration: 0.4,
               },
               push: {
-                particles_nb: 4,
+                particles_nb: 0,
               },
               remove: {
                 particles_nb: 2,
@@ -148,37 +184,13 @@ export const App = () => {
           retina_detect: true,
         }}
       />
-
-      <Box zIndex={100} fontWeight={"bold"}>
-        <Element name="about" className="about">
-          {/* <About /> */}
-        </Element>
-        <Element name="products" className="products">
-          <Box zIndex={100}>
-            <Products />
-          </Box>
-        </Element>
-        <Element name="why" className="why">
-          <Why />
-        </Element>
-        <Element name="token" className="token">
-          <Tokenomics />
-        </Element>
-        <Element name="roadmap" className="roadmap">
-          <RoadMap />
-        </Element>
-        <Element name="team" className="team">
-          <Box
-            backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
-          >
-            <Team />
-            <PoweredBy />
-          </Box>
-        </Element>
-        <Element name="footer" className="footer">
-          <Footer />
-        </Element>
-      </Box>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sale" element={<Axle />} />
+          <Route path="/coming-soon" element={<ComingSoon />} />
+        </Routes>
+      </Router>
     </ChakraProvider>
   );
 };
