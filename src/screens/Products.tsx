@@ -111,6 +111,7 @@ const ProductDetail = (props: Props) => {
   const navigate = useNavigate();
   const Content = () => (
     <Flex
+      zIndex={100}
       bg={brandingColors.fgColor}
       p={{ base: "4", lg: "8" }}
       borderRadius="md"
