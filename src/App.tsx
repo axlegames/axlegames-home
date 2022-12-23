@@ -11,10 +11,9 @@ import MobileNavbar from "./components/navbar/MobileNavbar";
 import Navbar from "./components/navbar/Navbar";
 import { Element } from "react-scroll";
 import PoweredBy from "./screens/PoweredBy";
-import Particles from "react-tsparticles";
-
-import { loadFull } from "tsparticles";
-import { useCallback } from "react";
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles";
+// import { useCallback } from "react";
 import { brandingColors } from "./config/brandingColors";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -22,17 +21,17 @@ import Axle from "./pages/Axle/Axle";
 import ComingSoon from "./pages/CommingSoon";
 
 export const App = () => {
-  const particlesInit = useCallback(async (engine: any) => {
-    console.log(engine);
-    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(engine);
-  }, []);
+  // const particlesInit = useCallback(async (engine: any) => {
+  //   console.log(engine);
+  //   // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+  //   // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+  //   // starting from v2 you can add only the features you need reducing the bundle size
+  //   await loadFull(engine);
+  // }, []);
 
-  const particlesLoaded = useCallback(async (container: any) => {
-    console.log(container);
-  }, []);
+  // const particlesLoaded = useCallback(async (container: any) => {
+  //   console.log(container);
+  // }, []);
 
   const Home = () => {
     return (
@@ -73,7 +72,7 @@ export const App = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <Particles
+      {/* <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
@@ -182,7 +181,7 @@ export const App = () => {
 
           retina_detect: true,
         }}
-      />
+      /> */}
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
