@@ -1,15 +1,13 @@
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 
-import Slide1 from "../assets/slide1.png";
-import Slide2 from "../assets/slide2.png";
-import Slide3 from "../assets/slide3.png";
-
 import TelegramI from "../assets/main/telegram.png";
 import Twitter from "../assets/main/twitter.png";
 import Instagram from "../assets/main/instagram.png";
 import Discord from "../assets/main/discord.png";
 import BG from "../assets/bg/token_countdown_bg.png";
-import J from "../assets/lottie/9.json";
+
+import S1 from "../assets/lottie/s1.json";
+import S2 from "../assets/lottie/s2.json";
 
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
@@ -18,29 +16,9 @@ import { useEffect, useRef } from "react";
 
 import Lottie from "lottie-react";
 import lottieW from "lottie-web";
+import NeuButton from "../components/NeuButton";
 
 const Main = () => {
-  const map = [
-    {
-      mainText: "AXLE GAMES.",
-      header: "A SKILL-BASED",
-      subHeader: "WEB3 GAMING PLATFORM",
-      image: Slide1,
-    },
-    {
-      mainText: "STAKING IS LIVE.",
-      header: "GET AN ATTRACTIVE",
-      subHeader: "APY OF 25%",
-      image: Slide2,
-    },
-    {
-      mainText: "OUR VISION",
-      header: "IS TO CREATE SAFE",
-      subHeader: "HOME OF COMPETITION",
-      image: Slide3,
-    },
-  ];
-
   const IconWrapper = (props: any) => (
     <Image
       color={props.color}
@@ -66,21 +44,64 @@ const Main = () => {
     );
   };
 
-  const container = useRef(null) as any;
+  const s1 = useRef(null) as any;
+  const s2 = useRef(null) as any;
+  const s3 = useRef(null) as any;
+
+  const map = [
+    {
+      mainText: "AXLE GAMES.",
+      header: "A SKILL-BASED",
+      subHeader: "WEB3 GAMING PLATFORM",
+      json: S1,
+      ref: s1,
+    },
+    {
+      mainText: "STAKING IS LIVE.",
+      header: "GET AN ATTRACTIVE",
+      subHeader: "APY OF 25%",
+      json: S2,
+      ref: s2,
+    },
+    {
+      mainText: "OUR VISION",
+      header: "IS TO CREATE SAFE",
+      subHeader: "HOME OF COMPETITION",
+      json: S1,
+      ref: s3,
+    },
+  ];
 
   useEffect(() => {
     lottieW.loadAnimation({
-      container: container,
+      container: s1,
       renderer: "svg",
       loop: true,
       autoplay: false,
-      animationData: J,
+      animationData: map[0].json,
+    });
+
+    lottieW.loadAnimation({
+      container: s2,
+      renderer: "svg",
+      loop: true,
+      autoplay: false,
+      animationData: map[1].json,
+    });
+
+    lottieW.loadAnimation({
+      container: s3,
+      renderer: "svg",
+      loop: true,
+      autoplay: false,
+      animationData: map[2].json,
     });
 
     return () => {
       lottieW.destroy();
     };
-  }, [container]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [s1, s2, s3]);
 
   return (
     <Box
@@ -153,37 +174,57 @@ const Main = () => {
                   </Text>
                   <Box>
                     <Text
-                      fontFamily={`'Poppins', sans-serif`}
+                      className="glowc_text"
+                      fontFamily={`'Russo One', sans-serif`}
                       lineHeight={"1"}
                       fontSize={{ base: "md", sm: "24px", lg: "48px" }}
                       fontWeight="900"
-                      color={brandingColors.secondaryTwoTextColor}
                     >
                       {m.header}
                     </Text>
                     <Text
-                      fontFamily={`'Poppins', sans-serif`}
+                      className="glowc_text"
+                      fontFamily={`'Russo One', sans-serif`}
                       lineHeight={"1"}
                       fontSize={{ base: "md", lg: "48px" }}
                       fontWeight="900"
-                      color={brandingColors.secondaryTwoTextColor}
                     >
                       {m.subHeader}
                     </Text>
                   </Box>
                 </Box>
                 <Box display={"flex"} flexDirection="column" rowGap={"3rem"}>
-                  <Flex columnGap={"1rem"}>
+                  <Flex
+                    display={{ base: "flex", md: "none" }}
+                    columnGap={"1rem"}
+                  >
+                    <NeuButton
+                      bg={"#A34400"}
+                      shadow={"#FF7C1F"}
+                      onClick={() => {}}
+                      label="GO TO APP"
+                    ></NeuButton>
+                    <NeuButton
+                      bg={"#A34400"}
+                      shadow={"#FF7C1F"}
+                      onClick={() => {}}
+                      label="BUY $AXLE"
+                    ></NeuButton>
+                  </Flex>
+                  <Flex
+                    display={{ base: "none", md: "flex" }}
+                    columnGap={"1rem"}
+                  >
                     <a
                       className="btn"
-                      href="https://axlegames.io"
+                      href="https://app.axlegames.io"
                       target={"_blank"}
                       rel="noreferrer"
                     >
                       GO TO APP
                     </a>
                     <a
-                      href="http://sale.localhost:3000"
+                      href="https://sale.axlegames.io"
                       className="btn-secondary btn-4"
                     >
                       Buy $AXLE
@@ -192,10 +233,10 @@ const Main = () => {
                 </Box>
               </Box>
               <Lottie
-                ref={container}
+                ref={m.ref}
                 onMouseEnter={() => lottieW.play()}
                 onMouseLeave={() => lottieW.pause()}
-                animationData={J}
+                animationData={m.json}
               />
             </Grid>
           ))}

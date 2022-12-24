@@ -95,3 +95,17 @@
   box-shadow: 0px 0px 4px #eb6612;
   color: #eb6612;
 }
+
+.glowc_text {
+  color: #eb6612;
+  animation-name: head_glow;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes head_glow {
+  50% {
+    text-shadow: 0px 0px 8px #eb6612;
+  }
+}

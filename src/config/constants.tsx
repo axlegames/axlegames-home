@@ -2,12 +2,12 @@ import { HomeRouter, PresaleRouter } from "./routers";
 
 export const APPS = [
   {
-    subdomain: "localhost",
+    subdomain: "axlegames.io",
     app: HomeRouter,
     main: true,
   },
   {
-    subdomain: "sale",
+    subdomain: "sale.axlegames.io",
     app: PresaleRouter,
     main: false,
   },

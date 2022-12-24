@@ -2,12 +2,14 @@ import { Box, Grid, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
-import Win from "../assets/imgs/win.png";
-import Compete from "../assets/imgs/compete.png";
-import Improve from "../assets/imgs/improve.png";
+
+import Win from "../assets/imgs/win.webp";
+import Compete from "../assets/imgs/compete.webp";
+import Improve from "../assets/imgs/improve.webp";
+import Blockchain from "../assets/imgs/blockchain.webp";
+import Coin from "../assets/imgs/coin.webp";
+
 import BG from "../assets/bg/token_bg.png";
-import Blockchain from "../assets/imgs/blockchain.png";
-import Coin from "../assets/imgs/coin.png";
 
 const whys = [
   {
