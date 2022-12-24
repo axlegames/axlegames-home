@@ -217,7 +217,7 @@ const Main = () => {
                   >
                     <a
                       className="btn"
-                      href="https://app.axlegames.io"
+                      href="https://play.axlegames.io"
                       target={"_blank"}
                       rel="noreferrer"
                     >
