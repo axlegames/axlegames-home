@@ -6,8 +6,9 @@ import Instagram from "../assets/main/instagram.png";
 import Discord from "../assets/main/discord.png";
 import BG from "../assets/bg/token_countdown_bg.png";
 
-import S1 from "../assets/lottie/s1.json";
-import S2 from "../assets/lottie/s2.json";
+import S2 from "../assets/lottie/s1.json";
+import S1 from "../assets/lottie/s2.json";
+import S3 from "../assets/lottie/roc 1.json";
 
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
@@ -57,17 +58,17 @@ const Main = () => {
       ref: s1,
     },
     {
-      mainText: "STAKING IS LIVE.",
-      header: "GET AN ATTRACTIVE",
-      subHeader: "APY OF 25%",
+      mainText: "LEVEL UP",
+      header: "IMPROVE YOUR",
+      subHeader: "COGNITIVE SKILLS",
       json: S2,
       ref: s2,
     },
     {
-      mainText: "OUR VISION",
-      header: "IS TO CREATE SAFE",
-      subHeader: "HOME OF COMPETITION",
-      json: S1,
+      mainText: "#WORDLE-TO-WEB3",
+      header: "YOUR FAVOURITE WORDLE",
+      subHeader: "ON AXLEGAMES",
+      json: S3,
       ref: s3,
     },
   ];
@@ -116,29 +117,16 @@ const Main = () => {
           autoplay={true}
           defaultControlsConfig={{
             pagingDotsStyle: {
-              marginLeft: "1rem",
-              marginRight: "1rem",
-              background: brandingColors.fgColor,
-              borderRadius: "2vh",
-              color: brandingColors.primaryTextColor,
-              marginBottom: "1rem",
+              height: "28px",
+              width: "28px",
+              fill: "#8D8CFF",
             },
-            nextButtonStyle: {
-              fontWeight: "bold",
-              fontFamily: "quicksand",
-              fontSize: "2rem",
-              borderRadius: "2rem",
-              marginRight: "1rem",
-            },
+            nextButtonStyle: { display: "none" },
             prevButtonStyle: {
-              fontWeight: "bold",
-              fontFamily: "quicksand",
-              fontSize: "2rem",
-              borderRadius: "2rem",
-              marginLeft: "1rem",
+              display: "none",
             },
-            nextButtonText: ">",
-            prevButtonText: "<",
+            nextButtonText: "",
+            prevButtonText: "",
           }}
           slidesToShow={1}
         >
@@ -166,9 +154,9 @@ const Main = () => {
                 <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>
                   <Text
                     lineHeight={"1.2"}
-                    fontSize={{ base: "sm", sm: "24px", lg: "32px" }}
+                    fontSize={{ base: "sm", sm: "18px", lg: "24px" }}
                     color={brandingColors.secondaryTextColor}
-                    fontFamily={`'Russo One', sans-serif`}
+                    fontFamily={`'Rubik 80s Fade', cursive`}
                   >
                     {m.mainText}
                   </Text>
@@ -178,7 +166,7 @@ const Main = () => {
                       fontFamily={`'Russo One', sans-serif`}
                       lineHeight={"1"}
                       fontSize={{ base: "md", sm: "24px", lg: "48px" }}
-                      fontWeight="900"
+                      fontWeight="normal"
                     >
                       {m.header}
                     </Text>
@@ -187,7 +175,7 @@ const Main = () => {
                       fontFamily={`'Russo One', sans-serif`}
                       lineHeight={"1"}
                       fontSize={{ base: "md", lg: "48px" }}
-                      fontWeight="900"
+                      fontWeight="normal"
                     >
                       {m.subHeader}
                     </Text>
@@ -225,9 +213,10 @@ const Main = () => {
                     </a>
                     <a
                       href="https://sale.axlegames.io"
-                      className="btn-secondary btn-4"
+                      className="btn-secondary"
+                      rel="noreferrer"
                     >
-                      Buy $AXLE
+                      BUY $AXLE
                     </a>
                   </Flex>
                 </Box>

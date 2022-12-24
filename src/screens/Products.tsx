@@ -33,7 +33,7 @@ const products = [
     isLive: true,
     subTitle: "Axle Staking",
     label: "STAKE $AXLE",
-    text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the AXLE platform and will receive $AXLE token rewards with a attractive APYs.",
+    text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the Axle platform and will receive $AXLE token rewards with attractive APYs.",
     image: Stake,
     mainImg: StakeM,
   },
@@ -41,7 +41,7 @@ const products = [
     isLive: true,
     subTitle: "Axle DAO",
     label: "GO TO SWAP",
-    text: "Tokenised ownership of the AXLe games platform through AXLE DAO. All the token holders will be able to take part in the governance of the platform for increased transparency and trust. Every $AXLE token holder is an owner of the platform.",
+    text: "Tokenised ownership of the Axle games platform through Axle DAO. All the token holders will be able to take part in the governance of the platform for increased transparency and trust. Every $AXLE token holder is a platform owner.",
     image: Dao,
     mainImg: DaoM,
   },
@@ -128,6 +128,7 @@ const ProductDetail = (props: Props) => {
         <Image width={"16"} src={props.image} />
         <Box display={"flex"} alignItems="center">
           <Flex
+            alignItems={"center"}
             color={brandingColors.secondaryTextColor}
             fontSize={"3xl"}
             columnGap="1rem"

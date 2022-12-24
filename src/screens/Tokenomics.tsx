@@ -20,7 +20,7 @@ const tokens = [
     img: Bsc,
   },
   {
-    title: "10 BILLION",
+    title: "1 BILLION",
     sub: "Total Supply",
     img: Supply,
   },
@@ -39,33 +39,43 @@ const Tokenomics = () => {
 
     chart.data = [
       {
-        country: "Presale",
-        value: 401,
+        country: "Zeus Sale",
+        value: 15,
         label: am4core.color("#ffffff"),
       },
       {
-        country: "Public sale",
-        value: 300,
+        country: "Poseidon Sale",
+        value: 25,
         label: am4core.color("#ffffff"),
       },
       {
-        country: "Team",
-        value: 200,
+        country: "Hades Sale",
+        value: 10,
         label: am4core.color("#ffffff"),
       },
       {
-        country: "test",
-        value: 165,
+        country: "Founding Team",
+        value: 10,
         label: am4core.color("#ffffff"),
       },
       {
-        country: "test2",
-        value: 139,
+        country: "Advisors and Legal team",
+        value: 5,
         label: am4core.color("#ffffff"),
       },
       {
-        country: "test4",
-        value: 128,
+        country: "Axle Ecosystem rewards",
+        value: 15,
+        label: am4core.color("#ffffff"),
+      },
+      {
+        country: "Referral and Bonuses",
+        value: 10,
+        label: am4core.color("#ffffff"),
+      },
+      {
+        country: "Marketing and Listings",
+        value: 10,
         label: am4core.color("#ffffff"),
       },
     ];

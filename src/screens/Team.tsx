@@ -4,12 +4,12 @@ import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 import BG from "../assets/bg/token_bg.png";
 
-import Praneeth from "../assets/team/praneeth.webp";
-import Chakri from "../assets/team/chakri.webp";
-import Akash from "../assets/team/akash.webp";
-import Roney from "../assets/team/roney.webp";
+import Praneeth from "../assets/team/praneeth.png";
+import Chakri from "../assets/team/chakri.png";
+import Akash from "../assets/team/akash.png";
+import Roney from "../assets/team/roney.png";
 import Lucas from "../assets/team/lucas.png";
-import Prashanth from "../assets/team/prashanth.webp";
+import Prashanth from "../assets/team/prashanth.png";
 
 const Team = () => {
   const team1 = [
@@ -28,8 +28,8 @@ const Team = () => {
     {
       name: "Akash Madduru",
       avatar: Akash,
-      role: "role",
-      linkedIn: "Product / Dev Lead",
+      role: "Product / Dev Lead",
+      linkedIn: "",
     },
 
     {
@@ -71,8 +71,8 @@ const Team = () => {
       <Heading title="Meet the team" />
       <Flex py={{ base: "16" }} flexDirection={"column"}>
         <Grid
-          rowGap={"2rem"}
-          columnGap="2rem"
+          rowGap={"3rem"}
+          columnGap="0rem"
           justifyContent="center"
           alignItems={"center"}
           gridTemplateColumns={{
@@ -90,41 +90,41 @@ const Team = () => {
                 lg: bottomAligner(i),
               }}
             >
-              <Tilt key={i}>
-                <GridItem
-                  maxW={"72"}
-                  px={8}
-                  py={4}
-                  display={"flex"}
-                  flexDirection="column"
-                  justifyContent={"center"}
-                  alignItems="center"
-                  borderRadius={"3vh"}
-                  border={`5px solid ${brandingColors.newHighlightColor}`}
-                >
-                  <Box>
+              <GridItem
+                key={i}
+                maxW={"72"}
+                display={"flex"}
+                flexDirection="column"
+                justifyContent={"center"}
+                alignItems="center"
+                borderRadius={"xl"}
+                borderTopRadius="xl"
+                p={8}
+              >
+                <Box>
+                  <Tilt>
                     <Image
-                      maxW="180px"
-                      borderRadius={"150rem"}
+                      boxShadow={`0px 2px 2px ${brandingColors.newHighlightColor}`}
+                      maxW="260px"
                       src={t.avatar}
+                      borderTopRadius={`0px 0px 4px ${brandingColors.newHighlightColor}`}
+                      borderRadius="150rem"
+                      border={`3px solid ${brandingColors.newHighlightColor}`}
                     />
-                  </Box>
-                  <Box textAlign={"center"} py={4}>
-                    <Text
-                      fontSize={"xl"}
-                      color={brandingColors.primaryTextColor}
-                    >
-                      {t.name}
-                    </Text>
-                    <Text
-                      fontSize={"md"}
-                      color={brandingColors.secondaryTextColor}
-                    >
-                      {t.role}
-                    </Text>
-                  </Box>
-                </GridItem>
-              </Tilt>
+                  </Tilt>
+                </Box>
+                <Box textAlign={"center"} py={4}>
+                  <Text fontSize={"xl"} color={brandingColors.primaryTextColor}>
+                    {t.name}
+                  </Text>
+                  <Text
+                    fontSize={"md"}
+                    color={brandingColors.secondaryTextColor}
+                  >
+                    {t.role}
+                  </Text>
+                </Box>
+              </GridItem>
             </Box>
           ))}
         </Grid>

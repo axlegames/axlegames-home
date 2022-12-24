@@ -82,18 +82,30 @@
   font-weight: bold;
   border-radius: 10px;
   background-size: 200% auto;
-  background-color: #0a325c;
   border: 0;
   color: #fff;
   outline: none;
   text-transform: uppercase;
   z-index: 2;
-  transition: all 0.25s ease 0s;
+  border: 2px solid #0a325c;
+  background-color: #0a325c;
+  transition: all 1s ease 0s;
 }
 
 .btn-secondary:hover {
-  box-shadow: 0px 0px 4px #eb6612;
-  color: #eb6612;
+  background: transparent;
+  background-image: linear-gradient(
+    to left,
+    #0a325c,
+    #5c3b7a,
+    #a83a7a,
+    #e2465c,
+    #f77726
+  );
+  -webkit-transition: background 1s;
+  -moz-transition: background 1s;
+  -o-transition: background 1s;
+  transition: background 1s;
 }
 
 .glowc_text {

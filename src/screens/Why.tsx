@@ -24,15 +24,15 @@ const whys = [
   },
   {
     title: "Fully Decentralized",
-    text: "It get’s more and more to $AXLE token",
+    text: "Community driven approach",
     img: Blockchain,
   },
 ];
 
 const whys2 = [
   {
-    title: "Zero fee",
-    text: "It get’s more and more to $AXLE token holders",
+    title: "Safe and Secure",
+    text: "Modern safety and security measures are ensured",
     img: Coin,
   },
   {
