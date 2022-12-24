@@ -13,7 +13,7 @@ import S3 from "../assets/lottie/roc 1.json";
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import Lottie from "lottie-react";
 import NeuButton from "../components/NeuButton";

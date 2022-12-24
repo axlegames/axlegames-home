@@ -3,11 +3,12 @@ import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 
-import Win from "../assets/imgs/win.webp";
-import Compete from "../assets/imgs/compete.webp";
-import Improve from "../assets/imgs/improve.webp";
-import Blockchain from "../assets/imgs/blockchain.webp";
-import Coin from "../assets/imgs/coin.webp";
+import Compete from "../assets/imgs/deflation.png";
+import Improve from "../assets/imgs/dao.png";
+
+import Win from "../assets/imgs/medal.png";
+import Blockchain from "../assets/imgs/blockchain.png";
+import Coin from "../assets/imgs/secure.png";
 
 import BG from "../assets/bg/token_bg.png";
 
@@ -98,8 +99,9 @@ const WhyCard = (props: Props) => {
         display="flex"
         backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
         flexDirection="column"
+        p={5}
       >
-        <Image width={"56"} borderRadius={"md"} src={props.img} />
+        <Image width={"44"} borderRadius={"md"} src={props.img} />
         <Box>
           <Text
             color={brandingColors.primaryTextColor}
