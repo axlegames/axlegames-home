@@ -16,7 +16,6 @@ import { brandingColors } from "../config/brandingColors";
 import { useEffect, useRef } from "react";
 
 import Lottie from "lottie-react";
-import lottieW from "lottie-web";
 import NeuButton from "../components/NeuButton";
 
 const Main = () => {
@@ -72,37 +71,6 @@ const Main = () => {
       ref: s3,
     },
   ];
-
-  useEffect(() => {
-    lottieW.loadAnimation({
-      container: s1,
-      renderer: "svg",
-      loop: true,
-      autoplay: false,
-      animationData: map[0].json,
-    });
-
-    lottieW.loadAnimation({
-      container: s2,
-      renderer: "svg",
-      loop: true,
-      autoplay: false,
-      animationData: map[1].json,
-    });
-
-    lottieW.loadAnimation({
-      container: s3,
-      renderer: "svg",
-      loop: true,
-      autoplay: false,
-      animationData: map[2].json,
-    });
-
-    return () => {
-      lottieW.destroy();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [s1, s2, s3]);
 
   return (
     <Box
@@ -221,12 +189,7 @@ const Main = () => {
                   </Flex>
                 </Box>
               </Box>
-              <Lottie
-                ref={m.ref}
-                onMouseEnter={() => lottieW.play()}
-                onMouseLeave={() => lottieW.pause()}
-                animationData={m.json}
-              />
+              <Lottie ref={m.ref} animationData={m.json} />
             </Grid>
           ))}
         </Carousel>
