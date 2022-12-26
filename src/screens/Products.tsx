@@ -4,6 +4,7 @@ import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { FaTelegram } from "react-icons/fa";
+
 import Stake from "../assets/icons/stake.svg";
 import Swap from "../assets/icons/swap.svg";
 import League from "../assets/icons/league.svg";
@@ -11,12 +12,12 @@ import Games from "../assets/icons/games.svg";
 import Dao from "../assets/icons/dao.svg";
 import MarketPlace from "../assets/icons/marketplace.svg";
 
-import DaoM from "../assets/products/dao.png";
-import StakeM from "../assets/products/stake.png";
-import SwapM from "../assets/products/swap.png";
-import LeagueM from "../assets/products/league.png";
-import GamesM from "../assets/products/games.png";
-import MarketPlaceM from "../assets/products/marketplace.png";
+import DaoM from "../assets/products/dao.webp";
+import StakeM from "../assets/products/stake.webp";
+import SwapM from "../assets/products/swap.webp";
+import LeagueM from "../assets/products/league.webp";
+import GamesM from "../assets/products/games.webp";
+import MarketPlaceM from "../assets/products/marketplace.webp";
 import { BsDot } from "react-icons/bs";
 import { useNavigate } from "react-router";
 

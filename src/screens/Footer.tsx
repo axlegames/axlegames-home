@@ -15,10 +15,11 @@ import Logo from "../assets/logo.png";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 
-import TelegramI from "../assets/main/telegram.png";
-import Twitter from "../assets/main/twitter.png";
-import Instagram from "../assets/main/instagram.png";
-import Discord from "../assets/main/discord.png";
+import TelegramI from "../assets/main/telegram.webp";
+import Twitter from "../assets/main/twitter.webp";
+import Instagram from "../assets/main/instagram.webp";
+import Discord from "../assets/main/discord.webp";
+
 import NeuLink from "../components/NeuLink";
 
 const IconWrapper = (props: any) => (

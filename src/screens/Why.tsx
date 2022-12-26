@@ -3,12 +3,11 @@ import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 
-import Compete from "../assets/imgs/deflation.png";
-import Improve from "../assets/imgs/dao.png";
-
-import Win from "../assets/imgs/medal.png";
-import Blockchain from "../assets/imgs/blockchain.png";
-import Coin from "../assets/imgs/secure.png";
+import Deflation from "../assets/imgs/deflation.webp";
+import Dao from "../assets/imgs/dao.webp";
+import Medal from "../assets/imgs/medal.webp";
+import Blockchain from "../assets/imgs/blockchain.webp";
+import Secure from "../assets/imgs/secure.webp";
 
 import BG from "../assets/bg/token_bg.png";
 
@@ -16,12 +15,12 @@ const whys = [
   {
     title: "DAO governance",
     text: "Voting rights to every holder",
-    img: Improve,
+    img: Dao,
   },
   {
     title: "Deflationary",
     text: "50% of game fee will be burned",
-    img: Compete,
+    img: Deflation,
   },
   {
     title: "Fully Decentralized",
@@ -34,12 +33,12 @@ const whys2 = [
   {
     title: "Safe and Secure",
     text: "Modern safety and security measures are ensured",
-    img: Coin,
+    img: Secure,
   },
   {
     title: "Exclusive Rewards",
     text: "It get’s more and more to $AXLE token holders",
-    img: Win,
+    img: Medal,
   },
 ];
 

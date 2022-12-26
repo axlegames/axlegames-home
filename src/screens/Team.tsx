@@ -4,12 +4,12 @@ import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 import BG from "../assets/bg/token_bg.png";
 
-import Praneeth from "../assets/team/praneeth.png";
-import Chakri from "../assets/team/chakri.png";
-import Akash from "../assets/team/akash.png";
-import Roney from "../assets/team/roney.png";
-import Lucas from "../assets/team/lucas.png";
-import Prashanth from "../assets/team/prashanth.png";
+import Praneeth from "../assets/team/praneeth.webp";
+import Chakri from "../assets/team/chakri.webp";
+import Akash from "../assets/team/akash.webp";
+import Roney from "../assets/team/roney.webp";
+import Lucas from "../assets/team/lucas.webp";
+import Prashanth from "../assets/team/prashanth.webp";
 
 const Team = () => {
   const team1 = [

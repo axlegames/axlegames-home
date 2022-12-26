@@ -1,9 +1,9 @@
 import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 
-import Bsc from "../assets/token/util.png";
-import Util from "../assets/token/util.png";
-import Supply from "../assets/token/supply.png";
+import Bsc from "../assets/token/util.webp";
+import Util from "../assets/token/util.webp";
+import Supply from "../assets/token/supply.webp";
 
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
