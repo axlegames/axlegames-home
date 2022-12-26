@@ -5,12 +5,12 @@ import NeuButton from "../components/NeuButton";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { FaTelegram } from "react-icons/fa";
 
-import Stake from "../assets/icons/stake.svg";
-import Swap from "../assets/icons/swap.svg";
-import League from "../assets/icons/league.svg";
-import Games from "../assets/icons/games.svg";
-import Dao from "../assets/icons/dao.svg";
-import MarketPlace from "../assets/icons/marketplace.svg";
+import Stake from "../assets/icons/stake.webp";
+import Swap from "../assets/icons/swap.webp";
+import League from "../assets/icons/league.webp";
+import Games from "../assets/icons/gaming.webp";
+import Dao from "../assets/icons/dao.webp";
+import MarketPlace from "../assets/icons/store.webp";
 
 import DaoM from "../assets/products/dao.webp";
 import StakeM from "../assets/products/stake.webp";

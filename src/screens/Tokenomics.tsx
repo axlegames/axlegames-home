@@ -1,7 +1,7 @@
 import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 
-import Bsc from "../assets/token/util.webp";
+import Bsc from "../assets/token/bsc.webp";
 import Util from "../assets/token/util.webp";
 import Supply from "../assets/token/supply.webp";
 
