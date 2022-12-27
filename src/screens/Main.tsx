@@ -1,4 +1,4 @@
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 
 import TelegramI from "../assets/main/telegram.webp";
 import Twitter from "../assets/main/twitter.webp";
@@ -7,17 +7,14 @@ import Discord from "../assets/main/discord.webp";
 
 import BG from "../assets/bg/token_countdown_bg.png";
 
-// import S2 from "../assets/lottie/s1.json";
-// import S1 from "../assets/lottie/s2.json";
-// import S3 from "../assets/lottie/s3.json";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
 
 import { useEffect, useState } from "react";
 
-// import Lottie from "lottie-react";
-// import NeuButton from "../components/NeuButton";
+import NeuButton from "../components/NeuButton";
 import { ThreeCircles } from "react-loader-spinner";
 
 const Main = () => {
@@ -46,37 +43,30 @@ const Main = () => {
     );
   };
 
-  // const s1 = useRef(null) as any;
-  // const s2 = useRef(null) as any;
-  // const s3 = useRef(null) as any;
-
-  // const [slides, setSlides] = useState<Array<any>>([]);
+  const [slides, setSlides] = useState<Array<any>>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // setSlides([
-    //   {
-    //     mainText: "AXLE GAMES.",
-    //     header: "A SKILL-BASED",
-    //     subHeader: "WEB3 GAMING PLATFORM",
-    //     json: S1,
-    //     ref: s1,
-    //   },
-    //   {
-    //     mainText: "LEVEL UP",
-    //     header: "IMPROVE YOUR",
-    //     subHeader: "COGNITIVE SKILLS",
-    //     json: S2,
-    //     ref: s2,
-    //   },
-    //   {
-    //     mainText: "#WORDLE-TO-WEB3",
-    //     header: "YOUR FAVOURITE WORDLE",
-    //     subHeader: "ON AXLEGAMES",
-    //     json: S3,
-    //     ref: s3,
-    //   },
-    // ]);
+    setSlides([
+      {
+        mainText: "AXLE GAMES.",
+        header: "A SKILL-BASED",
+        subHeader: "WEB3 GAMING PLATFORM",
+        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s1.json`,
+      },
+      {
+        mainText: "LEVEL UP",
+        header: "IMPROVE YOUR",
+        subHeader: "COGNITIVE SKILLS",
+        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s2.json`,
+      },
+      {
+        mainText: "#WORDLE-TO-WEB3",
+        header: "YOUR FAVOURITE WORDLE",
+        subHeader: "ON AXLEGAMES",
+        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s3.json`,
+      },
+    ]);
     setTimeout(() => {
       setIsLoaded(true);
     }, 3000);
@@ -105,7 +95,7 @@ const Main = () => {
               }}
               slidesToShow={1}
             >
-              {/* {slides.map((m, i) => (
+              {slides.map((m, i) => (
                 <Grid
                   m={5}
                   justifyContent="space-between"
@@ -204,9 +194,10 @@ const Main = () => {
                       </Flex>
                     </Box>
                   </Box>
-                  <Lottie ref={m.ref} animationData={m.json} />
+
+                  <Player className="player" loop autoplay src={m.json} />
                 </Grid>
-              ))} */}
+              ))}
             </Carousel>
           </Box>
           <Flex

@@ -3,7 +3,7 @@ import Products from "../screens/Products";
 import Why from "../screens/Why";
 import Footer from "../screens/Footer";
 import Team from "../screens/Team";
-// import Main from "../screens/Main";
+import Main from "../screens/Main";
 import Tokenomics from "../screens/Tokenomics";
 import RoadMap from "../screens/RoadMap";
 import MobileNavbar from "../components/navbar/MobileNavbar";
@@ -21,9 +21,9 @@ const Home = () => {
       <MobileNavbar />
       <Navbar />
       <Box bg={brandingColors.bgColor}>
-        {/* <Element name="about" className="about">
+        <Element name="about" className="about">
           <Main />
-        </Element> */}
+        </Element>
         <Element name="products" className="products">
           <Products />
         </Element>
