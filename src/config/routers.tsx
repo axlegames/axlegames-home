@@ -27,7 +27,7 @@ const Home = () => {
     return (
       <Box
         width={"100%"}
-        height={"90vh"}
+        height={"100vh"}
         display={"flex"}
         justifyContent="center"
         alignItems={"center"}
