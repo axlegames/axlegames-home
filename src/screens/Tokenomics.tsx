@@ -11,7 +11,6 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 import { brandingColors } from "../config/brandingColors";
 import { useEffect } from "react";
-// import BG from "../assets/bg/token_countdown_bg.png";
 
 const tokens = [
   {

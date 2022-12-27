@@ -3,11 +3,11 @@ import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 
-import Deflation from "../assets/imgs/deflation.webp";
-import Dao from "../assets/imgs/dao.webp";
-import Medal from "../assets/imgs/medal.webp";
-import Blockchain from "../assets/imgs/blockchain.webp";
-import Secure from "../assets/imgs/secure.webp";
+import Deflation from "../assets/why/deflation.webp";
+import Dao from "../assets/why/dao.webp";
+import Medal from "../assets/why/medal.webp";
+import Blockchain from "../assets/why/blockchain.webp";
+import Secure from "../assets/why/secure.webp";
 
 import BG from "../assets/bg/token_bg.png";
 

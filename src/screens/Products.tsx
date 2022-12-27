@@ -1,9 +1,5 @@
 import { Box, Flex, Icon, Image, Text } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
-import Heading from "../components/Heading";
-import NeuButton from "../components/NeuButton";
-import { ChevronRightIcon } from "@chakra-ui/icons";
-import { FaTelegram } from "react-icons/fa";
 
 import Stake from "../assets/icons/stake.webp";
 import Swap from "../assets/icons/swap.webp";
@@ -18,8 +14,15 @@ import SwapM from "../assets/products/swap.webp";
 import LeagueM from "../assets/products/league.webp";
 import GamesM from "../assets/products/games.webp";
 import MarketPlaceM from "../assets/products/marketplace.webp";
+
 import { BsDot } from "react-icons/bs";
+import { FaTelegram } from "react-icons/fa";
+import { ChevronRightIcon } from "@chakra-ui/icons";
+
 import { useNavigate } from "react-router";
+
+import Heading from "../components/Heading";
+import NeuButton from "../components/NeuButton";
 
 const products = [
   {

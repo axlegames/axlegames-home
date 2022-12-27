@@ -15,7 +15,6 @@ import { brandingColors } from "../config/brandingColors";
 import { useEffect, useState } from "react";
 
 import NeuButton from "../components/NeuButton";
-import { ThreeCircles } from "react-loader-spinner";
 
 const Main = () => {
   const IconWrapper = (props: any) => (
@@ -44,7 +43,6 @@ const Main = () => {
   };
 
   const [slides, setSlides] = useState<Array<any>>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setSlides([
@@ -67,171 +65,137 @@ const Main = () => {
         json: `https://axlegames.s3.ap-south-1.amazonaws.com/s3.json`,
       },
     ]);
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 3000);
   }, []);
 
   return (
     <Box minH={{ lg: "90vh" }} backgroundImage={BG} position="relative">
-      {isLoaded ? (
+      <Box>
         <Box>
-          <Box>
-            <Carousel
-              wrapAround={true}
-              autoplay={true}
-              defaultControlsConfig={{
-                pagingDotsStyle: {
-                  height: "28px",
-                  width: "28px",
-                  fill: "#8D8CFF",
-                },
-                nextButtonStyle: { display: "none" },
-                prevButtonStyle: {
-                  display: "none",
-                },
-                nextButtonText: "",
-                prevButtonText: "",
-              }}
-              slidesToShow={1}
-            >
-              {slides.map((m, i) => (
-                <Grid
-                  m={5}
-                  justifyContent="space-between"
-                  key={i}
-                  borderRadius="3xl"
-                  alignItems={"center"}
-                  maxW={{ lg: "70vw" }}
-                  minH={{ lg: "70vh" }}
-                  p={{ base: "8" }}
-                  mx="auto"
-                  gridTemplateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr" }}
-                  columnGap={{ base: "2rem" }}
+          <Carousel
+            wrapAround={true}
+            autoplay={true}
+            defaultControlsConfig={{
+              pagingDotsStyle: {
+                height: "28px",
+                width: "28px",
+                fill: "#8D8CFF",
+              },
+              nextButtonStyle: { display: "none" },
+              prevButtonStyle: {
+                display: "none",
+              },
+              nextButtonText: "",
+              prevButtonText: "",
+            }}
+            slidesToShow={1}
+          >
+            {slides.map((m, i) => (
+              <Grid
+                m={5}
+                justifyContent="space-between"
+                key={i}
+                borderRadius="3xl"
+                alignItems={"center"}
+                maxW={{ lg: "70vw" }}
+                minH={{ lg: "70vh" }}
+                p={{ base: "8" }}
+                mx="auto"
+                gridTemplateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr" }}
+                columnGap={{ base: "2rem" }}
+              >
+                <Box
+                  fontWeight={"bold"}
+                  display="flex"
+                  flexDirection={"column"}
+                  rowGap="2rem"
+                  position={"relative"}
                 >
-                  <Box
-                    fontWeight={"bold"}
-                    display="flex"
-                    flexDirection={"column"}
-                    rowGap="2rem"
-                    position={"relative"}
-                  >
-                    <Box
-                      display={"flex"}
-                      flexDirection="column"
-                      rowGap={".5rem"}
+                  <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>
+                    <Text
+                      lineHeight={"1.2"}
+                      fontSize={{ base: "sm", sm: "18px", lg: "24px" }}
+                      color={brandingColors.secondaryTextColor}
+                      fontFamily={`'Rubik 80s Fade', cursive`}
                     >
+                      {m.mainText}
+                    </Text>
+                    <Box>
                       <Text
-                        lineHeight={"1.2"}
-                        fontSize={{ base: "sm", sm: "18px", lg: "24px" }}
-                        color={brandingColors.secondaryTextColor}
-                        fontFamily={`'Rubik 80s Fade', cursive`}
+                        className="glowc_text"
+                        fontFamily={`'Russo One', sans-serif`}
+                        lineHeight={"1"}
+                        fontSize={{ base: "md", sm: "24px", lg: "48px" }}
+                        fontWeight="normal"
                       >
-                        {m.mainText}
+                        {m.header}
                       </Text>
-                      <Box>
-                        <Text
-                          className="glowc_text"
-                          fontFamily={`'Russo One', sans-serif`}
-                          lineHeight={"1"}
-                          fontSize={{ base: "md", sm: "24px", lg: "48px" }}
-                          fontWeight="normal"
-                        >
-                          {m.header}
-                        </Text>
-                        <Text
-                          className="glowc_text"
-                          fontFamily={`'Russo One', sans-serif`}
-                          lineHeight={"1"}
-                          fontSize={{ base: "md", lg: "48px" }}
-                          fontWeight="normal"
-                        >
-                          {m.subHeader}
-                        </Text>
-                      </Box>
-                    </Box>
-                    <Box
-                      display={"flex"}
-                      flexDirection="column"
-                      rowGap={"3rem"}
-                    >
-                      <Flex
-                        display={{ base: "flex", md: "none" }}
-                        columnGap={"1rem"}
+                      <Text
+                        className="glowc_text"
+                        fontFamily={`'Russo One', sans-serif`}
+                        lineHeight={"1"}
+                        fontSize={{ base: "md", lg: "48px" }}
+                        fontWeight="normal"
                       >
-                        <NeuButton
-                          bg={"#A34400"}
-                          shadow={"#FF7C1F"}
-                          onClick={() => {}}
-                          label="GO TO APP"
-                        ></NeuButton>
-                        <NeuButton
-                          bg={"#A34400"}
-                          shadow={"#FF7C1F"}
-                          onClick={() => {}}
-                          label="BUY $AXLE"
-                        ></NeuButton>
-                      </Flex>
-                      <Flex
-                        display={{ base: "none", md: "flex" }}
-                        columnGap={"1rem"}
-                      >
-                        <a
-                          className="btn"
-                          href="https://play.axlegames.io"
-                          target={"_blank"}
-                          rel="noreferrer"
-                        >
-                          GO TO APP
-                        </a>
-                        <a
-                          href="https://sale.axlegames.io"
-                          className="btn-secondary"
-                          rel="noreferrer"
-                        >
-                          BUY $AXLE
-                        </a>
-                      </Flex>
+                        {m.subHeader}
+                      </Text>
                     </Box>
                   </Box>
+                  <Box display={"flex"} flexDirection="column" rowGap={"3rem"}>
+                    <Flex
+                      display={{ base: "flex", md: "none" }}
+                      columnGap={"1rem"}
+                    >
+                      <NeuButton
+                        bg={"#A34400"}
+                        shadow={"#FF7C1F"}
+                        onClick={() => {}}
+                        label="GO TO APP"
+                      ></NeuButton>
+                      <NeuButton
+                        bg={"#A34400"}
+                        shadow={"#FF7C1F"}
+                        onClick={() => {}}
+                        label="BUY $AXLE"
+                      ></NeuButton>
+                    </Flex>
+                    <Flex
+                      display={{ base: "none", md: "flex" }}
+                      columnGap={"1rem"}
+                    >
+                      <a
+                        className="btn"
+                        href="https://play.axlegames.io"
+                        target={"_blank"}
+                        rel="noreferrer"
+                      >
+                        GO TO APP
+                      </a>
+                      <a
+                        href="https://sale.axlegames.io"
+                        className="btn-secondary"
+                        rel="noreferrer"
+                      >
+                        BUY $AXLE
+                      </a>
+                    </Flex>
+                  </Box>
+                </Box>
 
-                  <Player className="player" loop autoplay src={m.json} />
-                </Grid>
-              ))}
-            </Carousel>
-          </Box>
-          <Flex
-            display={{ base: "flex" }}
-            rowGap={{ base: "1rem" }}
-            alignItems={"center"}
-            flexDirection={{ base: "column" }}
-            justifyContent={{ base: "center" }}
-          >
-            <SocialsRow />
-          </Flex>
+                <Player className="player" loop autoplay src={m.json} />
+              </Grid>
+            ))}
+          </Carousel>
         </Box>
-      ) : (
-        <Box
-          width={"100%"}
-          height={"90vh"}
-          display={"flex"}
-          justifyContent="center"
+        <Flex
+          display={{ base: "flex" }}
+          rowGap={{ base: "1rem" }}
           alignItems={"center"}
+          flexDirection={{ base: "column" }}
+          justifyContent={{ base: "center" }}
         >
-          <ThreeCircles
-            height={"100%"}
-            width={"100%"}
-            color={brandingColors.primaryTextColor}
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            ariaLabel="three-circles-rotating"
-            outerCircleColor=""
-            innerCircleColor=""
-            middleCircleColor=""
-          />
-        </Box>
-      )}
+          <SocialsRow />
+        </Flex>
+      </Box>
     </Box>
   );
 };
