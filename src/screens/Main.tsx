@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 
 import TelegramI from "../assets/main/telegram.webp";
 import Twitter from "../assets/main/twitter.webp";
@@ -14,10 +14,10 @@ import BG from "../assets/bg/token_countdown_bg.png";
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-import Lottie from "lottie-react";
-import NeuButton from "../components/NeuButton";
+// import Lottie from "lottie-react";
+// import NeuButton from "../components/NeuButton";
 import { ThreeCircles } from "react-loader-spinner";
 
 const Main = () => {
@@ -46,11 +46,11 @@ const Main = () => {
     );
   };
 
-  const s1 = useRef(null) as any;
-  const s2 = useRef(null) as any;
-  const s3 = useRef(null) as any;
+  // const s1 = useRef(null) as any;
+  // const s2 = useRef(null) as any;
+  // const s3 = useRef(null) as any;
 
-  const [slides, setSlides] = useState<Array<any>>([]);
+  // const [slides, setSlides] = useState<Array<any>>([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -105,7 +105,7 @@ const Main = () => {
               }}
               slidesToShow={1}
             >
-              {slides.map((m, i) => (
+              {/* {slides.map((m, i) => (
                 <Grid
                   m={5}
                   justifyContent="space-between"
@@ -206,7 +206,7 @@ const Main = () => {
                   </Box>
                   <Lottie ref={m.ref} animationData={m.json} />
                 </Grid>
-              ))}
+              ))} */}
             </Carousel>
           </Box>
           <Flex
