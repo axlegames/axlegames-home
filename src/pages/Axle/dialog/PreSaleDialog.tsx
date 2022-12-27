@@ -1,4 +1,4 @@
-import Icon from "../../../assets/home/logos/icon.png";
+import Icon from "../../../assets/icon.png";
 import { Box, Flex, Image, Input, Text, useToast } from "@chakra-ui/react";
 import { ethers } from "ethers";
 
