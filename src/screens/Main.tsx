@@ -50,13 +50,13 @@ const Main = () => {
         mainText: "AXLE GAMES.",
         header: "A SKILL-BASED",
         subHeader: "WEB3 GAMING PLATFORM",
-        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s1.json`,
+        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s2.json`,
       },
       {
         mainText: "LEVEL UP",
         header: "IMPROVE YOUR",
         subHeader: "COGNITIVE SKILLS",
-        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s2.json`,
+        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s1.json`,
       },
       {
         mainText: "#WORDLE-TO-WEB3",

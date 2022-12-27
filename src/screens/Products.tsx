@@ -43,11 +43,11 @@ const products = [
   },
   {
     isLive: true,
-    subTitle: "Axle DAO",
+    subTitle: "Axle Swap",
     label: "GO TO SWAP",
-    text: "Tokenised ownership of the Axle games platform through Axle DAO. All the token holders will be able to take part in the governance of the platform for increased transparency and trust. Every $AXLE token holder is a platform owner.",
-    image: Dao,
-    mainImg: DaoM,
+    text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
+    image: Swap,
+    mainImg: SwapM,
   },
   {
     isLive: false,
@@ -57,13 +57,14 @@ const products = [
     image: League,
     mainImg: LeagueM,
   },
+
   {
-    isLive: true,
-    subTitle: "Axle Swap",
+    isLive: false,
+    subTitle: "Axle DAO",
     label: "GO TO SWAP",
-    text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
-    image: Swap,
-    mainImg: SwapM,
+    text: "Tokenised ownership of the Axle games platform through Axle DAO. All the token holders will be able to take part in the governance of the platform for increased transparency and trust. Every $AXLE token holder is a platform owner.",
+    image: Dao,
+    mainImg: DaoM,
   },
   {
     isLive: false,
@@ -165,12 +166,14 @@ const ProductDetail = (props: Props) => {
       </Box>
 
       <Flex>
-        <NeuButton
-          label={props.label}
-          onClick={() => navigate("/coming-soon")}
-          bg={brandingColors.neuPrimaryBg}
-          shadow={brandingColors.newPrimaryShadow}
-        />
+        {props.isLive ? (
+          <NeuButton
+            label={props.label}
+            onClick={() => navigate("/coming-soon")}
+            bg={brandingColors.neuPrimaryBg}
+            shadow={brandingColors.newPrimaryShadow}
+          />
+        ) : null}
       </Flex>
     </Flex>
   );
