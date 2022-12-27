@@ -31,6 +31,7 @@ const Home = () => {
         display={"flex"}
         justifyContent="center"
         alignItems={"center"}
+        bg={brandingColors.bgColor}
       >
         <Grid
           height={"100"}
