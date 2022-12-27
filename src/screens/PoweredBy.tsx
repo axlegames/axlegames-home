@@ -7,7 +7,7 @@ import { brandingColors } from "../config/brandingColors";
 import { GoVerified } from "react-icons/go";
 
 import Binance from "../assets/powerdby/bnb.svg";
-import AWS from "../assets/powerdby/aws.svg";
+import AWS from "../assets/powerdby/aws.png";
 import Azure from "../assets/powerdby/azure.svg";
 import Blender from "../assets/powerdby/unreal.svg";
 import Node from "../assets/powerdby/node.png";
@@ -140,7 +140,6 @@ const PoweredBy = (props: any) => {
     <Box
       display={"flex"}
       justifyContent="center"
-      // backgroundImage={BG}
       flexDirection={"column"}
       rowGap={{ base: "2rem" }}
       py={{ base: "16" }}
@@ -164,17 +163,25 @@ const PoweredBy = (props: any) => {
             display={"flex"}
             justifyContent="center"
             alignItems="center"
-            borderBottom={
-              index > 3 ? "none" : "1px solid rgba(255, 255, 255, 0.4)"
-            }
-            borderLeft={
-              index === 0 || index === 4
-                ? "none"
-                : "1px solid rgba(255, 255, 255, 0.4)"
-            }
+            borderBottom={{
+              base: "none",
+              lg:
+                index > 3 ? "none" : `3px solid ${brandingColors.disableColor}`,
+            }}
+            borderLeft={{
+              base: "none",
+              lg:
+                index === 0 || index === 4
+                  ? "none"
+                  : `3px solid ${brandingColors.disableColor}`,
+            }}
             p={6}
           >
-            <Image height="60px" width={"150px"} src={img}></Image>
+            <Image
+              width={{ base: "80%", lg: "70%" }}
+              className="logos"
+              src={img}
+            ></Image>
           </Box>
         ))}
       </Grid>

@@ -109,23 +109,43 @@ const RoadMap = () => {
         onClose={props.close}
       >
         <ModalOverlay />
-        <ModalContent bg={brandingColors.bgColor}>
-          <ModalHeader color={brandingColors.primaryTextColor}>
-            {" "}
+        <ModalContent m={4} bg={brandingColors.bgColor}>
+          <ModalHeader
+            textAlign={"center"}
+            fontFamily={`'Russo One', sans-serif`}
+            color={brandingColors.primaryTextColor}
+          >
             {state?.text}{" "}
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Box m={"4"} overflowY={"scroll"} maxH="48">
+            <Box mx={"2"}>
               {state?.milestones.map((m: string, i: number) => (
-                <Text
-                  textAlign={"center"}
-                  key={i}
-                  color={brandingColors.secondaryTextColor}
-                  fontSize={"sm"}
-                >
-                  {m}
-                </Text>
+                <Flex columnGap={".1rem"} justifyContent="flex-start">
+                  <Icon
+                    color={
+                      props.index < 2
+                        ? brandingColors.successColor
+                        : props.index === 2
+                        ? brandingColors.primaryTextColor
+                        : brandingColors.disableColor
+                    }
+                    as={
+                      props.index < 2
+                        ? TiTick
+                        : props.index === 2
+                        ? HiClock
+                        : BsDot
+                    }
+                  />
+                  <Text
+                    key={i}
+                    color={brandingColors.secondaryTextColor}
+                    fontSize={"sm"}
+                  >
+                    {m}
+                  </Text>
+                </Flex>
               ))}
             </Box>
           </ModalBody>
@@ -161,22 +181,59 @@ const RoadMap = () => {
         <Box
           display={"flex"}
           bg={brandingColors.bgColor}
-          boxShadow={
-            props.current
-              ? `0px 0px 32px ${brandingColors.newHighlightColor}`
-              : "xl"
-          }
+          boxShadow={`0px 0px 32px ${
+            props.index < 2
+              ? brandingColors.successColor
+              : props.index === 2
+              ? brandingColors.newHighlightColor
+              : brandingColors.disableColor
+          }`}
           boxSize={props.current ? "48" : "36"}
           borderRadius={"50vh"}
-          border={`4px solid ${brandingColors.newHighlightColor}`}
+          border={`4px solid ${
+            props.index < 2
+              ? brandingColors.successColor
+              : props.index === 2
+              ? brandingColors.newHighlightColor
+              : brandingColors.disableColor
+          }`}
           position="relative"
           alignItems={"center"}
           justifyContent="center"
           flexDirection={"column"}
         >
-          <Text color={brandingColors.primaryTextColor} fontSize={"2xl"}>
-            Phase {props.index + 1}
+          <Text
+            textAlign={"center"}
+            borderRadius={"xl"}
+            px={4}
+            color={
+              props.index < 2
+                ? brandingColors.successColor
+                : props.index === 2
+                ? brandingColors.newHighlightColor
+                : brandingColors.disableColor
+            }
+            fontSize={"5xl"}
+            fontFamily={`'Russo One', sans-serif`}
+            textShadow={`2px 2px 3px ${
+              props.index < 2
+                ? brandingColors.successColor
+                : props.index === 2
+                ? brandingColors.newHighlightColor
+                : brandingColors.disableColor
+            }`}
+          >
+            Q{props.index + 1}
           </Text>
+          <Button
+            onClick={() => changeState(props)}
+            width={"100%"}
+            size="sm"
+            textDecoration={"underline"}
+            variant={"ghos"}
+          >
+            see more
+          </Button>
         </Box>
       </Box>
     );
@@ -191,32 +248,22 @@ const RoadMap = () => {
         justifyContent="center"
       >
         <Box
-          display={"flex"}
-          justifyContent={"center"}
-          maxW={"80"}
-          bg={brandingColors.bgColor}
-          p={4}
-          borderRadius="2xl"
-          flexDirection="column"
-        >
-          <Text textAlign={"center"} color={brandingColors.primaryTextColor}>
-            {props.main}
-          </Text>
-          <Button
-            onClick={() => changeState(props)}
-            width={"100%"}
-            size="md"
-            textDecoration={"underline"}
-            variant={"link"}
-          >
-            see more
-          </Button>
-        </Box>
-        <Box
           height={"90px"}
           width="6"
-          bg={brandingColors.bgColor}
-          border={`3px dotted ${brandingColors.newHighlightColor}`}
+          bg={
+            props.index < 2
+              ? brandingColors.successColor
+              : props.index === 2
+              ? brandingColors.newHighlightColor
+              : brandingColors.disableColor
+          }
+          border={`3px solid ${
+            props.index < 2
+              ? brandingColors.successColor
+              : props.index === 2
+              ? brandingColors.newHighlightColor
+              : brandingColors.disableColor
+          }`}
         ></Box>
       </Box>
     );
@@ -386,11 +433,6 @@ const Phase = (props: Props) => {
       <Box
         display={"flex"}
         bg={brandingColors.bgColor}
-        // boxShadow={
-        //   props.current
-        //     ? `0px 0px 62px ${brandingColors.newHighlightColor}`
-        //     : "xl"
-        // }
         boxSize={props.current ? "48" : "36"}
         borderRadius={"50vh"}
         position="relative"

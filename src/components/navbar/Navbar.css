@@ -121,3 +121,8 @@
     text-shadow: 0px 0px 8px #eb6612;
   }
 }
+
+.logos {
+  aspect-ratio: 3.2/2;
+  object-fit: contain;
+}

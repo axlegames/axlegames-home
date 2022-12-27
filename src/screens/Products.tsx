@@ -19,8 +19,6 @@ import { BsDot } from "react-icons/bs";
 import { FaTelegram } from "react-icons/fa";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
-import { useNavigate } from "react-router";
-
 import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
 
@@ -32,6 +30,7 @@ const products = [
     text: "A skill based web3 gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
     image: Games,
     mainImg: GamesM,
+    function: () => (window.location.href = "https://play.axlegames.io"),
   },
   {
     isLive: true,
@@ -40,6 +39,7 @@ const products = [
     text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the Axle platform and will receive $AXLE token rewards with attractive APYs.",
     image: Stake,
     mainImg: StakeM,
+    function: () => (window.location.href = "https://sale.axlegames.io"),
   },
   {
     isLive: true,
@@ -48,6 +48,7 @@ const products = [
     text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
     image: Swap,
     mainImg: SwapM,
+    function: () => (window.location.href = "https://sale.axlegames.io"),
   },
   {
     isLive: false,
@@ -56,6 +57,7 @@ const products = [
     text: "In our Axle Arena, users can make/meet new friends and compete against each others by playing PvP games on the platform. In short, Axle Arena is a social media with wide range of offerings for our gamers on the platform.",
     image: League,
     mainImg: LeagueM,
+    function: () => null,
   },
 
   {
@@ -65,6 +67,7 @@ const products = [
     text: "Tokenised ownership of the Axle games platform through Axle DAO. All the token holders will be able to take part in the governance of the platform for increased transparency and trust. Every $AXLE token holder is a platform owner.",
     image: Dao,
     mainImg: DaoM,
+    function: () => null,
   },
   {
     isLive: false,
@@ -73,6 +76,7 @@ const products = [
     text: "An NFT Marketplace to trade in-game NFTs used in our AXLE games platform. These NFTs will unlock special abilities/powers and boost the winning chances of the gamer. NFT holders will be eligible to receive exclusive rewards in the future.",
     image: MarketPlace,
     mainImg: MarketPlaceM,
+    function: () => null,
   },
 ];
 
@@ -113,7 +117,6 @@ const Products = () => {
 };
 
 const ProductDetail = (props: Props) => {
-  const navigate = useNavigate();
   const Content = () => (
     <Flex
       zIndex={100}
@@ -169,7 +172,7 @@ const ProductDetail = (props: Props) => {
         {props.isLive ? (
           <NeuButton
             label={props.label}
-            onClick={() => navigate("/coming-soon")}
+            onClick={props.function}
             bg={brandingColors.neuPrimaryBg}
             shadow={brandingColors.newPrimaryShadow}
           />
@@ -205,10 +208,10 @@ interface Props {
   index: number;
   image: string;
   mainImg: string;
+  function: Function;
 }
 
 const Product = (props: Props) => {
-  const navigate = useNavigate();
   return (
     <Box py={{ base: "4" }}>
       <Box position={"relative"}>
@@ -239,7 +242,7 @@ const Product = (props: Props) => {
       <Flex columnGap={"1rem"} p={{ base: "4" }}>
         <NeuButton
           label={props.label}
-          onClick={() => navigate("/coming-soon")}
+          onClick={props.function}
           bg={brandingColors.neuPrimaryBg}
           shadow={brandingColors.newPrimaryShadow}
         />
