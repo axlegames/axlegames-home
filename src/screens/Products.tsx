@@ -137,7 +137,10 @@ const ProductDetail = (props: Props) => {
             fontSize={"3xl"}
             columnGap="1rem"
           >
-            <Text color={brandingColors.secondaryTextColor}>
+            <Text
+              fontFamily={`'Russo One', sans-serif`}
+              color={brandingColors.primaryTextColor}
+            >
               {props.subTitle}
             </Text>
             <Box>
@@ -161,27 +164,13 @@ const ProductDetail = (props: Props) => {
         </Text>
       </Box>
 
-      <Flex columnGap={"1rem"}>
+      <Flex>
         <NeuButton
           label={props.label}
           onClick={() => navigate("/coming-soon")}
           bg={brandingColors.neuPrimaryBg}
           shadow={brandingColors.newPrimaryShadow}
         />
-        {/* <Flex
-          columnGap={{ base: "1rem" }}
-          justifyContent={"space-evenly"}
-          alignItems="center"
-        >
-          <ChevronRightIcon width={{ base: "8" }} height={{ base: "8" }} />
-          <Text color={brandingColors.secondaryTextColor}>JOIN TELEGRAM</Text>
-          <Icon
-            color="#3C90D0"
-            width={{ base: "6" }}
-            height={{ base: "6" }}
-            as={FaTelegram}
-          />
-        </Flex> */}
       </Flex>
     </Flex>
   );

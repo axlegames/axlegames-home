@@ -27,4 +27,6 @@ export const brandingColors = {
   neuSecondaryBg: "#40464F",
   newSecondaryShadow: "#535A65",
   newHighlightColor: "#1442B5",
+  successColor: "#38A169",
+  disableColor: "#718096",
 };
