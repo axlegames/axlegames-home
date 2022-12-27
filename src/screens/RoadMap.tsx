@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Flex, Grid, Text } from "@chakra-ui/react";
+import { Box, Button, Divider, Flex, Grid, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
@@ -13,6 +13,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import NeuButton from "../components/NeuButton";
+import { TiTick } from "react-icons/ti";
 
 const phases = [
   {
@@ -162,7 +163,6 @@ const RoadMap = () => {
           <Text color={brandingColors.primaryTextColor} fontSize={"2xl"}>
             Phase {props.index + 1}
           </Text>
-          <Text color={brandingColors.secondaryTextColor}>{props.phase} </Text>
         </Box>
       </Box>
     );
@@ -362,7 +362,9 @@ const Phase = (props: Props) => {
         >
           Phase {props.index + 1}
         </Text>
-        <Text color={brandingColors.secondaryTextColor}>{props.phase} </Text>
+        {props.index < 3 ? (
+          <Icon height={"12"} width="12" color={"green.400"} as={TiTick}></Icon>
+        ) : null}
       </Box>
     </Box>
   );

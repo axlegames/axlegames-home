@@ -5,7 +5,7 @@ import { brandingColors } from "./brandingColors";
 
 import { Suspense, lazy } from "react";
 
-import { Grid } from "react-loader-spinner";
+import { Triangle } from "react-loader-spinner";
 
 const Axle = lazy(() => import("../pages/Axle/Axle"));
 
@@ -33,12 +33,11 @@ const Home = () => {
         alignItems={"center"}
         bg={brandingColors.bgColor}
       >
-        <Grid
+        <Triangle
           height={"100"}
           width={"100"}
           ariaLabel="grid-loading"
           color={brandingColors.primaryTextColor}
-          radius="12.5"
           wrapperStyle={{}}
           wrapperClass=""
           visible={true}
