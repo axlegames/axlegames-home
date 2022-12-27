@@ -7,9 +7,9 @@ import Discord from "../assets/main/discord.webp";
 
 import BG from "../assets/bg/token_countdown_bg.png";
 
-import S2 from "../assets/lottie/s1.json";
-import S1 from "../assets/lottie/s2.json";
-import S3 from "../assets/lottie/s3.json";
+// import S2 from "../assets/lottie/s1.json";
+// import S1 from "../assets/lottie/s2.json";
+// import S3 from "../assets/lottie/s3.json";
 
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
@@ -54,29 +54,29 @@ const Main = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setSlides([
-      {
-        mainText: "AXLE GAMES.",
-        header: "A SKILL-BASED",
-        subHeader: "WEB3 GAMING PLATFORM",
-        json: S1,
-        ref: s1,
-      },
-      {
-        mainText: "LEVEL UP",
-        header: "IMPROVE YOUR",
-        subHeader: "COGNITIVE SKILLS",
-        json: S2,
-        ref: s2,
-      },
-      {
-        mainText: "#WORDLE-TO-WEB3",
-        header: "YOUR FAVOURITE WORDLE",
-        subHeader: "ON AXLEGAMES",
-        json: S3,
-        ref: s3,
-      },
-    ]);
+    // setSlides([
+    //   {
+    //     mainText: "AXLE GAMES.",
+    //     header: "A SKILL-BASED",
+    //     subHeader: "WEB3 GAMING PLATFORM",
+    //     json: S1,
+    //     ref: s1,
+    //   },
+    //   {
+    //     mainText: "LEVEL UP",
+    //     header: "IMPROVE YOUR",
+    //     subHeader: "COGNITIVE SKILLS",
+    //     json: S2,
+    //     ref: s2,
+    //   },
+    //   {
+    //     mainText: "#WORDLE-TO-WEB3",
+    //     header: "YOUR FAVOURITE WORDLE",
+    //     subHeader: "ON AXLEGAMES",
+    //     json: S3,
+    //     ref: s3,
+    //   },
+    // ]);
     setTimeout(() => {
       setIsLoaded(true);
     }, 3000);
