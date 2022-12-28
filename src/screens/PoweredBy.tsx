@@ -175,7 +175,7 @@ const PoweredBy = (props: any) => {
             p={{ lg: 6 }}
           >
             <Image
-              width={{ base: "50%", lg: "70%" }}
+              width={{ base: "40%", lg: "70%" }}
               className="logos"
               src={img}
               data-aos={`zoom-out`}

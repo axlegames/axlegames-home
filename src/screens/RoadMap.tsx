@@ -185,6 +185,7 @@ const RoadMap = () => {
           zIndex={4}
         ></Box>
         <Box
+          data-aos={props.index % 2 === 0 ? `fade-right` : `fade-left`}
           display={"flex"}
           bg={brandingColors.bgColor}
           boxShadow={`0px 0px 32px ${
@@ -270,6 +271,7 @@ const RoadMap = () => {
   const MLinker = (props: any) => {
     return (
       <Box
+        data-aos={props.index % 2 === 0 ? `fade-right` : `fade-left`}
         flexDirection={"column"}
         alignItems="center"
         display={"flex"}

@@ -47,27 +47,25 @@ const Home = () => {
   };
 
   return (
-    <Box zIndex={100} fontWeight={"bold"}>
+    <Box bg={brandingColors.bgColor} fontWeight={"bold"}>
       <Suspense fallback={<FallBack />}>
         <MobileNavbar />
         <Navbar />
-        <Box bg={brandingColors.bgColor}>
-          <Element name="about" className="about">
-            <Main />
-          </Element>
-          <Element name="products" className="products">
-            <Products />
-          </Element>
-          <Element name="why" className="why">
-            <Why />
-          </Element>
-          <Element name="token" className="token">
-            <Tokenomics />
-          </Element>
-          <Element name="roadmap" className="roadmap">
-            <RoadMap />
-          </Element>
-        </Box>
+        <Element name="about" className="about">
+          <Main />
+        </Element>
+        <Element name="products" className="products">
+          <Products />
+        </Element>
+        <Element name="why" className="why">
+          <Why />
+        </Element>
+        <Element name="token" className="token">
+          <Tokenomics />
+        </Element>
+        <Element name="roadmap" className="roadmap">
+          <RoadMap />
+        </Element>
         <Element name="team" className="team">
           <Box
             backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}

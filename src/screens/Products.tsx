@@ -89,6 +89,8 @@ const Products = () => {
         flexDirection={"column"}
         display={{ base: "flex", lg: "none" }}
         py={{ base: "12" }}
+        justifyContent="center"
+        alignItems={"center"}
       >
         {products.map((p, i) => {
           return (
@@ -202,54 +204,64 @@ interface Props {
 
 const Product = (props: Props) => {
   return (
-    <Box py={{ base: "4" }}>
-      <Box position={"relative"}>
-        <Image maxW={{ base: "360px", md: "100%" }} src={props.mainImg} />
+    <Box data-aos={props.index % 2 === 0 ? "fade-left" : "fade-right"}>
+      <Box display={"flex"} flexDirection="column" alignItems={"center"}>
+        <Image maxW={{ base: "360px" }} src={props.mainImg} />
         <Box
           display={"flex"}
-          flexDirection="column"
-          rowGap={"0"}
-          bottom={"4"}
-          position="absolute"
-          left="4"
-          zIndex="4"
+          flexDirection={{ base: "column" }}
+          px={{ base: "4" }}
+          columnGap={{ base: "1rem" }}
         >
-          <Text color={brandingColors.primaryTextColor} fontSize={"3xl"}>
-            {props.subTitle}
-          </Text>
-          <Flex alignItems={"center"}>
-            <Icon color={props.isLive ? "green.400" : "red.400"} as={BsDot} />
-            <Text color={props.isLive ? "green.400" : "red.400"}>
-              {props.isLive ? `Live` : "Coming Soon"}
+          <Flex flexDirection={{ base: "column", sm: "row" }}>
+            <Text
+              px={4}
+              color={brandingColors.primaryTextColor}
+              fontSize={"3xl"}
+            >
+              {props.subTitle}
             </Text>
+            <Flex px={4} alignItems={"center"}>
+              <Icon color={props.isLive ? "green.400" : "red.400"} as={BsDot} />
+              <Text color={props.isLive ? "green.400" : "red.400"}>
+                {props.isLive ? `Live` : "Coming Soon"}
+              </Text>
+            </Flex>
+          </Flex>
+
+          <Text color={brandingColors.secondaryTextColor} p={{ base: "4" }}>
+            {props.text}
+          </Text>
+          <Flex columnGap={"1rem"} p={{ base: "4" }}>
+            <NeuButton
+              label={props.label}
+              onClick={props.function}
+              bg={brandingColors.neuPrimaryBg}
+              shadow={brandingColors.newPrimaryShadow}
+            />
+            <Flex
+              columnGap={{ base: "1rem" }}
+              justifyContent={"space-evenly"}
+              alignItems="center"
+            >
+              <ChevronRightIcon
+                color={brandingColors.secondaryButtonColor}
+                width={{ base: "8" }}
+                height={{ base: "8" }}
+              />
+              <Text color={brandingColors.secondaryButtonColor}>
+                JOIN TELEGRAM
+              </Text>
+              <Icon
+                color="#3C90D0"
+                width={{ base: "6" }}
+                height={{ base: "6" }}
+                as={FaTelegram}
+              />
+            </Flex>
           </Flex>
         </Box>
       </Box>
-      <Text color={brandingColors.secondaryTextColor} p={{ base: "4" }}>
-        {props.text}
-      </Text>
-      <Flex columnGap={"1rem"} p={{ base: "4" }}>
-        <NeuButton
-          label={props.label}
-          onClick={props.function}
-          bg={brandingColors.neuPrimaryBg}
-          shadow={brandingColors.newPrimaryShadow}
-        />
-        <Flex
-          columnGap={{ base: "1rem" }}
-          justifyContent={"space-evenly"}
-          alignItems="center"
-        >
-          <ChevronRightIcon width={{ base: "8" }} height={{ base: "8" }} />
-          <Text>JOIN TELEGRAM</Text>
-          <Icon
-            color="#3C90D0"
-            width={{ base: "6" }}
-            height={{ base: "6" }}
-            as={FaTelegram}
-          />
-        </Flex>
-      </Flex>
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, FormControl, Grid, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Dialog from "../dialog/AxleDialog";
 import PreSale from "../dialog/PreSaleDialog";
@@ -37,6 +37,7 @@ const AxleInfo = () => {
       templateColumns={{ base: "1fr", xl: "1fr 1fr" }}
       alignItems={"center"}
       borderRadius="xl"
+      px={{ base: "4", lg: "8" }}
     >
       <Dialog
         close={() => setOpen(false)}
@@ -45,14 +46,6 @@ const AxleInfo = () => {
         key={1}
         size={"lg"}
       />
-      <Box justifyContent={"center"} alignSelf="center" display={"flex"}>
-        <Image
-          onClick={() => setOpen(true)}
-          src={"https://axlegames.s3.ap-south-1.amazonaws.com/axle_poster.png"}
-          borderRadius="xl"
-          cursor={"pointer"}
-        />
-      </Box>
 
       <Flex
         my={{ base: "8" }}
@@ -82,34 +75,81 @@ const AxleInfo = () => {
             {token.map((t, i) => (
               <Tag key={i} name={t.name} value={t.value} />
             ))}
-            <Flex
-              pt={{ base: "4" }}
-              columnGap={"1rem"}
-              width="100%"
-              justifyContent={"center"}
-            >
-              <NeuButton
-                bg={"#A34400"}
-                shadow={"#FFA05C"}
-                onClick={() => setOpen(true)}
-                label="Buy now"
-              />
-              <a
-                href="https://testnet.bscscan.com/address/0x9FE1eb84F87d83Ad87A532aD3ce034037039913B"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <NeuButton
-                  onClick={() => {}}
-                  bg={"#40464F"}
-                  shadow={"#535A65"}
-                  label="Contract"
-                />
-              </a>
-            </Flex>
           </Flex>
         </Flex>
       </Flex>
+
+      <Box
+        borderRadius={"2vh 4vw"}
+        justifyContent={"center"}
+        alignSelf="center"
+        bg={brandingColors.fgColor}
+        display={"flex"}
+        py={{ base: "24", lg: "8" }}
+        height="80%"
+        boxShadow={"xl"}
+        px={8}
+        flexDirection="column"
+        fontSize={{ base: "md", lg: "xl" }}
+        color={brandingColors.primaryTextColor}
+        fontWeight="bold"
+        fontFamily={`'Russo One', sans-serif`}
+        rowGap="2rem"
+        pos={"relative"}
+      >
+        <Box
+          px={8}
+          top={"-8%"}
+          boxShadow="xl"
+          borderRadius="xl"
+          bg={brandingColors.fgColor}
+          position="absolute"
+          py={{ base: "4", xl: 0 }}
+        >
+          <Text>Buy $AXLE</Text>
+        </Box>
+        <Grid
+          templateColumns={{ base: "1fr 3fr" }}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <Text>BNB</Text>
+          <FormControl isRequired>
+            <Input
+              outline={"none"}
+              boxShadow={`1px 1px 4px ${brandingColors.newHighlightColor}`}
+              color={brandingColors.secondaryTwoTextColor}
+              fontWeight="bold"
+              size={"lg"}
+              placeholder="BNB"
+            />
+          </FormControl>
+        </Grid>
+        <Grid
+          templateColumns={"1fr 3fr"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <Text>$AXLE</Text>
+          <FormControl isRequired>
+            <Input
+              boxShadow={`1px 1px 4px ${brandingColors.newHighlightColor}`}
+              color={brandingColors.secondaryTwoTextColor}
+              fontWeight="bold"
+              size="lg"
+              placeholder="$AXLE"
+            />
+          </FormControl>
+        </Grid>
+        <Flex justifyContent={"center"}>
+          <NeuButton
+            bg={brandingColors.neuPrimaryBg}
+            label="connect wallet"
+            onClick={() => setOpen(true)}
+            shadow={brandingColors.newPrimaryShadow}
+          />
+        </Flex>
+      </Box>
     </Grid>
   );
 };
