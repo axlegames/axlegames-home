@@ -2,7 +2,8 @@ import { Box, Button, Divider, Flex, Grid, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
-import { HiClock } from "react-icons/hi";
+
+import { CheckIcon, TimeIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 
 import {
   Modal,
@@ -14,82 +15,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import NeuButton from "../components/NeuButton";
-import { TiTick } from "react-icons/ti";
-import { BsDot } from "react-icons/bs";
-
-const phases = [
-  {
-    text: "Phase 1",
-    phase: "completed",
-    milestones: [
-      "Axle games Ideation",
-      "Core Team formation",
-      "Infrastructure Planning and Setup",
-      "Product Workflow and Design",
-      "Social Media Setup",
-      "White paper and PitchDeck Release",
-    ],
-  },
-  {
-    text: "Phase 2",
-    phase: "completed",
-    milestones: [
-      "Business Model Validation",
-      "SDE / Smart contracts Architecture",
-      "LLD / HLD Design Mockups",
-      "axlegames.io - Live",
-      "Wordle #5,#6,#7 - Practice",
-      "Absurdle - Practice",
-    ],
-  },
-  {
-    text: "Phase 3",
-    phase: "completed",
-    milestones: [
-      "Axle Token Audit - Solidproof",
-      "Presale Community AMA’s",
-      "BSC, ETH Wallet - Testnet",
-      "Brand Development - Campaigns and",
-      "Platform Auditing -3rd Party",
-      "Zeus Presale - Live",
-    ],
-  },
-  {
-    text: "Phase 4",
-    phase: "on going",
-    milestones: [
-      "Team Expansion - New hiring",
-      "Poseidon and Hades Sale - Live",
-      "Axle Token Staking",
-      "Axle Swap Launch",
-      "Lewdle  and Lookdle Launch",
-    ],
-  },
-  {
-    text: "Phase 5",
-    phase: "up coming",
-    milestones: [
-      "Axle Arena Launch",
-      "Axle DAO Launch",
-      "In-game purchases",
-      "Axle Games Multiplayer Support",
-      "Streaming on Axle Games",
-      "Nerdle , Quordle and Redactle Launch",
-    ],
-  },
-  {
-    text: "Phase 6",
-    phase: "up coming",
-    milestones: [
-      "Axle NFT Marketplace",
-      "CEX Listings",
-      "AXLE SDK Launch",
-      "FIAT payment gateway",
-      "Community events - Meet-ups",
-      "Cross Wordle, Framed and Hurdle  Launch",
-    ],
-  },
-];
+import { phases } from "../config/data";
 
 const RoadMap = () => {
   const [state, setState] = useState<Props>({
@@ -132,10 +58,10 @@ const RoadMap = () => {
                     }
                     as={
                       state.index < 2
-                        ? TiTick
+                        ? CheckIcon
                         : state.index === 2
-                        ? HiClock
-                        : BsDot
+                        ? TimeIcon
+                        : ChevronLeftIcon
                     }
                   />
                   <Text
@@ -447,7 +373,11 @@ const Phase = (props: Props) => {
                     : brandingColors.disableColor
                 }
                 as={
-                  props.index < 2 ? TiTick : props.index === 2 ? HiClock : BsDot
+                  props.index < 2
+                    ? CheckIcon
+                    : props.index === 2
+                    ? TimeIcon
+                    : ChevronLeftIcon
                 }
               />
               <Text

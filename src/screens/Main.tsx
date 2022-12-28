@@ -6,7 +6,7 @@ import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
 
 import NeuButton from "../components/NeuButton";
-import { socials, homeSlides } from "./data";
+import { socials, homeSlides } from "../config/data";
 
 const Main = () => {
   return (

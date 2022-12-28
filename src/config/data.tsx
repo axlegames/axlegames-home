@@ -83,3 +83,88 @@ export const homeSlides = [
     json: `https://axlegames.s3.ap-south-1.amazonaws.com/s3.json`,
   },
 ];
+
+export const phases = [
+  {
+    text: "Phase 1",
+    phase: "completed",
+    milestones: [
+      "Axle games Ideation",
+      "Core Team formation",
+      "Infrastructure Planning and Setup",
+      "Product Workflow and Design",
+      "Social Media Setup",
+      "White paper and PitchDeck Release",
+    ],
+  },
+  {
+    text: "Phase 2",
+    phase: "completed",
+    milestones: [
+      "Business Model Validation",
+      "SDE / Smart contracts Architecture",
+      "LLD / HLD Design Mockups",
+      "axlegames.io - Live",
+      "Wordle #5,#6,#7 - Practice",
+      "Absurdle - Practice",
+    ],
+  },
+  {
+    text: "Phase 3",
+    phase: "completed",
+    milestones: [
+      "Axle Token Audit - Solidproof",
+      "Presale Community AMA’s",
+      "BSC, ETH Wallet - Testnet",
+      "Brand Development - Campaigns and",
+      "Platform Auditing -3rd Party",
+      "Zeus Presale - Live",
+    ],
+  },
+  {
+    text: "Phase 4",
+    phase: "on going",
+    milestones: [
+      "Team Expansion - New hiring",
+      "Poseidon and Hades Sale - Live",
+      "Axle Token Staking",
+      "Axle Swap Launch",
+      "Lewdle  and Lookdle Launch",
+    ],
+  },
+  {
+    text: "Phase 5",
+    phase: "up coming",
+    milestones: [
+      "Axle Arena Launch",
+      "Axle DAO Launch",
+      "In-game purchases",
+      "Axle Games Multiplayer Support",
+      "Streaming on Axle Games",
+      "Nerdle , Quordle and Redactle Launch",
+    ],
+  },
+  {
+    text: "Phase 6",
+    phase: "up coming",
+    milestones: [
+      "Axle NFT Marketplace",
+      "CEX Listings",
+      "AXLE SDK Launch",
+      "FIAT payment gateway",
+      "Community events - Meet-ups",
+      "Cross Wordle, Framed and Hurdle  Launch",
+    ],
+  },
+];
+
+export const powerdby = [
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/bnb.svg`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/aws.png`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/azure.svg`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/unreal.svg`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/sol.svg`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/react.png`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/mongo.png`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/node.png`,
+];

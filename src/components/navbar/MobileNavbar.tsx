@@ -9,25 +9,12 @@ import {
   AccordionItem,
   AccordionPanel,
 } from "@chakra-ui/react";
-import {
-  AiOutlineMenu,
-  AiOutlineClose,
-  AiOutlineDashboard,
-} from "react-icons/ai/index";
 import { useState } from "react";
 import SideBarCard from "./components/SideBarCard";
 import SideBarButton from "./components/SideBarButton";
-import { MdStore } from "react-icons/md/index";
-import {
-  HiHome,
-  HiOutlineViewList,
-  HiDocument,
-  HiUser,
-  HiUsers,
-  HiCreditCard,
-} from "react-icons/hi/index";
 
 import { brandingColors } from "../../config/brandingColors";
+import { HamburgerIcon, CloseIcon, SunIcon } from "@chakra-ui/icons";
 
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
@@ -70,22 +57,20 @@ const MobileNavbar = () => {
           }}
         >
           {open ? (
-            <AiOutlineClose
+            <CloseIcon
               style={{
                 transform: "scale(1.05)",
                 transition: "100ms all ease-in",
               }}
               color={brandingColors.highLightColor}
-              size={32}
             />
           ) : (
-            <AiOutlineMenu
+            <HamburgerIcon
               style={{
                 transform: "scale(1.05)",
                 transition: "100ms all ease-in",
               }}
               color={brandingColors.highLightColor}
-              size={32}
             />
           )}
         </Box>
@@ -109,37 +94,37 @@ const MobileNavbar = () => {
               link="about"
               onClick={() => toggle()}
               title={"About"}
-              icon={<HiHome size={32} />}
+              icon={<SunIcon />}
             />
             <SideBarButton
               link="products"
               onClick={() => toggle()}
               title={"Products"}
-              icon={<AiOutlineDashboard size={32} />}
+              icon={<SunIcon />}
             />
             <SideBarButton
               link="token"
               onClick={() => toggle()}
               title={"Tokenomics"}
-              icon={<HiCreditCard size={32} />}
+              icon={<SunIcon />}
             />
             <SideBarButton
               link="team"
               onClick={() => toggle()}
               title={"Team"}
-              icon={<HiUsers size={32} />}
+              icon={<SunIcon />}
             />
             <SideBarButton
               link="roadmap"
               onClick={() => toggle()}
               title={"RoadMap"}
-              icon={<HiUser size={32} />}
+              icon={<SunIcon />}
             />
             <SideBarButton
               link=""
               onClick={() => toggle()}
               title={"Buy $AXLE"}
-              icon={<MdStore size={32} />}
+              icon={<SunIcon />}
             />
 
             <Accordion width={"100%"} allowToggle defaultIndex={0}>
@@ -164,7 +149,7 @@ const MobileNavbar = () => {
                   >
                     <Flex alignItems={"center"} columnGap={"1rem"}>
                       <Box>
-                        <HiOutlineViewList size={32} />
+                        <SunIcon />
                       </Box>
                       <Text>{`Docs`}</Text>
                     </Flex>
@@ -183,7 +168,7 @@ const MobileNavbar = () => {
                       <SideBarButton
                         link=""
                         title={"Pitch-Deck"}
-                        icon={<HiDocument size={32} />}
+                        icon={<SunIcon />}
                       />
                     </a>
                     <a
@@ -196,7 +181,7 @@ const MobileNavbar = () => {
                       <SideBarButton
                         link=""
                         title={"Economics-Paper"}
-                        icon={<HiDocument size={32} />}
+                        icon={<SunIcon />}
                       />
                     </a>
                   </Flex>

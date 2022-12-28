@@ -1,14 +1,12 @@
 import { Box, Flex, Icon, Image, Text } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
 
-import { BsDot } from "react-icons/bs";
-import { FaTelegram } from "react-icons/fa";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
 
-import { products } from "./data";
+import { products } from "../config/data";
 
 interface Props {
   subTitle: string;
@@ -74,7 +72,10 @@ const ProductMobileView = (props: Props) => {
             {props.subTitle}
           </Text>
           <Flex alignItems={"center"}>
-            <Icon color={props.isLive ? "green.400" : "red.400"} as={BsDot} />
+            <Icon
+              color={props.isLive ? "green.400" : "red.400"}
+              as={ChevronRightIcon}
+            />
             <Text color={props.isLive ? "green.400" : "red.400"}>
               {props.isLive ? `Live` : "Coming Soon"}
             </Text>
@@ -106,12 +107,6 @@ const ProductMobileView = (props: Props) => {
             <Text color={brandingColors.secondaryButtonColor}>
               JOIN TELEGRAM
             </Text>
-            <Icon
-              color="#3C90D0"
-              width={{ base: "6" }}
-              height={{ base: "6" }}
-              as={FaTelegram}
-            />
           </Flex>
         </Flex>
       </Box>

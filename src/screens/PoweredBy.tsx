@@ -2,22 +2,12 @@ import { Box, Divider, Flex, Grid, Icon, Image, Text } from "@chakra-ui/react";
 
 import { useEffect, useState } from "react";
 import { brandingColors } from "../config/brandingColors";
-import { GoVerified } from "react-icons/go";
 
 import axios from "axios";
 import Heading from "../components/Heading";
 import Marquee from "react-fast-marquee";
-
-const images = [
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/bnb.svg`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/aws.png`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/azure.svg`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/unreal.svg`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/sol.svg`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/react.png`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/mongo.png`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/node.png`,
-];
+import { CheckCircleIcon } from "@chakra-ui/icons";
+import { powerdby } from "../config/data";
 
 interface Profile {
   description: string;
@@ -75,7 +65,7 @@ const PoweredBy = (props: any) => {
             {props.username}
           </Text>
           {props.verified ? (
-            <Icon color={"blue.400"} as={GoVerified}></Icon>
+            <Icon color={"blue.400"} as={CheckCircleIcon}></Icon>
           ) : null}
         </Flex>
         <Divider my={4} />
@@ -155,7 +145,7 @@ const PoweredBy = (props: any) => {
         }}
         justifyContent="flex-start"
       >
-        {images.map((img, index) => (
+        {powerdby.map((img, index) => (
           <Box
             display={"flex"}
             justifyContent="center"
