@@ -52,7 +52,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 7000);
+    }, 5000);
   }, []);
 
   return (

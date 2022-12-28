@@ -10,7 +10,7 @@ const SideBarCard = (props: any) => {
       borderRadius="2xl"
       direction={"column"}
       alignItems="flex-start"
-      rowGap={".25rem"}
+      rowGap={"1rem"}
       m={isMobile ? 4 : 0}
     >
       {props.children}

@@ -1,20 +1,11 @@
-import {
-  Box,
-  Flex,
-  Image,
-  Text,
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-} from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 import { useState } from "react";
 import SideBarCard from "./components/SideBarCard";
 import SideBarButton from "./components/SideBarButton";
 
 import { brandingColors } from "../../config/brandingColors";
 import { HamburgerIcon, CloseIcon, SunIcon } from "@chakra-ui/icons";
+import SideBarLink from "./components/SideBarLink";
 
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
@@ -25,7 +16,11 @@ const MobileNavbar = () => {
 
   return (
     <Box
+      position={open ? "fixed" : "relative"}
+      zIndex={500}
       width={"100%"}
+      height={open ? "100vh" : "100%"}
+      bg={brandingColors.bgColor}
       display={{ base: "flex", lg: "none" }}
       flexDirection="column"
       boxShadow={`0px 2px 3px ${brandingColors.bgColor}`}
@@ -120,74 +115,16 @@ const MobileNavbar = () => {
               title={"RoadMap"}
               icon={<SunIcon />}
             />
-            <SideBarButton
-              link=""
-              onClick={() => toggle()}
-              title={"Buy $AXLE"}
+            <SideBarLink
+              link="https://axlegames.s3.ap-south-1.amazonaws.com/Axlegames.pdf"
+              title={"Pitch-Deck"}
               icon={<SunIcon />}
             />
-
-            <Accordion width={"100%"} allowToggle defaultIndex={0}>
-              <AccordionItem border={"none"} outline="none" width={"100%"}>
-                <AccordionButton
-                  borderRadius={"md"}
-                  width={"100%"}
-                  justifyContent="flex-start"
-                  _hover={{
-                    color: brandingColors.primaryTextColor,
-                    bg: brandingColors.bgColor,
-                  }}
-                  position="relative"
-                  fontSize={"sm"}
-                  fontWeight="bold"
-                >
-                  <Flex
-                    alignItems={"center"}
-                    justifyContent="space-between"
-                    width={"100%"}
-                    columnGap={"1rem"}
-                  >
-                    <Flex alignItems={"center"} columnGap={"1rem"}>
-                      <Box>
-                        <SunIcon />
-                      </Box>
-                      <Text>{`Docs`}</Text>
-                    </Flex>
-                    <AccordionIcon />
-                  </Flex>
-                </AccordionButton>
-                <AccordionPanel>
-                  <Flex direction={"column"} rowGap=".25rem">
-                    <a
-                      href="https://axlegames.s3.ap-south-1.amazonaws.com/Axlegames.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ width: "100%" }}
-                    >
-                      {" "}
-                      <SideBarButton
-                        link=""
-                        title={"Pitch-Deck"}
-                        icon={<SunIcon />}
-                      />
-                    </a>
-                    <a
-                      href="https://axlegames.s3.ap-south-1.amazonaws.com/AxleGames_EconomicsPaper.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ width: "100%" }}
-                    >
-                      {" "}
-                      <SideBarButton
-                        link=""
-                        title={"Economics-Paper"}
-                        icon={<SunIcon />}
-                      />
-                    </a>
-                  </Flex>
-                </AccordionPanel>
-              </AccordionItem>
-            </Accordion>
+            <SideBarLink
+              link="https://axlegames.s3.ap-south-1.amazonaws.com/AxleGames_EconomicsPaper.pdf"
+              title={"Pitch-Deck"}
+              icon={<SunIcon />}
+            />
           </SideBarCard>
         </Box>
       </Box>
