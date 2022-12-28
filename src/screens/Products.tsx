@@ -1,20 +1,6 @@
 import { Box, Flex, Icon, Image, Text } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
 
-import Stake from "../assets/icons/stake.webp";
-import Swap from "../assets/icons/swap.webp";
-import League from "../assets/icons/league.webp";
-import Games from "../assets/icons/gaming.webp";
-import Dao from "../assets/icons/dao.webp";
-import MarketPlace from "../assets/icons/store.webp";
-
-import DaoM from "../assets/products/dao.webp";
-import StakeM from "../assets/products/stake.webp";
-import SwapM from "../assets/products/swap.webp";
-import LeagueM from "../assets/products/league.webp";
-import GamesM from "../assets/products/games.webp";
-import MarketPlaceM from "../assets/products/marketplace.webp";
-
 import { BsDot } from "react-icons/bs";
 import { FaTelegram } from "react-icons/fa";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -28,8 +14,8 @@ const products = [
     subTitle: "Axle Games",
     label: "Play",
     text: "A skill based web3 gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
-    image: Games,
-    mainImg: GamesM,
+    image: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/icons/gaming.webp`,
+    mainImg: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/products/games.webp`,
     function: () => (window.location.href = "https://play.axlegames.io"),
   },
   {
@@ -37,8 +23,8 @@ const products = [
     subTitle: "Axle Staking",
     label: "STAKE $AXLE",
     text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the Axle platform and will receive $AXLE token rewards with attractive APYs.",
-    image: Stake,
-    mainImg: StakeM,
+    image: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/icons/stake.webp`,
+    mainImg: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/products/stake.webp`,
     function: () => (window.location.href = "https://sale.axlegames.io"),
   },
   {
@@ -46,8 +32,8 @@ const products = [
     subTitle: "Axle Swap",
     label: "GO TO SWAP",
     text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
-    image: Swap,
-    mainImg: SwapM,
+    image: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/icons/swap.webp`,
+    mainImg: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/products/swap.webp`,
     function: () => (window.location.href = "https://sale.axlegames.io"),
   },
   {
@@ -55,8 +41,8 @@ const products = [
     subTitle: "Axle Arena",
     label: "BUY $AXLE",
     text: "In our Axle Arena, users can make/meet new friends and compete against each others by playing PvP games on the platform. In short, Axle Arena is a social media with wide range of offerings for our gamers on the platform.",
-    image: League,
-    mainImg: LeagueM,
+    image: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/icons/league.webp`,
+    mainImg: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/products/league.webp`,
     function: () => null,
   },
 
@@ -65,8 +51,8 @@ const products = [
     subTitle: "Axle DAO",
     label: "GO TO SWAP",
     text: "Tokenised ownership of the Axle games platform through Axle DAO. All the token holders will be able to take part in the governance of the platform for increased transparency and trust. Every $AXLE token holder is a platform owner.",
-    image: Dao,
-    mainImg: DaoM,
+    image: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/icons/dao.webp`,
+    mainImg: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/products/dao.webp`,
     function: () => null,
   },
   {
@@ -74,8 +60,8 @@ const products = [
     subTitle: "Axle Marketplace",
     label: "BUY $AXLE",
     text: "An NFT Marketplace to trade in-game NFTs used in our AXLE games platform. These NFTs will unlock special abilities/powers and boost the winning chances of the gamer. NFT holders will be eligible to receive exclusive rewards in the future.",
-    image: MarketPlace,
-    mainImg: MarketPlaceM,
+    image: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/icons/store.webp`,
+    mainImg: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/products/marketplace.webp`,
     function: () => null,
   },
 ];

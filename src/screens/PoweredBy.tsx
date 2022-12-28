@@ -1,24 +1,23 @@
 import { Box, Divider, Flex, Grid, Icon, Image, Text } from "@chakra-ui/react";
 
-import Heading from "../components/Heading";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { brandingColors } from "../config/brandingColors";
 import { GoVerified } from "react-icons/go";
 
-import Binance from "../assets/powerdby/bnb.svg";
-import AWS from "../assets/powerdby/aws.png";
-import Azure from "../assets/powerdby/azure.svg";
-import Blender from "../assets/powerdby/unreal.svg";
-import Node from "../assets/powerdby/node.png";
-
-import Sol from "../assets/powerdby/sol.svg";
-import React from "../assets/powerdby/react.png";
-import MongoDB from "../assets/powerdby/mongo.png";
+import axios from "axios";
+import Heading from "../components/Heading";
 import Marquee from "react-fast-marquee";
 
-axios.defaults.headers.post["Content-Type"] = "application/json;charset=utf-8";
-axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+const images = [
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/bnb.svg`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/aws.png`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/azure.svg`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/unreal.svg`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/sol.svg`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/react.png`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/mongo.png`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/node.png`,
+];
 
 interface Profile {
   description: string;
@@ -48,8 +47,6 @@ const PoweredBy = (props: any) => {
         console.log(err);
       });
   }, []);
-
-  const images = [Binance, AWS, Azure, Blender, Sol, React, MongoDB, Node];
 
   const TwitterProfileCard = (props: Profile) => {
     return (

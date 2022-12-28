@@ -1,5 +1,4 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import Failed from "../../../assets/gamein/cancel.png";
 import NeuButton from "../component/NeuButton";
 
 const TransactionFailureDialog = (props: any) => {
@@ -12,7 +11,10 @@ const TransactionFailureDialog = (props: any) => {
           rowGap={"1rem"}
           alignItems={"center"}
         >
-          <Image width={"50%"} src={Failed} />
+          <Image
+            width={"50%"}
+            src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/gamein/cancel.png`}
+          />
           <Text fontSize={"xl"}>Oops, something went wrong, try again</Text>
         </Flex>
         <Flex justifyContent={"center"}>

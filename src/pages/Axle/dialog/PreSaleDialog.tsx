@@ -1,4 +1,3 @@
-import Icon from "../../../assets/icon.png";
 import { Box, Flex, Image, Input, Text, useToast } from "@chakra-ui/react";
 import { ethers } from "ethers";
 
@@ -217,7 +216,10 @@ const PreSale = (props: any) => {
         direction={"column"}
         rowGap="1rem"
       >
-        <Image p={8} src={Icon} />
+        <Image
+          p={8}
+          src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
+        />
         <Box textAlign={"center"}>
           <Text fontWeight={"bold"} fontSize="xl">
             Join the AXLE Presale

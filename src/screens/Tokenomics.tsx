@@ -1,10 +1,6 @@
 import { Box, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 
-import Bsc from "../assets/token/bsc.webp";
-import Util from "../assets/token/util.webp";
-import Supply from "../assets/token/supply.webp";
-
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
@@ -16,17 +12,17 @@ const tokens = [
   {
     title: "BEP-20",
     sub: "BSC Token",
-    img: Bsc,
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/bsc.webp`,
   },
   {
     title: "1 BILLION",
     sub: "Total Supply",
-    img: Supply,
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/supply.webp`,
   },
   {
     title: "$AXLE",
     sub: "Utility Token",
-    img: Util,
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/util.webp`,
   },
 ];
 

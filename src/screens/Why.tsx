@@ -3,29 +3,21 @@ import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 
-import Deflation from "../assets/why/deflation.webp";
-import Dao from "../assets/why/dao.webp";
-import Medal from "../assets/why/medal.webp";
-import Blockchain from "../assets/why/blockchain.webp";
-import Secure from "../assets/why/secure.webp";
-
-import BG from "../assets/bg/token_bg.png";
-
 const whys = [
   {
     title: "DAO governance",
     text: "Voting rights to every holder",
-    img: Dao,
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/dao.webp`,
   },
   {
     title: "Deflationary",
     text: "50% of game fee will be burned",
-    img: Deflation,
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/deflation.webp`,
   },
   {
     title: "Fully Decentralized",
     text: "Community driven approach",
-    img: Blockchain,
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/blockchain.webp`,
   },
 ];
 
@@ -33,12 +25,12 @@ const whys2 = [
   {
     title: "Safe and Secure",
     text: "Modern safety and security measures are ensured",
-    img: Secure,
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/secure.webp`,
   },
   {
     title: "Exclusive Rewards",
     text: "It get’s more and more to $AXLE token holders",
-    img: Medal,
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/medal.webp`,
   },
 ];
 
@@ -46,7 +38,7 @@ const Why = () => {
   return (
     <Box
       bg={brandingColors.bgColor}
-      backgroundImage={BG}
+      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
       p={{ base: "4", lg: "16" }}
       display="flex"
       flexDirection={"column"}

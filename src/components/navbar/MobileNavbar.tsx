@@ -15,7 +15,6 @@ import {
   AiOutlineDashboard,
 } from "react-icons/ai/index";
 import { useState } from "react";
-import Logo from "../../assets/logo.png";
 import SideBarCard from "./components/SideBarCard";
 import SideBarButton from "./components/SideBarButton";
 import { MdStore } from "react-icons/md/index";
@@ -58,7 +57,10 @@ const MobileNavbar = () => {
         bg={brandingColors.bgColor}
       >
         <Flex alignItems={"center"} columnGap=".5rem">
-          <Image maxH={"6vh"} src={Logo}></Image>
+          <Image
+            maxH={"6vh"}
+            src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
+          ></Image>
         </Flex>
         <Box
           onClick={() => setOpen(!open)}

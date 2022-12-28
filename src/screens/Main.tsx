@@ -1,12 +1,5 @@
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 
-import TelegramI from "../assets/main/telegram.webp";
-import Twitter from "../assets/main/twitter.webp";
-import Instagram from "../assets/main/instagram.webp";
-import Discord from "../assets/main/discord.webp";
-
-import BG from "../assets/bg/token_countdown_bg.png";
-
 import { Player } from "@lottiefiles/react-lottie-player";
 
 import Carousel from "nuka-carousel";
@@ -17,30 +10,12 @@ import { useEffect, useState } from "react";
 import NeuButton from "../components/NeuButton";
 
 const Main = () => {
-  const IconWrapper = (props: any) => (
-    <Image
-      color={props.color}
-      height={{ base: "12", lg: "20" }}
-      width={{ base: "12", lg: "20" }}
-      _hover={{
-        transform: "scale(1.1)",
-        transition: "all 200ms ease-in",
-        cursor: "pointer",
-      }}
-      src={props.icon}
-    />
-  );
-
-  const SocialsRow = (props: any) => {
-    return (
-      <Flex columnGap={{ base: "1rem" }} alignItems="center">
-        <IconWrapper icon={TelegramI} />
-        <IconWrapper icon={Twitter} />
-        <IconWrapper icon={Instagram} />
-        <IconWrapper icon={Discord} />
-      </Flex>
-    );
-  };
+  const images = [
+    `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/telegram.webp`,
+    `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/twitter.webp`,
+    `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/instagram.webp`,
+    `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/discord.webp`,
+  ];
 
   const [slides, setSlides] = useState<Array<any>>([]);
 
@@ -68,7 +43,11 @@ const Main = () => {
   }, []);
 
   return (
-    <Box minH={{ lg: "90vh" }} backgroundImage={BG} position="relative">
+    <Box
+      minH={{ lg: "90vh" }}
+      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_countdown_bg.png`}
+      position="relative"
+    >
       <Box>
         <Box>
           <Carousel
@@ -190,10 +169,21 @@ const Main = () => {
           display={{ base: "flex" }}
           rowGap={{ base: "1rem" }}
           alignItems={"center"}
-          flexDirection={{ base: "column" }}
+          flexDirection={{ base: "row" }}
           justifyContent={{ base: "center" }}
         >
-          <SocialsRow />
+          {images.map((i, x) => (
+            <Image
+              height={{ base: "12", lg: "20" }}
+              width={{ base: "12", lg: "20" }}
+              _hover={{
+                transform: "scale(1.1)",
+                transition: "all 200ms ease-in",
+                cursor: "pointer",
+              }}
+              src={i}
+            />
+          ))}
         </Flex>
       </Box>
     </Box>

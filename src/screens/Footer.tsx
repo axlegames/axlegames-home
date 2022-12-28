@@ -10,42 +10,17 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 
-import Logo from "../assets/logo.png";
-
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 
-import TelegramI from "../assets/main/telegram.webp";
-import Twitter from "../assets/main/twitter.webp";
-import Instagram from "../assets/main/instagram.webp";
-import Discord from "../assets/main/discord.webp";
-
 import NeuLink from "../components/NeuLink";
 
-const IconWrapper = (props: any) => (
-  <Image
-    color={props.color}
-    height={{ base: "16" }}
-    width={{ base: "16" }}
-    _hover={{
-      transform: "scale(1.1)",
-      transition: "all 200ms ease-in",
-      cursor: "pointer",
-    }}
-    src={props.icon}
-  />
-);
-
-const SocialsRow = (props: any) => {
-  return (
-    <Flex columnGap={{ base: "1rem" }} alignItems="center">
-      <IconWrapper icon={TelegramI} />
-      <IconWrapper icon={Twitter} />
-      <IconWrapper icon={Instagram} />
-      <IconWrapper icon={Discord} />
-    </Flex>
-  );
-};
+const images = [
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/telegram.webp`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/twitter.webp`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/instagram.webp`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/discord.webp`,
+];
 
 const Footer = () => {
   return (
@@ -133,7 +108,26 @@ const Footer = () => {
           {" "}
           Visit us on our social channels!
         </Text>
-        <SocialsRow />
+        <Flex
+          display={{ base: "flex" }}
+          rowGap={{ base: "1rem" }}
+          alignItems={"center"}
+          flexDirection={{ base: "row" }}
+          justifyContent={{ base: "center" }}
+        >
+          {images.map((i, x) => (
+            <Image
+              height={{ base: "12", lg: "20" }}
+              width={{ base: "12", lg: "20" }}
+              _hover={{
+                transform: "scale(1.1)",
+                transition: "all 200ms ease-in",
+                cursor: "pointer",
+              }}
+              src={i}
+            />
+          ))}
+        </Flex>
       </Box>
       <Divider />
       <Box
@@ -143,7 +137,10 @@ const Footer = () => {
         columnGap={"2rem"}
       >
         <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"}>
-          <Image maxW="120px" src={Logo} />
+          <Image
+            maxW="120px"
+            src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
+          />
           <Flex columnGap={"1rem"} justifyContent={"center"}>
             <NeuLink
               label={"About"}

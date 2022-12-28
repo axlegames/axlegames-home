@@ -1,5 +1,4 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import Success from "../../../assets/gamein/checked.webp";
 import { brandingColors } from "../../../config/brandingColors";
 import NeuButton from "../component/NeuButton";
 
@@ -12,7 +11,10 @@ const TransactionSuccessDialog = (props: any) => {
         rowGap={"1rem"}
         alignItems={"center"}
       >
-        <Image width={"50%"} src={Success} />
+        <Image
+          width={"50%"}
+          src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/gamein/checked.webp`}
+        />
         <Text fontSize={"xl"}>Welcome to AXLE family!</Text>{" "}
         <Text fontSize={"md"}> You purchased {props.fee} AXLE</Text>
         <a

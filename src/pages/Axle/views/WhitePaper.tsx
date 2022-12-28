@@ -1,6 +1,5 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
-import WP from "../../../assets/gamein/whitepaper.png";
 import { brandingColors } from "../../../config/brandingColors";
 import NeuButton from "../component/NeuButton";
 
@@ -23,7 +22,11 @@ const WhitePaper = (props: any) => {
         direction={{ base: "column", xl: "row" }}
       >
         <Box borderRadius="xl">
-          <Image width={{ base: "32", lg: "64" }} src={WP} m={4} />
+          <Image
+            width={{ base: "32", lg: "64" }}
+            src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/gamein/whitepaper.png`}
+            m={4}
+          />
         </Box>
         <Flex p={4} borderRadius="xl" rowGap={".5rem"} direction={"column"}>
           <Text color={brandingColors.primaryTextColor} fontSize={"3xl"}>

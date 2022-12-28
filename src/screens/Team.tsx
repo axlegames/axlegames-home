@@ -2,51 +2,43 @@ import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
-import BG from "../assets/bg/token_bg.png";
-
-import Praneeth from "../assets/team/praneeth.webp";
-import Chakri from "../assets/team/chakri.webp";
-import Akash from "../assets/team/akash.webp";
-import Roney from "../assets/team/roney.webp";
-import Lucas from "../assets/team/lucas.webp";
-import Prashanth from "../assets/team/prashanth.webp";
 
 const Team = () => {
   const team1 = [
     {
       name: "Praneeth Nagu",
-      avatar: Praneeth,
+      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/praneeth.webp`,
       role: "Founder / Marketing Lead",
       linkedIn: "linkedin",
     },
     {
       name: "D. C. R",
-      avatar: Chakri,
+      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/chakri.webp`,
       role: "Co-Founder / Project Lead",
       linkedIn: "linkedin",
     },
     {
       name: "Akash Madduru",
-      avatar: Akash,
+      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/akash.webp`,
       role: "Product / Dev Lead",
       linkedIn: "",
     },
 
     {
       name: "Roney",
-      avatar: Roney,
+      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/roney.webp`,
       role: "Product / Design Lead",
       linkedIn: "linkedin",
     },
     {
       name: "Prashanth",
-      avatar: Prashanth,
+      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/prashanth.webp`,
       role: "Blockchain Developer",
       linkedIn: "linkedin",
     },
     {
       name: "Lucas",
-      avatar: Lucas,
+      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/lucas.webp`,
       role: "Marketing",
       linkedIn: "",
     },
@@ -64,7 +56,7 @@ const Team = () => {
 
   return (
     <Box
-      backgroundImage={BG}
+      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
       width={{ base: "100%", md: "80%" }}
       mx={{ md: "auto" }}
     >
