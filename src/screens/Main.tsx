@@ -5,43 +5,10 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import Carousel from "nuka-carousel";
 import { brandingColors } from "../config/brandingColors";
 
-import { useEffect, useState } from "react";
-
 import NeuButton from "../components/NeuButton";
+import { socials, homeSlides } from "./data";
 
 const Main = () => {
-  const images = [
-    `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/telegram.webp`,
-    `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/twitter.webp`,
-    `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/instagram.webp`,
-    `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/discord.webp`,
-  ];
-
-  const [slides, setSlides] = useState<Array<any>>([]);
-
-  useEffect(() => {
-    setSlides([
-      {
-        mainText: "AXLE GAMES.",
-        header: "A SKILL-BASED",
-        subHeader: "WEB3 GAMING PLATFORM",
-        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s2.json`,
-      },
-      {
-        mainText: "LEVEL UP",
-        header: "IMPROVE YOUR",
-        subHeader: "COGNITIVE SKILLS",
-        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s1.json`,
-      },
-      {
-        mainText: "#WORDLE-TO-WEB3",
-        header: "YOUR FAVOURITE WORDLE",
-        subHeader: "ON AXLEGAMES",
-        json: `https://axlegames.s3.ap-south-1.amazonaws.com/s3.json`,
-      },
-    ]);
-  }, []);
-
   return (
     <Box
       minH={{ lg: "90vh" }}
@@ -72,7 +39,7 @@ const Main = () => {
           }}
           slidesToShow={1}
         >
-          {slides.map((m, i) => (
+          {homeSlides.map((m, i) => (
             <Grid
               m={5}
               justifyContent="space-between"
@@ -176,7 +143,7 @@ const Main = () => {
         flexDirection={{ base: "row" }}
         justifyContent={{ base: "center" }}
       >
-        {images.map((i, x) => (
+        {socials.map((i, x) => (
           <Image
             data-aos={`zoom-in`}
             height={{ base: "12", lg: "20" }}

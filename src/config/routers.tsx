@@ -15,7 +15,7 @@ const MobileNavbar = lazy(() => import("../components/navbar/MobileNavbar"));
 const Main = lazy(() => import("../screens/Main"));
 const Products = lazy(() => import("../screens/Products"));
 const Why = lazy(() => import("../screens/Why"));
-const Tokenomics = lazy(() => import("../screens/Tokenomics"));
+// const Tokenomics = lazy(() => import("../screens/Tokenomics"));
 const RoadMap = lazy(() => import("../screens/RoadMap"));
 const Team = lazy(() => import("../screens/Team"));
 const PoweredBy = lazy(() => import("../screens/PoweredBy"));
@@ -51,22 +51,20 @@ const Home = () => {
       <Suspense fallback={<FallBack />}>
         <MobileNavbar />
         <Navbar />
-        <Element name="about" className="about">
+        <Element name="about">
           <Main />
         </Element>
-        <Element name="products" className="products">
+        <Element name="products">
           <Products />
         </Element>
-        <Element name="why" className="why">
+        <Element name="why">
           <Why />
         </Element>
-        <Element name="token" className="token">
-          <Tokenomics />
-        </Element>
-        <Element name="roadmap" className="roadmap">
+        <Element name="token">{/* <Tokenomics /> */}</Element>
+        <Element name="roadmap">
           <RoadMap />
         </Element>
-        <Element name="team" className="team">
+        <Element name="team">
           <Box
             backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
           >
@@ -74,7 +72,7 @@ const Home = () => {
             <PoweredBy />
           </Box>
         </Element>
-        <Element name="footer" className="footer">
+        <Element name="footer">
           <Footer />
         </Element>
       </Suspense>
