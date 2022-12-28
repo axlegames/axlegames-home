@@ -174,6 +174,7 @@ const Main = () => {
         >
           {images.map((i, x) => (
             <Image
+              data-aos={`zoom-in`}
               height={{ base: "12", lg: "20" }}
               width={{ base: "12", lg: "20" }}
               _hover={{

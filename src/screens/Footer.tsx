@@ -46,6 +46,7 @@ const Footer = () => {
         rowGap="2rem"
         bg={brandingColors.bgColor}
         boxShadow={`5px 5px 13px #05192d, -5px -5px 13px #072341`}
+        data-aos={`zoom-out`}
       >
         <Grid
           width={"100%"}
@@ -117,6 +118,7 @@ const Footer = () => {
         >
           {images.map((i, x) => (
             <Image
+              data-aos={`zoom-in`}
               height={{ base: "12", lg: "20" }}
               width={{ base: "12", lg: "20" }}
               _hover={{

@@ -408,6 +408,7 @@ const Phase = (props: Props) => {
   return (
     <Box display={"flex"} justifyContent="center" position={"relative"}>
       <Box
+        data-aos={props.index % 2 === 0 ? `fade-left` : `fade-right`}
         bg={brandingColors.bgColor}
         p={{ base: "4" }}
         borderRadius="xl"
@@ -459,6 +460,7 @@ const Phase = (props: Props) => {
         </Box>
       </Box>
       <Box
+        data-aos={props.index % 2 === 0 ? `fade-right` : `fade-left`}
         display={"flex"}
         bg={brandingColors.bgColor}
         boxSize={props.current ? "48" : "36"}

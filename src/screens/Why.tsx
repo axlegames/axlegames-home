@@ -55,7 +55,7 @@ const Why = () => {
         rowGap={{ base: "4rem" }}
       >
         {whys.map((why, index) => (
-          <WhyCard {...why} key={index} />
+          <WhyCard slide={`fade-down`} {...why} key={index} />
         ))}
       </Grid>
 
@@ -66,7 +66,7 @@ const Why = () => {
         justifyContent={{ lg: "flex-start" }}
       >
         {whys2.map((why, index) => (
-          <WhyCard {...why} key={index} />
+          <WhyCard slide={`fade-up`} {...why} key={index} />
         ))}
       </Grid>
     </Box>
@@ -76,42 +76,45 @@ interface Props {
   title: string;
   text: string;
   img: string;
+  slide: string;
 }
 
 const WhyCard = (props: Props) => {
   return (
-    <Tilt>
-      <Box
-        minW={{ base: "340px" }}
-        maxW={{ base: "340px" }}
-        justifyContent={"center"}
-        alignItems="center"
-        borderRadius="md"
-        display="flex"
-        backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
-        flexDirection="column"
-        p={5}
-      >
-        <Image width={"44"} borderRadius={"md"} src={props.img} />
-        <Box>
-          <Text
-            color={brandingColors.primaryTextColor}
-            fontSize={{ base: "lg", lg: "2xl" }}
-            textAlign={"center"}
-          >
-            {props.title}
-          </Text>
-          <Text
-            color={brandingColors.secondaryTextColor}
-            fontWeight={"normal"}
-            fontSize={{ base: "sm", lg: "md" }}
-            textAlign={"center"}
-          >
-            {props.text}
-          </Text>
+    <Box data-aos={props.slide}>
+      <Tilt>
+        <Box
+          minW={{ base: "340px" }}
+          maxW={{ base: "340px" }}
+          justifyContent={"center"}
+          alignItems="center"
+          borderRadius="md"
+          display="flex"
+          backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
+          flexDirection="column"
+          p={5}
+        >
+          <Image width={"44"} borderRadius={"md"} src={props.img} />
+          <Box>
+            <Text
+              color={brandingColors.primaryTextColor}
+              fontSize={{ base: "lg", lg: "2xl" }}
+              textAlign={"center"}
+            >
+              {props.title}
+            </Text>
+            <Text
+              color={brandingColors.secondaryTextColor}
+              fontWeight={"normal"}
+              fontSize={{ base: "sm", lg: "md" }}
+              textAlign={"center"}
+            >
+              {props.text}
+            </Text>
+          </Box>
         </Box>
-      </Box>
-    </Tilt>
+      </Tilt>
+    </Box>
   );
 };
 

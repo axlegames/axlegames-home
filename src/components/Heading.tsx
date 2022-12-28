@@ -17,6 +17,7 @@ const Heading = (props: Props) => {
         fontSize={{ base: "3xl", lg: "5xl" }}
         textAlign={"center"}
         fontFamily={`'Russo One', sans-serif`}
+        data-aos={`zoom-out`}
       >
         {props.title}
       </Text>

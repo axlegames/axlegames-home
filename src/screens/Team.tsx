@@ -81,6 +81,7 @@ const Team = () => {
                 md: i % 2 === 0 ? "flex-end" : "flex-start",
                 lg: bottomAligner(i),
               }}
+              data-aos={i % 2 === 0 ? `zoom-in-down` : `zoom-in-up`}
             >
               <GridItem
                 key={i}

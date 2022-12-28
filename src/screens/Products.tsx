@@ -105,6 +105,7 @@ const Products = () => {
 const ProductDetail = (props: Props) => {
   const Content = () => (
     <Flex
+      data-aos={props.index % 2 === 0 ? `fade-right` : `fade-left`}
       zIndex={100}
       bg={brandingColors.fgColor}
       p={{ base: "4", lg: "8" }}
@@ -175,7 +176,9 @@ const ProductDetail = (props: Props) => {
       columnGap={"3rem"}
     >
       {props.index % 2 === 0 ? <Content /> : null}
+
       <Image
+        data-aos={props.index % 2 === 0 ? `fade-left` : `fade-right`}
         maxW={{ base: "256px", lg: "312px" }}
         borderRadius={"md"}
         src={props.mainImg}

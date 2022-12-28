@@ -137,12 +137,15 @@ const Tokenomics = () => {
               maxW={{ base: "60px", xl: "80px" }}
               borderRadius={"xl"}
               src={t.img}
+              data-aos={`fade-left`}
             />
+
             <Box
               display={"flex"}
               flexDirection="column"
               alignItems={"center"}
               justifyContent="flex-start"
+              data-aos={`fade-right`}
             >
               <Text
                 lineHeight={"1"}
@@ -172,6 +175,7 @@ const Tokenomics = () => {
       >
         <Box display={"flex"} justifyContent="flex-end">
           <Box
+            data-aos={`zoom-in`}
             height={{ base: "70vh" }}
             width="100%"
             borderRadius="xl"
