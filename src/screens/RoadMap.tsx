@@ -124,23 +124,29 @@ const RoadMap = () => {
                 <Flex columnGap={".1rem"} justifyContent="flex-start">
                   <Icon
                     color={
-                      props.index < 2
+                      state.index < 2
                         ? brandingColors.successColor
-                        : props.index === 2
+                        : state.index === 2
                         ? brandingColors.primaryTextColor
                         : brandingColors.disableColor
                     }
                     as={
-                      props.index < 2
+                      state.index < 2
                         ? TiTick
-                        : props.index === 2
+                        : state.index === 2
                         ? HiClock
                         : BsDot
                     }
                   />
                   <Text
                     key={i}
-                    color={brandingColors.secondaryTextColor}
+                    color={
+                      state.index < 2
+                        ? brandingColors.successColor
+                        : state.index === 2
+                        ? brandingColors.primaryTextColor
+                        : brandingColors.disableColor
+                    }
                     fontSize={"sm"}
                   >
                     {m}
@@ -213,7 +219,7 @@ const RoadMap = () => {
                 ? brandingColors.newHighlightColor
                 : brandingColors.disableColor
             }
-            fontSize={"5xl"}
+            fontSize={"2xl"}
             fontFamily={`'Russo One', sans-serif`}
             textShadow={`2px 2px 3px ${
               props.index < 2
@@ -224,6 +230,28 @@ const RoadMap = () => {
             }`}
           >
             Q{props.index + 1}
+          </Text>
+          <Text
+            textAlign={"center"}
+            borderRadius={"xl"}
+            px={4}
+            color={
+              props.index < 2
+                ? brandingColors.successColor
+                : props.index === 2
+                ? brandingColors.newHighlightColor
+                : brandingColors.disableColor
+            }
+            fontSize={"md"}
+            textShadow={`2px 2px 3px ${
+              props.index < 2
+                ? brandingColors.successColor
+                : props.index === 2
+                ? brandingColors.newHighlightColor
+                : brandingColors.disableColor
+            }`}
+          >
+            {props.phase}
           </Text>
           <Button
             onClick={() => changeState(props)}
@@ -248,7 +276,7 @@ const RoadMap = () => {
         justifyContent="center"
       >
         <Box
-          height={"90px"}
+          height={"40px"}
           width="6"
           bg={
             props.index < 2

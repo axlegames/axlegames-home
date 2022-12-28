@@ -140,11 +140,11 @@ const PoweredBy = (props: any) => {
       flexDirection={"column"}
       rowGap={{ base: "2rem" }}
       py={{ base: "16" }}
-      px={{ base: "12" }}
+      px={{ base: "0" }}
     >
       <Heading title="Powered By" />
       <Grid
-        py={{ base: "16" }}
+        py={{ lg: "16" }}
         width={{ lg: "85%", xl: "75%", "2xl": "65%" }}
         mx={{ lg: "auto" }}
         gridTemplateColumns={{
@@ -172,10 +172,10 @@ const PoweredBy = (props: any) => {
                   ? "none"
                   : `3px solid ${brandingColors.disableColor}`,
             }}
-            p={6}
+            p={{ lg: 6 }}
           >
             <Image
-              width={{ base: "80%", lg: "70%" }}
+              width={{ base: "50%", lg: "70%" }}
               className="logos"
               src={img}
             ></Image>

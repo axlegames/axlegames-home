@@ -172,7 +172,7 @@ const Tokenomics = () => {
       >
         <Box display={"flex"} justifyContent="flex-end">
           <Box
-            height={{ base: "100vh", lg: "70vh" }}
+            height={{ base: "70vh" }}
             width="100%"
             borderRadius="xl"
             color={brandingColors.secondaryTextColor}
