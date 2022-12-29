@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { brandingColors } from "./config/brandingColors";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import { Triangle } from "react-loader-spinner";
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy } from "react";
 import { Element } from "react-scroll";
 import { theme } from "./config/theme";
 import { useEffect } from "react";
@@ -48,16 +48,8 @@ const Home = () => {
     );
   };
 
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 2500);
-  }, []);
-
   return (
     <Box bg={brandingColors.bgColor} fontWeight={"bold"}>
-      {!loaded ? <FallBack /> : null}
       <Suspense fallback={<FallBack />}>
         <MobileNavbar />
         <Navbar />
