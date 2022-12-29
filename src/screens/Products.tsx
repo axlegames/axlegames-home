@@ -1,7 +1,5 @@
-import { Box, Flex, Icon, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
-
-import { ChevronRightIcon } from "@chakra-ui/icons";
 
 import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
@@ -38,7 +36,6 @@ const Products = () => {
         flexDirection={"column"}
         display={{ base: "flex", lg: "none" }}
         py={{ base: "12" }}
-        rowGap="4rem"
       >
         {products.map((p, i) => {
           return <ProductMobileView key={i} index={i} {...p} />;
@@ -51,7 +48,11 @@ const Products = () => {
 const ProductMobileView = (props: Props) => {
   return (
     <Box
-      bg={{ base: brandingColors.bgColor, sm: brandingColors.fgColor }}
+      backgroundImage={
+        props.index % 2 === 0
+          ? `linear-gradient(to right, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+          : `linear-gradient(to left, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+      }
       data-aos={props.index % 2 === 0 ? "fade-left" : "fade-right"}
       display="flex"
       justifyContent={"center"}
@@ -59,27 +60,33 @@ const ProductMobileView = (props: Props) => {
       flexDirection="column"
       px={{ base: "4", sm: "6", md: "8" }}
       py={4}
-      mx={{ base: 0, sm: "4", md: "8" }}
+      m={4}
       borderRadius="xl"
     >
       <Image maxW={"320px"} src={props.mainImg} />
       <Box display={"flex"} flexDirection={{ base: "column" }} rowGap="1rem">
-        <Flex columnGap={"1rem"} flexDirection={{ base: "column", sm: "row" }}>
+        <Flex
+          alignItems={"center"}
+          columnGap={"1rem"}
+          flexDirection={{ base: "row" }}
+        >
+          <Image maxW={"12"} src={props.image} />
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "xl", sm: "2xl", md: "3xl" }}
           >
             {props.subTitle}
           </Text>
-          <Flex alignItems={"center"}>
-            <Icon
-              color={props.isLive ? "green.400" : "red.400"}
-              as={ChevronRightIcon}
-            />
-            <Text color={props.isLive ? "green.400" : "red.400"}>
-              {props.isLive ? `Live` : "Coming Soon"}
-            </Text>
-          </Flex>
+          <Text
+            display={props.index === 5 ? "none" : "block"}
+            p={1}
+            borderRadius="md"
+            fontSize={"xx-small"}
+            color={props.isLive ? "green.400" : "red.400"}
+            bg={brandingColors.fgColor}
+          >
+            {props.isLive ? `• Live` : "• Coming Soon"}
+          </Text>
         </Flex>
         <Text
           fontSize={{ base: "sm", sm: "md", md: "lg" }}
@@ -87,28 +94,16 @@ const ProductMobileView = (props: Props) => {
         >
           {props.text}
         </Text>
-        <Flex py={4} columnGap={"1rem"}>
-          <NeuButton
-            label={props.label}
-            onClick={props.function}
-            bg={brandingColors.neuPrimaryBg}
-            shadow={brandingColors.newPrimaryShadow}
-          />
-          <Flex
-            columnGap={{ base: "1rem" }}
-            justifyContent={"space-evenly"}
-            alignItems="center"
-          >
-            <ChevronRightIcon
-              color={brandingColors.secondaryButtonColor}
-              width={{ base: "8" }}
-              height={{ base: "8" }}
+        {props.isLive ? (
+          <Box>
+            <NeuButton
+              label={props.label}
+              onClick={props.function}
+              bg={brandingColors.neuPrimaryBg}
+              shadow={brandingColors.newPrimaryShadow}
             />
-            <Text color={brandingColors.secondaryButtonColor}>
-              JOIN TELEGRAM
-            </Text>
-          </Flex>
-        </Flex>
+          </Box>
+        ) : null}
       </Box>
     </Box>
   );

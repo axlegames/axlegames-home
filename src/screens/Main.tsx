@@ -15,126 +15,12 @@ const Main = () => {
       backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_countdown_bg.png`}
       position="relative"
     >
-      <Box
-        display={"flex"}
-        flexDirection="column"
-        justifyContent={"center"}
-        alignSelf="center"
-      >
-        <Carousel
-          wrapAround={true}
-          autoplay={true}
-          defaultControlsConfig={{
-            pagingDotsStyle: {
-              height: "28px",
-              width: "28px",
-              fill: "#8D8CFF",
-            },
-            nextButtonStyle: { display: "none" },
-            prevButtonStyle: {
-              display: "none",
-            },
-            nextButtonText: "",
-            prevButtonText: "",
-          }}
-          slidesToShow={1}
-        >
-          {homeSlides.map((m, i) => (
-            <Grid
-              m={5}
-              justifyContent="space-between"
-              key={i}
-              borderRadius="3xl"
-              alignItems={"center"}
-              maxW={{ lg: "70vw" }}
-              minH={{ lg: "70vh" }}
-              p={{ base: "8" }}
-              mx="auto"
-              gridTemplateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr" }}
-              columnGap={{ base: "2rem" }}
-            >
-              <Box
-                fontWeight={"bold"}
-                display="flex"
-                flexDirection={"column"}
-                rowGap="2rem"
-                position={"relative"}
-              >
-                <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>
-                  <Text
-                    lineHeight={"1.2"}
-                    fontSize={{ base: "sm", sm: "18px", lg: "24px" }}
-                    color={brandingColors.secondaryTextColor}
-                    fontFamily={`'Rubik 80s Fade', cursive`}
-                  >
-                    {m.mainText}
-                  </Text>
-                  <Box>
-                    <Text
-                      className="glowc_text"
-                      fontFamily={`'Russo One', sans-serif`}
-                      lineHeight={"1"}
-                      fontSize={{ base: "md", sm: "24px", lg: "48px" }}
-                      fontWeight="normal"
-                    >
-                      {m.header}
-                    </Text>
-                    <Text
-                      className="glowc_text"
-                      fontFamily={`'Russo One', sans-serif`}
-                      lineHeight={"1"}
-                      fontSize={{ base: "md", lg: "48px" }}
-                      fontWeight="normal"
-                    >
-                      {m.subHeader}
-                    </Text>
-                  </Box>
-                </Box>
-                <Box display={"flex"} flexDirection="column" rowGap={"3rem"}>
-                  <Flex
-                    display={{ base: "flex", md: "none" }}
-                    columnGap={"1rem"}
-                  >
-                    <NeuButton
-                      bg={"#A34400"}
-                      shadow={"#FF7C1F"}
-                      onClick={() => {}}
-                      label="GO TO APP"
-                    ></NeuButton>
-                    <NeuButton
-                      bg={"#A34400"}
-                      shadow={"#FF7C1F"}
-                      onClick={() => {}}
-                      label="BUY $AXLE"
-                    ></NeuButton>
-                  </Flex>
-                  <Flex
-                    display={{ base: "none", md: "flex" }}
-                    columnGap={"1rem"}
-                  >
-                    <a
-                      className="btn"
-                      href="https://play.axlegames.io"
-                      target={"_blank"}
-                      rel="noreferrer"
-                    >
-                      GO TO APP
-                    </a>
-                    <a
-                      href="https://sale.axlegames.io"
-                      className="btn-secondary"
-                      rel="noreferrer"
-                    >
-                      BUY $AXLE
-                    </a>
-                  </Flex>
-                </Box>
-              </Box>
+      <Box display={{ base: "block", md: "none" }}>
+        <MobileAndIpadView />
+      </Box>
 
-              <Player className="player" loop autoplay src={m.json} />
-            </Grid>
-          ))}
-        </Carousel>
+      <Box display={{ base: "none", md: "block" }}>
+        <LaptopAndDesktopView />
       </Box>
       <Flex
         display={{ base: "flex" }}
@@ -162,3 +48,186 @@ const Main = () => {
   );
 };
 export default Main;
+
+const MobileAndIpadView = () => {
+  return (
+    <Box
+      display={"flex"}
+      flexDirection="column"
+      rowGap={"2rem"}
+      py={8}
+      height="85vh"
+      alignItems={"center"}
+      justifyContent="center"
+    >
+      {homeSlides.map((m, i) => (
+        <Box
+          data-aos={i % 2 === 0 ? `fade-left` : `fade-right`}
+          width={"100%"}
+          fontWeight={"bold"}
+          display="flex"
+          flexDirection={"column"}
+          rowGap="2rem"
+          p={8}
+          position={"relative"}
+          backgroundImage={
+            i % 2 === 0
+              ? `linear-gradient(to right, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+              : `linear-gradient(to left, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+          }
+        >
+          <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>
+            <Text
+              lineHeight={"1.2"}
+              fontSize={{ base: "3xl" }}
+              color={brandingColors.secondaryTwoTextColor}
+              fontFamily={`'Rubik 80s Fade', cursive`}
+            >
+              {m.mainText}
+            </Text>
+            <Box>
+              <Text
+                className="glowc_text"
+                fontFamily={`'Russo One', sans-serif`}
+                lineHeight={"1"}
+                fontSize="xl"
+                fontWeight="normal"
+              >
+                {m.header}
+              </Text>
+              <Text
+                className="glowc_text"
+                fontFamily={`'Russo One', sans-serif`}
+                lineHeight={"1"}
+                fontSize="xl"
+                fontWeight="normal"
+              >
+                {m.subHeader}
+              </Text>
+            </Box>
+          </Box>
+        </Box>
+      ))}
+      ;
+    </Box>
+  );
+};
+
+const LaptopAndDesktopView = () => {
+  return (
+    <Box
+      display={"flex"}
+      flexDirection="column"
+      justifyContent={"center"}
+      alignSelf="center"
+    >
+      <Carousel
+        wrapAround={true}
+        autoplay={true}
+        defaultControlsConfig={{
+          pagingDotsStyle: {
+            height: "28px",
+            width: "28px",
+            fill: "#8D8CFF",
+          },
+          nextButtonStyle: { display: "none" },
+          prevButtonStyle: {
+            display: "none",
+          },
+          nextButtonText: "",
+          prevButtonText: "",
+        }}
+        slidesToShow={1}
+      >
+        {homeSlides.map((m, i) => (
+          <Grid
+            m={5}
+            justifyContent="space-between"
+            key={i}
+            borderRadius="3xl"
+            alignItems={"center"}
+            maxW={{ lg: "70vw" }}
+            minH={{ lg: "70vh" }}
+            p={{ base: "8" }}
+            mx="auto"
+            gridTemplateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr" }}
+            columnGap={{ base: "2rem" }}
+          >
+            <Box
+              fontWeight={"bold"}
+              display="flex"
+              flexDirection={"column"}
+              rowGap="2rem"
+              position={"relative"}
+            >
+              <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>
+                <Text
+                  lineHeight={"1.2"}
+                  fontSize={{ base: "sm", sm: "18px", lg: "24px" }}
+                  color={brandingColors.secondaryTextColor}
+                  fontFamily={`'Rubik 80s Fade', cursive`}
+                >
+                  {m.mainText}
+                </Text>
+                <Box>
+                  <Text
+                    className="glowc_text"
+                    fontFamily={`'Russo One', sans-serif`}
+                    lineHeight={"1"}
+                    fontSize={{ base: "md", sm: "24px", lg: "48px" }}
+                    fontWeight="normal"
+                  >
+                    {m.header}
+                  </Text>
+                  <Text
+                    className="glowc_text"
+                    fontFamily={`'Russo One', sans-serif`}
+                    lineHeight={"1"}
+                    fontSize={{ base: "md", lg: "48px" }}
+                    fontWeight="normal"
+                  >
+                    {m.subHeader}
+                  </Text>
+                </Box>
+              </Box>
+              <Box display={"flex"} flexDirection="column" rowGap={"3rem"}>
+                <Flex display={{ base: "flex", md: "none" }} columnGap={"1rem"}>
+                  <NeuButton
+                    bg={"#A34400"}
+                    shadow={"#FF7C1F"}
+                    onClick={() => {}}
+                    label="GO TO APP"
+                  ></NeuButton>
+                  <NeuButton
+                    bg={"#A34400"}
+                    shadow={"#FF7C1F"}
+                    onClick={() => {}}
+                    label="BUY $AXLE"
+                  ></NeuButton>
+                </Flex>
+                <Flex display={{ base: "none", md: "flex" }} columnGap={"1rem"}>
+                  <a
+                    className="btn"
+                    href="https://play.axlegames.io"
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    GO TO APP
+                  </a>
+                  <a
+                    href="https://sale.axlegames.io"
+                    className="btn-secondary"
+                    rel="noreferrer"
+                  >
+                    BUY $AXLE
+                  </a>
+                </Flex>
+              </Box>
+            </Box>
+            <Player className="player" loop autoplay src={m.json} />
+          </Grid>
+        ))}
+      </Carousel>
+    </Box>
+  );
+};

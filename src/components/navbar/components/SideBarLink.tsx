@@ -2,7 +2,7 @@ import { Box, Button } from "@chakra-ui/react";
 import { brandingColors } from "../../../config/brandingColors";
 
 const SideBarLink = (props: any) => {
-  const normalEffect = `4px 4px 8px #A34400, -2px -2px 4px ${brandingColors.bgColor}`;
+  const normalEffect = `4px 4px 8px ${brandingColors.bgColor}, -2px -2px 4px ${brandingColors.bgColor}`;
   const pushedEffect = `2px 2px 4px ${brandingColors.bgColor}, -4px -4px 8px ${brandingColors.bgColor}`;
   return (
     <Box width={"100%"}>

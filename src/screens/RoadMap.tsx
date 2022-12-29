@@ -184,10 +184,37 @@ const RoadMap = () => {
             width={"100%"}
             size="sm"
             textDecoration={"underline"}
-            variant={"ghos"}
+            variant={"ghost"}
+            color={brandingColors.secondaryTwoTextColor}
           >
             see more
           </Button>
+        </Box>
+
+        <Box
+          data-aos={props.index % 2 === 0 ? `fade-left` : `fade-right`}
+          bg={
+            props.index < 2
+              ? brandingColors.successColor
+              : props.index === 2
+              ? brandingColors.newHighlightColor
+              : brandingColors.disableColor
+          }
+          p={2}
+          borderRadius="xl"
+          bottom={"-35%"}
+          zIndex={12}
+          position={"absolute"}
+          width={{ base: "80%", sm: "60%", md: "40%" }}
+        >
+          <Text
+            fontWeight={"bold"}
+            fontFamily={`'Russo One', sans-serif`}
+            textAlign={"center"}
+            color={brandingColors.secondaryTextColor}
+          >
+            {props.milestones[0]}
+          </Text>
         </Box>
       </Box>
     );
@@ -203,7 +230,7 @@ const RoadMap = () => {
         justifyContent="center"
       >
         <Box
-          height={"40px"}
+          height={"78px"}
           width="6"
           bg={
             props.index < 2
