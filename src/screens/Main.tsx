@@ -145,6 +145,7 @@ const Main = () => {
       >
         {socials.map((i, x) => (
           <Image
+            key={i}
             data-aos={`zoom-in`}
             height={{ base: "12", lg: "20" }}
             width={{ base: "12", lg: "20" }}

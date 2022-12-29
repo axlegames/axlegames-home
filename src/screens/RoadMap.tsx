@@ -47,7 +47,7 @@ const RoadMap = () => {
           <ModalBody>
             <Box mx={"2"}>
               {state?.milestones.map((m: string, i: number) => (
-                <Flex columnGap={".1rem"} justifyContent="flex-start">
+                <Flex key={i} columnGap={".1rem"} justifyContent="flex-start">
                   <Icon
                     color={
                       state.index < 2
@@ -65,7 +65,6 @@ const RoadMap = () => {
                     }
                   />
                   <Text
-                    key={i}
                     color={
                       state.index < 2
                         ? brandingColors.successColor
@@ -249,7 +248,6 @@ const RoadMap = () => {
               text={p.text}
               index={i}
               current={i === 2 ? true : false}
-              key={i}
             />
 
             {i === phases.length - 1 ? null : (
@@ -259,7 +257,6 @@ const RoadMap = () => {
                 text={p.text}
                 index={i}
                 current={i === 2 ? true : false}
-                key={i}
                 main={p.text}
               />
             )}
@@ -363,7 +360,7 @@ const Phase = (props: Props) => {
         <Divider my={2} />
         <Box mx={"2"}>
           {props.milestones.map((m, i) => (
-            <Flex columnGap={".1rem"} justifyContent="flex-start">
+            <Flex key={i} columnGap={".1rem"} justifyContent="flex-start">
               <Icon
                 color={
                   props.index < 2
@@ -380,11 +377,7 @@ const Phase = (props: Props) => {
                     : ChevronLeftIcon
                 }
               />
-              <Text
-                key={i}
-                color={brandingColors.secondaryTextColor}
-                fontSize={"sm"}
-              >
+              <Text color={brandingColors.secondaryTextColor} fontSize={"sm"}>
                 {m}
               </Text>
             </Flex>

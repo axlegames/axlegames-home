@@ -19,7 +19,7 @@ const NeuLink = (props: Props) => {
       offset={50}
       duration={500}
     >
-      <a className="nav-link nav-link-ltr">{props.label}</a>
+      <div className="nav-link nav-link-ltr">{props.label}</div>
     </Link>
   );
 };

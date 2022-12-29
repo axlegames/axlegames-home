@@ -15,7 +15,7 @@ const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
 const Main = lazy(() => import("./screens/Main"));
 const Products = lazy(() => import("./screens/Products"));
 const Why = lazy(() => import("./screens/Why"));
-// const Tokenomics = lazy(() => import("../screens/Tokenomics"));
+const Tokenomics = lazy(() => import("./screens/Tokenomics"));
 const RoadMap = lazy(() => import("./screens/RoadMap"));
 const Team = lazy(() => import("./screens/Team"));
 const PoweredBy = lazy(() => import("./screens/PoweredBy"));
@@ -52,7 +52,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 5000);
+    }, 2500);
   }, []);
 
   return (
@@ -70,7 +70,9 @@ const Home = () => {
         <Element name="why">
           <Why />
         </Element>
-        <Element name="token">{/* <Tokenomics /> */}</Element>
+        <Element name="token">
+          <Tokenomics />
+        </Element>
         <Element name="roadmap">
           <RoadMap />
         </Element>

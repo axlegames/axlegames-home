@@ -147,6 +147,7 @@ const PoweredBy = (props: any) => {
       >
         {powerdby.map((img, index) => (
           <Box
+            key={index}
             display={"flex"}
             justifyContent="center"
             alignItems="center"
@@ -178,7 +179,7 @@ const PoweredBy = (props: any) => {
 
       <Marquee gradientWidth={0} speed={40}>
         {profiles.map((profile, index) => (
-          <TwitterProfileCard {...profile} />
+          <TwitterProfileCard key={index} {...profile} />
         ))}
       </Marquee>
     </Box>

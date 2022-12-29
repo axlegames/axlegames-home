@@ -75,6 +75,7 @@ const Team = () => {
         >
           {team1.map((t, i) => (
             <Box
+              key={i}
               display={"flex"}
               justifyContent={{
                 base: "center",
