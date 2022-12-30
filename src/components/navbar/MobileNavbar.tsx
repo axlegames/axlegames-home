@@ -122,7 +122,7 @@ const MobileNavbar = () => {
             />
             <SideBarLink
               link="https://axlegames.s3.ap-south-1.amazonaws.com/AxleGames_EconomicsPaper.pdf"
-              title={"Pitch-Deck"}
+              title={"Economics Paper"}
               icon={<SunIcon />}
             />
           </SideBarCard>

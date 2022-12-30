@@ -1,9 +1,9 @@
-import { Box, Button, Divider, Flex, Grid, Icon, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Grid, Icon, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 
-import { CheckIcon, TimeIcon, ChevronLeftIcon } from "@chakra-ui/icons";
+import { CheckIcon, TimeIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 import {
   Modal,
@@ -61,17 +61,11 @@ const RoadMap = () => {
                         ? CheckIcon
                         : state.index === 2
                         ? TimeIcon
-                        : ChevronLeftIcon
+                        : ChevronRightIcon
                     }
                   />
                   <Text
-                    color={
-                      state.index < 2
-                        ? brandingColors.successColor
-                        : state.index === 2
-                        ? brandingColors.primaryTextColor
-                        : brandingColors.disableColor
-                    }
+                    color={brandingColors.secondaryTextColor}
                     fontSize={"sm"}
                   >
                     {m}
@@ -113,7 +107,7 @@ const RoadMap = () => {
           data-aos={props.index % 2 === 0 ? `fade-right` : `fade-left`}
           display={"flex"}
           bg={brandingColors.bgColor}
-          boxShadow={`0px 0px 32px ${
+          boxShadow={`2px 2px 2px 3px ${
             props.index < 2
               ? brandingColors.successColor
               : props.index === 2
@@ -122,13 +116,6 @@ const RoadMap = () => {
           }`}
           boxSize={props.current ? "48" : "36"}
           borderRadius={"50vh"}
-          border={`4px solid ${
-            props.index < 2
-              ? brandingColors.successColor
-              : props.index === 2
-              ? brandingColors.newHighlightColor
-              : brandingColors.disableColor
-          }`}
           position="relative"
           alignItems={"center"}
           justifyContent="center"
@@ -179,16 +166,17 @@ const RoadMap = () => {
           >
             {props.phase}
           </Text>
-          <Button
+          <Text
             onClick={() => changeState(props)}
             width={"100%"}
-            size="sm"
+            fontSize="xs"
             textDecoration={"underline"}
             variant={"ghost"}
-            color={brandingColors.secondaryTwoTextColor}
+            color={brandingColors.secondaryTextColor}
+            textAlign={"center"}
           >
             see more
-          </Button>
+          </Text>
         </Box>
 
         <Box
@@ -200,12 +188,12 @@ const RoadMap = () => {
               ? brandingColors.newHighlightColor
               : brandingColors.disableColor
           }
-          p={2}
           borderRadius="xl"
-          bottom={"-35%"}
+          bottom={props.current ? "-35%" : "-45%"}
           zIndex={12}
           position={"absolute"}
-          width={{ base: "80%", sm: "60%", md: "40%" }}
+          px={4}
+          py={2}
         >
           <Text
             fontWeight={"bold"}
@@ -230,7 +218,7 @@ const RoadMap = () => {
         justifyContent="center"
       >
         <Box
-          height={"78px"}
+          height={props.isLast ? "30px" : "98px"}
           width="6"
           bg={
             props.index < 2
@@ -277,16 +265,15 @@ const RoadMap = () => {
               current={i === 2 ? true : false}
             />
 
-            {i === phases.length - 1 ? null : (
-              <MLinker
-                phase={p.phase}
-                milestones={p.milestones}
-                text={p.text}
-                index={i}
-                current={i === 2 ? true : false}
-                main={p.text}
-              />
-            )}
+            <MLinker
+              phase={p.phase}
+              milestones={p.milestones}
+              text={p.text}
+              index={i}
+              current={i === 2 ? true : false}
+              main={p.text}
+              isLast={i === phases.length - 1}
+            />
           </Flex>
         ))}
       </Grid>
@@ -401,7 +388,7 @@ const Phase = (props: Props) => {
                     ? CheckIcon
                     : props.index === 2
                     ? TimeIcon
-                    : ChevronLeftIcon
+                    : ChevronRightIcon
                 }
               />
               <Text color={brandingColors.secondaryTextColor} fontSize={"sm"}>

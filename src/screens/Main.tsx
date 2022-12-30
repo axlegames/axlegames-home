@@ -51,64 +51,82 @@ export default Main;
 
 const MobileAndIpadView = () => {
   return (
-    <Box
-      display={"flex"}
-      flexDirection="column"
-      rowGap={"2rem"}
-      py={8}
-      height="85vh"
-      alignItems={"center"}
-      justifyContent="center"
-    >
-      {homeSlides.map((m, i) => (
-        <Box
-          data-aos={i % 2 === 0 ? `fade-left` : `fade-right`}
-          width={"100%"}
-          fontWeight={"bold"}
-          display="flex"
-          flexDirection={"column"}
-          rowGap="2rem"
-          p={8}
-          position={"relative"}
-          backgroundImage={
-            i % 2 === 0
-              ? `linear-gradient(to right, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
-              : `linear-gradient(to left, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
-          }
-        >
-          <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>
-            <Text
-              lineHeight={"1.2"}
-              fontSize={{ base: "3xl" }}
-              color={brandingColors.secondaryTwoTextColor}
-              fontFamily={`'Rubik 80s Fade', cursive`}
-            >
-              {m.mainText}
-            </Text>
-            <Box>
+    <Box py={8} display="flex" alignItems={"center"} height="60vh">
+      <Carousel
+        wrapAround={true}
+        autoplay={true}
+        defaultControlsConfig={{
+          pagingDotsStyle: {
+            height: "28px",
+            width: "28px",
+            fill: "#8D8CFF",
+          },
+          nextButtonStyle: { display: "none" },
+          prevButtonStyle: {
+            display: "none",
+          },
+          nextButtonText: "",
+          prevButtonText: "",
+        }}
+        slidesToShow={1}
+      >
+        {homeSlides.map((m, i) => (
+          <Box
+            width={"100%"}
+            fontWeight={"bold"}
+            display="flex"
+            flexDirection={"column"}
+            rowGap="2rem"
+            p={8}
+            position={"relative"}
+          >
+            <Box display={"flex"} flexDirection="column" rowGap={"1rem"}>
               <Text
-                className="glowc_text"
-                fontFamily={`'Russo One', sans-serif`}
-                lineHeight={"1"}
-                fontSize="xl"
-                fontWeight="normal"
+                lineHeight={"1.2"}
+                fontSize={{ base: "sm", sm: "18px", lg: "24px" }}
+                color={brandingColors.secondaryTextColor}
+                fontFamily={`'Rubik 80s Fade', cursive`}
               >
-                {m.header}
+                {m.mainText}
               </Text>
-              <Text
-                className="glowc_text"
-                fontFamily={`'Russo One', sans-serif`}
-                lineHeight={"1"}
-                fontSize="xl"
-                fontWeight="normal"
-              >
-                {m.subHeader}
-              </Text>
+              <Box>
+                <Text
+                  className="glowc_text"
+                  fontFamily={`'Russo One', sans-serif`}
+                  lineHeight={"1"}
+                  fontSize={{ base: "2xl" }}
+                  fontWeight="normal"
+                >
+                  {m.header}
+                </Text>
+                <Text
+                  className="glowc_text"
+                  fontFamily={`'Russo One', sans-serif`}
+                  lineHeight={"1"}
+                  fontSize={{ base: "2xl" }}
+                  fontWeight="normal"
+                >
+                  {m.subHeader}
+                </Text>
+              </Box>
+              <Flex columnGap={"1rem"}>
+                <NeuButton
+                  label={"GO TO APP"}
+                  onClick={() => {}}
+                  bg={brandingColors.neuPrimaryBg}
+                  shadow={brandingColors.newPrimaryShadow}
+                />
+                <NeuButton
+                  label={"BUY $AXLE"}
+                  onClick={() => {}}
+                  bg={brandingColors.neuPrimaryBg}
+                  shadow={brandingColors.newPrimaryShadow}
+                />
+              </Flex>
             </Box>
           </Box>
-        </Box>
-      ))}
-      ;
+        ))}
+      </Carousel>
     </Box>
   );
 };
