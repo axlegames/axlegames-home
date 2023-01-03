@@ -15,7 +15,7 @@ const Main = () => {
   useEffect(() => {
     setTimeout(() => {
       setShow(true);
-    }, 6000);
+    }, 8000);
   }, []);
   return (
     <Box
