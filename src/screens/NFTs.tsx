@@ -31,19 +31,15 @@ interface Props {
 const NFT = (props: Props) => {
   return (
     <Box data-aos={props.slide}>
-      <Tilt>
-        <Box
-          boxShadow={`2xl`}
-          minW={{ base: "280px" }}
-          maxW={{ base: "280px" }}
-          justifyContent={"center"}
-          alignItems="center"
-          borderRadius="md"
-          display="flex"
-          backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
-          flexDirection="column"
-          p={5}
-        >
+      <Box
+        minW={{ base: "240px" }}
+        maxW={{ base: "240px" }}
+        justifyContent={"center"}
+        alignItems="center"
+        display="flex"
+        flexDirection="column"
+      >
+        <Tilt>
           <video
             muted
             loop
@@ -52,27 +48,35 @@ const NFT = (props: Props) => {
             autoPlay
             height="240"
           ></video>
-          <Box my={2}>
-            <Text
-              color={brandingColors.primaryTextColor}
-              fontSize={{ base: "lg", lg: "2xl" }}
-              fontFamily={`'Russo One', sans-serif`}
-              textAlign={"center"}
-            >
-              {props.title}
-            </Text>
-            <Text
-              color={brandingColors.dangerColor}
-              fontFamily={`'Russo One', sans-serif`}
-              fontWeight={"normal"}
-              fontSize={{ base: "sm", lg: "md" }}
-              textAlign={"center"}
-            >
-              {props.text}
-            </Text>
-          </Box>
+        </Tilt>
+        <Box
+          py={3}
+          borderBottomRadius="xl"
+          backgroundImage={`linear-gradient(to bottom, #061e37, #002956, #003376, #003b96, #1442b5)`}
+          width={"100%"}
+          mx="auto"
+          my={2}
+          boxShadow={`2xl`}
+        >
+          <Text
+            color={brandingColors.primaryTextColor}
+            fontSize={{ base: "lg", lg: "2xl" }}
+            fontFamily={`'Russo One', sans-serif`}
+            textAlign={"center"}
+          >
+            {props.title}
+          </Text>
+          <Text
+            color={brandingColors.secondaryTextColor}
+            fontFamily={`'Russo One', sans-serif`}
+            fontWeight={"normal"}
+            fontSize={{ base: "sm", lg: "md" }}
+            textAlign={"center"}
+          >
+            {props.text}
+          </Text>
         </Box>
-      </Tilt>
+      </Box>
     </Box>
   );
 };

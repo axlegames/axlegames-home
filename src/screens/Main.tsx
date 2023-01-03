@@ -261,6 +261,10 @@ const LaptopAndDesktopView = (props: Props) => {
 
             <Box display={props.show ? "flex" : "none"}>
               <Player
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
                 loop
                 autoplay
                 src={m.json}
