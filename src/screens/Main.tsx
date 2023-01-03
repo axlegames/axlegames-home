@@ -7,8 +7,16 @@ import { brandingColors } from "../config/brandingColors";
 
 import NeuButton from "../components/NeuButton";
 import { socials, homeSlides } from "../config/data";
+import { useEffect, useState } from "react";
+import Loader from "../assets/loader.svg";
 
 const Main = () => {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 6000);
+  }, []);
   return (
     <Box
       minH={{ lg: "90vh" }}
@@ -20,7 +28,7 @@ const Main = () => {
       </Box>
 
       <Box display={{ base: "none", md: "block" }}>
-        <LaptopAndDesktopView />
+        <LaptopAndDesktopView show={show} />
       </Box>
       <Flex
         display={{ base: "flex" }}
@@ -130,8 +138,11 @@ const MobileAndIpadView = () => {
     </Box>
   );
 };
+type Props = {
+  show: boolean;
+};
 
-const LaptopAndDesktopView = () => {
+const LaptopAndDesktopView = (props: Props) => {
   return (
     <Box
       display={"flex"}
@@ -168,7 +179,7 @@ const LaptopAndDesktopView = () => {
             minH={{ lg: "70vh" }}
             p={{ base: "8" }}
             mx="auto"
-            gridTemplateColumns={{ base: "1fr 1fr", lg: "1.3fr 1fr" }}
+            gridTemplateColumns={{ base: "1.2fr 1fr", lg: "1.3fr 1fr" }}
             columnGap={{ base: "2rem" }}
           >
             <Box
@@ -242,7 +253,20 @@ const LaptopAndDesktopView = () => {
                 </Flex>
               </Box>
             </Box>
-            <Player className="player" loop autoplay src={m.json} />
+            {props.show ? null : (
+              <Box>
+                <Image src={Loader} />
+              </Box>
+            )}
+
+            <Box display={props.show ? "flex" : "none"}>
+              <Player
+                loop
+                autoplay
+                src={m.json}
+                rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+              />
+            </Box>
           </Grid>
         ))}
       </Carousel>
