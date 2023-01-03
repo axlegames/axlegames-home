@@ -32,8 +32,8 @@ const NFT = (props: Props) => {
   return (
     <Box data-aos={props.slide}>
       <Box
-        minW={{ base: "320px" }}
-        maxW={{ base: "320px" }}
+        minW={{ base: "270px" }}
+        maxW={{ base: "270px" }}
         justifyContent={"center"}
         alignItems="center"
         display="flex"
