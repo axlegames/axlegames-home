@@ -8,7 +8,7 @@ import { brandingColors } from "../config/brandingColors";
 import NeuButton from "../components/NeuButton";
 import { socials, homeSlides } from "../config/data";
 import { useEffect, useState } from "react";
-import Loader from "../assets/loader.svg";
+import Loader from "../components/Loader";
 
 const Main = () => {
   const [show, setShow] = useState(false);
@@ -255,7 +255,7 @@ const LaptopAndDesktopView = (props: Props) => {
             </Box>
             {props.show ? null : (
               <Box>
-                <Image src={Loader} />
+                <Loader />
               </Box>
             )}
 

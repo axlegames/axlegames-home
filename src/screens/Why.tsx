@@ -1,7 +1,6 @@
 import { Box, Grid, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
-import Tilt from "react-parallax-tilt";
 
 const whys = [
   {
@@ -82,38 +81,36 @@ interface Props {
 const WhyCard = (props: Props) => {
   return (
     <Box data-aos={props.slide}>
-      <Tilt>
-        <Box
-          minW={{ base: "340px" }}
-          maxW={{ base: "340px" }}
-          justifyContent={"center"}
-          alignItems="center"
-          borderRadius="md"
-          display="flex"
-          backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
-          flexDirection="column"
-          p={5}
-        >
-          <Image width={"44"} borderRadius={"md"} src={props.img} />
-          <Box>
-            <Text
-              color={brandingColors.primaryTextColor}
-              fontSize={{ base: "lg", lg: "2xl" }}
-              textAlign={"center"}
-            >
-              {props.title}
-            </Text>
-            <Text
-              color={brandingColors.secondaryTextColor}
-              fontWeight={"normal"}
-              fontSize={{ base: "sm", lg: "md" }}
-              textAlign={"center"}
-            >
-              {props.text}
-            </Text>
-          </Box>
+      <Box
+        minW={{ base: "340px" }}
+        maxW={{ base: "340px" }}
+        justifyContent={"center"}
+        alignItems="center"
+        borderRadius="md"
+        display="flex"
+        backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
+        flexDirection="column"
+        p={5}
+      >
+        <Image width={"44"} borderRadius={"md"} src={props.img} />
+        <Box>
+          <Text
+            color={brandingColors.primaryTextColor}
+            fontSize={{ base: "lg", lg: "2xl" }}
+            textAlign={"center"}
+          >
+            {props.title}
+          </Text>
+          <Text
+            color={brandingColors.secondaryTextColor}
+            fontWeight={"normal"}
+            fontSize={{ base: "sm", lg: "md" }}
+            textAlign={"center"}
+          >
+            {props.text}
+          </Text>
         </Box>
-      </Tilt>
+      </Box>
     </Box>
   );
 };

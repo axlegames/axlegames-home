@@ -8,6 +8,7 @@ import { theme } from "./config/theme";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import NFTs from "./screens/NFTs";
 
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
@@ -61,6 +62,7 @@ const Home = () => {
         </Element>
         <Element name="why">
           <Why />
+          <NFTs />
         </Element>
         <Element name="token">
           <Tokenomics />
