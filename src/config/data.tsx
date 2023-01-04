@@ -61,6 +61,7 @@ export const socials = [
   `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/twitter.webp`,
   `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/instagram.webp`,
   `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/discord.webp`,
+  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/medium.webp`,
 ];
 
 export const homeSlides = [
