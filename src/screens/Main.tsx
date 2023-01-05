@@ -1,14 +1,12 @@
+import { useEffect, useState } from "react";
+import { socials, homeSlides } from "../config/data";
+import { brandingColors } from "../config/brandingColors";
+import { Player } from "@lottiefiles/react-lottie-player";
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 
-import { Player } from "@lottiefiles/react-lottie-player";
-
-import Carousel from "nuka-carousel";
-import { brandingColors } from "../config/brandingColors";
-
-import NeuButton from "../components/NeuButton";
-import { socials, homeSlides } from "../config/data";
-import { useEffect, useState } from "react";
 import Loader from "../components/Loader";
+import Carousel from "nuka-carousel";
+import NeuButton from "../components/NeuButton";
 
 const Main = () => {
   const [show, setShow] = useState(false);
@@ -17,6 +15,7 @@ const Main = () => {
       setShow(true);
     }, 8000);
   }, []);
+
   return (
     <Box
       minH={{ lg: "90vh" }}
@@ -80,7 +79,6 @@ const MobileAndIpadView = () => {
       >
         {homeSlides.map((m, i) => (
           <Box
-            key={i}
             width={"100%"}
             fontWeight={"bold"}
             display="flex"

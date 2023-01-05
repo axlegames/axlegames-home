@@ -1,10 +1,9 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { products } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 import Heading from "../components/Heading";
 import NeuButton from "../components/NeuButton";
-
-import { products } from "../config/data";
 
 interface Props {
   subTitle: string;

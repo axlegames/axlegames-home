@@ -1,11 +1,12 @@
 import { Box, Flex, Image } from "@chakra-ui/react";
 import { useState } from "react";
+
+import SideBarLink from "./components/SideBarLink";
 import SideBarCard from "./components/SideBarCard";
 import SideBarButton from "./components/SideBarButton";
 
 import { brandingColors } from "../../config/brandingColors";
 import { HamburgerIcon, CloseIcon, SunIcon } from "@chakra-ui/icons";
-import SideBarLink from "./components/SideBarLink";
 
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);

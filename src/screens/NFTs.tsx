@@ -1,25 +1,9 @@
-import { Box, Grid, Text } from "@chakra-ui/react";
+import { nfts } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
+import { Box, Grid, Text } from "@chakra-ui/react";
+
 import Tilt from "react-parallax-tilt";
 import Heading from "../components/Heading";
-
-const whys = [
-  {
-    title: "Zeus",
-    text: "400 $AXLE",
-    img: `https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`,
-  },
-  {
-    title: "Poseidon",
-    text: "800 $AXLE",
-    img: `https://axlegames.s3.ap-south-1.amazonaws.com/poseidon.mp4`,
-  },
-  {
-    title: "Hades",
-    text: "1200 $AXLE",
-    img: `https://axlegames.s3.ap-south-1.amazonaws.com/hades.mp4`,
-  },
-];
 
 interface Props {
   title: string;
@@ -101,10 +85,10 @@ const NFTs = () => {
         gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
         rowGap={{ base: "4rem" }}
       >
-        {whys.map((why, index) => (
+        {nfts.map((nft, index) => (
           <NFT
             slide={index % 2 === 0 ? `fade-down` : `fade-up`}
-            {...why}
+            {...nft}
             key={index}
           />
         ))}

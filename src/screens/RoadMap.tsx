@@ -1,10 +1,3 @@
-import { Box, Divider, Flex, Grid, Icon, Text } from "@chakra-ui/react";
-import { useState } from "react";
-import Heading from "../components/Heading";
-import { brandingColors } from "../config/brandingColors";
-
-import { CheckIcon, TimeIcon, ChevronRightIcon } from "@chakra-ui/icons";
-
 import {
   Modal,
   ModalOverlay,
@@ -14,8 +7,14 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import NeuButton from "../components/NeuButton";
 import { phases } from "../config/data";
+import { useState } from "react";
+import { brandingColors } from "../config/brandingColors";
+import { Box, Divider, Flex, Grid, Icon, Text } from "@chakra-ui/react";
+import { CheckIcon, TimeIcon, ChevronRightIcon } from "@chakra-ui/icons";
+
+import Heading from "../components/Heading";
+import NeuButton from "../components/NeuButton";
 
 const RoadMap = () => {
   const [state, setState] = useState<Props>({

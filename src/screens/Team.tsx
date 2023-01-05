@@ -2,48 +2,9 @@ import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
+import { team } from "../config/data";
 
 const Team = () => {
-  const team1 = [
-    {
-      name: "Praneeth Nagu",
-      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/praneeth.webp`,
-      role: "Founder / Marketing Lead",
-      linkedIn: "linkedin",
-    },
-    {
-      name: "D. C. R",
-      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/chakri.webp`,
-      role: "Co-Founder / Project Lead",
-      linkedIn: "linkedin",
-    },
-    {
-      name: "Akash Madduru",
-      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/akash.webp`,
-      role: "Product / Dev Lead",
-      linkedIn: "",
-    },
-
-    {
-      name: "Roney",
-      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/roney.webp`,
-      role: "Product / Design Lead",
-      linkedIn: "linkedin",
-    },
-    {
-      name: "Prashanth",
-      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/prashanth.webp`,
-      role: "Blockchain Developer",
-      linkedIn: "linkedin",
-    },
-    {
-      name: "Lucas",
-      avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/lucas.webp`,
-      role: "Marketing",
-      linkedIn: "",
-    },
-  ];
-
   const bottomAligner = (index: number) => {
     if (index === 0) return "flex-end";
     if (index === 1) return "center";
@@ -73,7 +34,7 @@ const Team = () => {
             lg: "1fr 1fr 1fr",
           }}
         >
-          {team1.map((t, i) => (
+          {team.map((t, i) => (
             <Box
               key={i}
               display={"flex"}

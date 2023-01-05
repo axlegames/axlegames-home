@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { brandingColors } from "./config/brandingColors";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import { Triangle } from "react-loader-spinner";
@@ -6,6 +5,7 @@ import { Suspense, lazy } from "react";
 import { Element } from "react-scroll";
 import { theme } from "./config/theme";
 import { useEffect } from "react";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import NFTs from "./screens/NFTs";
@@ -21,9 +21,12 @@ const RoadMap = lazy(() => import("./screens/RoadMap"));
 const Team = lazy(() => import("./screens/Team"));
 const PoweredBy = lazy(() => import("./screens/PoweredBy"));
 const Footer = lazy(() => import("./screens/Footer"));
-const ComingSoon = lazy(() => import("./screens/CommingSoon"));
 
-const Home = () => {
+export const App = () => {
+  useEffect(() => {
+    AOS.init({});
+  });
+
   const FallBack = () => {
     return (
       <Box
@@ -48,57 +51,40 @@ const Home = () => {
       </Box>
     );
   };
-
-  return (
-    <Box bg={brandingColors.bgColor} fontWeight={"bold"}>
-      <Suspense fallback={<FallBack />}>
-        <MobileNavbar />
-        <Navbar />
-        <Element name="about">
-          <Main />
-        </Element>
-        <Element name="products">
-          <Products />
-        </Element>
-        <Element name="why">
-          <Why />
-          <NFTs />
-        </Element>
-        <Element name="token">
-          <Tokenomics />
-        </Element>
-        <Element name="roadmap">
-          <RoadMap />
-        </Element>
-        <Element name="team">
-          <Box
-            backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
-          >
-            <Team />
-            <PoweredBy />
-          </Box>
-        </Element>
-        <Element name="footer">
-          <Footer />
-        </Element>
-      </Suspense>
-    </Box>
-  );
-};
-
-export const App = () => {
-  useEffect(() => {
-    AOS.init({});
-  });
   return (
     <ChakraProvider theme={theme}>
-      <Box>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/coming-soon" element={<ComingSoon />} />
-          </Routes>
-        </Router>
+      <Box bg={brandingColors.bgColor} fontWeight={"bold"}>
+        <Suspense fallback={<FallBack />}>
+          <MobileNavbar />
+          <Navbar />
+          <Element name="about">
+            <Main />
+          </Element>
+          <Element name="products">
+            <Products />
+          </Element>
+          <Element name="why">
+            <Why />
+            <NFTs />
+          </Element>
+          <Element name="token">
+            <Tokenomics />
+          </Element>
+          <Element name="roadmap">
+            <RoadMap />
+          </Element>
+          <Element name="team">
+            <Box
+              backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
+            >
+              <Team />
+              <PoweredBy />
+            </Box>
+          </Element>
+          <Element name="footer">
+            <Footer />
+          </Element>
+        </Suspense>
       </Box>
     </ChakraProvider>
   );

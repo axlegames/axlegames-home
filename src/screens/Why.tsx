@@ -1,37 +1,8 @@
-import { Box, Grid, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
+
 import { brandingColors } from "../config/brandingColors";
-
-const whys = [
-  {
-    title: "DAO governance",
-    text: "Voting rights to every holder",
-    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/dao.webp`,
-  },
-  {
-    title: "Deflationary",
-    text: "50% of game fee will be burned",
-    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/deflation.webp`,
-  },
-  {
-    title: "Fully Decentralized",
-    text: "Community driven approach",
-    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/blockchain.webp`,
-  },
-];
-
-const whys2 = [
-  {
-    title: "Safe and Secure",
-    text: "Modern safety and security measures are ensured",
-    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/secure.webp`,
-  },
-  {
-    title: "Exclusive Rewards",
-    text: "It get’s more and more to $AXLE token holders",
-    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/medal.webp`,
-  },
-];
+import { whysGridOne, whysGridTwo } from "../config/data";
+import { Box, Grid, Image, Text } from "@chakra-ui/react";
 
 const Why = () => {
   return (
@@ -53,7 +24,7 @@ const Why = () => {
         gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
         rowGap={{ base: "4rem" }}
       >
-        {whys.map((why, index) => (
+        {whysGridOne.map((why, index) => (
           <WhyCard slide={`fade-down`} {...why} key={index} />
         ))}
       </Grid>
@@ -64,7 +35,7 @@ const Why = () => {
         gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
         justifyContent={{ lg: "flex-start" }}
       >
-        {whys2.map((why, index) => (
+        {whysGridTwo.map((why, index) => (
           <WhyCard slide={`fade-up`} {...why} key={index} />
         ))}
       </Grid>

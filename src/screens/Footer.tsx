@@ -10,17 +10,11 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 
-import Heading from "../components/Heading";
+import { socials } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
 
+import Heading from "../components/Heading";
 import NeuLink from "../components/NeuLink";
-
-const images = [
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/telegram.webp`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/twitter.webp`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/instagram.webp`,
-  `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/discord.webp`,
-];
 
 const Footer = () => {
   return (
@@ -116,7 +110,7 @@ const Footer = () => {
           flexDirection={{ base: "row" }}
           justifyContent={{ base: "center" }}
         >
-          {images.map((i, x) => (
+          {socials.map((i, x) => (
             <Image
               key={x}
               data-aos={`zoom-in`}

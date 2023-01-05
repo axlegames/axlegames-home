@@ -1,13 +1,11 @@
+import { powerdby } from "../config/data";
+import { useEffect, useState } from "react";
+import { CheckCircleIcon } from "@chakra-ui/icons";
+import { brandingColors } from "../config/brandingColors";
 import { Box, Divider, Flex, Grid, Icon, Image, Text } from "@chakra-ui/react";
 
-import { useEffect, useState } from "react";
-import { brandingColors } from "../config/brandingColors";
-
-import axios from "axios";
-import Heading from "../components/Heading";
 import Marquee from "react-fast-marquee";
-import { CheckCircleIcon } from "@chakra-ui/icons";
-import { powerdby } from "../config/data";
+import Heading from "../components/Heading";
 
 interface Profile {
   description: string;
@@ -28,10 +26,10 @@ const PoweredBy = (props: any) => {
   const [profiles, setProfiles] = useState<Array<Profile>>([]);
 
   useEffect(() => {
-    axios
-      .get("https://api.axlegames.io/axlegames/api/v1/users/twitter/profiles")
-      .then((res) => {
-        setProfiles(res.data.data);
+    fetch("https://api.axlegames.io/axlegames/api/v1/users/twitter/profiles")
+      .then(async (res) => {
+        const { data } = await res.json();
+        setProfiles(data);
       })
       .catch((err) => {
         console.log(err);

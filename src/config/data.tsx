@@ -64,6 +64,55 @@ export const socials = [
   `https://axlegames.s3.ap-south-1.amazonaws.com/assets/main/medium.webp`,
 ];
 
+export const tokenomics = [
+  {
+    title: "BEP-20",
+    sub: "BSC Token",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/bsc.webp`,
+  },
+  {
+    title: "1 BILLION",
+    sub: "Total Supply",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/supply.webp`,
+  },
+  {
+    title: "$AXLE",
+    sub: "Utility Token",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/util.webp`,
+  },
+];
+
+export const whysGridOne = [
+  {
+    title: "DAO governance",
+    text: "Voting rights to every holder",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/dao.webp`,
+  },
+  {
+    title: "Deflationary",
+    text: "50% of game fee will be burned",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/deflation.webp`,
+  },
+  {
+    title: "Fully Decentralized",
+    text: "Community driven approach",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/blockchain.webp`,
+  },
+];
+
+export const whysGridTwo = [
+  {
+    title: "Safe and Secure",
+    text: "Modern safety and security measures are ensured",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/secure.webp`,
+  },
+  {
+    title: "Exclusive Rewards",
+    text: "It get’s more and more to $AXLE token holders",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/why/medal.webp`,
+  },
+];
+
 export const homeSlides = [
   {
     mainText: "AXLE GAMES.",
@@ -168,4 +217,247 @@ export const powerdby = [
   `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/react.png`,
   `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/mongo.png`,
   `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/node.png`,
+];
+
+export const chart = `
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Luckiest+Guy&family=Nabla&family=Poppins:ital,wght@0,800;0,900;1,900&family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&family=Righteous&family=Rubik+80s+Fade&family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Russo One", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body style="height: 100vh; width: 100vw; position: fixed">
+    <div style="height:100vh" id="chartdiv"></div>
+    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/themes/animated.js">
+    <script>
+      am4core.useTheme(am4themes_animated);
+      var chart = am4core.create("chartdiv", am4charts.PieChart);
+      chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+      chart.data = [
+        {
+          country: "Zeus Sale",
+          value: 15,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Poseidon Sale",
+          value: 25,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Hades Sale",
+          value: 10,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Founding Team",
+          value: 10,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Advisors and Legal team",
+          value: 5,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Axle Ecosystem rewards",
+          value: 15,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Referral and Bonuses",
+          value: 10,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Marketing and Listings",
+          value: 10,
+          label: am4core.color("#ffffff"),
+        },
+      ];
+
+      chart.radius = am4core.percent(70);
+      chart.innerRadius = am4core.percent(40);
+      chart.startAngle = 180;
+      chart.endAngle = 360;
+
+      var series = chart.series.push(new am4charts.PieSeries());
+      series.dataFields.value = "value";
+      series.dataFields.category = "country";
+
+      // Disable ticks and labels
+      series.labels.template.disabled = true;
+      series.ticks.template.disabled = true;
+
+      series.slices.template.innerCornerRadius = 4;
+      series.slices.template.draggable = true;
+      series.slices.template.inert = true;
+
+      series.hiddenState.properties.startAngle = 90;
+      series.hiddenState.properties.endAngle = 90;
+      series.slices.template.draggable = false;
+
+      chart.legend = new am4charts.Legend();
+      chart.legend.labels.template.fill = am4core.color("#ffffff");
+      chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
+    </script>
+  </body>
+</html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="height: 70vh; background-color: #2b2d42" id="chartdiv"></div>
+    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+    <script>
+      var chart = am4core.create("chartdiv", am4charts.PieChart);
+      chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+      chart.data = [
+        {
+          country: "Zeus Sale",
+          value: 15,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Poseidon Sale",
+          value: 25,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Hades Sale",
+          value: 10,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Founding Team",
+          value: 10,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Advisors and Legal team",
+          value: 5,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Axle Ecosystem rewards",
+          value: 15,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Referral and Bonuses",
+          value: 10,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          country: "Marketing and Listings",
+          value: 10,
+          label: am4core.color("#ffffff"),
+        },
+      ];
+
+      chart.radius = am4core.percent(70);
+      chart.innerRadius = am4core.percent(40);
+      chart.startAngle = 180;
+      chart.endAngle = 360;
+
+      var series = chart.series.push(new am4charts.PieSeries());
+      series.dataFields.value = "value";
+      series.dataFields.category = "country";
+
+      // Disable ticks and labels
+      series.labels.template.disabled = true;
+      series.ticks.template.disabled = true;
+
+      series.slices.template.innerCornerRadius = 4;
+      series.slices.template.draggable = true;
+      series.slices.template.inert = true;
+
+      series.hiddenState.properties.startAngle = 90;
+      series.hiddenState.properties.endAngle = 90;
+      series.slices.template.draggable = false;
+
+      chart.legend = new am4charts.Legend();
+      chart.legend.labels.template.fill = am4core.color("#ffffff");
+      chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
+    </script>
+    ;
+  </body>
+</html>
+`;
+
+export const nfts = [
+  {
+    title: "Zeus",
+    text: "400 $AXLE",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`,
+  },
+  {
+    title: "Poseidon",
+    text: "800 $AXLE",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/poseidon.mp4`,
+  },
+  {
+    title: "Hades",
+    text: "1200 $AXLE",
+    img: `https://axlegames.s3.ap-south-1.amazonaws.com/hades.mp4`,
+  },
+];
+
+export const team = [
+  {
+    name: "Praneeth Nagu",
+    avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/praneeth.webp`,
+    role: "Founder / Marketing Lead",
+    linkedIn: "linkedin",
+  },
+  {
+    name: "D. C. R",
+    avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/chakri.webp`,
+    role: "Co-Founder / Project Lead",
+    linkedIn: "linkedin",
+  },
+  {
+    name: "Akash Madduru",
+    avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/akash.webp`,
+    role: "Product / Dev Lead",
+    linkedIn: "",
+  },
+
+  {
+    name: "Roney",
+    avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/roney.webp`,
+    role: "Product / Design Lead",
+    linkedIn: "linkedin",
+  },
+  {
+    name: "Prashanth",
+    avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/prashanth.webp`,
+    role: "Blockchain Developer",
+    linkedIn: "linkedin",
+  },
+  {
+    name: "Lucas",
+    avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/lucas.webp`,
+    role: "Marketing",
+    linkedIn: "",
+  },
 ];
