@@ -80,6 +80,7 @@ const MobileAndIpadView = () => {
       >
         {homeSlides.map((m, i) => (
           <Box
+            key={i}
             width={"100%"}
             fontWeight={"bold"}
             display="flex"
