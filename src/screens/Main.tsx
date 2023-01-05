@@ -85,6 +85,7 @@ const MobileAndIpadView = () => {
             flexDirection={"column"}
             rowGap="2rem"
             p={8}
+            key={i}
             position={"relative"}
           >
             <Box display={"flex"} flexDirection="column" rowGap={"1rem"}>
