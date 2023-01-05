@@ -194,7 +194,7 @@ const LaptopAndDesktopView = (props: Props) => {
                   lineHeight={"1.2"}
                   fontSize={{ base: "sm", sm: "18px", lg: "24px" }}
                   color={brandingColors.secondaryTextColor}
-                  fontFamily={`'Rubik 80s Fade', cursive`}
+                  fontFamily={`'Russo One', sans-serif`}
                 >
                   {m.mainText}
                 </Text>
