@@ -77,7 +77,6 @@ const ProductMobileView = (props: Props) => {
             {props.subTitle}
           </Text>
           <Text
-            display={props.index === 5 ? "none" : "block"}
             p={1}
             borderRadius="md"
             fontSize={"xx-small"}
