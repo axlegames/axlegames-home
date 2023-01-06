@@ -53,7 +53,7 @@ export const App = () => {
   };
   return (
     <ChakraProvider theme={theme}>
-      <Box bg={brandingColors.bgColor} fontWeight={"bold"}>
+      <Box data-aos="fade-up" bg={brandingColors.bgColor} fontWeight={"bold"}>
         <Suspense fallback={<FallBack />}>
           <MobileNavbar />
           <Navbar />
