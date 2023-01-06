@@ -259,18 +259,18 @@ const LaptopAndDesktopView = (props: Props) => {
               </Box>
             )}
 
-            <Box display={props.show ? "flex" : "none"}>
+            <div
+              style={{
+                display: props.show ? "block" : "none",
+              }}
+            >
               <Player
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
                 loop
                 autoplay
                 src={m.json}
                 rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
               />
-            </Box>
+            </div>
           </Grid>
         ))}
       </Carousel>
