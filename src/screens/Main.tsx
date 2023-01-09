@@ -175,11 +175,11 @@ const LaptopAndDesktopView = (props: Props) => {
             key={i}
             borderRadius="3xl"
             alignItems={"center"}
-            maxW={{ lg: "70vw" }}
+            maxW={{ lg: "75vw" }}
             minH={{ lg: "70vh" }}
             p={{ base: "8" }}
             mx="auto"
-            gridTemplateColumns={{ base: "1.2fr 1fr", lg: "1.3fr 1fr" }}
+            gridTemplateColumns={{ base: "1fr 1fr" }}
             columnGap={{ base: "2rem" }}
           >
             <Box
@@ -255,13 +255,16 @@ const LaptopAndDesktopView = (props: Props) => {
             </Box>
             {props.show ? null : (
               <Box>
-                <Loader />
+                <div className="skeleton_wrapper">
+                  <div className="skeleton_img"></div>
+                </div>
               </Box>
             )}
 
             <div
               style={{
                 display: props.show ? "block" : "none",
+                width: "100%",
               }}
             >
               <Player

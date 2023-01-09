@@ -38,6 +38,8 @@ export const App = () => {
         bg={brandingColors.bgColor}
         position="fixed"
         zIndex={500}
+        margin={0}
+        padding={0}
       >
         <Triangle
           height={"100"}
@@ -52,9 +54,9 @@ export const App = () => {
     );
   };
   return (
-    <ChakraProvider theme={theme}>
-      <Box data-aos="fade-up" bg={brandingColors.bgColor} fontWeight={"bold"}>
-        <Suspense fallback={<FallBack />}>
+    <Suspense fallback={<FallBack />}>
+      <ChakraProvider theme={theme}>
+        <Box data-aos="fade-up" bg={brandingColors.bgColor} fontWeight={"bold"}>
           <MobileNavbar />
           <Navbar />
           <Element name="about">
@@ -84,8 +86,8 @@ export const App = () => {
           <Element name="footer">
             <Footer />
           </Element>
-        </Suspense>
-      </Box>
-    </ChakraProvider>
+        </Box>
+      </ChakraProvider>
+    </Suspense>
   );
 };
