@@ -253,7 +253,7 @@ const LaptopAndDesktopView = (props: Props) => {
               </Box>
             </Box>
             {props.show ? null : (
-              <Box>
+              <Box width={"100%"}>
                 <div className="skeleton_wrapper">
                   <div className="skeleton_img"></div>
                 </div>
