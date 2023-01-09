@@ -4,7 +4,6 @@ import { brandingColors } from "../config/brandingColors";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 
-import Loader from "../components/Loader";
 import Carousel from "nuka-carousel";
 import NeuButton from "../components/NeuButton";
 
@@ -268,6 +267,7 @@ const LaptopAndDesktopView = (props: Props) => {
               }}
             >
               <Player
+                style={{ width: "100%" }}
                 loop
                 autoplay
                 src={m.json}
