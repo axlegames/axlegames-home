@@ -25,7 +25,12 @@ const Footer = lazy(() => import("./screens/Footer"));
 
 export const App = () => {
   useEffect(() => {
-    AOS.init({});
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
   });
 
   const FallBack = () => {
