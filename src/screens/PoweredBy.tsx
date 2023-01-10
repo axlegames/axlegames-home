@@ -46,77 +46,26 @@ const PoweredBy = (props: any) => {
         borderRadius="xl"
         minW="216px"
         display={"flex"}
-        justifyContent="center"
-        flexDirection={"column"}
+        justifyContent="space-evenly"
         alignItems="center"
+        columnGap={"1rem"}
       >
         <Image
           borderRadius={"10vh"}
           width={"60px"}
           src={props.profile_image_url}
         />
-        <Flex justifyContent={"center"} alignItems="center" columnGap={".2rem"}>
-          <Text
-            color={brandingColors.secondaryTextColor}
-            fontFamily={`'Russo One', sans-serif`}
-          >
-            {props.username}
-          </Text>
-          {props.verified ? (
-            <Icon color={"blue.400"} as={CheckCircleIcon}></Icon>
-          ) : null}
-        </Flex>
-        <Divider my={4} />
-        <Flex columnGap="2rem">
-          <Flex
-            flexDirection={"column"}
-            justifyContent="center"
-            alignItems={"center"}
-          >
-            <Text
-              fontFamily={`'Russo One', sans-serif`}
-              color={brandingColors.primaryTextColor}
-              fontSize="xl"
-            >
-              {props.public_metrics.followers_count}
-            </Text>
-            <Text color={brandingColors.secondaryTextColor} fontSize={"sm"}>
-              Followers
-            </Text>
-          </Flex>
-          <Flex
-            flexDirection={"column"}
-            justifyContent="center"
-            alignItems={"center"}
-          >
-            <Text
-              fontFamily={`'Russo One', sans-serif`}
-              color={brandingColors.primaryTextColor}
-              fontSize="xl"
-            >
-              {props.public_metrics.following_count}{" "}
-            </Text>
-            <Text color={brandingColors.secondaryTextColor} fontSize={"sm"}>
-              Following
-            </Text>
-          </Flex>
-          <Flex
-            flexDirection={"column"}
-            justifyContent="center"
-            alignItems={"center"}
-          >
-            <Text
-              fontFamily={`'Russo One', sans-serif`}
-              color={brandingColors.primaryTextColor}
-              fontSize="xl"
-            >
-              {props.public_metrics.tweet_count}
-            </Text>
-            <Text color={brandingColors.secondaryTextColor} fontSize={"sm"}>
-              Tweets
-            </Text>
-          </Flex>
-        </Flex>
+        <Text
+          fontSize={"2xl"}
+          color={brandingColors.secondaryTextColor}
+          fontFamily={`'Russo One', sans-serif`}
+        >
+          {props.username}
+        </Text>
+
+        {props.verified ? (
+          <Icon color={"blue.400"} as={CheckCircleIcon}></Icon>
+        ) : null}
       </Box>
     );
   };
