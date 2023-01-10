@@ -67,7 +67,6 @@ const NFTs = () => {
   return (
     <Box
       bg={brandingColors.bgColor}
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
       p={{ base: "4", lg: "16" }}
       display="flex"
       flexDirection={"column"}
