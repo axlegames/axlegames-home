@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { socials, homeSlides } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
-import { Player } from "@lottiefiles/react-lottie-player";
+// import { Player } from "@lottiefiles/react-lottie-player";
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 
 import Carousel from "nuka-carousel";
