@@ -74,12 +74,14 @@ export const App = () => {
             backgroundSize="cotain"
             backgroundImage={BG}
           >
-            <MobileNavbar />
-            <Navbar />
-            <Box>
-              <Element name="about">
-                <Main />
-              </Element>
+            <Box style={{ backdropFilter: "blur(8px)" }}>
+              <MobileNavbar />
+              <Navbar />
+              <Box>
+                <Element name="about">
+                  <Main />
+                </Element>
+              </Box>
             </Box>
           </Box>
           <Element name="products">

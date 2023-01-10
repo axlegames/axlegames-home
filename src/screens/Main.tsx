@@ -188,7 +188,6 @@ const LaptopAndDesktopView = (props: Props) => {
               rowGap="2rem"
               position={"relative"}
               p={8}
-              style={{ backdropFilter: "blur(10px)" }}
               borderRadius="xl"
             >
               <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>

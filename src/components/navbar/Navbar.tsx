@@ -10,7 +10,6 @@ const Navbar = () => {
       minH={"10vh"}
       fontWeight={"bold"}
       fontFamily={`'Russo One', sans-serif`}
-      style={{ backdropFilter: "blur(20px)" }}
     >
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
         <Flex alignItems={"center"}>
