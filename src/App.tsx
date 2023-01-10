@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "react-loading-skeleton/dist/skeleton.css";
+import BG from "./assets/bg.jpg";
 
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
@@ -62,12 +63,19 @@ export const App = () => {
   return (
     <Suspense fallback={<FallBack />}>
       <ChakraProvider theme={theme}>
-        <Box data-aos="fade-up" bg={brandingColors.bgColor} fontWeight={"bold"}>
-          <MobileNavbar />
-          <Navbar />
-          <Element name="about">
-            <Main />
-          </Element>
+        <Box bg={brandingColors.bgColor} fontWeight={"bold"}>
+          <Box
+            backgroundRepeat="no-repeat"
+            backgroundSize={"cover"}
+            backgroundPosition={"center"}
+            backgroundImage={BG}
+          >
+            <MobileNavbar />
+            <Navbar />
+            <Element name="about">
+              <Main />
+            </Element>
+          </Box>
           <Element name="products">
             <Products />
           </Element>

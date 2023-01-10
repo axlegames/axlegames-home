@@ -5,11 +5,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <Box
-      display={{ base: "none", lg: "block" }}
-      minH={"10vh"}
-      bg={brandingColors.bgColor}
-    >
+    <Box display={{ base: "none", lg: "block" }} minH={"10vh"}>
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
         <Flex alignItems={"center"}>
           <Image

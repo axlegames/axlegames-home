@@ -18,11 +18,7 @@ const Main = () => {
   }, []);
 
   return (
-    <Box
-      minH={{ lg: "90vh" }}
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_countdown_bg.png`}
-      position="relative"
-    >
+    <Box minH={{ lg: "90vh" }} position="relative">
       <Box display={{ base: "block", md: "none" }}>
         <MobileAndIpadView />
       </Box>
