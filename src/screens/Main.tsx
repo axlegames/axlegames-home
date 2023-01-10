@@ -280,13 +280,13 @@ const LaptopAndDesktopView = (props: Props) => {
                 width: "100%",
               }}
             >
-              <Player
+              {/* <Player
                 style={{ width: "100%" }}
                 loop
                 autoplay
                 src={m.json}
                 rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
-              />
+              /> */}
             </div>
           </Grid>
         ))}
