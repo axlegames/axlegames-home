@@ -45,7 +45,7 @@ export const products = [
     text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the Axle platform and will receive $AXLE token rewards with attractive APYs.",
     image: ProductStakingIcon,
     mainImg: ProductStakingImg,
-    function: () => (window.location.href = "https://sale.axlegames.io"),
+    function: () => null,
   },
   {
     isLive: true,
@@ -54,7 +54,7 @@ export const products = [
     text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
     image: ProductSwapIcon,
     mainImg: ProductSwapImg,
-    function: () => (window.location.href = "https://sale.axlegames.io"),
+    function: () => null,
   },
   {
     isLive: false,
@@ -431,17 +431,17 @@ export const chart = `
 export const nfts = [
   {
     title: "Zeus",
-    text: "400 $AXLE",
+    text: "Thunder NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`,
   },
   {
     title: "Poseidon",
-    text: "800 $AXLE",
+    text: "Spear NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/poseidon.mp4`,
   },
   {
     title: "Hades",
-    text: "1200 $AXLE",
+    text: "Fire NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/hades.mp4`,
   },
 ];

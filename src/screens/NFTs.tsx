@@ -25,7 +25,6 @@ const NFT = (props: Props) => {
       >
         <Tilt>
           <video
-            style={{ filter: "brightness(60%)" }}
             muted
             loop
             src={props.img}

@@ -242,13 +242,7 @@ const LaptopAndDesktopView = (props: Props) => {
                   >
                     GO TO APP
                   </a>
-                  <a
-                    href="https://sale.axlegames.io"
-                    className="btn-secondary"
-                    rel="noreferrer"
-                  >
-                    BUY $AXLE
-                  </a>
+                  <div className="btn-secondary">BUY $AXLE</div>
                 </Flex>
               </Box>
             </Box>
