@@ -6,16 +6,16 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <Box
-      backdropBlur={"50px"}
-      fontFamily={`'Russo One', sans-serif`}
       display={{ base: "none", lg: "block" }}
       minH={"10vh"}
+      fontWeight={"bold"}
+      fontFamily={`'Russo One', sans-serif`}
+      style={{ backdropFilter: "blur(20px)" }}
     >
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
         <Flex alignItems={"center"}>
           <Image
             ml={{ lg: "20" }}
-            mt={{ lg: "6" }}
             maxW="120px"
             src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
           />

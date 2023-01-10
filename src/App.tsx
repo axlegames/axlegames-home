@@ -5,6 +5,7 @@ import { Suspense, lazy } from "react";
 import { Element } from "react-scroll";
 import { theme } from "./config/theme";
 import { useEffect } from "react";
+import BG from "./assets/bg.jpg";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -71,13 +72,15 @@ export const App = () => {
           <Box
             backgroundPosition={"center"}
             backgroundSize="cotain"
-            backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_countdown_bg.png`}
+            backgroundImage={BG}
           >
             <MobileNavbar />
             <Navbar />
-            <Element name="about">
-              <Main />
-            </Element>
+            <Box>
+              <Element name="about">
+                <Main />
+              </Element>
+            </Box>
           </Box>
           <Element name="products">
             <Products />
