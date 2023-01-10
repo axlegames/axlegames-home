@@ -14,6 +14,7 @@ const Navbar = () => {
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
         <Flex alignItems={"center"}>
           <Image
+            pt={2}
             ml={{ lg: "20" }}
             maxW="120px"
             src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
