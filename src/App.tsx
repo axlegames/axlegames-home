@@ -70,11 +70,13 @@ export const App = () => {
             backgroundPosition={"center"}
             backgroundImage={BG}
           >
-            <MobileNavbar />
-            <Navbar />
-            <Element name="about">
-              <Main />
-            </Element>
+            <Box style={{ backdropFilter: "blur(4px)" }}>
+              <MobileNavbar />
+              <Navbar />
+              <Element name="about">
+                <Main />
+              </Element>
+            </Box>
           </Box>
           <Element name="products">
             <Products />
