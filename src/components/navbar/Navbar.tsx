@@ -5,7 +5,12 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <Box display={{ base: "none", lg: "block" }} minH={"10vh"}>
+    <Box
+      backdropBlur={"50px"}
+      fontFamily={`'Russo One', sans-serif`}
+      display={{ base: "none", lg: "block" }}
+      minH={"10vh"}
+    >
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
         <Flex alignItems={"center"}>
           <Image

@@ -174,7 +174,7 @@ const LaptopAndDesktopView = (props: Props) => {
             key={i}
             borderRadius="3xl"
             alignItems={"center"}
-            maxW={{ lg: "75vw" }}
+            maxW={{ lg: "80vw" }}
             minH={{ lg: "70vh" }}
             p={{ base: "8" }}
             mx="auto"
@@ -187,6 +187,8 @@ const LaptopAndDesktopView = (props: Props) => {
               flexDirection={"column"}
               rowGap="2rem"
               position={"relative"}
+              style={{ backdropFilter: "blur(4px)" }}
+              p={8}
             >
               <Box display={"flex"} flexDirection="column" rowGap={".5rem"}>
                 <Text
