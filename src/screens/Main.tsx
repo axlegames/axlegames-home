@@ -254,7 +254,7 @@ const LaptopAndDesktopView = (props: Props) => {
                   baseColor={brandingColors.bgColor}
                   highlightColor={brandingColors.fgColor}
                   style={{
-                    border: `2px solid ${brandingColors.fgColor}`,
+                    boxShadow: `0px 0px 4px ${brandingColors.fgColor}`,
                   }}
                   borderRadius={"1vh"}
                   height={"300px"}
@@ -265,7 +265,7 @@ const LaptopAndDesktopView = (props: Props) => {
                   baseColor={brandingColors.bgColor}
                   highlightColor={brandingColors.fgColor}
                   style={{
-                    border: `2px solid ${brandingColors.fgColor}`,
+                    boxShadow: `0px 0px 4px ${brandingColors.fgColor}`,
                   }}
                   height={"100%"}
                   width="100%"
