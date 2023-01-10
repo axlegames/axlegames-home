@@ -18,7 +18,7 @@ const Main = () => {
   }, []);
 
   return (
-    <Box minH={{ lg: "90vh" }} position="relative">
+    <Box>
       <Box display={{ base: "block", md: "none" }}>
         <MobileAndIpadView />
       </Box>

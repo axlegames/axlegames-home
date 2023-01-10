@@ -63,20 +63,22 @@ export const App = () => {
   return (
     <Suspense fallback={<FallBack />}>
       <ChakraProvider theme={theme}>
-        <Box bg={brandingColors.bgColor} fontWeight={"bold"}>
+        <Box
+          bg={brandingColors.bgColor}
+          minH={{ lg: "90vh" }}
+          position="relative"
+          fontWeight={"bold"}
+        >
           <Box
-            backgroundRepeat="no-repeat"
-            backgroundSize={"cover"}
             backgroundPosition={"center"}
-            backgroundImage={BG}
+            backgroundSize="cotain"
+            backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_countdown_bg.png`}
           >
-            <Box style={{ backdropFilter: "blur(4px)" }}>
-              <MobileNavbar />
-              <Navbar />
-              <Element name="about">
-                <Main />
-              </Element>
-            </Box>
+            <MobileNavbar />
+            <Navbar />
+            <Element name="about">
+              <Main />
+            </Element>
           </Box>
           <Element name="products">
             <Products />
