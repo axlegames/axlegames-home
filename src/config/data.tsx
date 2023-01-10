@@ -448,7 +448,7 @@ export const nfts = [
 
 export const team = [
   {
-    name: "Praneeth Nagu",
+    name: "Praneeth",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/praneeth.webp`,
     role: "Founder / Marketing Lead",
     linkedIn: "linkedin",
@@ -460,7 +460,7 @@ export const team = [
     linkedIn: "linkedin",
   },
   {
-    name: "Akash Madduru",
+    name: "Akash",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/akash.webp`,
     role: "Product / Dev Lead",
     linkedIn: "",
