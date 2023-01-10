@@ -42,9 +42,11 @@ const PoweredBy = (props: any) => {
         m={4}
         bg={brandingColors.bgColor}
         boxShadow={`5px 5px 13px #05192d, -5px -5px 13px #072341`}
-        p={{ base: "4" }}
+        py={{ base: "4" }}
+        px={{ base: "2" }}
         borderRadius="xl"
-        minW="216px"
+        minW="316px"
+        maxW="316px"
         display={"flex"}
         justifyContent="space-evenly"
         alignItems="center"
@@ -56,7 +58,7 @@ const PoweredBy = (props: any) => {
           src={props.profile_image_url}
         />
         <Text
-          fontSize={"2xl"}
+          fontSize={"xl"}
           color={brandingColors.secondaryTextColor}
           fontFamily={`'Russo One', sans-serif`}
         >
@@ -64,7 +66,12 @@ const PoweredBy = (props: any) => {
         </Text>
 
         {props.verified ? (
-          <Icon color={"blue.400"} as={CheckCircleIcon}></Icon>
+          <Icon
+            color={"blue.400"}
+            height="28px"
+            width={"28px"}
+            as={CheckCircleIcon}
+          ></Icon>
         ) : null}
       </Box>
     );
