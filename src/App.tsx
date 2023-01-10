@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "react-loading-skeleton/dist/skeleton.css";
-import BG from "./assets/bg.jpg";
 
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
