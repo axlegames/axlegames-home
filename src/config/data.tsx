@@ -19,7 +19,6 @@ import ProductMarketPlaceIcon from "../assets/product_icons/store.webp";
 import Telegram from "../assets/socials/telegram.webp";
 import Medium from "../assets/socials/medium.webp";
 import Twitter from "../assets/socials/twitter.webp";
-import Discord from "../assets/socials/discord.webp";
 import Instagram from "../assets/socials/instagram.webp";
 
 import WhyBlockchain from "../assets/why/blockchain.webp";
@@ -86,7 +85,7 @@ export const products = [
   },
 ];
 
-export const socials = [Telegram, Twitter, Instagram, Discord, Medium];
+export const socials = [Telegram, Twitter, Instagram, Medium];
 
 export const whysGridOne = [
   {
@@ -484,4 +483,11 @@ export const team = [
     role: "Marketing",
     linkedIn: "",
   },
+];
+
+export const links = [
+  `https://t.me/axlegames_en`,
+  `https://twitter.com/AxleGames`,
+  `https://instagram.com/axlegames`,
+  `https://medium.com/@axlegames`,
 ];

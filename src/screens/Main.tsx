@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { socials, homeSlides } from "../config/data";
+import { socials, homeSlides, links } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
@@ -38,18 +38,20 @@ const Main = () => {
         justifyContent={{ base: "center" }}
       >
         {socials.map((i, x) => (
-          <Image
-            key={i}
-            data-aos={`zoom-in`}
-            height={{ base: "12", lg: "20" }}
-            width={{ base: "12", lg: "20" }}
-            _hover={{
-              transform: "scale(1.1)",
-              transition: "all 200ms ease-in",
-              cursor: "pointer",
-            }}
-            src={i}
-          />
+          <a href={links[x]} target={"_blank"} rel="noopener noreferrer">
+            <Image
+              key={i}
+              data-aos={`zoom-in`}
+              height={{ base: "12", lg: "20" }}
+              width={{ base: "12", lg: "20" }}
+              _hover={{
+                transform: "scale(1.1)",
+                transition: "all 200ms ease-in",
+                cursor: "pointer",
+              }}
+              src={i}
+            />
+          </a>
         ))}
       </Flex>
     </Box>

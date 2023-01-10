@@ -11,7 +11,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import { socials } from "../config/data";
+import { socials, links } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
 
 import Heading from "../components/Heading";
@@ -123,18 +123,20 @@ const Footer = () => {
           justifyContent={{ base: "center" }}
         >
           {socials.map((i, x) => (
-            <Image
-              key={x}
-              data-aos={`zoom-in`}
-              height={{ base: "12", lg: "20" }}
-              width={{ base: "12", lg: "20" }}
-              _hover={{
-                transform: "scale(1.1)",
-                transition: "all 200ms ease-in",
-                cursor: "pointer",
-              }}
-              src={i}
-            />
+            <a href={links[x]} target={"_blank"} rel="noopener noreferrer">
+              <Image
+                key={x}
+                data-aos={`zoom-in`}
+                height={{ base: "12", lg: "20" }}
+                width={{ base: "12", lg: "20" }}
+                _hover={{
+                  transform: "scale(1.1)",
+                  transition: "all 200ms ease-in",
+                  cursor: "pointer",
+                }}
+                src={i}
+              />
+            </a>
           ))}
         </Flex>
       </Box>
@@ -152,7 +154,7 @@ const Footer = () => {
           />
           <Flex columnGap={"1rem"} justifyContent={"center"}>
             <NeuLink
-              label={"About"}
+              label={"Home"}
               link="about"
               onClick={() => null}
               bg={brandingColors.neuPrimaryBg}

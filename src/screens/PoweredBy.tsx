@@ -2,7 +2,7 @@ import { powerdby } from "../config/data";
 import { useEffect, useState } from "react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { brandingColors } from "../config/brandingColors";
-import { Box, Divider, Flex, Grid, Icon, Image, Text } from "@chakra-ui/react";
+import { Box, Grid, Icon, Image, Text } from "@chakra-ui/react";
 
 import Marquee from "react-fast-marquee";
 import Heading from "../components/Heading";
