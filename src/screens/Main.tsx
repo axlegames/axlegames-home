@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { socials, homeSlides } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
-// import { Player } from "@lottiefiles/react-lottie-player";
+import { Player } from "@lottiefiles/react-lottie-player";
 import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 
 import Carousel from "nuka-carousel";
@@ -280,13 +280,13 @@ const LaptopAndDesktopView = (props: Props) => {
                 width: "100%",
               }}
             >
-              {/* <Player
+              <Player
                 style={{ width: "100%" }}
                 loop
                 autoplay
                 src={m.json}
                 rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
-              /> */}
+              />
             </div>
           </Grid>
         ))}

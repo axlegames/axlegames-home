@@ -192,7 +192,7 @@ const Footer = () => {
       >
         <Text color={brandingColors.secondaryTextColor}>
           Disclaimer: Your investment may go down as well as up in value.
-          Cryptocurrency is not regulated in the UK.
+          Cryptocurrency is not regulated in the Singapore.
         </Text>
         <Text pb={{ base: "4" }} color={brandingColors.secondaryTextColor}>
           Copyright 2022 © Axle Games
