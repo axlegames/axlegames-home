@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import NFTs from "./screens/NFTs";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
@@ -20,6 +20,7 @@ const Tokenomics = lazy(() => import("./screens/Tokenomics"));
 const RoadMap = lazy(() => import("./screens/RoadMap"));
 const Team = lazy(() => import("./screens/Team"));
 const PoweredBy = lazy(() => import("./screens/PoweredBy"));
+const NFTs = lazy(() => import("./screens/NFTs"));
 const Footer = lazy(() => import("./screens/Footer"));
 
 export const App = () => {

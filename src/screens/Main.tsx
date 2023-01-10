@@ -7,6 +7,8 @@ import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 import Carousel from "nuka-carousel";
 import NeuButton from "../components/NeuButton";
 
+import Skeleton from "react-loading-skeleton";
+
 const Main = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
@@ -248,9 +250,27 @@ const LaptopAndDesktopView = (props: Props) => {
             </Box>
             {props.show ? null : (
               <Box width={"100%"}>
-                <div className="skeleton_wrapper">
-                  <div className="skeleton_img"></div>
-                </div>
+                <Skeleton
+                  baseColor={brandingColors.bgColor}
+                  highlightColor={brandingColors.fgColor}
+                  style={{
+                    border: `2px solid ${brandingColors.fgColor}`,
+                  }}
+                  borderRadius={"1vh"}
+                  height={"300px"}
+                  width="100%"
+                  count={1}
+                ></Skeleton>
+                <Skeleton
+                  baseColor={brandingColors.bgColor}
+                  highlightColor={brandingColors.fgColor}
+                  style={{
+                    border: `2px solid ${brandingColors.fgColor}`,
+                  }}
+                  height={"100%"}
+                  width="100%"
+                  count={3}
+                ></Skeleton>
               </Box>
             )}
 

@@ -2,7 +2,6 @@ import { nfts } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
 import { Box, Grid, Text } from "@chakra-ui/react";
 
-import Tilt from "react-parallax-tilt";
 import Heading from "../components/Heading";
 
 interface Props {
@@ -22,17 +21,16 @@ const NFT = (props: Props) => {
         alignItems="center"
         display="flex"
         flexDirection="column"
+        zIndex={300}
       >
-        <Tilt>
-          <video
-            muted
-            loop
-            src={props.img}
-            width="320"
-            autoPlay
-            height="240"
-          ></video>
-        </Tilt>
+        <video
+          muted
+          loop
+          src={props.img}
+          width="320"
+          autoPlay
+          height="240"
+        ></video>
         <Box
           py={3}
           borderBottomRadius="xl"
