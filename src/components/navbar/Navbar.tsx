@@ -21,7 +21,7 @@ const Navbar = () => {
         </Flex>
         <Flex columnGap={"1rem"} justifyContent={"center"}>
           <NeuLink
-            label={"About"}
+            label={"Home"}
             link="about"
             onClick={() => null}
             bg={brandingColors.neuPrimaryBg}

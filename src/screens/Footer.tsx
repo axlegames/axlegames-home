@@ -8,6 +8,7 @@ import {
   Input,
   Text,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 
 import { socials } from "../config/data";
@@ -17,6 +18,18 @@ import Heading from "../components/Heading";
 import NeuLink from "../components/NeuLink";
 
 const Footer = () => {
+  const toast = useToast();
+  function submit() {
+    return toast({
+      title: "Thank you!",
+      description: "Your message has been recoreded.",
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  }
+
   return (
     <Flex
       bg={brandingColors.bgColor}
@@ -84,9 +97,9 @@ const Footer = () => {
             />
           </FormControl>
         </Grid>
-        <a className="btn" href="login.html">
+        <div onClick={submit} className="btn">
           Submit
-        </a>
+        </div>
       </Box>
 
       <Box
@@ -100,7 +113,6 @@ const Footer = () => {
           fontSize={"3xl"}
           textAlign={"center"}
         >
-          {" "}
           Visit us on our social channels!
         </Text>
         <Flex

@@ -48,13 +48,17 @@ const PoweredBy = (props: any) => {
         minW="316px"
         maxW="316px"
         display={"flex"}
-        justifyContent="space-evenly"
+        justifyContent="center"
         alignItems="center"
         columnGap={"1rem"}
       >
         <Image
           borderRadius={"10vh"}
-          width={"60px"}
+          width={"50px"}
+          boxShadow={`0px 2px 2px ${brandingColors.newHighlightColor}`}
+          maxW="260px"
+          borderTopRadius={`0px 0px 4px ${brandingColors.newHighlightColor}`}
+          border={`3px solid ${brandingColors.newHighlightColor}`}
           src={props.profile_image_url}
         />
         <Text
