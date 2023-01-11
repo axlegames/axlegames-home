@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
-  "homepage": "https://axlegames.io",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.13",
     "@chakra-ui/react": "^2.4.3",
