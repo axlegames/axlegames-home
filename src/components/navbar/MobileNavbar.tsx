@@ -23,7 +23,6 @@ const MobileNavbar = () => {
       height={open ? "100vh" : "100%"}
       display={{ base: "flex", lg: "none" }}
       flexDirection="column"
-      boxShadow={`0px 2px 3px ${brandingColors.bgColor}`}
     >
       <Box
         display={"flex"}
@@ -36,7 +35,6 @@ const MobileNavbar = () => {
         py={{ base: "4" }}
         alignItems={"center"}
         position="relative"
-        bg={brandingColors.bgColor}
       >
         <Flex alignItems={"center"} columnGap=".5rem">
           <Image

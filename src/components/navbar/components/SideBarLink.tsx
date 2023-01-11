@@ -16,7 +16,7 @@ const SideBarLink = (props: any) => {
           textAlign={"left"}
           boxShadow={normalEffect}
           width={"100%"}
-          bg={brandingColors.primaryButtonColor}
+          bg={brandingColors.newHighlightColor}
           size={{ base: "sm", md: "md", lg: "lg" }}
           color={brandingColors.secondaryTextColor}
           onClick={() => props.onClick()}
