@@ -6,7 +6,6 @@ import { team } from "../config/data";
 
 import LinkedIn from "../assets/socials/linkedin.webp";
 import Email from "../assets/socials/email.webp";
-import { Link } from "react-scroll";
 
 const Team = () => {
   const bottomAligner = (index: number) => {
