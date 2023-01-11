@@ -67,7 +67,7 @@ const Team = () => {
                       href={t.linkedIn}
                     >
                       <Image
-                        width={"20"}
+                        width={"12"}
                         _hover={{
                           transform: "scale(1.2)",
                           transition: "all 200ms ease-in",
@@ -82,7 +82,7 @@ const Team = () => {
                       href={`mailto:${t.email}`}
                     >
                       <Image
-                        width={"20"}
+                        width={"12"}
                         _hover={{
                           transform: "scale(1.2)",
                           transition: "all 200ms ease-in",
