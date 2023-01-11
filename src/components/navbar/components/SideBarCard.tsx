@@ -5,7 +5,7 @@ const SideBarCard = (props: any) => {
   const [isMobile] = useMediaQuery("(max-width: 900px)");
   return (
     <Flex
-      bg={brandingColors.newHighlightColor}
+      bg={brandingColors.bgColor}
       p={"8"}
       borderRadius="2xl"
       direction={"column"}
