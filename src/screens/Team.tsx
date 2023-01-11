@@ -4,6 +4,10 @@ import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 import { team } from "../config/data";
 
+import LinkedIn from "../assets/socials/linkedin.webp";
+import Email from "../assets/socials/email.webp";
+import { Link } from "react-scroll";
+
 const Team = () => {
   const bottomAligner = (index: number) => {
     if (index === 0) return "flex-end";
@@ -56,6 +60,40 @@ const Team = () => {
                 borderTopRadius="xl"
                 p={8}
               >
+                <Box>
+                  <Flex my={4} p={2} borderRadius="xl">
+                    <a
+                      target={"_blank"}
+                      rel="noopener noreferrer"
+                      href={t.linkedIn}
+                    >
+                      <Image
+                        width={"20"}
+                        _hover={{
+                          transform: "scale(1.2)",
+                          transition: "all 200ms ease-in",
+                          cursor: "pointer",
+                        }}
+                        src={LinkedIn}
+                      />
+                    </a>
+                    <a
+                      target={"_blank"}
+                      rel="noopener noreferrer"
+                      href={`mailto:${t.email}`}
+                    >
+                      <Image
+                        width={"20"}
+                        _hover={{
+                          transform: "scale(1.2)",
+                          transition: "all 200ms ease-in",
+                          cursor: "pointer",
+                        }}
+                        src={Email}
+                      />
+                    </a>
+                  </Flex>
+                </Box>
                 <Box>
                   <Tilt>
                     <Image

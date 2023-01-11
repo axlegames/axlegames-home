@@ -2,6 +2,7 @@ import { Box, Flex, Grid, Image } from "@chakra-ui/react";
 import { brandingColors } from "../../config/brandingColors";
 import NeuLink from "../NeuLink";
 import "./Navbar.css";
+import NeuPageLink from "./NeuPageLink";
 
 const Navbar = () => {
   return (
@@ -28,6 +29,7 @@ const Navbar = () => {
             bg={brandingColors.neuPrimaryBg}
             shadow={brandingColors.newPrimaryShadow}
           />
+          <NeuPageLink label="About" link="/about" />
           <NeuLink
             link="products"
             label={"Products"}

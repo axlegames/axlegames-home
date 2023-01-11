@@ -16,6 +16,7 @@ import { brandingColors } from "../config/brandingColors";
 
 import Heading from "../components/Heading";
 import NeuLink from "../components/NeuLink";
+import NeuPageLink from "../components/navbar/NeuPageLink";
 
 const Footer = () => {
   const toast = useToast();
@@ -159,6 +160,8 @@ const Footer = () => {
               bg={brandingColors.neuPrimaryBg}
               shadow={brandingColors.newPrimaryShadow}
             />
+
+            <NeuPageLink link="/about" label="About" />
             <NeuLink
               link="products"
               label={"Products"}

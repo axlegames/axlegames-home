@@ -86,7 +86,7 @@ const MobileNavbar = () => {
             <SideBarButton
               link="about"
               onClick={() => toggle()}
-              title={"About"}
+              title={"Home"}
               icon={<SunIcon />}
             />
             <SideBarButton
