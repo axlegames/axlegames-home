@@ -18,7 +18,7 @@ const Main = () => {
   }, []);
 
   return (
-    <Box>
+    <Box boxShadow={`inset 0px -50px 30px ${brandingColors.bgColor}`}>
       <Box display={{ base: "block", md: "none" }}>
         <MobileAndIpadView />
       </Box>
@@ -32,20 +32,20 @@ const Main = () => {
         alignItems={"center"}
         flexDirection={{ base: "row" }}
         justifyContent={{ base: "center" }}
+        pb={24}
       >
         {socials.map((i, x) => (
           <a href={links[x]} target={"_blank"} rel="noopener noreferrer">
             <Image
               key={i}
-              data-aos={`zoom-in`}
-              height={{ base: "12", lg: "20" }}
-              width={{ base: "12", lg: "20" }}
+              height={{ base: "12", lg: "24" }}
+              width={{ base: "12", lg: "24" }}
+              src={i}
               _hover={{
-                transform: "scale(1.1)",
+                transform: "scale(1.2)",
                 transition: "all 200ms ease-in",
                 cursor: "pointer",
               }}
-              src={i}
             />
           </a>
         ))}

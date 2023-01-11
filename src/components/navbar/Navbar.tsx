@@ -16,7 +16,7 @@ const Navbar = () => {
           <Image
             pt={2}
             ml={{ lg: "20" }}
-            maxW="120px"
+            maxW="140px"
             src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
           />
         </Flex>

@@ -74,7 +74,7 @@ export const App = () => {
             backgroundSize="cotain"
             backgroundImage={BG}
           >
-            <Box style={{ backdropFilter: "blur(8px)" }}>
+            <Box style={{ backdropFilter: "blur(11px)" }}>
               <MobileNavbar />
               <Navbar />
               <Box>

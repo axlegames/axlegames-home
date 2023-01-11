@@ -18,7 +18,7 @@ interface Props {
 
 const Products = () => {
   return (
-    <Box py={{ base: "12" }}>
+    <Box bg={brandingColors.bgColor} py={{ base: "12" }}>
       <Heading title="Products" />
       <Box
         flexDirection={"column"}

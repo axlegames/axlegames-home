@@ -126,15 +126,14 @@ const Footer = () => {
             <a href={links[x]} target={"_blank"} rel="noopener noreferrer">
               <Image
                 key={x}
-                data-aos={`zoom-in`}
                 height={{ base: "12", lg: "20" }}
                 width={{ base: "12", lg: "20" }}
+                src={i}
                 _hover={{
-                  transform: "scale(1.1)",
+                  transform: "scale(1.2)",
                   transition: "all 200ms ease-in",
                   cursor: "pointer",
                 }}
-                src={i}
               />
             </a>
           ))}
