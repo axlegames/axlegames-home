@@ -20,7 +20,7 @@ const About = () => {
         columnGap={"8rem"}
         p={12}
         rowGap="8rem"
-        width={"75%"}
+        width={"85%"}
         mx="auto"
       >
         <Box
