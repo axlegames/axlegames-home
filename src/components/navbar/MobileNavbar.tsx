@@ -21,7 +21,6 @@ const MobileNavbar = () => {
       zIndex={500}
       width={"100%"}
       height={open ? "100vh" : "100%"}
-      bg={brandingColors.bgColor}
       display={{ base: "flex", lg: "none" }}
       flexDirection="column"
       boxShadow={`0px 2px 3px ${brandingColors.bgColor}`}
