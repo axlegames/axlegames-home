@@ -60,7 +60,14 @@ const Navbar = () => {
           />
         </Flex>
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
-          <div className="btn">Buy $AXLE</div>
+          <a
+            className="btn"
+            href={`https://sale.axlegames.io`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            BUY $AXLE
+          </a>
         </Flex>
       </Grid>
     </Box>

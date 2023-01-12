@@ -35,7 +35,7 @@ export const products = [
     text: "A skill based web3 gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
     image: ProductGameIcon,
     mainImg: ProductGameImg,
-    function: () => (window.location.href = "https://play.axlegames.io"),
+    function: () => window.open("https://play.axlegames.io", "_blank"),
   },
   {
     isLive: true,
@@ -44,8 +44,9 @@ export const products = [
     text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the Axle platform and will receive $AXLE token rewards with attractive APYs.",
     image: ProductStakingIcon,
     mainImg: ProductStakingImg,
-    function: () => null,
+    function: () => window.open("https://sale.axlegames.io", "_blank"),
   },
+
   {
     isLive: true,
     subTitle: "Axle Swap",
@@ -53,7 +54,7 @@ export const products = [
     text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
     image: ProductSwapIcon,
     mainImg: ProductSwapImg,
-    function: () => null,
+    function: () => window.open("https://sale.axlegames.io", "_blank"),
   },
   {
     isLive: false,

@@ -119,13 +119,17 @@ const MobileAndIpadView = () => {
               <Flex columnGap={"1rem"}>
                 <NeuButton
                   label={"GO TO APP"}
-                  onClick={() => {}}
+                  onClick={() =>
+                    window.open("https://play.axlegames.io", "_blank")
+                  }
                   bg={brandingColors.neuPrimaryBg}
                   shadow={brandingColors.newPrimaryShadow}
                 />
                 <NeuButton
                   label={"BUY $AXLE"}
-                  onClick={() => {}}
+                  onClick={() =>
+                    window.open("https://sale.axlegames.io", "_blank")
+                  }
                   bg={brandingColors.neuPrimaryBg}
                   shadow={brandingColors.newPrimaryShadow}
                 />
@@ -244,7 +248,14 @@ const LaptopAndDesktopView = (props: Props) => {
                   >
                     GO TO APP
                   </a>
-                  <div className="btn-secondary">BUY $AXLE</div>
+                  <a
+                    href={`https://sale.axlegames.io`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary"
+                  >
+                    BUY $AXLE
+                  </a>
                 </Flex>
               </Box>
             </Box>
