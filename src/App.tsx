@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { brandingColors } from "./config/brandingColors";
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import { Triangle } from "react-loader-spinner";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Element } from "react-scroll";
 import { theme } from "./config/theme";
 import { useEffect } from "react";
@@ -12,6 +12,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import About from "./screens/About";
+import Banner from "./components/Banner";
 
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
@@ -111,9 +112,12 @@ export const App = () => {
     );
   };
 
+  const [banner, setBanner] = useState(true);
+
   return (
     <Suspense fallback={<FallBack />}>
       <ChakraProvider theme={theme}>
+        <Banner close={() => setBanner(false)} isOpen={banner} size="xl" />
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
