@@ -436,7 +436,7 @@ export const nfts = [
   },
   {
     title: "Poseidon",
-    text: "Spear NFT",
+    text: "Trident NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/poseidon.mp4`,
   },
   {
