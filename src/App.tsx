@@ -14,6 +14,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import About from "./screens/About";
 import Banner from "./components/Banner";
 import Giveaway from "./screens/Giveaway";
+import TSupply from "./screens/Tsupply";
 
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
@@ -124,6 +125,7 @@ export const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/giveaway" element={<Giveaway />} />
+            <Route path="/tsupply" element={<TSupply />} />
           </Routes>
         </Router>
       </ChakraProvider>
