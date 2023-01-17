@@ -13,6 +13,7 @@ import "aos/dist/aos.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import About from "./screens/About";
 import Banner from "./components/Banner";
+import Giveaway from "./screens/Giveaway";
 
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
@@ -122,6 +123,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/giveaway" element={<Giveaway />} />
           </Routes>
         </Router>
       </ChakraProvider>
