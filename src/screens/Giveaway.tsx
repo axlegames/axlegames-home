@@ -393,7 +393,7 @@ const Join = (props: any) => {
           placeholder="Wallet Address"
         />
 
-        <div style={{ widows: "100%" }} className="btn">
+        <div style={{ width: "100%" }} className="btn">
           Submit
         </div>
       </Box>
