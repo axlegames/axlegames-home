@@ -48,19 +48,21 @@ const Giveaway = () => {
           Exclusive $5,000 Giveaway!
         </Text>
         <Box
-          borderRadius={"lg"}
           width={"100%"}
           justifyContent="space-evenly"
           alignItems={"center"}
           bg={brandingColors.fgColor}
           display={"flex"}
           fontFamily={`'Russo One', sans-serif`}
-          fontSize={{ base: "xl", md: "2xl", lg: "2xl", xl: "3xl" }}
+          fontSize={{ base: "3xl" }}
+          border={`3px solid ${brandingColors.primaryButtonColor}`}
         >
           <Box
-            onClick={() => setToggle(!toggle)}
+            onClick={() => setToggle(false)}
             cursor={"pointer"}
             width={"100%"}
+            boxShadow={"md"}
+            transition={`200ms all ease-in`}
             bg={
               !toggle ? brandingColors.primaryTextColor : brandingColors.fgColor
             }
@@ -71,9 +73,11 @@ const Giveaway = () => {
             Join
           </Box>
           <Box
-            onClick={() => setToggle(!toggle)}
+            onClick={() => setToggle(true)}
+            boxShadow={"md"}
             cursor={"pointer"}
             width={"100%"}
+            transition={`200ms all ease-in`}
             bg={
               toggle ? brandingColors.primaryTextColor : brandingColors.fgColor
             }
@@ -85,7 +89,7 @@ const Giveaway = () => {
           </Box>
         </Box>
 
-        {!toggle ? <Join /> : <Check />}
+        {!toggle ? <Join toggle={toggle} /> : <Check />}
         <Box
           flexDirection={"column"}
           display={"flex"}
@@ -199,24 +203,17 @@ const FormInput = (input: form) => {
 const Check = () => {
   return (
     <Box width={"100%"}>
-      <Text
-        fontFamily={`'Russo One', sans-serif`}
-        color={brandingColors.primaryTextColor}
-        fontSize={{ base: "lg", md: "3xl" }}
-      >
-        Please Enter the wallet address
-      </Text>
-
       <Box
         display={"flex"}
-        justifyContent="center"
-        alignItems={"center"}
         rowGap="1rem"
         flexDirection={"column"}
         width={{ base: "100%", sm: "95%", md: "85%", lg: "65%", xl: "55%" }}
         margin="auto"
         px={4}
       >
+        <Text textAlign={"left"} color={brandingColors.primaryTextColor}>
+          Please Enter the wallet address
+        </Text>
         <FormInput
           label="Wallet Address"
           onChange={() => {}}
@@ -224,10 +221,10 @@ const Check = () => {
         />
 
         <NeuButton
-          bg={brandingColors.bgColor}
+          bg={brandingColors.newHighlightColor}
           label="Check"
           onClick={() => {}}
-          shadow={brandingColors.fgColor}
+          shadow={brandingColors.bgColor}
           width="100%"
         />
       </Box>
@@ -235,7 +232,7 @@ const Check = () => {
   );
 };
 
-const Join = () => {
+const Join = (props: any) => {
   return (
     <Box
       display={"flex"}
@@ -243,8 +240,9 @@ const Join = () => {
       alignItems={"center"}
       flexDirection="column"
       rowGap={"1rem"}
+      transition={`200ms all ease-in`}
     >
-      <Image px={8} borderRadius={"xl"} width={"520px"} src={Ban} />
+      <Image px={8} borderRadius={"xl"} maxW={"420px"} src={Ban} />
       <Box
         display={"flex"}
         justifyContent="center"
@@ -257,6 +255,7 @@ const Join = () => {
         <Text
           fontSize={{ base: "sm", sm: "md", md: "xl" }}
           color={brandingColors.secondaryTextColor}
+          fontWeight="bold"
         >
           To celebrate the 1000+ BNB contributed in 2 Rounds of Presale, we're
           holding a giveaway! One lucky winner will be chosen in 10 Days. The
@@ -276,7 +275,7 @@ const Join = () => {
           color={brandingColors.secondaryTextColor}
           rowGap={"2rem"}
           textAlign={"left"}
-          fontFamily={`'Russo One', sans-serif`}
+          fontWeight="bold"
         >
           <Box>
             <Text fontSize={{ base: "sm", sm: "lg", md: "xl" }}>
@@ -292,9 +291,8 @@ const Join = () => {
                   cursor={"pointer"}
                   justifyContent={"center"}
                   alignItems="center"
-                  columnGap={".25rem"}
                 >
-                  <Image width={"12"} src={Twitter} />
+                  <Image width={"16"} src={Twitter} />
                   <Text>Twitter</Text>
                 </Flex>
 
@@ -302,18 +300,16 @@ const Join = () => {
                   cursor={"pointer"}
                   justifyContent={"center"}
                   alignItems="center"
-                  columnGap={".25rem"}
                 >
-                  <Image width={"12"} src={Telegram} />
+                  <Image width={"16"} src={Telegram} />
                   <Text>Telegram</Text>
                 </Flex>
                 <Flex
                   cursor={"pointer"}
                   justifyContent={"center"}
                   alignItems="center"
-                  columnGap={".25rem"}
                 >
-                  <Image width={"12"} src={Youtube} />
+                  <Image width={"16"} src={Youtube} />
                   <Text>Youtube</Text>
                 </Flex>
               </Flex>
@@ -338,7 +334,7 @@ const Join = () => {
                 alignItems="center"
                 columnGap={".25rem"}
               >
-                <Image width={"12"} src={Link} />
+                <Image width={"6"} src={Link} />
                 <Text>Twitter Link 1</Text>
               </Flex>
 
@@ -348,7 +344,7 @@ const Join = () => {
                 alignItems="center"
                 columnGap={".25rem"}
               >
-                <Image width={"12"} src={Link} />
+                <Image width={"6"} src={Link} />
                 <Text>Twitter Link 2</Text>
               </Flex>
             </Flex>
@@ -388,10 +384,10 @@ const Join = () => {
         />
 
         <NeuButton
-          bg={brandingColors.bgColor}
+          bg={brandingColors.newHighlightColor}
           label="Submit"
           onClick={() => {}}
-          shadow={brandingColors.fgColor}
+          shadow={brandingColors.bgColor}
           width="100%"
         />
       </Box>
