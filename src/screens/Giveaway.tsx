@@ -8,15 +8,16 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
-import Ban from "../components/banner.jpg";
 import NeuButton from "../components/NeuButton";
 import "../components/navbar/Navbar.css";
+import Ban from "../assets/banner.png";
 
 import Twitter from "../assets/socials/twitter.svg";
 import Telegram from "../assets/socials/telegram.svg";
 import Youtube from "../assets/socials/youtube.svg";
 import Link from "../assets/socials/link.svg";
 import { useState } from "react";
+import { socials } from "../config/data";
 
 const Giveaway = () => {
   const [toggle, setToggle] = useState(false);
@@ -51,11 +52,14 @@ const Giveaway = () => {
           width={"100%"}
           justifyContent="space-evenly"
           alignItems={"center"}
-          bg={brandingColors.fgColor}
+          bg={brandingColors.bgColor}
           display={"flex"}
-          fontFamily={`'Russo One', sans-serif`}
           fontSize={{ base: "3xl" }}
-          border={`3px solid ${brandingColors.primaryButtonColor}`}
+          fontWeight="bold"
+          border={`3px solid ${brandingColors.bgColor}`}
+          borderRadius="lg"
+          p={2}
+          columnGap=".5rem"
         >
           <Box
             onClick={() => setToggle(false)}
@@ -63,6 +67,7 @@ const Giveaway = () => {
             width={"100%"}
             boxShadow={"md"}
             transition={`200ms all ease-in`}
+            borderRadius="md"
             bg={
               !toggle ? brandingColors.primaryTextColor : brandingColors.fgColor
             }
@@ -74,6 +79,7 @@ const Giveaway = () => {
           </Box>
           <Box
             onClick={() => setToggle(true)}
+            borderRadius="md"
             boxShadow={"md"}
             cursor={"pointer"}
             width={"100%"}
@@ -102,8 +108,8 @@ const Giveaway = () => {
         >
           <Text color={brandingColors.successColor}>
             Note: We will manually check each wallet and social account, if you
-            unfollow MetaGold Verse social accounts before the giveaway date,
-            your wallet will be excluded and not be eligible for the giveaway.
+            unfollow AxleGames social accounts before the giveaway date, your
+            wallet will be excluded and not be eligible for the giveaway.
           </Text>
           <Text color={brandingColors.dangerColor}>
             Warning: Never share your Seed Phrase / Private Key with anyone. We
@@ -138,7 +144,7 @@ const Giveaway = () => {
           fontSize={"xl"}
           color={brandingColors.secondaryTextColor}
         >
-          Silicon Valley, California, USA
+          Singapore
         </Text>
       </Box>
       <Box
@@ -220,13 +226,7 @@ const Check = () => {
           placeholder="Wallet Address"
         />
 
-        <NeuButton
-          bg={brandingColors.newHighlightColor}
-          label="Check"
-          onClick={() => {}}
-          shadow={brandingColors.bgColor}
-          width="100%"
-        />
+        <div className="btn">Submit</div>
       </Box>
     </Box>
   );
@@ -242,7 +242,7 @@ const Join = (props: any) => {
       rowGap={"1rem"}
       transition={`200ms all ease-in`}
     >
-      <Image px={8} borderRadius={"xl"} maxW={"420px"} src={Ban} />
+      <Image px={8} maxW={"720px"} borderRadius="xl" src={Ban} />
       <Box
         display={"flex"}
         justifyContent="center"
@@ -253,21 +253,11 @@ const Join = (props: any) => {
         px={8}
       >
         <Text
-          fontSize={{ base: "sm", sm: "md", md: "xl" }}
-          color={brandingColors.secondaryTextColor}
-          fontWeight="bold"
-        >
-          To celebrate the 1000+ BNB contributed in 2 Rounds of Presale, we're
-          holding a giveaway! One lucky winner will be chosen in 10 Days. The
-          winner will be announced on 24th January at 13:00 UTC
-        </Text>
-
-        <Text
           fontFamily={`'Russo One', sans-serif`}
           color={brandingColors.primaryTextColor}
           fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
         >
-          Rules for the $5K BNB Giveaway*:
+          Rules for the $5K AXLE Giveaway*:
         </Text>
         <Box
           display={"flex"}
@@ -279,7 +269,7 @@ const Join = (props: any) => {
         >
           <Box>
             <Text fontSize={{ base: "sm", sm: "lg", md: "xl" }}>
-              1. Follow MetaGold Verse Official Social Accounts:
+              1. Follow AxleGames Official Social Accounts:
             </Text>
             <Box>
               <Flex
@@ -287,31 +277,50 @@ const Join = (props: any) => {
                 justifyContent={"space-between"}
                 alignItems="center"
               >
-                <Flex
-                  cursor={"pointer"}
-                  justifyContent={"center"}
-                  alignItems="center"
+                <a
+                  target={"_blank"}
+                  rel="noopener noreferrer"
+                  href="https://t.me/axlegames_en"
                 >
-                  <Image width={"16"} src={Twitter} />
-                  <Text>Twitter</Text>
-                </Flex>
+                  <Flex
+                    cursor={"pointer"}
+                    justifyContent={"center"}
+                    alignItems="center"
+                    onClick={() => {}}
+                  >
+                    <Image width={"16"} src={Telegram} />
+                    <Text>Telegram Group</Text>
+                  </Flex>
+                </a>
+                <a
+                  target={"_blank"}
+                  rel="noopener noreferrer"
+                  href="https://twitter.com/AxleGames"
+                >
+                  <Flex
+                    cursor={"pointer"}
+                    justifyContent={"center"}
+                    alignItems="center"
+                  >
+                    <Image width={"16"} src={Twitter} />
+                    <Text>Twitter</Text>
+                  </Flex>
+                </a>
 
-                <Flex
-                  cursor={"pointer"}
-                  justifyContent={"center"}
-                  alignItems="center"
+                <a
+                  target={"_blank"}
+                  rel="noopener noreferrer"
+                  href="https://t.me/axlegames"
                 >
-                  <Image width={"16"} src={Telegram} />
-                  <Text>Telegram</Text>
-                </Flex>
-                <Flex
-                  cursor={"pointer"}
-                  justifyContent={"center"}
-                  alignItems="center"
-                >
-                  <Image width={"16"} src={Youtube} />
-                  <Text>Youtube</Text>
-                </Flex>
+                  <Flex
+                    cursor={"pointer"}
+                    justifyContent={"center"}
+                    alignItems="center"
+                  >
+                    <Image width={"16"} src={Telegram} />
+                    <Text>Telegram Announcements</Text>
+                  </Flex>
+                </a>
               </Flex>
             </Box>
           </Box>
@@ -319,12 +328,13 @@ const Join = (props: any) => {
             display={"flex"}
             justifyContent="space-between"
             flexDirection={"column"}
+            rowGap="1rem"
           >
             <Text fontSize={{ base: "sm", sm: "lg", md: "xl" }}>
               2. Like + Retweet + Tag 3 Friends
             </Text>
             <Flex
-              justifyContent={"space-between"}
+              justifyContent={"space-evenly"}
               alignItems="center"
               fontSize={{ base: "sm", sm: "md", md: "lg" }}
             >
@@ -383,13 +393,9 @@ const Join = (props: any) => {
           placeholder="Wallet Address"
         />
 
-        <NeuButton
-          bg={brandingColors.newHighlightColor}
-          label="Submit"
-          onClick={() => {}}
-          shadow={brandingColors.bgColor}
-          width="100%"
-        />
+        <div style={{ widows: "100%" }} className="btn">
+          Submit
+        </div>
       </Box>
     </Box>
   );
