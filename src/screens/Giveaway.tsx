@@ -429,7 +429,7 @@ const Join = (props: FormInterface) => {
           color={brandingColors.primaryTextColor}
           fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
         >
-          Rules for the $5000 AXLE Giveaway:
+          Rules for the $5000 AXLE Giveaway
         </Text>
         <Box
           display={"flex"}
@@ -441,7 +441,7 @@ const Join = (props: FormInterface) => {
         >
           <Box>
             <Text fontSize={{ base: "sm", sm: "lg", md: "xl" }}>
-              1. Follow AxleGames Official Social Accounts:
+              1. Follow AxleGames Official Social Account
             </Text>
             <Box>
               <Flex
