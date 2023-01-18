@@ -530,7 +530,7 @@ const Join = (props: FormInterface) => {
                   <Text>Twitter Link 1</Text>
                 </Flex>
               </a>
-
+              {/* 
               <a
                 target={"_blank"}
                 href={`https://twitter.com/AxleGames/status/1615598654936731648?s=20&t=r1wrUQRxUurhV3QliyTknw`}
@@ -545,7 +545,7 @@ const Join = (props: FormInterface) => {
                   <Image width={"6"} src={Link} />
                   <Text>Twitter Link 2</Text>
                 </Flex>
-              </a>
+              </a> */}
             </Flex>
           </Box>
 
