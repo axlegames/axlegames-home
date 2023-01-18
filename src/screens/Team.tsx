@@ -61,21 +61,23 @@ const Team = () => {
               >
                 <Box>
                   <Flex my={4} p={2} borderRadius="xl">
-                    <a
-                      target={"_blank"}
-                      rel="noopener noreferrer"
-                      href={t.linkedIn}
-                    >
-                      <Image
-                        width={"12"}
-                        _hover={{
-                          transform: "scale(1.2)",
-                          transition: "all 200ms ease-in",
-                          cursor: "pointer",
-                        }}
-                        src={LinkedIn}
-                      />
-                    </a>
+                    {i < 3 ? (
+                      <a
+                        target={"_blank"}
+                        rel="noopener noreferrer"
+                        href={t.linkedIn}
+                      >
+                        <Image
+                          width={"12"}
+                          _hover={{
+                            transform: "scale(1.2)",
+                            transition: "all 200ms ease-in",
+                            cursor: "pointer",
+                          }}
+                          src={LinkedIn}
+                        />
+                      </a>
+                    ) : null}
                     <a
                       target={"_blank"}
                       rel="noopener noreferrer"
