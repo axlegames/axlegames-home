@@ -26,9 +26,34 @@ const Giveaway = () => {
     twitter: "",
     wallet: "",
   });
+  const [walletForm, setWalletForm] = useState("");
 
   const toast = useToast();
   const path = useLocation();
+
+  const onWalletFormChange = (e: any) => {
+    setWalletForm(e.target.value);
+  };
+
+  const onWalletFormSubmit = () => {
+    if (walletForm === "")
+      return toast({
+        title: "Warning",
+        description: "wallet address required",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    return toast({
+      title: "Info",
+      description: `Results will be announced soon`,
+      status: "info",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  };
 
   const onTelegramChange = (e: any) => {
     setForm({
@@ -55,9 +80,7 @@ const Giveaway = () => {
   };
 
   const registerUser = () => {
-    console.log(form);
     const giveaway = path.pathname.replace("/giveaway/", "");
-    console.log(giveaway);
     if (form.telegram === "")
       return toast({
         title: "Warning",
@@ -222,7 +245,11 @@ const Giveaway = () => {
             toggle={toggle}
           />
         ) : (
-          <Check />
+          <Check
+            submit={onWalletFormSubmit}
+            wallet={walletForm}
+            onChange={onWalletFormChange}
+          />
         )}
         <Box
           flexDirection={"column"}
@@ -329,7 +356,13 @@ const FormInput = (input: form) => {
   );
 };
 
-const Check = () => {
+interface CheckProps {
+  wallet: string;
+  onChange: Function;
+  submit: Function;
+}
+
+const Check = (props: CheckProps) => {
   return (
     <Box width={"100%"}>
       <Box
@@ -344,13 +377,15 @@ const Check = () => {
           Please Enter the wallet address
         </Text>
         <FormInput
-          value=""
+          value={props.wallet}
           label="Wallet Address"
-          onChange={() => {}}
+          onChange={props.onChange}
           placeholder="Wallet Address"
         />
 
-        <div className="btn">Submit</div>
+        <div onClick={() => props.submit()} className="btn">
+          Submit
+        </div>
       </Box>
     </Box>
   );
@@ -394,7 +429,7 @@ const Join = (props: FormInterface) => {
           color={brandingColors.primaryTextColor}
           fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
         >
-          Rules for the $5K AXLE Giveaway*:
+          Rules for the $5000 AXLE Giveaway:
         </Text>
         <Box
           display={"flex"}
