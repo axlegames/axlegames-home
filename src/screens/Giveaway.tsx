@@ -17,7 +17,7 @@ import Telegram from "../assets/socials/telegram.svg";
 import Link from "../assets/socials/link.svg";
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router";
+import { useLocation } from "react-router";
 
 const Giveaway = () => {
   const [toggle, setToggle] = useState(false);
@@ -28,7 +28,7 @@ const Giveaway = () => {
   });
 
   const toast = useToast();
-  const params = useParams();
+  const path = useLocation();
 
   const onTelegramChange = (e: any) => {
     setForm({
@@ -56,6 +56,8 @@ const Giveaway = () => {
 
   const registerUser = () => {
     console.log(form);
+    const giveaway = path.pathname.replace("/giveaway/", "");
+    console.log(giveaway);
     if (form.telegram === "")
       return toast({
         title: "Warning",
@@ -87,7 +89,7 @@ const Giveaway = () => {
     axios
       .post("https://api.axlegames.io/axlegames/api/v1/users/giveaway", {
         ...form,
-        type: params.type,
+        type: giveaway,
       })
       .then((res) => {
         console.log(res);
@@ -149,6 +151,15 @@ const Giveaway = () => {
           mt={8}
         >
           Exclusive $5,000 Giveaway!
+        </Text>
+
+        <Text
+          fontFamily={`'Russo One', sans-serif`}
+          fontSize={"xl"}
+          fontWeight={"bold"}
+          color={brandingColors.primaryTwoTextColor}
+        >
+          Winners will be announced by January 31, 2023
         </Text>
         <Box
           width={"100%"}
@@ -227,13 +238,6 @@ const Giveaway = () => {
             Note: We will manually check each wallet and social account, if you
             unfollow AxleGames social accounts before the giveaway date, your
             wallet will be excluded and not be eligible for the giveaway.
-          </Text>
-          <Text color={brandingColors.dangerColor}>
-            Warning: Never share your Seed Phrase / Private Key with anyone. We
-            will NEVER ask for private keys/phrases or to send funds. We will
-            never ask you to connect a wallet to a website to get an giveaway.
-            If someone asks you to connect a wallet to get an giveaway on a
-            website, it is a scammer, and beware of all scammers.
           </Text>
         </Box>
       </Box>

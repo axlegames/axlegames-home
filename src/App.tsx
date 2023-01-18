@@ -124,7 +124,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/giveaway/:type" element={<Giveaway />} />
+            <Route path="/giveaway/1" element={<Giveaway />} />
             <Route path="/tsupply" element={<TSupply />} />
           </Routes>
         </Router>
