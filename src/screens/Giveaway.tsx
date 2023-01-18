@@ -8,19 +8,63 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
-import NeuButton from "../components/NeuButton";
 import "../components/navbar/Navbar.css";
 import Ban from "../assets/banner.png";
 
 import Twitter from "../assets/socials/twitter.svg";
 import Telegram from "../assets/socials/telegram.svg";
-import Youtube from "../assets/socials/youtube.svg";
 import Link from "../assets/socials/link.svg";
 import { useState } from "react";
-import { socials } from "../config/data";
+import axios from "axios";
 
 const Giveaway = () => {
   const [toggle, setToggle] = useState(false);
+
+  const [form, setForm] = useState({
+    telegram: "",
+    twitter: "",
+    wallet: "",
+  });
+
+  const onTelegramChange = (e: any) => {
+    setForm({
+      telegram: e.target.value,
+      twitter: form.twitter,
+      wallet: form.wallet,
+    });
+  };
+
+  const onTwitterChange = (e: any) => {
+    setForm({
+      twitter: e.target.value,
+      telegram: form.telegram,
+      wallet: form.wallet,
+    });
+  };
+
+  const onWalletChange = (e: any) => {
+    setForm({
+      twitter: form.twitter,
+      telegram: form.telegram,
+      wallet: e.target.value,
+    });
+  };
+
+  const registerUser = () => {
+    if (form.telegram === "") {
+    }
+    if (form.twitter === "") {
+    }
+    if (form.wallet === "") {
+    }
+    console.log(form);
+    axios
+      .post("http://localhost:5001/axlegames/api/v1/users/giveaway")
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
   return (
     <Box
       bg={brandingColors.bgColor}
@@ -95,7 +139,22 @@ const Giveaway = () => {
           </Box>
         </Box>
 
-        {!toggle ? <Join toggle={toggle} /> : <Check />}
+        {!toggle ? (
+          <Join
+            twitter={onTwitterChange}
+            telegram={onTelegramChange}
+            wallet={onWalletChange}
+            submit={registerUser}
+            form={{
+              telegram: form.telegram,
+              twitter: form.twitter,
+              wallet: form.wallet,
+            }}
+            toggle={toggle}
+          />
+        ) : (
+          <Check />
+        )}
         <Box
           flexDirection={"column"}
           display={"flex"}
@@ -184,6 +243,7 @@ interface form {
   label: string;
   onChange: Function;
   placeholder: string;
+  value: string;
 }
 
 const FormInput = (input: form) => {
@@ -195,11 +255,12 @@ const FormInput = (input: form) => {
         </FormLabel>
         <Input
           width={"100%"}
+          value={input.value}
           required={true}
           fontWeight={"bold"}
           color={brandingColors.primaryButtonColor}
           placeholder={input.placeholder}
-          onChange={() => input.onChange()}
+          onChange={(e) => input.onChange(e)}
         ></Input>
       </FormControl>
     </Box>
@@ -221,6 +282,7 @@ const Check = () => {
           Please Enter the wallet address
         </Text>
         <FormInput
+          value=""
           label="Wallet Address"
           onChange={() => {}}
           placeholder="Wallet Address"
@@ -232,7 +294,20 @@ const Check = () => {
   );
 };
 
-const Join = (props: any) => {
+interface FormInterface {
+  toggle: boolean;
+  form: {
+    twitter: string;
+    telegram: string;
+    wallet: string;
+  };
+  twitter: Function;
+  telegram: Function;
+  wallet: Function;
+  submit: Function;
+}
+
+const Join = (props: FormInterface) => {
   return (
     <Box
       display={"flex"}
@@ -377,25 +452,29 @@ const Join = (props: any) => {
       >
         <FormInput
           label="Twitter username"
-          onChange={() => {}}
+          onChange={props.twitter}
           placeholder="Twitter Handle"
+          value={props.form.twitter}
         />
 
         <FormInput
           label="Telegram username"
-          onChange={() => {}}
+          onChange={props.telegram}
           placeholder="Telegram Username"
+          value={props.form.telegram}
         />
 
         <FormInput
           label="Wallet Address"
-          onChange={() => {}}
+          onChange={props.wallet}
           placeholder="Wallet Address"
+          value={props.form.wallet}
         />
-
-        <div style={{ width: "100%" }} className="btn">
-          Submit
-        </div>
+        <Box>
+          <div onClick={() => props.submit()} className="btn">
+            Submit
+          </div>
+        </Box>
       </Box>
     </Box>
   );
