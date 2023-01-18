@@ -80,7 +80,7 @@ const Giveaway = () => {
   };
 
   const registerUser = () => {
-    const giveaway = path.pathname.replace("/giveaway/", "");
+    const giveaway = path.pathname.replace("/giveaway", "");
     if (form.telegram === "")
       return toast({
         title: "Warning",
@@ -414,7 +414,12 @@ const Join = (props: FormInterface) => {
       rowGap={"1rem"}
       transition={`200ms all ease-in`}
     >
-      <Image px={8} maxW={"720px"} borderRadius="xl" src={Ban} />
+      <Image
+        boxShadow={`0px 0px 50px ${brandingColors.newHighlightColor}`}
+        maxW={"720px"}
+        borderRadius="md"
+        src={Ban}
+      />
       <Box
         display={"flex"}
         justifyContent="center"
