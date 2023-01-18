@@ -347,7 +347,7 @@ const FormInput = (input: form) => {
           value={input.value}
           required={true}
           fontWeight={"bold"}
-          color={brandingColors.primaryButtonColor}
+          color={brandingColors.secondaryTextColor}
           placeholder={input.placeholder}
           onChange={(e) => input.onChange(e)}
         ></Input>
