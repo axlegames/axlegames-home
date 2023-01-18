@@ -456,7 +456,7 @@ const Join = (props: FormInterface) => {
                 <a
                   target={"_blank"}
                   rel="noopener noreferrer"
-                  href="https://t.me/axlegames_en"
+                  href="https://medium.com/@axlegames/how-to-buy-axle-token-from-binance-kucoin-others-105e9167fc55"
                 >
                   <Flex
                     cursor={"pointer"}
@@ -471,7 +471,7 @@ const Join = (props: FormInterface) => {
                 <a
                   target={"_blank"}
                   rel="noopener noreferrer"
-                  href="https://medium.com/@axlegames/how-to-buy-axle-token-from-binance-kucoin-others-105e9167fc55"
+                  href="https://sale.axlegames.io"
                 >
                   <Flex
                     cursor={"pointer"}
