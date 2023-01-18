@@ -6,6 +6,7 @@ import {
   Image,
   Input,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
 import "../components/navbar/Navbar.css";
@@ -16,15 +17,18 @@ import Telegram from "../assets/socials/telegram.svg";
 import Link from "../assets/socials/link.svg";
 import { useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router";
 
 const Giveaway = () => {
   const [toggle, setToggle] = useState(false);
-
   const [form, setForm] = useState({
     telegram: "",
     twitter: "",
     wallet: "",
   });
+
+  const toast = useToast();
+  const params = useParams();
 
   const onTelegramChange = (e: any) => {
     setForm({
@@ -51,17 +55,71 @@ const Giveaway = () => {
   };
 
   const registerUser = () => {
-    if (form.telegram === "") {
-    }
-    if (form.twitter === "") {
-    }
-    if (form.wallet === "") {
-    }
     console.log(form);
+    if (form.telegram === "")
+      return toast({
+        title: "Warning",
+        description: "telegram username required",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    if (form.twitter === "")
+      return toast({
+        title: "Warning",
+        description: "twitter handle required",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    if (form.wallet === "")
+      return toast({
+        title: "Warning",
+        description: "wallet address required",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+
     axios
-      .post("http://localhost:5001/axlegames/api/v1/users/giveaway")
+      .post("https://api.axlegames.io/axlegames/api/v1/users/giveaway", {
+        ...form,
+        type: params.type,
+      })
       .then((res) => {
         console.log(res);
+        if (!res.data.error) {
+          return toast({
+            title: "Successfull",
+            description: "Giveaway entry registered",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+            position: "top",
+          });
+        }
+        return toast({
+          title: "Error",
+          description: res.data.message,
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+          position: "top",
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        return toast({
+          title: "Error",
+          description: "Something went wrong",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+          position: "top",
+        });
       });
   };
 
@@ -413,25 +471,37 @@ const Join = (props: FormInterface) => {
               alignItems="center"
               fontSize={{ base: "sm", sm: "md", md: "lg" }}
             >
-              <Flex
-                cursor={"pointer"}
-                justifyContent={"center"}
-                alignItems="center"
-                columnGap={".25rem"}
+              <a
+                target={"_blank"}
+                href={`https://twitter.com/AxleGames/status/1614260092236599296?s=20&t=r1wrUQRxUurhV3QliyTknw`}
+                rel="noopener noreferrer"
               >
-                <Image width={"6"} src={Link} />
-                <Text>Twitter Link 1</Text>
-              </Flex>
+                <Flex
+                  cursor={"pointer"}
+                  justifyContent={"center"}
+                  alignItems="center"
+                  columnGap={".25rem"}
+                >
+                  <Image width={"6"} src={Link} />
+                  <Text>Twitter Link 1</Text>
+                </Flex>
+              </a>
 
-              <Flex
-                cursor={"pointer"}
-                justifyContent={"center"}
-                alignItems="center"
-                columnGap={".25rem"}
+              <a
+                target={"_blank"}
+                href={`https://twitter.com/AxleGames/status/1615598654936731648?s=20&t=r1wrUQRxUurhV3QliyTknw`}
+                rel="noopener noreferrer"
               >
-                <Image width={"6"} src={Link} />
-                <Text>Twitter Link 2</Text>
-              </Flex>
+                <Flex
+                  cursor={"pointer"}
+                  justifyContent={"center"}
+                  alignItems="center"
+                  columnGap={".25rem"}
+                >
+                  <Image width={"6"} src={Link} />
+                  <Text>Twitter Link 2</Text>
+                </Flex>
+              </a>
             </Flex>
           </Box>
 
