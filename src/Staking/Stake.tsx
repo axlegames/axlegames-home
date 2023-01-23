@@ -272,10 +272,13 @@ const Stake = () => {
             flexDirection={"column"}
             alignItems="center"
             rowGap={"1rem"}
-            fontFamily={`'Russo One', sans-serif`}
             minW={"20vw"}
           >
-            <Text lineHeight={"0.8"} fontSize={"xl"}>
+            <Text
+              fontFamily={`'Russo One', sans-serif`}
+              lineHeight={"0.8"}
+              fontSize={"xl"}
+            >
               TOTAL VALUE LOCKED
             </Text>
             <Text
@@ -287,8 +290,9 @@ const Stake = () => {
             </Text>
             <Text
               lineHeight={"0.8"}
-              color={brandingColors.primaryTextColor}
+              color={brandingColors.secondaryTextColor}
               fontSize={"sm"}
+              fontFamily={`'Russo One', sans-serif`}
             >
               $ 0.00164 = 1 AXLE
             </Text>
@@ -436,7 +440,6 @@ const Stake = () => {
               <Box
                 minW={`30vw`}
                 borderRadius="3xl"
-                backdropFilter={`blur(12.3px)`}
                 borderLeft={`2px solid ${brandingColors.newHighlightColor}`}
                 borderRight={`2px solid ${brandingColors.newHighlightColor}`}
                 borderBottom={`2px solid ${brandingColors.newHighlightColor}`}
@@ -488,17 +491,11 @@ const Stake = () => {
                   </Text>
                 </Box>
                 {!unstake ? (
-                  <Box
-                    background={`rgba(17, 25, 40, 0.75)`}
-                    box-shadow={`0 4px 30px rgba(0, 0, 0, 0.1)`}
-                    backdropBlur="blur(2px) saturate(100%)"
-                    borderRadius={"3xl"}
-                    p={6}
-                  >
+                  <Box borderRadius={"3xl"} p={6}>
                     <Box
                       color={brandingColors.secondaryTextColor}
                       display={"flex"}
-                      px={8}
+                      px={2}
                       py={2}
                       justifyContent="space-between"
                     >
@@ -555,21 +552,15 @@ const Stake = () => {
                     </Box>
                   </Box>
                 ) : (
-                  <Box
-                    background={`rgba(17, 25, 40, 0.75)`}
-                    box-shadow={`0 4px 30px rgba(0, 0, 0, 0.1)`}
-                    backdropBlur="blur(2px) saturate(100%)"
-                    borderRadius={"3xl"}
-                    p={6}
-                  >
+                  <Box borderRadius={"3xl"} p={6}>
                     <Box
                       color={brandingColors.secondaryTextColor}
                       display={"flex"}
-                      px={8}
+                      px={2}
                       py={2}
                       justifyContent="space-between"
                     >
-                      <Text>Amout</Text>
+                      <Text>Amount</Text>
                       <Text>~My Balance {axleBalance} AXLE</Text>
                     </Box>
                     <Box
