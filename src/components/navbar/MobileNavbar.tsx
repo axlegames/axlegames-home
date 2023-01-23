@@ -119,6 +119,11 @@ const MobileNavbar = () => {
               icon={<SunIcon />}
             />
             <SideBarLink
+              link="https://whitepaper.axlegames.io/"
+              title={"White Paper"}
+              icon={<SunIcon />}
+            />
+            <SideBarLink
               link="https://axlegames.s3.ap-south-1.amazonaws.com/AxleGames_EconomicsPaper.pdf"
               title={"Economics Paper"}
               icon={<SunIcon />}
