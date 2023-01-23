@@ -1,6 +1,6 @@
 import { Box, Divider, Image, Input, Text } from "@chakra-ui/react";
 
-import Logo from "../../assets/home/logos/logo.png";
+import Logo from "../assets/logo.png";
 
 import Web3Modal from "web3modal";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
@@ -221,12 +221,14 @@ const Stake = () => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
-      my={12}
+      py={4}
+      minH={"100vh"}
+      pb={12}
     >
       <Box
         alignItems={"center"}
         mx={24}
-        my={4}
+        my={2}
         display={"flex"}
         justifyContent="space-between"
       >
@@ -257,7 +259,8 @@ const Stake = () => {
           width={"32vw"}
         >
           <Box
-            boxShadow={`0px 0px 125px -60px ${brandingColors.primaryTextColor}`}
+            boxShadow={`0px 0px 125px -20px ${brandingColors.newHighlightColor}`}
+            border={`3px solid ${brandingColors.newHighlightColor}`}
             p={6}
             borderRadius="xl"
             bg={brandingColors.bgColor}
@@ -269,71 +272,91 @@ const Stake = () => {
             flexDirection={"column"}
             alignItems="center"
             rowGap={"1rem"}
+            fontFamily={`'Russo One', sans-serif`}
+            minW={"20vw"}
           >
-            <Text fontSize={"3xl"}>Total Value Locked</Text>
-            <Divider bg={brandingColors.primaryButtonColor} />
-            <Text color={brandingColors.primaryTextColor} fontSize={"xl"}>
-              $20000000
+            <Text lineHeight={"0.8"} fontSize={"xl"}>
+              TOTAL VALUE LOCKED
             </Text>
-            <Divider bg={brandingColors.primaryButtonColor} />
-            <Text color={brandingColors.primaryTextColor} fontSize={"sm"}>
-              $ 0.00167 = 1 AXLE
+            <Text
+              lineHeight={"0.8"}
+              color={brandingColors.primaryTextColor}
+              fontSize={"3xl"}
+            >
+              $2,438,563.28
+            </Text>
+            <Text
+              lineHeight={"0.8"}
+              color={brandingColors.primaryTextColor}
+              fontSize={"sm"}
+            >
+              $ 0.00164 = 1 AXLE
             </Text>
           </Box>
           <Box
             mt={4}
+            minW={"20vw"}
             display={"flex"}
-            borderRadius={"3xl"}
             justifyContent="space-between"
-            fontSize="2xl"
+            fontSize="xl"
             columnGap=".2rem"
-            border={`2px solid ${brandingColors.primaryButtonColor}`}
+            border={`2px solid ${brandingColors.newHighlightColor}`}
+            p={1}
+            borderRadius={"8vw"}
           >
             <Box
-              borderTopLeftRadius={"3xl"}
-              borderBottomLeftRadius={"3xl"}
-              boxShadow="xl"
-              px={8}
-              py={4}
+              px={4}
+              py={2}
               width={"100%"}
+              color={brandingColors.secondaryTextColor}
+              boxShadow={
+                togglePage
+                  ? `0px 0px 2px ${brandingColors.newHighlightColor}`
+                  : "none"
+              }
               bg={
                 togglePage
                   ? brandingColors.primaryButtonColor
                   : brandingColors.bgColor
               }
-              color={
-                !togglePage
-                  ? brandingColors.primaryButtonColor
-                  : brandingColors.bgColor
+              backgroundImage={
+                togglePage
+                  ? `linear-gradient(to right, #061e37, #002956, #003376, #003b96, #1442b5)`
+                  : "none"
               }
+              borderRadius={"8vw"}
               textAlign="center"
               onClick={() => setTogglePage(true)}
               cursor="pointer"
             >
-              <Text>Flexible</Text>
+              <Text>FLEXIBLE</Text>
             </Box>
             <Box
               cursor="pointer"
-              color={
-                togglePage
-                  ? brandingColors.primaryButtonColor
-                  : brandingColors.bgColor
+              color={brandingColors.secondaryTextColor}
+              boxShadow={
+                !togglePage
+                  ? `0px 0px 2px ${brandingColors.newHighlightColor}`
+                  : "none"
               }
-              boxShadow="xl"
-              borderTopRightRadius={"3xl"}
-              borderBottomRightRadius={"3xl"}
-              px={8}
-              py={4}
-              width={"100%"}
               bg={
                 !togglePage
                   ? brandingColors.primaryButtonColor
                   : brandingColors.bgColor
               }
+              backgroundImage={
+                !togglePage
+                  ? `linear-gradient(to right, #061e37, #002956, #003376, #003b96, #1442b5)`
+                  : "none"
+              }
+              borderRadius={"8vw"}
+              px={4}
+              py={2}
+              width={"100%"}
               textAlign="center"
               onClick={() => setTogglePage(false)}
             >
-              <Text>Locked</Text>
+              <Text>LOCKED</Text>
             </Box>
           </Box>
           {togglePage ? (
@@ -348,9 +371,18 @@ const Stake = () => {
               <Text fontSize={"3xl"} fontWeight="bold">
                 FLEXIBLE STAKING
               </Text>
-              <Text color={brandingColors.primaryTextColor}> APY: 12% </Text>
+              <Text
+                fontFamily={`'Russo One', sans-serif`}
+                color={brandingColors.primaryTextColor}
+              >
+                {" "}
+                APY: 12%{" "}
+              </Text>
               <Text fontSize={"2xl"}> Total $AXLE in Flexible Staking</Text>
-              <Text color={brandingColors.primaryTextColor}>
+              <Text
+                fontFamily={`'Russo One', sans-serif`}
+                color={brandingColors.primaryTextColor}
+              >
                 597,297,277.293 AXLE
               </Text>
             </Box>
@@ -367,7 +399,10 @@ const Stake = () => {
                 LOCKED STAKING
               </Text>
               <Text fontSize={"2xl"}> Total $AXLE in Locked Staking</Text>
-              <Text color={brandingColors.primaryTextColor}>
+              <Text
+                fontFamily={`'Russo One', sans-serif`}
+                color={brandingColors.primaryTextColor}
+              >
                 597,297,277.293 AXLE
               </Text>
             </Box>
@@ -400,61 +435,66 @@ const Stake = () => {
             {togglePage ? (
               <Box
                 minW={`30vw`}
-                borderRadius="xl"
+                borderRadius="3xl"
                 backdropFilter={`blur(12.3px)`}
-                border={`1px solid rgba(24, 28, 26, 1)`}
+                borderLeft={`2px solid ${brandingColors.newHighlightColor}`}
+                borderRight={`2px solid ${brandingColors.newHighlightColor}`}
+                borderBottom={`2px solid ${brandingColors.newHighlightColor}`}
                 color={brandingColors.primaryTextColor}
-                boxShadow={`0px 0px 120px -70px ${brandingColors.primaryButtonColor}`}
-                p={4}
+                boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
               >
                 <Box
                   textAlign={"center"}
                   display="flex"
                   justifyContent={"space-between"}
-                  my={4}
-                  border={`2px solid ${brandingColors.primaryButtonColor}`}
+                  border={`2px solid ${brandingColors.newHighlightColor}`}
+                  borderTopRadius="3xl"
                 >
                   <Text
+                    borderTopLeftRadius={"3xl"}
                     width={"100%"}
                     boxShadow="xl"
                     fontSize={"2xl"}
-                    bg={
+                    backgroundImage={
                       !unstake
-                        ? brandingColors.primaryButtonColor
-                        : brandingColors.bgColor
+                        ? `linear-gradient(to right, #061e37, #002956, #003376, #003b96, #1442b5)`
+                        : "none"
                     }
-                    color={
-                      unstake
-                        ? brandingColors.primaryButtonColor
-                        : brandingColors.bgColor
-                    }
+                    color={brandingColors.secondaryTextColor}
                     cursor="pointer"
                     onClick={() => setUnstake(false)}
+                    fontFamily={`'Russo One', sans-serif`}
+                    py={2}
                   >
                     STAKE AXLE
                   </Text>
                   <Text
+                    py={2}
                     boxShadow="xl"
-                    color={
-                      !unstake
-                        ? brandingColors.primaryButtonColor
-                        : brandingColors.bgColor
-                    }
+                    color={brandingColors.secondaryTextColor}
                     onClick={() => setUnstake(true)}
                     cursor="pointer"
                     width={"100%"}
                     fontSize={"2xl"}
-                    bg={
+                    borderTopRightRadius="3xl"
+                    fontFamily={`'Russo One', sans-serif`}
+                    backgroundImage={
                       unstake
-                        ? brandingColors.primaryButtonColor
-                        : brandingColors.bgColor
+                        ? `linear-gradient(to left, #061e37, #002956, #003376, #003b96, #1442b5)`
+                        : "none"
                     }
                   >
                     UNSTAKE AXLE
                   </Text>
                 </Box>
                 {!unstake ? (
-                  <Box>
+                  <Box
+                    background={`rgba(17, 25, 40, 0.75)`}
+                    box-shadow={`0 4px 30px rgba(0, 0, 0, 0.1)`}
+                    backdropBlur="blur(2px) saturate(100%)"
+                    borderRadius={"3xl"}
+                    p={6}
+                  >
                     <Box
                       color={brandingColors.secondaryTextColor}
                       display={"flex"}
@@ -515,7 +555,13 @@ const Stake = () => {
                     </Box>
                   </Box>
                 ) : (
-                  <Box>
+                  <Box
+                    background={`rgba(17, 25, 40, 0.75)`}
+                    box-shadow={`0 4px 30px rgba(0, 0, 0, 0.1)`}
+                    backdropBlur="blur(2px) saturate(100%)"
+                    borderRadius={"3xl"}
+                    p={6}
+                  >
                     <Box
                       color={brandingColors.secondaryTextColor}
                       display={"flex"}
@@ -568,7 +614,7 @@ const Stake = () => {
                       <Box cursor={"pointer"}>MAX</Box>
                     </Box>
                     <Box mt={4} textAlign={"center"} className="btn">
-                      Unstake AXLE
+                      UNSTAKE AXLE
                     </Box>
                   </Box>
                 )}
@@ -576,15 +622,20 @@ const Stake = () => {
             ) : (
               <Box
                 minW={`30vw`}
-                borderRadius="xl"
-                backdropFilter={`blur(12.3px)`}
-                border={`1px solid rgba(24, 28, 26, 1)`}
                 color={brandingColors.primaryTextColor}
-                boxShadow={`0px 0px 120px -70px ${brandingColors.primaryButtonColor}`}
-                p={4}
+                boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
+                border={`3px solid ${brandingColors.newHighlightColor}`}
+                borderRadius="3xl"
               >
                 <Box textAlign={"center"}>
-                  <Text fontSize={"3xl"}>STAKE AXLE</Text>
+                  <Text
+                    color={brandingColors.secondaryTextColor}
+                    fontFamily={`'Russo One', sans-serif`}
+                    fontSize={"3xl"}
+                    p={2}
+                  >
+                    STAKE AXLE
+                  </Text>
                 </Box>
                 <Divider bg={brandingColors.primaryButtonColor} my={2} />
                 <Box
@@ -597,93 +648,109 @@ const Stake = () => {
                   <Text>Amout</Text>
                   <Text>~My Balance {axleBalance} AXLE</Text>
                 </Box>
-                <Box
-                  height={"100%"}
-                  width="100%"
-                  px={4}
-                  alignItems={"center"}
-                  display={"flex"}
-                  border={`3px solid ${brandingColors.fgColor}`}
-                  borderRadius="xl"
-                >
-                  <Box>$AXLE</Box>
-                  <Input
-                    mx={4}
-                    fontWeight={"bold"}
-                    color={brandingColors.primaryButtonColor}
-                    placeholder="value (BNB)"
-                    onChange={onBnbChange}
-                    fontSize="lg"
-                    type={"number"}
-                    inputMode="decimal"
-                    borderRadius={"none"}
-                    textAlign="right"
-                    value={bnb}
-                    borderLeft={`2px solid ${brandingColors.fgColor}`}
-                    borderRight={`2px solid ${brandingColors.fgColor}`}
-                    min={0.2}
-                    max={50}
-                    _active={{
-                      outline: "none",
-                      shadow: "none",
-                    }}
-                    _hover={{
-                      outline: "none",
-                      shadow: "none",
-                    }}
-                    _focus={{
-                      outline: "none",
-                      shadow: "none",
-                    }}
-                  ></Input>
-                  <Box cursor={"pointer"}>MAX</Box>
+                <Box px={8}>
+                  <Box
+                    height={"100%"}
+                    width="100%"
+                    px={4}
+                    alignItems={"center"}
+                    display={"flex"}
+                    border={`3px solid ${brandingColors.fgColor}`}
+                    borderRadius="xl"
+                  >
+                    <Box>$AXLE</Box>
+                    <Input
+                      mx={4}
+                      fontWeight={"bold"}
+                      color={brandingColors.primaryButtonColor}
+                      placeholder="value (BNB)"
+                      onChange={onBnbChange}
+                      fontSize="lg"
+                      type={"number"}
+                      inputMode="decimal"
+                      borderRadius={"none"}
+                      textAlign="right"
+                      value={bnb}
+                      borderLeft={`2px solid ${brandingColors.fgColor}`}
+                      borderRight={`2px solid ${brandingColors.fgColor}`}
+                      min={0.2}
+                      max={50}
+                      _active={{
+                        outline: "none",
+                        shadow: "none",
+                      }}
+                      _hover={{
+                        outline: "none",
+                        shadow: "none",
+                      }}
+                      _focus={{
+                        outline: "none",
+                        shadow: "none",
+                      }}
+                    ></Input>
+                    <Box cursor={"pointer"}>MAX</Box>
+                  </Box>
                 </Box>
-                <Box color={brandingColors.secondaryTextColor} my={4} px={8}>
-                  Locking
-                </Box>
-                <Box
-                  display={"flex"}
-                  justifyContent="center"
-                  columnGap={"1rem"}
-                  alignItems={"center"}
-                  my={8}
-                >
-                  {stakeRewards.map((s, i) => (
-                    <Box
-                      borderRadius={"xl"}
-                      p={2}
-                      bg={brandingColors.bgColor}
-                      boxShadow={`1px 1px 3px ${brandingColors.primaryTextColor}`}
-                      textAlign={"center"}
-                      key={i}
-                      px={3}
-                      minW={"32"}
-                      cursor="pointer"
-                    >
-                      <Text
-                        color={brandingColors.secondaryTextColor}
-                        fontSize={"lg"}
+                <Box mx={8} my={4}>
+                  <Box my={2} color={brandingColors.secondaryTextColor}>
+                    Locking
+                  </Box>
+                  <Box
+                    display={"flex"}
+                    justifyContent="center"
+                    columnGap={"1rem"}
+                    alignItems={"center"}
+                  >
+                    {stakeRewards.map((s, i) => (
+                      <Box
+                        borderRadius={"xl"}
+                        bg={brandingColors.bgColor}
+                        boxShadow={`0px 0px 3px ${brandingColors.newHighlightColor}`}
+                        textAlign={"center"}
+                        key={i}
+                        minW={"32"}
+                        cursor="pointer"
                       >
-                        {" "}
-                        {s.days} Days{" "}
-                      </Text>
-                      <Divider my={2} />
-                      <Text
-                        color={brandingColors.secondaryTwoTextColor}
-                        fontSize={"xl"}
-                      >
-                        {" "}
-                        {s.roi}%
-                      </Text>
-                    </Box>
-                  ))}
+                        <Text
+                          color={brandingColors.secondaryTextColor}
+                          fontFamily={`'Russo One', sans-serif`}
+                          px={3}
+                          py={2}
+                          fontSize={"lg"}
+                        >
+                          {" "}
+                          {s.days} Days{" "}
+                        </Text>
+                        <Divider
+                          bg={brandingColors.newHighlightColor}
+                          color={brandingColors.newHighlightColor}
+                        />
+                        <Text
+                          color={brandingColors.primaryTextColor}
+                          px={3}
+                          py={2}
+                          fontSize={"md"}
+                          fontFamily={`'Russo One', sans-serif`}
+                        >
+                          {" "}
+                          {s.roi}% APY
+                        </Text>
+                      </Box>
+                    ))}
+                  </Box>
                 </Box>
-                <Box textAlign={"center"} className="btn">
+                <Box mx={8} my={4} textAlign={"center"} className="btn">
                   Enable Staking
                 </Box>
-                <Box textAlign={"center"}>
-                  <Divider bg={brandingColors.primaryTextColor} my={4} />
-                  <Text>Locking 12002 AXLE for 180 Days</Text>
+                <Box
+                  mt={4}
+                  borderTop={`2px solid ${brandingColors.newHighlightColor}`}
+                  textAlign={"center"}
+                  p={4}
+                >
+                  <Text color={brandingColors.secondaryTextColor}>
+                    Locking 12002 AXLE for 180 Days
+                  </Text>
                 </Box>
               </Box>
             )}

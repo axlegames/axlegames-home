@@ -1,4 +1,4 @@
-import env from "react-dotenv";
+// import env from "react-dotenv";
 
 import TokenAbiMainnet from "./mainnet/AxleTokenMain.json";
 import PresaleAbiMainnet from "./mainnet/AxlePresaleMain.json";
@@ -26,7 +26,7 @@ const testnet: Creds = {
   presaleAbi: PresaleAbiTestnet,
 };
 
-const isDevServer = env.IS_DEV_SERVER;
+const isDevServer = "true";
 let creds: Creds = {
   AXLE_CONTRACT: "",
   AXLE_ZEUS_PRESALE: "",
