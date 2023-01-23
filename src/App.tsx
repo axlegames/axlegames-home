@@ -16,6 +16,7 @@ import Banner from "./components/Banner";
 import Giveaway from "./screens/Giveaway";
 import TSupply from "./screens/Tsupply";
 import Giveaway2 from "./screens/Giveaway2";
+import Stake from "./Staking/Stake";
 
 const Navbar = lazy(() => import("./components/navbar/Navbar"));
 const MobileNavbar = lazy(() => import("./components/navbar/MobileNavbar"));
@@ -128,6 +129,7 @@ export const App = () => {
             <Route path="/giveaway1" element={<Giveaway />} />
             <Route path="/giveaway2" element={<Giveaway2 />} />
             <Route path="/tsupply" element={<TSupply />} />
+            <Route path="/staking" element={<Stake />} />
           </Routes>
         </Router>
       </ChakraProvider>
