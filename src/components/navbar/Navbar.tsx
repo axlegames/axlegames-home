@@ -1,4 +1,13 @@
-import { Box, Flex, Grid, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Grid,
+  Image,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
 import { brandingColors } from "../../config/brandingColors";
 import NeuLink from "../NeuLink";
 import "./Navbar.css";
@@ -58,6 +67,69 @@ const Navbar = () => {
             bg={brandingColors.neuPrimaryBg}
             shadow={brandingColors.newPrimaryShadow}
           />
+          <Menu>
+            <MenuButton className="nav-link nav-link-ltr">Docs</MenuButton>
+            <MenuList
+              border={brandingColors.fgColor}
+              bg={brandingColors.bgColor}
+              p={4}
+            >
+              <MenuItem
+                color={brandingColors.primaryTextColor}
+                bg={brandingColors.bgColor}
+                _hover={{
+                  bg: brandingColors.primaryTextColor,
+                  color: brandingColors.bgColor,
+                }}
+                my={2}
+              >
+                <a
+                  href={`https://axlegames.s3.ap-south-1.amazonaws.com/Axlegames.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ width: "100%" }}
+                >
+                  Pitch-Deck
+                </a>
+              </MenuItem>
+              <MenuItem
+                my={2}
+                _hover={{
+                  bg: brandingColors.primaryTextColor,
+                  color: brandingColors.bgColor,
+                }}
+                color={brandingColors.primaryTextColor}
+                bg={brandingColors.bgColor}
+              >
+                <a
+                  href={`https://whitepaper.axlegames.io/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ width: "100%" }}
+                >
+                  White Paper
+                </a>
+              </MenuItem>
+              <MenuItem
+                my={2}
+                _hover={{
+                  bg: brandingColors.primaryTextColor,
+                  color: brandingColors.bgColor,
+                }}
+                color={brandingColors.primaryTextColor}
+                bg={brandingColors.bgColor}
+              >
+                <a
+                  href={`https://axlegames.s3.ap-south-1.amazonaws.com/AxleGames_EconomicsPaper.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ width: "100%" }}
+                >
+                  Economics Paper
+                </a>
+              </MenuItem>
+            </MenuList>
+          </Menu>
         </Flex>
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
           <a
