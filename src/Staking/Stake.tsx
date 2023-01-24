@@ -282,13 +282,10 @@ const Stake = () => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
-      py={4}
-      minH={"100vh"}
     >
       <Box
         alignItems={"center"}
         mx={24}
-        my={2}
         display={"flex"}
         justifyContent="space-between"
       >
@@ -514,7 +511,7 @@ const Stake = () => {
           <Box>
             {togglePage ? (
               <Box
-                minW={`24vw`}
+                minW="40vw"
                 borderRadius="3xl"
                 borderLeft={`2px solid ${brandingColors.newHighlightColor}`}
                 borderRight={`2px solid ${brandingColors.newHighlightColor}`}

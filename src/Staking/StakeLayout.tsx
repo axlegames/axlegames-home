@@ -40,13 +40,13 @@ const StakeLayout = () => {
   const GetPage = () => pages[currentPage];
 
   return (
-    <Box>
+    <Box bg={brandingColors.bgColor} minH="100vh">
       <GetPage />
       <Box
         position={"fixed"}
         zIndex={300}
-        bottom="16%"
-        left={"86%"}
+        bottom="10%"
+        right={"4%"}
         fontWeight="bold"
         cursor={"pointer"}
       >
@@ -65,7 +65,7 @@ const StakeLayout = () => {
           How To Stake?
         </Text>
       </Box>
-      <Box bg={brandingColors.bgColor} display={"flex"}>
+      <Box py={8} bg={brandingColors.bgColor} display={"flex"}>
         <Box
           mx="auto"
           display="flex"
@@ -74,7 +74,6 @@ const StakeLayout = () => {
           fontFamily={`'Russo One', sans-serif`}
           color={brandingColors.primaryTextColor}
           borderRadius="xl"
-          pb={8}
         >
           {screens.map((screen, index) => (
             <MenuIcon
