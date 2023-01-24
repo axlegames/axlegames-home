@@ -332,7 +332,8 @@ const Stake = () => {
             flexDirection={"column"}
             alignItems="center"
             rowGap={"1rem"}
-            minW={"24vw"}
+            minW={"18vw"}
+            minH={"14vh"}
           >
             <Text
               fontFamily={`'Russo One', sans-serif`}
@@ -424,7 +425,7 @@ const Stake = () => {
               <Text>LOCKED</Text>
             </Box>
           </Box>
-          {togglePage ? (
+          {/* {togglePage ? (
             <Box
               color={brandingColors.secondaryTextColor}
               justifyContent="center"
@@ -485,8 +486,9 @@ const Stake = () => {
                 ${pool.lockin} AXLE
               </Text>
             </Box>
-          )}
+          )} */}
         </Box>
+        <Box my={8}></Box>
 
         {address === "" ? (
           <Box
