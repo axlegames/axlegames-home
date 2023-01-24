@@ -664,7 +664,7 @@ const Stake = () => {
               </Box>
             ) : (
               <Box
-                minW={`26vw`}
+                minW={`42vw`}
                 color={brandingColors.primaryTextColor}
                 boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
                 border={`3px solid ${brandingColors.newHighlightColor}`}
@@ -674,7 +674,7 @@ const Stake = () => {
                   <Text
                     color={brandingColors.secondaryTextColor}
                     fontFamily={`'Russo One', sans-serif`}
-                    fontSize={"3xl"}
+                    fontSize={{ base: "xl", md: "3xl" }}
                     p={2}
                   >
                     STAKE AXLE
@@ -687,6 +687,7 @@ const Stake = () => {
                   px={8}
                   py={2}
                   justifyContent="space-between"
+                  fontSize={{ base: "xx-small", md: "md" }}
                 >
                   <Text>Amout</Text>
                   <Text>~My Balance {axleBalance} AXLE</Text>
@@ -700,7 +701,7 @@ const Stake = () => {
                     display={"flex"}
                     border={`3px solid ${brandingColors.fgColor}`}
                     borderRadius="xl"
-                    fontSize={{ base: "xx-small", md: "md" }}
+                    fontSize={{ base: "xs", md: "md" }}
                   >
                     <Box>$AXLE</Box>
                     <Input
@@ -735,11 +736,20 @@ const Stake = () => {
                   </Box>
                 </Box>
                 <Box mx={8} my={4}>
-                  <Box my={2} color={brandingColors.secondaryTextColor}>
+                  <Box
+                    fontSize={{ base: "xx-small", md: "md" }}
+                    my={2}
+                    color={brandingColors.secondaryTextColor}
+                  >
                     Locking
                   </Box>
                   <Box
-                    display={"flex"}
+                    display={"grid"}
+                    gridTemplateColumns={{
+                      base: "1fr 1fr",
+                      md: "1fr 1fr 1fr 1f",
+                    }}
+                    rowGap={"1rem"}
                     justifyContent="center"
                     columnGap={"1rem"}
                     alignItems={"center"}
@@ -764,7 +774,7 @@ const Stake = () => {
                           fontFamily={`'Russo One', sans-serif`}
                           px={3}
                           py={2}
-                          fontSize={"lg"}
+                          fontSize={{ base: "sm", md: "md", lg: "xl" }}
                         >
                           {" "}
                           {s.days} Days{" "}
@@ -777,7 +787,7 @@ const Stake = () => {
                           color={brandingColors.primaryTextColor}
                           px={3}
                           py={2}
-                          fontSize={"md"}
+                          fontSize={{ base: "xs", md: "sm", lg: "md" }}
                           fontFamily={`'Russo One', sans-serif`}
                         >
                           {" "}
@@ -802,7 +812,10 @@ const Stake = () => {
                   textAlign={"center"}
                   p={4}
                 >
-                  <Text color={brandingColors.secondaryTextColor}>
+                  <Text
+                    fontSize={{ base: "sm", md: "md" }}
+                    color={brandingColors.secondaryTextColor}
+                  >
                     Locking {bnb} AXLE for {stakeRewards[lockIn].days} Days
                   </Text>
                 </Box>

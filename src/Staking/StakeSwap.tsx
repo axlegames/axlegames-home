@@ -30,7 +30,7 @@ const StakeSwap = () => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
-      minH={"160vh"}
+      minH={{ base: "160vh", md: "140vh" }}
     >
       <Box
         py={8}
