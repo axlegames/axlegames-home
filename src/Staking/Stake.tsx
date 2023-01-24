@@ -103,17 +103,10 @@ const stakeRewards = [
   },
 ];
 
-interface Pool {
-  flex: number;
-  lockin: number;
-}
 const Stake = () => {
   const [lockIn, setLockIn] = useState(0);
   const [balance, setBalance] = useState(0);
-  const [pool, setPool] = useState<Pool>({
-    flex: 22231123111,
-    lockin: 2231231123,
-  });
+  const [pool, setPool] = useState("323,123,103");
   const [axleBalance, setAxleBalance] = useState<any>("0");
   const [openWallet, setOpenWallet] = useState(false);
   const [togglePage, setTogglePage] = useState(false);
@@ -188,6 +181,7 @@ const Stake = () => {
       // let bal = await token.balanceOf(web3Accounts[0]);
       // bal = ethers.utils.formatEther(bal);
       setAxleBalance(25000);
+      setPool("312,212,189");
       // localStorage.setItem("isWalletConnected", "true");
     } catch (error) {
       console.log(error);
@@ -222,7 +216,6 @@ const Stake = () => {
   const toast = useToast();
 
   const buy = () => {
-    const p = Number(pool.lockin) + Number(bnb);
     if (axleBalance - bnb <= 0) {
       return toast({
         title: "Warning",
@@ -234,37 +227,6 @@ const Stake = () => {
       });
     }
     setAxleBalance(axleBalance - bnb);
-    setPool({
-      flex: pool.flex,
-      lockin: p,
-    });
-    return toast({
-      title: "Success",
-      description: `${bnb} AXLE has been staked`,
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-      position: "top",
-    });
-  };
-
-  const buy2 = () => {
-    const p = Number(pool.flex) + Number(bnb);
-    if (axleBalance - bnb <= 0) {
-      return toast({
-        title: "Warning",
-        description: `Insufficent funds!`,
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
-      });
-    }
-    setAxleBalance(axleBalance - bnb);
-    setPool({
-      flex: p,
-      lockin: pool.lockin,
-    });
     return toast({
       title: "Success",
       description: `${bnb} AXLE has been staked`,
@@ -343,7 +305,7 @@ const Stake = () => {
               color={brandingColors.primaryTextColor}
               fontSize={"3xl"}
             >
-              ${pool.lockin}
+              ${pool}
             </Text>
             <Text
               lineHeight={"0.8"}
@@ -621,7 +583,7 @@ const Stake = () => {
 
                     <Box
                       mt={4}
-                      onClick={buy2}
+                      onClick={buy}
                       textAlign={"center"}
                       className="btn"
                     >
