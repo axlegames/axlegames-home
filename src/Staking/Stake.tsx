@@ -1,4 +1,4 @@
-import { Box, Divider, Image, Input, Text } from "@chakra-ui/react";
+import { Box, Divider, Image, Input, Text, useToast } from "@chakra-ui/react";
 
 import Logo from "../assets/logo.png";
 
@@ -8,7 +8,6 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 
 import { ethers } from "ethers";
 import { useState, useEffect } from "react";
-import creds from "../abi/creds";
 import Wallet from "./Wallet";
 import { brandingColors } from "../config/brandingColors";
 
@@ -52,9 +51,6 @@ const chainIds = [
     network: "Goerli",
   },
 ];
-
-const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
-const axleTokenABI = creds.tokenAbi;
 
 const web3Modal = new Web3Modal({
   network: "mainnet",
@@ -107,8 +103,17 @@ const stakeRewards = [
   },
 ];
 
+interface Pool {
+  flex: number;
+  lockin: number;
+}
 const Stake = () => {
+  const [lockIn, setLockIn] = useState(0);
   const [balance, setBalance] = useState(0);
+  const [pool, setPool] = useState<Pool>({
+    flex: 22231123111,
+    lockin: 2231231123,
+  });
   const [axleBalance, setAxleBalance] = useState<any>("0");
   const [openWallet, setOpenWallet] = useState(false);
   const [togglePage, setTogglePage] = useState(false);
@@ -174,16 +179,16 @@ const Stake = () => {
       let bnbBal: any = await provider.getBalance(web3Accounts[0]);
       bnbBal = Number(ethers.utils.formatEther(bnbBal));
       setBalance(bnbBal);
-      const signer = provider.getSigner();
-      const token = new ethers.Contract(
-        TOKEN_CONTRACT_ADDRESS,
-        axleTokenABI,
-        signer
-      );
-      let bal = await token.balanceOf(web3Accounts[0]);
-      bal = ethers.utils.formatEther(bal);
-      setAxleBalance(bal);
-      localStorage.setItem("isWalletConnected", "true");
+      // const signer = provider.getSigner();
+      // const token = new ethers.Contract(
+      //   TOKEN_CONTRACT_ADDRESS,
+      //   axleTokenABI,
+      //   signer
+      // );
+      // let bal = await token.balanceOf(web3Accounts[0]);
+      // bal = ethers.utils.formatEther(bal);
+      setAxleBalance(25000);
+      // localStorage.setItem("isWalletConnected", "true");
     } catch (error) {
       console.log(error);
     }
@@ -213,6 +218,62 @@ const Stake = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const toast = useToast();
+
+  const buy = () => {
+    const p = Number(pool.lockin) + Number(bnb);
+    if (axleBalance - bnb <= 0) {
+      return toast({
+        title: "Warning",
+        description: `Insufficent funds!`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+    setAxleBalance(axleBalance - bnb);
+    setPool({
+      flex: pool.flex,
+      lockin: p,
+    });
+    return toast({
+      title: "Success",
+      description: `${bnb} AXLE has been staked`,
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  };
+
+  const buy2 = () => {
+    const p = Number(pool.flex) + Number(bnb);
+    if (axleBalance - bnb <= 0) {
+      return toast({
+        title: "Warning",
+        description: `Insufficent funds!`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+    setAxleBalance(axleBalance - bnb);
+    setPool({
+      flex: p,
+      lockin: pool.lockin,
+    });
+    return toast({
+      title: "Success",
+      description: `${bnb} AXLE has been staked`,
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+      position: "top",
+    });
+  };
 
   return (
     <Box
@@ -256,15 +317,14 @@ const Stake = () => {
           justifyContent="center"
           alignItems={"center"}
           flexDirection={"column"}
-          width={"32vw"}
         >
           <Box
-            boxShadow={`0px 0px 125px  ${brandingColors.primaryTwoTextColor}`}
+            boxShadow={`0px 0px 120px -30px ${brandingColors.secondaryTwoTextColor}`}
             border={`3px solid ${brandingColors.newHighlightColor}`}
             p={6}
             borderRadius="xl"
             bg={brandingColors.bgColor}
-            backgroundImage={`radial-gradient(circle, #061e37, #1a3767, #3f4f99, #7165ca, #ad78f7)`}
+            backgroundImage={`radial-gradient(circle, #061e37, #14213c, #202441, #2c2645, #372948)`}
             color={brandingColors.secondaryTextColor}
             fontWeight="bold"
             justifyContent={"center"}
@@ -272,7 +332,7 @@ const Stake = () => {
             flexDirection={"column"}
             alignItems="center"
             rowGap={"1rem"}
-            minW={"14vw"}
+            minW={"24vw"}
           >
             <Text
               fontFamily={`'Russo One', sans-serif`}
@@ -286,7 +346,7 @@ const Stake = () => {
               color={brandingColors.primaryTextColor}
               fontSize={"3xl"}
             >
-              $2,438,563.28
+              ${pool.lockin}
             </Text>
             <Text
               lineHeight={"0.8"}
@@ -299,14 +359,15 @@ const Stake = () => {
           </Box>
           <Box
             mt={4}
-            minW={"16vw"}
+            minW={"14vw"}
             display={"flex"}
             justifyContent="space-between"
             fontSize="xl"
-            columnGap=".2rem"
+            columnGap=".5rem"
             border={`3px solid ${brandingColors.newHighlightColor}`}
             p={1}
             borderRadius={"8vw"}
+            fontFamily={`'Russo One', sans-serif`}
           >
             <Box
               px={4}
@@ -315,7 +376,7 @@ const Stake = () => {
               color={brandingColors.secondaryTextColor}
               boxShadow={
                 togglePage
-                  ? `0px 0px 2px ${brandingColors.newHighlightColor}`
+                  ? `0px 0px 8px -2px ${brandingColors.secondaryTwoTextColor}`
                   : "none"
               }
               bg={
@@ -340,7 +401,7 @@ const Stake = () => {
               color={brandingColors.secondaryTextColor}
               boxShadow={
                 !togglePage
-                  ? `0px 0px 2px ${brandingColors.newHighlightColor}`
+                  ? `0px 0px 8px -2px ${brandingColors.secondaryTwoTextColor}`
                   : "none"
               }
               bg={
@@ -372,22 +433,32 @@ const Stake = () => {
               my={12}
               alignItems={"center"}
             >
-              <Text fontSize={"3xl"} fontWeight="bold">
+              <Text
+                fontFamily={`'Russo One', sans-serif`}
+                fontSize={"2xl"}
+                fontWeight="bold"
+              >
                 FLEXIBLE STAKING
               </Text>
               <Text
-                fontFamily={`'Russo One', sans-serif`}
+                fontWeight={"bold"}
+                fontSize={"xl"}
                 color={brandingColors.primaryTextColor}
+                my={4}
               >
                 {" "}
                 APY: 12%{" "}
               </Text>
-              <Text fontSize={"2xl"}> Total $AXLE in Flexible Staking</Text>
+              <Text fontSize={"2xl"} fontWeight="bold">
+                {" "}
+                Total $AXLE in Flexible Staking
+              </Text>
               <Text
-                fontFamily={`'Russo One', sans-serif`}
+                fontWeight={"bold"}
+                fontSize={"xl"}
                 color={brandingColors.primaryTextColor}
               >
-                597,297,277.293 AXLE
+                ${pool.lockin} AXLE
               </Text>
             </Box>
           ) : (
@@ -399,15 +470,19 @@ const Stake = () => {
               my={12}
               alignItems={"center"}
             >
-              <Text fontSize={"3xl"} fontWeight="bold">
-                LOCKED STAKING
-              </Text>
-              <Text fontSize={"2xl"}> Total $AXLE in Locked Staking</Text>
               <Text
                 fontFamily={`'Russo One', sans-serif`}
-                color={brandingColors.primaryTextColor}
+                fontSize={"2xl"}
+                fontWeight="bold"
               >
-                597,297,277.293 AXLE
+                LOCKED STAKING
+              </Text>
+              <Text mt={2} fontSize={"2xl"}>
+                {" "}
+                Total $AXLE in Locked Staking
+              </Text>
+              <Text fontSize={"xl"} color={brandingColors.primaryTextColor}>
+                ${pool.lockin} AXLE
               </Text>
             </Box>
           )}
@@ -438,7 +513,7 @@ const Stake = () => {
           <Box>
             {togglePage ? (
               <Box
-                minW={`30vw`}
+                minW={`24vw`}
                 borderRadius="3xl"
                 borderLeft={`2px solid ${brandingColors.newHighlightColor}`}
                 borderRight={`2px solid ${brandingColors.newHighlightColor}`}
@@ -516,7 +591,6 @@ const Stake = () => {
                         mx={4}
                         fontWeight={"bold"}
                         color={brandingColors.primaryButtonColor}
-                        placeholder="value (BNB)"
                         onChange={onBnbChange}
                         fontSize="lg"
                         type={"number"}
@@ -547,7 +621,12 @@ const Stake = () => {
                       Min Stake Amount : 8000 AXLE
                     </Box>
 
-                    <Box mt={4} textAlign={"center"} className="btn">
+                    <Box
+                      mt={4}
+                      onClick={buy2}
+                      textAlign={"center"}
+                      className="btn"
+                    >
                       Enable Staking
                     </Box>
                   </Box>
@@ -612,7 +691,7 @@ const Stake = () => {
               </Box>
             ) : (
               <Box
-                minW={`30vw`}
+                minW={`26vw`}
                 color={brandingColors.primaryTextColor}
                 boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
                 border={`3px solid ${brandingColors.newHighlightColor}`}
@@ -695,9 +774,14 @@ const Stake = () => {
                     {stakeRewards.map((s, i) => (
                       <Box
                         borderRadius={"xl"}
-                        bg={brandingColors.bgColor}
+                        bg={
+                          i === lockIn
+                            ? brandingColors.newHighlightColor
+                            : brandingColors.bgColor
+                        }
                         boxShadow={`0px 0px 3px ${brandingColors.newHighlightColor}`}
                         textAlign={"center"}
+                        onClick={() => setLockIn(i)}
                         key={i}
                         minW={"32"}
                         cursor="pointer"
@@ -730,7 +814,13 @@ const Stake = () => {
                     ))}
                   </Box>
                 </Box>
-                <Box mx={8} my={4} textAlign={"center"} className="btn">
+                <Box
+                  onClick={buy}
+                  mx={8}
+                  my={4}
+                  textAlign={"center"}
+                  className="btn"
+                >
                   Enable Staking
                 </Box>
                 <Box
@@ -740,7 +830,7 @@ const Stake = () => {
                   p={4}
                 >
                   <Text color={brandingColors.secondaryTextColor}>
-                    Locking 12002 AXLE for 180 Days
+                    Locking {bnb} AXLE for {stakeRewards[lockIn].days} Days
                   </Text>
                 </Box>
               </Box>

@@ -1,12 +1,28 @@
-import { Box, Image, Input, Text } from "@chakra-ui/react";
+import { Box, Image, Input, Select, Text } from "@chakra-ui/react";
 
 import Logo from "../assets/logo.png";
 
 import { brandingColors } from "../config/brandingColors";
 import { SettingsIcon } from "@chakra-ui/icons";
+
 import SwapIcon from "../assets/stake/swapv.svg";
 
+import Bnb from "../assets/stake/icons/bnb.svg";
+import Busd from "../assets/stake/icons/busd.png";
+import Cake from "../assets/stake/icons/cake.png";
+import UsdT from "../assets/stake/icons/usdt.png";
+import Axle from "../assets/icon.png";
+import { useState } from "react";
+
 const StakeSwap = () => {
+  const images1 = [Axle, Bnb, Cake, Busd, UsdT];
+  const swaps1 = ["AXLE", "BNB", "CAKE", "BUSD", "USDT"];
+  const [swap1, setSwap1] = useState(0);
+
+  const images2 = [Axle, Bnb, Cake, Busd, UsdT];
+  const swaps2 = ["AXLE", "BNB", "CAKE", "BUSD", "USDT"];
+  const [swap2, setSwap2] = useState(0);
+
   return (
     <Box
       bg={brandingColors.bgColor}
@@ -40,7 +56,6 @@ const StakeSwap = () => {
           justifyContent="center"
           alignItems={"center"}
           flexDirection={"column"}
-          width={"32vw"}
         >
           <Text
             fontFamily={`'Russo One', sans-serif`}
@@ -55,7 +70,7 @@ const StakeSwap = () => {
           boxShadow={`0px 0px 9px ${brandingColors.newHighlightColor}`}
           color={brandingColors.primaryTextColor}
           borderRadius="xl"
-          width="30%"
+          minW="30vw"
           my={8}
         >
           <Box
@@ -77,9 +92,23 @@ const StakeSwap = () => {
             </Box>
           </Box>
           <Box color={brandingColors.secondaryTextColor} p={4}>
-            <Box display={"flex"} justifyContent="space-between">
-              <Text>From AXLE </Text>
-              <Text>Balance : 0 AXLE</Text>
+            <Box
+              alignItems={"center"}
+              display={"flex"}
+              justifyContent="space-between"
+            >
+              <Box display={"flex"} alignItems="center" columnGap={"1rem"}>
+                <Select onChange={(e) => setSwap1(Number(e.target.value))}>
+                  <Box></Box>
+                  <option value={0}>AXLE</option>
+                  <option value={1}>BNB</option>
+                  <option value={2}>CAKE</option>
+                  <option value={3}>BUSD</option>
+                  <option value={4}>USDT</option>
+                </Select>
+                <Image w={8} src={images1[swap1]} />
+              </Box>
+              <Text>Balance : 0 {swaps1[swap1]}</Text>
             </Box>
             <Input
               my={2}
@@ -113,8 +142,17 @@ const StakeSwap = () => {
               </Box>
             </Box>
             <Box display={"flex"} justifyContent="space-between">
-              <Text>From BNB</Text>
-              <Text>Balance : 0 BNB</Text>
+              <Box display={"flex"} alignItems="center" columnGap={"1rem"}>
+                <Select onChange={(e) => setSwap2(Number(e.target.value))}>
+                  <option value={0}>AXLE</option>
+                  <option value={1}>BNB</option>
+                  <option value={2}>CAKE</option>
+                  <option value={3}>BUSD</option>
+                  <option value={4}>USDT</option>
+                </Select>
+                <Image w={8} src={images2[swap2]} />
+              </Box>
+              <Text>Balance : 0 {swaps2[swap2]}</Text>
             </Box>
             <Input
               my={2}

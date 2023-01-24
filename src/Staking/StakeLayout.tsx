@@ -10,6 +10,7 @@ import Stake from "./Stake";
 import Dashboard from "./StakeDashboard";
 
 import { useState } from "react";
+import { LinkIcon } from "@chakra-ui/icons";
 
 const screens = [
   {
@@ -42,34 +43,57 @@ const StakeLayout = () => {
     <Box>
       <GetPage />
       <Box
+        position={"fixed"}
+        zIndex={300}
+        bottom="16%"
+        left={"86%"}
+        fontWeight="bold"
+        cursor={"pointer"}
+      >
+        <Text
+          py={2}
+          px={4}
+          borderRadius="md"
+          bg={brandingColors.newHighlightColor}
+          color={brandingColors.primaryTextColor}
+          fontSize="xl"
+          _hover={{
+            textDecoration: "underline",
+          }}
+        >
+          <LinkIcon mr={2} />
+          How To Stake?
+        </Text>
+      </Box>
+      <Box
         width={"100%"}
         position={"fixed"}
         zIndex={300}
         bottom="2%"
         fontWeight="bold"
       >
-        <Box
-          width={"12%"}
-          mx="auto"
-          display="flex"
-          columnGap="1rem"
-          justifyContent="space-between"
-          bg={brandingColors.newHighlightColor}
-          fontFamily={`'Russo One', sans-serif`}
-          color={brandingColors.primaryTextColor}
-          p={4}
-          borderRadius="xl"
-        >
-          {screens.map((screen, index) => (
-            <MenuIcon
-              onClick={() => {
-                setCurrentPage(index);
-              }}
-              isActive={index === currentPage}
-              icon={screen.icon}
-              text={screen.text}
-            />
-          ))}
+        <Box display={"flex"}>
+          <Box
+            mx="auto"
+            display="flex"
+            columnGap="1rem"
+            justifyContent="space-between"
+            fontFamily={`'Russo One', sans-serif`}
+            color={brandingColors.primaryTextColor}
+            p={4}
+            borderRadius="xl"
+          >
+            {screens.map((screen, index) => (
+              <MenuIcon
+                onClick={() => {
+                  setCurrentPage(index);
+                }}
+                isActive={index === currentPage}
+                icon={screen.icon}
+                text={screen.text}
+              />
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>
@@ -94,7 +118,11 @@ const MenuIcon = (props: MenuIconInterface) => {
       justifyContent="center"
       alignItems={"center"}
       flexDirection="column"
-      bg={props.isActive ? brandingColors.bgColor : brandingColors.fgColor}
+      bg={
+        props.isActive
+          ? brandingColors.newHighlightColor
+          : brandingColors.fgColor
+      }
       boxShadow="2xl"
       py={2}
       px={4}
