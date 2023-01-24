@@ -245,13 +245,14 @@ const Stake = () => {
       fontFamily={"quicksand"}
       fontWeight="bold"
       py={6}
-      minH={{ base: "180vh" }}
+      minH={{ base: "160vh" }}
     >
       <Box
         alignItems={"center"}
         mx={24}
         display={"flex"}
-        justifyContent="space-between"
+        justifyContent={{ base: "center", md: "space-between" }}
+        my={{ base: 8, md: 4 }}
       >
         <Image maxH={"8vh"} src={Logo}></Image>
         <Wallet
@@ -298,21 +299,21 @@ const Stake = () => {
             <Text
               fontFamily={`'Russo One', sans-serif`}
               lineHeight={"0.8"}
-              fontSize={"xl"}
+              fontSize={{ base: "md", md: "xl" }}
             >
               TOTAL VALUE LOCKED
             </Text>
             <Text
               lineHeight={"0.8"}
               color={brandingColors.primaryTextColor}
-              fontSize={"3xl"}
+              fontSize={{ base: "xl", md: "3xl" }}
             >
               ${pool}
             </Text>
             <Text
               lineHeight={"0.8"}
               color={brandingColors.secondaryTextColor}
-              fontSize={"sm"}
+              fontSize={{ base: "xs", md: "sm" }}
               fontFamily={`'Russo One', sans-serif`}
             >
               $ 0.00164 = 1 AXLE
@@ -323,7 +324,7 @@ const Stake = () => {
             minW={"14vw"}
             display={"flex"}
             justifyContent="space-between"
-            fontSize="xl"
+            fontSize={{ base: "sm", md: "xl" }}
             columnGap=".5rem"
             border={`3px solid ${brandingColors.newHighlightColor}`}
             p={1}
@@ -458,8 +459,9 @@ const Stake = () => {
           >
             <Text
               my={4}
-              fontSize={"xl"}
-              color={brandingColors.secondaryTwoTextColor}
+              fontSize={{ base: "sm", md: "xl" }}
+              textAlign="center"
+              color={brandingColors.primaryTextColor}
             >
               Connect your wallet to stake $AXLE tokens!
             </Text>
@@ -475,7 +477,9 @@ const Stake = () => {
           <Box>
             {togglePage ? (
               <Box
-                minW="40vw"
+                minW={{ base: "90vw", md: "42vw" }}
+                mx="auto"
+                width={"100%"}
                 borderRadius="3xl"
                 borderLeft={`2px solid ${brandingColors.newHighlightColor}`}
                 borderRight={`2px solid ${brandingColors.newHighlightColor}`}
@@ -492,9 +496,9 @@ const Stake = () => {
                 >
                   <Text
                     borderTopLeftRadius={"3xl"}
-                    width={"100%"}
                     boxShadow="xl"
-                    fontSize={"2xl"}
+                    width={"100%"}
+                    fontSize={{ base: "md", md: "2xl" }}
                     backgroundImage={
                       !unstake
                         ? `linear-gradient(to right, #061e37, #002956, #003376, #003b96, #1442b5)`
@@ -515,7 +519,7 @@ const Stake = () => {
                     onClick={() => setUnstake(true)}
                     cursor="pointer"
                     width={"100%"}
-                    fontSize={"2xl"}
+                    fontSize={{ base: "md", md: "2xl" }}
                     borderTopRightRadius="3xl"
                     fontFamily={`'Russo One', sans-serif`}
                     backgroundImage={
@@ -535,6 +539,7 @@ const Stake = () => {
                       px={2}
                       py={2}
                       justifyContent="space-between"
+                      fontSize={{ base: "xx-small", md: "sm" }}
                     >
                       <Text>Amount</Text>
                       <Text>~My Balance {axleBalance} AXLE</Text>
@@ -547,6 +552,7 @@ const Stake = () => {
                       display={"flex"}
                       border={`3px solid ${brandingColors.fgColor}`}
                       borderRadius="xl"
+                      fontSize={{ base: "xs", md: "md" }}
                     >
                       <Box>$AXLE</Box>
                       <Input
@@ -554,7 +560,6 @@ const Stake = () => {
                         fontWeight={"bold"}
                         color={brandingColors.primaryButtonColor}
                         onChange={onBnbChange}
-                        fontSize="lg"
                         type={"number"}
                         inputMode="decimal"
                         borderRadius={"none"}
@@ -563,6 +568,7 @@ const Stake = () => {
                         borderLeft={`2px solid ${brandingColors.fgColor}`}
                         borderRight={`2px solid ${brandingColors.fgColor}`}
                         min={0.2}
+                        width="100%"
                         max={50}
                         _active={{
                           outline: "none",
@@ -579,7 +585,11 @@ const Stake = () => {
                       ></Input>
                       <Box cursor={"pointer"}>MAX</Box>
                     </Box>
-                    <Box px={2} color={brandingColors.secondaryTextColor}>
+                    <Box
+                      fontSize={{ base: "xx-small", md: "md" }}
+                      px={2}
+                      color={brandingColors.secondaryTextColor}
+                    >
                       Min Stake Amount : 8000 AXLE
                     </Box>
 
@@ -600,6 +610,7 @@ const Stake = () => {
                       px={2}
                       py={2}
                       justifyContent="space-between"
+                      fontSize={{ base: "xx-small", md: "sm" }}
                     >
                       <Text>Amount</Text>
                       <Text>~My Balance {axleBalance} AXLE</Text>
@@ -612,6 +623,7 @@ const Stake = () => {
                       display={"flex"}
                       border={`3px solid ${brandingColors.fgColor}`}
                       borderRadius="xl"
+                      fontSize={{ base: "xs", md: "md" }}
                     >
                       <Box>$AXLE</Box>
                       <Input
@@ -620,7 +632,6 @@ const Stake = () => {
                         color={brandingColors.primaryButtonColor}
                         placeholder="value (BNB)"
                         onChange={onBnbChange}
-                        fontSize="lg"
                         type={"number"}
                         inputMode="decimal"
                         borderRadius={"none"}
@@ -689,6 +700,7 @@ const Stake = () => {
                     display={"flex"}
                     border={`3px solid ${brandingColors.fgColor}`}
                     borderRadius="xl"
+                    fontSize={{ base: "xx-small", md: "md" }}
                   >
                     <Box>$AXLE</Box>
                     <Input
@@ -697,7 +709,6 @@ const Stake = () => {
                       color={brandingColors.primaryButtonColor}
                       placeholder="value (BNB)"
                       onChange={onBnbChange}
-                      fontSize="lg"
                       type={"number"}
                       inputMode="decimal"
                       borderRadius={"none"}
