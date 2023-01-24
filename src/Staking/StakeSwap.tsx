@@ -32,9 +32,9 @@ const StakeSwap = () => {
       fontWeight="bold"
     >
       <Box
+        py={8}
         alignItems={"center"}
         mx={24}
-        my={2}
         display={"flex"}
         justifyContent="space-between"
       >

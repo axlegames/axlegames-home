@@ -25,7 +25,7 @@ const Dashboard = (props: Props) => {
       <Box
         alignItems={"center"}
         mx={24}
-        my={2}
+        py={6}
         display={"flex"}
         justifyContent="space-between"
       >

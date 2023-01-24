@@ -181,7 +181,7 @@ const Stake = () => {
       // let bal = await token.balanceOf(web3Accounts[0]);
       // bal = ethers.utils.formatEther(bal);
       setAxleBalance(25000);
-      setPool("312,212,189");
+      setPool("3,212,189");
       // localStorage.setItem("isWalletConnected", "true");
     } catch (error) {
       console.log(error);
@@ -244,6 +244,7 @@ const Stake = () => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
+      py={6}
     >
       <Box
         alignItems={"center"}
