@@ -259,12 +259,12 @@ const Stake = () => {
           width={"32vw"}
         >
           <Box
-            boxShadow={`0px 0px 125px -20px ${brandingColors.newHighlightColor}`}
+            boxShadow={`0px 0px 125px  ${brandingColors.primaryTwoTextColor}`}
             border={`3px solid ${brandingColors.newHighlightColor}`}
             p={6}
             borderRadius="xl"
             bg={brandingColors.bgColor}
-            backgroundImage={`linear-gradient(to bottom, #061e37, #072340, #072849, #082d52, #0a325c)`}
+            backgroundImage={`radial-gradient(circle, #061e37, #1a3767, #3f4f99, #7165ca, #ad78f7)`}
             color={brandingColors.secondaryTextColor}
             fontWeight="bold"
             justifyContent={"center"}
@@ -272,7 +272,7 @@ const Stake = () => {
             flexDirection={"column"}
             alignItems="center"
             rowGap={"1rem"}
-            minW={"20vw"}
+            minW={"14vw"}
           >
             <Text
               fontFamily={`'Russo One', sans-serif`}
@@ -299,12 +299,12 @@ const Stake = () => {
           </Box>
           <Box
             mt={4}
-            minW={"20vw"}
+            minW={"16vw"}
             display={"flex"}
             justifyContent="space-between"
             fontSize="xl"
             columnGap=".2rem"
-            border={`2px solid ${brandingColors.newHighlightColor}`}
+            border={`3px solid ${brandingColors.newHighlightColor}`}
             p={1}
             borderRadius={"8vw"}
           >
@@ -325,7 +325,7 @@ const Stake = () => {
               }
               backgroundImage={
                 togglePage
-                  ? `linear-gradient(to right, #061e37, #002956, #003376, #003b96, #1442b5)`
+                  ? `linear-gradient(to left, #ad78f7, #8e6ae7, #6e5cd6, #4a4fc6, #1442b5)`
                   : "none"
               }
               borderRadius={"8vw"}
@@ -350,7 +350,7 @@ const Stake = () => {
               }
               backgroundImage={
                 !togglePage
-                  ? `linear-gradient(to right, #061e37, #002956, #003376, #003b96, #1442b5)`
+                  ? `linear-gradient(to right, #ad78f7, #8e6ae7, #6e5cd6, #4a4fc6, #1442b5)`
                   : "none"
               }
               borderRadius={"8vw"}
