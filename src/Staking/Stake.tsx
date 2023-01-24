@@ -245,6 +245,7 @@ const Stake = () => {
       fontFamily={"quicksand"}
       fontWeight="bold"
       py={6}
+      minH={{ base: "180vh" }}
     >
       <Box
         alignItems={"center"}

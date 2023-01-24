@@ -20,21 +20,21 @@ const Dashboard = (props: Props) => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
-      minH={"85vh"}
+      minH={{ base: "180vh" }}
     >
       <Box
         alignItems={"center"}
         mx={24}
         py={6}
         display={"flex"}
-        justifyContent="space-between"
+        justifyContent={{ base: "center", md: "space-between" }}
       >
         <Image maxH={"8vh"} src={Logo}></Image>
       </Box>
       <Text
         fontFamily={`'Russo One', sans-serif`}
         lineHeight={"0.8"}
-        fontSize={"6xl"}
+        fontSize={{ base: "3xl", md: "5xl" }}
         textAlign="center"
         my={12}
         color={brandingColors.primaryTextColor}
@@ -44,12 +44,13 @@ const Dashboard = (props: Props) => {
       <Box
         display={"flex"}
         justifyContent="center"
-        flexDirection={"row"}
+        flexDirection={{ base: "column", md: "row" }}
         alignItems="center"
         width={{ base: "100%", md: "90%", lg: "80%", xl: "75%" }}
         cursor="pointer"
         mx="auto"
         columnGap="4rem"
+        rowGap="1rem"
       >
         <Box
           boxShadow={`0px 0px 125px -20px ${brandingColors.newHighlightColor}`}

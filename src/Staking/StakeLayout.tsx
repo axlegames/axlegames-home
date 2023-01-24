@@ -40,8 +40,10 @@ const StakeLayout = () => {
   const GetPage = () => pages[currentPage];
 
   return (
-    <Box bg={brandingColors.bgColor} minH="100vh">
-      <GetPage />
+    <Box position="relative" bg={brandingColors.bgColor} minH="100vh">
+      <Box mx={4}>
+        <GetPage />
+      </Box>
       <Box
         position={"fixed"}
         zIndex={300}
@@ -49,6 +51,7 @@ const StakeLayout = () => {
         right={"4%"}
         fontWeight="bold"
         cursor={"pointer"}
+        display={{ base: "none", lg: "flex" }}
       >
         <Text
           py={2}
@@ -65,26 +68,41 @@ const StakeLayout = () => {
           How To Stake?
         </Text>
       </Box>
-      <Box py={8} bg={brandingColors.bgColor} display={"flex"}>
+      <Box
+        display={"flex"}
+        justifyContent="center"
+        alignItems={"center"}
+        position="fixed"
+        bottom={"0"}
+        width="100%"
+        zIndex={5000}
+      >
         <Box
-          mx="auto"
-          display="flex"
-          columnGap="1rem"
-          justifyContent="space-between"
-          fontFamily={`'Russo One', sans-serif`}
-          color={brandingColors.primaryTextColor}
-          borderRadius="xl"
+          justifyContent={"center"}
+          alignItems="center"
+          py={8}
+          display={"flex"}
         >
-          {screens.map((screen, index) => (
-            <MenuIcon
-              onClick={() => {
-                setCurrentPage(index);
-              }}
-              isActive={index === currentPage}
-              icon={screen.icon}
-              text={screen.text}
-            />
-          ))}
+          <Box
+            mx="auto"
+            display="flex"
+            columnGap="1rem"
+            justifyContent="space-between"
+            fontFamily={`'Russo One', sans-serif`}
+            color={brandingColors.primaryTextColor}
+            borderRadius="xl"
+          >
+            {screens.map((screen, index) => (
+              <MenuIcon
+                onClick={() => {
+                  setCurrentPage(index);
+                }}
+                isActive={index === currentPage}
+                icon={screen.icon}
+                text={screen.text}
+              />
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>

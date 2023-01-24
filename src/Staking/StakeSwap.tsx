@@ -30,13 +30,14 @@ const StakeSwap = () => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
+      minH={"160vh"}
     >
       <Box
         py={8}
+        px={8}
         alignItems={"center"}
-        mx={24}
         display={"flex"}
-        justifyContent="space-between"
+        justifyContent={{ base: "center", sm: "space-between" }}
       >
         <Image maxH={"8vh"} src={Logo}></Image>
       </Box>
@@ -45,7 +46,6 @@ const StakeSwap = () => {
         justifyContent="center"
         flexDirection={"column"}
         alignItems="center"
-        width={{ base: "100%", md: "90%", lg: "80%", xl: "75%" }}
         mx="auto"
       >
         <Box
@@ -57,7 +57,7 @@ const StakeSwap = () => {
           <Text
             fontFamily={`'Russo One', sans-serif`}
             lineHeight={"0.8"}
-            fontSize={"5xl"}
+            fontSize={{ base: "3xl", md: "5xl" }}
             color={brandingColors.primaryTextColor}
           >
             AXLE SWAP
@@ -67,8 +67,10 @@ const StakeSwap = () => {
           boxShadow={`0px 0px 9px ${brandingColors.newHighlightColor}`}
           color={brandingColors.primaryTextColor}
           borderRadius="xl"
-          minW="30vw"
           my={8}
+          minW={{ base: "100%", md: "auto" }}
+          width="50vw"
+          mx={4}
         >
           <Box
             display={"flex"}
@@ -78,14 +80,22 @@ const StakeSwap = () => {
             px={4}
             py={2}
           >
-            <Text fontFamily={`'Russo One', sans-serif`} fontSize={"3xl"}>
+            <Text
+              fontFamily={`'Russo One', sans-serif`}
+              fontSize={{ base: "xl", md: "3xl" }}
+            >
               SWAP
             </Text>
             <Box
               borderRadius={"md"}
               boxShadow={`0px 0px 4px ${brandingColors.newHighlightColor}`}
             >
-              <SettingsIcon cursor={"pointer"} p={2} height={"12"} width="12" />
+              <SettingsIcon
+                cursor={"pointer"}
+                p={2}
+                height={{ base: "8", md: "12" }}
+                width={{ base: "8", md: "12" }}
+              />
             </Box>
           </Box>
           <Box color={brandingColors.secondaryTextColor} p={4}>
@@ -95,7 +105,10 @@ const StakeSwap = () => {
               justifyContent="space-between"
             >
               <Box display={"flex"} alignItems="center" columnGap={"1rem"}>
-                <Select onChange={(e) => setSwap1(Number(e.target.value))}>
+                <Select
+                  fontSize={{ base: "xs", md: "md" }}
+                  onChange={(e) => setSwap1(Number(e.target.value))}
+                >
                   <Box></Box>
                   <option value={0}>AXLE</option>
                   <option value={1}>BNB</option>
@@ -103,9 +116,11 @@ const StakeSwap = () => {
                   <option value={3}>BUSD</option>
                   <option value={4}>USDT</option>
                 </Select>
-                <Image w={8} src={images1[swap1]} />
+                <Image w={{ base: 7, md: 8 }} src={images1[swap1]} />
               </Box>
-              <Text>Balance : 0 {swaps1[swap1]}</Text>
+              <Text fontSize={{ base: "xs", md: "md" }}>
+                Balance : 0 {swaps1[swap1]}
+              </Text>
             </Box>
             <Input
               my={2}
@@ -135,21 +150,26 @@ const StakeSwap = () => {
             />
             <Box display={"flex"} justifyContent="center" mt={4} mb={0}>
               <Box bg={brandingColors.fgColor} borderRadius="3xl">
-                <Image p={1} src={SwapIcon} width="12" />
+                <Image p={1} src={SwapIcon} width={{ base: 7, md: 8 }} />
               </Box>
             </Box>
             <Box display={"flex"} justifyContent="space-between">
               <Box display={"flex"} alignItems="center" columnGap={"1rem"}>
-                <Select onChange={(e) => setSwap2(Number(e.target.value))}>
+                <Select
+                  fontSize={{ base: "xs", md: "md" }}
+                  onChange={(e) => setSwap2(Number(e.target.value))}
+                >
                   <option value={0}>AXLE</option>
                   <option value={1}>BNB</option>
                   <option value={2}>CAKE</option>
                   <option value={3}>BUSD</option>
                   <option value={4}>USDT</option>
                 </Select>
-                <Image w={8} src={images2[swap2]} />
+                <Image w={{ base: 7, md: 8 }} src={images2[swap2]} />
               </Box>
-              <Text>Balance : 0 {swaps2[swap2]}</Text>
+              <Text fontSize={{ base: "xs", md: "md" }}>
+                Balance : 0 {swaps2[swap2]}
+              </Text>
             </Box>
             <Input
               my={2}
@@ -186,6 +206,7 @@ const StakeSwap = () => {
               justifyContent={"center"}
               flexDirection="column"
               rowGap={"1rem"}
+              fontSize={{ base: "xs", md: "md" }}
             >
               <Box display={"flex"} justifyContent="space-between">
                 <Text>Slippage Tolerance</Text>
