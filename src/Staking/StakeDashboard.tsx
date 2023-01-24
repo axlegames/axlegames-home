@@ -20,9 +20,7 @@ const Dashboard = (props: Props) => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
-      py={4}
-      minH={"100vh"}
-      pb={12}
+      minH={"85vh"}
     >
       <Box
         alignItems={"center"}
