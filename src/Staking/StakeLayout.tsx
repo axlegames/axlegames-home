@@ -65,35 +65,27 @@ const StakeLayout = () => {
           How To Stake?
         </Text>
       </Box>
-      <Box
-        width={"100%"}
-        position={"fixed"}
-        zIndex={300}
-        bottom="2%"
-        fontWeight="bold"
-      >
-        <Box display={"flex"}>
-          <Box
-            mx="auto"
-            display="flex"
-            columnGap="1rem"
-            justifyContent="space-between"
-            fontFamily={`'Russo One', sans-serif`}
-            color={brandingColors.primaryTextColor}
-            p={4}
-            borderRadius="xl"
-          >
-            {screens.map((screen, index) => (
-              <MenuIcon
-                onClick={() => {
-                  setCurrentPage(index);
-                }}
-                isActive={index === currentPage}
-                icon={screen.icon}
-                text={screen.text}
-              />
-            ))}
-          </Box>
+      <Box bg={brandingColors.bgColor} display={"flex"}>
+        <Box
+          mx="auto"
+          display="flex"
+          columnGap="1rem"
+          justifyContent="space-between"
+          fontFamily={`'Russo One', sans-serif`}
+          color={brandingColors.primaryTextColor}
+          borderRadius="xl"
+          pb={8}
+        >
+          {screens.map((screen, index) => (
+            <MenuIcon
+              onClick={() => {
+                setCurrentPage(index);
+              }}
+              isActive={index === currentPage}
+              icon={screen.icon}
+              text={screen.text}
+            />
+          ))}
         </Box>
       </Box>
     </Box>

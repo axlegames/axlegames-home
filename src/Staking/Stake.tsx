@@ -284,7 +284,6 @@ const Stake = () => {
       fontWeight="bold"
       py={4}
       minH={"100vh"}
-      pb={12}
     >
       <Box
         alignItems={"center"}
