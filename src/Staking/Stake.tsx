@@ -575,7 +575,7 @@ const Stake = () => {
                       py={2}
                       justifyContent="space-between"
                     >
-                      <Text>Amout</Text>
+                      <Text>Amount</Text>
                       <Text>~My Balance {axleBalance} AXLE</Text>
                     </Box>
                     <Box
