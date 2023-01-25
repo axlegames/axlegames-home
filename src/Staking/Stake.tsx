@@ -1,4 +1,12 @@
-import { Box, Divider, Image, Input, Text, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Grid,
+  Image,
+  Input,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 
 import Logo from "../assets/logo.png";
 
@@ -743,11 +751,11 @@ const Stake = () => {
                   >
                     Locking
                   </Box>
-                  <Box
+                  <Grid
                     display={"grid"}
                     gridTemplateColumns={{
                       base: "1fr 1fr",
-                      md: "1fr 1fr 1fr 1f",
+                      md: "1fr 1fr 1fr 1fr",
                     }}
                     rowGap={"1rem"}
                     justifyContent="center"
@@ -795,7 +803,7 @@ const Stake = () => {
                         </Text>
                       </Box>
                     ))}
-                  </Box>
+                  </Grid>
                 </Box>
                 <Box
                   onClick={buy}
