@@ -1,220 +1,328 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  FormControl,
-  Grid,
-  Image,
-  Input,
-  Text,
-  Textarea,
-  useToast,
-} from "@chakra-ui/react";
+const html = `
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Begam - Online Gaming Tournaments Template</title>
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/jquery-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/magnific-popup.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/nice-select.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
+    />
 
-import { socials, links } from "../config/data";
-import { brandingColors } from "../config/brandingColors";
+  </head>
 
-import Heading from "../components/Heading";
-import NeuLink from "../components/NeuLink";
-import NeuPageLink from "../components/navbar/NeuPageLink";
+  <body>
+    <!-- start preloader -->
+    <div class="preloader" id="preloader"></div>
+    <!-- end preloader -->
+
+    <a href="#" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
+
+    <!-- Call to Action In start -->
+    <section id="call-to-action">
+      <div class="overlay pt-120 pb-120">
+        <div class="container">
+          <div class="main-content">
+            <div class="row d-sm-flex justify-content-sm-end">
+              <div class="col-lg-4 col-md-1">
+                <img
+                  class="left"
+                  src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/call-to-action-left.png"
+                  alt="image"
+                />
+              </div>
+              <div class="col-lg-4 col-md-5 col-sm-5 d-flex align-items-center">
+                <div class="section-item">
+                  <h4>Invite Friends and Win Rewards.Join BEGAM Games today</h4>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center justify-content-sm-end align-items-center"
+              >
+                <div
+                  class="btn-area d-flex justify-content-center justify-content-sm-end align-items-center"
+                >
+                  <a href="registration.html" class="cmn-btn">Join Now</a>
+                </div>
+                <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/call-to-action-right.png" alt="image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call to Action In end -->
+
+    <!-- Testimonials In start -->
+    <section id="testimonials-section">
+      <div class="overlay pt-120 pb-120">
+        <div class="container wow fadeInUp">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="section-header text-center">
+                <h2 class="title">Our Gamers Review</h2>
+                <p>Thousands of Happy Gamers All Around the World</p>
+              </div>
+            </div>
+          </div>
+          <div class="row mp-none">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <p>
+                  I play Tournament every day, it's a great way to relax and win
+                  cash too!
+                </p>
+                <div class="bottom-area d-flex justify-content-between">
+                  <div class="left-area d-flex">
+                    <div class="img">
+                      <div class="img-area">
+                        <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/testimonials-user-1.png" alt="image" />
+                      </div>
+                    </div>
+                    <div class="title-area">
+                      <h6>Brice Tong</h6>
+                      <span>Texas, USA</span>
+                    </div>
+                  </div>
+                  <div class="amount">
+                    <h6>$306</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <p>
+                  When I hang out with my friends, we play Tournament, its so
+                  much fun
+                </p>
+                <div class="bottom-area d-flex justify-content-between">
+                  <div class="left-area d-flex">
+                    <div class="img">
+                      <div class="img-area">
+                        <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/testimonials-user-1.png" alt="image" />
+                      </div>
+                    </div>
+                    <div class="title-area">
+                      <h6>Alva Adair</h6>
+                      <span>Frankfurt, Germany</span>
+                    </div>
+                  </div>
+                  <div class="amount">
+                    <h6>$496</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <p>
+                  I joined for the community but ended up winning cash, amazing.
+                </p>
+                <div class="bottom-area d-flex justify-content-between">
+                  <div class="left-area d-flex">
+                    <div class="img">
+                      <div class="img-area">
+                        <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/testimonials-user-1.png" alt="image" />
+                      </div>
+                    </div>
+                    <div class="title-area">
+                      <h6>Ray Sutton</h6>
+                      <span>Ontario, Canada</span>
+                    </div>
+                  </div>
+                  <div class="amount">
+                    <h6>$306</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials In end -->
+
+    <!-- Call Action In start -->
+    <section id="call-action" class="pb-120">
+      <div class="overlay">
+        <div class="container wow fadeInUp">
+          <div class="row d-flex justify-content-between align-items-center">
+            <div class="col-lg-6 col-md-6">
+              <div class="left-area">
+                <h2 class="title">Build Your Esports Profile</h2>
+                <p>
+                  Showcase your achievements, match history and win rate while
+                  you build your reputation on Begam.
+                </p>
+                <a href="registration.html" class="cmn-btn-second"
+                  >Sign Up Free</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-6">
+              <div class="right-area">
+                <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/profile-info.png" alt="image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call Action In end -->
+
+    <!-- footer-section start -->
+    <footer id="footer-section">
+      <div class="overlay">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="footer-top">
+                <div class="row justify-content-center">
+                  <div class="col-lg-6 col-md-8">
+                    <div class="top-area text-center">
+                      <h3>Subscribe to Our Newsletter</h3>
+                      <p>Receive news, stay updated and special offers</p>
+                    </div>
+                    <form action="#">
+                      <div class="subscribe d-flex">
+                        <input type="email" placeholder="Your Email Address" />
+                        <button class="cmn-btn">Subscribe</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-mid pt-120">
+        <div class="container">
+          <div class="row d-flex">
+            <div
+              class="col-lg-8 col-md-8 d-flex justify-content-md-between justify-content-center align-items-center cus-grid"
+            >
+              <div class="logo-section">
+                <a class="site-logo site-title" href="index.html">
+                  <img style="width:128px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png" alt="site-logo"/>
+                </a>
+              </div>
+              <ul class="menu-side d-flex align-items-center">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div
+              class="col-lg-4 col-md-4 d-flex align-items-center justify-content-center justify-content-md-end"
+            >
+              <div class="right-area">
+                <ul class="d-flex">
+                  <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="main-content">
+            <div class="row d-flex align-items-center justify-content-center">
+              <div class="col-lg-12 col-md-6">
+                <div class="left-area text-center">
+                  <p>
+                    Copyright © 2023. All Rights Reserved By
+                    <a href="#">AXLEGAMES</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer-section end -->
+
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery-3.5.1.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/bootstrap.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/slick.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.nice-select.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/fontawesome.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.counterup.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.waypoints.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/wow.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/main.js"></script>
+  </body>
+</html>
+
+`;
 
 const Footer = () => {
-  const toast = useToast();
-  function submit() {
-    return toast({
-      title: "Thank you!",
-      description: "Your message has been recoreded.",
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-      position: "top",
-    });
-  }
+  // const toast = useToast();
+  // function submit() {
+  //   return toast({
+  //     title: "Thank you!",
+  //     description: "Your message has been recoreded.",
+  //     status: "success",
+  //     duration: 5000,
+  //     isClosable: true,
+  //     position: "top",
+  //   });
+  // }
 
   return (
-    <Flex
-      bg={brandingColors.bgColor}
-      fontFamily={"quicksand"}
-      fontWeight="bold"
-      justifyContent={"center"}
-      alignItems="center"
-      flexDirection={"column"}
-      rowGap={{ base: "2rem" }}
-    >
-      <Heading title="Get in Touch" />
-      <Box
-        px={4}
-        py={8}
-        minW={{ base: "46vw" }}
-        borderRadius="xl"
-        display="flex"
-        flexDirection={"column"}
-        justifyContent="center"
-        alignItems={"center"}
-        rowGap="2rem"
-        bg={brandingColors.bgColor}
-        boxShadow={`5px 5px 13px #05192d, -5px -5px 13px #072341`}
-        data-aos={`zoom-out`}
-      >
-        <Grid
-          width={"100%"}
-          gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
-          columnGap="2rem"
-          justifyContent={"center"}
-          alignItems="center"
-          rowGap={"1rem"}
-          fontFamily={`'Russo One', sans-serif`}
-        >
-          <Box display={"flex"} flexDirection="column" rowGap={"1rem"}>
-            <FormControl isRequired>
-              <Input
-                outline={"none"}
-                boxShadow={`1px 1px 4px ${brandingColors.newHighlightColor}`}
-                color={brandingColors.secondaryTwoTextColor}
-                fontWeight="bold"
-                size={"lg"}
-                placeholder="Name"
-              />
-            </FormControl>
-            <FormControl isRequired>
-              <Input
-                boxShadow={`1px 1px 4px ${brandingColors.newHighlightColor}`}
-                color={brandingColors.secondaryTwoTextColor}
-                fontWeight="bold"
-                size="lg"
-                placeholder="Email"
-              />
-            </FormControl>
-          </Box>
-          <FormControl>
-            <Textarea
-              height={"110px"}
-              boxShadow={`1px 1px 4px ${brandingColors.newHighlightColor}`}
-              color={brandingColors.secondaryTwoTextColor}
-              fontWeight="bold"
-              size="lg"
-              noOfLines={20}
-              placeholder="Message"
-            />
-          </FormControl>
-        </Grid>
-        <div onClick={submit} className="btn">
-          Submit
-        </div>
-      </Box>
-
-      <Box
-        display={"flex"}
-        justifyContent="center"
-        flexDirection={"column"}
-        alignItems="center"
-      >
-        <Text
-          color={brandingColors.secondaryTextColor}
-          fontSize={"3xl"}
-          textAlign={"center"}
-        >
-          Visit us on our social channels!
-        </Text>
-        <Flex
-          display={{ base: "flex" }}
-          rowGap={{ base: "1rem" }}
-          alignItems={"center"}
-          flexDirection={{ base: "row" }}
-          justifyContent={{ base: "center" }}
-        >
-          {socials.map((i, x) => (
-            <a href={links[x]} target={"_blank"} rel="noopener noreferrer">
-              <Image
-                key={x}
-                height={{ base: "12", lg: "20" }}
-                width={{ base: "12", lg: "20" }}
-                src={i}
-                _hover={{
-                  transform: "scale(1.2)",
-                  transition: "all 200ms ease-in",
-                  cursor: "pointer",
-                }}
-              />
-            </a>
-          ))}
-        </Flex>
-      </Box>
-      <Divider />
-      <Box
-        display={{ base: "none", xl: "flex" }}
-        alignItems="center"
-        justifyContent={"center"}
-        columnGap={"2rem"}
-      >
-        <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"}>
-          <Image
-            maxW="120px"
-            src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
-          />
-          <Flex columnGap={"1rem"} justifyContent={"center"}>
-            <NeuLink
-              label={"Home"}
-              link="about"
-              onClick={() => null}
-              bg={brandingColors.neuPrimaryBg}
-              shadow={brandingColors.newPrimaryShadow}
-            />
-
-            <NeuPageLink link="/about" label="About" />
-            <NeuLink
-              link="products"
-              label={"Products"}
-              onClick={() => null}
-              bg={brandingColors.neuPrimaryBg}
-              shadow={brandingColors.newPrimaryShadow}
-            />
-            <NeuLink
-              link="token"
-              label={"Tokenomics"}
-              onClick={() => null}
-              bg={brandingColors.neuPrimaryBg}
-              shadow={brandingColors.newPrimaryShadow}
-            />
-            <NeuLink
-              link="team"
-              label={"Team"}
-              onClick={() => null}
-              bg={brandingColors.neuPrimaryBg}
-              shadow={brandingColors.newPrimaryShadow}
-            />
-            <NeuLink
-              label="Roadmap"
-              link="roadmap"
-              onClick={() => null}
-              bg={brandingColors.neuPrimaryBg}
-              shadow={brandingColors.newPrimaryShadow}
-            />
-          </Flex>
-          <Flex
-            justifyContent={"flex-end"}
-            columnGap={{ base: "1rem" }}
-            alignItems="center"
-          ></Flex>
-        </Grid>
-      </Box>
-      <Box
-        textAlign={"center"}
-        display="flex"
-        justifyContent={"center"}
-        flexDirection="column"
-        rowGap={".5rem"}
-        p={5}
-      >
-        <Text color={brandingColors.secondaryTextColor}>
-          Disclaimer: Your investment may go down as well as up in value.
-          Cryptocurrency is not regulated in the Singapore.
-        </Text>
-        <Text pb={{ base: "4" }} color={brandingColors.secondaryTextColor}>
-          Copyright 2022 © Axle Games
-        </Text>
-      </Box>
-    </Flex>
+    <iframe
+      style={{ height: "304vh", width: "100vw" }}
+      title="charts"
+      srcDoc={html}
+    ></iframe>
   );
 };
 

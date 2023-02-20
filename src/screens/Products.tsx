@@ -49,8 +49,8 @@ const ProductMobileView = (props: Props) => {
     <Box
       backgroundImage={
         props.index % 2 === 0
-          ? `linear-gradient(to right, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
-          : `linear-gradient(to left, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+          ? `linear-gradient(to right, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`
+          : `linear-gradient(to left, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`
       }
       data-aos={props.index % 2 === 0 ? "fade-left" : "fade-right"}
       display="flex"
@@ -119,8 +119,8 @@ const ProductMidDeviceView = (props: Props) => {
       flexDirection={"column"}
       backgroundImage={
         props.index % 2 === 0
-          ? `linear-gradient(to right, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
-          : `linear-gradient(to left, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+          ? `linear-gradient(to right, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`
+          : `linear-gradient(to left, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`
       }
     >
       <Box display={"flex"} columnGap="1rem">
@@ -133,14 +133,17 @@ const ProductMidDeviceView = (props: Props) => {
             columnGap="1rem"
           >
             <Text
-              fontFamily={`'Russo One', sans-serif`}
+              fontFamily={`"Chakra Petch", sans-serif`}
               color={brandingColors.primaryTextColor}
+              fontWeight="bolder"
+              fontSize={"3xl"}
             >
               {props.subTitle}
             </Text>
             <Box>
               <Text
-                bg={brandingColors.fgColor}
+                fontFamily={`"Chakra Petch", sans-serif`}
+                bg={brandingColors.bgColor}
                 fontSize="md"
                 px={2}
                 borderRadius="md"
@@ -161,12 +164,13 @@ const ProductMidDeviceView = (props: Props) => {
 
       <Flex>
         {props.isLive ? (
-          <NeuButton
-            label={props.label}
-            onClick={props.function}
-            bg={brandingColors.neuPrimaryBg}
-            shadow={brandingColors.newPrimaryShadow}
-          />
+          <Box
+            fontFamily={`"Chakra Petch", sans-serif`}
+            className="cmn-btn"
+            onClick={() => props.function()}
+          >
+            {props.label}
+          </Box>
         ) : null}
       </Flex>
     </Flex>

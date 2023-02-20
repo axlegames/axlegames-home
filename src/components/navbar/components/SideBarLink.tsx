@@ -17,7 +17,7 @@ const SideBarLink = (props: any) => {
           boxShadow={normalEffect}
           width={"100%"}
           bg={brandingColors.bgColor}
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           size={{ base: "lg" }}
           color={brandingColors.secondaryTextColor}
           onClick={() => props.onClick()}

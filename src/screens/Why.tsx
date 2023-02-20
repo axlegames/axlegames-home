@@ -7,8 +7,8 @@ import { Box, Grid, Image, Text } from "@chakra-ui/react";
 const Why = () => {
   return (
     <Box
-      bg={brandingColors.bgColor}
       backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
+      bg={brandingColors.bgColor}
       p={{ base: "4", lg: "16" }}
       display="flex"
       flexDirection={"column"}
@@ -59,7 +59,7 @@ const WhyCard = (props: Props) => {
         alignItems="center"
         borderRadius="md"
         display="flex"
-        backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
+        backgroundImage={`linear-gradient(to left bottom, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
         flexDirection="column"
         p={5}
       >
@@ -68,6 +68,8 @@ const WhyCard = (props: Props) => {
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "lg", lg: "2xl" }}
+            fontFamily={`"Chakra Petch", sans-serif`}
+            fontWeight="bold"
             textAlign={"center"}
           >
             {props.title}

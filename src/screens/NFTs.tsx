@@ -34,7 +34,7 @@ const NFT = (props: Props) => {
         <Box
           py={3}
           borderBottomRadius="xl"
-          backgroundImage={`linear-gradient(to bottom, #061e37, #002956, #003376, #003b96, #1442b5)`}
+          backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
           width={"100%"}
           mx="auto"
           my={2}
@@ -43,14 +43,15 @@ const NFT = (props: Props) => {
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "lg", lg: "2xl" }}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`"Chakra Petch", sans-serif`}
             textAlign={"center"}
+            fontWeight="bold"
           >
             {props.title}
           </Text>
           <Text
             color={brandingColors.secondaryTextColor}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`"Chakra Petch", sans-serif`}
             fontWeight={"normal"}
             fontSize={{ base: "sm", lg: "md" }}
             textAlign={"center"}
@@ -66,13 +67,14 @@ const NFT = (props: Props) => {
 const NFTs = () => {
   return (
     <Box
-      bg={brandingColors.bgColor}
       p={{ base: "4", lg: "16" }}
       display="flex"
       flexDirection={"column"}
       rowGap="4rem"
       justifyContent={"center"}
       alignItems="center"
+      bg={brandingColors.bgColor}
+      backgroundImage="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/players-week-bg.png"
     >
       <Heading title="NFTs" />
       <Grid

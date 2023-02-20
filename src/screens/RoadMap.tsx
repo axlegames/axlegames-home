@@ -37,7 +37,7 @@ const RoadMap = () => {
         <ModalContent m={4} bg={brandingColors.bgColor}>
           <ModalHeader
             textAlign={"center"}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`"Chakra Petch", sans-serif`}
             color={brandingColors.primaryTextColor}
           >
             {state?.text}{" "}
@@ -132,7 +132,7 @@ const RoadMap = () => {
                 : brandingColors.disableColor
             }
             fontSize={"2xl"}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`"Chakra Petch", sans-serif`}
             textShadow={`2px 2px 3px ${
               props.index < 3
                 ? brandingColors.successColor
@@ -196,7 +196,7 @@ const RoadMap = () => {
         >
           <Text
             fontWeight={"bold"}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`"Chakra Petch", sans-serif`}
             textAlign={"center"}
             color={brandingColors.secondaryTextColor}
           >
@@ -240,7 +240,7 @@ const RoadMap = () => {
 
   return (
     <Box
-      backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
+      backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
       py={{ base: "16" }}
     >
       <Heading title="Roadmap" />
@@ -363,7 +363,7 @@ const Phase = (props: Props) => {
         }`}
       >
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontSize={"xl"}
           color={brandingColors.primaryTextColor}
           textAlign="center"
@@ -427,7 +427,7 @@ const Phase = (props: Props) => {
               : brandingColors.disableColor
           }
           fontSize={"7xl"}
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           textShadow={`2px 2px 3px ${
             props.index < 3
               ? brandingColors.successColor

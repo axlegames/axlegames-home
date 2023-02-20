@@ -17,12 +17,12 @@ const MobileNavbar = () => {
 
   return (
     <Box
-      position={open ? "fixed" : "relative"}
-      zIndex={500}
-      width={"100%"}
+      bg={brandingColors.bgColor}
+      width={"100vw"}
       height={open ? "100vh" : "100%"}
       display={{ base: "flex", lg: "none" }}
       flexDirection="column"
+      boxShadow={`0px 0px 12px -3px ${brandingColors.primaryButtonColor}`}
     >
       <Box
         display={"flex"}
@@ -71,7 +71,7 @@ const MobileNavbar = () => {
 
       <Box height={open ? "100%" : "0"} position={"relative"}>
         <Box
-          zIndex={100}
+          zIndex={100000000}
           transition={"all ease 500ms"}
           opacity={open ? 1 : 0}
           fontFamily={"quicksand"}

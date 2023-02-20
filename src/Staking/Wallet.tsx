@@ -49,7 +49,7 @@ const Wallet = (props: Props) => {
               </Text>
             </Box>
             <Button
-              fontFamily={`'Russo One', sans-serif`}
+              fontFamily={`"Chakra Petch", sans-serif`}
               fontWeight={"bold"}
               _hover={{
                 bg: brandingColors.ternaryButtonColor,

@@ -23,6 +23,7 @@ const Team = () => {
       backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
       width={{ base: "100%", md: "80%" }}
       mx={{ md: "auto" }}
+      pt={16}
     >
       <Heading title="Meet the team" />
       <Flex py={{ base: "16" }} flexDirection={"column"}>
@@ -108,7 +109,12 @@ const Team = () => {
                   </Tilt>
                 </Box>
                 <Box textAlign={"center"} py={4}>
-                  <Text fontSize={"xl"} color={brandingColors.primaryTextColor}>
+                  <Text
+                    fontFamily={`"Chakra Petch", sans-serif`}
+                    fontSize={"xl"}
+                    fontWeight="bold"
+                    color={brandingColors.primaryTextColor}
+                  >
                     {t.name}
                   </Text>
                   <Text

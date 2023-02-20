@@ -13,10 +13,11 @@ const Heading = (props: Props) => {
       justifyContent={"center"}
     >
       <Text
-        color={brandingColors.primaryTextColor}
+        color={brandingColors.secondaryTextColor}
         fontSize={{ base: "3xl", lg: "5xl" }}
         textAlign={"center"}
-        fontFamily={`'Russo One', sans-serif`}
+        fontFamily={`"Chakra Petch", sans-serif`}
+        fontWeight="bold"
         data-aos={`zoom-out`}
       >
         {props.title}

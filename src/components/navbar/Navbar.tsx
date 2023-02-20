@@ -7,6 +7,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Text,
 } from "@chakra-ui/react";
 import { brandingColors } from "../../config/brandingColors";
 import NeuLink from "../NeuLink";
@@ -19,7 +20,9 @@ const Navbar = () => {
       display={{ base: "none", lg: "block" }}
       minH={"10vh"}
       fontWeight={"bold"}
-      fontFamily={`'Russo One', sans-serif`}
+      fontFamily={`"Chakra Petch", sans-serif`}
+      width="100vw"
+      boxShadow={`0px 0px 12px -3px ${brandingColors.primaryButtonColor}`}
     >
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
         <Flex alignItems={"center"}>
@@ -31,13 +34,6 @@ const Navbar = () => {
           />
         </Flex>
         <Flex columnGap={"1rem"} justifyContent={"center"}>
-          <NeuLink
-            label={"Home"}
-            link="about"
-            onClick={() => null}
-            bg={brandingColors.neuPrimaryBg}
-            shadow={brandingColors.newPrimaryShadow}
-          />
           <NeuPageLink label="About" link="/about" />
           <NeuLink
             link="products"
@@ -54,13 +50,6 @@ const Navbar = () => {
             shadow={brandingColors.newPrimaryShadow}
           />
           <NeuLink
-            link="team"
-            label={"Team"}
-            onClick={() => null}
-            bg={brandingColors.neuPrimaryBg}
-            shadow={brandingColors.newPrimaryShadow}
-          />
-          <NeuLink
             label="Roadmap"
             link="roadmap"
             onClick={() => null}
@@ -68,7 +57,15 @@ const Navbar = () => {
             shadow={brandingColors.newPrimaryShadow}
           />
           <Menu>
-            <MenuButton className="nav-link nav-link-ltr">Docs</MenuButton>
+            <MenuButton>
+              <Text
+                fontFamily={`"Chakra Petch", sans-serif`}
+                fontWeight={"bold"}
+                className="nav-link nav-link-ltr"
+              >
+                DOCS
+              </Text>
+            </MenuButton>
             <MenuList
               border={brandingColors.fgColor}
               bg={brandingColors.bgColor}
@@ -133,7 +130,7 @@ const Navbar = () => {
         </Flex>
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
           <a
-            className="btn"
+            className="cmn-btn"
             href={`https://sale.axlegames.io`}
             target="_blank"
             rel="noopener noreferrer"

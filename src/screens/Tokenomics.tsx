@@ -12,10 +12,7 @@ const Tokenomics = () => {
   };
 
   return (
-    <Box
-      backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
-      p={{ base: "4", lg: "16" }}
-    >
+    <Box bg={brandingColors.bgColor} p={{ base: "4", lg: "16" }}>
       <Heading title="Tokenomics" />
       <Grid
         pt={{ base: "16" }}
@@ -25,6 +22,7 @@ const Tokenomics = () => {
         justifyContent="center"
         width={{ lg: "80%" }}
         mx={{ lg: "auto" }}
+        bg={brandingColors.bgColor}
       >
         {tokenomics.map((t, i) => (
           <GridItem
@@ -55,11 +53,13 @@ const Tokenomics = () => {
                 lineHeight={"1"}
                 fontSize={{ base: "md", lg: "3xl" }}
                 color={brandingColors.primaryTextColor}
+                fontFamily={`"Chakra Petch", sans-serif`}
+                fontWeight="bold"
               >
                 {t.title}
               </Text>
               <Text
-                fontSize={{ base: "sm" }}
+                fontSize={{ base: "sm", md: "md" }}
                 fontWeight={"normal"}
                 color={brandingColors.secondaryTextColor}
               >
@@ -76,6 +76,7 @@ const Tokenomics = () => {
         gridTemplateColumns={{ base: "1fr", lg: "1fr" }}
         columnGap={{ base: "8rem" }}
         rowGap={{ base: "2rem" }}
+        bg={brandingColors.bgColor}
       >
         <Box display={"flex"} justifyContent="flex-end">
           <Box

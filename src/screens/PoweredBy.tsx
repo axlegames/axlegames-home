@@ -41,7 +41,7 @@ const PoweredBy = (props: any) => {
       <Box
         m={4}
         bg={brandingColors.bgColor}
-        boxShadow={`5px 5px 13px #05192d, -5px -5px 13px #072341`}
+        boxShadow={`4px 4px 9px #0b052e, -4px -4px 9px #11074c`}
         py={{ base: "4" }}
         px={{ base: "2" }}
         borderRadius="xl"
@@ -64,7 +64,8 @@ const PoweredBy = (props: any) => {
         <Text
           fontSize={"xl"}
           color={brandingColors.secondaryTextColor}
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
+          fontWeight="bold"
         >
           {props.username}
         </Text>
