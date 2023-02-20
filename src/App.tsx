@@ -6,11 +6,11 @@ import { Suspense, lazy } from "react";
 import { useEffect } from "react";
 
 import AOS from "aos";
-import About from "./screens/About";
-import Giveaway from "./screens/Giveaway";
-import TSupply from "./screens/Tsupply";
-import Giveaway2 from "./screens/Giveaway2";
-import StakeLayout from "./Staking/StakeLayout";
+// import About from "./screens/About";
+// import Giveaway from "./screens/Giveaway";
+// import TSupply from "./screens/Tsupply";
+// import Giveaway2 from "./screens/Giveaway2";
+// import StakeLayout from "./Staking/StakeLayout";
 
 import "aos/dist/aos.css";
 
@@ -63,11 +63,11 @@ export const App = () => {
           <Router>
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/giveaway1" element={<Giveaway />} />
+              {/* <Route path="/about" element={<About />} /> */}
+              {/* <Route path="/giveaway1" element={<Giveaway />} />
               <Route path="/giveaway2" element={<Giveaway2 />} />
               <Route path="/tsupply" element={<TSupply />} />
-              <Route path="/staking" element={<StakeLayout />} />
+              <Route path="/staking" element={<StakeLayout />} /> */}
             </Routes>
           </Router>
         </ChakraProvider>
