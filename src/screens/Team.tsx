@@ -4,6 +4,9 @@ import { brandingColors } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 import { team } from "../config/data";
 
+import LinkedIn from "../assets/socials/linkedin.webp";
+import Email from "../assets/socials/email.webp";
+
 const Team = () => {
   const bottomAligner = (index: number) => {
     if (index === 0) return "flex-end";
@@ -20,6 +23,7 @@ const Team = () => {
       backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
       width={{ base: "100%", md: "80%" }}
       mx={{ md: "auto" }}
+      pt={16}
     >
       <Heading title="Meet the team" />
       <Flex py={{ base: "16" }} flexDirection={"column"}>
@@ -57,6 +61,42 @@ const Team = () => {
                 p={8}
               >
                 <Box>
+                  <Flex my={4} p={2} borderRadius="xl">
+                    {i < 3 ? (
+                      <a
+                        target={"_blank"}
+                        rel="noopener noreferrer"
+                        href={t.linkedIn}
+                      >
+                        <Image
+                          width={"12"}
+                          _hover={{
+                            transform: "scale(1.2)",
+                            transition: "all 200ms ease-in",
+                            cursor: "pointer",
+                          }}
+                          src={LinkedIn}
+                        />
+                      </a>
+                    ) : null}
+                    <a
+                      target={"_blank"}
+                      rel="noopener noreferrer"
+                      href={`mailto:${t.email}`}
+                    >
+                      <Image
+                        width={"12"}
+                        _hover={{
+                          transform: "scale(1.2)",
+                          transition: "all 200ms ease-in",
+                          cursor: "pointer",
+                        }}
+                        src={Email}
+                      />
+                    </a>
+                  </Flex>
+                </Box>
+                <Box>
                   <Tilt>
                     <Image
                       boxShadow={`0px 2px 2px ${brandingColors.newHighlightColor}`}
@@ -69,7 +109,12 @@ const Team = () => {
                   </Tilt>
                 </Box>
                 <Box textAlign={"center"} py={4}>
-                  <Text fontSize={"xl"} color={brandingColors.primaryTextColor}>
+                  <Text
+                    fontFamily={`"Chakra Petch", sans-serif`}
+                    fontSize={"xl"}
+                    fontWeight="bold"
+                    color={brandingColors.primaryTextColor}
+                  >
                     {t.name}
                   </Text>
                   <Text

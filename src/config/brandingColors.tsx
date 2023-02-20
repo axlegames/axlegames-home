@@ -1,5 +1,5 @@
 export const brandingColors = {
-  bgColor: "#061E37",
+  bgColor: "#0e063d",
   fgColor: "#0A325C",
 
   primaryMiscColor: "#EB6612",

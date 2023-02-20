@@ -17,13 +17,12 @@ const MobileNavbar = () => {
 
   return (
     <Box
-      position={open ? "fixed" : "relative"}
-      zIndex={500}
-      width={"100%"}
+      bg={brandingColors.bgColor}
+      width={"100vw"}
       height={open ? "100vh" : "100%"}
       display={{ base: "flex", lg: "none" }}
       flexDirection="column"
-      boxShadow={`0px 2px 3px ${brandingColors.bgColor}`}
+      boxShadow={`0px 0px 12px -3px ${brandingColors.primaryButtonColor}`}
     >
       <Box
         display={"flex"}
@@ -36,7 +35,6 @@ const MobileNavbar = () => {
         py={{ base: "4" }}
         alignItems={"center"}
         position="relative"
-        bg={brandingColors.bgColor}
       >
         <Flex alignItems={"center"} columnGap=".5rem">
           <Image
@@ -73,7 +71,7 @@ const MobileNavbar = () => {
 
       <Box height={open ? "100%" : "0"} position={"relative"}>
         <Box
-          zIndex={100}
+          zIndex={100000000}
           transition={"all ease 500ms"}
           opacity={open ? 1 : 0}
           fontFamily={"quicksand"}
@@ -88,7 +86,7 @@ const MobileNavbar = () => {
             <SideBarButton
               link="about"
               onClick={() => toggle()}
-              title={"About"}
+              title={"Home"}
               icon={<SunIcon />}
             />
             <SideBarButton
@@ -118,6 +116,11 @@ const MobileNavbar = () => {
             <SideBarLink
               link="https://axlegames.s3.ap-south-1.amazonaws.com/Axlegames.pdf"
               title={"Pitch-Deck"}
+              icon={<SunIcon />}
+            />
+            <SideBarLink
+              link="https://whitepaper.axlegames.io/"
+              title={"White Paper"}
               icon={<SunIcon />}
             />
             <SideBarLink

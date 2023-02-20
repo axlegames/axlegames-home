@@ -1,43 +1,41 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { Link } from "react-scroll";
 import { brandingColors } from "../../../config/brandingColors";
 
 const SideBarButton = (props: any) => {
-  const normalEffect = `4px 4px 8px #A34400, -2px -2px 4px ${brandingColors.bgColor}`;
-  const pushedEffect = `2px 2px 4px ${brandingColors.bgColor}, -4px -4px 8px ${brandingColors.bgColor}`;
+  const normalEffect = `9px 9px 18px #05172b, -9px -9px 18px #072543;`;
+  const pushedEffect = `inset 9px 9px 18px #05172b, inset -9px -9px 18px #072543`;
   return (
-    <Box width={"100%"}>
-      <Link
-        name={props.link}
-        to={props.link}
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
+    <Link
+      name={props.link}
+      to={props.link}
+      spy={true}
+      smooth={true}
+      offset={50}
+      duration={500}
+      style={{ width: "100%" }}
+    >
+      <Button
+        fontFamily={`"Chakra Petch", sans-serif`}
+        textAlign={"left"}
+        boxShadow={normalEffect}
+        bg={brandingColors.bgColor}
+        width="100%"
+        size={{ base: "lg" }}
+        color={brandingColors.secondaryTextColor}
+        onClick={() => props.onClick()}
+        _hover={{
+          boxShadow: pushedEffect,
+          transition: "200ms all ",
+        }}
+        _active={{
+          boxShadow: pushedEffect,
+          transition: "200ms all ",
+        }}
       >
-        <Button
-          textAlign={"left"}
-          boxShadow={normalEffect}
-          width={"100%"}
-          bg={brandingColors.primaryButtonColor}
-          size={{ base: "sm", md: "md", lg: "lg" }}
-          color={brandingColors.secondaryTextColor}
-          onClick={() => props.onClick()}
-          _hover={{
-            boxShadow: pushedEffect,
-            transform: `scale(0.95)`,
-            transition: "200ms all ",
-          }}
-          _active={{
-            boxShadow: pushedEffect,
-            transform: `scale(0.95)`,
-            transition: "200ms all ",
-          }}
-        >
-          {props.title}
-        </Button>
-      </Link>
-    </Box>
+        {props.title}
+      </Button>
+    </Link>
   );
 };
 

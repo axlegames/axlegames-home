@@ -35,7 +35,7 @@ export const products = [
     text: "A skill based web3 gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
     image: ProductGameIcon,
     mainImg: ProductGameImg,
-    function: () => (window.location.href = "https://play.axlegames.io"),
+    function: () => window.open("https://play.axlegames.io", "_blank"),
   },
   {
     isLive: true,
@@ -44,8 +44,9 @@ export const products = [
     text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the Axle platform and will receive $AXLE token rewards with attractive APYs.",
     image: ProductStakingIcon,
     mainImg: ProductStakingImg,
-    function: () => null,
+    function: () => window.open("https://sale.axlegames.io", "_blank"),
   },
+
   {
     isLive: true,
     subTitle: "Axle Swap",
@@ -53,7 +54,7 @@ export const products = [
     text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
     image: ProductSwapIcon,
     mainImg: ProductSwapImg,
-    function: () => null,
+    function: () => window.open("https://sale.axlegames.io", "_blank"),
   },
   {
     isLive: false,
@@ -250,13 +251,10 @@ export const chart = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Luckiest+Guy&family=Nabla&family=Poppins:ital,wght@0,800;0,900;1,900&family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&family=Righteous&family=Rubik+80s+Fade&family=Russo+One&display=swap"
-      rel="stylesheet"
-    />
     <style>
+    @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
       * {
-        font-family: "Russo One", sans-serif;
+          font-family: "Chakra Petch", sans-serif;
       }
     </style>
   </head>
@@ -435,7 +433,7 @@ export const nfts = [
   },
   {
     title: "Poseidon",
-    text: "Spear NFT",
+    text: "Trident NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/poseidon.mp4`,
   },
   {
@@ -450,38 +448,44 @@ export const team = [
     name: "Praneeth",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/praneeth.webp`,
     role: "Founder / Marketing Lead",
-    linkedIn: "linkedin",
+    linkedIn: "https://www.linkedin.com/in/praneethnagu/",
+    email: "praneethnagu@artemisnetwork.io",
   },
   {
     name: "D. C. R",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/chakri.webp`,
     role: "Co-Founder / Project Lead",
-    linkedIn: "linkedin",
+    linkedIn: "https://www.linkedin.com/in/chakravardhan/",
+    email: "dcr@artemisnetwork.io",
   },
   {
     name: "Akash",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/akash.webp`,
     role: "Product / Dev Lead",
-    linkedIn: "",
+    linkedIn: "https://www.linkedin.com/in/akashmrc98/",
+    email: "akash@artemisnetwork.io",
   },
 
   {
     name: "Roney",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/roney.webp`,
     role: "Product / Design Lead",
-    linkedIn: "linkedin",
+    linkedIn: "",
+    email: "roney@axlegames.io",
   },
   {
     name: "Prashanth",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/prashanth.webp`,
     role: "Blockchain Developer",
-    linkedIn: "linkedin",
+    linkedIn: "",
+    email: "prashanth@axlegames.io",
   },
   {
     name: "Lucas",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/lucas.webp`,
     role: "Marketing",
     linkedIn: "",
+    email: "lucas@axlegames.io",
   },
 ];
 

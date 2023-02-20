@@ -37,7 +37,7 @@ const RoadMap = () => {
         <ModalContent m={4} bg={brandingColors.bgColor}>
           <ModalHeader
             textAlign={"center"}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`"Chakra Petch", sans-serif`}
             color={brandingColors.primaryTextColor}
           >
             {state?.text}{" "}
@@ -49,16 +49,16 @@ const RoadMap = () => {
                 <Flex key={i} columnGap={".1rem"} justifyContent="flex-start">
                   <Icon
                     color={
-                      state.index < 2
+                      state.index < 3
                         ? brandingColors.successColor
-                        : state.index === 2
+                        : state.index === 3
                         ? brandingColors.primaryTextColor
                         : brandingColors.disableColor
                     }
                     as={
-                      state.index < 2
+                      state.index < 3
                         ? CheckIcon
-                        : state.index === 2
+                        : state.index === 3
                         ? TimeIcon
                         : ChevronRightIcon
                     }
@@ -107,9 +107,9 @@ const RoadMap = () => {
           display={"flex"}
           bg={brandingColors.bgColor}
           boxShadow={`2px 2px 2px 3px ${
-            props.index < 2
+            props.index < 3
               ? brandingColors.successColor
-              : props.index === 2
+              : props.index === 3
               ? brandingColors.newHighlightColor
               : brandingColors.disableColor
           }`}
@@ -125,18 +125,18 @@ const RoadMap = () => {
             borderRadius={"xl"}
             px={4}
             color={
-              props.index < 2
+              props.index < 3
                 ? brandingColors.successColor
-                : props.index === 2
+                : props.index === 3
                 ? brandingColors.newHighlightColor
                 : brandingColors.disableColor
             }
             fontSize={"2xl"}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`"Chakra Petch", sans-serif`}
             textShadow={`2px 2px 3px ${
-              props.index < 2
+              props.index < 3
                 ? brandingColors.successColor
-                : props.index === 2
+                : props.index === 3
                 ? brandingColors.newHighlightColor
                 : brandingColors.disableColor
             }`}
@@ -148,17 +148,17 @@ const RoadMap = () => {
             borderRadius={"xl"}
             px={4}
             color={
-              props.index < 2
+              props.index < 3
                 ? brandingColors.successColor
-                : props.index === 2
+                : props.index === 3
                 ? brandingColors.newHighlightColor
                 : brandingColors.disableColor
             }
             fontSize={"md"}
             textShadow={`2px 2px 3px ${
-              props.index < 2
+              props.index < 3
                 ? brandingColors.successColor
-                : props.index === 2
+                : props.index === 3
                 ? brandingColors.newHighlightColor
                 : brandingColors.disableColor
             }`}
@@ -181,9 +181,9 @@ const RoadMap = () => {
         <Box
           data-aos={props.index % 2 === 0 ? `fade-left` : `fade-right`}
           bg={
-            props.index < 2
+            props.index < 3
               ? brandingColors.successColor
-              : props.index === 2
+              : props.index === 3
               ? brandingColors.newHighlightColor
               : brandingColors.disableColor
           }
@@ -196,7 +196,7 @@ const RoadMap = () => {
         >
           <Text
             fontWeight={"bold"}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`"Chakra Petch", sans-serif`}
             textAlign={"center"}
             color={brandingColors.secondaryTextColor}
           >
@@ -220,16 +220,16 @@ const RoadMap = () => {
           height={props.isLast ? "30px" : "98px"}
           width="6"
           bg={
-            props.index < 2
+            props.index < 3
               ? brandingColors.successColor
-              : props.index === 2
+              : props.index === 3
               ? brandingColors.newHighlightColor
               : brandingColors.disableColor
           }
           border={`3px solid ${
-            props.index < 2
+            props.index < 3
               ? brandingColors.successColor
-              : props.index === 2
+              : props.index === 3
               ? brandingColors.newHighlightColor
               : brandingColors.disableColor
           }`}
@@ -240,7 +240,7 @@ const RoadMap = () => {
 
   return (
     <Box
-      backgroundImage={`linear-gradient(to bottom, #061e37, #06223e, #072544, #07294b, #082d52, #082d52, #082d52, #082d52, #07294b, #072544, #06223e, #061e37)`}
+      backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
       py={{ base: "16" }}
     >
       <Heading title="Roadmap" />
@@ -261,7 +261,7 @@ const RoadMap = () => {
               milestones={p.milestones}
               text={p.text}
               index={i}
-              current={i === 2 ? true : false}
+              current={i === 3 ? true : false}
             />
 
             <MLinker
@@ -269,7 +269,7 @@ const RoadMap = () => {
               milestones={p.milestones}
               text={p.text}
               index={i}
-              current={i === 2 ? true : false}
+              current={i === 3 ? true : false}
               main={p.text}
               isLast={i === phases.length - 1}
             />
@@ -293,7 +293,7 @@ const RoadMap = () => {
               milestones={p.milestones}
               text={p.text}
               index={i}
-              current={i === 2 ? true : false}
+              current={i === 3 ? true : false}
               key={i}
             />
             {i === phases.length - 1 ? null : <Linker index={i} />}
@@ -320,9 +320,9 @@ const Linker = (props: any) => {
         alignSelf="center"
         justifySelf={"center"}
         bg={
-          props.index < 2
+          props.index < 3
             ? brandingColors.successColor
-            : props.index === 2
+            : props.index === 3
             ? brandingColors.newHighlightColor
             : brandingColors.disableColor
         }
@@ -330,9 +330,9 @@ const Linker = (props: any) => {
         width={"6"}
         height="12"
         border={`2px solid ${
-          props.index < 2
+          props.index < 3
             ? brandingColors.successColor
-            : props.index === 2
+            : props.index === 3
             ? brandingColors.newHighlightColor
             : brandingColors.disableColor
         }`}
@@ -355,15 +355,15 @@ const Phase = (props: Props) => {
         right={props.index % 2 !== 0 ? "" : "60%"}
         maxW={"80"}
         boxShadow={`0px 0px 4px ${
-          props.index < 2
+          props.index < 3
             ? brandingColors.successColor
-            : props.index === 2
+            : props.index === 3
             ? brandingColors.newHighlightColor
             : brandingColors.disableColor
         }`}
       >
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontSize={"xl"}
           color={brandingColors.primaryTextColor}
           textAlign="center"
@@ -376,16 +376,16 @@ const Phase = (props: Props) => {
             <Flex key={i} columnGap={".1rem"} justifyContent="flex-start">
               <Icon
                 color={
-                  props.index < 2
+                  props.index < 3
                     ? brandingColors.successColor
-                    : props.index === 2
+                    : props.index === 3
                     ? brandingColors.primaryTextColor
                     : brandingColors.disableColor
                 }
                 as={
-                  props.index < 2
+                  props.index < 3
                     ? CheckIcon
-                    : props.index === 2
+                    : props.index === 3
                     ? TimeIcon
                     : ChevronRightIcon
                 }
@@ -408,9 +408,9 @@ const Phase = (props: Props) => {
         justifyContent="center"
         flexDirection={"column"}
         boxShadow={`2px 2px 2px 3px ${
-          props.index < 2
+          props.index < 3
             ? brandingColors.successColor
-            : props.index === 2
+            : props.index === 3
             ? brandingColors.newHighlightColor
             : brandingColors.disableColor
         }`}
@@ -420,18 +420,18 @@ const Phase = (props: Props) => {
           borderRadius={"xl"}
           px={4}
           color={
-            props.index < 2
+            props.index < 3
               ? brandingColors.successColor
-              : props.index === 2
+              : props.index === 3
               ? brandingColors.newHighlightColor
               : brandingColors.disableColor
           }
           fontSize={"7xl"}
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           textShadow={`2px 2px 3px ${
-            props.index < 2
+            props.index < 3
               ? brandingColors.successColor
-              : props.index === 2
+              : props.index === 3
               ? brandingColors.newHighlightColor
               : brandingColors.disableColor
           }`}
