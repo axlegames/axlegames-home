@@ -202,8 +202,6 @@ const Giveaway = () => {
       });
   };
 
-  const checkForWinner = () => {};
-
   return (
     <Box
       bg={brandingColors.bgColor}
