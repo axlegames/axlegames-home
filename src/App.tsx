@@ -10,7 +10,7 @@ import FallBack from "./components/Fallback";
 
 const Main = lazy(() => import("./screens/Main"));
 const About = lazy(() => import("./screens/About"));
-// const Giveaway1 = lazy(() => import("./Giveaway/Giveaway"));
+const Giveaway1 = lazy(() => import("./Giveaway/Giveaway"));
 // const Giveaway2 = lazy(() => import("./Giveaway/Giveaway2"));
 // const TSupply = lazy(() => import("./screens/Tsupply"));
 // const StakeLayout = lazy(() => import("./Staking/StakeLayout"));
@@ -35,8 +35,8 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/giveaway1" element={<Giveaway1 />} />
-              <Route path="/giveaway2" element={<Giveaway2 />} /> */}
+            <Route path="/giveaway1" element={<Giveaway1 />} />
+            {/* <Route path="/giveaway2" element={<Giveaway2 />} /> */}
             {/* <Route path="/tsupply" element={<TSupply />} />
               <Route path="/staking" element={<StakeLayout />} /> */}
           </Routes>

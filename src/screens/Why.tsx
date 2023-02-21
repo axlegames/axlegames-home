@@ -3,6 +3,7 @@ import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import { whysGridOne, whysGridTwo } from "../config/data";
 import { Box, Grid, Image, Text } from "@chakra-ui/react";
+import Tilt from "react-parallax-tilt";
 
 const Why = () => {
   return (
@@ -26,7 +27,9 @@ const Why = () => {
         rowGap={{ base: "4rem" }}
       >
         {whysGridOne.map((why, index) => (
-          <WhyCard slide={`fade-down`} {...why} key={index} />
+          <Tilt>
+            <WhyCard slide={`fade-down`} {...why} key={index} />
+          </Tilt>
         ))}
       </Grid>
 
@@ -37,7 +40,9 @@ const Why = () => {
         justifyContent={{ lg: "flex-start" }}
       >
         {whysGridTwo.map((why, index) => (
-          <WhyCard slide={`fade-up`} {...why} key={index} />
+          <Tilt>
+            <WhyCard slide={`fade-up`} {...why} key={index} />
+          </Tilt>
         ))}
       </Grid>
     </Box>

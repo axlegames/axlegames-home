@@ -10,29 +10,10 @@ const html = `
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AxleGames</title>
     <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/jquery-ui.min.css"
-    />
+
     <link
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/fontawesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/magnific-popup.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/nice-select.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/animate.css"
     />
     <link
       rel="stylesheet"
@@ -78,7 +59,7 @@ const html = `
               class="col-lg-8 col-md-8 d-flex justify-content-md-between justify-content-center align-items-center cus-grid"
             >
               <div class="logo-section">
-                <a class="site-logo site-title" href="index.html">
+                <a class="site-logo site-title" style="cursor:pointer">
                   <img style="width:128px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png" alt="site-logo"/>
                 </a>
               </div>
@@ -90,14 +71,25 @@ const html = `
             >
               <div class="right-area">
                 <ul class="d-flex">
-                  <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <li> 
+                    <a href="https://instagram.com/axlegames" target="_blank">
+                      <img src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/instagram.webp" />
+                    </a>
                   </li>
                   <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://medium.com/@axlegames" target="_blank">
+                      <img src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/medium.webp" />
+                    </a>
                   </li>
                   <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/axlegames_en" target="_blank">
+                      <img src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/telegram.webp" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/AxleGames" target="_blank">
+                      <img src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/twitter.webp" />
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -113,7 +105,7 @@ const html = `
                 <div class="left-area text-center">
                   <p>
                     Copyright © 2023. All Rights Reserved By
-                    <a href="#">AXLEGAMES</a>
+                    <a style="cursor:pointer">AXLEGAMES</a>
                   </p>
                 </div>
               </div>

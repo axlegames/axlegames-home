@@ -277,29 +277,59 @@ const RoadMap = () => {
         ))}
       </Grid>
 
-      <Grid
-        display={{ base: "none", lg: "grid" }}
-        gridTemplateColumns={{ base: "1fr" }}
-        columnGap={"2rem"}
-        p={{ lg: "16" }}
-        pb={{ lg: "64" }}
-        alignItems="center"
-        justifyContent={"center"}
-      >
-        {phases.map((p, i) => (
-          <Flex key={i} flexDirection={"column"}>
-            <Phase
-              phase={p.phase}
-              milestones={p.milestones}
-              text={p.text}
-              index={i}
-              current={i === 3 ? true : false}
-              key={i}
-            />
-            {i === phases.length - 1 ? null : <Linker index={i} />}
-          </Flex>
-        ))}
-      </Grid>
+      <Flex justifyContent={"center"}>
+        <Grid
+          display={{ base: "none", lg: "grid" }}
+          gridTemplateColumns={{ base: "1fr" }}
+          columnGap={"2rem"}
+          p={{ lg: "16" }}
+          pb={{ lg: "64" }}
+          alignItems="center"
+          justifyContent={"center"}
+        >
+          {phases.map((p, i) =>
+            i < 3 ? (
+              <Flex key={i} flexDirection={"column"}>
+                <Phase
+                  phase={p.phase}
+                  milestones={p.milestones}
+                  text={p.text}
+                  index={i}
+                  current={i === 3 ? true : false}
+                  key={i}
+                />
+                {/* {i === phases.length - 1 ? null : <Linker index={i} />} */}
+              </Flex>
+            ) : null
+          )}
+        </Grid>
+
+        <Grid
+          display={{ base: "none", lg: "grid" }}
+          gridTemplateColumns={{ base: "1fr" }}
+          columnGap={"2rem"}
+          p={{ lg: "16" }}
+          pb={{ lg: "64" }}
+          alignItems="center"
+          justifyContent={"center"}
+        >
+          {phases.map((p, i) =>
+            i > 2 ? (
+              <Flex key={i} flexDirection={"column"}>
+                <Phase
+                  phase={p.phase}
+                  milestones={p.milestones}
+                  text={p.text}
+                  index={i}
+                  current={i === 3 ? true : false}
+                  key={i}
+                />
+                {/* {i === phases.length - 1 ? null : <Linker index={i} />} */}
+              </Flex>
+            ) : null
+          )}
+        </Grid>
+      </Flex>
     </Box>
   );
 };
@@ -350,7 +380,6 @@ const Phase = (props: Props) => {
         bg={brandingColors.bgColor}
         p={{ base: "4" }}
         borderRadius="xl"
-        position={"absolute"}
         left={props.index % 2 === 0 ? "" : "60%"}
         right={props.index % 2 !== 0 ? "" : "60%"}
         maxW={"80"}
@@ -397,7 +426,7 @@ const Phase = (props: Props) => {
           ))}
         </Box>
       </Box>
-      <Box
+      {/* <Box
         data-aos={props.index % 2 === 0 ? `fade-right` : `fade-left`}
         display={"flex"}
         bg={brandingColors.bgColor}
@@ -438,7 +467,7 @@ const Phase = (props: Props) => {
         >
           {`${props.index + 1}`}
         </Text>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

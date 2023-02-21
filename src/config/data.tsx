@@ -16,11 +16,6 @@ import ProductDaoIcon from "../assets/product_icons/dao.webp";
 import ProductMarketPlaceImg from "../assets/products/marketplace.webp";
 import ProductMarketPlaceIcon from "../assets/product_icons/store.webp";
 
-import Telegram from "../assets/socials/telegram.webp";
-import Medium from "../assets/socials/medium.webp";
-import Twitter from "../assets/socials/twitter.webp";
-import Instagram from "../assets/socials/instagram.webp";
-
 import WhyBlockchain from "../assets/why/blockchain.webp";
 import WhyDao from "../assets/why/dao.webp";
 import WhyDeflation from "../assets/why/deflation.webp";
@@ -85,8 +80,6 @@ export const products = [
     function: () => null,
   },
 ];
-
-export const socials = [Telegram, Twitter, Instagram, Medium];
 
 export const whysGridOne = [
   {
@@ -160,7 +153,7 @@ export const homeSlides = [
 
 export const phases = [
   {
-    text: "Phase 1",
+    text: "Season 1",
     phase: "completed",
     milestones: [
       "Axle games Ideation",
@@ -172,7 +165,7 @@ export const phases = [
     ],
   },
   {
-    text: "Phase 2",
+    text: "Season 2",
     phase: "completed",
     milestones: [
       "Business Model Validation",
@@ -184,7 +177,7 @@ export const phases = [
     ],
   },
   {
-    text: "Phase 3",
+    text: "Season 3",
     phase: "completed",
     milestones: [
       "Axle Token Audit - Solidproof",
@@ -196,7 +189,7 @@ export const phases = [
     ],
   },
   {
-    text: "Phase 4",
+    text: "Season 4",
     phase: "on going",
     milestones: [
       "Team Expansion - New hiring",
@@ -207,7 +200,7 @@ export const phases = [
     ],
   },
   {
-    text: "Phase 5",
+    text: "Season 5",
     phase: "up coming",
     milestones: [
       "Axle Arena Launch",
@@ -219,7 +212,7 @@ export const phases = [
     ],
   },
   {
-    text: "Phase 6",
+    text: "Season 6",
     phase: "up coming",
     milestones: [
       "Axle NFT Marketplace",
@@ -489,9 +482,4 @@ export const team = [
   },
 ];
 
-export const links = [
-  `https://t.me/axlegames_en`,
-  `https://twitter.com/AxleGames`,
-  `https://instagram.com/axlegames`,
-  `https://medium.com/@axlegames`,
-];
+export const links = [``, ``, ``, ``];
