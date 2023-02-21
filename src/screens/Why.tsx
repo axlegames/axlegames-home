@@ -9,7 +9,8 @@ const Why = () => {
     <Box
       backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
       bg={brandingColors.bgColor}
-      p={{ base: "4", lg: "16" }}
+      px={{ base: "4", lg: "16" }}
+      py={{ base: "16", lg: "16" }}
       display="flex"
       flexDirection={"column"}
       rowGap="4rem"

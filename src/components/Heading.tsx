@@ -1,4 +1,4 @@
-import { Box, Divider, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
 
 interface Props {
@@ -22,22 +22,6 @@ const Heading = (props: Props) => {
       >
         {props.title}
       </Text>
-      <Box
-        maxW="240px"
-        minW="240px"
-        display={"flex"}
-        justifyContent="center"
-        position={"relative"}
-        my={{ base: "2" }}
-      >
-        <Divider
-          width={"60%"}
-          position={"absolute"}
-          bg="Highlight"
-          borderRadius="3xl"
-        />
-        <Divider borderBottom={"1px solid white"} opacity="0.6" />
-      </Box>
     </Box>
   );
 };

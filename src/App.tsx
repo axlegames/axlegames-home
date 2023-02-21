@@ -1,20 +1,19 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { brandingColors } from "./config/brandingColors";
-import { Box, ChakraProvider } from "@chakra-ui/react";
-import { Triangle } from "react-loader-spinner";
+import { ChakraProvider } from "@chakra-ui/react";
 import { Suspense, lazy } from "react";
 import { useEffect } from "react";
 
 import AOS from "aos";
-// import About from "./screens/About";
-// import Giveaway from "./screens/Giveaway";
-// import TSupply from "./screens/Tsupply";
-// import Giveaway2 from "./screens/Giveaway2";
-// import StakeLayout from "./Staking/StakeLayout";
-
 import "aos/dist/aos.css";
 
+import FallBack from "./components/Fallback";
+
 const Main = lazy(() => import("./screens/Main"));
+const About = lazy(() => import("./screens/About"));
+// const Giveaway1 = lazy(() => import("./Giveaway/Giveaway"));
+// const Giveaway2 = lazy(() => import("./Giveaway/Giveaway2"));
+// const TSupply = lazy(() => import("./screens/Tsupply"));
+// const StakeLayout = lazy(() => import("./Staking/StakeLayout"));
 
 export const App = () => {
   useEffect(() => {
@@ -26,33 +25,6 @@ export const App = () => {
     });
   });
 
-  const FallBack = () => {
-    return (
-      <Box
-        width={"100vw"}
-        height={"100vh"}
-        display={"flex"}
-        justifyContent="center"
-        alignItems={"center"}
-        bg={brandingColors.bgColor}
-        position="fixed"
-        zIndex={500}
-        margin={0}
-        padding={0}
-      >
-        <Triangle
-          height={"100"}
-          width={"100"}
-          ariaLabel="grid-loading"
-          color={brandingColors.primaryTextColor}
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
-      </Box>
-    );
-  };
-
   // const [banner, setBanner] = useState(true);
 
   return (
@@ -63,10 +35,10 @@ export const App = () => {
           <Router>
             <Routes>
               <Route path="/" element={<Main />} />
-              {/* <Route path="/about" element={<About />} /> */}
-              {/* <Route path="/giveaway1" element={<Giveaway />} />
-              <Route path="/giveaway2" element={<Giveaway2 />} />
-              <Route path="/tsupply" element={<TSupply />} />
+              <Route path="/about" element={<About />} />
+              {/* <Route path="/giveaway1" element={<Giveaway1 />} />
+              <Route path="/giveaway2" element={<Giveaway2 />} /> */}
+              {/* <Route path="/tsupply" element={<TSupply />} />
               <Route path="/staking" element={<StakeLayout />} /> */}
             </Routes>
           </Router>

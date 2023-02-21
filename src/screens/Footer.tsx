@@ -1,3 +1,5 @@
+import useIframeContentHeight from "react-use-iframe-content-height";
+
 const html = `
 <!DOCTYPE html>
 <html lang="zxx">
@@ -10,10 +12,6 @@ const html = `
     <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
     <link
       rel="stylesheet"
-      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/jquery-ui.min.css"
     />
     <link
@@ -23,10 +21,6 @@ const html = `
     <link
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/fontawesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/slick.css"
     />
     <link
       rel="stylesheet"
@@ -44,7 +38,6 @@ const html = `
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
     />
-
   </head>
 
   <body>
@@ -54,158 +47,7 @@ const html = `
 
     <a href="#" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
 
-    <!-- Call to Action In start -->
-    <section id="call-to-action">
-      <div class="overlay pt-120 pb-120">
-        <div class="container">
-          <div class="main-content">
-            <div class="row d-sm-flex justify-content-sm-end">
-              <div class="col-lg-4 col-md-1">
-                <img
-                  class="left"
-                  src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/call-to-action-left.png"
-                  alt="image"
-                />
-              </div>
-              <div class="col-lg-4 col-md-5 col-sm-5 d-flex align-items-center">
-                <div class="section-item">
-                  <h4>Invite Friends and Win Rewards.Join BEGAM Games today</h4>
-                </div>
-              </div>
-              <div
-                class="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center justify-content-sm-end align-items-center"
-              >
-                <div
-                  class="btn-area d-flex justify-content-center justify-content-sm-end align-items-center"
-                >
-                  <a href="registration.html" class="cmn-btn">Join Now</a>
-                </div>
-                <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/call-to-action-right.png" alt="image" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Call to Action In end -->
-
-    <!-- Testimonials In start -->
-    <section id="testimonials-section">
-      <div class="overlay pt-120 pb-120">
-        <div class="container wow fadeInUp">
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="section-header text-center">
-                <h2 class="title">Our Gamers Review</h2>
-                <p>Thousands of Happy Gamers All Around the World</p>
-              </div>
-            </div>
-          </div>
-          <div class="row mp-none">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-              <div class="single-item text-center">
-                <p>
-                  I play Tournament every day, it's a great way to relax and win
-                  cash too!
-                </p>
-                <div class="bottom-area d-flex justify-content-between">
-                  <div class="left-area d-flex">
-                    <div class="img">
-                      <div class="img-area">
-                        <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/testimonials-user-1.png" alt="image" />
-                      </div>
-                    </div>
-                    <div class="title-area">
-                      <h6>Brice Tong</h6>
-                      <span>Texas, USA</span>
-                    </div>
-                  </div>
-                  <div class="amount">
-                    <h6>$306</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-              <div class="single-item text-center">
-                <p>
-                  When I hang out with my friends, we play Tournament, its so
-                  much fun
-                </p>
-                <div class="bottom-area d-flex justify-content-between">
-                  <div class="left-area d-flex">
-                    <div class="img">
-                      <div class="img-area">
-                        <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/testimonials-user-1.png" alt="image" />
-                      </div>
-                    </div>
-                    <div class="title-area">
-                      <h6>Alva Adair</h6>
-                      <span>Frankfurt, Germany</span>
-                    </div>
-                  </div>
-                  <div class="amount">
-                    <h6>$496</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-              <div class="single-item text-center">
-                <p>
-                  I joined for the community but ended up winning cash, amazing.
-                </p>
-                <div class="bottom-area d-flex justify-content-between">
-                  <div class="left-area d-flex">
-                    <div class="img">
-                      <div class="img-area">
-                        <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/testimonials-user-1.png" alt="image" />
-                      </div>
-                    </div>
-                    <div class="title-area">
-                      <h6>Ray Sutton</h6>
-                      <span>Ontario, Canada</span>
-                    </div>
-                  </div>
-                  <div class="amount">
-                    <h6>$306</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Testimonials In end -->
-
-    <!-- Call Action In start -->
-    <section id="call-action" class="pb-120">
-      <div class="overlay">
-        <div class="container wow fadeInUp">
-          <div class="row d-flex justify-content-between align-items-center">
-            <div class="col-lg-6 col-md-6">
-              <div class="left-area">
-                <h2 class="title">Build Your Esports Profile</h2>
-                <p>
-                  Showcase your achievements, match history and win rate while
-                  you build your reputation on Begam.
-                </p>
-                <a href="registration.html" class="cmn-btn-second"
-                  >Sign Up Free</a
-                >
-              </div>
-            </div>
-            <div class="col-lg-5 col-md-6">
-              <div class="right-area">
-                <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/profile-info.png" alt="image" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Call Action In end -->
+   
 
     <!-- footer-section start -->
     <footer id="footer-section">
@@ -220,7 +62,7 @@ const html = `
                       <h3>Subscribe to Our Newsletter</h3>
                       <p>Receive news, stay updated and special offers</p>
                     </div>
-                    <form action="#">
+                    <form>
                       <div class="subscribe d-flex">
                         <input type="email" placeholder="Your Email Address" />
                         <button class="cmn-btn">Subscribe</button>
@@ -305,6 +147,7 @@ const html = `
 `;
 
 const Footer = () => {
+  const [iframeRef, iframeHeight] = useIframeContentHeight();
   // const toast = useToast();
   // function submit() {
   //   return toast({
@@ -319,10 +162,12 @@ const Footer = () => {
 
   return (
     <iframe
-      style={{ height: "304vh", width: "100vw" }}
-      title="charts"
+      ref={iframeRef}
+      height={iframeHeight}
+      title="footer"
       srcDoc={html}
-    ></iframe>
+      frameBorder="0"
+    />
   );
 };
 

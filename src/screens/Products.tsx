@@ -3,7 +3,6 @@ import { brandingColors } from "../config/brandingColors";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 import Heading from "../components/Heading";
-import NeuButton from "../components/NeuButton";
 
 interface Props {
   subTitle: string;
@@ -92,16 +91,18 @@ const ProductMobileView = (props: Props) => {
         >
           {props.text}
         </Text>
-        {props.isLive ? (
-          <Box>
-            <NeuButton
-              label={props.label}
-              onClick={props.function}
-              bg={brandingColors.neuPrimaryBg}
-              shadow={brandingColors.newPrimaryShadow}
-            />
-          </Box>
-        ) : null}
+        <Flex>
+          {props.isLive ? (
+            <Box
+              fontFamily={`"Chakra Petch", sans-serif`}
+              className="cmn-btn"
+              onClick={() => props.function()}
+              cursor="pointer"
+            >
+              {props.label}
+            </Box>
+          ) : null}
+        </Flex>
       </Box>
     </Box>
   );
@@ -168,6 +169,7 @@ const ProductMidDeviceView = (props: Props) => {
             fontFamily={`"Chakra Petch", sans-serif`}
             className="cmn-btn"
             onClick={() => props.function()}
+            cursor="pointer"
           >
             {props.label}
           </Box>
@@ -184,14 +186,12 @@ const ProductMidDeviceView = (props: Props) => {
       columnGap={"3rem"}
     >
       {props.index % 2 === 0 ? <Content /> : null}
-
       <Image
         data-aos={props.index % 2 === 0 ? `fade-left` : `fade-right`}
         maxW={{ base: "256px", lg: "312px" }}
         borderRadius={"md"}
         src={props.mainImg}
       />
-
       {props.index % 2 !== 0 ? <Content /> : null}
     </Flex>
   );
