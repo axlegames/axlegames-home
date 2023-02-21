@@ -36,19 +36,73 @@ const Giveaway = () => {
   };
 
   const onWalletFormSubmit = () => {
-    if (walletForm === "")
-      return toast({
-        title: "Warning",
-        description: "wallet address required",
-        status: "warning",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
-      });
+    const giveaway = path.pathname.replace("/giveaway", "");
+    if (walletForm !== "")
+      return axios
+        .post(
+          "https://api.axlegames.io/axlegames/api/v1/users/giveaway/check",
+          {
+            wallet: walletForm,
+            giveAwayType: giveaway,
+          }
+        )
+        .then((res) => {
+          console.log(res.data);
+          if (!res.data.error) {
+            if (res.data.isSelected)
+              return toast({
+                title: "Congrats!",
+                description: "Horray! you have selected in the giveaway",
+                status: "success",
+                duration: 5000,
+                isClosable: true,
+                position: "top",
+              });
+
+            if (res.data.enrolled)
+              return toast({
+                title: "Sorry!",
+                description: "Better luck next time!",
+                status: "warning",
+                duration: 5000,
+                isClosable: true,
+                position: "top",
+              });
+
+            return toast({
+              title: "Warning!",
+              description: "Your address not registered for giveaway",
+              status: "error",
+              duration: 5000,
+              isClosable: true,
+              position: "top",
+            });
+          }
+          return toast({
+            title: "Error",
+            description: res.data.message,
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+            position: "top",
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          return toast({
+            title: "Error",
+            description: "Something went wrong",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+            position: "top",
+          });
+        });
+
     return toast({
-      title: "Info",
-      description: `Results will be announced soon`,
-      status: "info",
+      title: "Warning",
+      description: "wallet address required",
+      status: "warning",
       duration: 5000,
       isClosable: true,
       position: "top",
@@ -167,7 +221,7 @@ const Giveaway = () => {
         textAlign={"center"}
       >
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontWeight="bold"
           fontSize={{ base: "2xl", sm: "4xl", md: "5xl" }}
           color={brandingColors.primaryTextColor}
@@ -177,7 +231,7 @@ const Giveaway = () => {
         </Text>
 
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontSize={"xl"}
           fontWeight={"bold"}
           color={brandingColors.primaryTwoTextColor}
@@ -281,14 +335,14 @@ const Giveaway = () => {
           src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
         />
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontSize={"3xl"}
           color={brandingColors.primaryTextColor}
         >
           AxleGames
         </Text>
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontSize={"xl"}
           color={brandingColors.secondaryTextColor}
         >
@@ -430,7 +484,7 @@ const Join = (props: FormInterface) => {
         px={8}
       >
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           color={brandingColors.primaryTextColor}
           fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
         >
