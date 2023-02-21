@@ -29,21 +29,19 @@ export const App = () => {
 
   return (
     <Suspense fallback={<FallBack />}>
-      <body>
-        <ChakraProvider>
-          {/* <Banner close={() => setBanner(false)} isOpen={banner} size="xl" /> */}
-          <Router>
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="/about" element={<About />} />
-              {/* <Route path="/giveaway1" element={<Giveaway1 />} />
+      <ChakraProvider>
+        {/* <Banner close={() => setBanner(false)} isOpen={banner} size="xl" /> */}
+        <Router>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/giveaway1" element={<Giveaway1 />} />
               <Route path="/giveaway2" element={<Giveaway2 />} /> */}
-              {/* <Route path="/tsupply" element={<TSupply />} />
+            {/* <Route path="/tsupply" element={<TSupply />} />
               <Route path="/staking" element={<StakeLayout />} /> */}
-            </Routes>
-          </Router>
-        </ChakraProvider>
-      </body>
+          </Routes>
+        </Router>
+      </ChakraProvider>
     </Suspense>
   );
 };

@@ -8,7 +8,7 @@ const html = `
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Begam - Online Gaming Tournaments Template</title>
+    <title>AxleGames</title>
     <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
     <link
       rel="stylesheet"
@@ -44,10 +44,6 @@ const html = `
     <!-- start preloader -->
     <div class="preloader" id="preloader"></div>
     <!-- end preloader -->
-
-    <a href="#" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
-
-   
 
     <!-- footer-section start -->
     <footer id="footer-section">
@@ -87,9 +83,6 @@ const html = `
                 </a>
               </div>
               <ul class="menu-side d-flex align-items-center">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
             <div
@@ -148,17 +141,6 @@ const html = `
 
 const Footer = () => {
   const [iframeRef, iframeHeight] = useIframeContentHeight();
-  // const toast = useToast();
-  // function submit() {
-  //   return toast({
-  //     title: "Thank you!",
-  //     description: "Your message has been recoreded.",
-  //     status: "success",
-  //     duration: 5000,
-  //     isClosable: true,
-  //     position: "top",
-  //   });
-  // }
 
   return (
     <iframe

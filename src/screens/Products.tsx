@@ -76,11 +76,12 @@ const ProductMobileView = (props: Props) => {
             {props.subTitle}
           </Text>
           <Text
-            p={1}
+            py={1}
             borderRadius="md"
             fontSize={"xx-small"}
-            color={props.isLive ? "green.400" : "red.400"}
+            color={props.isLive ? "green.400" : "yellow.400"}
             bg={brandingColors.fgColor}
+            px={2}
           >
             {props.isLive ? `• Live` : "• Coming Soon"}
           </Text>
@@ -148,7 +149,7 @@ const ProductMidDeviceView = (props: Props) => {
                 fontSize="md"
                 px={2}
                 borderRadius="md"
-                color={props.isLive ? "green.400" : "red.400"}
+                color={props.isLive ? "green.400" : "yellow.400"}
                 fontWeight="bold"
               >
                 {props.isLive ? `• LIVE` : `• COMING SOON`}

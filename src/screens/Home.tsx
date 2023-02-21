@@ -45,44 +45,44 @@ const home = `
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Begam - Online Gaming Tournaments Template</title>
+    <title>AxleGames</title>
 
     <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/owl.carousel.min.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/owl.carousel.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/jquery-ui.min.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/jquery-ui.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/bootstrap.min.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/fontawesome.min.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/fontawesome.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/slick.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/slick.css"
     />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/magnific-popup.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/magnific-popup.css"
     />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/nice-select.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/nice-select.css"
     />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/animate.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/animate.css"
     />
     <link
       rel="stylesheet"
-      href="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
     />
   </head>
 
@@ -100,19 +100,19 @@ const home = `
               <div class="main-content">
                 <div class="top-area justify-content-center text-center">
                   <h3>#WORDLE-TO-WEB3</h3>
-                  <h1>AXLEHome</h1>
+                  <h1>AXLEgames</h1>
                   <p>
                     A SKILL-BASED WEB3 GAMING PLATFORM
                   </p>
                   <div
                     class="btn-play d-flex justify-content-center align-items-center"
                   >
-                    <a href="registration.html" class="cmn-btn">Get Started</a>
+                    <a href="https://play.axlegames.io" target="_blank" class="cmn-btn">Get Started</a>
                     <a
                       href="https://www.youtube.com/watch?v=MJ0zpsWQ_XM"
                       class="mfp-iframe popupvideo"
                     >
-                      <img src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/play-icon.png" alt="play" />
+                      <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/play-icon.png" alt="play" />
                     </a>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ const home = `
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
                         <div class="bottom-area text-center">
-                          <img src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png" alt="banner-vs" />
+                          <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png" alt="banner-vs" />
                         </div>
                       </div>
                     </div>
@@ -133,12 +133,12 @@ const home = `
           <div class="ani-illu">
             <img
               class="left-1 wow fadeInUp"
-              src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/left-banner.png"
+              src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/left-banner.png"
               alt="image"
             />
             <img
               class="right-2 wow fadeInUp"
-              src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/right-banner.png"
+              src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/right-banner.png"
               alt="image"
             />
           </div>
@@ -164,43 +164,43 @@ const home = `
             </div>
             <div class="available-game-carousel">
               <div class="single-item">
-                <a href="#"
+                <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/game-1.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/game-1.png"
                     alt="image"
                 /></a>
               </div>
               <div class="single-item">
-                <a href="#"
+                <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/game-2.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/game-2.png"
                     alt="image"
                 /></a>
               </div>
               <div class="single-item">
-                <a href="#"
+                <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/game-3.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/game-3.png"
                     alt="image"
                 /></a>
               </div>
               <div class="single-item">
-                <a href="#"
+                <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/game-4.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/game-4.png"
                     alt="image"
                 /></a>
               </div>
               <div class="single-item">
-                <a href="#"
+                <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/game-3.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/game-3.png"
                     alt="image"
                 /></a>
               </div>
             </div>
             <div class="btn-area text-center">
-              <a href="tournaments.html" class="cmn-btn">View All</a>
+              <a href="https://play.axlegames.io" target="_blank" class="cmn-btn">View All</a>
             </div>
           </div>
         </div>
@@ -228,7 +228,7 @@ const home = `
                 <div class="icon-area">
                   <span>1</span>
                   <img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/how-icon-1.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-icon-1.png"
                     alt="image"
                   />
                 </div>
@@ -244,7 +244,7 @@ const home = `
                 <div class="icon-area">
                   <span>2</span>
                   <img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/how-icon-2.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-icon-2.png"
                     alt="image"
                   />
                 </div>
@@ -260,7 +260,7 @@ const home = `
                 <div class="icon-area">
                   <span>3</span>
                   <img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/how-icon-3.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-icon-3.png"
                     alt="image"
                   />
                 </div>
@@ -276,7 +276,7 @@ const home = `
                 <div class="icon-area">
                   <span>4</span>
                   <img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/how-icon-4.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-icon-4.png"
                     alt="image"
                   />
                 </div>
@@ -288,7 +288,7 @@ const home = `
           </div>
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <a href="registration.html" class="cmn-btn">Join Now!</a>
+              <a href="https://play.axlegames.io" target="_blank" class="cmn-btn">Join Now!</a>
             </div>
           </div>
         </div>
@@ -305,7 +305,7 @@ const home = `
               <div class="single-item text-center">
                 <div class="img-area">
                   <img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-1.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-1.png"
                     alt="image"
                   />
                 </div>
@@ -317,7 +317,7 @@ const home = `
               <div class="single-item text-center">
                 <div class="img-area">
                   <img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-2.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-2.png"
                     alt="image"
                   />
                 </div>
@@ -329,7 +329,7 @@ const home = `
               <div class="single-item text-center">
                 <div class="img-area">
                   <img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-3.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-3.png"
                     alt="image"
                   />
                 </div>
@@ -341,7 +341,7 @@ const home = `
               <div class="single-item text-center">
                 <div class="img-area">
                   <img
-                    src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-4.png"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-4.png"
                     alt="image"
                   />
                 </div>
@@ -355,16 +355,16 @@ const home = `
     </section>
     <!-- Counter In end -->
 
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery-3.5.1.min.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/bootstrap.min.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/slick.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.nice-select.min.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/fontawesome.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.counterup.min.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.waypoints.min.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/wow.js"></script>
-    <script src="https://axleHome.s3.ap-south-1.amazonaws.com/theme_assets/js/main.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery-3.5.1.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/bootstrap.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/slick.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.nice-select.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/fontawesome.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.counterup.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.waypoints.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/wow.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/main.js"></script>
   </body>
 </html>
 
