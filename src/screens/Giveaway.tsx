@@ -230,14 +230,6 @@ const Giveaway = () => {
           Exclusive $5,000 Giveaway!
         </Text>
 
-        <Text
-          fontFamily={`"Chakra Petch", sans-serif`}
-          fontSize={"xl"}
-          fontWeight={"bold"}
-          color={brandingColors.primaryTwoTextColor}
-        >
-          Winners will be announced by January 31, 2023
-        </Text>
         <Box
           width={"100%"}
           justifyContent="space-evenly"
@@ -340,13 +332,6 @@ const Giveaway = () => {
           color={brandingColors.primaryTextColor}
         >
           AxleGames
-        </Text>
-        <Text
-          fontFamily={`"Chakra Petch", sans-serif`}
-          fontSize={"xl"}
-          color={brandingColors.secondaryTextColor}
-        >
-          Singapore
         </Text>
       </Box>
       <Box
