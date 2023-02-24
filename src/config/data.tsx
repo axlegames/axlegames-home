@@ -237,11 +237,15 @@ export const powerdby = [
 ];
 
 export const chart = `
-<html lang="en">
+
+<!DOCTYPE html>
+<html lang="zxx">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AxleGames</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style>
@@ -250,9 +254,100 @@ export const chart = `
           font-family: "Chakra Petch", sans-serif;
       }
     </style>
+
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/jquery-ui.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/fontawesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/magnific-popup.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/nice-select.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
+    />
   </head>
-  <body style="height: 100vh; width: 100vw; position: fixed">
-    <div style="height:100vh" id="chartdiv"></div>
+
+  <body>
+    <!-- start preloader -->
+    <div class="preloader" id="preloader"></div>
+    <!-- end preloader -->
+
+    <!-- Counter In start -->
+    <section id="counter-section">
+      <div class="overlay pt-120 pb-120">
+        <div class="container">
+          <div style="justify-content:center" class="row mp-none">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <div class="img-area">
+                  <img
+                    style="padding:1rem"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/bsc.webp"
+                    alt="image"
+                  />
+                </div>
+                <h3>BEP-20</h3>
+                <p>BSC Token</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <div class="img-area">
+                  <img
+                    style="padding:1rem"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/supply.webp"
+                    alt="image"
+                  />
+                </div>
+                <h3>1B</h3>
+                <p>Total Supply</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <div class="img-area">
+                  <img
+                    style="padding:1rem"
+                    src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/util.webp"
+                    alt="image"
+                  />
+                </div>
+                <h3>$AXLE</h3>
+                <p>Utility Token</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div  style="height:54vh; margin-top:2rem" id="chartdiv"></div>
+      </div>
+
     <script src="//cdn.amcharts.com/lib/4/core.js"></script>
     <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
     <script>
@@ -326,6 +421,20 @@ export const chart = `
       chart.legend.labels.template.fill = am4core.color("#ffffff");
       chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
     </script>
+
+    </section>
+    <!-- Counter In end -->
+
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery-3.5.1.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/bootstrap.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/slick.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.nice-select.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/fontawesome.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.counterup.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.waypoints.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/wow.js"></script>
+    <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/main.js"></script>
   </body>
 </html>
 `;
@@ -466,13 +575,7 @@ export const home = `
                   <div
                     class="btn-play d-flex justify-content-center align-items-center"
                   >
-                    <a href="https://play.axlegames.io" target="_blank" class="cmn-btn">Get Started</a>
-                    <a
-                      href="https://www.youtube.com/watch?v=MJ0zpsWQ_XM"
-                      class="mfp-iframe popupvideo"
-                    >
-                      <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/play-icon.png" alt="play" />
-                    </a>
+                    <a href="https://sale.axlegames.io" target="_blank" class="cmn-btn">Presale</a>
                   </div>
                 </div>
                 <div class="row justify-content-center">
@@ -659,66 +762,6 @@ export const home = `
       </div>
     </section>
     <!-- How Works end -->
-
-    <!-- Counter In start -->
-    <section id="counter-section">
-      <div class="overlay pt-120 pb-120">
-        <div class="container">
-          <div class="row mp-none">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="single-item text-center">
-                <div class="img-area">
-                  <img
-                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-1.png"
-                    alt="image"
-                  />
-                </div>
-                <h3><span class="counter">84</span>K</h3>
-                <p>Matches Played</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="single-item text-center">
-                <div class="img-area">
-                  <img
-                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-2.png"
-                    alt="image"
-                  />
-                </div>
-                <h3>$<span class="counter">96</span>m</h3>
-                <p>Winnings Paid</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="single-item text-center">
-                <div class="img-area">
-                  <img
-                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-3.png"
-                    alt="image"
-                  />
-                </div>
-                <h3><span class="counter">180</span></h3>
-                <p>Active Ladders</p>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="single-item text-center">
-                <div class="img-area">
-                  <img
-                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-icon-4.png"
-                    alt="image"
-                  />
-                </div>
-                <h3><span class="counter">168</span>b</h3>
-                <p>XP Earned</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Counter In end -->
-
     <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery-3.5.1.min.js"></script>
     <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/bootstrap.min.js"></script>
     <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/slick.js"></script>
