@@ -583,7 +583,7 @@ export const home = `
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
                         <div class="bottom-area text-center">
-                          <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/Fore ground element 2.png" alt="banner-vs" />
+                          <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png" alt="banner-vs" />
                         </div>
                       </div>
                     </div>
