@@ -345,7 +345,7 @@ export const chart = `
             </div>
           </div>
         </div>
-        <div  style="min-height:44vh; margin-top:2rem" id="chartdiv"></div>
+        <div style="min-height:44vh; margin-top:2rem" id="chartdiv"></div>
       </div>
 
     <script src="//cdn.amcharts.com/lib/4/core.js"></script>
@@ -689,7 +689,7 @@ export const home = `
               </div>
             </div>
           </div>
-          <div class=" mp-top">
+          <div class="row mp-top">
             <div
               class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center"
             >
