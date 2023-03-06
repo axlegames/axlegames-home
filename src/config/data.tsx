@@ -583,7 +583,7 @@ export const home = `
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
                         <div class="bottom-area text-center">
-                          <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png" alt="banner-vs" />
+                          <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/Fore ground element 2.png" alt="banner-vs" />
                         </div>
                       </div>
                     </div>
@@ -594,13 +594,15 @@ export const home = `
           </div>
           <div class="ani-illu">
             <img
+              style="height:620px"
               class="left-1 wow fadeInUp"
-              src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/left-banner.png"
+              src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.png"
               alt="image"
             />
             <img
+              style="height:620px"
               class="right-2 wow fadeInUp"
-              src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/right-banner.png"
+              src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.png"
               alt="image"
             />
           </div>

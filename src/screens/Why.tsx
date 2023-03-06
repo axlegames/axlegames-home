@@ -69,7 +69,12 @@ const WhyCard = (props: Props) => {
         flexDirection="column"
         p={5}
       >
-        <Image width={"44"} borderRadius={"md"} src={props.img} />
+        <Image
+          width={{ base: "32", md: "40" }}
+          my={{ base: "4" }}
+          borderRadius={"md"}
+          src={props.img}
+        />
         <Box>
           <Text
             color={brandingColors.primaryTextColor}

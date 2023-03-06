@@ -120,8 +120,8 @@ const Phase = (props: Props) => {
         data-aos={props.index % 2 === 0 ? `fade-left` : `fade-right`}
         boxShadow={`4px 4px 7px #350794,
              -4px -4px 7px #570bf2`}
-        minW={"96"}
-        minH={"64"}
+        minW={{ base: "80", md: "96" }}
+        minH={{ base: "44", md: "64" }}
         transition={`all 100ms ease-out`}
         _hover={{
           boxShadow: `inset 4px 4px 7px #350794,
@@ -132,7 +132,7 @@ const Phase = (props: Props) => {
       >
         <Text
           fontFamily={`"Chakra Petch", sans-serif`}
-          fontSize={"3xl"}
+          fontSize={{ base: "md", md: "3xl" }}
           color={brandingColors.primaryTextColor}
           fontWeight={"bold"}
         >
@@ -157,7 +157,7 @@ const Phase = (props: Props) => {
                 fontFamily={`"Chakra Petch", sans-serif`}
                 fontWeight="bold"
                 color={brandingColors.secondaryTextColor}
-                fontSize={"sm"}
+                fontSize={{ base: "xs", md: "sm" }}
               >
                 {m}
               </Text>
