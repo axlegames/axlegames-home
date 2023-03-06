@@ -345,7 +345,7 @@ export const chart = `
             </div>
           </div>
         </div>
-        <div  style="height:54vh; margin-top:2rem" id="chartdiv"></div>
+        <div  style="min-height:44vh; margin-top:2rem" id="chartdiv"></div>
       </div>
 
     <script src="//cdn.amcharts.com/lib/4/core.js"></script>
@@ -594,13 +594,13 @@ export const home = `
           </div>
           <div class="ani-illu">
             <img
-              style="height:620px"
+              style="max-height:620px"
               class="left-1 wow fadeInUp"
               src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.png"
               alt="image"
             />
             <img
-              style="height:620px"
+              style="max-height:620px"
               class="right-2 wow fadeInUp"
               src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.png"
               alt="image"
@@ -689,7 +689,7 @@ export const home = `
               </div>
             </div>
           </div>
-          <div class="row mp-top">
+          <div class=" mp-top">
             <div
               class="col-lg-3 col-md-3 col-sm-6 d-flex justify-content-center"
             >
