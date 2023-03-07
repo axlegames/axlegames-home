@@ -76,6 +76,7 @@ const ProductMobileView = (props: Props) => {
             {props.subTitle}
           </Text>
           <Text
+            fontFamily={`Shantell Sans`}
             py={1}
             borderRadius="md"
             fontSize={"xx-small"}
@@ -89,6 +90,7 @@ const ProductMobileView = (props: Props) => {
         <Text
           fontSize={{ base: "sm", sm: "md", md: "lg" }}
           color={brandingColors.secondaryTextColor}
+          fontFamily={`Shantell Sans`}
         >
           {props.text}
         </Text>
@@ -96,7 +98,7 @@ const ProductMobileView = (props: Props) => {
           {props.isLive ? (
             <Box
               fontFamily={`"Chakra Petch", sans-serif`}
-              className="cmn-btn"
+              className="btnc"
               onClick={() => props.function()}
               cursor="pointer"
             >
@@ -159,7 +161,11 @@ const ProductMidDeviceView = (props: Props) => {
         </Box>
       </Box>
       <Box>
-        <Text color={brandingColors.secondaryTextColor} fontSize={"lg"}>
+        <Text
+          fontFamily={`Shantell Sans`}
+          color={brandingColors.secondaryTextColor}
+          fontSize={"lg"}
+        >
           {props.text}
         </Text>
       </Box>
@@ -168,7 +174,7 @@ const ProductMidDeviceView = (props: Props) => {
         {props.isLive ? (
           <Box
             fontFamily={`"Chakra Petch", sans-serif`}
-            className="cmn-btn"
+            className="btnc"
             onClick={() => props.function()}
             cursor="pointer"
           >

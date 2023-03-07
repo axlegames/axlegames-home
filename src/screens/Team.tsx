@@ -119,6 +119,7 @@ const Team = () => {
                   </Text>
                   <Text
                     fontSize={"md"}
+                    fontFamily={`Shantell Sans`}
                     color={brandingColors.secondaryTextColor}
                   >
                     {t.role}

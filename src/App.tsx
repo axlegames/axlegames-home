@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import FallBack from "./components/Fallback";
+import { theme } from "./config/theme";
 
 const Main = lazy(() => import("./screens/Main"));
 const About = lazy(() => import("./screens/About"));
@@ -30,7 +31,7 @@ export const App = () => {
 
   return (
     <Suspense fallback={<FallBack />}>
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         {/* <Banner close={() => setBanner(false)} isOpen={banner} size="xl" /> */}
         <Router>
           <Routes>

@@ -193,7 +193,8 @@ export const phases = [
     phase: "on going",
     milestones: [
       "Team Expansion - New hiring",
-      "Poseidon and Hades Sale - Live",
+      "Axle Games Website V2",
+      "IDO Presale Phase 4",
       "Axle Token Staking",
       "Axle Swap Launch",
       "Lewdle  and Lookdle Launch",
@@ -249,6 +250,9 @@ export const chart = `
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Shantell+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
       * {
           font-family: "Chakra Petch", sans-serif;
@@ -536,6 +540,9 @@ export const home = `
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/slick.css"
     />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/magnific-popup.css"
@@ -552,7 +559,83 @@ export const home = `
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
     />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
   </head>
+  <style>
+  .btnc {
+  min-width:150px;
+  font-family:"Chakra Petch", sans-serif;
+  border: 0 none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  height: 54px;
+  line-height: 54px;
+  padding: 0 25px;
+  position: relative;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  background-size: 200% auto;
+  cursor: pointer;
+  background-image: -webkit-linear-gradient(
+    left,
+    #0a325c 0%,
+    #eb6612 51%,
+    #0a325c
+  );
+  background-image: linear-gradient(to right, #0a325c 0%, #eb6612 51%, #0a325c);
+  border: 0;
+  color: #fff;
+  outline: none;
+  text-transform: uppercase;
+  z-index: 2;
+  transition: all 0.5s ease 0s;
+  }
+  .btnc:hover {
+  background-position: right center;
+  }
+  .btnc-secondary {
+  min-width:150px;
+  font-family:"Chakra Petch", sans-serif;
+  border: 0 none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  height: 54px;
+  line-height: 54px;
+  padding: 0 25px;
+  position: relative;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-family: "Russo One", sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  background-size: 200% auto;
+  cursor: pointer;
+  background-image: -webkit-linear-gradient(
+    right,
+    #0a325c 0%,
+    #eb6612 51%,
+    #0a325c
+  );
+  background-image: linear-gradient(to left, #0a325c 0%, #eb6612 51%, #0a325c);
+  border: 0;
+  color: #fff;
+  outline: none;
+  text-transform: uppercase;
+  z-index: 2;
+  transition: all 0.5s ease 0s;
+  }
+  .btnc-secondary:hover {
+  background-position: right center;
+  }
+</style>
+
 
   <body>
     <!-- start preloader -->
@@ -567,23 +650,50 @@ export const home = `
             <div class="col-lg-12">
               <div class="main-content">
                 <div class="top-area justify-content-center text-center">
-                  <h3>#WORDLE-TO-WEB3</h3>
-                  <h1>AXLEgames</h1>
-                  <p>
-                    A SKILL-BASED WEB3 GAMING PLATFORM
-                  </p>
+                  <h3>#AI-GAMING</h3>
+                  <div style="column-gap:1rem" class="d-flex justify-content-center">
+                    <h1 style="font-family: 'Bungee Shade', cursive;">AXLE</h1>
+                    <h1 style="font-family: 'Bungee Shade', cursive; color:#F46B15">GAMES</h1>
+                  </div>
                   <div
+                    style="column-gap:1rem"
                     class="btn-play d-flex justify-content-center align-items-center"
                   >
-                    <a href="https://sale.axlegames.io" target="_blank" class="cmn-btn">Presale</a>
+                    <a href="https://sale.axlegames.io" target="_blank" class="btnc">Presale</a>
+                    <a href="https://sale.axlegames.io" target="_blank" class="btnc-secondary">Launch App</a>
                   </div>
                 </div>
+
+                <ul style="margin-top:3rem" class="d-flex align-items-center justify-content-center">
+                  <li> 
+                    <a href="https://instagram.com/axlegames" target="_blank">
+                      <img style="max-width:52px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/instagram.webp" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://medium.com/@axlegames" target="_blank">
+                      <img style="max-width:52px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/medium.webp" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://t.me/axlegames_en" target="_blank">
+                      <img style="max-width:52px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/telegram.webp" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/AxleGames" target="_blank">
+                      <img style="max-width:52px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/twitter.webp" />
+                    </a>
+                  </li>
+                </ul>
+
+
                 <div class="row justify-content-center">
                   <div class="col-lg-12">
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
                         <div class="bottom-area text-center">
-                          <img src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png" alt="banner-vs" />
+                          <img style="max-height:200px" src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png" alt="banner-vs" />
                         </div>
                       </div>
                     </div>
@@ -592,15 +702,16 @@ export const home = `
               </div>
             </div>
           </div>
+
           <div class="ani-illu">
             <img
-              style="max-height:620px"
+              style="max-height:520px"
               class="left-1 wow fadeInUp"
               src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.png"
               alt="image"
             />
             <img
-              style="max-height:620px"
+              style="max-height:520px"
               class="right-2 wow fadeInUp"
               src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.png"
               alt="image"

@@ -130,7 +130,7 @@ const Navbar = () => {
         </Flex>
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
           <a
-            className="cmn-btn"
+            className="btn"
             href={`https://sale.axlegames.io`}
             target="_blank"
             rel="noopener noreferrer"

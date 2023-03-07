@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Shantell+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Silkscreen&display=swap");
+
 @font-face {
   font-family: "Russo One";
   font-style: normal;
@@ -56,7 +58,7 @@
   width: 100%;
 }
 
-.btn {
+.btnc {
   border: 0 none;
   border-radius: 5px;
   font-size: 16px;
@@ -87,11 +89,11 @@
   transition: all 0.5s ease 0s;
 }
 
-.btn:hover {
+.btnc:hover {
   background-position: right center;
 }
 
-.btn-secondary {
+.btnc-secondary {
   cursor: pointer;
   border: 0 none;
   border-radius: 5px;
@@ -117,7 +119,7 @@
   transition: all 1s ease 0s;
 }
 
-.btn-secondary:hover {
+.btnc-secondary:hover {
   background: transparent;
   background-image: linear-gradient(
     to left,

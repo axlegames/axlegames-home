@@ -90,6 +90,7 @@ const WhyCard = (props: Props) => {
             fontWeight={"normal"}
             fontSize={{ base: "sm", lg: "md" }}
             textAlign={"center"}
+            fontFamily={`Shantell Sans`}
           >
             {props.text}
           </Text>
