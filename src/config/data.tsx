@@ -780,7 +780,7 @@ export const home = `
               </div>
             </div>
             <div class="btn-area text-center">
-              <a href="https://play.axlegames.io" target="_blank" class="cmn-btn">View All</a>
+              <a href="https://play.axlegames.io" target="_blank" class="btnc">View All</a>
             </div>
           </div>
         </div>
@@ -868,7 +868,7 @@ export const home = `
           </div>
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <a href="https://play.axlegames.io" target="_blank" class="cmn-btn">Join Now!</a>
+              <a href="https://play.axlegames.io" target="_blank" class="btnc">Join Now!</a>
             </div>
           </div>
         </div>
