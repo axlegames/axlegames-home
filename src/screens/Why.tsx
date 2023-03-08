@@ -70,7 +70,7 @@ const WhyCard = (props: Props) => {
         p={5}
       >
         <Image
-          width={{ base: "32", md: "40" }}
+          width={{ base: "24", md: "40" }}
           my={{ base: "4" }}
           borderRadius={"md"}
           src={props.img}
@@ -87,7 +87,7 @@ const WhyCard = (props: Props) => {
           </Text>
           <Text
             color={brandingColors.secondaryTextColor}
-            fontSize={{ base: "sm", md: "md", lg: "lg" }}
+            fontSize={{ base: "md", lg: "lg" }}
             textAlign={"center"}
             fontFamily={`Shantell Sans`}
           >

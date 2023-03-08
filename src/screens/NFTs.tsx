@@ -2,6 +2,7 @@ import { nfts } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
 import { Box, Grid, Text } from "@chakra-ui/react";
 
+import Slider from "react-slick";
 import Heading from "../components/Heading";
 
 interface Props {
@@ -13,7 +14,12 @@ interface Props {
 
 const NFT = (props: Props) => {
   return (
-    <Box data-aos={props.slide}>
+    <Box
+      display={"flex"}
+      justifyContent="center"
+      alignItems={"center"}
+      data-aos={props.slide}
+    >
       <Box
         minW={{ base: "270px" }}
         maxW={{ base: "270px" }}
@@ -68,20 +74,17 @@ const NFTs = () => {
   return (
     <Box
       p={{ base: "4", lg: "16" }}
-      display="flex"
-      flexDirection={"column"}
-      rowGap="4rem"
-      justifyContent={"center"}
-      alignItems="center"
       bg={brandingColors.bgColor}
       backgroundImage="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/players-week-bg.png"
     >
       <Heading title="NFTs" />
       <Grid
+        display={{ base: "none", md: "grid" }}
         columnGap={{ base: "1rem", xl: "4rem" }}
         justifyContent={"space-evenly"}
         alignItems="center"
-        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
+        gridTemplateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }}
+        py={12}
         rowGap={{ base: "4rem" }}
       >
         {nfts.map((nft, index) => (
@@ -92,6 +95,21 @@ const NFTs = () => {
           />
         ))}
       </Grid>
+      <Box py={12} display={{ base: "block", md: "none" }}>
+        <Slider
+          infinite={true}
+          arrows={false}
+          speed={500}
+          slidesToScroll={1}
+          slidesPerRow={1}
+          slidesToShow={1}
+          dots={true}
+        >
+          <NFT slide={""} {...nfts[0]} />
+          <NFT slide={""} {...nfts[1]} />
+          <NFT slide={""} {...nfts[2]} />
+        </Slider>
+      </Box>
     </Box>
   );
 };

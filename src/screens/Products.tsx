@@ -65,7 +65,7 @@ const ProductMobileView = (props: Props) => {
       m={4}
       borderRadius="xl"
     >
-      <Image maxW={"320px"} src={props.mainImg} />
+      <Image maxW={"180px"} src={props.mainImg} />
       <Box display={"flex"} flexDirection={{ base: "column" }} rowGap="1rem">
         <Flex
           alignItems={"center"}
@@ -93,7 +93,7 @@ const ProductMobileView = (props: Props) => {
           </Text>
         </Flex>
         <Text
-          fontSize={{ base: "sm", sm: "md", md: "lg" }}
+          fontSize={{ base: "md", md: "lg" }}
           color={brandingColors.secondaryTextColor}
           fontFamily={`Shantell Sans`}
         >

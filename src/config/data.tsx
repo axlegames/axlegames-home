@@ -255,6 +255,14 @@ export const chart = `
       * {
           font-family: Shantell Sans;
       }
+      #chartdiv {
+        min-height:36vh;
+      }
+      @media only screen and (min-width:840px){
+      #chartdiv {
+        min-height:52vh;
+      }
+      } 
     </style>
 
     <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
@@ -351,7 +359,7 @@ export const chart = `
             </div>
           </div>
         </div>
-        <div style="min-height:44vh; margin-top:2rem" id="chartdiv"></div>
+        <div margin-top:2rem" id="chartdiv"></div>
       </div>
 
     <script src="//cdn.amcharts.com/lib/4/core.js"></script>
