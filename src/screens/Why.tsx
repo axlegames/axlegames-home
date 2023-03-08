@@ -18,7 +18,7 @@ const Why = () => {
       justifyContent={"center"}
       alignItems="center"
     >
-      <Heading title="Why $AXLE ?" />
+      <Heading title="Why $AXLE?" />
       <Grid
         columnGap={{ base: "1rem", xl: "4rem" }}
         justifyContent={"space-evenly"}

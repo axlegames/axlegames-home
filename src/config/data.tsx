@@ -862,7 +862,7 @@ export const home = `
             <div class="col-lg-6 text-center">
               <div class="section-header">
                 <h2 style="font-family:Staatliches" class="title">How It Works</h2>
-                <p style="font-family: Shantell Sans">
+                <p style="font-family: Shantell Sans; color:#EB6612">
                   It's easier than you think. Follow 4 simple easy steps
                 </p>
               </div>

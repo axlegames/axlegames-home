@@ -5,23 +5,27 @@ interface Props {
   title: string;
 }
 const Heading = (props: Props) => {
+  let split = props.title.split(" ");
+
   return (
     <Box
       alignItems={"center"}
+      columnGap="1rem"
       display={"flex"}
-      flexDirection="column"
       justifyContent={"center"}
     >
-      <Text
-        color={brandingColors.secondaryTextColor}
-        fontSize={{ base: "3xl", lg: "5xl" }}
-        textAlign={"center"}
-        fontFamily={`Staatliches`}
-        fontWeight="bold"
-        data-aos={`zoom-out`}
-      >
-        {props.title}
-      </Text>
+      {split.map((s, i) => (
+        <Text
+          color={i % 2 === 0 ? "white" : brandingColors.primaryTextColor}
+          fontSize={{ base: "3xl", lg: "5xl" }}
+          textAlign={"center"}
+          fontFamily={`Staatliches`}
+          fontWeight="bold"
+          data-aos={`zoom-out`}
+        >
+          {s}
+        </Text>
+      ))}
     </Box>
   );
 };

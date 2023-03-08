@@ -20,7 +20,7 @@ const Team = () => {
 
   return (
     <Box backgroundImage={``} mx={{ md: "auto" }} pt={16}>
-      <Heading title="Meet the team" />
+      <Heading title="Meet team" />
       <Flex py={{ base: "16" }} flexDirection={"column"}>
         <Grid
           rowGap={"3rem"}
