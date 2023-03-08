@@ -9,12 +9,23 @@ import {
   MenuList,
   Text,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { brandingColors } from "../../config/brandingColors";
 import NeuLink from "../NeuLink";
 import "./Navbar.css";
 import NeuPageLink from "./NeuPageLink";
 
 const Navbar = () => {
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
+
   return (
     <Box
       display={{ base: "none", lg: "block" }}
@@ -22,7 +33,9 @@ const Navbar = () => {
       fontWeight={"bold"}
       fontFamily={`"Chakra Petch", sans-serif`}
       width="100vw"
-      boxShadow={`0px 0px 12px -3px ${brandingColors.primaryButtonColor}`}
+      boxShadow={`0px 0px 12px -6px ${brandingColors.primaryButtonColor}`}
+      bg={!colorChange ? `rgba(0, 0, 0, 0.4)` : `transparent`}
+      transition="all 200ms ease-in"
     >
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
         <Flex alignItems={"center"}>
@@ -130,7 +143,7 @@ const Navbar = () => {
         </Flex>
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
           <a
-            className="btn"
+            className="btnc"
             href={`https://sale.axlegames.io`}
             target="_blank"
             rel="noopener noreferrer"

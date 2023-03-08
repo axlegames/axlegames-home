@@ -8,8 +8,8 @@ import Tilt from "react-parallax-tilt";
 const Why = () => {
   return (
     <Box
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
       bg={brandingColors.bgColor}
+      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png`}
       px={{ base: "4", lg: "16" }}
       py={{ base: "16", lg: "16" }}
       display="flex"
@@ -87,8 +87,7 @@ const WhyCard = (props: Props) => {
           </Text>
           <Text
             color={brandingColors.secondaryTextColor}
-            fontWeight={"normal"}
-            fontSize={{ base: "sm", lg: "md" }}
+            fontSize={{ base: "sm", md: "md", lg: "lg" }}
             textAlign={"center"}
             fontFamily={`Shantell Sans`}
           >

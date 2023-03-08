@@ -7,7 +7,8 @@ import Heading from "../components/Heading";
 const RoadMap = () => {
   return (
     <Box
-      backgroundImage={`linear-gradient(to bottom, #270e5a, #200d53, #190b4b, #130a44, #0e063d);`}
+      bg={brandingColors.bgColor}
+      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/tournaments-bg.png`}
       py={{ base: "16" }}
     >
       <Heading title="Roadmap" />
@@ -154,7 +155,7 @@ const Phase = (props: Props) => {
                 <GrayCircle />
               )}
               <Text
-                fontFamily={`"Chakra Petch", sans-serif`}
+                fontFamily={`Shantell Sans`}
                 fontWeight="bold"
                 color={brandingColors.secondaryTextColor}
                 fontSize={{ base: "xs", md: "sm" }}

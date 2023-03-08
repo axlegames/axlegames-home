@@ -94,45 +94,32 @@
 }
 
 .btnc-secondary {
-  cursor: pointer;
-  border: 0 none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  height: 54px;
-  line-height: 54px;
-  padding: 0 25px;
   position: relative;
-  text-transform: uppercase;
-  vertical-align: middle;
-  font-family: "Russo One", sans-serif;
-  font-weight: bold;
-  border-radius: 10px;
-  background-size: 200% auto;
-  border: 0;
-  color: #fff;
-  outline: none;
-  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  background-color: none;
+  border: 3px #eb6612 solid;
   z-index: 2;
-  border: 2px solid #0a325c;
-  background-color: #0a325c;
-  transition: all 1s ease 0s;
 }
-
-.btnc-secondary:hover {
-  background: transparent;
-  background-image: linear-gradient(
-    to left,
-    #0a325c,
-    #5c3b7a,
-    #a83a7a,
-    #e2465c,
-    #f77726
-  );
-  -webkit-transition: background 1s;
-  -moz-transition: background 1s;
-  -o-transition: background 1s;
-  transition: background 1s;
+.btnc-secondary::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eb6612;
+  z-index: -1;
+  transition: height 200ms ease;
+}
+.btnc-secondary:hover::before {
+  height: 100%;
 }
 
 .glowc_text {

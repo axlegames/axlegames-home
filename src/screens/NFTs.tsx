@@ -52,8 +52,8 @@ const NFT = (props: Props) => {
           <Text
             color={brandingColors.secondaryTextColor}
             fontFamily={`Shantell Sans`}
-            fontWeight={"normal"}
-            fontSize={{ base: "sm", lg: "md" }}
+            fontWeight={"bold"}
+            fontSize={{ base: "sm", md: "md", lg: "lg" }}
             textAlign={"center"}
           >
             {props.text}

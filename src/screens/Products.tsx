@@ -17,7 +17,11 @@ interface Props {
 
 const Products = () => {
   return (
-    <Box bg={brandingColors.bgColor} py={{ base: "12" }}>
+    <Box
+      bg={brandingColors.bgColor}
+      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-bg.png`}
+      py={{ base: "12" }}
+    >
       <Heading title="Products" />
       <Box
         flexDirection={"column"}
@@ -164,7 +168,7 @@ const ProductMidDeviceView = (props: Props) => {
         <Text
           fontFamily={`Shantell Sans`}
           color={brandingColors.secondaryTextColor}
-          fontSize={"lg"}
+          fontSize={{ base: "md", md: "lg" }}
         >
           {props.text}
         </Text>

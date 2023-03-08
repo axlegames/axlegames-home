@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 
 import FallBack from "./components/Fallback";
 import { theme } from "./config/theme";
+import StakeLayout from "./Staking/StakeLayout";
 
 const Main = lazy(() => import("./screens/Main"));
 const About = lazy(() => import("./screens/About"));
@@ -39,8 +40,8 @@ export const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/giveaway1" element={<Giveaway1 />} />
             {/* <Route path="/giveaway2" element={<Giveaway2 />} /> */}
-            {/* <Route path="/tsupply" element={<TSupply />} />
-              <Route path="/staking" element={<StakeLayout />} /> */}
+            {/* <Route path="/tsupply" element={<TSupply />} /> */}
+            <Route path="/staking" element={<StakeLayout />} />
           </Routes>
         </Router>
       </ChakraProvider>

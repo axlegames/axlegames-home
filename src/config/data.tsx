@@ -247,15 +247,12 @@ export const chart = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AxleGames</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Shantell+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-    @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+    <style>
       * {
-          font-family: "Chakra Petch", sans-serif;
+          font-family: Shantell Sans;
       }
     </style>
 
@@ -296,6 +293,10 @@ export const chart = `
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Shantell+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -317,7 +318,7 @@ export const chart = `
                     alt="image"
                   />
                 </div>
-                <h3>BEP-20</h3>
+                <h3 style="font-family:Shantell Sans">BEP-20</h3>
                 <p>BSC Token</p>
               </div>
             </div>
@@ -330,7 +331,7 @@ export const chart = `
                     alt="image"
                   />
                 </div>
-                <h3>1B</h3>
+                <h3 style="font-family:Shantell Sans">1B</h3>
                 <p>Total Supply</p>
               </div>
             </div>
@@ -343,7 +344,7 @@ export const chart = `
                     alt="image"
                   />
                 </div>
-                <h3>$AXLE</h3>
+                <h3 style="font-family:Shantell Sans">$AXLE</h3>
                 <p>Utility Token</p>
               </div>
             </div>
@@ -518,8 +519,17 @@ export const home = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AxleGames</title>
-
     <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Shantell+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/owl.carousel.min.css"
@@ -540,9 +550,6 @@ export const home = `
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/slick.css"
     />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/magnific-popup.css"
@@ -559,83 +566,127 @@ export const home = `
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
     />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
   </head>
   <style>
-  .btnc {
-  min-width:150px;
-  font-family:"Chakra Petch", sans-serif;
-  border: 0 none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  height: 54px;
-  line-height: 54px;
-  padding: 0 25px;
-  position: relative;
-  text-transform: uppercase;
-  vertical-align: middle;
-  font-family: "Russo One", sans-serif;
-  font-weight: bold;
-  border-radius: 10px;
-  background-size: 200% auto;
-  cursor: pointer;
-  background-image: -webkit-linear-gradient(
-    left,
-    #0a325c 0%,
-    #eb6612 51%,
-    #0a325c
-  );
-  background-image: linear-gradient(to right, #0a325c 0%, #eb6612 51%, #0a325c);
-  border: 0;
-  color: #fff;
-  outline: none;
-  text-transform: uppercase;
-  z-index: 2;
-  transition: all 0.5s ease 0s;
-  }
-  .btnc:hover {
-  background-position: right center;
-  }
-  .btnc-secondary {
-  min-width:150px;
-  font-family:"Chakra Petch", sans-serif;
-  border: 0 none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  height: 54px;
-  line-height: 54px;
-  padding: 0 25px;
-  position: relative;
-  text-transform: uppercase;
-  vertical-align: middle;
-  font-family: "Russo One", sans-serif;
-  font-weight: bold;
-  border-radius: 10px;
-  background-size: 200% auto;
-  cursor: pointer;
-  background-image: -webkit-linear-gradient(
-    right,
-    #0a325c 0%,
-    #eb6612 51%,
-    #0a325c
-  );
-  background-image: linear-gradient(to left, #0a325c 0%, #eb6612 51%, #0a325c);
-  border: 0;
-  color: #fff;
-  outline: none;
-  text-transform: uppercase;
-  z-index: 2;
-  transition: all 0.5s ease 0s;
-  }
-  .btnc-secondary:hover {
-  background-position: right center;
-  }
-</style>
+    .btnc {
+      min-width: 150px;
+      font-family: "Chakra Petch", sans-serif;
+      border: 0 none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      height: 54px;
+      line-height: 54px;
+      padding: 0 25px;
+      position: relative;
+      text-transform: uppercase;
+      vertical-align: middle;
+      font-weight: bold;
+      border-radius: 10px;
+      background-size: 200% auto;
+      cursor: pointer;
+      background-image: -webkit-linear-gradient(
+        left,
+        #0a325c 0%,
+        #eb6612 51%,
+        #0a325c
+      );
+      background-image: linear-gradient(
+        to right,
+        #0a325c 0%,
+        #eb6612 51%,
+        #0a325c
+      );
+      border: 0;
+      color: #fff;
+      outline: none;
+      text-transform: uppercase;
+      z-index: 2;
+      transition: all 0.5s ease 0s;
+    }
+    .btnc:hover {
+      background-position: right center;
+    }
+    .btn-hover {
+      min-width: 150px;
+      position: relative;
+      text-transform: uppercase;
+      vertical-align: middle;
+      border: 0 none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      height: 54px;
+      color: #fff;
+      cursor: pointer;
+      text-align: center;
+      border: none;
+      background-size: 300% 100%;
+      moz-transition: all 0.4s ease-in-out;
+      line-height: 54px;
+      -o-transition: all 0.4s ease-in-out;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+    .btn-hover:hover {
+      background-position: 100% 0;
+      moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+    .btn-hover:focus {
+      outline: none;
+    }
+    .btn-hover.color-3 {
+      background-image: linear-gradient(
+        to right,
+        #667eea,
+        #764ba2,
+        #6b8dd6,
+        #8e37d7
+      );
+      box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+    }
+    .top-section {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0.5rem;
+    }
+    .top-titles {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .titler {
+      background-color: #0e063d;
+      padding: 0.5rem;
+      border-radius: 1vh;
 
+    }
+    .subFont {
+      font-family: Shantell Sans;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    @media only screen and (min-width: 840px) {
+      .top-section {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0.5rem;
+      }
+
+      .top-titles {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  </style>
 
   <body>
     <!-- start preloader -->
@@ -649,51 +700,55 @@ export const home = `
           <div class="row justify-content-center">
             <div class="col-lg-12">
               <div class="main-content">
-                <div class="top-area justify-content-center text-center">
-                  <h3>#AI-GAMING</h3>
-                  <div style="column-gap:1rem" class="d-flex justify-content-center">
-                    <h1 style="font-family: 'Bungee Shade', cursive;">AXLE</h1>
-                    <h1 style="font-family: 'Bungee Shade', cursive; color:#F46B15">GAMES</h1>
+                <div class="top-section">
+                  <h4 class="titler">#AI-GAMING</h4>
+                  <div class="top-titles">
+                    <h1 style="font-family: 'Bungee Shade', cursive">AXLE</h1>
+                    <h1
+                      style="
+                        font-family: 'Bungee Shade', cursive;
+                        color: #f46b15;
+                      "
+                    >
+                      GAMES
+                    </h1>
                   </div>
+                  <p class="subFont">
+                    A
+                    <span class="subFont" style="color: #eb6612"
+                      >Skill based</span
+                    >
+                    web3 gaming platform
+                  </p>
                   <div
-                    style="column-gap:1rem"
+                    style="column-gap: 1rem; margin: 1rem"
                     class="btn-play d-flex justify-content-center align-items-center"
                   >
-                    <a href="https://sale.axlegames.io" target="_blank" class="btnc">Presale</a>
-                    <a href="https://sale.axlegames.io" target="_blank" class="btnc-secondary">Launch App</a>
+                    <a
+                      href="https://sale.axlegames.io"
+                      target="_blank"
+                      class="btnc"
+                      >Presale</a
+                    >
+                    <a
+                      href="https://sale.axlegames.io"
+                      target="_blank"
+                      class="btn-hover color-3"
+                      >Launch App</a
+                    >
                   </div>
                 </div>
-
-                <ul style="margin-top:3rem" class="d-flex align-items-center justify-content-center">
-                  <li> 
-                    <a href="https://instagram.com/axlegames" target="_blank">
-                      <img style="max-width:52px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/instagram.webp" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://medium.com/@axlegames" target="_blank">
-                      <img style="max-width:52px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/medium.webp" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://t.me/axlegames_en" target="_blank">
-                      <img style="max-width:52px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/telegram.webp" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/AxleGames" target="_blank">
-                      <img style="max-width:52px" src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/twitter.webp" />
-                    </a>
-                  </li>
-                </ul>
-
 
                 <div class="row justify-content-center">
                   <div class="col-lg-12">
                     <div class="row justify-content-center">
                       <div class="col-lg-6">
                         <div class="bottom-area text-center">
-                          <img style="max-height:200px" src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png" alt="banner-vs" />
+                          <img
+                            style="max-height: 260px"
+                            src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png"
+                            alt="banner-vs"
+                          />
                         </div>
                       </div>
                     </div>
@@ -705,13 +760,13 @@ export const home = `
 
           <div class="ani-illu">
             <img
-              style="max-height:520px"
+              style="max-height: 520px"
               class="left-1 wow fadeInUp"
               src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.png"
               alt="image"
             />
             <img
-              style="max-height:520px"
+              style="max-height: 520px"
               class="right-2 wow fadeInUp"
               src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.png"
               alt="image"
@@ -722,8 +777,6 @@ export const home = `
     </section>
     <!-- banner-section end -->
 
-
-
     <!-- Available Game In start -->
     <section id="available-game-section">
       <div class="overlay pb-120">
@@ -733,15 +786,17 @@ export const home = `
               <div class="col-lg-10">
                 <div class="section-header">
                   <h2 class="title">Available Games</h2>
-                  <p>We are constantly adding new games</p>
+                  <p style="font-family: Shantell Sans">
+                    We are constantly adding new games
+                  </p>
                 </div>
               </div>
             </div>
-            <div style="padding:1rem" class="available-game-carousel">
+            <div style="padding: 1rem" class="available-game-carousel">
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    style="border-radius:.3vh"
+                    style="border-radius: 0.3vh"
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-5.png"
                     alt="image"
                 /></a>
@@ -749,7 +804,7 @@ export const home = `
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    style="border-radius:.3vh"
+                    style="border-radius: 0.3vh"
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-6.png"
                     alt="image"
                 /></a>
@@ -757,7 +812,7 @@ export const home = `
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    style="border-radius:.3vh"
+                    style="border-radius: 0.3vh"
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-7.png"
                     alt="image"
                 /></a>
@@ -765,7 +820,7 @@ export const home = `
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    style="border-radius:.3vh"
+                    style="border-radius: 0.3vh"
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/absurdle.png"
                     alt="image"
                 /></a>
@@ -773,14 +828,16 @@ export const home = `
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
                   ><img
-                    style="border-radius:.3vh"
+                    style="border-radius: 0.3vh"
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/lewdle.png"
                     alt="image"
                 /></a>
               </div>
             </div>
             <div class="btn-area text-center">
-              <a href="https://play.axlegames.io" target="_blank" class="btnc">View All</a>
+              <a href="https://play.axlegames.io" target="_blank" class="btnc"
+                >View All</a
+              >
             </div>
           </div>
         </div>
@@ -796,7 +853,9 @@ export const home = `
             <div class="col-lg-6 text-center">
               <div class="section-header">
                 <h2 class="title">How It Works</h2>
-                <p>It's easier than you think. Follow 4 simple easy steps</p>
+                <p style="font-family: Shantell Sans">
+                  It's easier than you think. Follow 4 simple easy steps
+                </p>
               </div>
             </div>
           </div>
@@ -813,7 +872,7 @@ export const home = `
                   />
                 </div>
                 <div class="text-area">
-                  <h5>Signup</h5>
+                  <h5 style="font-family: Shantell Sans">Signup</h5>
                 </div>
               </div>
             </div>
@@ -829,7 +888,7 @@ export const home = `
                   />
                 </div>
                 <div class="text-area">
-                  <h5>Deposit</h5>
+                  <h5 style="font-family: Shantell Sans">Deposit</h5>
                 </div>
               </div>
             </div>
@@ -845,7 +904,7 @@ export const home = `
                   />
                 </div>
                 <div class="text-area">
-                  <h5>Compete</h5>
+                  <h5 style="font-family: Shantell Sans">Compete</h5>
                 </div>
               </div>
             </div>
@@ -861,14 +920,16 @@ export const home = `
                   />
                 </div>
                 <div class="text-area">
-                  <h5>Get Paid</h5>
+                  <h5 style="font-family: Shantell Sans">Get Paid</h5>
                 </div>
               </div>
             </div>
           </div>
           <div class="row d-flex justify-content-center">
-            <div class="col-lg-6 text-center">
-              <a href="https://play.axlegames.io" target="_blank" class="btnc">Join Now!</a>
+            <div style="margin-top: 4rem" class="col-lg-6 text-center">
+              <a href="https://play.axlegames.io" target="_blank" class="btnc"
+                >Join Now!</a
+              >
             </div>
           </div>
         </div>
@@ -887,4 +948,5 @@ export const home = `
     <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/main.js"></script>
   </body>
 </html>
+
 `;

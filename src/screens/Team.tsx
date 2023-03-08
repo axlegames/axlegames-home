@@ -19,12 +19,7 @@ const Team = () => {
   };
 
   return (
-    <Box
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
-      width={{ base: "100%", md: "80%" }}
-      mx={{ md: "auto" }}
-      pt={16}
-    >
+    <Box backgroundImage={``} mx={{ md: "auto" }} pt={16}>
       <Heading title="Meet the team" />
       <Flex py={{ base: "16" }} flexDirection={"column"}>
         <Grid
@@ -118,7 +113,8 @@ const Team = () => {
                     {t.name}
                   </Text>
                   <Text
-                    fontSize={"md"}
+                    fontSize={{ base: "md" }}
+                    fontWeight="bold"
                     fontFamily={`Shantell Sans`}
                     color={brandingColors.secondaryTextColor}
                   >
