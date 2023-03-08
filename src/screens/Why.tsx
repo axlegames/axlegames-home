@@ -79,7 +79,7 @@ const WhyCard = (props: Props) => {
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "lg", lg: "2xl" }}
-            fontFamily={`"Chakra Petch", sans-serif`}
+            fontFamily={`Staatliches`}
             fontWeight="bold"
             textAlign={"center"}
           >

@@ -74,6 +74,7 @@ const ProductMobileView = (props: Props) => {
         >
           <Image maxW={"12"} src={props.image} />
           <Text
+            fontFamily={"Staatliches"}
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "xl", sm: "2xl", md: "3xl" }}
           >
@@ -101,7 +102,7 @@ const ProductMobileView = (props: Props) => {
         <Flex>
           {props.isLive ? (
             <Box
-              fontFamily={`"Chakra Petch", sans-serif`}
+              fontFamily={"Staatliches"}
               className="btnc"
               onClick={() => props.function()}
               cursor="pointer"
@@ -141,7 +142,7 @@ const ProductMidDeviceView = (props: Props) => {
             columnGap="1rem"
           >
             <Text
-              fontFamily={`"Chakra Petch", sans-serif`}
+              fontFamily={"Staatliches"}
               color={brandingColors.primaryTextColor}
               fontWeight="bolder"
               fontSize={"3xl"}
@@ -150,7 +151,7 @@ const ProductMidDeviceView = (props: Props) => {
             </Text>
             <Box>
               <Text
-                fontFamily={`"Chakra Petch", sans-serif`}
+                fontFamily={"Staatliches"}
                 bg={brandingColors.bgColor}
                 fontSize="md"
                 px={2}
@@ -177,7 +178,7 @@ const ProductMidDeviceView = (props: Props) => {
       <Flex>
         {props.isLive ? (
           <Box
-            fontFamily={`"Chakra Petch", sans-serif`}
+            fontFamily={"Staatliches"}
             className="btnc"
             onClick={() => props.function()}
             cursor="pointer"

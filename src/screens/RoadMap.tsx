@@ -132,7 +132,7 @@ const Phase = (props: Props) => {
         borderRadius="xl"
       >
         <Text
-          fontFamily={`"Chakra Petch", sans-serif`}
+          fontFamily={`Staatliches`}
           fontSize={{ base: "md", md: "3xl" }}
           color={brandingColors.primaryTextColor}
           fontWeight={"bold"}

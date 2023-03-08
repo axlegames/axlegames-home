@@ -251,6 +251,7 @@ export const chart = `
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Shantell+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
       * {
           font-family: Shantell Sans;
       }
@@ -318,8 +319,8 @@ export const chart = `
                     alt="image"
                   />
                 </div>
-                <h3 style="font-family:Shantell Sans">BEP-20</h3>
-                <p>BSC Token</p>
+                <h3 style="font-family:Staatliches">BEP-20</h3>
+                <p style="font-family:Shantell Sans">BSC Token</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -331,8 +332,8 @@ export const chart = `
                     alt="image"
                   />
                 </div>
-                <h3 style="font-family:Shantell Sans">1B</h3>
-                <p>Total Supply</p>
+                <h3 style="font-family:Staatliches">1B</h3>
+                <p style="font-family:Shantell Sans">Total Supply</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -344,8 +345,8 @@ export const chart = `
                     alt="image"
                   />
                 </div>
-                <h3 style="font-family:Shantell Sans">$AXLE</h3>
-                <p>Utility Token</p>
+                <h3 style="font-family:Staatliches">$AXLE</h3>
+                <p style="font-family:Shantell Sans">Utility Token</p>
               </div>
             </div>
           </div>
@@ -568,6 +569,7 @@ export const home = `
     />
   </head>
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
     .btnc {
       min-width: 150px;
       font-family: "Chakra Petch", sans-serif;
@@ -584,6 +586,7 @@ export const home = `
       font-weight: bold;
       border-radius: 10px;
       background-size: 200% auto;
+      text-align:center;
       cursor: pointer;
       background-image: -webkit-linear-gradient(
         left,
@@ -608,6 +611,7 @@ export const home = `
       background-position: right center;
     }
     .btn-hover {
+      display:none;
       min-width: 150px;
       position: relative;
       text-transform: uppercase;
@@ -617,6 +621,7 @@ export const home = `
       font-size: 16px;
       font-weight: 500;
       height: 54px;
+      text-align:center;
       color: #fff;
       cursor: pointer;
       text-align: center;
@@ -650,9 +655,9 @@ export const home = `
     }
     .top-section {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       padding-left: 0.5rem;
     }
     .top-titles {
@@ -685,7 +690,11 @@ export const home = `
         justify-content: center;
         align-items: center;
       }
+      .btn-hover{
+        display:block
+      }
     }
+
   </style>
 
   <body>
@@ -701,7 +710,7 @@ export const home = `
             <div class="col-lg-12">
               <div class="main-content">
                 <div class="top-section">
-                  <h4 class="titler">#AI-GAMING</h4>
+                  <h4 style="font-family:Staatliches" class="titler">#AI-GAMING</h4>
                   <div class="top-titles">
                     <h1 style="font-family: 'Bungee Shade', cursive">AXLE</h1>
                     <h1
@@ -785,7 +794,7 @@ export const home = `
             <div class="row justify-content-between">
               <div class="col-lg-10">
                 <div class="section-header">
-                  <h2 class="title">Available Games</h2>
+                  <h2 style="font-family:Staatliches" class="title">Available Games</h2>
                   <p style="font-family: Shantell Sans">
                     We are constantly adding new games
                   </p>
@@ -852,7 +861,7 @@ export const home = `
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
               <div class="section-header">
-                <h2 class="title">How It Works</h2>
+                <h2 style="font-family:Staatliches" class="title">How It Works</h2>
                 <p style="font-family: Shantell Sans">
                   It's easier than you think. Follow 4 simple easy steps
                 </p>

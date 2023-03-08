@@ -20,6 +20,9 @@ const html = `
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
     />
   </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+  </style>
 
   <body>
     <!-- start preloader -->
@@ -36,7 +39,7 @@ const html = `
                 <div class="row justify-content-center">
                   <div class="col-lg-6 col-md-8">
                     <div class="top-area text-center">
-                      <h3>Subscribe to Our Newsletter</h3>
+                      <h3 style="font-family:Staatliches">Subscribe to Our Newsletter</h3>
                       <p>Receive news, stay updated and special offers</p>
                     </div>
                     <form>

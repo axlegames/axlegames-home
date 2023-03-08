@@ -64,7 +64,7 @@ const PoweredBy = (props: any) => {
         <Text
           fontSize={"xl"}
           color={brandingColors.secondaryTextColor}
-          fontFamily={`"Chakra Petch", sans-serif`}
+          fontFamily={`Staatliches`}
           fontWeight="bold"
         >
           {props.username}

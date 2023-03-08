@@ -16,7 +16,7 @@ const Heading = (props: Props) => {
         color={brandingColors.secondaryTextColor}
         fontSize={{ base: "3xl", lg: "5xl" }}
         textAlign={"center"}
-        fontFamily={`"Chakra Petch", sans-serif`}
+        fontFamily={`Staatliches`}
         fontWeight="bold"
         data-aos={`zoom-out`}
       >

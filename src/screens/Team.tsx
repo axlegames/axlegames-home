@@ -106,7 +106,7 @@ const Team = () => {
                 <Box textAlign={"center"} py={4}>
                   <Text
                     fontSize={"xl"}
-                    fontFamily={`"Chakra Petch", sans-serif`}
+                    fontFamily={`Staatliches`}
                     fontWeight="bold"
                     color={brandingColors.primaryTextColor}
                   >
