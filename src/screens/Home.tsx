@@ -32,7 +32,6 @@ const Home = () => {
   return (
     <Box position={"relative"}>
       <Box
-        bg={brandingColors.bgColor}
         backgroundPosition={"center"}
         backgroundSize="cotain"
         position={"fixed"}

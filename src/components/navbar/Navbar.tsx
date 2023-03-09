@@ -29,12 +29,14 @@ const Navbar = () => {
   return (
     <Box
       display={{ base: "none", lg: "block" }}
-      minH={"10vh"}
+      backgroundImage={
+        "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png"
+      }
       fontWeight={"bold"}
-      fontFamily={`"Chakra Petch", sans-serif`}
       width="100vw"
-      boxShadow={`0px 0px 12px -6px ${brandingColors.primaryButtonColor}`}
-      bg={!colorChange ? `rgba(0, 0, 0, 0.4)` : `transparent`}
+      minH="10vh"
+      boxShadow={`0px 0px 12px -6px ${brandingColors.newHighlightColor}`}
+      bg={!colorChange ? "transparent" : brandingColors.bgColor}
       transition="all 200ms ease-in"
     >
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
