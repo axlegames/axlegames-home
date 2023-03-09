@@ -55,13 +55,20 @@ const Dashboard = () => {
             title="AXLE STAKING"
             img={StakeLogo}
             stakePage={() => navigate("/staking")}
+            comingSoon={false}
           />
           <DashboardCard
             title="AXLE SWAP"
             img={SwapLogo}
-            stakePage={() => navigate("/swap")}
+            stakePage={() => {}}
+            comingSoon={true}
           />
-          <DashboardCard title="AXLE DAO" img={DaoLogo} stakePage={() => {}} />
+          <DashboardCard
+            comingSoon={true}
+            title="AXLE DAO"
+            img={DaoLogo}
+            stakePage={() => {}}
+          />
         </Box>
       </Box>
       <Box
@@ -115,6 +122,18 @@ const DashboardCard = (props: any) => {
       <Image width={"52"} src={props.img} />
       <Text fontFamily={`Staatliches`} lineHeight={"0.8"} fontSize={"3xl"}>
         {props.title}
+      </Text>
+      <Text
+        fontFamily={`Staatliches`}
+        color={
+          props.comingSoon
+            ? brandingColors.dangerColor
+            : brandingColors.successColor
+        }
+        lineHeight={"0.2"}
+        fontSize={"xs"}
+      >
+        {props.comingSoon ? `Coming soon` : `Live`}
       </Text>
     </Box>
   );

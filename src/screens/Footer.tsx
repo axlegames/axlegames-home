@@ -66,8 +66,8 @@ const html = `
                 </a>
               </div>
               <ul class="menu-side d-flex align-items-center">
-                <li><a target="_blank" href="https://play.axlegames.io">Axle Games</a></li>
-                <li><a target="_blank" href="https://sale.axlegames.io">Axle Presale</a></li>
+                <li style="font-family:Staatliches;" ><a  target="_blank" href="https://play.axlegames.io">Axle Games</a></li>
+                <li style="font-family:Staatliches;" ><a  target="_blank" href="https://sale.axlegames.io">Axle Presale</a></li>
               </ul>
             </div>
             <div

@@ -30,6 +30,7 @@ const Swap = () => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
+      minH="100vh"
     >
       <Box
         py={8}

@@ -79,13 +79,15 @@ const NFTs = () => {
     >
       <Heading title="NFTs" />
       <Grid
-        display={{ base: "none", md: "grid" }}
-        columnGap={{ base: "1rem", xl: "4rem" }}
+        display={{ base: "none", lg: "grid" }}
+        columnGap={{ base: "1rem", xl: "1rem" }}
         justifyContent={"space-evenly"}
         alignItems="center"
         gridTemplateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }}
         py={12}
         rowGap={{ base: "4rem" }}
+        width={{ base: "65%" }}
+        mx="auto"
       >
         {nfts.map((nft, index) => (
           <NFT
@@ -95,7 +97,7 @@ const NFTs = () => {
           />
         ))}
       </Grid>
-      <Box py={12} display={{ base: "block", md: "none" }}>
+      <Box py={12} display={{ base: "block", lg: "none" }}>
         <Slider
           infinite={true}
           arrows={false}

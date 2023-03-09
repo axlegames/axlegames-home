@@ -254,6 +254,7 @@ const Stake = () => {
       fontFamily={"Shantell Sans"}
       fontWeight="bold"
       py={6}
+      minH="100vh"
     >
       <Box
         alignItems={"center"}

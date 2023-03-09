@@ -257,6 +257,7 @@ export const chart = `
       }
       #chartdiv {
         min-height:36vh;
+        overflow:hidden;
       }
       @media only screen and (min-width:840px){
       #chartdiv {
@@ -811,8 +812,9 @@ export const home = `
               <div class="col-lg-10">
                 <div class="section-header">
                   <h2 style="font-family:Staatliches" class="title">Available Games</h2>
-                  <p style="font-family: Shantell Sans; color:#eb6612" >
-                    We are constantly adding new games
+                  <p style="font-family: Shantell Sans;"  >
+                    We are constantly adding 
+                  <span style="font-family: Shantell Sans; color:#eb6612">new games</span>
                   </p>
                 </div>
               </div>
@@ -825,6 +827,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-5.png"
                     alt="image"
                 /></a>
+                <div class="btnc">Play now</div>
               </div>
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
@@ -833,6 +836,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-6.png"
                     alt="image"
                 /></a>
+                <div class="btnc">Play now</div>
               </div>
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
@@ -841,6 +845,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-7.png"
                     alt="image"
                 /></a>
+                <div class="btnc">Play now</div>
               </div>
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
@@ -849,6 +854,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/absurdle.png"
                     alt="image"
                 /></a>
+                <div class="btnc">Play now</div>
               </div>
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
@@ -857,12 +863,8 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/lewdle.png"
                     alt="image"
                 /></a>
+                <div class="btnc">Play now</div>
               </div>
-            </div>
-            <div class="btn-area text-center">
-              <a href="https://play.axlegames.io" target="_blank" class="btnc"
-                >View All</a
-              >
             </div>
           </div>
         </div>
@@ -878,8 +880,11 @@ export const home = `
             <div class="col-lg-6 text-center">
               <div class="section-header">
                 <h2 style="font-family:Staatliches" class="title">How It Works</h2>
-                <p style="font-family: Shantell Sans; color:#EB6612">
-                  It's easier than you think. Follow 4 simple easy steps
+                <p style="font-family: Shantell Sans;">
+                  It's easier than you think. 
+                  <span style="font-family: Shantell Sans; color:#EB6612">
+                      Follow 4 simple easy steps
+                  </span>
                 </p>
               </div>
             </div>
