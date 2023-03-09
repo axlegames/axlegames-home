@@ -142,7 +142,11 @@ const Wallet = (props: Props) => {
         </Box>
       ) : (
         <Box m={5}>
-          <Box className="btnc" onClick={() => props.connectWallet()}>
+          <Box
+            fontFamily={`Staatliches`}
+            className="btnc"
+            onClick={() => props.connectWallet()}
+          >
             Connect Wallet
           </Box>
         </Box>

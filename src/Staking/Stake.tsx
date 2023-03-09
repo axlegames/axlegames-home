@@ -672,7 +672,12 @@ const Stake = () => {
                       ></Input>
                       <Box cursor={"pointer"}>MAX</Box>
                     </Box>
-                    <Box mt={4} textAlign={"center"} className="btnc">
+                    <Box
+                      mt={4}
+                      textAlign={"center"}
+                      fontFamily={`Staatliches`}
+                      className="btnc"
+                    >
                       UNSTAKE AXLE
                     </Box>
                   </Box>
