@@ -657,16 +657,50 @@ export const home = `
     .btn-hover:focus {
       outline: none;
     }
-    .btn-hover.color-3 {
-      background-image: linear-gradient(
-        to right,
-        #667eea,
-        #764ba2,
-        #6b8dd6,
-        #8e37d7
-      );
-      box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-    }
+.btn-hover.color-1 {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+.btn-hover.color-2 {
+    background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+.btn-hover.color-3 {
+    background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
+.btn-hover.color-4 {
+    background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+    box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+}
+.btn-hover.color-5 {
+    background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+}
+.btn-hover.color-6 {
+    background-image: linear-gradient(to right, #009245, #FCEE21, #00A8C5, #D9E021);
+    box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+}
+.btn-hover.color-7 {
+    background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+}
+.btn-hover.color-8 {
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+.btn-hover.color-9 {
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+.btn-hover.color-10 {
+        background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a , #FBB03B);
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+.btn-hover.color-11 {
+       background-image: linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f);  box-shadow: 0 5px 15px rgba(242, 97, 103, .4);
+}
+
     .top-section {
       display: flex;
       justify-content: center;
@@ -680,12 +714,6 @@ export const home = `
       align-items: center;
     }
     .titler {
-      background-color: #0e063d;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
     .subFont {
       font-family: Shantell Sans;
@@ -710,6 +738,74 @@ export const home = `
         display: block;
       }
     }
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: #CA4246;
+
+  
+  /* Create the gradient. */
+   background-image: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%);
+  
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  
+  /* Animate the text when loading the element. */
+    /* This animates it on page load and when hovering out. */
+    animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+
+}
+
+.gradient-text:hover{
+    animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-simple-animation-rev {
+    0% {
+        background-size: 650%;
+    }
+    40% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+    80% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 650%;
+    }
+}
+  
+
   </style>
 
   <body>
@@ -725,7 +821,7 @@ export const home = `
             <div class="col-lg-12">
               <div class="main-content">
                 <div class="top-section">
-                  <h4 style="font-family: Bungee Shade" class="titler">
+                  <h4 style="font-family: Bungee Shade" class="titler gradient-text">
                     #AI-GAMING
                   </h4>
                   <div class="top-titles">
@@ -838,7 +934,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-5.png"
                     alt="image"
                 /></a>
-                <div class="btnc">Play now</div>
+                <div class="btn-hover color-2">Play now</div>
               </div>
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
@@ -847,7 +943,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-6.png"
                     alt="image"
                 /></a>
-                <div class="btnc">Play now</div>
+                <div class="btn-hover color-1">Play now</div>
               </div>
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
@@ -856,7 +952,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/wordle-7.png"
                     alt="image"
                 /></a>
-                <div class="btnc">Play now</div>
+                <div class="btn-hover color-9">Play now</div>
               </div>
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
@@ -865,7 +961,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/absurdle.png"
                     alt="image"
                 /></a>
-                <div class="btnc">Play now</div>
+                <div class="btn-hover color-1">Play now</div>
               </div>
               <div class="single-item">
                 <a href="https://play.axlegames.io" target="_blank"
@@ -874,7 +970,7 @@ export const home = `
                     src="https://axlegames.s3.ap-south-1.amazonaws.com/lewdle.png"
                     alt="image"
                 /></a>
-                <div class="btnc">Play now</div>
+                <div class="btn-hover color-3">Play now</div>
               </div>
             </div>
           </div>

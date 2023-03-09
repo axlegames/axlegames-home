@@ -71,6 +71,13 @@ const Navbar = () => {
             bg={brandingColors.neuPrimaryBg}
             shadow={brandingColors.newPrimaryShadow}
           />
+          <NeuLink
+            label="Testimonials"
+            link="footer"
+            onClick={() => {}}
+            bg={brandingColors.neuPrimaryBg}
+            shadow={brandingColors.newPrimaryShadow}
+          />
           <Menu>
             <MenuButton>
               <Text
