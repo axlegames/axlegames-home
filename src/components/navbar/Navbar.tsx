@@ -72,14 +72,15 @@ const Navbar = () => {
           <Menu>
             <MenuButton>
               <Text
-                fontFamily={`"Chakra Petch", sans-serif`}
                 fontWeight={"bold"}
                 className="nav-link nav-link-ltr"
+                fontFamily="Staatliches"
               >
                 DOCS
               </Text>
             </MenuButton>
             <MenuList
+              fontFamily="Staatliches"
               border={brandingColors.fgColor}
               bg={brandingColors.bgColor}
               p={4}
