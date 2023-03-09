@@ -10,7 +10,12 @@ const html = `
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AxleGames</title>
     <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Shantell+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/bootstrap.min.css"
@@ -36,15 +41,15 @@ const html = `
           <div class="row justify-content-center">
             <div class="col-lg-10">
               <div class="section-header text-center">
-                <h2 class="title">Our Gamers Review</h2>
-                <p>Thousands of Happy Gamers All Around the World</p>
+                <h2 style="font-family:Staatliches;" class="title">Our Gamers Review</h2>
+                <p style="font-family:Shantell Sans;">Thousands of Happy Gamers All Around the World</p>
               </div>
             </div>
           </div>
           <div class="row mp-none">
             <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="single-item text-center">
-                <p>
+                <p style="font-family:Shantell Sans">
                   I play Tournament every day, it's a great way to relax and win
                   cash too!
                 </p>
@@ -56,19 +61,19 @@ const html = `
                       </div>
                     </div>
                     <div class="title-area">
-                      <h6>Brice Tong</h6>
-                      <span>Texas, USA</span>
+                      <h6 style="font-family:Staatliches;">Brice Tong</h6>
+                      <span style="font-family:Shantell Sans">Texas, USA</span>
                     </div>
                   </div>
                   <div class="amount">
-                    <h6>$306</h6>
+                    <h6 style="font-family:Staatliches;">$306</h6>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="single-item text-center">
-                <p>
+                <p style="font-family:Shantell Sans">
                   When I hang out with my friends, we play Tournament, its so
                   much fun
                 </p>
@@ -80,19 +85,19 @@ const html = `
                       </div>
                     </div>
                     <div class="title-area">
-                      <h6>Alva Adair</h6>
-                      <span>Frankfurt, Germany</span>
+                      <h6 style="font-family:Staatliches;">Alva Adair</h6>
+                      <span style="font-family:Shantell Sans">Frankfurt, Germany</span>
                     </div>
                   </div>
                   <div class="amount">
-                    <h6>$496</h6>
+                    <h6 style="font-family:Staatliches;">$496</h6>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="single-item text-center">
-                <p>
+                <p style="font-family:Shantell Sans">
                   I joined for the community but ended up winning cash, amazing.
                 </p>
                 <div class="bottom-area d-flex justify-content-between">
@@ -103,12 +108,12 @@ const html = `
                       </div>
                     </div>
                     <div class="title-area">
-                      <h6>Ray Sutton</h6>
-                      <span>Ontario, Canada</span>
+                      <h6 style="font-family:Staatliches;">Ray Sutton</h6>
+                      <span style="font-family:Shantell Sans">Ontario, Canada</span>
                     </div>
                   </div>
                   <div class="amount">
-                    <h6>$306</h6>
+                    <h6 style="font-family:Staatliches;">$306</h6>
                   </div>
                 </div>
               </div>

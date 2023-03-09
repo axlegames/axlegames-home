@@ -986,8 +986,8 @@ export const home = `
           <div class="row d-flex justify-content-between align-items-center">
             <div class="col-lg-6 col-md-6">
               <div class="left-area">
-                <h2 class="title">Build Your Esports Profile</h2>
-                <p>
+                <h2 style="font-family:Staatliches" class="title">Build Your Esports Profile</h2>
+                <p style="font-family:Shantell Sans">
                   Showcase your achievements, match history and win rate while
                   you build your reputation on Begam.
                 </p>
