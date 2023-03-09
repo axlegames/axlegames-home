@@ -989,7 +989,7 @@ export const home = `
                 <h2 style="font-family:Staatliches" class="title">Build Your Esports Profile</h2>
                 <p style="font-family:Shantell Sans">
                   Showcase your achievements, match history and win rate while
-                  you build your reputation on Begam.
+                  you build your reputation on Axlegames.
                 </p>
                 <a  href="https://play.axlegames.io" target="_blank" class="btnc"
                   >Sign Up</a
