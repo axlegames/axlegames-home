@@ -675,8 +675,11 @@ export const home = `
     }
     .titler {
       background-color: #0e063d;
-      padding: 0.5rem;
-      border-radius: 1vh;
+      padding: .6rem 1.2rem;
+      border-radius: 6px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
 
     }
     .subFont {
@@ -718,7 +721,7 @@ export const home = `
             <div class="col-lg-12">
               <div class="main-content">
                 <div class="top-section">
-                  <h4 style="font-family:Staatliches" class="titler">#AI-GAMING</h4>
+                  <h4  style="font-family:Bungee Shade;" class="titler">#AI-GAMING</h4>
                   <div class="top-titles">
                     <h1 style="font-family: 'Bungee Shade', cursive">AXLE</h1>
                     <h1
