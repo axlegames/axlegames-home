@@ -745,7 +745,12 @@ export const home = `
                       href="https://sale.axlegames.io"
                       target="_blank"
                       class="btnc"
-                      >Presale</a
+                      >
+                      <div style="flex-direction:row; column-gap:.5rem" class="d-flex align-items-center justify-content-center">
+                      Presale
+                      <div style="font-size:10px">• live</div>
+                      </div>
+                      </a
                     >
                     <a
                       href="https://sale.axlegames.io"

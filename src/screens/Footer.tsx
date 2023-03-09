@@ -38,8 +38,8 @@ const html = `
               <div class="footer-top">
                 <div class="row justify-content-center">
                   <div class="col-lg-6 col-md-8">
-                    <div class="top-area text-center">
-                      <h3 style="font-family:Staatliches; color:#eb6612; margin-bottom:2rem">Subscribe to Our Newsletter</h3>
+                    <div style="column-gap:.75rem" class="d-flex justify-content-center  top-area text-center">
+                      <h3 style="font-family:Staatliches; margin-bottom:2rem">Subscribe to Our <h3 style="color:#eb6612; font-family:Staatliches;">Newsletter</h3></h3>
                     </div>
                     <form>
                       <div class="subscribe d-flex">
