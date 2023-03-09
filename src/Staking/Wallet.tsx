@@ -44,12 +44,13 @@ const Wallet = (props: Props) => {
               <Text
                 fontFamily={"Shantell Sans"}
                 color={brandingColors.secondaryTextColor}
+                fontSize="sm"
               >
                 Your wallet balance
               </Text>
               <Text
                 fontFamily={`Staatliches`}
-                fontSize={"xl"}
+                fontSize={"md"}
                 color={brandingColors.secondaryTextColor}
               >
                 {Number(props.balance).toFixed(2)} BNB{" "}
@@ -119,6 +120,7 @@ const Wallet = (props: Props) => {
               fontFamily={`Staatliches`}
               fontSize={"md"}
               color={brandingColors.secondaryTextColor}
+              lineHeight="1.5"
             >
               {!props.isLoading
                 ? `${Number(props.balance).toFixed(2)} BNB`
@@ -129,7 +131,11 @@ const Wallet = (props: Props) => {
                 color={brandingColors.secondaryTextColor}
                 direction={"column"}
               >
-                <Text fontFamily={`Staatliches`} fontSize={"xs"}>
+                <Text
+                  lineHeight="1.2"
+                  fontFamily={`Staatliches`}
+                  fontSize={"xs"}
+                >
                   {props.address.substring(0, 8)}....
                   {props.address.substring(
                     props.address.length - 8,
