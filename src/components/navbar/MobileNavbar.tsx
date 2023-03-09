@@ -15,14 +15,24 @@ const MobileNavbar = () => {
     setOpen(!open);
   }
 
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
+
   return (
     <Box
-      bg={brandingColors.bgColor}
+      bg={!colorChange ? "transparent" : brandingColors.bgColor}
       width={"100vw"}
       height={open ? "100vh" : "100%"}
       display={{ base: "flex", lg: "none" }}
       flexDirection="column"
-      boxShadow={`0px 0px 12px -3px ${brandingColors.primaryButtonColor}`}
+      boxShadow={`0px 0px 12px -3px ${brandingColors.newHighlightColor}`}
     >
       <Box
         display={"flex"}
