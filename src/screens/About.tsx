@@ -25,13 +25,13 @@ const About = () => {
       >
         <Box
           borderRadius={"xl"}
-          border={`12px solid ${brandingColors.fgColor}`}
+          border={`12px solid ${brandingColors.newHighlightColor}`}
         >
           <Image borderRadius={"md"} src={Team1} />
         </Box>
         <Box
           borderRadius={"xl"}
-          border={`12px solid ${brandingColors.fgColor}`}
+          border={`12px solid ${brandingColors.newHighlightColor}`}
         >
           <Image borderRadius={"md"} src={Team2} />
         </Box>

@@ -803,7 +803,7 @@ export const home = `
               <div class="col-lg-10">
                 <div class="section-header">
                   <h2 style="font-family:Staatliches" class="title">Available Games</h2>
-                  <p style="font-family: Shantell Sans">
+                  <p style="font-family: Shantell Sans; color:#eb6612" >
                     We are constantly adding new games
                   </p>
                 </div>

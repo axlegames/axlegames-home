@@ -41,15 +41,21 @@ const Wallet = (props: Props) => {
               bg={brandingColors.bgColor}
               p={2}
             >
-              <Text color={brandingColors.secondaryTextColor}>
+              <Text
+                fontFamily={"Shantell Sans"}
+                color={brandingColors.secondaryTextColor}
+              >
                 Your wallet balance
               </Text>
-              <Text fontSize={"xl"} color={brandingColors.secondaryTextColor}>
+              <Text
+                fontFamily={`Staatliches`}
+                fontSize={"xl"}
+                color={brandingColors.secondaryTextColor}
+              >
                 {Number(props.balance).toFixed(2)} BNB{" "}
               </Text>
             </Box>
             <Button
-              fontFamily={`"Chakra Petch", sans-serif`}
               fontWeight={"bold"}
               _hover={{
                 bg: brandingColors.ternaryButtonColor,
@@ -57,6 +63,7 @@ const Wallet = (props: Props) => {
               bg={brandingColors.bgColor}
               color={brandingColors.secondaryTextColor}
               mt={"1"}
+              fontFamily={`Staatliches`}
               width={"100%"}
               onClick={() => props.disconnect()}
             >
@@ -108,7 +115,11 @@ const Wallet = (props: Props) => {
           </Box>
 
           <Box pr={4}>
-            <Text fontSize={"md"} color={brandingColors.secondaryTextColor}>
+            <Text
+              fontFamily={`Staatliches`}
+              fontSize={"md"}
+              color={brandingColors.secondaryTextColor}
+            >
               {!props.isLoading
                 ? `${Number(props.balance).toFixed(2)} BNB`
                 : `...`}
@@ -118,7 +129,7 @@ const Wallet = (props: Props) => {
                 color={brandingColors.secondaryTextColor}
                 direction={"column"}
               >
-                <Text fontSize={"xs"}>
+                <Text fontFamily={`Staatliches`} fontSize={"xs"}>
                   {props.address.substring(0, 8)}....
                   {props.address.substring(
                     props.address.length - 8,
@@ -131,7 +142,7 @@ const Wallet = (props: Props) => {
         </Box>
       ) : (
         <Box m={5}>
-          <Box className="btn" onClick={() => props.connectWallet()}>
+          <Box className="btnc" onClick={() => props.connectWallet()}>
             Connect Wallet
           </Box>
         </Box>

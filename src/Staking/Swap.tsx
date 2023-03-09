@@ -14,7 +14,7 @@ import UsdT from "../assets/stake/icons/usdt.png";
 import Axle from "../assets/icon.png";
 import { useState } from "react";
 
-const StakeSwap = () => {
+const Swap = () => {
   const images1 = [Axle, Bnb, Cake, Busd, UsdT];
   const swaps1 = ["AXLE", "BNB", "CAKE", "BUSD", "USDT"];
   const [swap1, setSwap1] = useState(0);
@@ -30,7 +30,6 @@ const StakeSwap = () => {
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"
-      minH={{ base: "160vh", md: "140vh" }}
     >
       <Box
         py={8}
@@ -55,7 +54,7 @@ const StakeSwap = () => {
           flexDirection={"column"}
         >
           <Text
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`Staatliches`}
             lineHeight={"0.8"}
             fontSize={{ base: "3xl", md: "5xl" }}
             color={brandingColors.primaryTextColor}
@@ -71,6 +70,7 @@ const StakeSwap = () => {
           minW={{ base: "100%", md: "auto" }}
           width="50vw"
           mx={4}
+          fontFamily={"Shantell Sans"}
         >
           <Box
             display={"flex"}
@@ -81,7 +81,7 @@ const StakeSwap = () => {
             py={2}
           >
             <Text
-              fontFamily={`'Russo One', sans-serif`}
+              fontFamily={`Staatliches`}
               fontSize={{ base: "xl", md: "3xl" }}
             >
               SWAP
@@ -106,6 +106,7 @@ const StakeSwap = () => {
             >
               <Box display={"flex"} alignItems="center" columnGap={"1rem"}>
                 <Select
+                  fontFamily={`Staatliches`}
                   fontSize={{ base: "xs", md: "md" }}
                   onChange={(e) => setSwap1(Number(e.target.value))}
                 >
@@ -118,7 +119,10 @@ const StakeSwap = () => {
                 </Select>
                 <Image w={{ base: 7, md: 8 }} src={images1[swap1]} />
               </Box>
-              <Text fontSize={{ base: "xs", md: "md" }}>
+              <Text
+                fontFamily={"Shantell Sans"}
+                fontSize={{ base: "xs", md: "md" }}
+              >
                 Balance : 0 {swaps1[swap1]}
               </Text>
             </Box>
@@ -157,6 +161,7 @@ const StakeSwap = () => {
               <Box display={"flex"} alignItems="center" columnGap={"1rem"}>
                 <Select
                   fontSize={{ base: "xs", md: "md" }}
+                  fontFamily={`Staatliches`}
                   onChange={(e) => setSwap2(Number(e.target.value))}
                 >
                   <option value={0}>AXLE</option>
@@ -167,7 +172,10 @@ const StakeSwap = () => {
                 </Select>
                 <Image w={{ base: 7, md: 8 }} src={images2[swap2]} />
               </Box>
-              <Text fontSize={{ base: "xs", md: "md" }}>
+              <Text
+                fontFamily={"Shantell Sans"}
+                fontSize={{ base: "xs", md: "md" }}
+              >
                 Balance : 0 {swaps2[swap2]}
               </Text>
             </Box>
@@ -209,12 +217,12 @@ const StakeSwap = () => {
               fontSize={{ base: "xs", md: "md" }}
             >
               <Box display={"flex"} justifyContent="space-between">
-                <Text>Slippage Tolerance</Text>
-                <Text>5%</Text>
+                <Text fontFamily={"Shantell Sans"}>Slippage Tolerance</Text>
+                <Text fontFamily={"Shantell Sans"}>5%</Text>
               </Box>
               <Box display={"flex"} justifyContent="space-between">
-                <Text>Minimum Received</Text>
-                <Text>0.000 BNB</Text>
+                <Text fontFamily={"Shantell Sans"}>Minimum Received</Text>
+                <Text fontFamily={"Shantell Sans"}>0.000 BNB</Text>
               </Box>
             </Box>
             <Box
@@ -228,10 +236,10 @@ const StakeSwap = () => {
               flexDirection="column"
               justifyContent="center"
             >
-              <Box width={"100%"} className="btn">
+              <Box fontFamily={`Staatliches`} width={"100%"} className="btnc">
                 ENABLE AXLE
               </Box>
-              <Box width={"100%"} className="btn">
+              <Box fontFamily={`Staatliches`} width={"100%"} className="btnc">
                 STAKE AXLE
               </Box>
             </Box>
@@ -242,4 +250,4 @@ const StakeSwap = () => {
   );
 };
 
-export default StakeSwap;
+export default Swap;

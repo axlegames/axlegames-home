@@ -39,8 +39,7 @@ const html = `
                 <div class="row justify-content-center">
                   <div class="col-lg-6 col-md-8">
                     <div class="top-area text-center">
-                      <h3 style="font-family:Staatliches">Subscribe to Our Newsletter</h3>
-                      <p>Receive news, stay updated and special offers</p>
+                      <h3 style="font-family:Staatliches; color:#eb6612; margin-bottom:2rem">Subscribe to Our Newsletter</h3>
                     </div>
                     <form>
                       <div class="subscribe d-flex">
