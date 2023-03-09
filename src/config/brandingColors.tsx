@@ -2,7 +2,7 @@ export const brandingColors = {
   bgColor: "#0e063d",
   fgColor: "#0A325C",
 
-  primaryMiscColor: "#EB6612",
+  primaryMiscColor: "#eb6612",
   secondaryMiscColor: "#7EB2F1",
 
   primaryButtonColor: "#EB6612", //bright orange
