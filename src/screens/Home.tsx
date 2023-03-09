@@ -12,20 +12,20 @@ const Home = () => {
   const [iframeRef, iframeHeight] = useIframeContentHeight();
   const socials = [
     {
-      url: "https://instagram.com/axlegames",
-      icon: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/instagram.webp",
+      url: "https://twitter.com/AxleGames",
+      icon: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/twitter.webp",
     },
     {
       url: "https://medium.com/@axlegames",
       icon: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/medium.webp",
     },
     {
-      url: "https://t.me/axlegames_en",
-      icon: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/telegram.webp",
+      url: "https://instagram.com/axlegames",
+      icon: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/instagram.webp",
     },
     {
-      url: "https://twitter.com/AxleGames",
-      icon: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/twitter.webp",
+      url: "https://t.me/axlegames_en",
+      icon: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/socials/telegram.webp",
     },
   ];
 
@@ -59,6 +59,7 @@ const Home = () => {
           bg={brandingColors.bgColor}
           boxShadow={`0px 0px 2px ${brandingColors.newHighlightColor}`}
           borderRadius="3xl"
+          py={1}
         >
           {socials.map((s, i) => (
             <Box
@@ -66,7 +67,7 @@ const Home = () => {
               _hover={{ transform: "scale(1.1)" }}
             >
               <a rel="noopener noreferrer" href={s.url} target="_blank">
-                <img style={{ maxWidth: "52px" }} src={s.icon} alt="" />
+                <img style={{ maxWidth: "40px" }} src={s.icon} alt="" />
               </a>
             </Box>
           ))}

@@ -29,6 +29,97 @@ const html = `
     <div class="preloader" id="preloader"></div>
     <!-- end preloader -->
 
+    <!-- Testimonials In start -->
+    <section id="testimonials-section">
+      <div class="overlay pt-120 pb-120">
+        <div class="container wow fadeInUp">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="section-header text-center">
+                <h2 class="title">Our Gamers Review</h2>
+                <p>Thousands of Happy Gamers All Around the World</p>
+              </div>
+            </div>
+          </div>
+          <div class="row mp-none">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <p>
+                  I play Tournament every day, it's a great way to relax and win
+                  cash too!
+                </p>
+                <div class="bottom-area d-flex justify-content-between">
+                  <div class="left-area d-flex">
+                    <div class="img">
+                      <div class="img-area">
+                        <img src="images/testimonials-user-1.png" alt="image" />
+                      </div>
+                    </div>
+                    <div class="title-area">
+                      <h6>Brice Tong</h6>
+                      <span>Texas, USA</span>
+                    </div>
+                  </div>
+                  <div class="amount">
+                    <h6>$306</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <p>
+                  When I hang out with my friends, we play Tournament, its so
+                  much fun
+                </p>
+                <div class="bottom-area d-flex justify-content-between">
+                  <div class="left-area d-flex">
+                    <div class="img">
+                      <div class="img-area">
+                        <img src="images/testimonials-user-1.png" alt="image" />
+                      </div>
+                    </div>
+                    <div class="title-area">
+                      <h6>Alva Adair</h6>
+                      <span>Frankfurt, Germany</span>
+                    </div>
+                  </div>
+                  <div class="amount">
+                    <h6>$496</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="single-item text-center">
+                <p>
+                  I joined for the community but ended up winning cash, amazing.
+                </p>
+                <div class="bottom-area d-flex justify-content-between">
+                  <div class="left-area d-flex">
+                    <div class="img">
+                      <div class="img-area">
+                        <img src="images/testimonials-user-1.png" alt="image" />
+                      </div>
+                    </div>
+                    <div class="title-area">
+                      <h6>Ray Sutton</h6>
+                      <span>Ontario, Canada</span>
+                    </div>
+                  </div>
+                  <div class="amount">
+                    <h6>$306</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials In end -->
+
+
     <!-- footer-section start -->
     <footer id="footer-section">
       <div class="overlay">

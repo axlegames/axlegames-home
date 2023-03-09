@@ -19,12 +19,17 @@ const Main = () => {
       <Element name="home">
         <Home />
       </Element>
-      <Element name="products">
-        <Products />
-      </Element>
-      <Element name="why">
-        <Why />
-      </Element>
+      <Box
+        bg={brandingColors.bgColor}
+        backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-bg.png`}
+      >
+        <Element name="products">
+          <Products />
+        </Element>
+        <Element name="why">
+          <Why />
+        </Element>
+      </Box>
       <NFTs />
       <Element name="token">
         <Tokenomics />

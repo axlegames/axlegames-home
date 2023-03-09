@@ -16,10 +16,11 @@ const Dashboard = () => {
     <Box position="relative" bg={brandingColors.bgColor} minH="100vh">
       <Box
         bg={brandingColors.bgColor}
-        backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_countdown_bg.png`}
+        backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-bg.png`}
         backgroundSize="contain"
         fontFamily={"quicksand"}
         fontWeight="bold"
+        minH="100vh"
       >
         <Box
           alignItems={"center"}

@@ -26,7 +26,7 @@ const Swap = () => {
   return (
     <Box
       bg={brandingColors.bgColor}
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_countdown_bg.png`}
+      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png`}
       backgroundSize="contain"
       fontFamily={"quicksand"}
       fontWeight="bold"

@@ -8,8 +8,6 @@ import Tilt from "react-parallax-tilt";
 const Why = () => {
   return (
     <Box
-      bg={brandingColors.bgColor}
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png`}
       px={{ base: "4", lg: "16" }}
       py={{ base: "16", lg: "16" }}
       display="flex"

@@ -17,11 +17,7 @@ interface Props {
 
 const Products = () => {
   return (
-    <Box
-      bg={brandingColors.bgColor}
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-bg.png`}
-      py={{ base: "12" }}
-    >
+    <Box py={{ base: "12" }}>
       <Heading title="Products" />
       <Box
         flexDirection={"column"}

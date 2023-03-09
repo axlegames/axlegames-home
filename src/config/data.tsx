@@ -259,6 +259,8 @@ export const chart = `
         min-height:36vh;
         overflow:hidden;
       }
+      body{
+      }
       @media only screen and (min-width:840px){
       #chartdiv {
           min-height:44vh;
@@ -360,8 +362,11 @@ export const chart = `
             </div>
           </div>
         </div>
-        <div margin-top:2rem" id="chartdiv"></div>
       </div>
+      <div margin-top:2rem" id="chartdiv"></div>
+      </section>
+
+
 
     <script src="//cdn.amcharts.com/lib/4/core.js"></script>
     <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
@@ -595,7 +600,7 @@ export const home = `
       font-weight: bold;
       border-radius: 10px;
       background-size: 200% auto;
-      text-align:center;
+      text-align: center;
       cursor: pointer;
       background-image: -webkit-linear-gradient(
         left,
@@ -620,7 +625,7 @@ export const home = `
       background-position: right center;
     }
     .btn-hover {
-      display:none;
+      display: none;
       min-width: 150px;
       position: relative;
       text-transform: uppercase;
@@ -630,7 +635,7 @@ export const home = `
       font-size: 16px;
       font-weight: 500;
       height: 54px;
-      text-align:center;
+      text-align: center;
       color: #fff;
       cursor: pointer;
       text-align: center;
@@ -676,12 +681,11 @@ export const home = `
     }
     .titler {
       background-color: #0e063d;
-      padding: .6rem 1.2rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 6px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .subFont {
       font-family: Shantell Sans;
@@ -702,11 +706,10 @@ export const home = `
         justify-content: center;
         align-items: center;
       }
-      .btn-hover{
-        display:block
+      .btn-hover {
+        display: block;
       }
     }
-
   </style>
 
   <body>
@@ -722,7 +725,9 @@ export const home = `
             <div class="col-lg-12">
               <div class="main-content">
                 <div class="top-section">
-                  <h4  style="font-family:Bungee Shade;" class="titler">#AI-GAMING</h4>
+                  <h4 style="font-family: Bungee Shade" class="titler">
+                    #AI-GAMING
+                  </h4>
                   <div class="top-titles">
                     <h1 style="font-family: 'Bungee Shade', cursive">AXLE</h1>
                     <h1
@@ -749,15 +754,17 @@ export const home = `
                       href="https://sale.axlegames.io"
                       target="_blank"
                       class="btnc"
-                      >
-                      <div style="flex-direction:row; column-gap:.5rem" class="d-flex align-items-center justify-content-center">
-                      Presale
-                      <div style="font-size:10px">• live</div>
-                      </div>
-                      </a
                     >
+                      <div
+                        style="flex-direction: row; column-gap: 0.5rem"
+                        class="d-flex align-items-center justify-content-center"
+                      >
+                        Presale
+                        <div style="font-size: 10px; color:#38A169">• live</div>
+                      </div>
+                    </a>
                     <a
-                      href="https://sale.axlegames.io"
+                      href="https://play.axlegames.io"
                       target="_blank"
                       class="btn-hover color-3"
                       >Launch App</a
@@ -811,10 +818,14 @@ export const home = `
             <div class="row justify-content-between">
               <div class="col-lg-10">
                 <div class="section-header">
-                  <h2 style="font-family:Staatliches" class="title">Available Games</h2>
-                  <p style="font-family: Shantell Sans;"  >
-                    We are constantly adding 
-                  <span style="font-family: Shantell Sans; color:#eb6612">new games</span>
+                  <h2 style="font-family: Staatliches" class="title">
+                    Available Games
+                  </h2>
+                  <p style="font-family: Shantell Sans">
+                    We are constantly adding
+                    <span style="font-family: Shantell Sans; color: #eb6612"
+                      >new games</span
+                    >
                   </p>
                 </div>
               </div>
@@ -879,11 +890,13 @@ export const home = `
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
               <div class="section-header">
-                <h2 style="font-family:Staatliches" class="title">How It Works</h2>
-                <p style="font-family: Shantell Sans;">
-                  It's easier than you think. 
-                  <span style="font-family: Shantell Sans; color:#EB6612">
-                      Follow 4 simple easy steps
+                <h2 style="font-family: Staatliches" class="title">
+                  How It Works
+                </h2>
+                <p style="font-family: Shantell Sans">
+                  It's easier than you think.
+                  <span style="font-family: Shantell Sans; color: #eb6612">
+                    Follow 4 simple easy steps
                   </span>
                 </p>
               </div>
@@ -965,6 +978,38 @@ export const home = `
         </div>
       </div>
     </section>
+
+    <!-- Call Action In start -->
+    <section id="call-action" class="pb-120 pt-120">
+      <div class="overlay">
+        <div class="container wow fadeInUp">
+          <div class="row d-flex justify-content-between align-items-center">
+            <div class="col-lg-6 col-md-6">
+              <div class="left-area">
+                <h2 class="title">Build Your Esports Profile</h2>
+                <p>
+                  Showcase your achievements, match history and win rate while
+                  you build your reputation on Begam.
+                </p>
+                <a  href="https://play.axlegames.io" target="_blank" class="btnc"
+                  >Sign Up</a
+                >
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-6">
+              <div class="right-area">
+                <img
+                  src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/profile-info.png"
+                  alt="image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Call Action In end -->
+
     <!-- How Works end -->
     <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/jquery-3.5.1.min.js"></script>
     <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/bootstrap.min.js"></script>

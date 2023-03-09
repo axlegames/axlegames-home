@@ -22,7 +22,7 @@ const Wallet = (props: Props) => {
             bottom={"-235%"}
             zIndex={200}
             p={2}
-            bg={brandingColors.fgColor}
+            bg={brandingColors.newHighlightColor}
             position="absolute"
             display={"flex"}
             flexDirection="column"
@@ -77,12 +77,7 @@ const Wallet = (props: Props) => {
   };
 
   return (
-    <Box
-      bg={brandingColors.bgColor}
-      columnGap={"2rem"}
-      display={{ base: "none", md: "flex" }}
-      minW="64px"
-    >
+    <Box columnGap={"2rem"} display={{ base: "none", md: "flex" }} minW="64px">
       <Flex
         my={3}
         display={{ base: "flex" }}
@@ -96,7 +91,7 @@ const Wallet = (props: Props) => {
         <Box
           position="relative"
           display={{ base: "none", md: "flex" }}
-          bg={brandingColors.fgColor}
+          bg={brandingColors.bgColor}
           my={4}
           borderRadius="md"
           columnGap={"1rem"}
