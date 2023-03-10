@@ -627,6 +627,7 @@ export const home = `
     .btn-hover {
       display: none;
       min-width: 150px;
+      font-family: Staatliches;
       position: relative;
       text-transform: uppercase;
       vertical-align: middle;
@@ -852,17 +853,18 @@ export const home = `
                       class="btnc"
                     >
                       <div
-                        style="flex-direction: row; column-gap: 0.5rem"
+                        style="flex-direction: row; column-gap: 0.5rem; font-family: Staatliches"
                         class="d-flex align-items-center justify-content-center"
                       >
                         Presale
-                        <div style="font-size: 10px; color:#38A169">• live</div>
+                        <div style="font-family: Staatliches; font-size: 14px; color:#38A169">• live</div>
                       </div>
                     </a>
                     <a
                       href="https://play.axlegames.io"
                       target="_blank"
                       class="btn-hover color-3"
+                      style="font-family: Staatliches"
                       >Launch App</a
                     >
                   </div>
@@ -915,7 +917,7 @@ export const home = `
               <div class="col-lg-10">
                 <div class="section-header">
                   <h2 style="font-family: Staatliches" class="title">
-                    Available Games
+                    Available <span style="font-family: Staatliches; color:#F46B15;">Games</span>
                   </h2>
                   <p style="font-family: Shantell Sans">
                     We are constantly adding
@@ -987,7 +989,7 @@ export const home = `
             <div class="col-lg-6 text-center">
               <div class="section-header">
                 <h2 style="font-family: Staatliches" class="title">
-                  How It Works
+                  How It <span style="font-family: Staatliches; color:#F46B15;">Works</span>
                 </h2>
                 <p style="font-family: Shantell Sans">
                   It's easier than you think.
@@ -1027,7 +1029,7 @@ export const home = `
                   />
                 </div>
                 <div class="text-area">
-                  <h5 style="font-family: Shantell Sans">Deposit</h5>
+                  <h5 style="font-family: Shantell Sans">participate</h5>
                 </div>
               </div>
             </div>
@@ -1059,14 +1061,14 @@ export const home = `
                   />
                 </div>
                 <div class="text-area">
-                  <h5 style="font-family: Shantell Sans">Get Paid</h5>
+                  <h5 style="font-family: Shantell Sans">Get Rewarded</h5>
                 </div>
               </div>
             </div>
           </div>
           <div class="row d-flex justify-content-center">
             <div style="margin-top: 4rem" class="col-lg-6 text-center">
-              <a href="https://play.axlegames.io" target="_blank" class="btnc"
+              <a style="font-family: Staatliches;" href="https://play.axlegames.io" target="_blank" class="btnc"
                 >Join Now!</a
               >
             </div>
@@ -1087,7 +1089,7 @@ export const home = `
                   Showcase your achievements, match history and win rate while
                   you build your reputation on Axlegames.
                 </p>
-                <a  href="https://play.axlegames.io" target="_blank" class="btnc"
+                <a style="font-family: Staatliches;" href="https://play.axlegames.io" target="_blank" class="btnc"
                   >Sign Up</a
                 >
               </div>

@@ -1,6 +1,3 @@
-import useIframeContentHeight from "react-use-iframe-content-height";
-
-const html = `
 <!DOCTYPE html>
 <html lang="zxx">
   <head>
@@ -487,7 +484,7 @@ const html = `
                         id="email"
                         placeholder="Your Email Address"
                       />
-                      <button style="font-family:Staatliches" onclick="post()" class="cmn-btn">
+                      <button onclick="post()" class="cmn-btn">
                         Subscribe
                       </button>
                     </div>
@@ -661,22 +658,3 @@ const html = `
     </script>
   </body>
 </html>
-
-
-`;
-
-const Footer = () => {
-  const [iframeRef, iframeHeight] = useIframeContentHeight();
-
-  return (
-    <iframe
-      ref={iframeRef}
-      height={iframeHeight}
-      title="footer"
-      srcDoc={html}
-      frameBorder="0"
-    />
-  );
-};
-
-export default Footer;
