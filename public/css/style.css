@@ -4689,3 +4689,41 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 15px 10px;
   }
 }
+
+.slide_button_c {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.slide-arrow_c {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  cursor: pointer;
+}
+.prev-arrow_c {
+  cursor: pointer;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 15px solid #eb6612;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.next-arrow_c {
+  right: 10px;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-right: 0 solid transparent;
+  border-left: 15px solid #eb6612;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
