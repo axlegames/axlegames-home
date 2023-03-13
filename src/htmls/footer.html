@@ -22,18 +22,121 @@
       href="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/css/style.css"
     />
   </head>
+
   <link
     rel="stylesheet"
     type="text/css"
     href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
   />
-  <script
-    type="text/javascript"
-    src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-  ></script>
 
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+    .slide_button {
+      margin: 0;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    .slide-arrow {
+      position: absolute;
+      top: 50%;
+      margin-top: -15px;
+    }
+    .prev-arrow {
+      left: 10px;
+      width: 0;
+      height: 0;
+      border-left: 0 solid transparent;
+      border-right: 15px solid #eb6612;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+    .next-arrow {
+      right: 10px;
+      width: 0;
+      height: 0;
+      border-right: 0 solid transparent;
+      border-left: 15px solid #eb6612;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+    .clinks_c {
+      font-size: xx-small;
+    }
+    @media only screen and (min-width: 960px) {
+      .clinks_c {
+        font-size: small;
+      }
+    }
+    .gradient-text {
+      /* Fallback: Set a background color. */
+      background-color: #ca4246;
+
+      /* Create the gradient. */
+      background-image: linear-gradient(
+        45deg,
+        #ca4246 16.666%,
+        #e16541 16.666%,
+        #e16541 33.333%,
+        #f18f43 33.333%,
+        #f18f43 50%,
+        #8b9862 50%,
+        #8b9862 66.666%,
+        #476098 66.666%,
+        #476098 83.333%,
+        #a7489b 83.333%
+      );
+
+      /* Set the background size and repeat properties. */
+      background-size: 100%;
+      background-repeat: repeat;
+
+      /* Use the text as a mask for the background. */
+      /* This will show the gradient as a text color rather than element bg. */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      /* Animate the text when loading the element. */
+      /* This animates it on page load and when hovering out. */
+      animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+    }
+
+    .gradient-text:hover {
+      animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+    }
+
+    /* Move the background and make it smaller. */
+    /* Animation shown when entering the page and after the hover animation. */
+    @keyframes rainbow-text-simple-animation-rev {
+      0% {
+        background-size: 650%;
+      }
+      40% {
+        background-size: 650%;
+      }
+      100% {
+        background-size: 100%;
+      }
+    }
+
+    /* Move the background and make it larger. */
+    /* Animation shown when hovering over the text. */
+    @keyframes rainbow-text-simple-animation {
+      0% {
+        background-size: 100%;
+      }
+      80% {
+        background-size: 650%;
+      }
+      100% {
+        background-size: 650%;
+      }
+    }
   </style>
 
   <body>
@@ -68,7 +171,7 @@
               </div>
             </div>
           </div>
-          <div class="row testmonials_slick mp-none">
+          <div style="padding: 2rem" class="row testmonials_slick mp-none">
             <div>
               <div class="single-item text-center">
                 <p style="font-family: Shantell Sans; font-size: small">
@@ -512,20 +615,42 @@
               </div>
               <ul class="menu-side d-flex align-items-center">
                 <li style="font-family: Staatliches">
-                  <a target="_blank" href="https://axlegames.io/staking"
-                    >Axle Staking</a
-                  >
-                </li>
-                <li style="font-family: Staatliches">
-                  <a href="#">Axle Swap</a>
-                </li>
-                <li style="font-family: Staatliches">
-                  <a target="_blank" href="https://play.axlegames.io"
+                  <a
+                    class="clinks_c gradient-text"
+                    target="_blank"
+                    href="https://play.axlegames.io"
                     >Axle Games</a
                   >
                 </li>
                 <li style="font-family: Staatliches">
-                  <a target="_blank" href="https://sale.axlegames.io"
+                  <a
+                    class="clinks_c gradient-text"
+                    target="_blank"
+                    href="https://axlegames.io/staking"
+                    >Axle Staking</a
+                  >
+                </li>
+                <li style="font-family: Staatliches">
+                  <a
+                    class="clinks_c gradient-text"
+                    target="_blank"
+                    href="https://axlegames.io/staking"
+                    >Axle Swap</a
+                  >
+                </li>
+                <li style="font-family: Staatliches">
+                  <a
+                    class="clinks_c gradient-text"
+                    target="_blank"
+                    href="https://axlegames.io/staking"
+                    >Axle Dao</a
+                  >
+                </li>
+                <li style="font-family: Staatliches">
+                  <a
+                    class="clinks_c gradient-text"
+                    target="_blank"
+                    href="https://sale.axlegames.io"
                     >Axle Presale</a
                   >
                 </li>
@@ -600,44 +725,48 @@
     <script src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/js/main.js"></script>
     <script>
       $(".testmonials_slick").slick({
+        arrows: true,
+        prevArrow:
+          '<button class="slide_button slide-arrow prev-arrow"></button>',
+        nextArrow:
+          '<button class="slide_button slide-arrow next-arrow"></button>',
         dots: false,
         infinite: true,
         speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
         lazyLoad: "ondemand",
-        arrows: false,
         autoplay: true,
         autoplaySpeed: 3500,
-
+        slidesToShow: 3,
+        slidesToScroll: 1,
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 1400,
             settings: {
               slidesToShow: 3,
               slidesToScroll: 1,
             },
           },
           {
-            breakpoint: 800,
+            breakpoint: 1200,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
             },
           },
           {
-            breakpoint: 480,
+            breakpoint: 960,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
             },
           },
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
         ],
       });
     </script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
     <script>
       async function post() {
         const email = document.getElementById("email").value;

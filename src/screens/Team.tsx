@@ -24,37 +24,19 @@ const Team = () => {
     <Box backgroundImage={``} mx={{ md: "auto" }} pt={16}>
       <Heading title="Meet team" />
 
-      <Box display={{ base: "block", md: "none" }}>
+      <Box px={16} display={{ base: "block", md: "none" }}>
         <Slider
           infinite={true}
-          arrows={false}
+          arrows={true}
           speed={500}
           slidesToScroll={1}
           slidesPerRow={1}
           slidesToShow={1}
           dots={true}
         >
-          {team.map((t, i) =>
-            i < 3 ? (
-              <TeamCard i={i} bottomAligner={bottomAligner} {...t} />
-            ) : null
-          )}
-        </Slider>
-
-        <Slider
-          infinite={true}
-          arrows={false}
-          speed={500}
-          slidesToScroll={1}
-          slidesPerRow={1}
-          slidesToShow={1}
-          dots={true}
-        >
-          {team.map((t, i) =>
-            i > 2 ? (
-              <TeamCard i={i} bottomAligner={bottomAligner} {...t} />
-            ) : null
-          )}
+          {team.map((t, i) => (
+            <TeamCard i={i} bottomAligner={bottomAligner} {...t} />
+          ))}
         </Slider>
       </Box>
       <Flex py={{ base: "16" }} flexDirection={"column"}>
