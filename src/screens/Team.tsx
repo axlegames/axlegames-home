@@ -10,7 +10,6 @@ import Email from "../assets/socials/email.webp";
 import Slider from "react-slick";
 
 import "./NFTs.css";
-import { useRef } from "react";
 
 const Team = () => {
   const bottomAligner = (index: number) => {
@@ -23,19 +22,12 @@ const Team = () => {
     return "center";
   };
 
-  const slider = useRef(null);
   const PrevArrow = () => (
-    <button
-      onClick={() => slider?.current?.slickPrev()}
-      className="slide_button_c slide-arrow_c prev-arrow_c"
-    ></button>
+    <button className="slide_button_c slide-arrow_c prev-arrow_c"></button>
   );
 
   const NextArrow = () => (
-    <button
-      onClick={() => slider?.current?.slickNext()}
-      className="slide_button_c slide-arrow_c next-arrow_c"
-    ></button>
+    <button className="slide_button_c slide-arrow_c next-arrow_c"></button>
   );
 
   return (
@@ -48,7 +40,6 @@ const Team = () => {
           speed={500}
           slidesToScroll={1}
           slidesPerRow={1}
-          ref={slider}
           slidesToShow={1}
           dots={true}
           nextArrow={<NextArrow />}

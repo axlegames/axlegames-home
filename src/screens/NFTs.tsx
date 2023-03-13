@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import Heading from "../components/Heading";
 
 import "./NFTs.css";
-import { useRef } from "react";
 
 interface Props {
   title: string;
@@ -74,20 +73,12 @@ const NFT = (props: Props) => {
 };
 
 const NFTs = () => {
-  const slider = useRef(null);
-
   const PrevArrow = () => (
-    <button
-      onClick={() => slider?.current?.slickPrev()}
-      className="slide_button_c slide-arrow_c prev-arrow_c"
-    ></button>
+    <button className="slide_button_c slide-arrow_c prev-arrow_c"></button>
   );
 
   const NextArrow = () => (
-    <button
-      onClick={() => slider?.current?.slickNext()}
-      className="slide_button_c slide-arrow_c next-arrow_c"
-    ></button>
+    <button className="slide_button_c slide-arrow_c next-arrow_c"></button>
   );
   return (
     <Box
@@ -117,7 +108,6 @@ const NFTs = () => {
       </Grid>
       <Box px={1} py={12} display={{ base: "block", lg: "none" }}>
         <Slider
-          ref={slider}
           infinite={true}
           speed={500}
           slidesToScroll={1}
