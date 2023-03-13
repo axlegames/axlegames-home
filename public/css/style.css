@@ -952,6 +952,31 @@ body::-webkit-scrollbar-thumb:hover {
   bottom: 0;
 }
 
+@media only screen and (min-width: 340px) {
+  #available-game-section .slick-initialized .slick-next,
+  #available-game-section .slick-initialized .slick-prev {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(237, 184, 255, 1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  available-game-section .slick-initialized .slick-prev::before,
+  #available-game-section .slick-initialized .slick-next::before {
+    top: -5px;
+    left: -6px;
+  }
+
+  #available-game-section .slick-initialized .slick-next,
+  #available-game-section .slick-initialized .slick-prev {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 /* Available Game */
 #available-game-section .main-container {
   background: linear-gradient(178.07deg, #4609c3 -9.74%, #0e063d 82.69%);
@@ -1790,7 +1815,7 @@ body::-webkit-scrollbar-thumb:hover {
 #banner-section.inner-banner .slick-initialized .section-dots .dot .string {
   position: absolute;
   line-height: 0;
-  opacity: 0;
+  opacity: 1;
 }
 #banner-section.inner-banner .slick-initialized .section-dots .slick-active a {
   width: 40px;
@@ -4102,22 +4127,22 @@ body::-webkit-scrollbar-thumb:hover {
   }
   #available-game-section .slick-initialized .slick-prev::before,
   #available-game-section .slick-initialized .slick-next::before {
-    top: 11px;
-    left: 11px;
+    top: 2px;
+    left: 2px;
   }
   #available-game-section .slick-initialized .slick-next,
   #available-game-section .slick-initialized .slick-prev {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
   }
   #available-game-section .main-container {
     padding: 60px 20px;
   }
   #available-game-section .slick-initialized .slick-next {
-    right: calc(10% - -10px);
+    right: calc(10% - -0px);
   }
   #available-game-section .slick-initialized .slick-prev {
-    right: calc(14% - 60px);
+    right: calc(14% - 50px);
   }
   #how-works-section .single-item {
     margin-bottom: 40px;
@@ -4479,7 +4504,7 @@ body::-webkit-scrollbar-thumb:hover {
   }
   #available-game-section .slick-initialized .slick-next,
   #available-game-section .slick-initialized .slick-prev {
-    display: none !important;
+    /* display: none !important; */
   }
   #how-works-section .obj-rel::before,
   #how-works-section .obj-alt::before {
