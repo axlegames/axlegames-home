@@ -1014,11 +1014,12 @@ body::-webkit-scrollbar-thumb:hover {
   left: 15px;
 }
 #available-game-section .slick-initialized .slick-prev::before {
+  background: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/right-arrow.png);
   background-repeat: no-repeat;
 }
 #available-game-section .slick-initialized .slick-next::before {
+  background: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/left-arrow.png);
   background-repeat: no-repeat;
-  background: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/right-arrow.png);
 }
 
 /* How Works */
