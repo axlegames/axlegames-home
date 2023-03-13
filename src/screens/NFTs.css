@@ -1,4 +1,4 @@
-.slide_button {
+.slide_button_c {
   margin: 0;
   padding: 0;
   background: none;
@@ -9,12 +9,14 @@
   -moz-appearance: none;
   appearance: none;
 }
-.slide-arrow {
+.slide-arrow_c {
   position: absolute;
   top: 50%;
   margin-top: -15px;
+  cursor: pointer;
 }
-.prev-arrow {
+.prev-arrow_c {
+  cursor: pointer;
   left: 10px;
   width: 0;
   height: 0;
@@ -23,8 +25,9 @@
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
-.next-arrow {
+.next-arrow_c {
   right: 10px;
+  cursor: pointer;
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
