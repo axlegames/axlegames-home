@@ -115,7 +115,7 @@ const NFTs = () => {
           />
         ))}
       </Grid>
-      <Box px={8} py={12} display={{ base: "block", lg: "none" }}>
+      <Box px={4} py={12} display={{ base: "block", lg: "none" }}>
         <Slider
           ref={slider}
           infinite={true}
