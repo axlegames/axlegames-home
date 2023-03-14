@@ -1922,7 +1922,7 @@ body::-webkit-scrollbar-thumb:hover {
 #banner-section.inner-banner .headign-info .top-area .mid-area::before {
   position: absolute;
   content: "";
-  background: url(../images/text-bg.png);
+  background: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/text-bg.png);
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
@@ -1943,12 +1943,12 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 0;
 }
 #banner-section.inner-banner .headign-info .top-area::before {
-  background: url(../images/splash1.png);
+  background: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/splash1.png);
   background-repeat: no-repeat;
   left: -5%;
 }
 #banner-section.inner-banner .headign-info .top-area::after {
-  background: url(../images/splash2.png);
+  background: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/splash2.png);
   background-repeat: no-repeat;
   right: -5%;
 }
@@ -2555,7 +2555,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Login Regi Start */
 #login-reg {
-  background: url(../images/login-reg-cover.png), rgba(8, 4, 73, 0.5);
+  background: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/login-reg-cover.png),
+    rgba(8, 4, 73, 0.5);
   background-repeat: no-repeat;
   background-position: bottom;
 }
@@ -2651,7 +2652,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* Profile Page Start */
 #banner-section.inner-banner.profile {
   background-image: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/about-bg-overlay.png),
-    url(../images/inner-banner-bg.png);
+    url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/inner-banner-bg.png);
   background-repeat: no-repeat, no-repeat;
   background-size: 100%, 100% 100%;
   padding: 240px 0 200px;
@@ -2729,7 +2730,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* Features Page Start */
 #banner-section.inner-banner.profile {
   background-image: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/about-bg-overlay.png),
-    url(../images/features-banner-bg.png);
+    url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/features-banner-bg.png);
 }
 #banner-section .features-video {
   margin-bottom: -350px;
@@ -3516,7 +3517,8 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Deal of the day */
 #deal-of-day {
-  background: url(../images/deal-of-day-bg.png), #0e063d;
+  background: url(https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/deal-of-day-bg.png),
+    #0e063d;
   background-repeat: no-repeat;
   background-position: top;
 }
@@ -4688,42 +4690,4 @@ body::-webkit-scrollbar-thumb:hover {
   #products-content .single .single-side ul li {
     padding: 15px 10px;
   }
-}
-
-.slide_button_c {
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  border-radius: 0;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.slide-arrow_c {
-  position: absolute;
-  top: 50%;
-  margin-top: -15px;
-  cursor: pointer;
-}
-.prev-arrow_c {
-  cursor: pointer;
-  left: 10px;
-  width: 0;
-  height: 0;
-  border-left: 0 solid transparent;
-  border-right: 15px solid #eb6612;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-}
-.next-arrow_c {
-  right: 10px;
-  cursor: pointer;
-  width: 0;
-  height: 0;
-  border-right: 0 solid transparent;
-  border-left: 15px solid #eb6612;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
 }

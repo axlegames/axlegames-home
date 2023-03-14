@@ -12,12 +12,19 @@ const PoweredBy = lazy(() => import("./PoweredBy"));
 const NFTs = lazy(() => import("./NFTs"));
 const Footer = lazy(() => import("./Footer"));
 const Home = lazy(() => import("./Home"));
+const HowItWorks = lazy(() => import("./HowItWorks"));
+const EProfile = lazy(() => import("./EProfile"));
+const Games = lazy(() => import("./Games"));
+const Testimonials = lazy(() => import("./Testimonials"));
 
 const Main = () => {
   return (
     <Box position={"relative"}>
       <Element name="home">
         <Home />
+        <Games />
+        <HowItWorks />
+        <EProfile />
       </Element>
       <Box
         bg={brandingColors.bgColor}
@@ -47,6 +54,7 @@ const Main = () => {
         </Box>
       </Element>
       <Element name="footer">
+        <Testimonials />
         <Footer />
       </Element>
     </Box>

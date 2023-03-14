@@ -5,8 +5,6 @@ import { Box, Grid, Text } from "@chakra-ui/react";
 import Slider from "react-slick";
 import Heading from "../components/Heading";
 
-import "./NFTs.css";
-
 interface Props {
   title: string;
   text: string;
@@ -73,13 +71,6 @@ const NFT = (props: Props) => {
 };
 
 const NFTs = () => {
-  const PrevArrow = () => (
-    <button className="slide_button_c slide-arrow_c prev-arrow_c"></button>
-  );
-
-  const NextArrow = () => (
-    <button className="slide_button_c slide-arrow_c next-arrow_c"></button>
-  );
   return (
     <Box
       p={{ base: "4", lg: "16" }}
@@ -106,7 +97,7 @@ const NFTs = () => {
           />
         ))}
       </Grid>
-      <Box px={1} py={12} display={{ base: "block", lg: "none" }}>
+      <Box px={4} py={12} display={{ base: "block", lg: "none" }}>
         <Slider
           infinite={true}
           speed={500}
@@ -114,8 +105,6 @@ const NFTs = () => {
           slidesPerRow={1}
           slidesToShow={1}
           dots={true}
-          prevArrow={<PrevArrow />}
-          nextArrow={<NextArrow />}
           arrows={true}
         >
           <NFT slide={""} {...nfts[0]} />

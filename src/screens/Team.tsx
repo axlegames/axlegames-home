@@ -9,8 +9,6 @@ import Email from "../assets/socials/email.webp";
 
 import Slider from "react-slick";
 
-import "./NFTs.css";
-
 const Team = () => {
   const bottomAligner = (index: number) => {
     if (index === 0) return "flex-end";
@@ -21,14 +19,6 @@ const Team = () => {
     if (index === 5) return "flex-start";
     return "center";
   };
-
-  const PrevArrow = () => (
-    <button className="slide_button_c slide-arrow_c prev-arrow_c"></button>
-  );
-
-  const NextArrow = () => (
-    <button className="slide_button_c slide-arrow_c next-arrow_c"></button>
-  );
 
   return (
     <Box backgroundImage={``} mx={{ md: "auto" }} pt={16}>
@@ -42,8 +32,6 @@ const Team = () => {
           slidesPerRow={1}
           slidesToShow={1}
           dots={true}
-          nextArrow={<NextArrow />}
-          prevArrow={<PrevArrow />}
           infinite={true}
         >
           {team.map((t, i) => (

@@ -45,6 +45,7 @@ export const chart = `
       @media only screen and (min-width:840px){
       #chartdiv {
           min-height:44vh;
+          overflow:hidden;
         }
       } 
     </style>
