@@ -130,7 +130,9 @@ const Banner = () => {
             </Box>
             <Box className="ani-illu">
               <Image
-                style={{ maxHeight: "520px" }}
+                style={{
+                  maxHeight: "500px",
+                }}
                 className="left-1 wow"
                 src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.png"
                 alt="image"
@@ -144,7 +146,9 @@ const Banner = () => {
                 data-aos-easing="ease-in-back"
                 data-aos-delay="300"
                 data-aos-offset="0"
-                style={{ maxHeight: "520px" }}
+                style={{
+                  maxHeight: "520px",
+                }}
                 className="right-2 wow fadeInUp"
                 src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.png"
                 alt="image"

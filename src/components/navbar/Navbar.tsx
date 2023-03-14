@@ -154,6 +154,7 @@ const Navbar = () => {
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
           <a
             className="btnc"
+            style={{ fontFamily: "Staatliches" }}
             href={`https://sale.axlegames.io`}
             target="_blank"
             rel="noopener noreferrer"
