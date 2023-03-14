@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { brandingColors } from "../../../config/brandingColors";
 
 const SideBarButton = (props: any) => {
-  const normalEffect = `9px 9px 18px #05172b, -9px -9px 18px #072543;`;
+  const normalEffect = `3px 3px 9px ${brandingColors.newHighlightColor}, -3px -3px 9px ${brandingColors.bgColor}`;
   const pushedEffect = `inset 9px 9px 18px #05172b, inset -9px -9px 18px #072543`;
   return (
     <Link
@@ -16,7 +16,7 @@ const SideBarButton = (props: any) => {
       style={{ width: "100%" }}
     >
       <Button
-        fontFamily={`"Chakra Petch", sans-serif`}
+        fontFamily={`Staatliches`}
         textAlign={"left"}
         boxShadow={normalEffect}
         bg={brandingColors.bgColor}

@@ -15,19 +15,9 @@ const MobileNavbar = () => {
     setOpen(!open);
   }
 
-  const [colorChange, setColorchange] = useState(false);
-  const changeNavbarColor = () => {
-    if (window.scrollY >= 80) {
-      setColorchange(true);
-    } else {
-      setColorchange(false);
-    }
-  };
-  window.addEventListener("scroll", changeNavbarColor);
-
   return (
     <Box
-      bg={!colorChange ? "transparent" : brandingColors.bgColor}
+      bg={brandingColors.bgColor}
       width={"100vw"}
       height={open ? "100vh" : "100%"}
       display={{ base: "flex", lg: "none" }}
@@ -79,7 +69,7 @@ const MobileNavbar = () => {
         </Box>
       </Box>
 
-      <Box height={open ? "100%" : "0"} position={"relative"}>
+      <Box position={"relative"}>
         <Box
           zIndex={100000000}
           transition={"all ease 500ms"}
@@ -89,8 +79,9 @@ const MobileNavbar = () => {
           color={brandingColors.highLightColor}
           display={open ? "block" : "none"}
           width="100%"
+          height={"100vh"}
           boxShadow="lg"
-          position={"absolute"}
+          position={"fixed"}
         >
           <SideBarCard>
             <SideBarButton
