@@ -8,18 +8,18 @@ import { useRef } from "react";
 const testimonials = [
   {
     name: "Ana Paula",
-
-    desc: `I used to play a lot of action-packed games, but after
-	discovering Axle Games, I'm hooked. I love the sense of accomplishment I feel when I
-	solve a challenging puzzle.`,
+    desc: `One of the things I appreciate most about Axle Games is how
+                  user-friendly it is. It's clear that the developers put a lot
+                  of thought into making the platform as enjoyable as possible
+                  for gamers.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_4.jpg",
   },
   {
     name: "Sophia Grace",
-    desc: `I never knew that word games could be so competitive until I
-                  started playing on Axle Games. The tournaments and
-                  leaderboards add an extra level of excitement.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_5.jpg",
+    desc: `If you're a fan of word games, you have to try Axle Games! The
+                  games are addictive, the community is friendly and supportive,
+                  and the overall experience is just top-notch.`,
   },
   {
     name: "Victoria Jane",
@@ -31,11 +31,9 @@ const testimonials = [
   },
   {
     name: "Marco Antonio",
-
-    desc: `One of the things I appreciate most about Axle Games is how
-                  user-friendly it is. It's clear that the developers put a lot
-                  of thought into making the platform as enjoyable as possible
-                  for gamers.`,
+    desc: `I used to play a lot of action-packed games, but after
+	discovering Axle Games, I'm hooked. I love the sense of accomplishment I feel when I
+	solve a challenging puzzle.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_2.jpg",
   },
   {
@@ -47,9 +45,10 @@ const testimonials = [
   },
   {
     name: "Juan Carlos",
-    desc: `If you're a fan of word games, you have to try Axle Games! The
-                  games are addictive, the community is friendly and supportive,
-                  and the overall experience is just top-notch.`,
+
+    desc: `I never knew that word games could be so competitive until I
+                  started playing on Axle Games. The tournaments and
+                  leaderboards add an extra level of excitement.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_6.jpg",
   },
 ];

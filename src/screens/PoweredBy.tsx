@@ -113,14 +113,16 @@ const PoweredBy = (props: any) => {
             borderBottom={{
               base: "none",
               lg:
-                index > 3 ? "none" : `3px solid ${brandingColors.disableColor}`,
+                index > 3
+                  ? "none"
+                  : `4px groove ${brandingColors.newHighlightColor}`,
             }}
             borderLeft={{
               base: "none",
               lg:
                 index === 0 || index === 4
                   ? "none"
-                  : `3px solid ${brandingColors.disableColor}`,
+                  : `4px groove ${brandingColors.newHighlightColor}`,
             }}
             p={{ lg: 6 }}
           >

@@ -109,6 +109,7 @@ const Footer = () => {
                       fontSize={{ base: "smaller" }}
                       fontFamily={"Staatliches"}
                       className="gradient-text"
+                      cursor={"pointer"}
                     >
                       {link.title}
                     </Text>
@@ -126,7 +127,8 @@ const Footer = () => {
                               fontSize={{ base: "x-small", lg: "xs" }}
                               display={"block"}
                               textAlign={"center"}
-                              style={{ fontFamily: "Staatliches" }}
+                              fontFamily={"Shantell Sans"}
+                              fontWeight="bold"
                             >
                               {nav.name}
                             </Text>
@@ -146,8 +148,9 @@ const Footer = () => {
                           >
                             <Text
                               textAlign={"center"}
-                              fontFamily={"Staatliches"}
+                              fontFamily={"Shantell Sans"}
                               fontSize={{ base: "x-small", lg: "xs" }}
+                              fontWeight="bold"
                               cursor="pointer"
                               _hover={{
                                 textDecoration: "underline",
@@ -250,19 +253,19 @@ const links = [
     title: "Products",
     nav: [
       {
-        name: "AXLE GAMES",
+        name: "Axle Games",
         url: "https://play.axlegames.io",
       },
       {
-        name: "AXLE STAKING",
+        name: "Axle Staking",
         url: "https://axlegames.io/staking",
       },
       {
-        name: "AXLE SWAP",
+        name: "Axle Swap",
         url: "https://axlegames.io/staking",
       },
       {
-        name: "AXLE DAO",
+        name: "Axle Dao",
         url: "https://axlegames.io/staking",
       },
     ],
