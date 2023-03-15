@@ -112,7 +112,7 @@ const Banner = () => {
                             className="bottom-area text-center"
                           >
                             <Image
-                              style={{ maxHeight: "260px" }}
+                              maxH={{ base: "56", lg: "72" }}
                               src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png"
                               alt="banner-vs"
                               data-aos="fade-up"

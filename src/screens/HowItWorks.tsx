@@ -8,7 +8,7 @@ const HowItWorks = () => {
         id="how-works-section"
         className="border-area"
         overflowY={"hidden"}
-        minH={{ base: "100vh", lg: "75vh" }}
+        minH={{ base: "120vh", md: "60vh", lg: "78vh" }}
         zIndex={10}
       >
         <Box overflowY={"hidden"} className="overlay pt-120 pb-120">

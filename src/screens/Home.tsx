@@ -41,6 +41,7 @@ const Home = () => {
         >
           {socials.map((s, i) => (
             <Box
+              key={i}
               transition={"all 200ms ease-in"}
               _hover={{ transform: "scale(1.1)" }}
             >

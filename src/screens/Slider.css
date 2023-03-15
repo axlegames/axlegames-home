@@ -21,9 +21,11 @@
   width: 0;
   height: 0;
   border-left: 0 solid transparent;
-  border-right: 15px solid #eb6612;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-right: 24px solid #4609c3;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-radius: 100%;
+  z-index: 100;
 }
 .next-arrow_c {
   right: 10px;
@@ -31,28 +33,34 @@
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
-  border-left: 15px solid #eb6612;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-left: 24px solid #4609c3;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-radius: 100%;
+  z-index: 100;
 }
 
 .prev-arrow_c_games {
   cursor: pointer;
-  left: -20px;
+  left: -35px;
   width: 0;
   height: 0;
   border-left: 0 solid transparent;
-  border-right: 15px solid #eb6612;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-right: 24px solid #4609c3;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-radius: 100%;
+  z-index: 100;
 }
 .next-arrow_c_games {
-  right: -20px;
+  right: -35px;
   cursor: pointer;
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
-  border-left: 15px solid #eb6612;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
+  border-left: 24px solid #4609c3;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-radius: 100%;
+  z-index: 100;
 }

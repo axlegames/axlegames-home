@@ -16,6 +16,7 @@ const Heading = (props: Props) => {
     >
       {split.map((s, i) => (
         <Text
+          key={i}
           color={i % 2 === 0 ? "white" : brandingColors.primaryTextColor}
           fontSize={{ base: "3xl", lg: "5xl" }}
           textAlign={"center"}

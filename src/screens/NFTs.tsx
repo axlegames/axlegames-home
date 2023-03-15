@@ -4,6 +4,7 @@ import { Box, Grid, Text } from "@chakra-ui/react";
 
 import Slider from "react-slick";
 import Heading from "../components/Heading";
+import { useRef } from "react";
 
 interface Props {
   title: string;
@@ -71,6 +72,20 @@ const NFT = (props: Props) => {
 };
 
 const NFTs = () => {
+  const slider = useRef() as any;
+  const PrevArrow = () => (
+    <button
+      onClick={() => slider.current.slickPrev()}
+      className="slide_button_c slide-arrow_c prev-arrow_c"
+    ></button>
+  );
+
+  const NextArrow = () => (
+    <button
+      onClick={() => slider.current.slickNext()}
+      className="slide_button_c slide-arrow_c next-arrow_c"
+    ></button>
+  );
   return (
     <Box
       p={{ base: "4", lg: "16" }}
@@ -100,6 +115,9 @@ const NFTs = () => {
       <Box px={4} py={12} display={{ base: "block", lg: "none" }}>
         <Slider
           infinite={true}
+          ref={slider}
+          prevArrow={<PrevArrow />}
+          nextArrow={<NextArrow />}
           speed={500}
           slidesToScroll={1}
           slidesPerRow={1}

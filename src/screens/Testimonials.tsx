@@ -3,6 +3,7 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
 
 import Slider from "react-slick";
+import { useRef } from "react";
 
 const testimonials = [
   {
@@ -56,9 +57,26 @@ const testimonials = [
 const stars = [1, 2, 3, 4, 5];
 
 const Testimonials = () => {
+  const slider = useRef() as any;
+  const PrevArrow = () => (
+    <button
+      onClick={() => slider.current.slickPrev()}
+      className="slide_button_c slide-arrow_c prev-arrow_c_games"
+    ></button>
+  );
+
+  const NextArrow = () => (
+    <button
+      onClick={() => slider.current.slickNext()}
+      className="slide_button_c slide-arrow_c next-arrow_c_games"
+    ></button>
+  );
+
   const settings = {
     arrows: true,
-
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
+    initialSlide: 0,
     dots: false,
     infinite: true,
     speed: 300,
@@ -133,7 +151,7 @@ const Testimonials = () => {
               </Box>
             </Box>
             <Box px={4}>
-              <Slider {...settings}>
+              <Slider ref={slider} {...settings}>
                 {testimonials.map((t, i) => (
                   <Box key={i} p={1}>
                     <Box key={i} className="single-item text-center">

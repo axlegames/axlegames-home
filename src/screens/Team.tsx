@@ -8,8 +8,23 @@ import LinkedIn from "../assets/socials/linkedin.webp";
 import Email from "../assets/socials/email.webp";
 
 import Slider from "react-slick";
+import { useRef } from "react";
 
 const Team = () => {
+  const slider = useRef() as any;
+  const PrevArrow = () => (
+    <button
+      onClick={() => slider.current.slickPrev()}
+      className="slide_button_c slide-arrow_c prev-arrow_c"
+    ></button>
+  );
+
+  const NextArrow = () => (
+    <button
+      onClick={() => slider.current.slickNext()}
+      className="slide_button_c slide-arrow_c next-arrow_c"
+    ></button>
+  );
   const bottomAligner = (index: number) => {
     if (index === 0) return "flex-end";
     if (index === 1) return "center";
@@ -26,6 +41,9 @@ const Team = () => {
 
       <Box px={16} display={{ base: "block", md: "none" }}>
         <Slider
+          ref={slider}
+          nextArrow={<NextArrow />}
+          prevArrow={<PrevArrow />}
           arrows={true}
           speed={500}
           slidesToScroll={1}
@@ -35,7 +53,7 @@ const Team = () => {
           infinite={true}
         >
           {team.map((t, i) => (
-            <TeamCard i={i} bottomAligner={bottomAligner} {...t} />
+            <TeamCard key={i} i={i} bottomAligner={bottomAligner} {...t} />
           ))}
         </Slider>
       </Box>
@@ -52,7 +70,7 @@ const Team = () => {
           }}
         >
           {team.map((t, i) => (
-            <TeamCard i={i} bottomAligner={bottomAligner} {...t} />
+            <TeamCard key={i} i={i} bottomAligner={bottomAligner} {...t} />
           ))}
         </Grid>
       </Flex>

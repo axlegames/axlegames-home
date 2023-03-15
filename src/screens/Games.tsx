@@ -1,4 +1,4 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Image, Link, Text } from "@chakra-ui/react";
 import { useRef } from "react";
 import Slider from "react-slick";
 import { brandingColors } from "../config/brandingColors";
@@ -105,8 +105,8 @@ const Games = () => {
               <Box p={4}>
                 <Slider ref={slider} {...settings}>
                   {games.map((game, i) => (
-                    <Box width={"100%"} px={2}>
-                      <a
+                    <Box key={i} width={"100%"} px={2}>
+                      <Link
                         rel="noopener noreferrer"
                         href="https://play.axlegames.io"
                         target="_blank"
@@ -120,7 +120,7 @@ const Games = () => {
                         <Box my={1} className={`btn-hover ${colors[i]}`}>
                           Play now
                         </Box>
-                      </a>
+                      </Link>
                     </Box>
                   ))}
                 </Slider>

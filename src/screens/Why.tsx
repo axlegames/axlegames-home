@@ -25,7 +25,7 @@ const Why = () => {
         rowGap={{ base: "4rem" }}
       >
         {whysGridOne.map((why, index) => (
-          <Tilt>
+          <Tilt key={index}>
             <WhyCard slide={`fade-down`} {...why} key={index} />
           </Tilt>
         ))}
@@ -38,7 +38,7 @@ const Why = () => {
         justifyContent={{ lg: "flex-start" }}
       >
         {whysGridTwo.map((why, index) => (
-          <Tilt>
+          <Tilt key={index}>
             <WhyCard slide={`fade-up`} {...why} key={index} />
           </Tilt>
         ))}
