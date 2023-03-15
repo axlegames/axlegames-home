@@ -10,10 +10,18 @@
       @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
       * {
         font-family: Staatliches;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
       }
       #chartdiv {
+        margin: auto;
+        display: block;
         min-height: 60vh;
+        max-width: 100vw;
         overflow: hidden;
+        display: flex;
+        background-color: black;
       }
     </style>
   </head>
@@ -22,66 +30,69 @@
     <div id="chartdiv"></div>
     <script src="//cdn.amcharts.com/lib/4/core.js"></script>
     <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+
     <script>
+      am4core.useTheme(am4themes_animated);
       var chart = am4core.create("chartdiv", am4charts.PieChart);
       chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
       chart.data = [
         {
-          country: "Private Sale",
+          category: "Private Sale",
           value: 10,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Public Sale",
+          category: "Public Sale",
           value: 20,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Founding Team",
+          category: "Founding Team",
           value: 15,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Advisors and Legal team",
+          category: "Advisors and Legal team",
           value: 5,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Axle Ecosystem rewards",
+          category: "Axle Ecosystem rewards",
           value: 20,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Referral and Bonuses",
+          category: "Referral and Bonuses",
           value: 10,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "NULS SCO",
+          category: "NULS SCO",
           value: 5,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Marketing and Listings",
+          category: "Marketing and Listings",
           value: 15,
           label: am4core.color("#ffffff"),
         },
       ];
 
       chart.radius = am4core.percent(70);
-      chart.innerRadius = am4core.percent(40);
+      chart.innerRadius = am4core.percent(20);
       chart.startAngle = 180;
       chart.endAngle = 360;
 
       var series = chart.series.push(new am4charts.PieSeries());
       series.dataFields.value = "value";
-      series.dataFields.category = "country";
+      series.dataFields.category = "category";
 
       // Disable ticks and labels
       series.labels.template.disabled = true;
       series.ticks.template.disabled = true;
 
-      series.slices.template.innerCornerRadius = 4;
+      series.slices.template.innerCornerRadius = 2;
       series.slices.template.draggable = true;
       series.slices.template.inert = true;
 
@@ -91,7 +102,10 @@
 
       chart.legend = new am4charts.Legend();
       chart.legend.labels.template.fill = am4core.color("#ffffff");
-      chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
+      chart.legend.valueLabels.template.fill = am4core.color("#4609C3");
+      chart.legend.align = "center";
+
+      console.log(chart.legend);
     </script>
   </body>
 </html>

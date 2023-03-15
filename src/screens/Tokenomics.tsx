@@ -25,10 +25,17 @@ const Tokenomics = () => {
   const [isMobile] = useMediaQuery("(max-width: 720px)");
 
   return (
-    <Box bg={brandingColors.bgColor} p={{ base: "4", lg: "16" }}>
+    <Box
+      bg={brandingColors.bgColor}
+      pt={{ base: "12", lg: "16" }}
+      px={{ base: "4", lg: "16" }}
+    >
       <Heading title="Tokenomics" />
-      <Box id="counter-section">
-        <Box p={12}>
+      <Box
+        maxH={{ base: "166vh", md: "130vh", lg: "110vh", xl: "100vh" }}
+        id="counter-section"
+      >
+        <Box pt={{ base: "4", lg: "16" }} px={12}>
           <Box style={{ justifyContent: "center" }} className="row mp-none">
             {token.map((t, i) => (
               <Box key={i} className="col-lg-3 col-md-6 col-sm-6">
@@ -60,7 +67,14 @@ const Tokenomics = () => {
               </Box>
             ))}
           </Box>
-          <Box minH={{ base: "80vh", lg: "60vh" }} overflow={"hidden"}>
+          <Box
+            display={"flex"}
+            justifyContent="center"
+            alignItems={"center"}
+            minH={{ base: "80vh", lg: "60vh" }}
+            overflow={"hidden"}
+            py={8}
+          >
             <iframe
               style={{ minHeight: isMobile ? "100vh" : "80vh" }}
               title="charts"
@@ -88,10 +102,17 @@ const chart = `
       @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
       * {
         font-family: Staatliches;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
       }
       #chartdiv {
+        margin: auto;
+        display: block;
         min-height: 60vh;
+        max-width: 100vw;
         overflow: hidden;
+        display: flex;
       }
     </style>
   </head>
@@ -100,47 +121,50 @@ const chart = `
     <div id="chartdiv"></div>
     <script src="//cdn.amcharts.com/lib/4/core.js"></script>
     <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+
     <script>
+      am4core.useTheme(am4themes_animated);
       var chart = am4core.create("chartdiv", am4charts.PieChart);
       chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
       chart.data = [
         {
-          country: "Private Sale",
+          category: "Private Sale",
           value: 10,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Public Sale",
+          category: "Public Sale",
           value: 20,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Founding Team",
+          category: "Founding Team",
           value: 15,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Advisors and Legal team",
+          category: "Advisors and Legal team",
           value: 5,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Axle Ecosystem rewards",
+          category: "Axle Ecosystem rewards",
           value: 20,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Referral and Bonuses",
+          category: "Referral and Bonuses",
           value: 10,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "NULS SCO",
+          category: "NULS SCO",
           value: 5,
           label: am4core.color("#ffffff"),
         },
         {
-          country: "Marketing and Listings",
+          category: "Marketing and Listings",
           value: 15,
           label: am4core.color("#ffffff"),
         },
@@ -153,13 +177,13 @@ const chart = `
 
       var series = chart.series.push(new am4charts.PieSeries());
       series.dataFields.value = "value";
-      series.dataFields.category = "country";
+      series.dataFields.category = "category";
 
       // Disable ticks and labels
       series.labels.template.disabled = true;
       series.ticks.template.disabled = true;
 
-      series.slices.template.innerCornerRadius = 4;
+      series.slices.template.innerCornerRadius = 2;
       series.slices.template.draggable = true;
       series.slices.template.inert = true;
 
@@ -169,9 +193,11 @@ const chart = `
 
       chart.legend = new am4charts.Legend();
       chart.legend.labels.template.fill = am4core.color("#ffffff");
-      chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
+      chart.legend.valueLabels.template.fill = am4core.color("#F46B15");
+      chart.legend.align = "center";
+
+      console.log(chart.legend);
     </script>
   </body>
 </html>
-
 `;

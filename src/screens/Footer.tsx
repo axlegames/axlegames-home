@@ -26,17 +26,30 @@ const Footer = () => {
     });
   }
   return (
-    <Box pt={24} bg={brandingColors.bgColor}>
+    <Box pt={{ base: 12, md: 32, lg: 40 }} bg={brandingColors.bgColor}>
       <Box bg={brandingColors.bgColor} id="footer-section">
         <Box bg={brandingColors.bgColor} className="container">
           <Box className="row">
-            <Box className="col-lg-12">
-              <Box className="footer-top">
+            <Box
+              p={{ base: "4", md: "0" }}
+              borderRadius="xl"
+              backgroundSize="cover"
+              className="col-lg-12"
+            >
+              <Box
+                transform={{ base: `scale(1)`, md: `scale(1.05)` }}
+                boxShadow={"dark-lg"}
+                className="footer-top"
+              >
                 <Box className="row justify-content-center">
                   <Box className="col-lg-6 col-md-8">
                     <Box
-                      style={{ columnGap: "0.75rem" }}
-                      className="d-flex justify-content-center top-area text-center"
+                      display={"flex"}
+                      textAlign={"center"}
+                      justifyContent="center"
+                      alignItems={"center"}
+                      my={{ base: 4, md: 0 }}
+                      style={{ columnGap: "0.33rem" }}
                     >
                       <Box
                         fontSize={{ base: "xl", md: "3xl", lg: "5xl" }}
@@ -95,7 +108,10 @@ const Footer = () => {
                   </Box>
                 </Box>
               </Box>
-              <Box className="col-lg-5 col-md-5 d-flex justify-content-center">
+              <Box
+                columnGap={{ base: "1rem", md: "2rem", lg: "4rem" }}
+                className="col-lg-5 col-md-5 d-flex justify-content-center"
+              >
                 {links.map((link, index) => (
                   <Box
                     key={index}
@@ -258,15 +274,15 @@ const links = [
       },
       {
         name: "Axle Staking",
-        url: "https://axlegames.io/staking",
+        url: "https://axlegames.io/dashboard",
       },
       {
         name: "Axle Swap",
-        url: "https://axlegames.io/staking",
+        url: "https://axlegames.io/dashboard",
       },
       {
         name: "Axle Dao",
-        url: "https://axlegames.io/staking",
+        url: "https://axlegames.io/dashboard",
       },
     ],
     isLocal: false,

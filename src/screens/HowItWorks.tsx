@@ -8,7 +8,7 @@ const HowItWorks = () => {
         id="how-works-section"
         className="border-area"
         overflowY={"hidden"}
-        minH={{ base: "120vh", md: "60vh", lg: "78vh" }}
+        minH={{ base: "130vh", md: "60vh", lg: "78vh" }}
         zIndex={10}
       >
         <Box overflowY={"hidden"} className="overlay pt-120 pb-120">
@@ -21,13 +21,13 @@ const HowItWorks = () => {
                     style={{ columnGap: "0.5rem" }}
                   >
                     <Text
-                      fontSize={{ base: "2xl", lg: "5xl" }}
+                      fontSize={{ base: "3xl", lg: "5xl" }}
                       style={{ fontFamily: "Staatliches" }}
                     >
                       HOW IT
                     </Text>
                     <Text
-                      fontSize={{ base: "2xl", lg: "5xl" }}
+                      fontSize={{ base: "3xl", lg: "5xl" }}
                       style={{ fontFamily: "Staatliches", color: "#f46b15" }}
                     >
                       WORKS
