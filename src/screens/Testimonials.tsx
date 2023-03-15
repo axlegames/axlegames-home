@@ -60,14 +60,14 @@ const Testimonials = () => {
   const PrevArrow = () => (
     <button
       onClick={() => slider.current.slickPrev()}
-      className="slide_button_c slide-arrow_c prev-arrow_c"
+      className="slide_button_c slide-arrow_c prev-arrow_c_t"
     ></button>
   );
 
   const NextArrow = () => (
     <button
       onClick={() => slider.current.slickNext()}
-      className="slide_button_c slide-arrow_c next-arrow_c"
+      className="slide_button_c slide-arrow_c next-arrow_c_t"
     ></button>
   );
 
