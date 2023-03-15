@@ -130,26 +130,18 @@ const Banner = () => {
             </Box>
             <Box className="ani-illu">
               <Image
-                style={{
-                  maxHeight: "500px",
-                }}
-                className="left-1 wow"
+                objectFit={"contain"}
+                maxH={{ base: "96", xl: "520px" }}
+                maxW={{ base: "96", xl: "520px" }}
+                className="left-1"
                 src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.png"
                 alt="image"
-                data-aos="fade-left"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0"
               />
               <Image
-                data-aos="fade-right"
-                data-aos-easing="ease-in-back"
-                data-aos-delay="300"
-                data-aos-offset="0"
-                style={{
-                  maxHeight: "520px",
-                }}
-                className="right-2 wow fadeInUp"
+                objectFit={"contain"}
+                maxH={{ base: "96", md: "320px", xl: "520px" }}
+                maxW={{ base: "96", md: "320px", xl: "520px" }}
+                className="right-2"
                 src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.png"
                 alt="image"
               />
