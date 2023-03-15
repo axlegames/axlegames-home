@@ -80,22 +80,22 @@ const Footer = () => {
         </Box>
         <Box className="footer-mid pt-120">
           <Box className="container">
-            <Box className="row d-flex">
-              <Box className="col-lg-4 col-md-4 d-flex justify-content-md-between justify-content-center align-items-center cus-grid">
+            <Box rowGap={"1rem"} className="row d-flex">
+              <Box className="col-lg-3 col-md-3 d-flex justify-content-md-between justify-content-center align-items-center cus-grid">
                 <Box className="logo-section">
                   <Box
                     className="site-logo site-title"
                     style={{ cursor: "pointer" }}
                   >
                     <Image
-                      style={{ width: "128px" }}
+                      width={"32"}
                       src="https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png"
                       alt="site-logo"
                     />
                   </Box>
                 </Box>
               </Box>
-              <Box className="col-lg-4 col-md-4 d-flex justify-content-center">
+              <Box className="col-lg-5 col-md-5 d-flex justify-content-center">
                 {links.map((link, index) => (
                   <Box
                     key={index}
@@ -111,24 +111,24 @@ const Footer = () => {
                     >
                       {link.title}
                     </Text>
-                    <Box display={"flex"}>
+                    <Box flexDirection={"column"} display={"flex"}>
                       {link.nav.map((nav, i) =>
                         !link.isLocal ? (
                           <Link
                             key={i}
-                            display={"block"}
-                            fontSize={{ base: "x-small", lg: "xs" }}
                             rel="noopener noreferrer"
                             target="_blank"
                             href={nav.url}
                             cursor="pointer"
+                            style={{ textDecoration: "none" }}
                           >
                             <Text
+                              fontSize={{ base: "x-small", lg: "xs" }}
+                              display={"block"}
                               textAlign={"center"}
                               style={{ fontFamily: "Staatliches" }}
                               className="gradient-text"
                             >
-                              {" "}
                               {nav.name}
                             </Text>
                           </Link>
@@ -144,6 +144,8 @@ const Footer = () => {
                             duration={500}
                           >
                             <Text
+                              textAlign={"center"}
+                              className="gradient-text"
                               fontFamily={"Staatliches"}
                               fontSize={{ base: "x-small", lg: "xs" }}
                               cursor="pointer"
@@ -169,8 +171,8 @@ const Footer = () => {
                           p={0.5}
                           boxShadow={`0px 0px 4px ${brandingColors.primaryTextColor}`}
                           borderRadius="3xl"
-                          width={"10"}
-                          height="10"
+                          width={"8"}
+                          height="8"
                           alt={j.toString()}
                           src={social.img}
                         />
