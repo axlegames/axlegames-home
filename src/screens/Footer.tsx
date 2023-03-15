@@ -108,6 +108,7 @@ const Footer = () => {
                     <Text
                       fontSize={{ base: "smaller" }}
                       fontFamily={"Staatliches"}
+                      className="gradient-text"
                     >
                       {link.title}
                     </Text>
@@ -120,14 +121,12 @@ const Footer = () => {
                             target="_blank"
                             href={nav.url}
                             cursor="pointer"
-                            style={{ textDecoration: "none" }}
                           >
                             <Text
                               fontSize={{ base: "x-small", lg: "xs" }}
                               display={"block"}
                               textAlign={"center"}
                               style={{ fontFamily: "Staatliches" }}
-                              className="gradient-text"
                             >
                               {nav.name}
                             </Text>
@@ -135,7 +134,9 @@ const Footer = () => {
                         ) : (
                           <LLink
                             key={i}
-                            style={{ display: "block" }}
+                            style={{
+                              display: "block",
+                            }}
                             name={nav.url}
                             to={nav.url}
                             spy={true}
@@ -145,10 +146,12 @@ const Footer = () => {
                           >
                             <Text
                               textAlign={"center"}
-                              className="gradient-text"
                               fontFamily={"Staatliches"}
                               fontSize={{ base: "x-small", lg: "xs" }}
                               cursor="pointer"
+                              _hover={{
+                                textDecoration: "underline",
+                              }}
                             >
                               {nav.name}
                             </Text>
