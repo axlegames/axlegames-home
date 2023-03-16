@@ -217,9 +217,11 @@ const Footer = () => {
                       justifyContent="center"
                       style={{ fontFamily: "Staatliches" }}
                       color={brandingColors.secondaryTextColor}
+                      fontSize={{ base: "sm", lg: "lg" }}
                     >
                       Copyright © 2023. All Rights Reserved By
                       <Box
+                        fontSize={{ base: "sm", lg: "lg" }}
                         style={{
                           cursor: "pointer",
                           color: "#eb6612",

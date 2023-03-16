@@ -15,9 +15,10 @@
   margin-top: -15px;
   cursor: pointer;
 }
+
 .prev-arrow_c {
   cursor: pointer;
-  left: 10px;
+  left: -10px;
   width: 0;
   height: 0;
   border-left: 0 solid transparent;
@@ -28,7 +29,7 @@
   z-index: 100;
 }
 .next-arrow_c {
-  right: 10px;
+  right: -10px;
   cursor: pointer;
   width: 0;
   height: 0;
@@ -38,6 +39,85 @@
   border-bottom: 16px solid transparent;
   border-radius: 100%;
   z-index: 100;
+}
+
+.next-arrow_c_t {
+  right: -15px;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-right: 0 solid transparent;
+  border-left: 24px solid #4609c3;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-radius: 100%;
+  z-index: 100;
+}
+
+.prev-arrow_c_t {
+  cursor: pointer;
+  left: -15px;
+  width: 0;
+  height: 0;
+  border-left: 0 solid transparent;
+  border-right: 24px solid #4609c3;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-radius: 100%;
+  z-index: 100;
+}
+
+@media (min-width: 420px) {
+  .prev-arrow_c {
+    cursor: pointer;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 0 solid transparent;
+    border-right: 24px solid #4609c3;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-radius: 100%;
+    z-index: 100;
+  }
+  .next-arrow_c {
+    right: 10px;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-right: 0 solid transparent;
+    border-left: 24px solid #4609c3;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-radius: 100%;
+    z-index: 100;
+  }
+
+  .next-arrow_c_t {
+    right: 0px;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-right: 0 solid transparent;
+    border-left: 24px solid #4609c3;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-radius: 100%;
+    z-index: 100;
+  }
+
+  .prev-arrow_c_t {
+    cursor: pointer;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-left: 0 solid transparent;
+    border-right: 24px solid #4609c3;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-radius: 100%;
+    z-index: 100;
+  }
 }
 
 .prev-arrow_c_games {
@@ -59,32 +139,6 @@
   height: 0;
   border-right: 0 solid transparent;
   border-left: 24px solid #4609c3;
-  border-top: 16px solid transparent;
-  border-bottom: 16px solid transparent;
-  border-radius: 100%;
-  z-index: 100;
-}
-
-.next-arrow_c_t {
-  right: 0px;
-  cursor: pointer;
-  width: 0;
-  height: 0;
-  border-right: 0 solid transparent;
-  border-left: 24px solid #4609c3;
-  border-top: 16px solid transparent;
-  border-bottom: 16px solid transparent;
-  border-radius: 100%;
-  z-index: 100;
-}
-
-.prev-arrow_c_t {
-  cursor: pointer;
-  left: 0px;
-  width: 0;
-  height: 0;
-  border-left: 0 solid transparent;
-  border-right: 24px solid #4609c3;
   border-top: 16px solid transparent;
   border-bottom: 16px solid transparent;
   border-radius: 100%;
