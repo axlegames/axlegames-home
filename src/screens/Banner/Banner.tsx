@@ -134,7 +134,7 @@ const Banner = () => {
                 maxH={{ base: "96", xl: "520px" }}
                 maxW={{ base: "96", xl: "520px" }}
                 className="left-1"
-                src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.jpg"
+                src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.png"
                 alt="image"
               />
               <Image
@@ -142,7 +142,7 @@ const Banner = () => {
                 maxH={{ base: "96", md: "320px", xl: "520px" }}
                 maxW={{ base: "96", md: "320px", xl: "520px" }}
                 className="right-2"
-                src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.jpg"
+                src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.png"
                 alt="image"
               />
             </Box>
