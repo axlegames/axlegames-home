@@ -8,10 +8,9 @@ const HowItWorks = () => {
         id="how-works-section"
         className="border-area"
         overflowY={"hidden"}
-        minH={{ base: "130vh", md: "60vh", lg: "78vh" }}
         zIndex={10}
       >
-        <Box overflowY={"hidden"} className="overlay pt-120 pb-120">
+        <Box overflowY={"hidden"} className="pt-120 pb-120">
           <Box className="container wow fadeInUp">
             <Box className="row d-flex justify-content-center">
               <Box className="col-lg-6 text-center">
