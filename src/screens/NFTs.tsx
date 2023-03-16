@@ -2,7 +2,9 @@ import { nfts } from "../config/data";
 import { brandingColors } from "../config/brandingColors";
 import { Box, Grid, Text } from "@chakra-ui/react";
 
+import Slider from "react-slick";
 import Heading from "../components/Heading";
+import { useRef } from "react";
 
 interface Props {
   title: string;
@@ -13,7 +15,12 @@ interface Props {
 
 const NFT = (props: Props) => {
   return (
-    <Box data-aos={props.slide}>
+    <Box
+      display={"flex"}
+      justifyContent="center"
+      alignItems={"center"}
+      data-aos={props.slide}
+    >
       <Box
         minW={{ base: "270px" }}
         maxW={{ base: "270px" }}
@@ -34,7 +41,7 @@ const NFT = (props: Props) => {
         <Box
           py={3}
           borderBottomRadius="xl"
-          backgroundImage={`linear-gradient(to bottom, #061e37, #002956, #003376, #003b96, #1442b5)`}
+          backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
           width={"100%"}
           mx="auto"
           my={2}
@@ -43,16 +50,17 @@ const NFT = (props: Props) => {
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "lg", lg: "2xl" }}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`Staatliches`}
             textAlign={"center"}
+            fontWeight="bold"
           >
             {props.title}
           </Text>
           <Text
             color={brandingColors.secondaryTextColor}
-            fontFamily={`'Russo One', sans-serif`}
-            fontWeight={"normal"}
-            fontSize={{ base: "sm", lg: "md" }}
+            fontFamily={`Shantell Sans`}
+            fontWeight={"bold"}
+            fontSize={{ base: "sm", md: "md", lg: "lg" }}
             textAlign={"center"}
           >
             {props.text}
@@ -64,23 +72,37 @@ const NFT = (props: Props) => {
 };
 
 const NFTs = () => {
+  const slider = useRef() as any;
+  const PrevArrow = () => (
+    <button
+      onClick={() => slider.current.slickPrev()}
+      className="slide_button_c slide-arrow_c prev-arrow_c"
+    ></button>
+  );
+
+  const NextArrow = () => (
+    <button
+      onClick={() => slider.current.slickNext()}
+      className="slide_button_c slide-arrow_c next-arrow_c"
+    ></button>
+  );
   return (
     <Box
-      bg={brandingColors.bgColor}
       p={{ base: "4", lg: "16" }}
-      display="flex"
-      flexDirection={"column"}
-      rowGap="4rem"
-      justifyContent={"center"}
-      alignItems="center"
+      bg={brandingColors.bgColor}
+      backgroundImage="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/players-week-bg.png"
     >
       <Heading title="NFTs" />
       <Grid
-        columnGap={{ base: "1rem", xl: "4rem" }}
+        display={{ base: "none", lg: "grid" }}
+        columnGap={{ base: "1rem", xl: "1rem" }}
         justifyContent={"space-evenly"}
         alignItems="center"
-        gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr 1fr" }}
+        gridTemplateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }}
+        py={12}
         rowGap={{ base: "4rem" }}
+        width={{ base: "65%" }}
+        mx="auto"
       >
         {nfts.map((nft, index) => (
           <NFT
@@ -90,6 +112,24 @@ const NFTs = () => {
           />
         ))}
       </Grid>
+      <Box px={4} py={12} display={{ base: "block", lg: "none" }}>
+        <Slider
+          infinite={true}
+          ref={slider}
+          prevArrow={<PrevArrow />}
+          nextArrow={<NextArrow />}
+          speed={500}
+          slidesToScroll={1}
+          slidesPerRow={1}
+          slidesToShow={1}
+          dots={true}
+          arrows={true}
+        >
+          <NFT slide={""} {...nfts[0]} />
+          <NFT slide={""} {...nfts[1]} />
+          <NFT slide={""} {...nfts[2]} />
+        </Slider>
+      </Box>
     </Box>
   );
 };

@@ -2,7 +2,7 @@ import { Box, Button } from "@chakra-ui/react";
 import { brandingColors } from "../../../config/brandingColors";
 
 const SideBarLink = (props: any) => {
-  const normalEffect = `9px 9px 18px #05172b, -9px -9px 18px #072543;`;
+  const normalEffect = `3px 3px 9px ${brandingColors.newHighlightColor}, -3px -3px 9px ${brandingColors.bgColor}`;
   const pushedEffect = `inset 9px 9px 18px #05172b, inset -9px -9px 18px #072543`;
   return (
     <Box width={"100%"}>
@@ -17,7 +17,7 @@ const SideBarLink = (props: any) => {
           boxShadow={normalEffect}
           width={"100%"}
           bg={brandingColors.bgColor}
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`Staatliches`}
           size={{ base: "lg" }}
           color={brandingColors.secondaryTextColor}
           onClick={() => props.onClick()}

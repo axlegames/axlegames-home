@@ -1,42 +1,32 @@
-import { Box, Divider, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { brandingColors } from "../config/brandingColors";
 
 interface Props {
   title: string;
 }
 const Heading = (props: Props) => {
+  let split = props.title.split(" ");
+
   return (
     <Box
       alignItems={"center"}
+      columnGap="1rem"
       display={"flex"}
-      flexDirection="column"
       justifyContent={"center"}
     >
-      <Text
-        color={brandingColors.primaryTextColor}
-        fontSize={{ base: "3xl", lg: "5xl" }}
-        textAlign={"center"}
-        fontFamily={`'Russo One', sans-serif`}
-        data-aos={`zoom-out`}
-      >
-        {props.title}
-      </Text>
-      <Box
-        maxW="240px"
-        minW="240px"
-        display={"flex"}
-        justifyContent="center"
-        position={"relative"}
-        my={{ base: "2" }}
-      >
-        <Divider
-          width={"60%"}
-          position={"absolute"}
-          bg="Highlight"
-          borderRadius="3xl"
-        />
-        <Divider borderBottom={"1px solid white"} opacity="0.6" />
-      </Box>
+      {split.map((s, i) => (
+        <Text
+          key={i}
+          color={i % 2 === 0 ? "white" : brandingColors.primaryTextColor}
+          fontSize={{ base: "3xl", lg: "5xl" }}
+          textAlign={"center"}
+          fontFamily={`Staatliches`}
+          fontWeight="bold"
+          data-aos={`zoom-out`}
+        >
+          {s}
+        </Text>
+      ))}
     </Box>
   );
 };

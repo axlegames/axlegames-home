@@ -16,11 +16,6 @@ import ProductDaoIcon from "../assets/product_icons/dao.webp";
 import ProductMarketPlaceImg from "../assets/products/marketplace.webp";
 import ProductMarketPlaceIcon from "../assets/product_icons/store.webp";
 
-import Telegram from "../assets/socials/telegram.webp";
-import Medium from "../assets/socials/medium.webp";
-import Twitter from "../assets/socials/twitter.webp";
-import Instagram from "../assets/socials/instagram.webp";
-
 import WhyBlockchain from "../assets/why/blockchain.webp";
 import WhyDao from "../assets/why/dao.webp";
 import WhyDeflation from "../assets/why/deflation.webp";
@@ -85,8 +80,6 @@ export const products = [
     function: () => null,
   },
 ];
-
-export const socials = [Telegram, Twitter, Instagram, Medium];
 
 export const whysGridOne = [
   {
@@ -200,7 +193,8 @@ export const phases = [
     phase: "on going",
     milestones: [
       "Team Expansion - New hiring",
-      "Poseidon and Hades Sale - Live",
+      "Axle Games Website V2",
+      "IDO Presale Phase 4",
       "Axle Token Staking",
       "Axle Swap Launch",
       "Lewdle  and Lookdle Launch",
@@ -243,191 +237,6 @@ export const powerdby = [
   `https://axlegames.s3.ap-south-1.amazonaws.com/assets/powerdby/node.png`,
 ];
 
-export const chart = `
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Luckiest+Guy&family=Nabla&family=Poppins:ital,wght@0,800;0,900;1,900&family=Press+Start+2P&family=Quicksand:wght@300;400;500;600;700&family=Righteous&family=Rubik+80s+Fade&family=Russo+One&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        font-family: "Russo One", sans-serif;
-      }
-    </style>
-  </head>
-
-  <body style="height: 100vh; width: 100vw; position: fixed">
-    <div style="height:100vh" id="chartdiv"></div>
-    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/themes/animated.js">
-    <script>
-      am4core.useTheme(am4themes_animated);
-      var chart = am4core.create("chartdiv", am4charts.PieChart);
-      chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-      chart.data = [
-        {
-          country: "Zeus Sale",
-          value: 15,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Poseidon Sale",
-          value: 25,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Hades Sale",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Founding Team",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Advisors and Legal team",
-          value: 5,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Axle Ecosystem rewards",
-          value: 15,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Referral and Bonuses",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Marketing and Listings",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-      ];
-
-      chart.radius = am4core.percent(70);
-      chart.innerRadius = am4core.percent(40);
-      chart.startAngle = 180;
-      chart.endAngle = 360;
-
-      var series = chart.series.push(new am4charts.PieSeries());
-      series.dataFields.value = "value";
-      series.dataFields.category = "country";
-
-      // Disable ticks and labels
-      series.labels.template.disabled = true;
-      series.ticks.template.disabled = true;
-
-      series.slices.template.innerCornerRadius = 4;
-      series.slices.template.draggable = true;
-      series.slices.template.inert = true;
-
-      series.hiddenState.properties.startAngle = 90;
-      series.hiddenState.properties.endAngle = 90;
-      series.slices.template.draggable = false;
-
-      chart.legend = new am4charts.Legend();
-      chart.legend.labels.template.fill = am4core.color("#ffffff");
-      chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
-    </script>
-  </body>
-</html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div style="height: 70vh; background-color: #2b2d42" id="chartdiv"></div>
-    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
-    <script>
-      var chart = am4core.create("chartdiv", am4charts.PieChart);
-      chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-      chart.data = [
-        {
-          country: "Zeus Sale",
-          value: 15,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Poseidon Sale",
-          value: 25,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Hades Sale",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Founding Team",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Advisors and Legal team",
-          value: 5,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Axle Ecosystem rewards",
-          value: 15,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Referral and Bonuses",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          country: "Marketing and Listings",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-      ];
-
-      chart.radius = am4core.percent(70);
-      chart.innerRadius = am4core.percent(40);
-      chart.startAngle = 180;
-      chart.endAngle = 360;
-
-      var series = chart.series.push(new am4charts.PieSeries());
-      series.dataFields.value = "value";
-      series.dataFields.category = "country";
-
-      // Disable ticks and labels
-      series.labels.template.disabled = true;
-      series.ticks.template.disabled = true;
-
-      series.slices.template.innerCornerRadius = 4;
-      series.slices.template.draggable = true;
-      series.slices.template.inert = true;
-
-      series.hiddenState.properties.startAngle = 90;
-      series.hiddenState.properties.endAngle = 90;
-      series.slices.template.draggable = false;
-
-      chart.legend = new am4charts.Legend();
-      chart.legend.labels.template.fill = am4core.color("#ffffff");
-      chart.legend.valueLabels.template.fill = am4core.color("#ffffff");
-    </script>
-    ;
-  </body>
-</html>
-`;
-
 export const nfts = [
   {
     title: "Zeus",
@@ -452,7 +261,7 @@ export const team = [
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/praneeth.webp`,
     role: "Founder / Marketing Lead",
     linkedIn: "https://www.linkedin.com/in/praneethnagu/",
-    email: "praneethnagu@artemisnetwork.io",
+    email: "praneeth@artemisnetwork.io",
   },
   {
     name: "D. C. R",
@@ -490,11 +299,4 @@ export const team = [
     linkedIn: "",
     email: "lucas@axlegames.io",
   },
-];
-
-export const links = [
-  `https://t.me/axlegames_en`,
-  `https://twitter.com/AxleGames`,
-  `https://instagram.com/axlegames`,
-  `https://medium.com/@axlegames`,
 ];

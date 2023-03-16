@@ -166,7 +166,7 @@ const Giveaway2 = () => {
         textAlign={"center"}
       >
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontWeight="bold"
           fontSize={{ base: "2xl", sm: "4xl", md: "5xl" }}
           color={brandingColors.primaryTextColor}
@@ -176,7 +176,7 @@ const Giveaway2 = () => {
         </Text>
 
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontSize={"xl"}
           fontWeight={"bold"}
           color={brandingColors.primaryTwoTextColor}
@@ -280,14 +280,14 @@ const Giveaway2 = () => {
           src={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/logo.png`}
         />
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontSize={"3xl"}
           color={brandingColors.primaryTextColor}
         >
           AxleGames
         </Text>
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           fontSize={"xl"}
           color={brandingColors.secondaryTextColor}
         >
@@ -429,7 +429,7 @@ const Join = (props: FormInterface) => {
         px={8}
       >
         <Text
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`"Chakra Petch", sans-serif`}
           color={brandingColors.primaryTextColor}
           fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
         >

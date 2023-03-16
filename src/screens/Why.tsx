@@ -3,20 +3,20 @@ import Heading from "../components/Heading";
 import { brandingColors } from "../config/brandingColors";
 import { whysGridOne, whysGridTwo } from "../config/data";
 import { Box, Grid, Image, Text } from "@chakra-ui/react";
+import Tilt from "react-parallax-tilt";
 
 const Why = () => {
   return (
     <Box
-      bg={brandingColors.bgColor}
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_bg.png`}
-      p={{ base: "4", lg: "16" }}
+      px={{ base: "4", lg: "16" }}
+      py={{ base: "16", lg: "16" }}
       display="flex"
       flexDirection={"column"}
       rowGap="4rem"
       justifyContent={"center"}
       alignItems="center"
     >
-      <Heading title="Why $AXLE ?" />
+      <Heading title="Why $AXLE?" />
       <Grid
         columnGap={{ base: "1rem", xl: "4rem" }}
         justifyContent={"space-evenly"}
@@ -25,7 +25,9 @@ const Why = () => {
         rowGap={{ base: "4rem" }}
       >
         {whysGridOne.map((why, index) => (
-          <WhyCard slide={`fade-down`} {...why} key={index} />
+          <Tilt key={index}>
+            <WhyCard slide={`fade-down`} {...why} key={index} />
+          </Tilt>
         ))}
       </Grid>
 
@@ -36,7 +38,9 @@ const Why = () => {
         justifyContent={{ lg: "flex-start" }}
       >
         {whysGridTwo.map((why, index) => (
-          <WhyCard slide={`fade-up`} {...why} key={index} />
+          <Tilt key={index}>
+            <WhyCard slide={`fade-up`} {...why} key={index} />
+          </Tilt>
         ))}
       </Grid>
     </Box>
@@ -59,24 +63,31 @@ const WhyCard = (props: Props) => {
         alignItems="center"
         borderRadius="md"
         display="flex"
-        backgroundImage={`linear-gradient(to top, #061e37, #06223e, #072544, #07294b, #082d52, #03315d, #003569, #003874, #003c86, #003f97, #0041a8, #1a42b8)`}
+        backgroundImage={`linear-gradient(to left bottom, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
         flexDirection="column"
         p={5}
       >
-        <Image width={"44"} borderRadius={"md"} src={props.img} />
+        <Image
+          width={{ base: "24", md: "40" }}
+          my={{ base: "4" }}
+          borderRadius={"md"}
+          src={props.img}
+        />
         <Box>
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "lg", lg: "2xl" }}
+            fontFamily={`Staatliches`}
+            fontWeight="bold"
             textAlign={"center"}
           >
             {props.title}
           </Text>
           <Text
             color={brandingColors.secondaryTextColor}
-            fontWeight={"normal"}
-            fontSize={{ base: "sm", lg: "md" }}
+            fontSize={{ base: "md", lg: "lg" }}
             textAlign={"center"}
+            fontFamily={`Shantell Sans`}
           >
             {props.text}
           </Text>

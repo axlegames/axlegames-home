@@ -1,116 +1,5 @@
-/* vietnamese */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hJFQNYuDyP7bh.woff2)
-    format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
-    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hJVQNYuDyP7bh.woff2)
-    format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2)
-    format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 500;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hJFQNYuDyP7bh.woff2)
-    format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
-    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 500;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hJVQNYuDyP7bh.woff2)
-    format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 500;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2)
-    format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 600;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hJFQNYuDyP7bh.woff2)
-    format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
-    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 600;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hJVQNYuDyP7bh.woff2)
-    format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
-    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 600;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/quicksand/v30/6xKtdSZaM9iE8KbpRA_hK1QNYuDyPw.woff2)
-    format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
-}
-/* cyrillic */
-@font-face {
-  font-family: "Russo One";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url(https://fonts.gstatic.com/s/russoone/v14/Z9XUDmZRWg6M1LvRYsHOy8mJvLuL9BLT.woff2)
-    format("woff2");
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* latin-ext */
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&family=Shantell+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Silkscreen&display=swap");
+
 @font-face {
   font-family: "Russo One";
   font-style: normal;
@@ -140,6 +29,7 @@
   text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
+  font-family: Staatliches;
   padding: 20px 0px;
   margin: 0px 20px;
   display: inline-block;
@@ -169,7 +59,7 @@
   width: 100%;
 }
 
-.btn {
+.btnc {
   border: 0 none;
   border-radius: 5px;
   font-size: 16px;
@@ -180,7 +70,6 @@
   position: relative;
   text-transform: uppercase;
   vertical-align: middle;
-  font-family: "Russo One", sans-serif;
   font-weight: bold;
   border-radius: 10px;
   background-size: 200% auto;
@@ -200,50 +89,37 @@
   transition: all 0.5s ease 0s;
 }
 
-.btn:hover {
+.btnc:hover {
   background-position: right center;
 }
 
-.btn-secondary {
-  cursor: pointer;
-  border: 0 none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  height: 54px;
-  line-height: 54px;
-  padding: 0 25px;
+.btnc-secondary {
   position: relative;
-  text-transform: uppercase;
-  vertical-align: middle;
-  font-family: "Russo One", sans-serif;
-  font-weight: bold;
-  border-radius: 10px;
-  background-size: 200% auto;
-  border: 0;
-  color: #fff;
-  outline: none;
-  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  background-color: none;
+  border: 3px #eb6612 solid;
   z-index: 2;
-  border: 2px solid #0a325c;
-  background-color: #0a325c;
-  transition: all 1s ease 0s;
 }
-
-.btn-secondary:hover {
-  background: transparent;
-  background-image: linear-gradient(
-    to left,
-    #0a325c,
-    #5c3b7a,
-    #a83a7a,
-    #e2465c,
-    #f77726
-  );
-  -webkit-transition: background 1s;
-  -moz-transition: background 1s;
-  -o-transition: background 1s;
-  transition: background 1s;
+.btnc-secondary::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eb6612;
+  z-index: -1;
+  transition: height 200ms ease;
+}
+.btnc-secondary:hover::before {
+  height: 100%;
 }
 
 .glowc_text {
@@ -263,4 +139,86 @@
 .logos {
   aspect-ratio: 3.2/2;
   object-fit: contain;
+}
+
+.rcard {
+  background: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 3px 1px #00000088;
+  cursor: pointer;
+}
+
+.rcard .content {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: #171717;
+  z-index: 1;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content::before {
+  opacity: 0;
+  transition: opacity 300ms;
+  content: " ";
+  display: block;
+  background: white;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  filter: blur(50px);
+}
+
+.rcard:hover .content::before {
+  opacity: 1;
+}
+
+.rcard::before {
+  opacity: 0;
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 360px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff2288,
+    #387ef0,
+    transparent
+  );
+  transition: opacity 300ms;
+  animation: rotation_9018 3000ms infinite linear;
+  animation-play-state: paused;
+}
+
+.rcard:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.rcard::after {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 190px;
+  height: 254px;
+  background: #17171733;
+  backdrop-filter: blur(50px);
+}
+
+@keyframes rotation_9018 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

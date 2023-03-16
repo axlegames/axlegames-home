@@ -1,15 +1,15 @@
 export const brandingColors = {
-  bgColor: "#061E37",
+  bgColor: "#0e063d",
   fgColor: "#0A325C",
 
-  primaryMiscColor: "#EB6612",
+  primaryMiscColor: "#eb6612",
   secondaryMiscColor: "#7EB2F1",
 
   primaryButtonColor: "#EB6612", //bright orange
   secondaryButtonColor: "#F18541", //light orange
   ternaryButtonColor: "#372948", // dark button
 
-  secondaryTextColor: "#D4D3DA", //white
+  secondaryTextColor: "#ffffff", //white
   secondaryTwoTextColor: "#FD5EB3", // light pink
 
   highLightColor: "#edf2f4",
@@ -26,7 +26,7 @@ export const brandingColors = {
   newPrimaryShadow: "#FF7C1F",
   neuSecondaryBg: "#40464F",
   newSecondaryShadow: "#535A65",
-  newHighlightColor: "#1442B5",
+  newHighlightColor: "#4609C3",
   successColor: "#38A169",
   disableColor: "#718096",
 };

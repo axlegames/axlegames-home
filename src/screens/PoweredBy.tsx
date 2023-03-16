@@ -41,7 +41,7 @@ const PoweredBy = (props: any) => {
       <Box
         m={4}
         bg={brandingColors.bgColor}
-        boxShadow={`5px 5px 13px #05192d, -5px -5px 13px #072341`}
+        boxShadow={`4px 4px 9px #0b052e, -4px -4px 9px #11074c`}
         py={{ base: "4" }}
         px={{ base: "2" }}
         borderRadius="xl"
@@ -64,7 +64,8 @@ const PoweredBy = (props: any) => {
         <Text
           fontSize={"xl"}
           color={brandingColors.secondaryTextColor}
-          fontFamily={`'Russo One', sans-serif`}
+          fontFamily={`Staatliches`}
+          fontWeight="bold"
         >
           {props.username}
         </Text>
@@ -112,14 +113,16 @@ const PoweredBy = (props: any) => {
             borderBottom={{
               base: "none",
               lg:
-                index > 3 ? "none" : `3px solid ${brandingColors.disableColor}`,
+                index > 3
+                  ? "none"
+                  : `4px groove ${brandingColors.newHighlightColor}`,
             }}
             borderLeft={{
               base: "none",
               lg:
                 index === 0 || index === 4
                   ? "none"
-                  : `3px solid ${brandingColors.disableColor}`,
+                  : `4px groove ${brandingColors.newHighlightColor}`,
             }}
             p={{ lg: 6 }}
           >

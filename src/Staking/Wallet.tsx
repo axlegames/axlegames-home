@@ -22,7 +22,7 @@ const Wallet = (props: Props) => {
             bottom={"-235%"}
             zIndex={200}
             p={2}
-            bg={brandingColors.fgColor}
+            bg={brandingColors.newHighlightColor}
             position="absolute"
             display={"flex"}
             flexDirection="column"
@@ -41,15 +41,22 @@ const Wallet = (props: Props) => {
               bg={brandingColors.bgColor}
               p={2}
             >
-              <Text color={brandingColors.secondaryTextColor}>
+              <Text
+                fontFamily={"Shantell Sans"}
+                color={brandingColors.secondaryTextColor}
+                fontSize="sm"
+              >
                 Your wallet balance
               </Text>
-              <Text fontSize={"xl"} color={brandingColors.secondaryTextColor}>
+              <Text
+                fontFamily={`Staatliches`}
+                fontSize={"md"}
+                color={brandingColors.secondaryTextColor}
+              >
                 {Number(props.balance).toFixed(2)} BNB{" "}
               </Text>
             </Box>
             <Button
-              fontFamily={`'Russo One', sans-serif`}
               fontWeight={"bold"}
               _hover={{
                 bg: brandingColors.ternaryButtonColor,
@@ -57,6 +64,7 @@ const Wallet = (props: Props) => {
               bg={brandingColors.bgColor}
               color={brandingColors.secondaryTextColor}
               mt={"1"}
+              fontFamily={`Staatliches`}
               width={"100%"}
               onClick={() => props.disconnect()}
             >
@@ -69,12 +77,7 @@ const Wallet = (props: Props) => {
   };
 
   return (
-    <Box
-      bg={brandingColors.bgColor}
-      columnGap={"2rem"}
-      display={{ base: "none", md: "flex" }}
-      minW="64px"
-    >
+    <Box columnGap={"2rem"} display={{ base: "none", md: "flex" }} minW="64px">
       <Flex
         my={3}
         display={{ base: "flex" }}
@@ -88,7 +91,7 @@ const Wallet = (props: Props) => {
         <Box
           position="relative"
           display={{ base: "none", md: "flex" }}
-          bg={brandingColors.fgColor}
+          bg={brandingColors.bgColor}
           my={4}
           borderRadius="md"
           columnGap={"1rem"}
@@ -108,7 +111,12 @@ const Wallet = (props: Props) => {
           </Box>
 
           <Box pr={4}>
-            <Text fontSize={"md"} color={brandingColors.secondaryTextColor}>
+            <Text
+              fontFamily={`Staatliches`}
+              fontSize={"md"}
+              color={brandingColors.secondaryTextColor}
+              lineHeight="1.5"
+            >
               {!props.isLoading
                 ? `${Number(props.balance).toFixed(2)} BNB`
                 : `...`}
@@ -118,7 +126,11 @@ const Wallet = (props: Props) => {
                 color={brandingColors.secondaryTextColor}
                 direction={"column"}
               >
-                <Text fontSize={"xs"}>
+                <Text
+                  lineHeight="1.2"
+                  fontFamily={`Staatliches`}
+                  fontSize={"xs"}
+                >
                   {props.address.substring(0, 8)}....
                   {props.address.substring(
                     props.address.length - 8,
@@ -131,7 +143,11 @@ const Wallet = (props: Props) => {
         </Box>
       ) : (
         <Box m={5}>
-          <Box className="btn" onClick={() => props.connectWallet()}>
+          <Box
+            fontFamily={`Staatliches`}
+            className="btnc"
+            onClick={() => props.connectWallet()}
+          >
             Connect Wallet
           </Box>
         </Box>

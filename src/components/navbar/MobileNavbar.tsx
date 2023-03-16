@@ -17,12 +17,12 @@ const MobileNavbar = () => {
 
   return (
     <Box
-      position={open ? "fixed" : "relative"}
-      zIndex={500}
-      width={"100%"}
+      bg={brandingColors.bgColor}
+      width={"100vw"}
       height={open ? "100vh" : "100%"}
       display={{ base: "flex", lg: "none" }}
       flexDirection="column"
+      boxShadow={`0px 0px 12px -3px ${brandingColors.newHighlightColor}`}
     >
       <Box
         display={"flex"}
@@ -69,9 +69,9 @@ const MobileNavbar = () => {
         </Box>
       </Box>
 
-      <Box height={open ? "100%" : "0"} position={"relative"}>
+      <Box position={"relative"}>
         <Box
-          zIndex={100}
+          zIndex={100000000}
           transition={"all ease 500ms"}
           opacity={open ? 1 : 0}
           fontFamily={"quicksand"}
@@ -79,8 +79,9 @@ const MobileNavbar = () => {
           color={brandingColors.highLightColor}
           display={open ? "block" : "none"}
           width="100%"
+          height={"100vh"}
           boxShadow="lg"
-          position={"absolute"}
+          position={"fixed"}
         >
           <SideBarCard>
             <SideBarButton

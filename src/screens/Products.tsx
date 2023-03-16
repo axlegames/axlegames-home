@@ -3,7 +3,6 @@ import { brandingColors } from "../config/brandingColors";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 import Heading from "../components/Heading";
-import NeuButton from "../components/NeuButton";
 
 interface Props {
   subTitle: string;
@@ -18,7 +17,7 @@ interface Props {
 
 const Products = () => {
   return (
-    <Box bg={brandingColors.bgColor} py={{ base: "12" }}>
+    <Box py={{ base: "12" }}>
       <Heading title="Products" />
       <Box
         flexDirection={"column"}
@@ -49,8 +48,8 @@ const ProductMobileView = (props: Props) => {
     <Box
       backgroundImage={
         props.index % 2 === 0
-          ? `linear-gradient(to right, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
-          : `linear-gradient(to left, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+          ? `linear-gradient(to right, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`
+          : `linear-gradient(to left, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`
       }
       data-aos={props.index % 2 === 0 ? "fade-left" : "fade-right"}
       display="flex"
@@ -62,7 +61,7 @@ const ProductMobileView = (props: Props) => {
       m={4}
       borderRadius="xl"
     >
-      <Image maxW={"320px"} src={props.mainImg} />
+      <Image maxW={"180px"} src={props.mainImg} />
       <Box display={"flex"} flexDirection={{ base: "column" }} rowGap="1rem">
         <Flex
           alignItems={"center"}
@@ -71,37 +70,43 @@ const ProductMobileView = (props: Props) => {
         >
           <Image maxW={"12"} src={props.image} />
           <Text
+            fontFamily={"Staatliches"}
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "xl", sm: "2xl", md: "3xl" }}
           >
             {props.subTitle}
           </Text>
           <Text
-            p={1}
+            fontFamily={`Shantell Sans`}
+            py={1}
             borderRadius="md"
             fontSize={"xx-small"}
-            color={props.isLive ? "green.400" : "red.400"}
+            color={props.isLive ? "green.400" : "yellow.400"}
             bg={brandingColors.fgColor}
+            px={2}
           >
             {props.isLive ? `• Live` : "• Coming Soon"}
           </Text>
         </Flex>
         <Text
-          fontSize={{ base: "sm", sm: "md", md: "lg" }}
+          fontSize={{ base: "md", md: "lg" }}
           color={brandingColors.secondaryTextColor}
+          fontFamily={`Shantell Sans`}
         >
           {props.text}
         </Text>
-        {props.isLive ? (
-          <Box>
-            <NeuButton
-              label={props.label}
-              onClick={props.function}
-              bg={brandingColors.neuPrimaryBg}
-              shadow={brandingColors.newPrimaryShadow}
-            />
-          </Box>
-        ) : null}
+        <Flex>
+          {props.isLive ? (
+            <Box
+              fontFamily={"Staatliches"}
+              className="btnc"
+              onClick={() => props.function()}
+              cursor="pointer"
+            >
+              {props.label}
+            </Box>
+          ) : null}
+        </Flex>
       </Box>
     </Box>
   );
@@ -119,8 +124,8 @@ const ProductMidDeviceView = (props: Props) => {
       flexDirection={"column"}
       backgroundImage={
         props.index % 2 === 0
-          ? `linear-gradient(to right, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
-          : `linear-gradient(to left, #061e37, #06223e, #072544, #07294b, #082d52, #03315e, #003569, #003875, #003c87, #003f99, #0541aa, #1f42bb)`
+          ? `linear-gradient(to right, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`
+          : `linear-gradient(to left, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`
       }
     >
       <Box display={"flex"} columnGap="1rem">
@@ -133,18 +138,21 @@ const ProductMidDeviceView = (props: Props) => {
             columnGap="1rem"
           >
             <Text
-              fontFamily={`'Russo One', sans-serif`}
+              fontFamily={"Staatliches"}
               color={brandingColors.primaryTextColor}
+              fontWeight="bolder"
+              fontSize={"3xl"}
             >
               {props.subTitle}
             </Text>
             <Box>
               <Text
-                bg={brandingColors.fgColor}
+                fontFamily={"Staatliches"}
+                bg={brandingColors.bgColor}
                 fontSize="md"
                 px={2}
                 borderRadius="md"
-                color={props.isLive ? "green.400" : "red.400"}
+                color={props.isLive ? "green.400" : "yellow.400"}
                 fontWeight="bold"
               >
                 {props.isLive ? `• LIVE` : `• COMING SOON`}
@@ -154,19 +162,25 @@ const ProductMidDeviceView = (props: Props) => {
         </Box>
       </Box>
       <Box>
-        <Text color={brandingColors.secondaryTextColor} fontSize={"lg"}>
+        <Text
+          fontFamily={`Shantell Sans`}
+          color={brandingColors.secondaryTextColor}
+          fontSize={{ base: "md", md: "lg" }}
+        >
           {props.text}
         </Text>
       </Box>
 
       <Flex>
         {props.isLive ? (
-          <NeuButton
-            label={props.label}
-            onClick={props.function}
-            bg={brandingColors.neuPrimaryBg}
-            shadow={brandingColors.newPrimaryShadow}
-          />
+          <Box
+            fontFamily={"Staatliches"}
+            className="btnc"
+            onClick={() => props.function()}
+            cursor="pointer"
+          >
+            {props.label}
+          </Box>
         ) : null}
       </Flex>
     </Flex>
@@ -180,14 +194,12 @@ const ProductMidDeviceView = (props: Props) => {
       columnGap={"3rem"}
     >
       {props.index % 2 === 0 ? <Content /> : null}
-
       <Image
         data-aos={props.index % 2 === 0 ? `fade-left` : `fade-right`}
         maxW={{ base: "256px", lg: "312px" }}
         borderRadius={"md"}
         src={props.mainImg}
       />
-
       {props.index % 2 !== 0 ? <Content /> : null}
     </Flex>
   );

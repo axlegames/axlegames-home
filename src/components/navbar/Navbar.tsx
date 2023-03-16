@@ -7,19 +7,37 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Text,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { brandingColors } from "../../config/brandingColors";
 import NeuLink from "../NeuLink";
 import "./Navbar.css";
 import NeuPageLink from "./NeuPageLink";
 
 const Navbar = () => {
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+  window.addEventListener("scroll", changeNavbarColor);
+
   return (
     <Box
       display={{ base: "none", lg: "block" }}
-      minH={"10vh"}
+      backgroundImage={
+        "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png"
+      }
       fontWeight={"bold"}
-      fontFamily={`'Russo One', sans-serif`}
+      width="100vw"
+      minH="10vh"
+      boxShadow={`0px 0px 12px -6px ${brandingColors.newHighlightColor}`}
+      bg={!colorChange ? "transparent" : brandingColors.bgColor}
+      transition="all 200ms ease-in"
     >
       <Grid alignItems={"center"} templateColumns={"1fr 2fr 1fr"} py={2} px={4}>
         <Flex alignItems={"center"}>
@@ -31,13 +49,6 @@ const Navbar = () => {
           />
         </Flex>
         <Flex columnGap={"1rem"} justifyContent={"center"}>
-          <NeuLink
-            label={"Home"}
-            link="about"
-            onClick={() => null}
-            bg={brandingColors.neuPrimaryBg}
-            shadow={brandingColors.newPrimaryShadow}
-          />
           <NeuPageLink label="About" link="/about" />
           <NeuLink
             link="products"
@@ -54,22 +65,31 @@ const Navbar = () => {
             shadow={brandingColors.newPrimaryShadow}
           />
           <NeuLink
-            link="team"
-            label={"Team"}
-            onClick={() => null}
-            bg={brandingColors.neuPrimaryBg}
-            shadow={brandingColors.newPrimaryShadow}
-          />
-          <NeuLink
             label="Roadmap"
             link="roadmap"
             onClick={() => null}
             bg={brandingColors.neuPrimaryBg}
             shadow={brandingColors.newPrimaryShadow}
           />
+          <NeuLink
+            label="Testimonials"
+            link="footer"
+            onClick={() => {}}
+            bg={brandingColors.neuPrimaryBg}
+            shadow={brandingColors.newPrimaryShadow}
+          />
           <Menu>
-            <MenuButton className="nav-link nav-link-ltr">Docs</MenuButton>
+            <MenuButton>
+              <Text
+                fontWeight={"bold"}
+                className="nav-link nav-link-ltr"
+                fontFamily="Staatliches"
+              >
+                DOCS
+              </Text>
+            </MenuButton>
             <MenuList
+              fontFamily="Staatliches"
               border={brandingColors.fgColor}
               bg={brandingColors.bgColor}
               p={4}
@@ -133,7 +153,8 @@ const Navbar = () => {
         </Flex>
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
           <a
-            className="btn"
+            className="btnc"
+            style={{ fontFamily: "Staatliches" }}
             href={`https://sale.axlegames.io`}
             target="_blank"
             rel="noopener noreferrer"

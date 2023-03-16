@@ -1,95 +1,3 @@
-import Heading from "../components/Heading";
-
-import { brandingColors } from "../config/brandingColors";
-import { Box, Image, useMediaQuery } from "@chakra-ui/react";
-
-const token = [
-  {
-    main: "BEP-20",
-    sub: "BSC Token",
-    url: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/bsc.webp",
-  },
-  {
-    main: "1B",
-    sub: "Total Supply",
-    url: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/supply.webp",
-  },
-  {
-    main: "$AXLE",
-    sub: "Utility Token",
-    url: "https://axlegames.s3.ap-south-1.amazonaws.com/assets/token/util.webp",
-  },
-];
-
-const Tokenomics = () => {
-  const [isMobile] = useMediaQuery("(max-width: 720px)");
-
-  return (
-    <Box
-      bg={brandingColors.bgColor}
-      pt={{ base: "12", lg: "16" }}
-      px={{ base: "4", lg: "16" }}
-    >
-      <Heading title="Tokenomics" />
-      <Box
-        maxH={{ base: "166vh", md: "130vh", lg: "110vh", xl: "100vh" }}
-        id="counter-section"
-      >
-        <Box pt={{ base: "4", lg: "16" }} px={12}>
-          <Box style={{ justifyContent: "center" }} className="row mp-none">
-            {token.map((t, i) => (
-              <Box key={i} className="col-lg-3 col-md-6 col-sm-6">
-                <Box className="single-item text-center">
-                  <Box className="img-area">
-                    <Image
-                      style={{ padding: "1rem" }}
-                      src={t.url}
-                      alt="image"
-                    />
-                  </Box>
-                  <Box
-                    fontFamily={"Shantell Sans"}
-                    fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
-                    color={brandingColors.primaryTextColor}
-                    fontWeight="bold"
-                  >
-                    {t.main}
-                  </Box>
-                  <Box
-                    fontSize={{ base: "md", md: "lg" }}
-                    fontFamily={"Staatliches"}
-                    style={{ fontFamily: "" }}
-                    color={brandingColors.secondaryTwoTextColor}
-                  >
-                    {t.sub}
-                  </Box>
-                </Box>
-              </Box>
-            ))}
-          </Box>
-          <Box
-            display={"flex"}
-            justifyContent="center"
-            alignItems={"center"}
-            minH={{ base: "80vh", lg: "60vh" }}
-            overflow={"hidden"}
-            py={8}
-          >
-            <iframe
-              style={{ minHeight: isMobile ? "100vh" : "80vh" }}
-              title="charts"
-              srcDoc={chart}
-            />
-          </Box>
-        </Box>
-      </Box>
-    </Box>
-  );
-};
-
-export default Tokenomics;
-
-const chart = `
 <!DOCTYPE html>
 <html lang="zxx">
   <head>
@@ -113,6 +21,7 @@ const chart = `
         max-width: 100vw;
         overflow: hidden;
         display: flex;
+        background-color: black;
       }
     </style>
   </head>
@@ -171,7 +80,7 @@ const chart = `
       ];
 
       chart.radius = am4core.percent(70);
-      chart.innerRadius = am4core.percent(40);
+      chart.innerRadius = am4core.percent(20);
       chart.startAngle = 180;
       chart.endAngle = 360;
 
@@ -193,11 +102,10 @@ const chart = `
 
       chart.legend = new am4charts.Legend();
       chart.legend.labels.template.fill = am4core.color("#ffffff");
-      chart.legend.valueLabels.template.fill = am4core.color("#F46B15");
+      chart.legend.valueLabels.template.fill = am4core.color("#4609C3");
       chart.legend.align = "center";
 
       console.log(chart.legend);
     </script>
   </body>
 </html>
-`;

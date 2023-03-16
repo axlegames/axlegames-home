@@ -18,6 +18,7 @@ import { ethers } from "ethers";
 import { useState, useEffect } from "react";
 import Wallet from "./Wallet";
 import { brandingColors } from "../config/brandingColors";
+import "../components/navbar/Navbar.css";
 
 declare global {
   interface Window {
@@ -248,12 +249,12 @@ const Stake = () => {
   return (
     <Box
       bg={brandingColors.bgColor}
-      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/assets/bg/token_countdown_bg.png`}
+      backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png`}
       backgroundSize="contain"
-      fontFamily={"quicksand"}
+      fontFamily={"Shantell Sans"}
       fontWeight="bold"
       py={6}
-      minH={{ base: "160vh" }}
+      minH="100vh"
     >
       <Box
         alignItems={"center"}
@@ -305,7 +306,7 @@ const Stake = () => {
             minH={"14vh"}
           >
             <Text
-              fontFamily={`'Russo One', sans-serif`}
+              fontFamily={`Staatliches`}
               lineHeight={"0.8"}
               fontSize={{ base: "md", md: "xl" }}
             >
@@ -314,6 +315,7 @@ const Stake = () => {
             <Text
               lineHeight={"0.8"}
               color={brandingColors.primaryTextColor}
+              fontFamily={`Staatliches`}
               fontSize={{ base: "xl", md: "3xl" }}
             >
               ${pool}
@@ -322,7 +324,7 @@ const Stake = () => {
               lineHeight={"0.8"}
               color={brandingColors.secondaryTextColor}
               fontSize={{ base: "xs", md: "sm" }}
-              fontFamily={`'Russo One', sans-serif`}
+              fontFamily={`Staatliches`}
             >
               $ 0.00164 = 1 AXLE
             </Text>
@@ -337,7 +339,7 @@ const Stake = () => {
             border={`3px solid ${brandingColors.newHighlightColor}`}
             p={1}
             borderRadius={"8vw"}
-            fontFamily={`'Russo One', sans-serif`}
+            fontFamily={`Staatliches`}
           >
             <Box
               px={4}
@@ -364,7 +366,7 @@ const Stake = () => {
               onClick={() => setTogglePage(true)}
               cursor="pointer"
             >
-              <Text>FLEXIBLE</Text>
+              <Text fontFamily={`Staatliches`}>FLEXIBLE</Text>
             </Box>
             <Box
               cursor="pointer"
@@ -391,7 +393,7 @@ const Stake = () => {
               textAlign="center"
               onClick={() => setTogglePage(false)}
             >
-              <Text>LOCKED</Text>
+              <Text fontFamily={`Staatliches`}>LOCKED</Text>
             </Box>
           </Box>
           {/* {togglePage ? (
@@ -470,13 +472,15 @@ const Stake = () => {
               fontSize={{ base: "sm", md: "xl" }}
               textAlign="center"
               color={brandingColors.primaryTextColor}
+              fontFamily={`Staatliches`}
             >
               Connect your wallet to stake $AXLE tokens!
             </Text>
             <Box
               onClick={connectWeb3Wallet}
               style={{ textAlign: "center" }}
-              className="btn"
+              className="btnc"
+              fontFamily={`Staatliches`}
             >
               Connect Wallet
             </Box>
@@ -515,7 +519,7 @@ const Stake = () => {
                     color={brandingColors.secondaryTextColor}
                     cursor="pointer"
                     onClick={() => setUnstake(false)}
-                    fontFamily={`'Russo One', sans-serif`}
+                    fontFamily={`Staatliches`}
                     py={2}
                   >
                     STAKE AXLE
@@ -529,7 +533,7 @@ const Stake = () => {
                     width={"100%"}
                     fontSize={{ base: "md", md: "2xl" }}
                     borderTopRightRadius="3xl"
-                    fontFamily={`'Russo One', sans-serif`}
+                    fontFamily={`Staatliches`}
                     backgroundImage={
                       unstake
                         ? `linear-gradient(to left, #061e37, #002956, #003376, #003b96, #1442b5)`
@@ -549,8 +553,10 @@ const Stake = () => {
                       justifyContent="space-between"
                       fontSize={{ base: "xx-small", md: "sm" }}
                     >
-                      <Text>Amount</Text>
-                      <Text>~My Balance {axleBalance} AXLE</Text>
+                      <Text fontFamily={"Shantell Sans"}>Amount</Text>
+                      <Text fontFamily={"Shantell Sans"}>
+                        ~My Balance {axleBalance} AXLE
+                      </Text>
                     </Box>
                     <Box
                       height={"100%"}
@@ -605,7 +611,8 @@ const Stake = () => {
                       mt={4}
                       onClick={buy}
                       textAlign={"center"}
-                      className="btn"
+                      className="btnc"
+                      fontFamily={`Staatliches`}
                     >
                       Enable Staking
                     </Box>
@@ -620,8 +627,10 @@ const Stake = () => {
                       justifyContent="space-between"
                       fontSize={{ base: "xx-small", md: "sm" }}
                     >
-                      <Text>Amount</Text>
-                      <Text>~My Balance {axleBalance} AXLE</Text>
+                      <Text fontFamily={"Shantell Sans"}>Amount</Text>
+                      <Text fontFamily={"Shantell Sans"}>
+                        ~My Balance {axleBalance} AXLE
+                      </Text>
                     </Box>
                     <Box
                       height={"100%"}
@@ -664,7 +673,12 @@ const Stake = () => {
                       ></Input>
                       <Box cursor={"pointer"}>MAX</Box>
                     </Box>
-                    <Box mt={4} textAlign={"center"} className="btn">
+                    <Box
+                      mt={4}
+                      textAlign={"center"}
+                      fontFamily={`Staatliches`}
+                      className="btnc"
+                    >
                       UNSTAKE AXLE
                     </Box>
                   </Box>
@@ -681,7 +695,7 @@ const Stake = () => {
                 <Box textAlign={"center"}>
                   <Text
                     color={brandingColors.secondaryTextColor}
-                    fontFamily={`'Russo One', sans-serif`}
+                    fontFamily={`Staatliches`}
                     fontSize={{ base: "xl", md: "3xl" }}
                     p={2}
                   >
@@ -697,8 +711,10 @@ const Stake = () => {
                   justifyContent="space-between"
                   fontSize={{ base: "xx-small", md: "md" }}
                 >
-                  <Text>Amout</Text>
-                  <Text>~My Balance {axleBalance} AXLE</Text>
+                  <Text fontFamily={"Shantell Sans"}>Amount</Text>
+                  <Text fontFamily={"Shantell Sans"}>
+                    ~My Balance {axleBalance} AXLE
+                  </Text>
                 </Box>
                 <Box px={8}>
                   <Box
@@ -779,7 +795,7 @@ const Stake = () => {
                       >
                         <Text
                           color={brandingColors.secondaryTextColor}
-                          fontFamily={`'Russo One', sans-serif`}
+                          fontFamily={`Staatliches`}
                           px={3}
                           py={2}
                           fontSize={{ base: "sm", md: "md", lg: "xl" }}
@@ -796,7 +812,7 @@ const Stake = () => {
                           px={3}
                           py={2}
                           fontSize={{ base: "xs", md: "sm", lg: "md" }}
-                          fontFamily={`'Russo One', sans-serif`}
+                          fontFamily={`Staatliches`}
                         >
                           {" "}
                           {s.roi}% APY
@@ -809,8 +825,9 @@ const Stake = () => {
                   onClick={buy}
                   mx={8}
                   my={4}
-                  textAlign={"center"}
-                  className="btn"
+                  textAlign="center"
+                  className="btnc"
+                  fontFamily={`Staatliches`}
                 >
                   Enable Staking
                 </Box>
@@ -822,7 +839,8 @@ const Stake = () => {
                 >
                   <Text
                     fontSize={{ base: "sm", md: "md" }}
-                    color={brandingColors.secondaryTextColor}
+                    color={brandingColors.primaryTextColor}
+                    fontFamily={"Shantell Sans"}
                   >
                     Locking {bnb} AXLE for {stakeRewards[lockIn].days} Days
                   </Text>
