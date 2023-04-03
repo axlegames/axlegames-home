@@ -159,6 +159,7 @@ const Stake = () => {
   };
 
   const setNetworkName = (chainId: number) => {
+    console.log(onChain);
     for (let i = 0; i < chainIds.length; i++) {
       if (chainIds[i].chainId === chainId) {
         setOnChain(chainIds[i].network);
