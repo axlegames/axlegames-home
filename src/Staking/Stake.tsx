@@ -194,12 +194,37 @@ const Stake = () => {
     }
   };
 
+  const preClaim = async (txn: number) => {
+    try {
+      const hash = await stakingContract.preClaim(txn);
+      console.log(hash);
+      return toast({
+        title: "Success",
+        description: `Staking enabled, ${hash}`,
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
   const approveStake = async () => {
     try {
       console.log("ok");
       const hash = await tokenContract.approve(
         "0xD996A74A3376D75812f07781EF22666323288B86",
-        axle
+        axle * e9
       );
       console.log(hash);
       console.log("not oka");
@@ -230,6 +255,7 @@ const Stake = () => {
         60 * 60 * 24 * stakeRewards[lockIn].days,
         axle * 10 ** 9
       );
+      console.log(hash);
       return toast({
         title: "Success",
         description: `Staked ${axle}, ${hash}`,
@@ -239,6 +265,7 @@ const Stake = () => {
         position: "top",
       });
     } catch (error) {
+      console.log(error);
       return toast({
         title: "Oops!",
         description: `Something went wrong, try again`,
@@ -267,6 +294,7 @@ const Stake = () => {
         signer
       );
       const stake = new ethers.Contract(AXLE_STAKING, axleStakingABI, signer);
+      console.log(stake);
       let bal = await token.balanceOf(web3Accounts[0]);
       bal = ethers.utils.formatEther(bal);
       const totalStakeAmout: any = ethers.utils.formatEther(
@@ -732,7 +760,7 @@ const Stake = () => {
                         className="btnc"
                         fontFamily={`Staatliches`}
                       >
-                        Enable Staking
+                        Enable Stake
                       </Box>
                     </Box>
                   ) : (
@@ -948,7 +976,7 @@ const Stake = () => {
                     textAlign="center"
                     className="btnc"
                     fontFamily={`Staatliches`}
-                    onClick={() => approveStake()}
+                    onClick={async () => await approveStake()}
                   >
                     Enable Staking
                   </Box>
@@ -1054,8 +1082,13 @@ const Stake = () => {
                         justifyContent={"center"}
                         columnGap=".5rem"
                       >
-                        <Button color={"gray.800"} size="xs" bg="blue.300">
-                          precliam
+                        <Button
+                          onClick={() => preClaim(i + 1)}
+                          color={"gray.800"}
+                          size="xs"
+                          bg="blue.300"
+                        >
+                          preclaim
                         </Button>
                         <Button color="gray.800" size="xs" bg="orange.300">
                           unstake
