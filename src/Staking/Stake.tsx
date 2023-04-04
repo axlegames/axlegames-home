@@ -607,7 +607,7 @@ const Stake = () => {
                     Amount{" "}
                   </Text>
                   <Text fontSize={"sm"} fontFamily={headingFont}>
-                    ~My Balance {axleBalance} AXLE
+                    ~My Balance {Number(axleBalance).toFixed(0)} AXLE
                   </Text>
                 </Box>
                 <Box px={8}>
@@ -629,15 +629,13 @@ const Stake = () => {
                       onChange={onAxleChange}
                       color={brandingColors.highLightColor}
                       fontSize="xl"
-                      type={"number"}
+                      type={"text"}
                       inputMode="decimal"
                       borderRadius={"none"}
                       textAlign="right"
                       value={axle}
                       borderLeft={`2px solid ${brandingColors.fgColor}`}
                       borderRight={`2px solid ${brandingColors.fgColor}`}
-                      min={0.2}
-                      max={50}
                       fontFamily={headingFont}
                       _active={{
                         outline: "none",
@@ -656,7 +654,7 @@ const Stake = () => {
                       fontFamily={headingFont}
                       fontWeight="bold"
                       cursor={"pointer"}
-                      onClick={() => setAxle(axleBalance)}
+                      onClick={() => setAxle(Number(axleBalance).toFixed(0))}
                     >
                       MAX
                     </Box>
@@ -760,7 +758,8 @@ const Stake = () => {
                     fontFamily={headingFont}
                     fontWeight="bold"
                   >
-                    Locking {axle} AXLE for {stakeRewards[lockIn].days} Days
+                    Locking {Number(axle).toFixed(0)} AXLE for{" "}
+                    {stakeRewards[lockIn].days} Days
                   </Text>
                 </Box>
               </Box>
