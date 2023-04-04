@@ -208,8 +208,8 @@ const Stake = () => {
       console.log(hash);
       return toast({
         title: "Success",
-        description: `Axle precliamed`,
-        status: "error",
+        description: `Axle preclaimed`,
+        status: "success",
         duration: 5000,
         isClosable: true,
         position: "top",
@@ -238,8 +238,8 @@ const Stake = () => {
       // setHash(hash.hash);
       return toast({
         title: "Success",
-        description: `Axle ${axle} Approved`,
-        status: "error",
+        description: `${axle} AXLE approved for staking`,
+        status: "success",
         duration: 5000,
         isClosable: true,
         position: "top",
@@ -265,6 +265,7 @@ const Stake = () => {
       );
       setSuccess(true);
       setHash(hash.hash);
+      setAxle(axle);
     } catch (error) {
       console.log(error);
       return toast({
@@ -328,6 +329,7 @@ const Stake = () => {
         };
         txns.push(resp);
       }
+      txns.reverse();
       setTransactions(txns);
     } catch (error) {
       console.log(error);

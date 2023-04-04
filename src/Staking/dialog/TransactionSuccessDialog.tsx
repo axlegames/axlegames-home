@@ -21,8 +21,7 @@ const TransactionSuccessDialog = (props: any) => {
         </Text>{" "}
         <Text fontFamily={heading} fontSize={"md"}>
           {" "}
-          You have staked{" "}
-          {Number(Number(props.fee) + Number(props.fee * 0.25)).toFixed(0)} AXLE
+          You have staked {props.fee} AXLE
         </Text>
         <a
           href={`https://testnet.bscscan.com/tx/` + props.hash}
