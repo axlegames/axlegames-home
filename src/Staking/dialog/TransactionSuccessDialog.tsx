@@ -43,11 +43,18 @@ const TransactionSuccessDialog = (props: any) => {
             </Text>
           </Box>
         </a>
+        <Text
+          color={brandingColors.dangerColor}
+          textAlign={"left"}
+          fontSize={"sm"}
+        >
+          **please refresh the page after 2 minutes for the updated AXLE
+        </Text>
       </Flex>
       <Box mt={3}></Box>
       <Flex justifyContent={"center"}>
         <Box fontFamily={"Russo One"} className="btnc" onClick={props.close}>
-          Buy More
+          Stake More
         </Box>
       </Flex>
     </Box>

@@ -329,7 +329,6 @@ const Stake = () => {
         };
         txns.push(resp);
       }
-      txns.reverse();
       setTransactions(txns);
     } catch (error) {
       console.log(error);
