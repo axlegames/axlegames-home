@@ -6,6 +6,7 @@ import {
   Image,
   Input,
   Table,
+  TableCaption,
   TableContainer,
   Tbody,
   Td,
@@ -30,6 +31,7 @@ import "../components/navbar/Navbar.css";
 import creds from "../abi/creds";
 import AxleDialog from "./dialog/AxleDialog";
 import TransactionSuccessDialog from "./dialog/TransactionSuccessDialog";
+import { LinkIcon } from "@chakra-ui/icons";
 
 const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
 const axleTokenABI = creds.tokenAbi;
@@ -148,7 +150,7 @@ const Stake = () => {
   const [axleBalance, setAxleBalance] = useState<any>("0");
   const [openWallet, setOpenWallet] = useState(false);
   const [togglePage, setTogglePage] = useState(false);
-  const [unstake, setUnstake] = useState(false);
+  // const [unstake, setUnstake] = useState(false);
   const [transactions, setTransactions] = useState<Transactions[]>([]);
 
   const [address, setAddress] = useState<string>("");
@@ -362,28 +364,6 @@ const Stake = () => {
   };
   const toast = useToast();
 
-  const buy = () => {
-    if (axleBalance - axle <= 0) {
-      return toast({
-        title: "Warning",
-        description: `Insufficent funds!`,
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
-      });
-    }
-    setAxleBalance(axleBalance - axle);
-    return toast({
-      title: "Success",
-      description: `${axle} AXLE has been staked`,
-      status: "success",
-      duration: 5000,
-      isClosable: true,
-      position: "top",
-    });
-  };
-
   return (
     <Box
       bg={brandingColors.bgColor}
@@ -479,7 +459,7 @@ const Stake = () => {
                     fontFamily={headingFont}
                     lineHeight={"0.8"}
                     color={brandingColors.primaryTextColor}
-                    fontSize={{ base: "xl", md: "3xl" }}
+                    fontSize={{ base: "xl", md: "2xl" }}
                   >
                     {pool} AXLE
                   </Text>
@@ -595,401 +575,193 @@ const Stake = () => {
             </Box>
           ) : (
             <Box>
-              {togglePage ? (
-                <Box
-                  minW={{ base: "80vw", md: "42vw" }}
-                  mx="auto"
-                  width={"80%"}
-                  borderRadius="3xl"
-                  borderLeft={`2px solid ${brandingColors.newHighlightColor}`}
-                  borderRight={`2px solid ${brandingColors.newHighlightColor}`}
-                  borderBottom={`2px solid ${brandingColors.newHighlightColor}`}
-                  color={brandingColors.primaryTextColor}
-                  boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
-                >
-                  <Box
-                    textAlign={"center"}
-                    display="flex"
-                    justifyContent={"space-between"}
-                    border={`2px solid ${brandingColors.newHighlightColor}`}
-                    borderTopRadius="3xl"
-                  >
-                    <Text
-                      borderTopLeftRadius={"3xl"}
-                      boxShadow="xl"
-                      width={"100%"}
-                      fontSize={{ base: "md", md: "2xl" }}
-                      backgroundImage={
-                        !unstake
-                          ? `linear-gradient(to right, #061e37, #002956, #003376, #003b96, #1442b5)`
-                          : "none"
-                      }
-                      color={brandingColors.secondaryTextColor}
-                      cursor="pointer"
-                      onClick={() => setUnstake(false)}
-                      py={2}
-                      fontFamily={headingFont}
-                    >
-                      STAKE AXLE
-                    </Text>
-                    <Text
-                      fontFamily={headingFont}
-                      py={2}
-                      boxShadow="xl"
-                      color={brandingColors.secondaryTextColor}
-                      onClick={() => setUnstake(true)}
-                      cursor="pointer"
-                      width={"100%"}
-                      fontSize={{ base: "md", md: "2xl" }}
-                      borderTopRightRadius="3xl"
-                      backgroundImage={
-                        unstake
-                          ? `linear-gradient(to left, #061e37, #002956, #003376, #003b96, #1442b5)`
-                          : "none"
-                      }
-                    >
-                      UNSTAKE AXLE
-                    </Text>
-                  </Box>
-                  {!unstake ? (
-                    <Box borderRadius={"3xl"} p={6}>
-                      <Box
-                        color={brandingColors.secondaryTextColor}
-                        display={"flex"}
-                        px={2}
-                        py={2}
-                        justifyContent="space-between"
-                        fontSize={{ base: "xx-small", md: "sm" }}
-                      >
-                        <Text fontFamily={headingFont}>Amount</Text>
-                        <Text fontFamily={headingFont}>
-                          ~My Balance {axleBalance} AXLE
-                        </Text>
-                      </Box>
-                      <Box
-                        height={"100%"}
-                        width="100%"
-                        px={4}
-                        alignItems={"center"}
-                        display={"flex"}
-                        border={`3px solid ${brandingColors.fgColor}`}
-                        borderRadius="xl"
-                        fontSize={{ base: "xs", md: "md" }}
-                      >
-                        <Box fontFamily={headingFont}>$AXLE</Box>
-                        <Input
-                          mx={4}
-                          fontWeight={"bold"}
-                          color={brandingColors.highLightColor}
-                          onChange={onAxleChange}
-                          type={"number"}
-                          inputMode="decimal"
-                          borderRadius={"none"}
-                          fontSize="xl"
-                          fontFamily={headingFont}
-                          textAlign="right"
-                          value={axle}
-                          borderLeft={`2px solid ${brandingColors.fgColor}`}
-                          borderRight={`2px solid ${brandingColors.fgColor}`}
-                          min={0.2}
-                          width="100%"
-                          max={50}
-                          _active={{
-                            outline: "none",
-                            shadow: "none",
-                          }}
-                          _hover={{
-                            outline: "none",
-                            shadow: "none",
-                          }}
-                          _focus={{
-                            outline: "none",
-                            shadow: "none",
-                          }}
-                        ></Input>
-                        <Box fontFamily={headingFont} cursor={"pointer"}>
-                          MAX
-                        </Box>
-                      </Box>
-                      <Box
-                        fontSize={{ base: "xx-small", md: "md" }}
-                        px={2}
-                        my={1}
-                        color={brandingColors.secondaryTextColor}
-                        fontFamily={headingFont}
-                      >
-                        Min Stake Amount : 8000 AXLE
-                      </Box>
-
-                      <Box
-                        mt={4}
-                        onClick={buy}
-                        textAlign={"center"}
-                        className="btnc"
-                        fontFamily={headingFont}
-                      >
-                        Enable Stake
-                      </Box>
-                    </Box>
-                  ) : (
-                    <Box borderRadius={"3xl"} p={6}>
-                      <Box
-                        color={brandingColors.secondaryTextColor}
-                        display={"flex"}
-                        px={2}
-                        py={2}
-                        justifyContent="space-between"
-                        fontSize={{ base: "xx-small", md: "sm" }}
-                      >
-                        <Text fontFamily={headingFont}>Amount</Text>
-                        <Text fontFamily={headingFont}>
-                          ~My Balance {axleBalance} AXLE
-                        </Text>
-                      </Box>
-                      <Box
-                        height={"100%"}
-                        width="100%"
-                        px={4}
-                        alignItems={"center"}
-                        display={"flex"}
-                        border={`3px solid ${brandingColors.fgColor}`}
-                        borderRadius="xl"
-                        fontSize={{ base: "xs", md: "md" }}
-                      >
-                        <Box fontFamily={headingFont}>$AXLE</Box>
-                        <Input
-                          fontFamily={headingFont}
-                          fontSize="xl"
-                          mx={4}
-                          fontWeight={"bold"}
-                          color={brandingColors.highLightColor}
-                          placeholder="value (AXLE)"
-                          onChange={onAxleChange}
-                          type={"number"}
-                          inputMode="decimal"
-                          borderRadius={"none"}
-                          textAlign="right"
-                          value={axle}
-                          borderLeft={`2px solid ${brandingColors.fgColor}`}
-                          borderRight={`2px solid ${brandingColors.fgColor}`}
-                          min={0.2}
-                          max={50}
-                          _active={{
-                            outline: "none",
-                            shadow: "none",
-                          }}
-                          _hover={{
-                            outline: "none",
-                            shadow: "none",
-                          }}
-                          _focus={{
-                            outline: "none",
-                            shadow: "none",
-                          }}
-                        ></Input>
-                        <Box fontFamily={headingFont} cursor={"pointer"}>
-                          MAX
-                        </Box>
-                      </Box>
-                      <Box
-                        mt={4}
-                        textAlign={"center"}
-                        className="btnc"
-                        fontFamily={headingFont}
-                      >
-                        UNSTAKE AXLE
-                      </Box>
-                    </Box>
-                  )}
-                </Box>
-              ) : (
-                <Box
-                  minW={`42vw`}
-                  color={brandingColors.primaryTextColor}
-                  boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
-                  border={`3px solid ${brandingColors.newHighlightColor}`}
-                  borderRadius="3xl"
-                >
-                  <Box textAlign={"center"}>
-                    <Text
-                      color={brandingColors.secondaryTextColor}
-                      fontSize={{ base: "xl", md: "3xl" }}
-                      p={2}
-                      my={2}
-                      fontFamily={headingFont}
-                    >
-                      STAKE AXLE
-                    </Text>
-                  </Box>
-                  <Divider bg={brandingColors.primaryButtonColor} my={2} />
-                  <Box
+              <Box
+                color={brandingColors.primaryTextColor}
+                boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
+                border={`3px solid ${brandingColors.newHighlightColor}`}
+                borderRadius="3xl"
+              >
+                <Box textAlign={"center"}>
+                  <Text
                     color={brandingColors.secondaryTextColor}
+                    fontSize={{ base: "xl", md: "2xl" }}
+                    p={2}
+                    my={2}
+                    fontFamily={headingFont}
+                  >
+                    STAKE AXLE
+                  </Text>
+                </Box>
+                <Divider bg={brandingColors.primaryButtonColor} my={2} />
+                <Box
+                  color={brandingColors.secondaryTextColor}
+                  display={"flex"}
+                  px={8}
+                  py={2}
+                  justifyContent="space-between"
+                  fontSize={{ base: "xx-small", md: "md" }}
+                  fontFamily={subFont}
+                >
+                  <Text fontSize={"sm"} fontFamily={headingFont}>
+                    Amount{" "}
+                  </Text>
+                  <Text fontSize={"sm"} fontFamily={headingFont}>
+                    ~My Balance {axleBalance} AXLE
+                  </Text>
+                </Box>
+                <Box px={8}>
+                  <Box
+                    height={"100%"}
+                    width="100%"
+                    px={4}
+                    alignItems={"center"}
                     display={"flex"}
-                    px={8}
-                    py={2}
-                    justifyContent="space-between"
-                    fontSize={{ base: "xx-small", md: "md" }}
-                    fontFamily={subFont}
+                    border={`3px solid ${brandingColors.fgColor}`}
+                    borderRadius="xl"
+                    fontSize={{ base: "xs", md: "md" }}
                   >
-                    <Text fontFamily={headingFont}>Amount</Text>
-                    <Text fontFamily={headingFont}>
-                      ~My Balance {axleBalance} AXLE
-                    </Text>
-                  </Box>
-                  <Box px={8}>
-                    <Box
-                      height={"100%"}
-                      width="100%"
-                      px={4}
-                      alignItems={"center"}
-                      display={"flex"}
-                      border={`3px solid ${brandingColors.fgColor}`}
-                      borderRadius="xl"
-                      fontSize={{ base: "xs", md: "md" }}
-                    >
-                      <Box fontFamily={headingFont}>$AXLE</Box>
-                      <Input
-                        mx={4}
-                        fontWeight={"bold"}
-                        placeholder="value (AXLE)"
-                        onChange={onAxleChange}
-                        color={brandingColors.highLightColor}
-                        fontSize="xl"
-                        type={"number"}
-                        inputMode="decimal"
-                        borderRadius={"none"}
-                        textAlign="right"
-                        value={axle}
-                        borderLeft={`2px solid ${brandingColors.fgColor}`}
-                        borderRight={`2px solid ${brandingColors.fgColor}`}
-                        min={0.2}
-                        max={50}
-                        fontFamily={headingFont}
-                        _active={{
-                          outline: "none",
-                          shadow: "none",
-                        }}
-                        _hover={{
-                          outline: "none",
-                          shadow: "none",
-                        }}
-                        _focus={{
-                          outline: "none",
-                          shadow: "none",
-                        }}
-                      ></Input>
-                      <Box
-                        fontFamily={headingFont}
-                        fontWeight="bold"
-                        cursor={"pointer"}
-                      >
-                        MAX
-                      </Box>
-                    </Box>
-                  </Box>
-                  <Box mx={8} my={4}>
-                    <Box
-                      fontSize={{ base: "xx-small", md: "md" }}
-                      my={2}
-                      color={brandingColors.secondaryTextColor}
+                    <Box fontFamily={headingFont}>$AXLE</Box>
+                    <Input
+                      mx={4}
+                      fontWeight={"bold"}
+                      placeholder="value (AXLE)"
+                      onChange={onAxleChange}
+                      color={brandingColors.highLightColor}
+                      fontSize="xl"
+                      type={"number"}
+                      inputMode="decimal"
+                      borderRadius={"none"}
+                      textAlign="right"
+                      value={axle}
+                      borderLeft={`2px solid ${brandingColors.fgColor}`}
+                      borderRight={`2px solid ${brandingColors.fgColor}`}
+                      min={0.2}
+                      max={50}
                       fontFamily={headingFont}
-                    >
-                      Locking
-                    </Box>
-                    <Grid
-                      display={"grid"}
-                      gridTemplateColumns={{
-                        base: "1fr 1fr",
-                        md: "1fr 1fr 1fr 1fr",
+                      _active={{
+                        outline: "none",
+                        shadow: "none",
                       }}
-                      rowGap={"1rem"}
-                      justifyContent="center"
-                      columnGap={"1rem"}
-                      alignItems={"center"}
-                    >
-                      {stakeRewards.map((s, i) => (
-                        <Box
-                          borderRadius={"xl"}
-                          bg={
-                            i === lockIn
-                              ? brandingColors.newHighlightColor
-                              : brandingColors.bgColor
-                          }
-                          boxShadow={`0px 0px 3px ${brandingColors.newHighlightColor}`}
-                          textAlign={"center"}
-                          onClick={() => {
-                            setLockIn(i);
-                          }}
-                          key={i}
-                          minW={"32"}
-                          cursor="pointer"
-                        >
-                          <Text
-                            color={brandingColors.secondaryTextColor}
-                            px={3}
-                            py={2}
-                            fontSize={{ base: "sm", md: "md", lg: "xl" }}
-                            fontFamily={headingFont}
-                          >
-                            {" "}
-                            {s.days} Days{" "}
-                          </Text>
-                          <Divider
-                            bg={brandingColors.newHighlightColor}
-                            color={brandingColors.newHighlightColor}
-                          />
-                          <Text
-                            color={brandingColors.primaryTextColor}
-                            px={3}
-                            py={2}
-                            fontSize={{ base: "xs", md: "sm", lg: "md" }}
-                            fontFamily={headingFont}
-                          >
-                            {" "}
-                            {s.roi}% APY
-                          </Text>
-                        </Box>
-                      ))}
-                    </Grid>
-                  </Box>
-                  <Box
-                    // onClick={buy}
-                    mx={8}
-                    my={4}
-                    textAlign="center"
-                    className="btnc"
-                    fontFamily={headingFont}
-                    onClick={async () => await approveStake()}
-                  >
-                    Enable Staking
-                  </Box>
-                  <Box
-                    onClick={() => stake()}
-                    mx={8}
-                    my={4}
-                    textAlign="center"
-                    className="btnc"
-                    fontFamily={headingFont}
-                  >
-                    Stake
-                  </Box>
-                  <Box
-                    mt={4}
-                    borderTop={`2px solid ${brandingColors.newHighlightColor}`}
-                    textAlign={"center"}
-                    p={4}
-                  >
-                    <Text
-                      fontSize={{ base: "sm", md: "md" }}
-                      color={brandingColors.primaryTextColor}
+                      _hover={{
+                        outline: "none",
+                        shadow: "none",
+                      }}
+                      _focus={{
+                        outline: "none",
+                        shadow: "none",
+                      }}
+                    ></Input>
+                    <Box
                       fontFamily={headingFont}
                       fontWeight="bold"
+                      cursor={"pointer"}
                     >
-                      Locking {axle} AXLE for {stakeRewards[lockIn].days} Days
-                    </Text>
+                      MAX
+                    </Box>
                   </Box>
                 </Box>
-              )}
+                <Box mx={8} my={4}>
+                  <Box
+                    fontSize={{ base: "xx-small", md: "sm" }}
+                    my={2}
+                    color={brandingColors.secondaryTextColor}
+                    fontFamily={headingFont}
+                  >
+                    Locking
+                  </Box>
+                  <Grid
+                    display={"grid"}
+                    gridTemplateColumns={{
+                      base: "1fr 1fr",
+                      md: "1fr 1fr 1fr 1fr",
+                    }}
+                    rowGap={"1rem"}
+                    justifyContent="center"
+                    columnGap={"1rem"}
+                    alignItems={"center"}
+                  >
+                    {stakeRewards.map((s, i) => (
+                      <Box
+                        borderRadius={"xl"}
+                        bg={
+                          i === lockIn
+                            ? brandingColors.newHighlightColor
+                            : brandingColors.bgColor
+                        }
+                        boxShadow={`0px 0px 3px ${brandingColors.newHighlightColor}`}
+                        textAlign={"center"}
+                        onClick={() => {
+                          setLockIn(i);
+                        }}
+                        key={i}
+                        minW={"32"}
+                        cursor="pointer"
+                      >
+                        <Text
+                          color={brandingColors.secondaryTextColor}
+                          px={3}
+                          py={2}
+                          fontSize={{ base: "sm", md: "md" }}
+                          fontFamily={headingFont}
+                        >
+                          {" "}
+                          {s.days} Days{" "}
+                        </Text>
+                        <Divider
+                          bg={brandingColors.newHighlightColor}
+                          color={brandingColors.newHighlightColor}
+                        />
+                        <Text
+                          color={brandingColors.primaryTextColor}
+                          px={3}
+                          py={2}
+                          fontSize={{ base: "xs", md: "sm" }}
+                          fontFamily={headingFont}
+                        >
+                          {" "}
+                          {s.roi}% APY
+                        </Text>
+                      </Box>
+                    ))}
+                  </Grid>
+                </Box>
+                <Box
+                  // onClick={buy}
+                  mx={8}
+                  my={4}
+                  textAlign="center"
+                  className="btnc"
+                  fontFamily={headingFont}
+                  onClick={async () => await approveStake()}
+                >
+                  Enable Staking
+                </Box>
+                <Box
+                  onClick={() => stake()}
+                  mx={8}
+                  my={4}
+                  textAlign="center"
+                  className="btnc"
+                  fontFamily={headingFont}
+                >
+                  Stake
+                </Box>
+                <Box
+                  mt={4}
+                  borderTop={`2px solid ${brandingColors.newHighlightColor}`}
+                  textAlign={"center"}
+                  p={4}
+                >
+                  <Text
+                    fontSize={{ base: "xs", md: "sm" }}
+                    color={brandingColors.primaryTextColor}
+                    fontFamily={headingFont}
+                    fontWeight="bold"
+                  >
+                    Locking {axle} AXLE for {stakeRewards[lockIn].days} Days
+                  </Text>
+                </Box>
+              </Box>
             </Box>
           )}
         </Box>
@@ -1013,7 +785,7 @@ const Stake = () => {
               color={brandingColors.secondaryTextColor}
               cursor="pointer"
               pb={4}
-              fontSize={{ base: "md", md: "3xl" }}
+              fontSize={{ base: "xl", md: "2xl" }}
               borderBottom={`3px solid ${brandingColors.newHighlightColor}`}
             >
               TRANSACTIONS
@@ -1047,16 +819,16 @@ const Stake = () => {
                       <Td
                         fontFamily={subFont}
                         color={brandingColors.highLightColor}
-                        fontSize={"md"}
-                        fontWeight="bold"
+                        fontSize={"sm"}
+                        fontWeight="600"
                       >
                         {t.amount * e9}
                       </Td>
                       <Td
                         fontFamily={subFont}
                         color={brandingColors.highLightColor}
-                        fontSize={"md"}
-                        fontWeight="bold"
+                        fontSize={"sm"}
+                        fontWeight="600"
                       >
                         {getUntilIn(t.lockedUntil)
                           .substring(0, getUntilIn(t.lockedUntil).length - 3)
@@ -1065,24 +837,24 @@ const Stake = () => {
                       <Td
                         fontFamily={subFont}
                         color={brandingColors.highLightColor}
-                        fontSize={"md"}
-                        fontWeight="bold"
+                        fontSize={"sm"}
+                        fontWeight="600"
                       >
                         {t.percent * 10 ** 16}%
                       </Td>
                       <Td
                         fontFamily={subFont}
                         color={brandingColors.highLightColor}
-                        fontSize={"md"}
-                        fontWeight="bold"
+                        fontSize={"sm"}
+                        fontWeight="600"
                       >
                         {t.stakingOver ? "over" : "in progress"}
                       </Td>
                       <Td
                         fontFamily={subFont}
                         color={brandingColors.highLightColor}
-                        fontSize={"md"}
-                        fontWeight="bold"
+                        fontSize={"sm"}
+                        fontWeight="600"
                         display="flex"
                         justifyContent={"center"}
                         columnGap=".5rem"
@@ -1091,6 +863,7 @@ const Stake = () => {
                           isDisabled={t.stakingOver}
                           onClick={() => preClaim(i + 1)}
                           color={brandingColors.highLightColor}
+                          fontSize={{ base: "xs" }}
                           size="sm"
                           bg={brandingColors.primaryButtonColor}
                           fontFamily={headingFont}
@@ -1105,10 +878,52 @@ const Stake = () => {
                     </Tr>
                   ))}
                 </Tbody>
+                {transactions.length <= 0 ? (
+                  <TableCaption
+                    color={brandingColors.primaryTextColor}
+                    fontFamily={headingFont}
+                  >
+                    No Transcations Found
+                  </TableCaption>
+                ) : null}
               </Table>
             </TableContainer>
           </Box>
         ) : null}
+      </Box>
+      <Box
+        position={"fixed"}
+        bottom="4%"
+        right={"4%"}
+        display={{ base: "none", lg: "block" }}
+      >
+        <a
+          target={"_blank"}
+          rel="noopener noreferrer"
+          href="https://medium.com/@axlegames/axle-token-how-to-buy-3c523cd0888"
+        >
+          <Box
+            px={6}
+            py={2}
+            bg={brandingColors.newHighlightColor}
+            fontFamily={`'Russo One', sans-serif`}
+            color={brandingColors.primaryTwoTextColor}
+            border={`2px groove ${brandingColors.primaryTwoTextColor}`}
+            borderRadius="sm"
+            cursor="pointer"
+            display={"flex"}
+            _hover={{
+              textDecoration: "underline",
+            }}
+            alignItems={"center"}
+            columnGap={".25rem"}
+          >
+            <LinkIcon />
+            <Text fontSize={{ base: "xs", md: "sm", lg: "md" }}>
+              How To Stake?
+            </Text>
+          </Box>
+        </a>
       </Box>
     </Box>
   );
@@ -1118,3 +933,212 @@ export default Stake;
 
 const e9 = 10 ** 9;
 const heading = ["amount", "locked until", "apy", "status", "options"];
+
+//  {togglePage ? (
+//                 <Box
+//                   minW={{ base: "80vw", md: "42vw" }}
+//                   mx="auto"
+//                   width={"80%"}
+//                   borderRadius="3xl"
+//                   borderLeft={`2px solid ${brandingColors.newHighlightColor}`}
+//                   borderRight={`2px solid ${brandingColors.newHighlightColor}`}
+//                   borderBottom={`2px solid ${brandingColors.newHighlightColor}`}
+//                   color={brandingColors.primaryTextColor}
+//                   boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
+//                 >
+//                   <Box
+//                     textAlign={"center"}
+//                     display="flex"
+//                     justifyContent={"space-between"}
+//                     border={`2px solid ${brandingColors.newHighlightColor}`}
+//                     borderTopRadius="3xl"
+//                   >
+//                     <Text
+//                       borderTopLeftRadius={"3xl"}
+//                       boxShadow="xl"
+//                       width={"100%"}
+//                       fontSize={{ base: "md", md: "2xl" }}
+//                       backgroundImage={
+//                         !unstake
+//                           ? `linear-gradient(to right, #061e37, #002956, #003376, #003b96, #1442b5)`
+//                           : "none"
+//                       }
+//                       color={brandingColors.secondaryTextColor}
+//                       cursor="pointer"
+//                       onClick={() => setUnstake(false)}
+//                       py={2}
+//                       fontFamily={headingFont}
+//                     >
+//                       STAKE AXLE
+//                     </Text>
+//                     <Text
+//                       fontFamily={headingFont}
+//                       py={2}
+//                       boxShadow="xl"
+//                       color={brandingColors.secondaryTextColor}
+//                       onClick={() => setUnstake(true)}
+//                       cursor="pointer"
+//                       width={"100%"}
+//                       fontSize={{ base: "md", md: "2xl" }}
+//                       borderTopRightRadius="3xl"
+//                       backgroundImage={
+//                         unstake
+//                           ? `linear-gradient(to left, #061e37, #002956, #003376, #003b96, #1442b5)`
+//                           : "none"
+//                       }
+//                     >
+//                       UNSTAKE AXLE
+//                     </Text>
+//                   </Box>
+//                   {!unstake ? (
+//                     <Box borderRadius={"3xl"} p={6}>
+//                       <Box
+//                         color={brandingColors.secondaryTextColor}
+//                         display={"flex"}
+//                         px={2}
+//                         py={2}
+//                         justifyContent="space-between"
+//                         fontSize={{ base: "xx-small", md: "sm" }}
+//                       >
+//                         <Text fontFamily={headingFont}>Amount</Text>
+//                         <Text fontFamily={headingFont}>
+//                           ~My Balance {axleBalance} AXLE
+//                         </Text>
+//                       </Box>
+//                       <Box
+//                         height={"100%"}
+//                         width="100%"
+//                         px={4}
+//                         alignItems={"center"}
+//                         display={"flex"}
+//                         border={`3px solid ${brandingColors.fgColor}`}
+//                         borderRadius="xl"
+//                         fontSize={{ base: "xs", md: "md" }}
+//                       >
+//                         <Box fontFamily={headingFont}>$AXLE</Box>
+//                         <Input
+//                           mx={4}
+//                           fontWeight={"bold"}
+//                           color={brandingColors.highLightColor}
+//                           onChange={onAxleChange}
+//                           type={"number"}
+//                           inputMode="decimal"
+//                           borderRadius={"none"}
+//                           fontSize="xl"
+//                           fontFamily={headingFont}
+//                           textAlign="right"
+//                           value={axle}
+//                           borderLeft={`2px solid ${brandingColors.fgColor}`}
+//                           borderRight={`2px solid ${brandingColors.fgColor}`}
+//                           min={0.2}
+//                           width="100%"
+//                           max={50}
+//                           _active={{
+//                             outline: "none",
+//                             shadow: "none",
+//                           }}
+//                           _hover={{
+//                             outline: "none",
+//                             shadow: "none",
+//                           }}
+//                           _focus={{
+//                             outline: "none",
+//                             shadow: "none",
+//                           }}
+//                         ></Input>
+//                         <Box fontFamily={headingFont} cursor={"pointer"}>
+//                           MAX
+//                         </Box>
+//                       </Box>
+//                       <Box
+//                         fontSize={{ base: "xx-small", md: "md" }}
+//                         px={2}
+//                         my={1}
+//                         color={brandingColors.secondaryTextColor}
+//                         fontFamily={headingFont}
+//                       >
+//                         Min Stake Amount : 8000 AXLE
+//                       </Box>
+
+//                       <Box
+//                         mt={4}
+//                         onClick={buy}
+//                         textAlign={"center"}
+//                         className="btnc"
+//                         fontFamily={headingFont}
+//                       >
+//                         Enable Stake
+//                       </Box>
+//                     </Box>
+//                   ) : (
+//                     <Box borderRadius={"3xl"} p={6}>
+//                       <Box
+//                         color={brandingColors.secondaryTextColor}
+//                         display={"flex"}
+//                         px={2}
+//                         py={2}
+//                         justifyContent="space-between"
+//                         fontSize={{ base: "xx-small", md: "sm" }}
+//                       >
+//                         <Text fontFamily={headingFont}>Amount</Text>
+//                         <Text fontFamily={headingFont}>
+//                           ~My Balance {axleBalance} AXLE
+//                         </Text>
+//                       </Box>
+//                       <Box
+//                         height={"100%"}
+//                         width="100%"
+//                         px={4}
+//                         alignItems={"center"}
+//                         display={"flex"}
+//                         border={`3px solid ${brandingColors.fgColor}`}
+//                         borderRadius="xl"
+//                         fontSize={{ base: "xs", md: "md" }}
+//                       >
+//                         <Box fontFamily={headingFont}>$AXLE</Box>
+//                         <Input
+//                           fontFamily={headingFont}
+//                           fontSize="xl"
+//                           mx={4}
+//                           fontWeight={"bold"}
+//                           color={brandingColors.highLightColor}
+//                           placeholder="value (AXLE)"
+//                           onChange={onAxleChange}
+//                           type={"number"}
+//                           inputMode="decimal"
+//                           borderRadius={"none"}
+//                           textAlign="right"
+//                           value={axle}
+//                           borderLeft={`2px solid ${brandingColors.fgColor}`}
+//                           borderRight={`2px solid ${brandingColors.fgColor}`}
+//                           min={0.2}
+//                           max={50}
+//                           _active={{
+//                             outline: "none",
+//                             shadow: "none",
+//                           }}
+//                           _hover={{
+//                             outline: "none",
+//                             shadow: "none",
+//                           }}
+//                           _focus={{
+//                             outline: "none",
+//                             shadow: "none",
+//                           }}
+//                         ></Input>
+//                         <Box fontFamily={headingFont} cursor={"pointer"}>
+//                           MAX
+//                         </Box>
+//                       </Box>
+//                       <Box
+//                         mt={4}
+//                         textAlign={"center"}
+//                         className="btnc"
+//                         fontFamily={headingFont}
+//                       >
+//                         UNSTAKE AXLE
+//                       </Box>
+//                     </Box>
+//                   )}
+//                 </Box>
+//               ) : null}
