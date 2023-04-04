@@ -657,6 +657,7 @@ const Stake = () => {
                       fontFamily={headingFont}
                       fontWeight="bold"
                       cursor={"pointer"}
+                      onClick={() => setAxle(axleBalance)}
                     >
                       MAX
                     </Box>
@@ -824,6 +825,14 @@ const Stake = () => {
                         fontSize={"sm"}
                         fontWeight="600"
                       >
+                        {i + 1}
+                      </Td>
+                      <Td
+                        fontFamily={subFont}
+                        color={brandingColors.highLightColor}
+                        fontSize={"sm"}
+                        fontWeight="600"
+                      >
                         {t.amount * e9}
                       </Td>
                       <Td
@@ -934,7 +943,7 @@ const Stake = () => {
 export default Stake;
 
 const e9 = 10 ** 9;
-const heading = ["amount", "locked until", "apy", "status", "options"];
+const heading = ["sno", "amount", "locked until", "apy", "status", "options"];
 
 //  {togglePage ? (
 //                 <Box
