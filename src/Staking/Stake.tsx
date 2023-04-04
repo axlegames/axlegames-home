@@ -32,6 +32,7 @@ import creds from "../abi/creds";
 import AxleDialog from "./dialog/AxleDialog";
 import TransactionSuccessDialog from "./dialog/TransactionSuccessDialog";
 import { LinkIcon } from "@chakra-ui/icons";
+import moment from "moment";
 
 const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
 const axleTokenABI = creds.tokenAbi;
@@ -259,10 +260,10 @@ const Stake = () => {
 
   const stake = async () => {
     try {
-      const hash = await stakingContract.stake(
-        60 * 60 * 24 * stakeRewards[lockIn].days,
-        axle * 10 ** 9
-      );
+      console.log(stakeRewards[lockIn].days);
+      const day = 60 * 60 * 24 * stakeRewards[lockIn].days;
+      console.log(day);
+      const hash = await stakingContract.stake(day, axle * 10 ** 9);
       setSuccess(true);
       setHash(hash.hash);
       setAxle(axle);
@@ -295,6 +296,8 @@ const Stake = () => {
         axleTokenABI,
         signer
       );
+      console.log(token);
+      console.log(web3Accounts[0]);
       const stake = new ethers.Contract(AXLE_STAKING, axleStakingABI, signer);
       console.log(stake);
       let bal = await token.balanceOf(web3Accounts[0]);
@@ -360,8 +363,38 @@ const Stake = () => {
   }, []);
 
   const getUntilIn = (date: any) => {
-    const time = new Date(new Date(date * 10 ** 18 * 1000)).toLocaleString();
+    const time = new Date(new Date(date * 10 ** 18 * 1000)).toDateString();
     return time;
+  };
+
+  const stakedAt = (date: any, apy: number) => {
+    apy *= 10 ** 18;
+    apy /= 100;
+    date *= 10 ** 18 * 1000;
+    const time = 1000 * 60 * 60 * 24;
+    const lockedUntil = new Date(new Date(date));
+    let days = 30;
+    if (apy === 17) days = 90;
+    if (apy === 20) days = 180;
+    if (apy === 25) days = 360;
+    days *= time;
+    return new Date(new Date(lockedUntil).getTime() - days).toDateString();
+  };
+
+  const noOfDays = (date: any, apy: number) => {
+    apy *= 10 ** 18;
+    apy /= 100;
+    apy = Number(apy.toFixed(0));
+    const time = 1000 * 60 * 60 * 24;
+    const lockedUntil = new Date(new Date(date * 10 ** 18 * 1000));
+    let days = 30;
+    if (apy === 17) days = 90;
+    if (apy === 20) days = 180;
+    if (apy === 25) days = 360;
+    const interval = days * time;
+    let start = moment(new Date(new Date(lockedUntil).getTime() - interval));
+    let end = moment(lockedUntil);
+    return Math.abs(start.diff(end, "days"));
   };
   const toast = useToast();
 
@@ -839,9 +872,23 @@ const Stake = () => {
                         fontSize={"sm"}
                         fontWeight="600"
                       >
-                        {getUntilIn(t.lockedUntil)
-                          .substring(0, getUntilIn(t.lockedUntil).length - 3)
-                          .replace(",", " - ")}
+                        {stakedAt(t.lockedUntil, t.percent)}
+                      </Td>
+                      <Td
+                        fontFamily={subFont}
+                        color={brandingColors.highLightColor}
+                        fontSize={"sm"}
+                        fontWeight="600"
+                      >
+                        {getUntilIn(t.lockedUntil)}
+                      </Td>
+                      <Td
+                        fontFamily={subFont}
+                        color={brandingColors.highLightColor}
+                        fontSize={"sm"}
+                        fontWeight="600"
+                      >
+                        {noOfDays(t.lockedUntil, t.percent)}
                       </Td>
                       <Td
                         fontFamily={subFont}
@@ -941,7 +988,16 @@ const Stake = () => {
 export default Stake;
 
 const e9 = 10 ** 9;
-const heading = ["sno", "amount", "locked until", "apy", "status", "options"];
+const heading = [
+  "sno",
+  "amount",
+  "staked at",
+  "locked until",
+  "days",
+  "apy",
+  "status",
+  "options",
+];
 
 //  {togglePage ? (
 //                 <Box
