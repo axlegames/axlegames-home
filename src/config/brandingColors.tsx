@@ -18,7 +18,7 @@ export const brandingColors = {
   primaryTwoTextColor: "#AD78F7", //light purple
 
   dangerColor: "#E94560",
-  warningColor: "",
+  warningColor: "#ED961D",
 
   modalBgColor: "#262442",
 

@@ -6,7 +6,6 @@ import {
   Image,
   Input,
   Table,
-  TableCaption,
   TableContainer,
   Tbody,
   Td,
@@ -135,6 +134,9 @@ const stakeRewards = [
   },
 ];
 
+const headingFont = "Russo One";
+const subFont = "Inter";
+
 const Stake = () => {
   const [lockIn, setLockIn] = useState(0);
   const [balance, setBalance] = useState(0);
@@ -159,7 +161,6 @@ const Stake = () => {
   };
 
   const setNetworkName = (chainId: number) => {
-    console.log(onChain);
     for (let i = 0; i < chainIds.length; i++) {
       if (chainIds[i].chainId === chainId) {
         setOnChain(chainIds[i].network);
@@ -340,6 +341,7 @@ const Stake = () => {
   };
 
   useEffect(() => {
+    console.log(onChain);
     disconnectWeb3Modal(true);
     if (window.ethereum !== null && address !== "") {
       window.ethereum.on("accountsChanged", function (accounts: string) {
@@ -390,8 +392,6 @@ const Stake = () => {
       bg={brandingColors.bgColor}
       backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png`}
       backgroundSize="contain"
-      fontFamily={"Shantell Sans"}
-      fontWeight="bold"
       py={6}
       minH="100vh"
     >
@@ -433,203 +433,151 @@ const Stake = () => {
             justifyContent="center"
             alignItems={"center"}
             flexDirection={"column"}
+            mb={4}
           >
-            <Box
-              boxShadow={`0px 0px 120px -30px ${brandingColors.secondaryTwoTextColor}`}
-              border={`3px solid ${brandingColors.newHighlightColor}`}
-              p={6}
-              borderRadius="xl"
-              bg={brandingColors.bgColor}
-              backgroundImage={`radial-gradient(circle, #061e37, #14213c, #202441, #2c2645, #372948)`}
-              color={brandingColors.secondaryTextColor}
-              fontWeight="bold"
-              justifyContent={"center"}
-              display="flex"
-              flexDirection={"column"}
-              alignItems="center"
-              rowGap={"1rem"}
-              minW={"18vw"}
-              minH={"14vh"}
-            >
-              <Text
-                fontFamily={`Staatliches`}
-                lineHeight={"0.8"}
-                fontSize={{ base: "md", md: "xl" }}
-              >
-                TOTAL LOCKED
-              </Text>
-              <Text
-                lineHeight={"0.8"}
-                color={brandingColors.primaryTextColor}
-                fontFamily={`Staatliches`}
-                fontSize={{ base: "xl", md: "3xl" }}
-              >
-                {pool} AXLE
-              </Text>
-              <Text
-                lineHeight={"0.8"}
-                color={brandingColors.secondaryTextColor}
-                fontSize={{ base: "xs", md: "sm" }}
-                fontFamily={`Staatliches`}
-              >
-                $ 0.00164 = 1 AXLE
-              </Text>
-            </Box>
-            <Box
-              mt={4}
-              minW={"14vw"}
-              display={"flex"}
-              justifyContent="space-between"
-              fontSize={{ base: "sm", md: "xl" }}
-              columnGap=".5rem"
-              border={`3px solid ${brandingColors.newHighlightColor}`}
-              p={1}
-              borderRadius={"8vw"}
-              fontFamily={`Staatliches`}
-            >
-              <Box
-                px={4}
-                py={2}
-                width={"100%"}
-                color={brandingColors.secondaryTextColor}
-                boxShadow={
-                  togglePage
-                    ? `0px 0px 8px -2px ${brandingColors.secondaryTwoTextColor}`
-                    : "none"
-                }
-                bg={
-                  togglePage
-                    ? brandingColors.primaryButtonColor
-                    : brandingColors.bgColor
-                }
-                backgroundImage={
-                  togglePage
-                    ? `linear-gradient(to left, #ad78f7, #8e6ae7, #6e5cd6, #4a4fc6, #1442b5)`
-                    : "none"
-                }
-                borderRadius={"8vw"}
-                textAlign="center"
-                onClick={() => setTogglePage(true)}
-                cursor="pointer"
-              >
-                <Text fontFamily={`Staatliches`}>FLEXIBLE</Text>
+            {address !== "" ? (
+              <Box>
+                <Box
+                  boxShadow={`0px 0px 120px -30px ${brandingColors.secondaryTwoTextColor}`}
+                  border={`3px solid ${brandingColors.newHighlightColor}`}
+                  p={6}
+                  borderRadius="xl"
+                  bg={brandingColors.bgColor}
+                  backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d);`}
+                  color={brandingColors.secondaryTextColor}
+                  fontWeight="bold"
+                  justifyContent={"center"}
+                  display="flex"
+                  flexDirection={"column"}
+                  alignItems="center"
+                  rowGap={"1rem"}
+                  minW={"18vw"}
+                  minH={"14vh"}
+                  my={6}
+                >
+                  <Text
+                    fontFamily={headingFont}
+                    lineHeight={"0.8"}
+                    fontSize={{ base: "md", md: "xl" }}
+                  >
+                    TOTAL LOCKED
+                  </Text>
+                  <Text
+                    fontFamily={headingFont}
+                    lineHeight={"0.8"}
+                    color={brandingColors.primaryTextColor}
+                    fontSize={{ base: "xl", md: "3xl" }}
+                  >
+                    {pool} AXLE
+                  </Text>
+                  <Text
+                    fontFamily={headingFont}
+                    lineHeight={"0.8"}
+                    color={brandingColors.secondaryTextColor}
+                    fontSize={{ base: "xs", md: "sm" }}
+                  >
+                    $ 0.00164 = 1 AXLE
+                  </Text>
+                </Box>
+                <Box
+                  my={6}
+                  minW={"14vw"}
+                  display={"flex"}
+                  justifyContent="space-between"
+                  fontSize={{ base: "sm", md: "xl" }}
+                  columnGap=".5rem"
+                  border={`3px solid ${brandingColors.newHighlightColor}`}
+                  p={1}
+                  borderRadius={"8vw"}
+                >
+                  <Box
+                    px={4}
+                    py={2}
+                    width={"100%"}
+                    color={brandingColors.secondaryTextColor}
+                    boxShadow={
+                      togglePage
+                        ? `0px 0px 8px -2px ${brandingColors.secondaryTwoTextColor}`
+                        : "none"
+                    }
+                    bg={
+                      togglePage
+                        ? brandingColors.primaryButtonColor
+                        : brandingColors.bgColor
+                    }
+                    backgroundImage={
+                      togglePage
+                        ? `linear-gradient(to left, #ad78f7, #8e6ae7, #6e5cd6, #4a4fc6, #1442b5)`
+                        : "none"
+                    }
+                    borderRadius={"8vw"}
+                    textAlign="center"
+                    onClick={() => setTogglePage(true)}
+                    cursor="pointer"
+                  >
+                    <Text fontFamily={headingFont}>FLEXIBLE</Text>
+                  </Box>
+                  <Box
+                    cursor="pointer"
+                    color={brandingColors.secondaryTextColor}
+                    boxShadow={
+                      !togglePage
+                        ? `0px 0px 8px -2px ${brandingColors.secondaryTwoTextColor}`
+                        : "none"
+                    }
+                    bg={
+                      !togglePage
+                        ? brandingColors.primaryButtonColor
+                        : brandingColors.bgColor
+                    }
+                    backgroundImage={
+                      !togglePage
+                        ? `linear-gradient(to right, #ad78f7, #8e6ae7, #6e5cd6, #4a4fc6, #1442b5)`
+                        : "none"
+                    }
+                    borderRadius={"8vw"}
+                    px={4}
+                    py={2}
+                    width={"100%"}
+                    textAlign="center"
+                    onClick={() => setTogglePage(false)}
+                  >
+                    <Text fontFamily={headingFont}>LOCKED</Text>
+                  </Box>
+                </Box>
               </Box>
-              <Box
-                cursor="pointer"
-                color={brandingColors.secondaryTextColor}
-                boxShadow={
-                  !togglePage
-                    ? `0px 0px 8px -2px ${brandingColors.secondaryTwoTextColor}`
-                    : "none"
-                }
-                bg={
-                  !togglePage
-                    ? brandingColors.primaryButtonColor
-                    : brandingColors.bgColor
-                }
-                backgroundImage={
-                  !togglePage
-                    ? `linear-gradient(to right, #ad78f7, #8e6ae7, #6e5cd6, #4a4fc6, #1442b5)`
-                    : "none"
-                }
-                borderRadius={"8vw"}
-                px={4}
-                py={2}
-                width={"100%"}
-                textAlign="center"
-                onClick={() => setTogglePage(false)}
-              >
-                <Text fontFamily={`Staatliches`}>LOCKED</Text>
-              </Box>
-            </Box>
-
-            {/* {togglePage ? (
-            <Box
-              color={brandingColors.secondaryTextColor}
-              justifyContent="center"
-              display={"flex"}
-              flexDirection="column"
-              my={12}
-              alignItems={"center"}
-            >
-              <Text
-                fontFamily={`'Russo One', sans-serif`}
-                fontSize={"2xl"}
-                fontWeight="bold"
-              >
-                FLEXIBLE STAKING
-              </Text>
-              <Text
-                fontWeight={"bold"}
-                fontSize={"xl"}
-                color={brandingColors.primaryTextColor}
-                my={4}
-              >
-                {" "}
-                APY: 12%{" "}
-              </Text>
-              <Text fontSize={"2xl"} fontWeight="bold">
-                {" "}
-                Total $AXLE in Flexible Staking
-              </Text>
-              <Text
-                fontWeight={"bold"}
-                fontSize={"xl"}
-                color={brandingColors.primaryTextColor}
-              >
-                ${pool.lockin} AXLE
-              </Text>
-            </Box>
-          ) : (
-            <Box
-              color={brandingColors.secondaryTextColor}
-              justifyContent="center"
-              display={"flex"}
-              flexDirection="column"
-              my={12}
-              alignItems={"center"}
-            >
-              <Text
-                fontFamily={`'Russo One', sans-serif`}
-                fontSize={"2xl"}
-                fontWeight="bold"
-              >
-                LOCKED STAKING
-              </Text>
-              <Text mt={2} fontSize={"2xl"}>
-                {" "}
-                Total $AXLE in Locked Staking
-              </Text>
-              <Text fontSize={"xl"} color={brandingColors.primaryTextColor}>
-                ${pool.lockin} AXLE
-              </Text>
-            </Box>
-          )} */}
+            ) : null}
           </Box>
-          <Box my={8}></Box>
 
           {address === "" ? (
-            <Box
-              border={`3px solid ${brandingColors.fgColor}`}
-              borderRadius="xl"
-              p={12}
-            >
-              <Text
-                my={4}
-                fontSize={{ base: "sm", md: "xl" }}
-                textAlign="center"
-                color={brandingColors.primaryTextColor}
-                fontFamily={`Staatliches`}
-              >
-                Connect your wallet to stake $AXLE tokens!
-              </Text>
+            <Box position={"fixed"} top="40%" bottom={"40%"} my={"auto"}>
               <Box
-                onClick={connectWeb3Wallet}
-                style={{ textAlign: "center" }}
-                className="btnc"
-                fontFamily={`Staatliches`}
+                border={`3px solid ${brandingColors.newHighlightColor}`}
+                backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d);`}
+                borderRadius="xl"
+                p={12}
+                display="flex"
+                justifyContent={"center"}
+                alignItems="center"
+                flexDirection={"column"}
               >
-                Connect Wallet
+                <Text
+                  my={4}
+                  fontSize={{ base: "sm", md: "xl" }}
+                  textAlign="center"
+                  color={brandingColors.primaryTextColor}
+                  fontFamily={headingFont}
+                >
+                  Connect your wallet to stake $AXLE tokens!
+                </Text>
+                <Box
+                  onClick={connectWeb3Wallet}
+                  style={{ textAlign: "center" }}
+                  className="btnc"
+                  fontFamily={headingFont}
+                >
+                  Connect Wallet
+                </Box>
               </Box>
             </Box>
           ) : (
@@ -666,12 +614,13 @@ const Stake = () => {
                       color={brandingColors.secondaryTextColor}
                       cursor="pointer"
                       onClick={() => setUnstake(false)}
-                      fontFamily={`Staatliches`}
                       py={2}
+                      fontFamily={headingFont}
                     >
                       STAKE AXLE
                     </Text>
                     <Text
+                      fontFamily={headingFont}
                       py={2}
                       boxShadow="xl"
                       color={brandingColors.secondaryTextColor}
@@ -680,7 +629,6 @@ const Stake = () => {
                       width={"100%"}
                       fontSize={{ base: "md", md: "2xl" }}
                       borderTopRightRadius="3xl"
-                      fontFamily={`Staatliches`}
                       backgroundImage={
                         unstake
                           ? `linear-gradient(to left, #061e37, #002956, #003376, #003b96, #1442b5)`
@@ -700,8 +648,8 @@ const Stake = () => {
                         justifyContent="space-between"
                         fontSize={{ base: "xx-small", md: "sm" }}
                       >
-                        <Text fontFamily={"Shantell Sans"}>Amount</Text>
-                        <Text fontFamily={"Shantell Sans"}>
+                        <Text fontFamily={headingFont}>Amount</Text>
+                        <Text fontFamily={headingFont}>
                           ~My Balance {axleBalance} AXLE
                         </Text>
                       </Box>
@@ -715,15 +663,17 @@ const Stake = () => {
                         borderRadius="xl"
                         fontSize={{ base: "xs", md: "md" }}
                       >
-                        <Box>$AXLE</Box>
+                        <Box fontFamily={headingFont}>$AXLE</Box>
                         <Input
                           mx={4}
                           fontWeight={"bold"}
-                          color={brandingColors.primaryButtonColor}
+                          color={brandingColors.highLightColor}
                           onChange={onAxleChange}
                           type={"number"}
                           inputMode="decimal"
                           borderRadius={"none"}
+                          fontSize="xl"
+                          fontFamily={headingFont}
                           textAlign="right"
                           value={axle}
                           borderLeft={`2px solid ${brandingColors.fgColor}`}
@@ -744,12 +694,16 @@ const Stake = () => {
                             shadow: "none",
                           }}
                         ></Input>
-                        <Box cursor={"pointer"}>MAX</Box>
+                        <Box fontFamily={headingFont} cursor={"pointer"}>
+                          MAX
+                        </Box>
                       </Box>
                       <Box
                         fontSize={{ base: "xx-small", md: "md" }}
                         px={2}
+                        my={1}
                         color={brandingColors.secondaryTextColor}
+                        fontFamily={headingFont}
                       >
                         Min Stake Amount : 8000 AXLE
                       </Box>
@@ -759,7 +713,7 @@ const Stake = () => {
                         onClick={buy}
                         textAlign={"center"}
                         className="btnc"
-                        fontFamily={`Staatliches`}
+                        fontFamily={headingFont}
                       >
                         Enable Stake
                       </Box>
@@ -774,8 +728,8 @@ const Stake = () => {
                         justifyContent="space-between"
                         fontSize={{ base: "xx-small", md: "sm" }}
                       >
-                        <Text fontFamily={"Shantell Sans"}>Amount</Text>
-                        <Text fontFamily={"Shantell Sans"}>
+                        <Text fontFamily={headingFont}>Amount</Text>
+                        <Text fontFamily={headingFont}>
                           ~My Balance {axleBalance} AXLE
                         </Text>
                       </Box>
@@ -789,11 +743,13 @@ const Stake = () => {
                         borderRadius="xl"
                         fontSize={{ base: "xs", md: "md" }}
                       >
-                        <Box>$AXLE</Box>
+                        <Box fontFamily={headingFont}>$AXLE</Box>
                         <Input
+                          fontFamily={headingFont}
+                          fontSize="xl"
                           mx={4}
                           fontWeight={"bold"}
-                          color={brandingColors.primaryButtonColor}
+                          color={brandingColors.highLightColor}
                           placeholder="value (AXLE)"
                           onChange={onAxleChange}
                           type={"number"}
@@ -818,13 +774,15 @@ const Stake = () => {
                             shadow: "none",
                           }}
                         ></Input>
-                        <Box cursor={"pointer"}>MAX</Box>
+                        <Box fontFamily={headingFont} cursor={"pointer"}>
+                          MAX
+                        </Box>
                       </Box>
                       <Box
                         mt={4}
                         textAlign={"center"}
-                        fontFamily={`Staatliches`}
                         className="btnc"
+                        fontFamily={headingFont}
                       >
                         UNSTAKE AXLE
                       </Box>
@@ -842,9 +800,10 @@ const Stake = () => {
                   <Box textAlign={"center"}>
                     <Text
                       color={brandingColors.secondaryTextColor}
-                      fontFamily={`Staatliches`}
                       fontSize={{ base: "xl", md: "3xl" }}
                       p={2}
+                      my={2}
+                      fontFamily={headingFont}
                     >
                       STAKE AXLE
                     </Text>
@@ -857,9 +816,10 @@ const Stake = () => {
                     py={2}
                     justifyContent="space-between"
                     fontSize={{ base: "xx-small", md: "md" }}
+                    fontFamily={subFont}
                   >
-                    <Text fontFamily={"Shantell Sans"}>Amount</Text>
-                    <Text fontFamily={"Shantell Sans"}>
+                    <Text fontFamily={headingFont}>Amount</Text>
+                    <Text fontFamily={headingFont}>
                       ~My Balance {axleBalance} AXLE
                     </Text>
                   </Box>
@@ -874,13 +834,14 @@ const Stake = () => {
                       borderRadius="xl"
                       fontSize={{ base: "xs", md: "md" }}
                     >
-                      <Box>$AXLE</Box>
+                      <Box fontFamily={headingFont}>$AXLE</Box>
                       <Input
                         mx={4}
                         fontWeight={"bold"}
-                        color={brandingColors.primaryButtonColor}
                         placeholder="value (AXLE)"
                         onChange={onAxleChange}
+                        color={brandingColors.highLightColor}
+                        fontSize="xl"
                         type={"number"}
                         inputMode="decimal"
                         borderRadius={"none"}
@@ -890,6 +851,7 @@ const Stake = () => {
                         borderRight={`2px solid ${brandingColors.fgColor}`}
                         min={0.2}
                         max={50}
+                        fontFamily={headingFont}
                         _active={{
                           outline: "none",
                           shadow: "none",
@@ -903,7 +865,13 @@ const Stake = () => {
                           shadow: "none",
                         }}
                       ></Input>
-                      <Box cursor={"pointer"}>MAX</Box>
+                      <Box
+                        fontFamily={headingFont}
+                        fontWeight="bold"
+                        cursor={"pointer"}
+                      >
+                        MAX
+                      </Box>
                     </Box>
                   </Box>
                   <Box mx={8} my={4}>
@@ -911,6 +879,7 @@ const Stake = () => {
                       fontSize={{ base: "xx-small", md: "md" }}
                       my={2}
                       color={brandingColors.secondaryTextColor}
+                      fontFamily={headingFont}
                     >
                       Locking
                     </Box>
@@ -944,10 +913,10 @@ const Stake = () => {
                         >
                           <Text
                             color={brandingColors.secondaryTextColor}
-                            fontFamily={`Staatliches`}
                             px={3}
                             py={2}
                             fontSize={{ base: "sm", md: "md", lg: "xl" }}
+                            fontFamily={headingFont}
                           >
                             {" "}
                             {s.days} Days{" "}
@@ -961,7 +930,7 @@ const Stake = () => {
                             px={3}
                             py={2}
                             fontSize={{ base: "xs", md: "sm", lg: "md" }}
-                            fontFamily={`Staatliches`}
+                            fontFamily={headingFont}
                           >
                             {" "}
                             {s.roi}% APY
@@ -976,7 +945,7 @@ const Stake = () => {
                     my={4}
                     textAlign="center"
                     className="btnc"
-                    fontFamily={`Staatliches`}
+                    fontFamily={headingFont}
                     onClick={async () => await approveStake()}
                   >
                     Enable Staking
@@ -987,7 +956,7 @@ const Stake = () => {
                     my={4}
                     textAlign="center"
                     className="btnc"
-                    fontFamily={`Staatliches`}
+                    fontFamily={headingFont}
                   >
                     Stake
                   </Box>
@@ -1000,7 +969,8 @@ const Stake = () => {
                     <Text
                       fontSize={{ base: "sm", md: "md" }}
                       color={brandingColors.primaryTextColor}
-                      fontFamily={"Shantell Sans"}
+                      fontFamily={headingFont}
+                      fontWeight="bold"
                     >
                       Locking {axle} AXLE for {stakeRewards[lockIn].days} Days
                     </Text>
@@ -1020,19 +990,30 @@ const Stake = () => {
             color={brandingColors.primaryTextColor}
             boxShadow={`0px 0px 120px -70px ${brandingColors.newHighlightColor}`}
             height="100%"
-            display={"flex"}
-            justifyContent="flex-start"
             border={`3px solid ${brandingColors.newHighlightColor}`}
+            py={2}
           >
+            <Text
+              textAlign={"center"}
+              fontFamily={headingFont}
+              my={2}
+              color={brandingColors.secondaryTextColor}
+              cursor="pointer"
+              pb={4}
+              fontSize={{ base: "md", md: "3xl" }}
+              borderBottom={`3px solid ${brandingColors.newHighlightColor}`}
+            >
+              TRANSACTIONS
+            </Text>
             <TableContainer>
-              <Table variant={"unstyled"}>
+              <Table minW={`42vw`} variant={"unstyled"}>
                 <Thead>
                   <Tr
                     borderBottom={`3px solid ${brandingColors.newHighlightColor}`}
                   >
                     {heading.map((h, i) => (
                       <Th
-                        fontFamily={"Shantell Sans"}
+                        fontFamily={headingFont}
                         color={brandingColors.primaryTextColor}
                         key={i}
                       >
@@ -1051,60 +1032,66 @@ const Stake = () => {
                       }
                     >
                       <Td
-                        fontFamily={"Staatliches"}
+                        fontFamily={subFont}
                         color={brandingColors.highLightColor}
+                        fontSize={"md"}
+                        fontWeight="bold"
                       >
                         {t.amount * e9}
                       </Td>
                       <Td
-                        fontFamily={"Staatliches"}
+                        fontFamily={subFont}
                         color={brandingColors.highLightColor}
+                        fontSize={"md"}
+                        fontWeight="bold"
                       >
                         {getUntilIn(t.lockedUntil)
                           .substring(0, getUntilIn(t.lockedUntil).length - 3)
                           .replace(",", " - ")}
                       </Td>
                       <Td
-                        fontFamily={"Staatliches"}
+                        fontFamily={subFont}
                         color={brandingColors.highLightColor}
+                        fontSize={"md"}
+                        fontWeight="bold"
                       >
                         {t.percent * 10 ** 16}%
                       </Td>
                       <Td
-                        fontFamily={"Staatliches"}
+                        fontFamily={subFont}
                         color={brandingColors.highLightColor}
+                        fontSize={"md"}
+                        fontWeight="bold"
                       >
                         {t.stakingOver ? "over" : "in progress"}
                       </Td>
                       <Td
-                        fontFamily={"Staatliches"}
+                        fontFamily={subFont}
                         color={brandingColors.highLightColor}
+                        fontSize={"md"}
+                        fontWeight="bold"
                         display="flex"
                         justifyContent={"center"}
                         columnGap=".5rem"
                       >
                         <Button
+                          isDisabled={t.stakingOver}
                           onClick={() => preClaim(i + 1)}
-                          color={"gray.800"}
-                          size="xs"
-                          bg="blue.300"
+                          color={brandingColors.highLightColor}
+                          size="sm"
+                          bg={brandingColors.primaryButtonColor}
+                          fontFamily={headingFont}
+                          _hover={{
+                            bg: brandingColors.highLightColor,
+                            color: brandingColors.primaryTextColor,
+                          }}
                         >
-                          preclaim
-                        </Button>
-                        <Button color="gray.800" size="xs" bg="orange.300">
-                          unstake
+                          PRE-CLAIM
                         </Button>
                       </Td>
                     </Tr>
                   ))}
                 </Tbody>
-                <TableCaption
-                  fontSize={"xl"}
-                  color={brandingColors.primaryTextColor}
-                  fontFamily={"Staatliches"}
-                >
-                  Transcations
-                </TableCaption>
               </Table>
             </TableContainer>
           </Box>

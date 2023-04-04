@@ -2,11 +2,6 @@ import { extendTheme } from "@chakra-ui/react";
 
 // example theme
 export const theme = extendTheme({
-  fonts: {
-    body: "Varela Round",
-    heading: "Varela Round",
-    mono: "Varela Round",
-  },
   fontSizes: {
     xs: "0.75rem",
     sm: "0.875rem",

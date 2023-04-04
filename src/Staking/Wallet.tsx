@@ -11,6 +11,9 @@ interface Props {
   disconnect: Function;
 }
 
+const headingFont = "Russo One";
+const subFont = "Inter";
+
 const Wallet = (props: Props) => {
   const DropDown = () => {
     return (
@@ -42,14 +45,14 @@ const Wallet = (props: Props) => {
               p={2}
             >
               <Text
-                fontFamily={"Shantell Sans"}
+                fontFamily={headingFont}
                 color={brandingColors.secondaryTextColor}
                 fontSize="sm"
               >
                 Your wallet balance
               </Text>
               <Text
-                fontFamily={`Staatliches`}
+                fontFamily={headingFont}
                 fontSize={"md"}
                 color={brandingColors.secondaryTextColor}
               >
@@ -64,7 +67,7 @@ const Wallet = (props: Props) => {
               bg={brandingColors.bgColor}
               color={brandingColors.secondaryTextColor}
               mt={"1"}
-              fontFamily={`Staatliches`}
+              fontFamily={headingFont}
               width={"100%"}
               onClick={() => props.disconnect()}
             >
@@ -112,7 +115,7 @@ const Wallet = (props: Props) => {
 
           <Box pr={4}>
             <Text
-              fontFamily={`Staatliches`}
+              fontFamily={headingFont}
               fontSize={"md"}
               color={brandingColors.secondaryTextColor}
               lineHeight="1.5"
@@ -127,8 +130,9 @@ const Wallet = (props: Props) => {
                 direction={"column"}
               >
                 <Text
+                  fontWeight={"bold"}
                   lineHeight="1.2"
-                  fontFamily={`Staatliches`}
+                  fontFamily={subFont}
                   fontSize={"xs"}
                 >
                   {props.address.substring(0, 8)}....
@@ -144,7 +148,7 @@ const Wallet = (props: Props) => {
       ) : (
         <Box m={5}>
           <Box
-            fontFamily={`Staatliches`}
+            fontFamily={headingFont}
             className="btnc"
             onClick={() => props.connectWallet()}
           >
