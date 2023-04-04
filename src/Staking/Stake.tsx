@@ -28,6 +28,8 @@ import Wallet from "./Wallet";
 import { brandingColors } from "../config/brandingColors";
 import "../components/navbar/Navbar.css";
 import creds from "../abi/creds";
+import AxleDialog from "./dialog/AxleDialog";
+import TransactionSuccessDialog from "./dialog/TransactionSuccessDialog";
 
 const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
 const axleTokenABI = creds.tokenAbi;
@@ -138,6 +140,8 @@ const headingFont = "Russo One";
 const subFont = "Inter";
 
 const Stake = () => {
+  const [hash, setHash] = useState<string>("");
+  const [success, setSuccess] = useState(false);
   const [lockIn, setLockIn] = useState(0);
   const [balance, setBalance] = useState(0);
   const [pool, setPool] = useState("323,123,103");
@@ -202,8 +206,8 @@ const Stake = () => {
       console.log(hash);
       return toast({
         title: "Success",
-        description: `Staking enabled, ${hash}`,
-        status: "success",
+        description: `Axle precliamed`,
+        status: "error",
         duration: 5000,
         isClosable: true,
         position: "top",
@@ -223,17 +227,17 @@ const Stake = () => {
 
   const approveStake = async () => {
     try {
-      console.log("ok");
       const hash = await tokenContract.approve(
         "0xD996A74A3376D75812f07781EF22666323288B86",
         axle * e9
       );
       console.log(hash);
-      console.log("not oka");
+      // setSuccess(true);
+      // setHash(hash.hash);
       return toast({
         title: "Success",
-        description: `Staking enabled, ${hash}`,
-        status: "success",
+        description: `Axle ${axle} Approved`,
+        status: "error",
         duration: 5000,
         isClosable: true,
         position: "top",
@@ -257,15 +261,8 @@ const Stake = () => {
         60 * 60 * 24 * stakeRewards[lockIn].days,
         axle * 10 ** 9
       );
-      console.log(hash);
-      return toast({
-        title: "Success",
-        description: `Staked ${axle}, ${hash}`,
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
-      });
+      setSuccess(true);
+      setHash(hash.hash);
     } catch (error) {
       console.log(error);
       return toast({
@@ -395,6 +392,22 @@ const Stake = () => {
       py={6}
       minH="100vh"
     >
+      <AxleDialog
+        close={() => setSuccess(false)}
+        children={
+          <TransactionSuccessDialog
+            hash={hash}
+            close={async () => {
+              setSuccess(false);
+            }}
+            fee={axle}
+          />
+        }
+        isOpen={success}
+        key={2}
+        size={"lg"}
+      />
+
       <Box
         alignItems={"center"}
         mx={24}
