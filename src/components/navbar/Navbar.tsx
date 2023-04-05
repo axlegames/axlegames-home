@@ -79,17 +79,13 @@ const Navbar = () => {
             shadow={brandingColors.newPrimaryShadow}
           />
           <Menu>
-            <MenuButton>
-              <Text
-                fontWeight={"bold"}
-                className="nav-link nav-link-ltr"
-                fontFamily={brandingFonts.subFont}
-              >
+            <MenuButton className="nav-link nav-link-ltr">
+              <Text fontWeight={"bold"} fontFamily={brandingFonts.subFont}>
                 DOCS
               </Text>
             </MenuButton>
             <MenuList
-              fontFamily="Staatliches"
+              fontFamily={brandingFonts.subFont}
               border={brandingColors.fgColor}
               bg={brandingColors.bgColor}
               p={4}

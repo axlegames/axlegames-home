@@ -27,7 +27,7 @@ export const products = [
     isLive: true,
     subTitle: "Axle Games",
     label: "Play",
-    text: "A skill based web3 gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
+    text: "A skill based AI gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
     image: ProductGameIcon,
     mainImg: ProductGameImg,
     function: () => window.open("https://play.axlegames.io", "_blank"),
@@ -134,7 +134,7 @@ export const homeSlides = [
   {
     mainText: "AXLE GAMES.",
     header: "A SKILL-BASED",
-    subHeader: "WEB3 GAMING PLATFORM",
+    subHeader: "AI GAMING PLATFORM",
     json: `https://axlegames.s3.ap-south-1.amazonaws.com/s2.json`,
   },
   {

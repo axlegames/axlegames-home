@@ -46,7 +46,7 @@ const Home = () => {
               _hover={{ transform: "scale(1.1)" }}
             >
               <a rel="noopener noreferrer" href={s.url} target="_blank">
-                <img style={{ maxWidth: "40px" }} src={s.icon} alt="" />
+                <img style={{ maxWidth: "60px" }} src={s.icon} alt="" />
               </a>
             </Box>
           ))}

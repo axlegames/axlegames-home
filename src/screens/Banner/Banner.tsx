@@ -1,10 +1,20 @@
 import { Box, Image, Text } from "@chakra-ui/react";
-import { brandingFonts } from "../../config/brandingColors";
+import { brandingColors, brandingFonts } from "../../config/brandingColors";
 import Typewriter from "typewriter-effect";
+import Lottie from "lottie-react";
+import lineAnime from "../../assets/wave.json";
 
 import "./Banner.css";
+import { useEffect, useRef } from "react";
 
 const Banner = () => {
+  const ref = useRef() as any;
+
+  useEffect(() => {
+    if (ref) {
+      console.log(ref);
+    }
+  }, [ref]);
   return (
     <Box>
       {/* banner-section start */}
@@ -21,33 +31,44 @@ const Banner = () => {
                     alignItems="center"
                     rowGap={"2rem"}
                   >
-                    <Text
-                      cursor={"pointer"}
-                      className="gradient-text"
-                      transition={"200ms all ease-in"}
-                      fontSize={{ base: "xl", lg: "2xl", xl: "3xl" }}
-                      fontFamily={brandingFonts.subFont}
+                    <Box
+                      minW="80"
+                      boxShadow={"lg"}
+                      bg={brandingColors.bgColor}
+                      p={2}
+                      borderRadius="md"
                     >
-                      <Typewriter
-                        options={{
-                          cursor: "|",
-                          loop: true,
-                          wrapperClassName: "subFont",
-                          cursorClassName: "type_cursor",
-                        }}
-                        onInit={(typewriter) => {
-                          typewriter
-                            .typeString("#AI-GAMING")
-                            .pauseFor(3000)
-                            .deleteAll()
-                            .typeString("#PLAY TO EARN")
-                            .pauseFor(3000)
-                            .deleteAll()
-                            .typeString("#LEVEL UP")
-                            .start();
-                        }}
-                      />
-                    </Text>
+                      <Box
+                        cursor={"pointer"}
+                        className="gradient-text"
+                        transition={"200ms all ease-in"}
+                        fontSize={{ base: "xl", lg: "2xl", xl: "3xl" }}
+                        fontFamily={brandingFonts.subFont}
+                        textAlign="center"
+                      >
+                        <Typewriter
+                          options={{
+                            cursor: "|",
+                            loop: true,
+                            wrapperClassName: "subFont",
+                            cursorClassName: "type_cursor",
+                          }}
+                          onInit={(typewriter) => {
+                            typewriter
+                              .typeString("#AI-GAMING")
+                              .pauseFor(3000)
+                              .deleteAll()
+                              .typeString("#PLAY TO EARN")
+                              .pauseFor(3000)
+                              .deleteAll()
+                              .typeString("#LEVEL UP")
+                              .pauseFor(3000)
+                              .deleteAll()
+                              .start();
+                          }}
+                        />
+                      </Box>
+                    </Box>
                     <Box
                       display={"flex"}
                       style={{ fontFamily: "Bungee Shade" }}
@@ -67,25 +88,46 @@ const Banner = () => {
                         GAMES
                       </Text>
                     </Box>
-                    <Box display={"flex"} columnGap=".66rem">
+                    <Box
+                      alignItems={"center"}
+                      justifyContent="center"
+                      display={"flex"}
+                      columnGap=".55rem"
+                    >
                       <Text
                         fontSize={{ base: "xl" }}
                         fontFamily={brandingFonts.subFont}
                       >
                         A
                       </Text>
+                      <Box pos={"relative"}>
+                        <Text
+                          fontSize={{ base: "xl" }}
+                          fontFamily={brandingFonts.subFont}
+                          color="#eb6612"
+                        >
+                          Skill based AI
+                        </Text>
+                        <Box
+                          transition={`all 300ms ease-in`}
+                          bottom={"-5"}
+                          position={"absolute"}
+                        >
+                          <Lottie
+                            ref={ref}
+                            onComplete={(e: any) => {
+                              console.log(ref);
+                            }}
+                            animationData={lineAnime}
+                            loop={false}
+                          />
+                        </Box>
+                      </Box>
                       <Text
                         fontSize={{ base: "xl" }}
                         fontFamily={brandingFonts.subFont}
-                        color="#eb6612"
                       >
-                        Skill based
-                      </Text>
-                      <Text
-                        fontSize={{ base: "xl" }}
-                        fontFamily={brandingFonts.subFont}
-                      >
-                        web3 gaming platform
+                        gaming platform
                       </Text>
                     </Box>
                     <Box
