@@ -1,5 +1,5 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 const EProfile = () => {
   return (
@@ -29,20 +29,21 @@ const EProfile = () => {
               >
                 <Text
                   fontSize={{ base: "3xl", lg: "5xl" }}
-                  style={{ fontFamily: "Staatliches" }}
+                  fontFamily={brandingFonts.headingFont}
                 >
                   Build your
                 </Text>
                 <Box columnGap="0.5rem" display={"flex"}>
                   <Text
                     fontSize={{ base: "3xl", lg: "5xl" }}
-                    style={{ fontFamily: "Staatliches", color: "#f46b15" }}
+                    color={`#f46b15`}
+                    fontFamily={brandingFonts.headingFont}
                   >
                     Axle Games
                   </Text>
                   <Text
                     fontSize={{ base: "3xl", lg: "5xl" }}
-                    style={{ fontFamily: "Staatliches" }}
+                    fontFamily={brandingFonts.headingFont}
                   >
                     Profile
                   </Text>
@@ -50,19 +51,21 @@ const EProfile = () => {
               </Box>
               <Box display={"flex"} flexDirection="column" columnGap={".33rem"}>
                 <Box display={"flex"} columnGap=".33rem">
-                  {" "}
-                  <p style={{ fontFamily: "Shantell Sans" }}>Showcase your</p>
-                  <p style={{ fontFamily: "Shantell Sans", color: "#f46b15" }}>
+                  <Text fontFamily={brandingFonts.subFont}>Showcase your</Text>
+                  <Text fontFamily={brandingFonts.subFont} color={`#f46b15`}>
                     winnings, achievements, badges
-                  </p>
+                  </Text>
                 </Box>
-                <p style={{ fontFamily: "Shantell Sans" }}>
+                <Text fontFamily={brandingFonts.subFont}>
                   and build your reputation on Axle Games
-                </p>
+                </Text>
               </Box>
               <Flex columnGap={".5rem"}>
                 <a
-                  style={{ fontFamily: "Staatliches", textDecoration: "none" }}
+                  style={{
+                    fontFamily: brandingFonts.subFont,
+                    textDecoration: "none",
+                  }}
                   href="https://play.axlegames.io"
                   target="_blank"
                   className="btnc"
@@ -71,7 +74,10 @@ const EProfile = () => {
                   Sign Up
                 </a>
                 <a
-                  style={{ fontFamily: "Staatliches", textDecoration: "none" }}
+                  style={{
+                    fontFamily: brandingFonts.subFont,
+                    textDecoration: "none",
+                  }}
                   href="https://sale.axlegames.io"
                   target="_blank"
                   className="btn-hover color-3"

@@ -1,6 +1,6 @@
 import Heading from "../components/Heading";
 
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { Box, Image, useMediaQuery } from "@chakra-ui/react";
 
 const token = [
@@ -48,7 +48,7 @@ const Tokenomics = () => {
                     />
                   </Box>
                   <Box
-                    fontFamily={"Shantell Sans"}
+                    fontFamily={brandingFonts.subFont}
                     fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
                     color={brandingColors.primaryTextColor}
                     fontWeight="bold"
@@ -57,7 +57,7 @@ const Tokenomics = () => {
                   </Box>
                   <Box
                     fontSize={{ base: "md", md: "lg" }}
-                    fontFamily={"Staatliches"}
+                    fontFamily={brandingFonts.headingFont}
                     style={{ fontFamily: "" }}
                     color={brandingColors.secondaryTwoTextColor}
                   >
@@ -99,9 +99,9 @@ const chart = `
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AxleGames</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Alata&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Russo+One&display=swap");
       * {
-        font-family: Staatliches;
+        font-family: Alata;
         padding: 0;
         margin: 0;
         box-sizing: border-box;

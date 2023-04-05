@@ -1,5 +1,5 @@
 import { Box, Image, Text } from "@chakra-ui/react";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 const HowItWorks = () => {
   return (
@@ -21,29 +21,33 @@ const HowItWorks = () => {
                   >
                     <Text
                       fontSize={{ base: "3xl", lg: "5xl" }}
-                      style={{ fontFamily: "Staatliches" }}
+                      fontFamily={brandingFonts.headingFont}
                     >
                       HOW IT
                     </Text>
                     <Text
                       fontSize={{ base: "3xl", lg: "5xl" }}
-                      style={{ fontFamily: "Staatliches", color: "#f46b15" }}
+                      fontFamily={brandingFonts.headingFont}
+                      color={`#f46b15`}
                     >
                       WORKS
                     </Text>
                   </Box>
-                  <p style={{ fontFamily: "Shantell Sans" }}>
+                  <Box
+                    color={brandingColors.highLightColor}
+                    fontFamily={brandingFonts.subFont}
+                  >
                     It's easier than you think.
                     <span
                       style={{
-                        fontFamily: "Shantell Sans",
+                        fontFamily: brandingFonts.subFont,
                         color: "#eb6612",
                         margin: "0 .33rem",
                       }}
                     >
                       Follow 4 simple easy steps
                     </span>
-                  </p>
+                  </Box>
                 </Box>
               </Box>
             </Box>
@@ -58,7 +62,9 @@ const HowItWorks = () => {
                     />
                   </Box>
                   <Box className="text-area">
-                    <h5 style={{ fontFamily: "Shantell Sans" }}>Signup</h5>
+                    <h5 style={{ fontFamily: brandingFonts.subFont }}>
+                      Signup
+                    </h5>
                   </Box>
                 </Box>
               </Box>
@@ -72,7 +78,9 @@ const HowItWorks = () => {
                     />
                   </Box>
                   <Box className="text-area">
-                    <h5 style={{ fontFamily: "Shantell Sans" }}>participate</h5>
+                    <h5 style={{ fontFamily: brandingFonts.subFont }}>
+                      participate
+                    </h5>
                   </Box>
                 </Box>
               </Box>
@@ -86,7 +94,9 @@ const HowItWorks = () => {
                     />
                   </Box>
                   <Box className="text-area">
-                    <h5 style={{ fontFamily: "Shantell Sans" }}>Compete</h5>
+                    <h5 style={{ fontFamily: brandingFonts.subFont }}>
+                      Compete
+                    </h5>
                   </Box>
                 </Box>
               </Box>
@@ -100,7 +110,7 @@ const HowItWorks = () => {
                     />
                   </Box>
                   <Box className="text-area">
-                    <h5 style={{ fontFamily: "Shantell Sans" }}>
+                    <h5 style={{ fontFamily: brandingFonts.subFont }}>
                       Get Rewarded
                     </h5>
                   </Box>
@@ -113,7 +123,7 @@ const HowItWorks = () => {
                 className="col-lg-6 text-center"
               >
                 <a
-                  style={{ fontFamily: "Staatliches" }}
+                  style={{ fontFamily: brandingFonts.subFont }}
                   href="https://play.axlegames.io"
                   target="_blank"
                   className="btnc"

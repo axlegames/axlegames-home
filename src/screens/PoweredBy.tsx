@@ -1,7 +1,7 @@
 import { powerdby } from "../config/data";
 import { useEffect, useState } from "react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { Box, Grid, Icon, Image, Text } from "@chakra-ui/react";
 
 import Marquee from "react-fast-marquee";
@@ -64,7 +64,7 @@ const PoweredBy = (props: any) => {
         <Text
           fontSize={"xl"}
           color={brandingColors.secondaryTextColor}
-          fontFamily={`Staatliches`}
+          fontFamily={brandingFonts.headingFont}
           fontWeight="bold"
         >
           {props.username}

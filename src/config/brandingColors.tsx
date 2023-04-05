@@ -30,3 +30,8 @@ export const brandingColors = {
   successColor: "#38A169",
   disableColor: "#718096",
 };
+
+export const brandingFonts = {
+  headingFont: "Russo One",
+  subFont: "Alata",
+};

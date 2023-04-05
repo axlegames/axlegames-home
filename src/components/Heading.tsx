@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 interface Props {
   title: string;
@@ -20,7 +20,7 @@ const Heading = (props: Props) => {
           color={i % 2 === 0 ? "white" : brandingColors.primaryTextColor}
           fontSize={{ base: "3xl", lg: "5xl" }}
           textAlign={"center"}
-          fontFamily={`Staatliches`}
+          fontFamily={brandingFonts.headingFont}
           fontWeight="bold"
           data-aos={`zoom-out`}
         >

@@ -1,6 +1,6 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 import Slider from "react-slick";
 import { useRef } from "react";
@@ -122,21 +122,29 @@ const Testimonials = () => {
                   >
                     <Text
                       fontSize={{ base: "2xl", lg: "5xl" }}
-                      style={{ fontFamily: "Staatliches" }}
+                      style={{ fontFamily: brandingFonts.headingFont }}
                     >
                       Our Gamers
                     </Text>
                     <Text
                       fontSize={{ base: "2xl", lg: "5xl" }}
-                      style={{ fontFamily: "Staatliches", color: "#f46b15" }}
+                      style={{
+                        fontFamily: brandingFonts.headingFont,
+                        color: "#f46b15",
+                      }}
                     >
                       Testimonials
                     </Text>
                   </Box>
-                  <p style={{ fontFamily: "Shantell Sans", fontSize: "large" }}>
+                  <p
+                    style={{
+                      fontFamily: brandingFonts.subFont,
+                      fontSize: "large",
+                    }}
+                  >
                     <span
                       style={{
-                        fontFamily: "Shantell Sans",
+                        fontFamily: brandingFonts.subFont,
                         color: "#eb6612",
                         fontSize: "large",
                         margin: "0 .33rem",
@@ -156,8 +164,8 @@ const Testimonials = () => {
                     <Box key={i} className="single-item text-center">
                       <p
                         style={{
-                          fontFamily: "Shantell Sans",
-                          fontSize: "small",
+                          fontFamily: brandingFonts.subFont,
+                          fontSize: "medium",
                         }}
                       >
                         {t.desc}
@@ -184,8 +192,8 @@ const Testimonials = () => {
                           >
                             <h6
                               style={{
-                                fontFamily: "Staatliches",
-                                fontSize: "x-large",
+                                fontFamily: brandingFonts.headingFont,
+                                fontSize: "medium",
                               }}
                             >
                               {t.name}
@@ -196,7 +204,7 @@ const Testimonials = () => {
                               {stars.map((s, i) => (
                                 <Image
                                   key={i}
-                                  style={{ maxHeight: "24px" }}
+                                  style={{ maxHeight: "18px" }}
                                   src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/favourite.png"
                                   alt="star"
                                 />

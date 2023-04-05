@@ -1,7 +1,7 @@
 import { Box, Image, Link, Text } from "@chakra-ui/react";
 import { useRef } from "react";
 import Slider from "react-slick";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import "./Slider.css";
 
 const games = [
@@ -76,22 +76,23 @@ const Games = () => {
                     >
                       <Text
                         fontSize={{ base: "2xl", lg: "5xl" }}
-                        style={{ fontFamily: "Staatliches" }}
+                        fontFamily={brandingFonts.headingFont}
                       >
                         Available
                       </Text>
                       <Text
                         fontSize={{ base: "2xl", lg: "5xl" }}
-                        style={{ fontFamily: "Staatliches", color: "#f46b15" }}
+                        color={`#f46b15`}
+                        fontFamily={brandingFonts.headingFont}
                       >
                         Games
                       </Text>
                     </Box>
-                    <p style={{ fontFamily: "Shantell Sans" }}>
+                    <p style={{ fontFamily: brandingFonts.subFont }}>
                       We are constantly adding
                       <span
                         style={{
-                          fontFamily: "Shantell Sans",
+                          fontFamily: brandingFonts.subFont,
                           color: "#eb6612",
                           margin: "0 .33rem",
                         }}
@@ -117,7 +118,11 @@ const Games = () => {
                           src={game}
                           alt="image"
                         />
-                        <Box my={1} className={`btn-hover ${colors[i]}`}>
+                        <Box
+                          fontFamily={brandingFonts.headingFont}
+                          my={1}
+                          className={`btn-hover ${colors[i]}`}
+                        >
                           Play now
                         </Box>
                       </Link>

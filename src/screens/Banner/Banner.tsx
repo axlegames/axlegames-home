@@ -1,7 +1,18 @@
 import { Box, Image, Text } from "@chakra-ui/react";
+import { brandingFonts } from "../../config/brandingColors";
+import { useTypewriter } from "react-simple-typewriter";
+// import Logo from "../../assets/logo.png";
+
 import "./Banner.css";
 
 const Banner = () => {
+  const [text] = useTypewriter({
+    words: ["#AI-GAMING", "#Play to Earn", "#Level Up"],
+    loop: 0,
+    delaySpeed: 5000,
+    deleteSpeed: 60,
+    typeSpeed: 120,
+  });
   return (
     <Box>
       {/* banner-section start */}
@@ -9,6 +20,39 @@ const Banner = () => {
         <Box className="banner-content d-flex align-items-center">
           <Box className="container">
             <Box className="row justify-content-center">
+              {/* <Box
+                display={"flex"}
+                borderRadius="xl"
+                p={"4"}
+                mb={12}
+                bg={brandingColors.bgColor}
+                boxShadow="lg"
+                justifyContent={"space-between"}
+                width="80%"
+              >
+                <Image width={"16"} src={Logo} />
+                <Text
+                  fontSize={{ base: "4xl" }}
+                  fontFamily={brandingFonts.subFont}
+                  fontWeight="bold"
+                >
+                  Axle Games
+                </Text>
+                <Text
+                  fontSize={{ base: "4xl" }}
+                  fontFamily={brandingFonts.subFont}
+                  fontWeight="bold"
+                >
+                  Presale Live On
+                </Text>
+                <Text
+                  fontSize={{ base: "4xl" }}
+                  fontFamily={brandingFonts.subFont}
+                  fontWeight="bold"
+                >
+                  Pink Sale
+                </Text>
+              </Box> */}
               <Box className="col-lg-12">
                 <Box className="main-content">
                   <Box
@@ -21,10 +65,11 @@ const Banner = () => {
                     <Text
                       cursor={"pointer"}
                       className="gradient-text"
+                      transition={"200ms all ease-in"}
                       fontSize={{ base: "xl", lg: "2xl", xl: "3xl" }}
-                      fontFamily="Bungee Shade"
+                      fontFamily={brandingFonts.headingFont}
                     >
-                      #AI-GAMING
+                      {text}
                     </Text>
                     <Box
                       display={"flex"}
@@ -33,24 +78,24 @@ const Banner = () => {
                     >
                       <Text
                         fontSize={{ base: "5xl", lg: "6xl" }}
-                        fontFamily="Bungee Shade"
+                        fontFamily={brandingFonts.headingFont}
                       >
                         AXLE
                       </Text>
                       <Text
                         fontSize={{ base: "5xl", lg: "6xl" }}
-                        fontFamily="Bungee Shade"
+                        fontFamily={brandingFonts.headingFont}
                         color={"#f46b15"}
                       >
                         GAMES
                       </Text>
                     </Box>
                     <Box display={"flex"} columnGap=".25rem">
-                      <Text fontFamily={"Shantell Sans"}>A</Text>
-                      <Text fontFamily={"Shantell Sans"} color="#eb6612">
+                      <Text fontFamily={brandingFonts.subFont}>A</Text>
+                      <Text fontFamily={brandingFonts.subFont} color="#eb6612">
                         Skill based
                       </Text>
-                      <Text fontFamily={"Shantell Sans"}>
+                      <Text fontFamily={brandingFonts.subFont}>
                         web3 gaming platform
                       </Text>
                     </Box>
@@ -68,31 +113,22 @@ const Banner = () => {
                         <Box
                           flexDirection={"row"}
                           columnGap="0.5rem"
-                          fontFamily={"Staatliches"}
+                          fontFamily={brandingFonts.subFont}
                           display="flex"
                           justifyContent={"center"}
                           alignItems="center"
                           textDecoration={"none"}
                         >
                           Presale
-                          <Box
-                            style={{
-                              fontFamily: "Staatliches",
-                              fontSize: "14px",
-                              color: "#38a169",
-                            }}
-                          >
-                            • live
-                          </Box>
-                        </Box>
-                      </a>
+                        </Box>{" "}
+                      </a>{" "}
                       <Box display={{ base: "none", lg: "block" }}>
                         <a
                           href="https://play.axlegames.io"
                           target="_blank"
                           className="btn-hover color-3"
                           style={{
-                            fontFamily: "Staatliches",
+                            fontFamily: brandingFonts.subFont,
                             textDecoration: "none",
                           }}
                           rel="noopener noreferrer"

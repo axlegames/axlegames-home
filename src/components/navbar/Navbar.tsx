@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { brandingColors } from "../../config/brandingColors";
+import { brandingColors, brandingFonts } from "../../config/brandingColors";
 import NeuLink from "../NeuLink";
 import "./Navbar.css";
 import NeuPageLink from "./NeuPageLink";
@@ -83,7 +83,7 @@ const Navbar = () => {
               <Text
                 fontWeight={"bold"}
                 className="nav-link nav-link-ltr"
-                fontFamily="Staatliches"
+                fontFamily={brandingFonts.subFont}
               >
                 DOCS
               </Text>
@@ -154,7 +154,7 @@ const Navbar = () => {
         <Flex columnGap={"1rem"} alignItems="center" justifyContent={"center"}>
           <a
             className="btnc"
-            style={{ fontFamily: "Staatliches" }}
+            style={{ fontFamily: brandingFonts.headingFont }}
             href={`https://sale.axlegames.io`}
             target="_blank"
             rel="noopener noreferrer"

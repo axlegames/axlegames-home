@@ -1,5 +1,5 @@
 import { Box, Button } from "@chakra-ui/react";
-import { brandingColors } from "../../../config/brandingColors";
+import { brandingColors, brandingFonts } from "../../../config/brandingColors";
 
 const SideBarLink = (props: any) => {
   const normalEffect = `3px 3px 9px ${brandingColors.newHighlightColor}, -3px -3px 9px ${brandingColors.bgColor}`;
@@ -17,7 +17,7 @@ const SideBarLink = (props: any) => {
           boxShadow={normalEffect}
           width={"100%"}
           bg={brandingColors.bgColor}
-          fontFamily={`Staatliches`}
+          fontFamily={brandingFonts.headingFont}
           size={{ base: "lg" }}
           color={brandingColors.secondaryTextColor}
           onClick={() => props.onClick()}

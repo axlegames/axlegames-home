@@ -1,6 +1,6 @@
 import Heading from "../components/Heading";
 
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { whysGridOne, whysGridTwo } from "../config/data";
 import { Box, Grid, Image, Text } from "@chakra-ui/react";
 import Tilt from "react-parallax-tilt";
@@ -77,7 +77,7 @@ const WhyCard = (props: Props) => {
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "lg", lg: "2xl" }}
-            fontFamily={`Staatliches`}
+            fontFamily={brandingFonts.headingFont}
             fontWeight="bold"
             textAlign={"center"}
           >
@@ -87,7 +87,7 @@ const WhyCard = (props: Props) => {
             color={brandingColors.secondaryTextColor}
             fontSize={{ base: "md", lg: "lg" }}
             textAlign={"center"}
-            fontFamily={`Shantell Sans`}
+            fontFamily={brandingFonts.subFont}
           >
             {props.text}
           </Text>

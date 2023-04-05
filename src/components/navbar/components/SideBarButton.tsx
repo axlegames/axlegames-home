@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import { Link } from "react-scroll";
-import { brandingColors } from "../../../config/brandingColors";
+import { brandingColors, brandingFonts } from "../../../config/brandingColors";
 
 const SideBarButton = (props: any) => {
   const normalEffect = `3px 3px 9px ${brandingColors.newHighlightColor}, -3px -3px 9px ${brandingColors.bgColor}`;
@@ -16,7 +16,7 @@ const SideBarButton = (props: any) => {
       style={{ width: "100%" }}
     >
       <Button
-        fontFamily={`Staatliches`}
+        fontFamily={brandingFonts.headingFont}
         textAlign={"left"}
         boxShadow={normalEffect}
         bg={brandingColors.bgColor}

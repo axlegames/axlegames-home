@@ -1,5 +1,5 @@
 import { products } from "../config/data";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 import Heading from "../components/Heading";
@@ -70,14 +70,14 @@ const ProductMobileView = (props: Props) => {
         >
           <Image maxW={"12"} src={props.image} />
           <Text
-            fontFamily={"Staatliches"}
+            fontFamily={brandingFonts.headingFont}
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "xl", sm: "2xl", md: "3xl" }}
           >
             {props.subTitle}
           </Text>
           <Text
-            fontFamily={`Shantell Sans`}
+            fontFamily={brandingFonts.subFont}
             py={1}
             borderRadius="md"
             fontSize={"xx-small"}
@@ -91,14 +91,14 @@ const ProductMobileView = (props: Props) => {
         <Text
           fontSize={{ base: "md", md: "lg" }}
           color={brandingColors.secondaryTextColor}
-          fontFamily={`Shantell Sans`}
+          fontFamily={brandingFonts.subFont}
         >
           {props.text}
         </Text>
         <Flex>
           {props.isLive ? (
             <Box
-              fontFamily={"Staatliches"}
+              fontFamily={brandingFonts.headingFont}
               className="btnc"
               onClick={() => props.function()}
               cursor="pointer"
@@ -138,7 +138,7 @@ const ProductMidDeviceView = (props: Props) => {
             columnGap="1rem"
           >
             <Text
-              fontFamily={"Staatliches"}
+              fontFamily={brandingFonts.headingFont}
               color={brandingColors.primaryTextColor}
               fontWeight="bolder"
               fontSize={"3xl"}
@@ -147,7 +147,7 @@ const ProductMidDeviceView = (props: Props) => {
             </Text>
             <Box>
               <Text
-                fontFamily={"Staatliches"}
+                fontFamily={brandingFonts.headingFont}
                 bg={brandingColors.bgColor}
                 fontSize="md"
                 px={2}
@@ -163,7 +163,7 @@ const ProductMidDeviceView = (props: Props) => {
       </Box>
       <Box>
         <Text
-          fontFamily={`Shantell Sans`}
+          fontFamily={brandingFonts.subFont}
           color={brandingColors.secondaryTextColor}
           fontSize={{ base: "md", md: "lg" }}
         >
@@ -174,7 +174,7 @@ const ProductMidDeviceView = (props: Props) => {
       <Flex>
         {props.isLive ? (
           <Box
-            fontFamily={"Staatliches"}
+            fontFamily={brandingFonts.headingFont}
             className="btnc"
             onClick={() => props.function()}
             cursor="pointer"

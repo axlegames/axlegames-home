@@ -1,5 +1,5 @@
 import { nfts } from "../config/data";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { Box, Grid, Text } from "@chakra-ui/react";
 
 import Slider from "react-slick";
@@ -50,7 +50,7 @@ const NFT = (props: Props) => {
           <Text
             color={brandingColors.primaryTextColor}
             fontSize={{ base: "lg", lg: "2xl" }}
-            fontFamily={`Staatliches`}
+            fontFamily={brandingFonts.headingFont}
             textAlign={"center"}
             fontWeight="bold"
           >
@@ -58,7 +58,7 @@ const NFT = (props: Props) => {
           </Text>
           <Text
             color={brandingColors.secondaryTextColor}
-            fontFamily={`Shantell Sans`}
+            fontFamily={brandingFonts.subFont}
             fontWeight={"bold"}
             fontSize={{ base: "sm", md: "md", lg: "lg" }}
             textAlign={"center"}

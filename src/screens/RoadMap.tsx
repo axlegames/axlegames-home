@@ -1,5 +1,5 @@
 import { phases } from "../config/data";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 
 import Heading from "../components/Heading";
@@ -132,7 +132,7 @@ const Phase = (props: Props) => {
         borderRadius="xl"
       >
         <Text
-          fontFamily={`Staatliches`}
+          fontFamily={brandingFonts.headingFont}
           fontSize={{ base: "md", md: "3xl" }}
           color={brandingColors.primaryTextColor}
           fontWeight={"bold"}
@@ -155,7 +155,7 @@ const Phase = (props: Props) => {
                 <GrayCircle />
               )}
               <Text
-                fontFamily={`Shantell Sans`}
+                fontFamily={brandingFonts.subFont}
                 fontWeight="bold"
                 color={brandingColors.secondaryTextColor}
                 fontSize={{ base: "xs", md: "sm" }}

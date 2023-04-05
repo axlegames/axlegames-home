@@ -1,6 +1,6 @@
 import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 import Heading from "../components/Heading";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 import { team } from "../config/data";
 
@@ -162,7 +162,7 @@ const TeamCard = (props: Props) => {
         <Box textAlign={"center"} py={4}>
           <Text
             fontSize={"xl"}
-            fontFamily={`Staatliches`}
+            fontFamily={brandingFonts.headingFont}
             fontWeight="bold"
             color={brandingColors.primaryTextColor}
           >
@@ -171,7 +171,7 @@ const TeamCard = (props: Props) => {
           <Text
             fontSize={{ base: "md" }}
             fontWeight="bold"
-            fontFamily={`Shantell Sans`}
+            fontFamily={brandingFonts.subFont}
             color={brandingColors.secondaryTextColor}
           >
             {props.role}

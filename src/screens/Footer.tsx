@@ -1,6 +1,6 @@
 import { Box, Image, Link, Text, useToast } from "@chakra-ui/react";
 import { useState } from "react";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { Link as LLink } from "react-scroll";
 
 const Footer = () => {
@@ -52,25 +52,25 @@ const Footer = () => {
                       style={{ columnGap: "0.33rem" }}
                     >
                       <Box
-                        fontSize={{ base: "xl", md: "3xl", lg: "5xl" }}
+                        my={4}
+                        fontSize={{ base: "xl", md: "3xl" }}
                         color={brandingColors.secondaryTextColor}
-                        fontFamily={"Staatliches"}
+                        fontFamily={brandingFonts.headingFont}
                       >
-                        Subscribe to Our
-                      </Box>
-                      <Box
-                        fontSize={{ base: "xl", md: "3xl", lg: "5xl" }}
-                        fontFamily={"Staatliches"}
-                        color={"#eb6612"}
-                      >
-                        Newsletter
+                        Subscribe to Our{" "}
+                        <Box
+                          display={"inline"}
+                          color={brandingColors.primaryTextColor}
+                        >
+                          Newsletter
+                        </Box>
                       </Box>
                     </Box>
                     <Box className="subscribe d-flex">
                       <input
                         onChange={emailChange}
                         style={{
-                          fontFamily: "Staatliches",
+                          fontFamily: brandingFonts.headingFont,
                           padding: "0 1rem",
                         }}
                         type="email"
@@ -78,7 +78,7 @@ const Footer = () => {
                         placeholder="Your Email Address"
                       />
                       <button
-                        style={{ fontFamily: "Staatliches" }}
+                        style={{ fontFamily: brandingFonts.headingFont }}
                         onClick={() => submitEmail()}
                         className="cmn-btn"
                       >
@@ -123,7 +123,7 @@ const Footer = () => {
                   >
                     <Text
                       fontSize={{ base: "smaller" }}
-                      fontFamily={"Staatliches"}
+                      fontFamily={brandingFonts.headingFont}
                       className="gradient-text"
                       cursor={"pointer"}
                     >
@@ -143,7 +143,7 @@ const Footer = () => {
                               fontSize={{ base: "x-small", lg: "xs" }}
                               display={"block"}
                               textAlign={"center"}
-                              fontFamily={"Shantell Sans"}
+                              fontFamily={brandingFonts.subFont}
                               fontWeight="bold"
                             >
                               {nav.name}
@@ -164,7 +164,7 @@ const Footer = () => {
                           >
                             <Text
                               textAlign={"center"}
-                              fontFamily={"Shantell Sans"}
+                              fontFamily={brandingFonts.subFont}
                               fontSize={{ base: "x-small", lg: "xs" }}
                               fontWeight="bold"
                               cursor="pointer"
@@ -215,7 +215,7 @@ const Footer = () => {
                     <Box
                       display={"flex"}
                       justifyContent="center"
-                      style={{ fontFamily: "Staatliches" }}
+                      style={{ fontFamily: brandingFonts.headingFont }}
                       color={brandingColors.secondaryTextColor}
                       fontSize={{ base: "sm", lg: "lg" }}
                     >
