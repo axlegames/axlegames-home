@@ -18,13 +18,13 @@ const Heading = (props: Props) => {
         <Text
           key={i}
           color={i % 2 === 0 ? "white" : brandingColors.primaryTextColor}
-          fontSize={{ base: "3xl", lg: "5xl" }}
+          fontSize={{ base: "2xl", lg: "4xl" }}
           textAlign={"center"}
           fontFamily={brandingFonts.headingFont}
           fontWeight="bold"
           data-aos={`zoom-out`}
         >
-          {s}
+          {s.toUpperCase()}
         </Text>
       ))}
     </Box>

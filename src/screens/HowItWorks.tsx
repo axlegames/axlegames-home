@@ -20,13 +20,13 @@ const HowItWorks = () => {
                     style={{ columnGap: "0.5rem" }}
                   >
                     <Text
-                      fontSize={{ base: "3xl", lg: "5xl" }}
+                      fontSize={{ base: "2xl", lg: "4xl" }}
                       fontFamily={brandingFonts.headingFont}
                     >
                       HOW IT
                     </Text>
                     <Text
-                      fontSize={{ base: "3xl", lg: "5xl" }}
+                      fontSize={{ base: "2xl", lg: "4xl" }}
                       fontFamily={brandingFonts.headingFont}
                       color={`#f46b15`}
                     >
@@ -36,9 +36,12 @@ const HowItWorks = () => {
                   <Box
                     color={brandingColors.highLightColor}
                     fontFamily={brandingFonts.subFont}
+                    fontSize="xl"
                   >
                     It's easier than you think.
-                    <span
+                    <Box
+                      display={"inline"}
+                      fontSize="xl"
                       style={{
                         fontFamily: brandingFonts.subFont,
                         color: "#eb6612",
@@ -46,7 +49,7 @@ const HowItWorks = () => {
                       }}
                     >
                       Follow 4 simple easy steps
-                    </span>
+                    </Box>
                   </Box>
                 </Box>
               </Box>

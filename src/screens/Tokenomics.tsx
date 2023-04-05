@@ -49,7 +49,7 @@ const Tokenomics = () => {
                   </Box>
                   <Box
                     fontFamily={brandingFonts.subFont}
-                    fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+                    fontSize={{ base: "2xl", md: "3xl" }}
                     color={brandingColors.primaryTextColor}
                     fontWeight="bold"
                   >

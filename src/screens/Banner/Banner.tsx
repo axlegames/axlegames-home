@@ -1,18 +1,10 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import { brandingFonts } from "../../config/brandingColors";
-import { useTypewriter } from "react-simple-typewriter";
-// import Logo from "../../assets/logo.png";
+import Typewriter from "typewriter-effect";
 
 import "./Banner.css";
 
 const Banner = () => {
-  const [text] = useTypewriter({
-    words: ["#AI-GAMING", "#Play to Earn", "#Level Up"],
-    loop: 0,
-    delaySpeed: 5000,
-    deleteSpeed: 60,
-    typeSpeed: 120,
-  });
   return (
     <Box>
       {/* banner-section start */}
@@ -20,39 +12,6 @@ const Banner = () => {
         <Box className="banner-content d-flex align-items-center">
           <Box className="container">
             <Box className="row justify-content-center">
-              {/* <Box
-                display={"flex"}
-                borderRadius="xl"
-                p={"4"}
-                mb={12}
-                bg={brandingColors.bgColor}
-                boxShadow="lg"
-                justifyContent={"space-between"}
-                width="80%"
-              >
-                <Image width={"16"} src={Logo} />
-                <Text
-                  fontSize={{ base: "4xl" }}
-                  fontFamily={brandingFonts.subFont}
-                  fontWeight="bold"
-                >
-                  Axle Games
-                </Text>
-                <Text
-                  fontSize={{ base: "4xl" }}
-                  fontFamily={brandingFonts.subFont}
-                  fontWeight="bold"
-                >
-                  Presale Live On
-                </Text>
-                <Text
-                  fontSize={{ base: "4xl" }}
-                  fontFamily={brandingFonts.subFont}
-                  fontWeight="bold"
-                >
-                  Pink Sale
-                </Text>
-              </Box> */}
               <Box className="col-lg-12">
                 <Box className="main-content">
                   <Box
@@ -67,9 +26,27 @@ const Banner = () => {
                       className="gradient-text"
                       transition={"200ms all ease-in"}
                       fontSize={{ base: "xl", lg: "2xl", xl: "3xl" }}
-                      fontFamily={brandingFonts.headingFont}
+                      fontFamily={brandingFonts.subFont}
                     >
-                      {text}
+                      <Typewriter
+                        options={{
+                          cursor: "|",
+                          loop: true,
+                          wrapperClassName: "subFont",
+                          cursorClassName: "type_cursor",
+                        }}
+                        onInit={(typewriter) => {
+                          typewriter
+                            .typeString("#AI-GAMING")
+                            .pauseFor(3000)
+                            .deleteAll()
+                            .typeString("#PLAY TO EARN")
+                            .pauseFor(3000)
+                            .deleteAll()
+                            .typeString("#LEVEL UP")
+                            .start();
+                        }}
+                      />
                     </Text>
                     <Box
                       display={"flex"}
@@ -78,24 +55,36 @@ const Banner = () => {
                     >
                       <Text
                         fontSize={{ base: "5xl", lg: "6xl" }}
-                        fontFamily={brandingFonts.headingFont}
+                        fontFamily={`Bungee Shade`}
                       >
                         AXLE
                       </Text>
                       <Text
                         fontSize={{ base: "5xl", lg: "6xl" }}
-                        fontFamily={brandingFonts.headingFont}
                         color={"#f46b15"}
+                        fontFamily={`Bungee Shade`}
                       >
                         GAMES
                       </Text>
                     </Box>
-                    <Box display={"flex"} columnGap=".25rem">
-                      <Text fontFamily={brandingFonts.subFont}>A</Text>
-                      <Text fontFamily={brandingFonts.subFont} color="#eb6612">
+                    <Box display={"flex"} columnGap=".66rem">
+                      <Text
+                        fontSize={{ base: "xl" }}
+                        fontFamily={brandingFonts.subFont}
+                      >
+                        A
+                      </Text>
+                      <Text
+                        fontSize={{ base: "xl" }}
+                        fontFamily={brandingFonts.subFont}
+                        color="#eb6612"
+                      >
                         Skill based
                       </Text>
-                      <Text fontFamily={brandingFonts.subFont}>
+                      <Text
+                        fontSize={{ base: "xl" }}
+                        fontFamily={brandingFonts.subFont}
+                      >
                         web3 gaming platform
                       </Text>
                     </Box>

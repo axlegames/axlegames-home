@@ -25,24 +25,24 @@ const EProfile = () => {
                 display={"flex"}
                 columnGap="0.5rem"
                 className="title"
-                rowGap={{ base: ".5rem", md: "2rem" }}
+                rowGap={{ base: ".5rem", md: "1rem" }}
               >
                 <Text
-                  fontSize={{ base: "3xl", lg: "5xl" }}
+                  fontSize={{ base: "2xl", lg: "4xl" }}
                   fontFamily={brandingFonts.headingFont}
                 >
                   Build your
                 </Text>
                 <Box columnGap="0.5rem" display={"flex"}>
                   <Text
-                    fontSize={{ base: "3xl", lg: "5xl" }}
+                    fontSize={{ base: "2xl", lg: "4xl" }}
                     color={`#f46b15`}
                     fontFamily={brandingFonts.headingFont}
                   >
                     Axle Games
                   </Text>
                   <Text
-                    fontSize={{ base: "3xl", lg: "5xl" }}
+                    fontSize={{ base: "2xl", lg: "4xl" }}
                     fontFamily={brandingFonts.headingFont}
                   >
                     Profile
@@ -51,12 +51,18 @@ const EProfile = () => {
               </Box>
               <Box display={"flex"} flexDirection="column" columnGap={".33rem"}>
                 <Box display={"flex"} columnGap=".33rem">
-                  <Text fontFamily={brandingFonts.subFont}>Showcase your</Text>
-                  <Text fontFamily={brandingFonts.subFont} color={`#f46b15`}>
+                  <Text fontSize={"xl"} fontFamily={brandingFonts.subFont}>
+                    Showcase your
+                  </Text>
+                  <Text
+                    fontSize={"xl"}
+                    fontFamily={brandingFonts.subFont}
+                    color={`#f46b15`}
+                  >
                     winnings, achievements, badges
                   </Text>
                 </Box>
-                <Text fontFamily={brandingFonts.subFont}>
+                <Text fontSize={"xl"} fontFamily={brandingFonts.subFont}>
                   and build your reputation on Axle Games
                 </Text>
               </Box>

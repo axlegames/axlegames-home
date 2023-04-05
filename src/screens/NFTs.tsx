@@ -49,7 +49,7 @@ const NFT = (props: Props) => {
         >
           <Text
             color={brandingColors.primaryTextColor}
-            fontSize={{ base: "lg", lg: "2xl" }}
+            fontSize={{ base: "lg", lg: "xl" }}
             fontFamily={brandingFonts.headingFont}
             textAlign={"center"}
             fontWeight="bold"

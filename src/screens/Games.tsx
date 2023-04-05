@@ -75,22 +75,27 @@ const Games = () => {
                       style={{ columnGap: "0.5rem" }}
                     >
                       <Text
-                        fontSize={{ base: "2xl", lg: "5xl" }}
+                        fontSize={{ base: "2xl", lg: "4xl" }}
                         fontFamily={brandingFonts.headingFont}
                       >
                         Available
                       </Text>
                       <Text
-                        fontSize={{ base: "2xl", lg: "5xl" }}
+                        fontSize={{ base: "2xl", lg: "4xl" }}
                         color={`#f46b15`}
                         fontFamily={brandingFonts.headingFont}
                       >
                         Games
                       </Text>
                     </Box>
-                    <p style={{ fontFamily: brandingFonts.subFont }}>
+                    <Text
+                      fontSize={{ base: "xl" }}
+                      style={{ fontFamily: brandingFonts.subFont }}
+                    >
                       We are constantly adding
-                      <span
+                      <Box
+                        display={"inline"}
+                        fontSize={{ base: "xl" }}
                         style={{
                           fontFamily: brandingFonts.subFont,
                           color: "#eb6612",
@@ -98,8 +103,8 @@ const Games = () => {
                         }}
                       >
                         new games
-                      </span>
-                    </p>
+                      </Box>
+                    </Text>
                   </Box>
                 </Box>
               </Box>

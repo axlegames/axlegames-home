@@ -136,24 +136,16 @@ const Testimonials = () => {
                       Testimonials
                     </Text>
                   </Box>
-                  <p
-                    style={{
-                      fontFamily: brandingFonts.subFont,
-                      fontSize: "large",
-                    }}
+                  <Box
+                    color={brandingColors.highLightColor}
+                    fontSize={{ base: "xl" }}
+                    fontFamily={brandingFonts.subFont}
                   >
-                    <span
-                      style={{
-                        fontFamily: brandingFonts.subFont,
-                        color: "#eb6612",
-                        fontSize: "large",
-                        margin: "0 .33rem",
-                      }}
-                    >
+                    <Box mx={2} display={"inline"} color={"#eb6612"}>
                       Gamers Speak Out:
-                    </span>
+                    </Box>
                     What They're Saying About Our Platform!
-                  </p>
+                  </Box>
                 </Box>
               </Box>
             </Box>

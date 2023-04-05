@@ -177,6 +177,17 @@
   box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
 }
 
+.subFont {
+  font-family: Alata;
+  font-size: xx-large;
+}
+
+.type_cursor {
+  font-size: xx-large;
+  margin: 0 0.5rem;
+  transition: all 300ms ease-in;
+}
+
 .gradient-text {
   /* Fallback: Set a background color. */
   background-color: #ca4246;

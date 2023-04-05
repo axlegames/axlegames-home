@@ -76,7 +76,7 @@ const WhyCard = (props: Props) => {
         <Box>
           <Text
             color={brandingColors.primaryTextColor}
-            fontSize={{ base: "lg", lg: "2xl" }}
+            fontSize={{ base: "lg", lg: "xl" }}
             fontFamily={brandingFonts.headingFont}
             fontWeight="bold"
             textAlign={"center"}

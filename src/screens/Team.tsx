@@ -161,7 +161,7 @@ const TeamCard = (props: Props) => {
         </Box>
         <Box textAlign={"center"} py={4}>
           <Text
-            fontSize={"xl"}
+            fontSize={"2xl"}
             fontFamily={brandingFonts.headingFont}
             fontWeight="bold"
             color={brandingColors.primaryTextColor}
