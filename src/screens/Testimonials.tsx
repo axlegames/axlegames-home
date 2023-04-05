@@ -138,7 +138,7 @@ const Testimonials = () => {
                   </Box>
                   <Box
                     color={brandingColors.highLightColor}
-                    fontSize={{ base: "xl" }}
+                    fontSize={{ base: "md", lg: "xl" }}
                     fontFamily={brandingFonts.subFont}
                   >
                     <Box mx={2} display={"inline"} color={"#eb6612"}>

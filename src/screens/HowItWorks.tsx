@@ -36,12 +36,12 @@ const HowItWorks = () => {
                   <Box
                     color={brandingColors.highLightColor}
                     fontFamily={brandingFonts.subFont}
-                    fontSize="xl"
+                    fontSize={{ base: "md", lg: "xl" }}
                   >
                     It's easier than you think.
                     <Box
                       display={"inline"}
-                      fontSize="xl"
+                      fontSize={{ base: "md", lg: "xl" }}
                       style={{
                         fontFamily: brandingFonts.subFont,
                         color: "#eb6612",

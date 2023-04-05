@@ -6,6 +6,7 @@ const EProfile = () => {
     <Box py={12} px={{ base: "0", md: "12" }} bg={brandingColors.bgColor}>
       <Box width={"100%"} id="call-action" className="border-area" zIndex={10}>
         <Box
+          data-aos="fade-left"
           width={"100%"}
           columnGap="1rem"
           display={"flex"}
@@ -19,6 +20,8 @@ const EProfile = () => {
               display={"flex"}
               flexDirection="column"
               rowGap={{ base: "1.25rem", md: "1.25rem" }}
+              px={8}
+              py={4}
             >
               <Box
                 flexDirection={"column"}
@@ -51,20 +54,20 @@ const EProfile = () => {
               </Box>
               <Box display={"flex"} flexDirection="column" columnGap={".33rem"}>
                 <Box display={"flex"} columnGap=".33rem">
-                  <Text fontSize={"xl"} fontFamily={brandingFonts.subFont}>
-                    Showcase your
-                  </Text>
                   <Text
-                    fontSize={"xl"}
+                    fontSize={{ base: "md", lg: "xl" }}
                     fontFamily={brandingFonts.subFont}
-                    color={`#f46b15`}
                   >
-                    winnings, achievements, badges
+                    Showcase your{" "}
+                    <Box
+                      display={"inline"}
+                      color={brandingColors.primaryTextColor}
+                    >
+                      winnings, achievements, badges
+                    </Box>{" "}
+                    and build your reputation on Axle Games
                   </Text>
                 </Box>
-                <Text fontSize={"xl"} fontFamily={brandingFonts.subFont}>
-                  and build your reputation on Axle Games
-                </Text>
               </Box>
               <Flex columnGap={".5rem"}>
                 <a
@@ -94,7 +97,7 @@ const EProfile = () => {
               </Flex>
             </Box>
           </Box>
-          <Box className="right-area">
+          <Box data-aos="fade-right" className="right-area">
             <Image
               p={4}
               objectFit={"contain"}

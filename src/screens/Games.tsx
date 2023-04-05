@@ -89,13 +89,13 @@ const Games = () => {
                       </Text>
                     </Box>
                     <Text
-                      fontSize={{ base: "xl" }}
+                      fontSize={{ base: "md", lg: "xl" }}
                       style={{ fontFamily: brandingFonts.subFont }}
                     >
                       We are constantly adding
                       <Box
                         display={"inline"}
-                        fontSize={{ base: "xl" }}
+                        fontSize={{ base: "md", lg: "xl" }}
                         style={{
                           fontFamily: brandingFonts.subFont,
                           color: "#eb6612",

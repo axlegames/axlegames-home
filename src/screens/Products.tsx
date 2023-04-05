@@ -85,11 +85,11 @@ const ProductMobileView = (props: Props) => {
             bg={brandingColors.fgColor}
             px={2}
           >
-            {props.isLive ? `• Live` : "• Coming Soon"}
+            {props.isLive ? `• LIVE` : "• COMING SOON"}
           </Text>
         </Flex>
         <Text
-          fontSize={{ base: "md", md: "lg" }}
+          fontSize={{ base: "sm", md: "lg" }}
           color={brandingColors.secondaryTextColor}
           fontFamily={brandingFonts.subFont}
         >
@@ -101,6 +101,7 @@ const ProductMobileView = (props: Props) => {
               fontFamily={brandingFonts.headingFont}
               className="btnc"
               onClick={() => props.function()}
+              fontSize={{ base: "sm", md: "lg" }}
               cursor="pointer"
             >
               {props.label}

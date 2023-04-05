@@ -32,17 +32,16 @@ const Banner = () => {
                     rowGap={"2rem"}
                   >
                     <Box
-                      minW="80"
+                      pt={1}
                       boxShadow={"lg"}
                       bg={brandingColors.bgColor}
-                      p={2}
                       borderRadius="md"
                     >
                       <Box
                         cursor={"pointer"}
                         className="gradient-text"
                         transition={"200ms all ease-in"}
-                        fontSize={{ base: "xl", lg: "2xl", xl: "3xl" }}
+                        fontSize={{ base: "lg", lg: "2xl" }}
                         fontFamily={brandingFonts.subFont}
                         textAlign="center"
                       >
@@ -75,13 +74,13 @@ const Banner = () => {
                       cursor="pointer"
                     >
                       <Text
-                        fontSize={{ base: "5xl", lg: "6xl" }}
+                        fontSize={{ base: "4xl", lg: "6xl" }}
                         fontFamily={`Bungee Shade`}
                       >
                         AXLE
                       </Text>
                       <Text
-                        fontSize={{ base: "5xl", lg: "6xl" }}
+                        fontSize={{ base: "4xl", lg: "6xl" }}
                         color={"#f46b15"}
                         fontFamily={`Bungee Shade`}
                       >
@@ -95,14 +94,14 @@ const Banner = () => {
                       columnGap=".55rem"
                     >
                       <Text
-                        fontSize={{ base: "xl" }}
+                        fontSize={{ base: "md", lg: "xl" }}
                         fontFamily={brandingFonts.subFont}
                       >
                         A
                       </Text>
                       <Box pos={"relative"}>
                         <Text
-                          fontSize={{ base: "xl" }}
+                          fontSize={{ base: "md", lg: "xl" }}
                           fontFamily={brandingFonts.subFont}
                           color="#eb6612"
                         >
@@ -124,7 +123,7 @@ const Banner = () => {
                         </Box>
                       </Box>
                       <Text
-                        fontSize={{ base: "xl" }}
+                        fontSize={{ base: "md", lg: "xl" }}
                         fontFamily={brandingFonts.subFont}
                       >
                         gaming platform
