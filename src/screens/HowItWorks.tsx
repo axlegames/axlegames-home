@@ -1,4 +1,4 @@
-import { Box, Container, Image, Text } from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 const HowItWorks = () => {
