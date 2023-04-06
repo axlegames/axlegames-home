@@ -32,7 +32,6 @@ const Banner = () => {
                     rowGap={"2rem"}
                   >
                     <Box
-                      pt={1}
                       boxShadow={"lg"}
                       bg={brandingColors.bgColor}
                       borderRadius="md"
@@ -41,7 +40,7 @@ const Banner = () => {
                         cursor={"pointer"}
                         className="gradient-text"
                         transition={"200ms all ease-in"}
-                        fontSize={{ base: "lg", lg: "2xl" }}
+                        fontSize={{ base: "md", lg: "lg" }}
                         fontFamily={brandingFonts.subFont}
                         textAlign="center"
                       >
@@ -57,10 +56,10 @@ const Banner = () => {
                               .typeString("#AI-GAMING")
                               .pauseFor(3000)
                               .deleteAll()
-                              .typeString("#PLAY TO EARN")
+                              .typeString("#PLAY-AND-EARN")
                               .pauseFor(3000)
                               .deleteAll()
-                              .typeString("#LEVEL UP")
+                              .typeString("#LEVEL UP YOUR SKILL")
                               .pauseFor(3000)
                               .deleteAll()
                               .start();
@@ -74,12 +73,14 @@ const Banner = () => {
                       cursor="pointer"
                     >
                       <Text
+                        lineHeight={"0.1"}
                         fontSize={{ base: "4xl", lg: "6xl" }}
                         fontFamily={`Bungee Shade`}
                       >
                         AXLE
                       </Text>
                       <Text
+                        lineHeight={"0.1"}
                         fontSize={{ base: "4xl", lg: "6xl" }}
                         color={"#f46b15"}
                         fontFamily={`Bungee Shade`}
@@ -96,6 +97,7 @@ const Banner = () => {
                       <Text
                         fontSize={{ base: "md", lg: "xl" }}
                         fontFamily={brandingFonts.subFont}
+                        lineHeight={"2"}
                       >
                         A
                       </Text>
@@ -149,21 +151,22 @@ const Banner = () => {
                           alignItems="center"
                           textDecoration={"none"}
                         >
-                          Presale
+                          Join Presale
                         </Box>{" "}
                       </a>{" "}
                       <Box display={{ base: "none", lg: "block" }}>
                         <a
-                          href="https://play.axlegames.io"
+                          href="https://t.me/axlegames_en"
                           target="_blank"
                           className="btn-hover color-3"
                           style={{
+                            fontWeight: "bold",
                             fontFamily: brandingFonts.subFont,
                             textDecoration: "none",
                           }}
                           rel="noopener noreferrer"
                         >
-                          Launch App
+                          Community
                         </a>
                       </Box>
                     </Box>

@@ -3,7 +3,11 @@ import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 const EProfile = () => {
   return (
-    <Box py={12} px={{ base: "0", md: "12" }} bg={brandingColors.bgColor}>
+    <Box
+      py={{ base: "12" }}
+      px={{ base: "4", md: "12" }}
+      bg={brandingColors.bgColor}
+    >
       <Box width={"100%"} id="call-action" className="border-area" zIndex={10}>
         <Box
           data-aos="fade-left"
@@ -13,14 +17,14 @@ const EProfile = () => {
           justifyContent="space-evenly"
           alignItems={"center"}
           flexDirection={{ base: "column", lg: "row" }}
-          rowGap="2rem"
+          rowGap={{ base: "0", lg: "2rem" }}
         >
           <Box display={"flex"}>
             <Box
               display={"flex"}
               flexDirection="column"
-              rowGap={{ base: "1.25rem", md: "1.25rem" }}
-              px={8}
+              rowGap={{ base: ".75rem", md: "1.25rem" }}
+              px={4}
               py={4}
             >
               <Box
@@ -29,6 +33,8 @@ const EProfile = () => {
                 columnGap="0.5rem"
                 className="title"
                 rowGap={{ base: ".5rem", md: "1rem" }}
+                p={0}
+                m={0}
               >
                 <Text
                   fontSize={{ base: "2xl", lg: "4xl" }}
@@ -97,7 +103,7 @@ const EProfile = () => {
               </Flex>
             </Box>
           </Box>
-          <Box data-aos="fade-right" className="right-area">
+          <Box m={0} p={0} data-aos="fade-right" className="right-area">
             <Image
               p={4}
               objectFit={"contain"}

@@ -1,4 +1,4 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Container, Image, Text } from "@chakra-ui/react";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 const HowItWorks = () => {
@@ -10,8 +10,8 @@ const HowItWorks = () => {
         overflowY={"hidden"}
         zIndex={10}
       >
-        <Box overflowY={"hidden"} className="pt-120 pb-120">
-          <Box className="container wow fadeInUp">
+        <Box overflowY={"hidden"}>
+          <Box className="container pt-120 pb-120">
             <Box className="row d-flex justify-content-center">
               <Box className="col-lg-6 text-center">
                 <Box className="section-header">

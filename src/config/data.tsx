@@ -25,9 +25,9 @@ import WhySafe from "../assets/why/secure.webp";
 export const products = [
   {
     isLive: true,
-    subTitle: "Axle Games",
+    subTitle: "Axle AI Games",
     label: "Play",
-    text: "A skill based AI gaming platform that offers various single-player and multiplayer games with live tournaments/contests. Users can compete with their peers and win attractive rewards with unlimited fun.",
+    text: "Metamorphisis AI games are popular web2 games which are revamped with AI to benefit the web3 users. Axle is introducing popular games like wordle to web3 and enhancing them with use of AI. Users can compete with their peers and win attractive rewards with unlimited fun. Try out our new Metamorphisis AI games at axlegames.io",
     image: ProductGameIcon,
     mainImg: ProductGameImg,
     function: () => window.open("https://play.axlegames.io", "_blank"),
@@ -107,7 +107,7 @@ export const whysGridTwo = [
   },
   {
     title: "Exclusive Rewards",
-    text: "It get’s more and more to $AXLE token holders",
+    text: "More and more rewards to $AXLE token holders",
     img: WhyReward,
   },
 ];

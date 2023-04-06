@@ -56,7 +56,7 @@ window.env = {
   "npm_package_dependencies__types_moment": "^2.13.0",
   "npm_package_devDependencies__types_react_dom": "^18.0.4",
   "npm_package_dependencies__chakra_ui_react": "^2.4.3",
-  "PATH": "/var/folders/kx/__4j06dj131fc8hckq8l4_c00000gn/T/yarn--1680695001597-0.06571001011117672:/Users/praneethnagu/Desktop/axleverse/axlegames-home/node_modules/.bin:/Users/praneethnagu/.config/yarn/link/node_modules/.bin:/Users/praneethnagu/.yarn/bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/praneethnagu/.cargo/bin:/Users/praneethnagu/Documents/flutter/bin:/Users/praneethnagu/Documents/flutter/bin",
+  "PATH": "/var/folders/kx/__4j06dj131fc8hckq8l4_c00000gn/T/yarn--1680774267960-0.3328864012824271:/Users/praneethnagu/Desktop/axleverse/axlegames-home/node_modules/.bin:/Users/praneethnagu/.config/yarn/link/node_modules/.bin:/Users/praneethnagu/.yarn/bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/praneethnagu/.cargo/bin:/Users/praneethnagu/Documents/flutter/bin:/Users/praneethnagu/Documents/flutter/bin",
   "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"start\"],\"original\":[\"start\"]}",
   "_": "/Users/praneethnagu/Desktop/axleverse/axlegames-home/node_modules/.bin/react-dotenv",
   "__CFBundleIdentifier": "com.microsoft.VSCode",

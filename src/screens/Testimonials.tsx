@@ -10,8 +10,7 @@ const testimonials = [
     name: "Ana Paula",
     desc: `One of the things I appreciate most about Axle Games is how
                   user-friendly it is. It's clear that the developers put a lot
-                  of thought into making the platform as enjoyable as possible
-                  for gamers.`,
+                  of thought into making the platform more enjoyable.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_4.jpg",
   },
   {

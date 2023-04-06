@@ -88,7 +88,8 @@ const NFTs = () => {
   );
   return (
     <Box
-      p={{ base: "4", lg: "16" }}
+      px={{ base: "4", lg: "16" }}
+      py={{ base: "8", lg: "16" }}
       bg={brandingColors.bgColor}
       backgroundImage="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/players-week-bg.png"
     >

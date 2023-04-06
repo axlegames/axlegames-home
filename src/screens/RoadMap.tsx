@@ -158,7 +158,7 @@ const Phase = (props: Props) => {
                 fontFamily={brandingFonts.subFont}
                 fontWeight="bold"
                 color={brandingColors.secondaryTextColor}
-                fontSize={{ base: "xs", md: "sm" }}
+                fontSize={{ base: "xs", md: "sm", lg: "md" }}
               >
                 {m}
               </Text>

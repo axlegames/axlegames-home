@@ -36,7 +36,7 @@ const Team = () => {
   };
 
   return (
-    <Box backgroundImage={``} mx={{ md: "auto" }} pt={16}>
+    <Box py={{ base: "12" }} mx={{ md: "auto" }}>
       <Heading title="Meet team" />
 
       <Box px={16} display={{ base: "block", md: "none" }}>
@@ -57,9 +57,12 @@ const Team = () => {
           ))}
         </Slider>
       </Box>
-      <Flex py={{ base: "16" }} flexDirection={"column"}>
+      <Flex
+        display={{ base: "none", md: "grid" }}
+        py={{ base: "16" }}
+        flexDirection={"column"}
+      >
         <Grid
-          display={{ base: "none", md: "grid" }}
           columnGap="0rem"
           justifyContent="center"
           alignItems={"center"}

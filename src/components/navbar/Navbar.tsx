@@ -151,11 +151,11 @@ const Navbar = () => {
           <a
             className="btnc"
             style={{ fontFamily: brandingFonts.headingFont }}
-            href={`https://sale.axlegames.io`}
+            href={`https://play.axlegames.io`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            BUY $AXLE
+            LAUNCH dAPP
           </a>
         </Flex>
       </Grid>

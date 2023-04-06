@@ -88,8 +88,7 @@ const PoweredBy = (props: any) => {
       justifyContent="center"
       flexDirection={"column"}
       rowGap={{ base: "2rem" }}
-      py={{ base: "16" }}
-      px={{ base: "0" }}
+      py={12}
     >
       <Heading title="Powered By" />
       <Grid

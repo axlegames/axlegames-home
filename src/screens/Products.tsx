@@ -22,7 +22,6 @@ const Products = () => {
       <Box
         flexDirection={"column"}
         display={{ base: "none", lg: "flex" }}
-        py={{ base: "12" }}
         rowGap="4rem"
       >
         {products.map((p, i) => {

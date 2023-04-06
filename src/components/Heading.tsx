@@ -13,6 +13,7 @@ const Heading = (props: Props) => {
       columnGap="1rem"
       display={"flex"}
       justifyContent={"center"}
+      py={12}
     >
       {split.map((s, i) => (
         <Text

@@ -213,14 +213,13 @@ const Footer = () => {
                 <Box className="col-lg-12 col-md-6">
                   <Box className="left-area text-center">
                     <Box
-                      display={"flex"}
-                      justifyContent="center"
                       style={{ fontFamily: brandingFonts.headingFont }}
                       color={brandingColors.secondaryTextColor}
                       fontSize={{ base: "sm", lg: "lg" }}
                     >
                       Copyright © 2023. All Rights Reserved By
                       <Box
+                        display={"inline"}
                         fontSize={{ base: "sm", lg: "lg" }}
                         style={{
                           cursor: "pointer",

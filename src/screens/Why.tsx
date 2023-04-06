@@ -8,8 +8,8 @@ import Tilt from "react-parallax-tilt";
 const Why = () => {
   return (
     <Box
+      py={{ base: "12" }}
       px={{ base: "4", lg: "16" }}
-      py={{ base: "16", lg: "16" }}
       display="flex"
       flexDirection={"column"}
       rowGap="4rem"
