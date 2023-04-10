@@ -22,7 +22,7 @@ const Banner = () => {
         <Box mx="auto" width={"100%"} top="6rem" position={"absolute"}>
           <Flex my={4} justifyContent={"center"}>
             <Image
-              src={`https://axlegames.s3.ap-south-1.amazonaws.com/tag.png`}
+              src={`https://axlegames.s3.ap-south-1.amazonaws.com/tag.gif`}
               borderRadius="xl"
               boxShadow={"dark-lg"}
             />
