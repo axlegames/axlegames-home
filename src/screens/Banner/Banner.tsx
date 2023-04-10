@@ -1,8 +1,9 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { brandingColors, brandingFonts } from "../../config/brandingColors";
 import Typewriter from "typewriter-effect";
 import Lottie from "lottie-react";
 import lineAnime from "../../assets/wave.json";
+import Ban from "../../assets/ban.png";
 
 import "./Banner.css";
 import { useEffect, useRef } from "react";
@@ -19,6 +20,11 @@ const Banner = () => {
     <Box>
       {/* banner-section start */}
       <section id="banner-section">
+        <Box mx="auto" width={"100%"} top="6rem" position={"absolute"}>
+          <Flex my={4} justifyContent={"center"}>
+            <Image src={Ban} borderRadius="xl" boxShadow={"dark-lg"} />
+          </Flex>
+        </Box>
         <Box className="banner-content d-flex align-items-center">
           <Box className="container">
             <Box className="row justify-content-center">
