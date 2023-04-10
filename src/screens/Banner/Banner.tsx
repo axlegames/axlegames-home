@@ -3,7 +3,6 @@ import { brandingColors, brandingFonts } from "../../config/brandingColors";
 import Typewriter from "typewriter-effect";
 import Lottie from "lottie-react";
 import lineAnime from "../../assets/wave.json";
-import Ban from "../../assets/ban.png";
 
 import "./Banner.css";
 import { useEffect, useRef } from "react";
@@ -22,7 +21,11 @@ const Banner = () => {
       <section id="banner-section">
         <Box mx="auto" width={"100%"} top="6rem" position={"absolute"}>
           <Flex my={4} justifyContent={"center"}>
-            <Image src={Ban} borderRadius="xl" boxShadow={"dark-lg"} />
+            <Image
+              src={`https://axlegames.s3.ap-south-1.amazonaws.com/tag.png`}
+              borderRadius="xl"
+              boxShadow={"dark-lg"}
+            />
           </Flex>
         </Box>
         <Box className="banner-content d-flex align-items-center">
