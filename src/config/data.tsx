@@ -27,7 +27,7 @@ export const products = [
     isLive: true,
     subTitle: "Axle AI Games",
     label: "Play",
-    text: "Metamorphisis AI games are popular web2 games which are revamped with AI to benefit the web3 users. Axle is introducing popular games like wordle to web3 and enhancing them with use of AI. Users can compete with their peers and win attractive rewards with unlimited fun. Try out our new Metamorphisis AI games at axlegames.io",
+    text: " Metamorphosis AI games are popular web2 games revamped with AI to benefit web3 users. Our games range from virtual reality simulations to blockchain-based strategy games, where players can interact with intelligent agents, own and digital trade assets, and compete for rewards.",
     image: ProductGameIcon,
     mainImg: ProductGameImg,
     function: () => window.open("https://play.axlegames.io", "_blank"),
