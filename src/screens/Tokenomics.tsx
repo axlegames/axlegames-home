@@ -39,7 +39,10 @@ const Tokenomics = () => {
           <Box style={{ justifyContent: "center" }} className="row mp-none">
             {token.map((t, i) => (
               <Box key={i} className="col-lg-3 col-md-6 col-sm-6">
-                <Box className="single-item text-center">
+                <Box
+                  backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
+                  className="single-item text-center"
+                >
                   <Box className="img-area">
                     <Image
                       style={{ padding: "1rem" }}

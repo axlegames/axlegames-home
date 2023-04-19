@@ -9,6 +9,7 @@ const HowItWorks = () => {
         className="border-area"
         overflowY={"hidden"}
         zIndex={10}
+        minH="75vh"
       >
         <Box overflowY={"hidden"}>
           <Box className="container pt-120 pb-120">

@@ -288,7 +288,7 @@ export const team = [
   {
     name: "Prashanth",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/prashanth.webp`,
-    role: "Blockchain Developer",
+    role: "Game Developer",
     linkedIn: "",
     email: "prashanth@axlegames.io",
   },

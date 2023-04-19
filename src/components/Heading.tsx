@@ -2,10 +2,22 @@ import { Box, Text } from "@chakra-ui/react";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 interface Props {
+  isTeam?: boolean;
   title: string;
 }
 const Heading = (props: Props) => {
   let split = props.title.split(" ");
+  const color = (x: number, isTeam: boolean) => {
+    if (isTeam) {
+      return x % 2 === 0 && x !== 0
+        ? brandingColors.primaryMiscColor
+        : brandingColors.highLightColor;
+    }
+    return x % 2 === 0
+      ? brandingColors.primaryMiscColor
+      : brandingColors.highLightColor;
+  };
+  const team = props.isTeam ?? false;
 
   return (
     <Box
@@ -18,8 +30,8 @@ const Heading = (props: Props) => {
       {split.map((s, i) => (
         <Text
           key={i}
-          color={i % 2 === 0 ? "white" : brandingColors.primaryTextColor}
-          fontSize={{ base: "2xl", lg: "4xl" }}
+          color={color(i, team)}
+          fontSize={{ base: "xl", sm: "2xl", lg: "4xl" }}
           textAlign={"center"}
           fontFamily={brandingFonts.headingFont}
           fontWeight="bold"

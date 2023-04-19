@@ -1,4 +1,12 @@
-import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Flex,
+  Grid,
+  GridItem,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
@@ -32,12 +40,13 @@ const Team = () => {
     if (index === 3) return "flex-end";
     if (index === 4) return "center";
     if (index === 5) return "flex-start";
+
     return "center";
   };
 
   return (
     <Box py={{ base: "12" }} mx={{ md: "auto" }}>
-      <Heading title="Meet team" />
+      <Heading isTeam={true} title="BUILT BY DEVs AT MICROSOFT" />
 
       <Box px={16} display={{ base: "block", md: "none" }}>
         <Slider
@@ -63,7 +72,16 @@ const Team = () => {
         flexDirection={"column"}
       >
         <Grid
-          columnGap="0rem"
+          mx="auto"
+          width={{
+            base: "100%",
+            md: "70%",
+            lg: "60%",
+            xl: "50%",
+            "2xl": "40%",
+          }}
+          columnGap="3rem"
+          rowGap="3rem"
           justifyContent="center"
           alignItems={"center"}
           gridTemplateColumns={{
@@ -102,25 +120,45 @@ const TeamCard = (props: Props) => {
         lg: props.bottomAligner(props.i),
       }}
       data-aos={props.i % 2 === 0 ? `zoom-in-down` : `zoom-in-up`}
+      width="100%"
     >
-      <GridItem
-        key={props.i}
-        maxW={"72"}
-        display={"flex"}
-        flexDirection="column"
-        justifyContent={"center"}
-        alignItems="center"
-        borderRadius={"xl"}
-        borderTopRadius="xl"
-        p={4}
-      >
-        <Box>
-          <Flex my={4} p={2} borderRadius="xl">
-            {props.i < 3 ? (
+      <Tilt>
+        <GridItem
+          boxShadow={`0px 0px 96px -72px ${brandingColors.secondaryTwoTextColor}`}
+          cursor={"pointer"}
+          key={props.i}
+          display={"flex"}
+          flexDirection="column"
+          justifyContent={"center"}
+          alignItems="center"
+          borderRadius={"3xl"}
+          bg={brandingColors.newHighlightColor}
+          backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
+          p={4}
+        >
+          <Box>
+            <Flex my={4} p={2} borderRadius="xl">
+              {props.i < 3 ? (
+                <a
+                  target={"_blank"}
+                  rel="noopener noreferrer"
+                  href={props.linkedIn}
+                >
+                  <Image
+                    width={"12"}
+                    _hover={{
+                      transform: "scale(1.2)",
+                      transition: "all 200ms ease-in",
+                      cursor: "pointer",
+                    }}
+                    src={LinkedIn}
+                  />
+                </a>
+              ) : null}
               <a
                 target={"_blank"}
                 rel="noopener noreferrer"
-                href={props.linkedIn}
+                href={`mailto:${props.email}`}
               >
                 <Image
                   width={"12"}
@@ -129,58 +167,42 @@ const TeamCard = (props: Props) => {
                     transition: "all 200ms ease-in",
                     cursor: "pointer",
                   }}
-                  src={LinkedIn}
+                  src={Email}
                 />
               </a>
-            ) : null}
-            <a
-              target={"_blank"}
-              rel="noopener noreferrer"
-              href={`mailto:${props.email}`}
-            >
-              <Image
-                width={"12"}
-                _hover={{
-                  transform: "scale(1.2)",
-                  transition: "all 200ms ease-in",
-                  cursor: "pointer",
-                }}
-                src={Email}
-              />
-            </a>
-          </Flex>
-        </Box>
-        <Box>
-          <Tilt>
+            </Flex>
+          </Box>
+          <Box>
             <Image
               boxShadow={`0px 2px 2px ${brandingColors.newHighlightColor}`}
               maxW={{ base: "180px", lg: "240px" }}
               src={props.avatar}
               borderTopRadius={`0px 0px 4px ${brandingColors.newHighlightColor}`}
               borderRadius="150rem"
-              border={`3px solid ${brandingColors.newHighlightColor}`}
+              border={`4px solid ${brandingColors.newHighlightColor}`}
             />
-          </Tilt>
-        </Box>
-        <Box textAlign={"center"} py={4}>
-          <Text
-            fontSize={"2xl"}
-            fontFamily={brandingFonts.headingFont}
-            fontWeight="bold"
-            color={brandingColors.primaryTextColor}
-          >
-            {props.name}
-          </Text>
-          <Text
-            fontSize={{ base: "md" }}
-            fontWeight="bold"
-            fontFamily={brandingFonts.subFont}
-            color={brandingColors.secondaryTextColor}
-          >
-            {props.role}
-          </Text>
-        </Box>
-      </GridItem>
+          </Box>
+          <Box textAlign={"center"} py={4}>
+            <Text
+              fontSize={"2xl"}
+              fontFamily={brandingFonts.headingFont}
+              fontWeight="bold"
+              color={brandingColors.primaryTextColor}
+            >
+              {props.name}
+            </Text>
+            <Text
+              fontSize={{ base: "md" }}
+              fontWeight="bold"
+              fontFamily={brandingFonts.subFont}
+              color={brandingColors.secondaryTextColor}
+            >
+              {props.role}
+            </Text>
+            <Divider m={2} />
+          </Box>
+        </GridItem>
+      </Tilt>
     </Box>
   );
 };

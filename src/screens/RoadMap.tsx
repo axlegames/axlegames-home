@@ -34,6 +34,9 @@ const RoadMap = () => {
                 justifyContent="center"
                 key={i}
                 flexDirection={"column"}
+                borderRadius="xl"
+                backgroundImage={`linear-gradient(to right, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
+                data-aos={`fade-right`}
               >
                 <Phase
                   phase={p.phase}
@@ -55,8 +58,8 @@ const RoadMap = () => {
           zIndex={2}
           borderRadius="md"
           bg={brandingColors.bgColor}
-          boxShadow={`4px 4px 7px #350794,
-             -4px -4px 7px #570bf2`}
+          boxShadow={`2px 2px 5px #350794,
+             -2px -2px 5px #570bf2`}
           display={{ base: "none", lg: "flex" }}
         ></Box>
 
@@ -74,6 +77,9 @@ const RoadMap = () => {
                 justifyContent="center"
                 key={i}
                 flexDirection={"column"}
+                borderRadius="xl"
+                backgroundImage={`linear-gradient(to left, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
+                data-aos={`fade-left`}
               >
                 <Phase
                   phase={p.phase}
@@ -118,13 +124,10 @@ const Phase = (props: Props) => {
       ) : null}
       <Box
         cursor={"pointer"}
-        data-aos={props.index % 2 === 0 ? `fade-left` : `fade-right`}
-        boxShadow={`4px 4px 7px #350794,
-             -4px -4px 7px #570bf2`}
         minW={{ base: "80", md: "96" }}
         minH={{ base: "44", md: "64" }}
-        transition={`all 100ms ease-out`}
         _hover={{
+          transition: "all 12ms ease-in",
           boxShadow: `inset 4px 4px 7px #350794,
             inset -4px -4px 7px #570bf2`,
         }}

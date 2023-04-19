@@ -1,8 +1,10 @@
 import { Box, Image, Link, Text } from "@chakra-ui/react";
-import { useRef } from "react";
+import { lazy, useRef } from "react";
 import Slider from "react-slick";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 import "./Slider.css";
+
+const Audit = lazy(() => import("./Audit"));
 
 const games = [
   "https://axlegames.s3.ap-south-1.amazonaws.com/wordle-5.png",
@@ -139,6 +141,7 @@ const Games = () => {
             </Box>
           </Box>
         </Box>
+        <Audit />
       </Box>
     </Box>
   );

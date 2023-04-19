@@ -41,7 +41,7 @@ const PoweredBy = (props: any) => {
       <Box
         m={4}
         bg={brandingColors.bgColor}
-        boxShadow={`4px 4px 9px #0b052e, -4px -4px 9px #11074c`}
+        boxShadow={`0px 0px 4px ${brandingColors.newHighlightColor}`}
         py={{ base: "4" }}
         px={{ base: "2" }}
         borderRadius="xl"
