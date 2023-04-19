@@ -8,10 +8,10 @@ const Audit = lazy(() => import("./Audit"));
 
 const games = [
   "https://axlegames.s3.ap-south-1.amazonaws.com/wordle-5.png",
+  "https://axlegames.s3.ap-south-1.amazonaws.com/ai_wordle_5.png",
+  "https://axlegames.s3.ap-south-1.amazonaws.com/ai_arrival_5.png",
+  "https://axlegames.s3.ap-south-1.amazonaws.com/ai_s_5.png",
   "https://axlegames.s3.ap-south-1.amazonaws.com/wordle-6.png",
-  "https://axlegames.s3.ap-south-1.amazonaws.com/wordle-7.png",
-  "https://axlegames.s3.ap-south-1.amazonaws.com/absurdle.png",
-  "https://axlegames.s3.ap-south-1.amazonaws.com/lewdle.png",
 ];
 
 const colors = ["color-2", "color-1", "color-9", "color-1", "color-3"];
@@ -94,7 +94,7 @@ const Games = () => {
                       fontSize={{ base: "md", lg: "xl" }}
                       style={{ fontFamily: brandingFonts.subFont }}
                     >
-                      We are constantly adding
+                      Explore our new
                       <Box
                         display={"inline"}
                         fontSize={{ base: "md", lg: "xl" }}
@@ -104,7 +104,7 @@ const Games = () => {
                           margin: "0 .33rem",
                         }}
                       >
-                        new games
+                        Metamorphosis AI games
                       </Box>
                     </Text>
                   </Box>
