@@ -49,7 +49,7 @@ const data = [
   },
   {
     img: Sherlock,
-    name: "Sherlock",
+    name: "Sherlock calls",
   },
   {
     img: CCat,
@@ -183,7 +183,7 @@ const Audit = () => {
             <TwitterProfileCard key={index} {...profile} />
           ))}
         </Marquee>
-        <Marquee direction="right" gradientWidth={0} speed={202}>
+        <Marquee direction="right" gradientWidth={0} speed={120}>
           {data.map((profile, index) => (
             <TwitterProfileCard
               key={index}
