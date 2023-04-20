@@ -6,6 +6,11 @@ import { useEffect, useRef } from "react";
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { brandingColors, brandingFonts } from "../../config/brandingColors";
 
+import C3 from "../../assets/banner/C3.png";
+import C4 from "../../assets/banner/C4.png";
+import Versus from "../../assets/banner/versus.png";
+import T from "../../assets/banner/tag.gif";
+
 import "./Banner.css";
 
 const Banner = () => {
@@ -27,11 +32,7 @@ const Banner = () => {
           position={"absolute"}
         >
           <Flex px={4} my={4} justifyContent={"center"}>
-            <Image
-              src={`https://axlegames.s3.ap-south-1.amazonaws.com/tag.gif`}
-              borderRadius="xl"
-              boxShadow={"dark-lg"}
-            />
+            <Image src={T} borderRadius="xl" boxShadow={"dark-lg"} />
           </Flex>
         </Box>
         <Box className="banner-content d-flex align-items-center">
@@ -197,7 +198,7 @@ const Banner = () => {
                           >
                             <Image
                               maxH={{ base: "56", lg: "72" }}
-                              src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/versus.png"
+                              src={Versus}
                               alt="banner-vs"
                               data-aos="fade-up"
                               data-aos-easing="ease-in-back"
@@ -218,7 +219,7 @@ const Banner = () => {
                 maxH={{ base: "96", xl: "520px" }}
                 maxW={{ base: "96", xl: "520px" }}
                 className="left-1"
-                src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C3.png"
+                src={C3}
                 alt="image"
               />
               <Image
@@ -226,7 +227,7 @@ const Banner = () => {
                 maxH={{ base: "96", md: "320px", xl: "520px" }}
                 maxW={{ base: "96", md: "320px", xl: "520px" }}
                 className="right-2"
-                src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/C4.png"
+                src={C4}
                 alt="image"
               />
             </Box>
