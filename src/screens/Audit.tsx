@@ -178,12 +178,12 @@ const Audit = () => {
           title="our"
         />
 
-        <Marquee gradientWidth={0} speed={60}>
+        <Marquee direction="left" gradientWidth={0} speed={60}>
           {profiles.map((profile, index) => (
             <TwitterProfileCard key={index} {...profile} />
           ))}
         </Marquee>
-        <Marquee gradientWidth={0} speed={202}>
+        <Marquee direction="right" gradientWidth={0} speed={202}>
           {data.map((profile, index) => (
             <TwitterProfileCard
               key={index}
