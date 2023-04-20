@@ -3,6 +3,8 @@ import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 interface Props {
   isTeam?: boolean;
+  isSub?: boolean;
+  subTitle?: string;
   title: string;
 }
 const Heading = (props: Props) => {
@@ -40,6 +42,17 @@ const Heading = (props: Props) => {
           {s.toUpperCase()}
         </Text>
       ))}
+      <Text
+        fontSize={{ base: "xl", sm: "2xl", lg: "4xl" }}
+        textAlign={"center"}
+        fontFamily={brandingFonts.headingFont}
+        fontWeight="bold"
+        data-aos={`zoom-out`}
+        color={brandingColors.primaryTextColor}
+      >
+        {" "}
+        {props.subTitle}
+      </Text>
     </Box>
   );
 };
