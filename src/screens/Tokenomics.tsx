@@ -132,32 +132,32 @@ const chart = `
       chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
       chart.data = [
         {
-          category: "Private Sale",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-        {
-          category: "Public Sale",
-          value: 20,
+          category: "Presale",
+          value: 25,
           label: am4core.color("#ffffff"),
         },
         {
           category: "Founding Team",
-          value: 15,
+          value: 10,
           label: am4core.color("#ffffff"),
         },
         {
-          category: "Advisors and Legal team",
-          value: 5,
+          category: "Ecosystem and Staking Rewards",
+          value: 25,
           label: am4core.color("#ffffff"),
         },
         {
-          category: "Axle Ecosystem rewards",
-          value: 20,
+          category: "Advisors and Partners",
+          value: 4,
           label: am4core.color("#ffffff"),
         },
         {
-          category: "Referral and Bonuses",
+          category: "CEX listings",
+          value: 6,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          category: "Marketing",
           value: 10,
           label: am4core.color("#ffffff"),
         },
@@ -167,8 +167,13 @@ const chart = `
           label: am4core.color("#ffffff"),
         },
         {
-          category: "Marketing and Listings",
-          value: 15,
+          category: "Liquidity",
+          value: 12,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          category: "Airdrops and Giveaways",
+          value: 3,
           label: am4core.color("#ffffff"),
         },
       ];
