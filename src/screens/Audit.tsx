@@ -155,13 +155,19 @@ const Audit = () => {
       <Heading title="Audited and KYC'ED By" />
       <Container>
         <Box
-          columnGap={"3rem"}
+          columnGap={"2rem"}
           flexDirection={{ base: "column", lg: "row" }}
           display={"flex"}
           justifyContent="center"
+          alignItems={"center"}
         >
           {img.map((s, i) => (
-            <Image maxW="420px" borderRadius="xl" className="logos" src={s} />
+            <Image
+              maxW={{ base: "280px", md: "420px" }}
+              borderRadius="xl"
+              className="logos"
+              src={s}
+            />
           ))}
         </Box>
       </Container>
@@ -219,7 +225,7 @@ const Audit = () => {
           <Box borderRadius={"md"} bg={brandingColors.highLightColor}>
             <Image
               borderRadius={"xl"}
-              maxW={{ base: "256px", md: "512px", lg: "786px" }}
+              maxW={{ base: "386px", md: "512px", lg: "786px" }}
               src={Marketing}
             />
           </Box>
