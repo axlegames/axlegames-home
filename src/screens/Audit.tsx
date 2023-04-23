@@ -154,7 +154,7 @@ const Audit = () => {
 
   const img = [SP, PS];
   const img0 = [Nuls, Bitgert];
-  const texts = ["Bitgert", "NULS"];
+  const texts = ["NULS Blockchain", "Bitgert"];
   return (
     <Box py={12} zIndex={800}>
       <Box
