@@ -154,6 +154,7 @@ const Audit = () => {
 
   const img = [SP, PS];
   const img0 = [Nuls, Bitgert];
+  const texts = ["Bitgert", "NULS"];
   return (
     <Box py={12} zIndex={800}>
       <Box
@@ -225,12 +226,22 @@ const Audit = () => {
               rowGap="1rem"
             >
               {img0.map((s, i) => (
-                <Image
-                  style={{ borderRadius: "200%" }}
-                  maxW={{ base: "150px", xl: "220px" }}
-                  className="logos"
-                  src={s}
-                />
+                <Box textAlign={"center"}>
+                  <Image
+                    style={{ borderRadius: "200%" }}
+                    maxW={{ base: "150px", xl: "220px" }}
+                    className="logos"
+                    src={s}
+                  />
+                  <Text
+                    my={4}
+                    fontSize={{ base: "xl" }}
+                    fontWeight={"bold"}
+                    fontFamily={brandingFonts.subFont}
+                  >
+                    {texts[i].toUpperCase()}
+                  </Text>
+                </Box>
               ))}
             </Box>
           </Box>
