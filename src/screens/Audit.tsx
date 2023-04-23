@@ -226,10 +226,16 @@ const Audit = () => {
               rowGap="1rem"
             >
               {img0.map((s, i) => (
-                <Box textAlign={"center"}>
+                <Box
+                  flexDirection={"column"}
+                  display={"flex"}
+                  justifyContent="center"
+                  alignItems={"center"}
+                  textAlign={"center"}
+                >
                   <Image
                     style={{ borderRadius: "200%" }}
-                    maxW={{ base: "150px", xl: "220px" }}
+                    maxW={{ base: "150px", xl: "180px" }}
                     className="logos"
                     src={s}
                   />
