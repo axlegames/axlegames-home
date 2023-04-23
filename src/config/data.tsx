@@ -194,7 +194,7 @@ export const phases = [
     milestones: [
       "Team Expansion - New hiring",
       "Axle Games Website V2",
-      "IDO Presale Phase 4",
+      "Pinksale Presale Phase 4",
       "Axle Token Staking",
       "Axle Swap Launch",
       "Lewdle  and Lookdle Launch",

@@ -23,8 +23,9 @@ import Doc from "../assets/tchannels/docclub.jpeg";
 import Sapphire from "../assets/tchannels/Sapphirecalls.jpeg";
 import Monkey from "../assets/tchannels/MonkeyTreasury.jpeg";
 import Tweet from "../assets/banner/tweet.png";
-import Bitgert from "../assets/bitgert.jpeg";
-import Nuls from "../assets/nuls.jpeg";
+import Bitgert from "../assets/bitgert.png";
+import Nuls from "../assets/nuls.png";
+import Nerve from "../assets/nerve.png";
 
 interface Profile {
   description: string;
@@ -153,32 +154,56 @@ const Audit = () => {
   }, []);
 
   const img = [SP, PS];
-  const img0 = [Nuls, Bitgert];
-  const texts = ["NULS Blockchain", "Bitgert"];
+  const img0 = [Nuls, Bitgert, Nerve];
+  const texts = ["NULS Blockchain", "Bitgert", "Nerve Network"];
   return (
     <Box py={12} zIndex={800}>
       <Box
         borderRadius={"xl"}
-        justifyContent={"center"}
+        justifyContent={"space-evenly"}
         alignItems="center"
         display={"flex"}
-        py={12}
+        py={{ base: 12, lg: 24 }}
         px={4}
+        columnGap="3rem"
+        rowGap={"2rem"}
+        flexDirection={{ base: "column", lg: "row" }}
       >
+        <Box>
+          <Text
+            lineHeight={"1.6"}
+            fontSize={{ base: "3xl", md: "6xl", xl: "7xl" }}
+            fontFamily={brandingFonts.subFont}
+            data-aos="fade-left"
+          >
+            Elon Musk shilling
+          </Text>
+          <Text
+            data-aos="fade-left"
+            lineHeight={"1.6"}
+            fontSize={{ base: "3xl", md: "6xl", xl: "7xl" }}
+            fontFamily={brandingFonts.subFont}
+            color={brandingColors.secondaryTwoTextColor}
+          >
+            Metamorphosis AI
+          </Text>
+        </Box>
         <a
           href="https://twitter.com/elonmusk/status/1642710694301929473"
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
+            data-aos="fade-right"
             boxShadow={`0px 0px 156px -4px ${brandingColors.newHighlightColor}`}
             borderRadius={"xl"}
-            maxW={{ base: "auto", xl: "420px" }}
+            maxW={{ base: "auto", md: "420px" }}
             src={Tweet}
           />
         </a>
       </Box>
       <Flex
+        py={12}
         flexDirection={{ base: "column", xl: "row" }}
         justifyContent={"space-evenly"}
         alignItems={{ base: "center", xl: "start" }}
@@ -195,6 +220,7 @@ const Audit = () => {
             >
               {img.map((s, i) => (
                 <Image
+                  data-aos="fade-up"
                   maxW={{ base: "280px", xl: "320px" }}
                   borderRadius="xl"
                   className="logos"
@@ -203,15 +229,6 @@ const Audit = () => {
               ))}
             </Box>
           </Box>
-        </Box>
-        <Box
-          display={{ base: "none", xl: "flex" }}
-          borderRadius={"xl"}
-          minH="320px"
-          bg={brandingColors.newHighlightColor}
-          boxShadow={`0px 0px 4px ${brandingColors.newHighlightColor}`}
-        >
-          <Box visibility={"hidden"}>t</Box>
         </Box>
 
         <Box>
@@ -227,6 +244,7 @@ const Audit = () => {
             >
               {img0.map((s, i) => (
                 <Box
+                  data-aos="fade-up"
                   flexDirection={"column"}
                   display={"flex"}
                   justifyContent="center"
@@ -256,7 +274,7 @@ const Audit = () => {
       <Box
         bg={brandingColors.bgColor}
         backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-bg.png`}
-        py={12}
+        py={16}
       >
         <Heading
           isSub={true}
@@ -303,7 +321,11 @@ const Audit = () => {
             isSub={true}
             title="OUR"
           />
-          <Box borderRadius={"md"} bg={brandingColors.highLightColor}>
+          <Box
+            data-aos="fade-up"
+            borderRadius={"md"}
+            bg={brandingColors.highLightColor}
+          >
             <Image
               borderRadius={"xl"}
               maxW={{ base: "386px", md: "512px", lg: "786px" }}
