@@ -32,7 +32,13 @@ const Banner = () => {
           position={"absolute"}
         >
           <Flex px={4} my={4} justifyContent={"center"}>
-            <Image src={T} borderRadius="xl" boxShadow={"dark-lg"} />
+            <a
+              href="https://twitter.com/elonmusk/status/1642710694301929473"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image src={T} borderRadius="xl" boxShadow={"dark-lg"} />
+            </a>
           </Flex>
         </Box>
         <Box className="banner-content d-flex align-items-center">

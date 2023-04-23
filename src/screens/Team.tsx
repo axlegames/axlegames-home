@@ -46,7 +46,20 @@ const Team = () => {
 
   return (
     <Box py={{ base: "12" }} mx={{ md: "auto" }}>
-      <Heading isTeam={true} title="BUILT BY DEVs AT MICROSOFT" />
+      <Flex
+        flexDirection={"column"}
+        alignItems="center"
+        justifyContent={"center"}
+      >
+        <Heading isTeam={true} title="BUILT BY DEVs AT MICROSOFT" />
+        <Text
+          mb={{ base: "4", lg: "0" }}
+          lineHeight={{ lg: "-0" }}
+          fontFamily={brandingFonts.subFont}
+        >
+          {`Fully Doxxed and transparent Team`.toUpperCase()}
+        </Text>
+      </Flex>
 
       <Box px={16} display={{ base: "block", md: "none" }}>
         <Slider

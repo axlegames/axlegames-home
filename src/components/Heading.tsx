@@ -31,7 +31,7 @@ const Heading = (props: Props) => {
       justifyContent={"center"}
       py={12}
       flexDirection={{ base: "column", md: "row" }}
-      rowGap=".22rem"
+      rowGap=".5rem"
     >
       {split.map((s, i) => (
         <Text

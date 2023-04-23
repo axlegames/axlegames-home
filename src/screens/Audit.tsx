@@ -1,4 +1,4 @@
-import { Box, Container, Image, Icon, Text } from "@chakra-ui/react";
+import { Box, Image, Icon, Text, Flex } from "@chakra-ui/react";
 import Heading from "../components/Heading";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 
@@ -22,6 +22,9 @@ import DEX from "../assets/tchannels/dwen_exchange.jpeg";
 import Doc from "../assets/tchannels/docclub.jpeg";
 import Sapphire from "../assets/tchannels/Sapphirecalls.jpeg";
 import Monkey from "../assets/tchannels/MonkeyTreasury.jpeg";
+import Tweet from "../assets/banner/tweet.png";
+import Bitgert from "../assets/bitgert.jpeg";
+import Nuls from "../assets/nuls.jpeg";
 
 interface Profile {
   description: string;
@@ -150,28 +153,89 @@ const Audit = () => {
   }, []);
 
   const img = [SP, PS];
+  const img0 = [Nuls, Bitgert];
   return (
     <Box py={12} zIndex={800}>
-      <Heading title="Audited and KYC'ED By" />
-      <Container>
-        <Box
-          columnGap={"2rem"}
-          flexDirection={{ base: "column", lg: "row" }}
-          display={"flex"}
-          justifyContent="center"
-          alignItems={"center"}
+      <Box
+        borderRadius={"xl"}
+        justifyContent={"center"}
+        alignItems="center"
+        display={"flex"}
+        py={12}
+        px={4}
+      >
+        <a
+          href="https://twitter.com/elonmusk/status/1642710694301929473"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          {img.map((s, i) => (
-            <Image
-              maxW={{ base: "280px", md: "420px" }}
-              borderRadius="xl"
-              className="logos"
-              src={s}
-            />
-          ))}
+          <Image
+            boxShadow={`0px 0px 156px -4px ${brandingColors.newHighlightColor}`}
+            borderRadius={"xl"}
+            maxW={{ base: "auto", xl: "420px" }}
+            src={Tweet}
+          />
+        </a>
+      </Box>
+      <Flex
+        flexDirection={{ base: "column", xl: "row" }}
+        justifyContent={"space-evenly"}
+        alignItems={{ base: "center", xl: "start" }}
+      >
+        <Box>
+          <Heading title="Audited and KYC'ED By" />
+          <Box>
+            <Box
+              columnGap={"2rem"}
+              flexDirection={{ base: "column", xl: "row" }}
+              display={"flex"}
+              justifyContent="center"
+              alignItems={"center"}
+            >
+              {img.map((s, i) => (
+                <Image
+                  maxW={{ base: "280px", xl: "320px" }}
+                  borderRadius="xl"
+                  className="logos"
+                  src={s}
+                />
+              ))}
+            </Box>
+          </Box>
         </Box>
-      </Container>
+        <Box
+          display={{ base: "none", xl: "flex" }}
+          borderRadius={"xl"}
+          minH="320px"
+          bg={brandingColors.newHighlightColor}
+          boxShadow={`0px 0px 4px ${brandingColors.newHighlightColor}`}
+        >
+          <Box visibility={"hidden"}>t</Box>
+        </Box>
 
+        <Box>
+          <Heading isSub={true} subTitle="STRATEGIC ADVISORS" title=" Our" />
+          <Box>
+            <Box
+              columnGap={"2rem"}
+              flexDirection={{ base: "column", xl: "row" }}
+              display={"flex"}
+              justifyContent="center"
+              alignItems={"center"}
+              rowGap="1rem"
+            >
+              {img0.map((s, i) => (
+                <Image
+                  style={{ borderRadius: "200%" }}
+                  maxW={{ base: "150px", xl: "220px" }}
+                  className="logos"
+                  src={s}
+                />
+              ))}
+            </Box>
+          </Box>
+        </Box>
+      </Flex>
       <Box
         bg={brandingColors.bgColor}
         backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/counter-bg.png`}
