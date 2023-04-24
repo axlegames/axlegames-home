@@ -102,9 +102,9 @@ const chart = `
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AxleGames</title>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
       * {
-        font-family: Righteous;
+        font-family: Staatliches;
         padding: 0;
         margin: 0;
         box-sizing: border-box;
@@ -112,7 +112,7 @@ const chart = `
       #chartdiv {
         margin: auto;
         display: block;
-        min-height: 60vh;
+        min-height: 80vh;
         max-width: 100vw;
         overflow: hidden;
         display: flex;
@@ -137,13 +137,8 @@ const chart = `
           label: am4core.color("#ffffff"),
         },
         {
-          category: "Founding Team",
-          value: 10,
-          label: am4core.color("#ffffff"),
-        },
-        {
           category: "Ecosystem and Staking Rewards",
-          value: 25,
+          value: 30,
           label: am4core.color("#ffffff"),
         },
         {
@@ -158,7 +153,7 @@ const chart = `
         },
         {
           category: "Marketing",
-          value: 10,
+          value: 15,
           label: am4core.color("#ffffff"),
         },
         {
@@ -178,8 +173,8 @@ const chart = `
         },
       ];
 
-      chart.radius = am4core.percent(70);
-      chart.innerRadius = am4core.percent(40);
+      chart.radius = am4core.percent(40);
+      chart.innerRadius = am4core.percent(20);
       chart.startAngle = 180;
       chart.endAngle = 360;
 
@@ -208,4 +203,5 @@ const chart = `
     </script>
   </body>
 </html>
+
 `;
