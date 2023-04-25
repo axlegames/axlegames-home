@@ -468,20 +468,14 @@ const Join = (props: FormInterface) => {
                     <Text>How to buy guide</Text>
                   </Flex>
                 </a>
-                <a
-                  target={"_blank"}
-                  rel="noopener noreferrer"
-                  href="https://sale.axlegames.io"
+                {/* <Flex
+                  cursor={"pointer"}
+                  justifyContent={"center"}
+                  alignItems="center"
                 >
-                  <Flex
-                    cursor={"pointer"}
-                    justifyContent={"center"}
-                    alignItems="center"
-                  >
-                    <Image width={"6"} src={Link} />
-                    <Text>sale.axlegames.io</Text>
-                  </Flex>
-                </a>
+                  <Image width={"6"} src={Link} />
+                  <Text>sale.axlegames.io</Text>
+                </Flex> */}
               </Flex>
             </Box>
           </Box>

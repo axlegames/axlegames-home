@@ -303,10 +303,10 @@ const links = [
         name: "Pitch Deck",
         url: "https://axlegames.s3.ap-south-1.amazonaws.com/Axlegames.pdf",
       },
-      {
-        name: "Axle Presale",
-        url: "https://sale.axlegames.io",
-      },
+      // {
+      //   name: "Axle Presale",
+      //   url: "https://sale.axlegames.io",
+      // },
     ],
     isLocal: false,
   },

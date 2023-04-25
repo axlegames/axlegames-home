@@ -88,7 +88,7 @@ const EProfile = () => {
                 >
                   Sign Up
                 </a>
-                <a
+                {/* <a
                   style={{
                     fontFamily: brandingFonts.subFont,
                     textDecoration: "none",
@@ -99,7 +99,7 @@ const EProfile = () => {
                   rel="noopener noreferrer"
                 >
                   BUY $AXLE
-                </a>
+                </a> */}
               </Flex>
             </Box>
           </Box>

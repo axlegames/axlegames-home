@@ -39,7 +39,7 @@ export const products = [
     text: "Users can stake their $AXLE tokens by locking in our staking pools for a certain period of time. Our stakers will have exclusive benefits to the Axle platform and will receive $AXLE token rewards with attractive APYs.",
     image: ProductStakingIcon,
     mainImg: ProductStakingImg,
-    function: () => window.open("https://sale.axlegames.io", "_blank"),
+    function: () => null,
   },
 
   {
@@ -49,7 +49,7 @@ export const products = [
     text: "A decentralised exchange is a peer-to-peer marketplace to exchange cryptos. Axle swaps enables users to swap their $AXLE tokens to other supported tokens and vice versa. Decentralisation is a fundamental philosophy of blockchain and Axle Swap will play a huge role in decentralisation.",
     image: ProductSwapIcon,
     mainImg: ProductSwapImg,
-    function: () => window.open("https://sale.axlegames.io", "_blank"),
+    function: () => null,
   },
   {
     isLive: false,

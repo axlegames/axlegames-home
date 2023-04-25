@@ -157,7 +157,7 @@ const Banner = () => {
                       style={{ columnGap: "1rem", margin: "1rem" }}
                       className="btn-play d-flex justify-content-center align-items-center"
                     >
-                      <a
+                      {/* <a
                         href="https://sale.axlegames.io"
                         target="_blank"
                         className="btnc"
@@ -175,7 +175,7 @@ const Banner = () => {
                         >
                           Join Presale
                         </Box>{" "}
-                      </a>{" "}
+                      </a>{" "} */}
                       <Box display={{ base: "none", lg: "block" }}>
                         <a
                           href="https://t.me/axlegames_en"
@@ -188,7 +188,7 @@ const Banner = () => {
                           }}
                           rel="noopener noreferrer"
                         >
-                          Community
+                          Join Community
                         </a>
                       </Box>
                     </Box>
