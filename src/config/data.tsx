@@ -264,7 +264,7 @@ export const team = [
     email: "praneeth@artemisnetwork.io",
   },
   {
-    name: "D. C. R",
+    name: "Leo Chakri",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/chakri.webp`,
     role: "Co-Founder / Project Lead",
     linkedIn: "https://www.linkedin.com/in/chakravardhan/",

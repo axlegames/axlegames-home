@@ -56,6 +56,7 @@ const Team = () => {
           mb={{ base: "4", lg: "0" }}
           lineHeight={{ lg: "-0" }}
           fontFamily={brandingFonts.subFont}
+          color={brandingColors.dangerColor}
         >
           {`Fully Doxxed and transparent Team`.toUpperCase()}
         </Text>

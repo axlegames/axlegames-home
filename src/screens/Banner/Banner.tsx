@@ -157,8 +157,8 @@ const Banner = () => {
                       style={{ columnGap: "1rem", margin: "1rem" }}
                       className="btn-play d-flex justify-content-center align-items-center"
                     >
-                      {/* <a
-                        href="https://sale.axlegames.io"
+                      <a
+                        href="https://www.pinksale.finance/launchpad/0x8261A864541081B45c6e12e7b11e46D1Ab977fC2?chain=BSC"
                         target="_blank"
                         className="btnc"
                         rel="noopener noreferrer"
@@ -175,7 +175,7 @@ const Banner = () => {
                         >
                           Join Presale
                         </Box>{" "}
-                      </a>{" "} */}
+                      </a>{" "}
                       <Box display={{ base: "none", lg: "block" }}>
                         <a
                           href="https://t.me/axlegames_en"
@@ -188,7 +188,7 @@ const Banner = () => {
                           }}
                           rel="noopener noreferrer"
                         >
-                          Join Community
+                          Community
                         </a>
                       </Box>
                     </Box>

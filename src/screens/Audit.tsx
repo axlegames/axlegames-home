@@ -26,6 +26,7 @@ import Tweet from "../assets/banner/tweet.png";
 import Bitgert from "../assets/bitgert.png";
 import Nuls from "../assets/nuls.png";
 import Nerve from "../assets/nerve.png";
+import Dex from "../assets/dex.png";
 
 interface Profile {
   description: string;
@@ -153,9 +154,14 @@ const Audit = () => {
       });
   }, []);
 
-  const img = [SP, PS];
+  const img = [SP, PS, Dex];
   const img0 = [Nuls, Bitgert, Nerve];
   const texts = ["NULS Blockchain", "Bitgert", "Nerve Network"];
+  const links = [
+    "https://solidproof.io/",
+    "https://pinksale.finance",
+    "https://dexview.com",
+  ];
   return (
     <Box py={12} zIndex={800}>
       <Box
@@ -219,13 +225,16 @@ const Audit = () => {
               alignItems={"center"}
             >
               {img.map((s, i) => (
-                <Image
-                  data-aos="fade-up"
-                  maxW={{ base: "280px", xl: "320px" }}
-                  borderRadius="xl"
-                  className="logos"
-                  src={s}
-                />
+                <a href={links[i]} target={"_blank"} rel="noopener noreferrer">
+                  <Image
+                    px={2}
+                    data-aos="fade-up"
+                    maxW={{ base: "180px", xl: "200px" }}
+                    borderRadius="xl"
+                    className="logos"
+                    src={s}
+                  />
+                </a>
               ))}
             </Box>
           </Box>
@@ -253,7 +262,7 @@ const Audit = () => {
                 >
                   <Image
                     style={{ borderRadius: "200%" }}
-                    maxW={{ base: "150px", xl: "180px" }}
+                    maxW={{ base: "120px", xl: "140px" }}
                     className="logos"
                     src={s}
                   />
