@@ -179,7 +179,7 @@ const Stake = () => {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: ethers.utils.hexlify(56) }],
+        params: [{ chainId: ethers.utils.hexlify(97) }],
       });
     } catch (err: any) {
       // This error code indicates that the chain has not been added to MetaMask
@@ -285,9 +285,10 @@ const Stake = () => {
       const e9 = 10 ** 9;
       const web3Provider = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(web3Provider);
+      console.log(provider);
       const web3Accounts = await provider.listAccounts();
       const network = await provider.getNetwork();
-      if (network.chainId !== creds.chain.chainId) switchNetwork();
+      if (network.chainId !== 97) switchNetwork();
       let bnbBal: any = await provider.getBalance(web3Accounts[0]);
       bnbBal = Number(ethers.utils.formatEther(bnbBal));
       const signer = provider.getSigner();
@@ -296,8 +297,6 @@ const Stake = () => {
         axleTokenABI,
         signer
       );
-      console.log(token);
-      console.log(web3Accounts[0]);
       const stake = new ethers.Contract(AXLE_STAKING, axleStakingABI, signer);
       console.log(stake);
       let bal = await token.balanceOf(web3Accounts[0]);
@@ -339,7 +338,7 @@ const Stake = () => {
   };
 
   const disconnectWeb3Modal = async (loaded: boolean = false) => {
-    await web3Modal.clearCachedProvider();
+    web3Modal.clearCachedProvider();
     if (!loaded) window.location.reload();
   };
 

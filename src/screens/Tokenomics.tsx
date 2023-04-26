@@ -148,7 +148,12 @@ const chart = `
         },
         {
           category: "CEX listings",
-          value: 6,
+          value: 9,
+          label: am4core.color("#ffffff"),
+        },
+        {
+          category: "Partnership",
+          value: 2,
           label: am4core.color("#ffffff"),
         },
         {

@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import FallBack from "./components/Fallback";
 import { theme } from "./config/theme";
+
 import Stake from "./Staking/Stake";
 import Swap from "./Staking/Swap";
 import Banner from "./components/Banner";

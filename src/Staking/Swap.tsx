@@ -2,7 +2,7 @@ import { Box, Image, Input, Select, Text } from "@chakra-ui/react";
 
 import Logo from "../assets/logo.png";
 
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { SettingsIcon } from "@chakra-ui/icons";
 
 import SwapIcon from "../assets/stake/swapv.svg";
@@ -28,8 +28,7 @@ const Swap = () => {
       bg={brandingColors.bgColor}
       backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png`}
       backgroundSize="contain"
-      fontFamily={"quicksand"}
-      fontWeight="bold"
+      fontFamily={"Righteous"}
       minH="100vh"
     >
       <Box
@@ -55,7 +54,7 @@ const Swap = () => {
           flexDirection={"column"}
         >
           <Text
-            fontFamily={`Staatliches`}
+            fontFamily={brandingFonts.headingFont}
             lineHeight={"0.8"}
             fontSize={{ base: "3xl", md: "5xl" }}
             color={brandingColors.primaryTextColor}
@@ -71,7 +70,7 @@ const Swap = () => {
           minW={{ base: "100%", md: "auto" }}
           width="50vw"
           mx={4}
-          fontFamily={"Shantell Sans"}
+          fontFamily={brandingFonts.headingFont}
         >
           <Box
             display={"flex"}
@@ -82,7 +81,7 @@ const Swap = () => {
             py={2}
           >
             <Text
-              fontFamily={`Staatliches`}
+              fontFamily={brandingFonts.headingFont}
               fontSize={{ base: "xl", md: "3xl" }}
             >
               SWAP
@@ -107,7 +106,7 @@ const Swap = () => {
             >
               <Box display={"flex"} alignItems="center" columnGap={"1rem"}>
                 <Select
-                  fontFamily={`Staatliches`}
+                  fontFamily={brandingFonts.subFont}
                   fontSize={{ base: "xs", md: "md" }}
                   onChange={(e) => setSwap1(Number(e.target.value))}
                 >
@@ -121,7 +120,7 @@ const Swap = () => {
                 <Image w={{ base: 7, md: 8 }} src={images1[swap1]} />
               </Box>
               <Text
-                fontFamily={"Shantell Sans"}
+                fontFamily={brandingFonts.subFont}
                 fontSize={{ base: "xs", md: "md" }}
               >
                 Balance : 0 {swaps1[swap1]}
@@ -135,6 +134,7 @@ const Swap = () => {
               fontSize="lg"
               type={"number"}
               inputMode="decimal"
+              fontFamily={brandingFonts.subFont}
               borderRadius={"md"}
               textAlign="right"
               border={`2px solid ${brandingColors.fgColor}`}
@@ -162,7 +162,7 @@ const Swap = () => {
               <Box display={"flex"} alignItems="center" columnGap={"1rem"}>
                 <Select
                   fontSize={{ base: "xs", md: "md" }}
-                  fontFamily={`Staatliches`}
+                  fontFamily={brandingFonts.subFont}
                   onChange={(e) => setSwap2(Number(e.target.value))}
                 >
                   <option value={0}>AXLE</option>
@@ -174,7 +174,7 @@ const Swap = () => {
                 <Image w={{ base: 7, md: 8 }} src={images2[swap2]} />
               </Box>
               <Text
-                fontFamily={"Shantell Sans"}
+                fontFamily={brandingFonts.subFont}
                 fontSize={{ base: "xs", md: "md" }}
               >
                 Balance : 0 {swaps2[swap2]}
@@ -191,6 +191,7 @@ const Swap = () => {
               borderRadius={"md"}
               textAlign="right"
               border={`2px solid ${brandingColors.fgColor}`}
+              fontFamily={brandingFonts.subFont}
               min={0.2}
               max={50}
               _active={{
@@ -218,12 +219,16 @@ const Swap = () => {
               fontSize={{ base: "xs", md: "md" }}
             >
               <Box display={"flex"} justifyContent="space-between">
-                <Text fontFamily={"Shantell Sans"}>Slippage Tolerance</Text>
-                <Text fontFamily={"Shantell Sans"}>5%</Text>
+                <Text fontFamily={brandingFonts.headingFont}>
+                  Slippage Tolerance
+                </Text>
+                <Text fontFamily={brandingFonts.headingFont}>5%</Text>
               </Box>
               <Box display={"flex"} justifyContent="space-between">
-                <Text fontFamily={"Shantell Sans"}>Minimum Received</Text>
-                <Text fontFamily={"Shantell Sans"}>0.000 BNB</Text>
+                <Text fontFamily={brandingFonts.headingFont}>
+                  Minimum Received
+                </Text>
+                <Text fontFamily={brandingFonts.headingFont}>0.000 BNB</Text>
               </Box>
             </Box>
             <Box
@@ -237,10 +242,18 @@ const Swap = () => {
               flexDirection="column"
               justifyContent="center"
             >
-              <Box fontFamily={`Staatliches`} width={"100%"} className="btnc">
+              <Box
+                fontFamily={brandingFonts.headingFont}
+                width={"100%"}
+                className="btnc"
+              >
                 ENABLE AXLE
               </Box>
-              <Box fontFamily={`Staatliches`} width={"100%"} className="btnc">
+              <Box
+                fontFamily={brandingFonts.headingFont}
+                width={"100%"}
+                className="btnc"
+              >
                 STAKE AXLE
               </Box>
             </Box>
