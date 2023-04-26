@@ -31,14 +31,17 @@ const Banner = (props: Props) => {
       <ModalOverlay backdropFilter="blur(5px) hue-rotate(0deg)" />
       <ModalContent background={"none"} boxShadow="none">
         <ModalBody>
-          <a
-            style={{ outline: "none", border: "none" }}
-            href="https://www.pinksale.finance/launchpad/0x8261A864541081B45c6e12e7b11e46D1Ab977fC2?chain=BSC"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={Ban} borderRadius="xl" />
-          </a>
+          <Image
+            onClick={() => {
+              window.open(
+                "https://www.pinksale.finance/launchpad/0x8261A864541081B45c6e12e7b11e46D1Ab977fC2?chain=BSC",
+                "_blank"
+              );
+              props.close();
+            }}
+            src={Ban}
+            borderRadius="xl"
+          />
         </ModalBody>
       </ModalContent>
     </Modal>
