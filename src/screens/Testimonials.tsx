@@ -12,6 +12,7 @@ const testimonials = [
                   user-friendly it is. It's clear that the developers put a lot
                   of thought into making the platform more enjoyable.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_4.jpg",
+    stars: 3,
   },
   {
     name: "Sophia Grace",
@@ -19,6 +20,7 @@ const testimonials = [
     desc: `If you're a fan of word games, you have to try Axle Games! The
                   games are addictive, the community is friendly and supportive,
                   and the overall experience is just top-notch.`,
+    stars: 5,
   },
   {
     name: "Victoria Jane",
@@ -27,6 +29,7 @@ const testimonials = [
                   engaged, and I love challenging my vocabulary skills against
                   other players.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_1.jpg",
+    stars: 4,
   },
   {
     name: "Marco Antonio",
@@ -34,6 +37,7 @@ const testimonials = [
 	discovering Axle Games, I'm hooked. I love the sense of accomplishment I feel when I
 	solve a challenging puzzle.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_2.jpg",
+    stars: 4,
   },
   {
     name: "Alexander James",
@@ -41,18 +45,17 @@ const testimonials = [
                   Axle Games is by far my favourite. The variety of games and
                   challenges keeps things fresh and exciting, to play everyday.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_3.jpg",
+    stars: 4,
   },
   {
     name: "Juan Carlos",
-
     desc: `I never knew that word games could be so competitive until I
                   started playing on Axle Games. The tournaments and
                   leaderboards add an extra level of excitement.`,
     img: "https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/avatar_6.jpg",
+    stars: 3,
   },
 ];
-
-const stars = [1, 2, 3, 4, 5];
 
 const Testimonials = () => {
   const slider = useRef() as any;
@@ -192,14 +195,16 @@ const Testimonials = () => {
                             <span
                               style={{ display: "flex", columnGap: "0.5rem" }}
                             >
-                              {stars.map((s, i) => (
-                                <Image
-                                  key={i}
-                                  style={{ maxHeight: "18px" }}
-                                  src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/favourite.png"
-                                  alt="star"
-                                />
-                              ))}
+                              {Array(t.stars)
+                                .fill(0)
+                                .map((i, e) => (
+                                  <Image
+                                    key={i}
+                                    style={{ maxHeight: "18px" }}
+                                    src="https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/favourite.png"
+                                    alt="star"
+                                  />
+                                ))}
                             </span>
                           </Box>
                         </Box>
