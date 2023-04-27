@@ -133,7 +133,7 @@ const chart = `
       chart.data = [
         {
           category: "Presale",
-          value: 25,
+          value: 20,
           label: am4core.color("#ffffff"),
         },
         {
@@ -142,7 +142,7 @@ const chart = `
           label: am4core.color("#ffffff"),
         },
         {
-          category: "Advisors and Partners",
+          category: "Advisors",
           value: 4,
           label: am4core.color("#ffffff"),
         },
@@ -152,7 +152,7 @@ const chart = `
           label: am4core.color("#ffffff"),
         },
         {
-          category: "Partnership",
+          category: "Partnerships",
           value: 2,
           label: am4core.color("#ffffff"),
         },
