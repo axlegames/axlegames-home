@@ -17,22 +17,25 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import Logo from "../assets/logo.png";
+import { ethers } from "ethers";
+import { useState, useEffect } from "react";
 
+import creds from "../abi/creds";
+import moment from "moment";
+import Wallet from "./Wallet";
 import Web3Modal from "web3modal";
 import CoinbaseWalletSDK from "@coinbase/wallet-sdk";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 
-import { ethers } from "ethers";
-import { useState, useEffect } from "react";
-import Wallet from "./Wallet";
-import { brandingColors } from "../config/brandingColors";
-import "../components/navbar/Navbar.css";
-import creds from "../abi/creds";
+import { LinkIcon } from "@chakra-ui/icons";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
+
 import AxleDialog from "./dialog/AxleDialog";
 import TransactionSuccessDialog from "./dialog/TransactionSuccessDialog";
-import { LinkIcon } from "@chakra-ui/icons";
-import moment from "moment";
+
+import Logo from "../assets/logo.png";
+
+import "../components/navbar/Navbar.css";
 
 const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
 const axleTokenABI = creds.tokenAbi;
@@ -850,7 +853,7 @@ const Stake = () => {
                       }
                     >
                       <Td
-                        fontFamily={subFont}
+                        fontFamily={brandingFonts.subFont}
                         color={brandingColors.highLightColor}
                         fontSize={"sm"}
                         fontWeight="600"
@@ -858,7 +861,7 @@ const Stake = () => {
                         {i + 1}
                       </Td>
                       <Td
-                        fontFamily={subFont}
+                        fontFamily={brandingFonts.subFont}
                         color={brandingColors.highLightColor}
                         fontSize={"sm"}
                         fontWeight="600"
@@ -866,7 +869,7 @@ const Stake = () => {
                         {t.amount * e9}
                       </Td>
                       <Td
-                        fontFamily={subFont}
+                        fontFamily={brandingFonts.subFont}
                         color={brandingColors.highLightColor}
                         fontSize={"sm"}
                         fontWeight="600"
@@ -874,7 +877,7 @@ const Stake = () => {
                         {stakedAt(t.lockedUntil, t.percent)}
                       </Td>
                       <Td
-                        fontFamily={subFont}
+                        fontFamily={brandingFonts.subFont}
                         color={brandingColors.highLightColor}
                         fontSize={"sm"}
                         fontWeight="600"
@@ -882,7 +885,7 @@ const Stake = () => {
                         {getUntilIn(t.lockedUntil)}
                       </Td>
                       <Td
-                        fontFamily={subFont}
+                        fontFamily={brandingFonts.subFont}
                         color={brandingColors.highLightColor}
                         fontSize={"sm"}
                         fontWeight="600"
@@ -890,7 +893,7 @@ const Stake = () => {
                         {noOfDays(t.lockedUntil, t.percent)}
                       </Td>
                       <Td
-                        fontFamily={subFont}
+                        fontFamily={brandingFonts.subFont}
                         color={brandingColors.highLightColor}
                         fontSize={"sm"}
                         fontWeight="600"
@@ -898,7 +901,7 @@ const Stake = () => {
                         {t.percent * 10 ** 16}%
                       </Td>
                       <Td
-                        fontFamily={subFont}
+                        fontFamily={brandingFonts.subFont}
                         color={brandingColors.highLightColor}
                         fontSize={"sm"}
                         fontWeight="600"
@@ -906,7 +909,7 @@ const Stake = () => {
                         {t.stakingOver ? "over" : "in progress"}
                       </Td>
                       <Td
-                        fontFamily={subFont}
+                        fontFamily={brandingFonts.subFont}
                         color={brandingColors.highLightColor}
                         fontSize={"sm"}
                         fontWeight="600"
