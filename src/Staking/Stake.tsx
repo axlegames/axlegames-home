@@ -126,19 +126,15 @@ const web3Modal = new Web3Modal({
 const stakeRewards = [
   {
     days: 30,
-    roi: 14,
+    roi: 60,
   },
   {
     days: 90,
-    roi: 17,
+    roi: 90,
   },
   {
     days: 180,
-    roi: 20,
-  },
-  {
-    days: 360,
-    roi: 25,
+    roi: 100,
   },
 ];
 
@@ -708,7 +704,7 @@ const Stake = () => {
                     display={"grid"}
                     gridTemplateColumns={{
                       base: "1fr 1fr",
-                      md: "1fr 1fr 1fr 1fr",
+                      md: "1fr 1fr 1fr",
                     }}
                     rowGap={"1rem"}
                     justifyContent="center"
