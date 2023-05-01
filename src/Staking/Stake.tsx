@@ -773,12 +773,24 @@ const Stake = () => {
                 </Box>
                 <Box mx={8} my={4}>
                   <Box
+                    display={"flex"}
                     fontSize={{ base: "xx-small", md: "sm" }}
                     my={2}
-                    color={brandingColors.secondaryTextColor}
-                    fontFamily={headingFont}
+                    columnGap="1rem"
                   >
-                    Locking (APYs just for 24hours)
+                    <Text
+                      color={brandingColors.secondaryTextColor}
+                      fontFamily={headingFont}
+                    >
+                      Locking APYs
+                    </Text>
+                    <Text
+                      color={brandingColors.primaryTextColor}
+                      fontFamily={headingFont}
+                      fontSize={{ base: "sm" }}
+                    >
+                      [Just for 24hours]
+                    </Text>
                   </Box>
                   <Grid
                     display={"grid"}
