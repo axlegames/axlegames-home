@@ -266,7 +266,7 @@ const Stake = () => {
       if (axle <= 100000) {
         return toast({
           title: "Warning!",
-          description: `Min Stake is 100000 AXLE`,
+          description: `Min Stake is 100K AXLE`,
           status: "warning",
           duration: 5000,
           isClosable: true,
@@ -277,7 +277,7 @@ const Stake = () => {
       if (axle >= 20000000) {
         return toast({
           title: "Warning!",
-          description: `Max Stake is 20000000 AXLE`,
+          description: `Max Stake is 20M AXLE`,
           status: "warning",
           duration: 5000,
           isClosable: true,

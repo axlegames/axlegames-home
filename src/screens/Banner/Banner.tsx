@@ -158,7 +158,7 @@ const Banner = () => {
                       className="btn-play d-flex justify-content-center align-items-center"
                     >
                       <a
-                        href="https://www.pinksale.finance/launchpad/0x8261A864541081B45c6e12e7b11e46D1Ab977fC2?chain=BSC"
+                        href="https://axlegames.io/staking"
                         target="_blank"
                         className="btnc"
                         rel="noopener noreferrer"
@@ -173,7 +173,7 @@ const Banner = () => {
                           alignItems="center"
                           textDecoration={"none"}
                         >
-                          Join Presale
+                          Stake Axle
                         </Box>{" "}
                       </a>{" "}
                       <Box display={{ base: "none", lg: "block" }}>
