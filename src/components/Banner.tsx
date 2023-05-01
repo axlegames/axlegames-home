@@ -6,7 +6,7 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 
-import Ban from "./banner.png";
+import Ban from "./banner.webp";
 
 interface Props {
   isOpen: boolean;
@@ -17,7 +17,7 @@ interface Props {
 const Banner = (props: Props) => {
   return (
     <Modal
-      size={"lg"}
+      size={"4xl"}
       isOpen={props.isOpen}
       onClose={() => {
         props.close();
