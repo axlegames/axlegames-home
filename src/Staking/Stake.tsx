@@ -234,12 +234,12 @@ const Stake = () => {
     try {
       const hash = await tokenContract.approve(creds.AXLE_STAKING, axle * e9);
       console.log(hash);
-      setSuccess(true);
+      // setSuccess(true);
       setHash(hash.hash);
       return toast({
-        title: "Success",
+        title: "Staking Enabled",
         description: `${axle} AXLE approved for staking`,
-        status: "success",
+        status: "warning",
         duration: 5000,
         isClosable: true,
         position: "top",
@@ -260,10 +260,10 @@ const Stake = () => {
   const stake = async () => {
     try {
       console.log(axle);
-      if (axle <= 100000) {
+      if (axle < 100000) {
         return toast({
           title: "Warning!",
-          description: `Min Stake is 100K AXLE`,
+          description: `Min Stake is 100,000 AXLE`,
           status: "warning",
           duration: 5000,
           isClosable: true,
@@ -271,10 +271,10 @@ const Stake = () => {
         });
       }
 
-      if (axle >= 20000000) {
+      if (axle > 20000000) {
         return toast({
           title: "Warning!",
-          description: `Max Stake is 20M AXLE`,
+          description: `Max Stake is 20,000,000 AXLE`,
           status: "warning",
           duration: 5000,
           isClosable: true,
