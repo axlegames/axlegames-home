@@ -128,15 +128,15 @@ const web3Modal = new Web3Modal({
 const stakeRewards = [
   {
     days: 30,
-    roi: 60,
+    roi: 120,
   },
   {
     days: 90,
-    roi: 80,
+    roi: 160,
   },
   {
     days: 180,
-    roi: 100,
+    roi: 200,
   },
 ];
 
@@ -778,7 +778,7 @@ const Stake = () => {
                     color={brandingColors.secondaryTextColor}
                     fontFamily={headingFont}
                   >
-                    Locking
+                    Locking (APYs just for 24hours)
                   </Box>
                   <Grid
                     display={"grid"}
