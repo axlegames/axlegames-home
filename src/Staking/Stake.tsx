@@ -232,10 +232,7 @@ const Stake = () => {
 
   const approveStake = async () => {
     try {
-      const hash = await tokenContract.approve(
-        "0xD996A74A3376D75812f07781EF22666323288B86",
-        axle * e9
-      );
+      const hash = await tokenContract.approve(creds.AXLE_STAKING, axle * e9);
       console.log(hash);
       setSuccess(true);
       setHash(hash.hash);
