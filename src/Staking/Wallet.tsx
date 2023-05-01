@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
-import { brandingColors } from "../config/brandingColors";
+import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 interface Props {
   connectWallet: Function;
@@ -12,7 +12,6 @@ interface Props {
 }
 
 const headingFont = "Russo One";
-const subFont = "Inter";
 
 const Wallet = (props: Props) => {
   const DropDown = () => {
@@ -64,7 +63,7 @@ const Wallet = (props: Props) => {
               _hover={{
                 bg: brandingColors.ternaryButtonColor,
               }}
-              bg={brandingColors.bgColor}
+              bg={brandingColors.dangerColor}
               color={brandingColors.secondaryTextColor}
               mt={"1"}
               fontFamily={headingFont}
@@ -132,7 +131,7 @@ const Wallet = (props: Props) => {
                 <Text
                   fontWeight={"bold"}
                   lineHeight="1.2"
-                  fontFamily={subFont}
+                  fontFamily={brandingFonts.subFont}
                   fontSize={"xs"}
                 >
                   {props.address.substring(0, 8)}....

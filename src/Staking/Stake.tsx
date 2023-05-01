@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Divider,
+  Flex,
   Grid,
   Image,
   Input,
@@ -95,6 +96,7 @@ const web3Modal = new Web3Modal({
   network: "mainnet",
   theme: "dark",
   cacheProvider: false,
+  disableInjectedProvider: false,
   providerOptions: {
     binancechainwallet: {
       package: true,
@@ -130,7 +132,7 @@ const stakeRewards = [
   },
   {
     days: 90,
-    roi: 90,
+    roi: 80,
   },
   {
     days: 180,
@@ -156,9 +158,10 @@ const Stake = () => {
   const [address, setAddress] = useState<string>("");
   const [onChain, setOnChain] = useState("");
 
-  const [axle, setAxle] = useState<any>(15000);
+  const [axle, setAxle] = useState<any>(100000);
   const [tokenContract, setTokenContract] = useState<any>();
   const [stakingContract, setStakingContract] = useState<any>();
+  const [totalStaked, setTotalStaked] = useState(0);
 
   const onAxleChange = (e: any) => {
     const axle = Number(e.target.value);
@@ -234,8 +237,8 @@ const Stake = () => {
         axle * e9
       );
       console.log(hash);
-      // setSuccess(true);
-      // setHash(hash.hash);
+      setSuccess(true);
+      setHash(hash.hash);
       return toast({
         title: "Success",
         description: `${axle} AXLE approved for staking`,
@@ -259,6 +262,28 @@ const Stake = () => {
 
   const stake = async () => {
     try {
+      console.log(axle);
+      if (axle <= 100000) {
+        return toast({
+          title: "Warning!",
+          description: `Min Stake is 100000 AXLE`,
+          status: "warning",
+          duration: 5000,
+          isClosable: true,
+          position: "top",
+        });
+      }
+
+      if (axle >= 20000000) {
+        return toast({
+          title: "Warning!",
+          description: `Max Stake is 20000000 AXLE`,
+          status: "warning",
+          duration: 5000,
+          isClosable: true,
+          position: "top",
+        });
+      }
       console.log(stakeRewards[lockIn].days);
       const day = 60 * 60 * 24 * stakeRewards[lockIn].days;
       console.log(day);
@@ -314,11 +339,13 @@ const Stake = () => {
       const t = await stake.stakingTx(web3Accounts[0]);
       const totalTxns: any = ethers.utils.formatEther(t.txNo);
       const txns = [];
+      let tStaked: any = 0;
       for (let i = 1; i <= totalTxns * 10 ** 18; i++) {
         const txn = await stake.userTransactions(web3Accounts[0], i);
         let amount = ethers.utils.formatEther(txn.amount);
         let percent = ethers.utils.formatEther(txn.percent);
         let stakingOver = txn.stakingOver;
+        if (!stakingOver) tStaked += Number(amount) * 10 ** 9;
         let time = ethers.utils.formatEther(txn.time);
         let lockedUntil = ethers.utils.formatEther(txn.lockedUntil);
         let resp = {
@@ -330,6 +357,7 @@ const Stake = () => {
         };
         txns.push(resp);
       }
+      setTotalStaked(tStaked);
       setTransactions(txns);
     } catch (error) {
       console.log(error);
@@ -496,13 +524,46 @@ const Stake = () => {
                     {pool} AXLE
                   </Text>
                   <Text
-                    fontFamily={headingFont}
-                    lineHeight={"0.8"}
-                    color={brandingColors.secondaryTextColor}
-                    fontSize={{ base: "xs", md: "sm" }}
+                    fontWeight={"bold"}
+                    lineHeight="1.2"
+                    fontFamily={brandingFonts.subFont}
+                    fontSize={"xs"}
                   >
-                    $ 0.00164 = 1 AXLE
+                    {creds.AXLE_STAKING.substring(0, 8)}....
+                    {creds.AXLE_STAKING.substring(
+                      creds.AXLE_STAKING.length - 8,
+                      creds.AXLE_STAKING.length
+                    )}
                   </Text>
+                  <Divider />
+                  <Flex
+                    columnGap={"1rem"}
+                    justifyContent={"space-between"}
+                    alignItems="center"
+                  >
+                    <Text
+                      fontFamily={brandingFonts.subFont}
+                      lineHeight={"0.8"}
+                      color={brandingColors.secondaryTextColor}
+                      fontSize={{ base: "xs" }}
+                    >
+                      Your contributions
+                    </Text>
+                    <Text
+                      fontFamily={brandingFonts.subFont}
+                      fontWeight={"bold"}
+                    >
+                      |
+                    </Text>
+                    <Text
+                      fontFamily={brandingFonts.subFont}
+                      lineHeight={"0.8"}
+                      color={brandingColors.primaryTextColor}
+                      fontSize={{ base: "md" }}
+                    >
+                      {totalStaked} AXLE
+                    </Text>
+                  </Flex>
                 </Box>
                 <Box
                   my={6}
@@ -537,10 +598,26 @@ const Stake = () => {
                     }
                     borderRadius={"8vw"}
                     textAlign="center"
-                    onClick={() => setTogglePage(true)}
+                    // onClick={() => setTogglePage(true)}
                     cursor="pointer"
                   >
-                    <Text fontFamily={headingFont}>FLEXIBLE</Text>
+                    <Box
+                      display={"flex"}
+                      alignItems={"center"}
+                      flexDirection="column"
+                    >
+                      <Text fontFamily={headingFont} fontWeight="bold">
+                        FLEXIBLE
+                      </Text>
+                      <Text
+                        lineHeight="0.5"
+                        color={brandingColors.primaryTextColor}
+                        fontSize={{ base: "x-small" }}
+                        fontWeight="bold"
+                      >
+                        (coming soon)
+                      </Text>
+                    </Box>
                   </Box>
                   <Box
                     cursor="pointer"
@@ -954,7 +1031,7 @@ const Stake = () => {
         <a
           target={"_blank"}
           rel="noopener noreferrer"
-          href="https://medium.com/@axlegames/axle-token-how-to-buy-3c523cd0888"
+          href="https://medium.com/@axlegames/axle-staking-how-to-stake-8ec1a4146660"
         >
           <Box
             px={6}

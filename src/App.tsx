@@ -17,8 +17,10 @@ import Banner from "./components/Banner";
 
 const Main = lazy(() => import("./screens/Main"));
 const About = lazy(() => import("./screens/About"));
+
 const Giveaway1 = lazy(() => import("./Giveaway/Giveaway"));
 const Dashboard = lazy(() => import("./Staking/Dashboard"));
+
 // const Giveaway2 = lazy(() => import("./Giveaway/Giveaway2"));
 // const TSupply = lazy(() => import("./screens/Tsupply"));
 // const StakeLayout = lazy(() => import("./Staking/StakeLayout"));
@@ -34,7 +36,8 @@ export const App = () => {
     });
   });
 
-  const [banner, setBanner] = useState(true);
+  const pathname = window.location.pathname;
+  const [banner, setBanner] = useState(pathname === "/" ? true : false);
 
   return (
     <Suspense fallback={<FallBack />}>

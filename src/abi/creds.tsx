@@ -2,6 +2,7 @@ import env from "react-dotenv";
 
 import TokenAbiMainnet from "./mainnet/AxleTokenMain.json";
 import PresaleAbiMainnet from "./mainnet/AxlePresaleMain.json";
+import StakingAbiMainnet from "./testnet/AxleStakingTest.json";
 
 import TokenAbiTestnet from "../abi/testnet/AxleTokenTest.json";
 import PresaleAbiTestnet from "../abi/testnet/AxlePresaleTest.json";
@@ -33,12 +34,12 @@ interface Creds {
 const mainnet: Creds = {
   AXLE_CONTRACT: "0x7c56C79a454CBFaf63BAdb39f82555109a2A80Bf",
   AXLE_ZEUS_PRESALE: "0xeA29a0f11EaAF0f88DBf705b2b53A09767cDF305",
+  AXLE_STAKING: "0x20A33C553dB0b4AAD04065A234999C9228183291",
+  AXLE_SENDER: "",
+  stakingAbi: StakingAbiMainnet,
   tokenAbi: TokenAbiMainnet,
   presaleAbi: PresaleAbiMainnet,
-  stakingAbi: null,
-  AXLE_STAKING: "",
-  AXLE_SENDER: "",
-  isTestNet: true,
+  isTestNet: false,
   chain: {
     chainName: "Smart Chain",
     chainId: 56,
@@ -74,6 +75,8 @@ const testnet: Creds = {
 
 const isDevServer = env.IS_DEV_SERVER;
 
+console.log(env);
+
 let creds: Creds = {
   AXLE_CONTRACT: "",
   AXLE_ZEUS_PRESALE: "",
@@ -86,16 +89,11 @@ let creds: Creds = {
   chain: testnet.chain,
 };
 
+console.log(isDevServer);
 creds = testnet;
 
-if (
-  isDevServer === "true" ||
-  isDevServer === undefined ||
-  isDevServer === null
-) {
+if (isDevServer === "true" || isDevServer === undefined || isDevServer === null)
   creds = testnet;
-} else {
-  creds = mainnet;
-}
+else creds = mainnet;
 
 export default creds;
