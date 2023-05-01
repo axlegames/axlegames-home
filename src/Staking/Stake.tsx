@@ -310,9 +310,11 @@ const Stake = () => {
       const web3Provider = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(web3Provider);
       console.log(provider);
+      console.log(creds);
       const web3Accounts = await provider.listAccounts();
       const network = await provider.getNetwork();
-      if (network.chainId !== 97) switchNetwork();
+      console.log(network);
+      if (network.chainId !== creds.chain.chainId) switchNetwork();
       let bnbBal: any = await provider.getBalance(web3Accounts[0]);
       bnbBal = Number(ethers.utils.formatEther(bnbBal));
       const signer = provider.getSigner();
@@ -322,8 +324,10 @@ const Stake = () => {
         signer
       );
       const stake = new ethers.Contract(AXLE_STAKING, axleStakingABI, signer);
-      console.log(stake);
+      console.log(token);
+      console.log(web3Accounts[0]);
       let bal = await token.balanceOf(web3Accounts[0]);
+      console.log(bal);
       bal = ethers.utils.formatEther(bal);
       const totalStakeAmout: any = ethers.utils.formatEther(
         await stake.totalstakedamount()

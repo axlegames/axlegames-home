@@ -2,7 +2,7 @@ import env from "react-dotenv";
 
 import TokenAbiMainnet from "./mainnet/AxleTokenMain.json";
 import PresaleAbiMainnet from "./mainnet/AxlePresaleMain.json";
-import StakingAbiMainnet from "./testnet/AxleStakingTest.json";
+import StakingAbiMainnet from "./mainnet/AxleStakingMain.json";
 
 import TokenAbiTestnet from "../abi/testnet/AxleTokenTest.json";
 import PresaleAbiTestnet from "../abi/testnet/AxlePresaleTest.json";
