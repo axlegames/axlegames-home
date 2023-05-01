@@ -181,7 +181,7 @@ const Stake = () => {
     try {
       await window.ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: ethers.utils.hexlify(97) }],
+        params: [{ chainId: ethers.utils.hexlify(creds.chain.chainId) }],
       });
     } catch (err: any) {
       // This error code indicates that the chain has not been added to MetaMask
@@ -314,6 +314,8 @@ const Stake = () => {
       const web3Accounts = await provider.listAccounts();
       const network = await provider.getNetwork();
       console.log(network);
+      console.log(creds);
+      console.log(network.chainId !== creds.chain.chainId);
       if (network.chainId !== creds.chain.chainId) switchNetwork();
       let bnbBal: any = await provider.getBalance(web3Accounts[0]);
       bnbBal = Number(ethers.utils.formatEther(bnbBal));
