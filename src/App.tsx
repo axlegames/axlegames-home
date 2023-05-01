@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState } from "react";
 import { useEffect } from "react";
 
 import AOS from "aos";
@@ -13,7 +13,7 @@ import { theme } from "./config/theme";
 
 import Stake from "./Staking/Stake";
 import Swap from "./Staking/Swap";
-// import Banner from "./components/Banner";
+import Banner from "./components/Banner";
 
 const Main = lazy(() => import("./screens/Main"));
 const About = lazy(() => import("./screens/About"));
@@ -34,12 +34,12 @@ export const App = () => {
     });
   });
 
-  // const [banner, setBanner] = useState(true);
+  const [banner, setBanner] = useState(true);
 
   return (
     <Suspense fallback={<FallBack />}>
       <ChakraProvider theme={theme}>
-        {/* <Banner close={() => setBanner(false)} isOpen={banner} size="xl" /> */}
+        <Banner close={() => setBanner(false)} isOpen={banner} size="xl" />
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />
