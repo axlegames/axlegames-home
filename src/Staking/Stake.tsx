@@ -997,7 +997,7 @@ const Stake = () => {
                         columnGap=".5rem"
                       >
                         <Button
-                          isDisabled={t.stakingOver}
+                          isDisabled={true}
                           onClick={() => preClaim(i + 1)}
                           color={brandingColors.highLightColor}
                           fontSize={{ base: "xs" }}
