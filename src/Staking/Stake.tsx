@@ -1,4 +1,4 @@
-import { Box, Image, Text, useToast } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, useToast } from "@chakra-ui/react";
 
 import { ethers } from "ethers";
 import { useState, useEffect } from "react";
@@ -206,6 +206,87 @@ const Stake = () => {
       return toast({
         title: "Staking Enabled",
         description: `${axle} AXLE approved for staking`,
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  const stakeRewardsFun = async () => {
+    try {
+      const hash = await flexStakingContract.stakeRewards();
+      console.log(hash);
+      // setSuccess(true);
+      setHash(hash.hash);
+      return toast({
+        title: "Success",
+        description: `Rewards Staked`,
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  const claimRewards = async () => {
+    try {
+      const hash = await flexStakingContract.claimRewards();
+      console.log(hash);
+      // setSuccess(true);
+      setHash(hash.hash);
+      return toast({
+        title: "Success",
+        description: `Rewards Claimed`,
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  const withdraw = async () => {
+    try {
+      const hash = await flexStakingContract.withdraw(axle * e9);
+      console.log(hash);
+      // setSuccess(true);
+      setHash(hash.hash);
+      return toast({
+        title: "Withdraw successful",
+        description: `${axle} AXLE has withdrawn`,
         status: "warning",
         duration: 5000,
         isClosable: true,
@@ -495,14 +576,21 @@ const Stake = () => {
                 setFlex={() => setTogglePage(true)}
                 setLocked={() => setTogglePage(false)}
               />
+
               {togglePage ? (
-                <FlexStake
-                  approveStake={approveStakeFlexStaking}
-                  axle={axle}
-                  axleBalance={axleBalance}
-                  onAxleChange={onAxleChange}
-                  stakeFlexStaking={stakeFlexStaking}
-                />
+                <Flex justifyContent={"center"} alignItems="center">
+                  <FlexStake
+                    claimRewards={claimRewards}
+                    withdraw={withdraw}
+                    stakeRewards={stakeRewardsFun}
+                    hasStaked={totalStaked > 0 ? true : false}
+                    approveStake={approveStakeFlexStaking}
+                    axle={axle}
+                    axleBalance={axleBalance}
+                    onAxleChange={onAxleChange}
+                    stakeFlexStaking={stakeFlexStaking}
+                  />
+                </Flex>
               ) : (
                 <LockedStaking
                   approveStake={approveStake}

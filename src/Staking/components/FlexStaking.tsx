@@ -1,12 +1,16 @@
-import { Box, Text, Input } from "@chakra-ui/react";
+import { Box, Text, Input, Flex, Divider } from "@chakra-ui/react";
 import { brandingFonts, brandingColors } from "../../config/brandingColors";
 
 const FlexStake = (props: {
+  hasStaked: boolean;
   axle: number;
   axleBalance: number;
   onAxleChange: Function;
   approveStake: Function;
   stakeFlexStaking: Function;
+  claimRewards: Function;
+  stakeRewards: Function;
+  withdraw: Function;
 }) => {
   return (
     <Box
@@ -99,6 +103,42 @@ const FlexStake = (props: {
             MAX
           </Box>
         </Box>
+        {props.hasStaked ? (
+          <Box
+            justifyContent={"space-evenly"}
+            alignItems="center"
+            display={"flex"}
+          >
+            <Box
+              mt={4}
+              textAlign={"center"}
+              className="btnc"
+              fontFamily={brandingFonts.headingFont}
+              onClick={() => props.claimRewards()}
+            >
+              CLAIM REWARDS
+            </Box>
+            <Box
+              mt={4}
+              textAlign={"center"}
+              className="btnc"
+              fontFamily={brandingFonts.headingFont}
+              onClick={() => props.stakeRewards()}
+            >
+              STAKE REWARDS
+            </Box>
+            <Box
+              mt={4}
+              textAlign={"center"}
+              className="btnc"
+              fontFamily={brandingFonts.headingFont}
+              onClick={() => props.withdraw()}
+            >
+              WITHDRAW
+            </Box>
+          </Box>
+        ) : null}
+
         <Box
           mt={4}
           onClick={() => props.approveStake()}
@@ -118,6 +158,16 @@ const FlexStake = (props: {
           Stake
         </Box>
       </Box>
+      <Flex flexDir={"column"} justifyContent={"center"} rowGap="1rem" pb={3}>
+        <Divider />
+        <Text
+          color={brandingColors.primaryTextColor}
+          fontFamily={brandingFonts.subFont}
+          textAlign={"center"}
+        >
+          24% Fixed APY
+        </Text>
+      </Flex>
     </Box>
   );
 };
