@@ -140,6 +140,8 @@ const stakeRewards = [
   },
 ];
 
+console.log(creds);
+
 const headingFont = "Russo One";
 const subFont = "Inter";
 
@@ -397,9 +399,9 @@ const Stake = () => {
   };
 
   const stakedAt = (date: any, apy: number) => {
-    apy *= 10 ** 18;
+    apy *= 10 ** 9;
     apy /= 100;
-    date *= 10 ** 18 * 1000;
+    date *= 10 ** 9 * 1000;
     const time = 1000 * 60 * 60 * 24;
     const lockedUntil = new Date(new Date(date));
     let days = 30;
@@ -411,11 +413,11 @@ const Stake = () => {
   };
 
   const noOfDays = (date: any, apy: number) => {
-    apy *= 10 ** 18;
+    apy *= 10 ** 9;
     apy /= 100;
     apy = Number(apy.toFixed(0));
     const time = 1000 * 60 * 60 * 24;
-    const lockedUntil = new Date(new Date(date * 10 ** 18 * 1000));
+    const lockedUntil = new Date(new Date(date * 10 ** 9 * 1000));
     let days = 30;
     if (apy === 17) days = 90;
     if (apy === 20) days = 180;

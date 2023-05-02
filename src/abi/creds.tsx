@@ -75,8 +75,6 @@ const testnet: Creds = {
 
 const isDevServer = env.IS_DEV_SERVER;
 
-console.log(env);
-
 let creds: Creds = {
   AXLE_CONTRACT: "",
   AXLE_ZEUS_PRESALE: "",
@@ -89,7 +87,6 @@ let creds: Creds = {
   chain: testnet.chain,
 };
 
-console.log(isDevServer);
 creds = testnet;
 
 if (isDevServer === "true" || isDevServer === undefined || isDevServer === null)
