@@ -516,12 +516,14 @@ const Stake = () => {
                 />
               )}
             </Box>
-            <StakeTransactions
-              preClaimFlex={preClaimFlexStaking}
-              preClaim={preClaim}
-              transactions={transactions}
-              toggle={togglePage}
-            />
+            {!togglePage ? (
+              <StakeTransactions
+                preClaimFlex={preClaimFlexStaking}
+                preClaim={preClaim}
+                transactions={transactions}
+                toggle={togglePage}
+              />
+            ) : null}
           </Box>
         ) : (
           <ConnectModal connectWeb3Wallet={connectWeb3Wallet} />
