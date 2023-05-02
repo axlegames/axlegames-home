@@ -399,9 +399,9 @@ const Stake = () => {
   };
 
   const stakedAt = (date: any, apy: number) => {
-    apy *= 10 ** 9;
+    apy *= 10 ** 18;
     apy /= 100;
-    date *= 10 ** 9 * 1000;
+    date *= 10 ** 18 * 1000;
     const time = 1000 * 60 * 60 * 24;
     const lockedUntil = new Date(new Date(date));
     let days = 30;
