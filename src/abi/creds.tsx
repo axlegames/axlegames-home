@@ -3,6 +3,7 @@
 import TokenAbiMainnet from "./mainnet/AxleTokenMain.json";
 import PresaleAbiMainnet from "./mainnet/AxlePresaleMain.json";
 import StakingAbiMainnet from "./mainnet/AxleStakingMain.json";
+import FlexStakingMainnet from "./mainnet/AxleFlexStakingMain.json";
 
 import TokenAbiTestnet from "../abi/testnet/AxleTokenTest.json";
 import PresaleAbiTestnet from "../abi/testnet/AxlePresaleTest.json";
@@ -37,11 +38,11 @@ const mainnet: Creds = {
   AXLE_CONTRACT: "0x7c56C79a454CBFaf63BAdb39f82555109a2A80Bf",
   AXLE_ZEUS_PRESALE: "0xeA29a0f11EaAF0f88DBf705b2b53A09767cDF305",
   AXLE_STAKING: "0x20A33C553dB0b4AAD04065A234999C9228183291",
-  AXLE_FLEX_STAKING: "",
+  AXLE_FLEX_STAKING: "0xC2941D54E3ABB281983f565B8dF7249CBc5E7a0F",
   stakingAbi: StakingAbiMainnet,
   tokenAbi: TokenAbiMainnet,
   presaleAbi: PresaleAbiMainnet,
-  flexStakingAbi: null,
+  flexStakingAbi: FlexStakingMainnet,
   isTestNet: false,
   chain: {
     chainName: "Smart Chain",

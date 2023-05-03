@@ -11,9 +11,11 @@ import "slick-carousel/slick/slick-theme.css";
 import FallBack from "./components/Fallback";
 import { theme } from "./config/theme";
 
-import Stake from "./Staking/Stake";
 import Swap from "./Staking/Swap";
 import Banner from "./components/Banner";
+import StakingCategories from "./Staking/StakingCategories";
+import Stake from "./Staking/Stake";
+import BnbStake from "./Staking/components/bnb/bnbStaking";
 
 const Main = lazy(() => import("./screens/Main"));
 const About = lazy(() => import("./screens/About"));
@@ -52,7 +54,9 @@ export const App = () => {
             {/* <Route path="/tsupply" element={<TSupply />} /> */}
 
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/staking" element={<Stake />} />
+            <Route path="/staking" element={<StakingCategories />} />
+            <Route path="/staking/axle-stake" element={<Stake />} />
+            <Route path="/staking/bnb-stake" element={<BnbStake />} />
             <Route path="/swap" element={<Swap />} />
           </Routes>
         </Router>
