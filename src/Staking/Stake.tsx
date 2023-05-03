@@ -615,8 +615,8 @@ const Stake = () => {
               />
             ) : (
               <Rewards
-                totalRewards={reward}
-                totalStakedAmount={totalStaked}
+                totalRewards={`${reward} AXLE`}
+                totalStakedAmount={`${totalStaked} AXLE`}
                 claimRewards={claimRewards}
                 stakeRewards={stakeRewardsFun}
                 hasStaked={totalStaked > 0 ? true : false}

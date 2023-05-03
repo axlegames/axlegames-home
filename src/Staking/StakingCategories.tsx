@@ -57,7 +57,7 @@ const StakingCategories = () => {
           title="STAKE AXLE, GET BNB"
           img={StakeLogo}
           stakePage={() => navigate("/staking/bnb-stake")}
-          comingSoon={true}
+          comingSoon={false}
         />
       </Box>
     </Box>

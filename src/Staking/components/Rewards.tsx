@@ -2,8 +2,8 @@ import { Box, Text, Divider, Grid, GridItem } from "@chakra-ui/react";
 import { brandingColors, brandingFonts } from "../../config/brandingColors";
 
 const Rewards = (props: {
-  totalStakedAmount: number;
-  totalRewards: number;
+  totalStakedAmount: string;
+  totalRewards: string;
   claimRewards: Function;
   stakeRewards: Function;
   hasStaked: boolean;
@@ -61,7 +61,7 @@ const Rewards = (props: {
               color={brandingColors.primaryTextColor}
               fontFamily={brandingFonts.headingFont}
             >
-              {props.totalStakedAmount} AXLE
+              {props.totalStakedAmount}
             </Text>
           </GridItem>
           <GridItem
@@ -76,7 +76,7 @@ const Rewards = (props: {
               color={brandingColors.primaryTextColor}
               fontFamily={brandingFonts.subFont}
             >
-              {props.totalRewards.toFixed(2)} AXLE
+              {props.totalRewards}
             </Text>
           </GridItem>
         </Grid>

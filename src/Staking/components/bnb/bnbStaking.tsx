@@ -391,8 +391,8 @@ const Stake = () => {
               </Flex>
             </Box>
             <Rewards
-              totalRewards={reward}
-              totalStakedAmount={totalStaked}
+              totalRewards={`${reward.toFixed(2)} BNB`}
+              totalStakedAmount={`${totalStaked.toFixed(2)} AXLE`}
               claimRewards={claimRewards}
               stakeRewards={stakeRewardsFun}
               hasStaked={totalStaked > 0 ? true : false}
