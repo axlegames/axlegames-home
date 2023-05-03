@@ -195,11 +195,22 @@ const LockedStaking = (props: {
         onClick={() => props.stake()}
         mx={8}
         my={4}
-        textAlign="center"
-        className="btnc"
+        textAlign={"center"}
+        bg={brandingColors.successColor}
+        p={4}
+        transition="all 100ms ease-in"
+        backgroundImage={`linear-gradient(to right top, #77cfa0, #5ba37c, #40795b, #27513b, #102d1e)`}
+        borderRadius="xl"
+        color={brandingColors.bgColor}
+        cursor="pointer"
+        _hover={{
+          bg: brandingColors.bgColor,
+          boxShadow: `0px 0px 4px ${brandingColors.successColor}`,
+          color: brandingColors.successColor,
+        }}
         fontFamily={brandingFonts.subFont}
       >
-        Stake
+        STAKE
       </Box>
       <Box
         mt={4}
