@@ -1,4 +1,5 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import creds from "../../abi/creds";
 import { brandingColors } from "../../config/brandingColors";
 const heading = "Russo One";
 
@@ -24,7 +25,7 @@ const TransactionSuccessDialog = (props: any) => {
           You have staked {Number(props.fee).toFixed(0)} AXLE
         </Text>
         <a
-          href={`https://testnet.bscscan.com/tx/` + props.hash}
+          href={creds.blockChainUrl + props.hash}
           target="_blank"
           rel="noopener noreferrer"
         >

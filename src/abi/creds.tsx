@@ -35,6 +35,7 @@ interface Creds {
   flexStakingBnbAbi: any;
   isTestNet: boolean;
   chain: Chain;
+  blockChainUrl: string;
 }
 
 const mainnet: Creds = {
@@ -49,6 +50,7 @@ const mainnet: Creds = {
   flexStakingAbi: FlexStakingMainnet,
   flexStakingBnbAbi: FlexStakingBnbMainnet,
   isTestNet: false,
+  blockChainUrl: "https://bscscan.com/tx/",
   chain: {
     chainName: "Smart Chain",
     chainId: 56,
@@ -73,6 +75,7 @@ const testnet: Creds = {
   flexStakingAbi: FlexStakingTestnet,
   flexStakingBnbAbi: null,
   isTestNet: true,
+  blockChainUrl: "https://testnet.bscscan.com/tx/",
   chain: {
     chainName: "BSC Testnet",
     chainId: 97,
@@ -100,9 +103,10 @@ let creds: Creds = {
   tokenAbi: null,
   isTestNet: true,
   chain: testnet.chain,
+  blockChainUrl: "",
 };
 
-creds = testnet;
+creds = mainnet;
 
 if (isDevServer === "true" || isDevServer === undefined || isDevServer === null)
   creds = testnet;

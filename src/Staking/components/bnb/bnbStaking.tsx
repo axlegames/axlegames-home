@@ -134,7 +134,7 @@ const Stake = () => {
   const approveStakeFlexStaking = async () => {
     try {
       const hash = await tokenContract.approve(
-        creds.AXLE_FLEX_STAKING,
+        creds.AXLE_BNB_FLEX_STAKING,
         axle * e9
       );
       console.log(hash);
