@@ -1,7 +1,7 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, useToast } from "@chakra-ui/react";
 
 import { ethers } from "ethers";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import creds from "../../../abi/creds";
 import Wallet from "../../Wallet";
@@ -18,14 +18,14 @@ import "../../../components/navbar/Navbar.css";
 
 import FlexStake from "../../components/FlexStaking";
 import ConnectModal from "../../components/ConnectModal";
-import { web3Modal } from "../../components/utils";
+import { chainIds, e9, web3Modal } from "../../components/utils";
 import Stats from "../../components/Stats";
 import Rewards from "../../components/Rewards";
 
 const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
 const axleTokenABI = creds.tokenAbi;
-const axleStakingABI = creds.stakingAbi;
-const AXLE_STAKING = creds.AXLE_STAKING;
+const AXLE_FLEX_STAKING_BNB = creds.AXLE_BNB_FLEX_STAKING;
+const axleFlexStakingBnbAbi = creds.flexStakingBnbAbi;
 
 declare global {
   interface Window {
@@ -33,7 +33,8 @@ declare global {
   }
 }
 
-const BnbStake = () => {
+const Stake = () => {
+  const [hash, setHash] = useState<string>("");
   const [success, setSuccess] = useState(false);
   const [balance, setBalance] = useState(0);
   const [pool, setPool] = useState("323,123,103");
@@ -41,11 +42,11 @@ const BnbStake = () => {
   const [openWallet, setOpenWallet] = useState(false);
 
   const [address, setAddress] = useState<string>("");
-  //   const [onChain, setOnChain] = useState("");
+  const [onChain, setOnChain] = useState("");
 
   const [axle, setAxle] = useState<any>(100000);
-  //   const [tokenContract, setTokenContract] = useState<any>();
-  //   const [stakingContract, setStakingContract] = useState<any>();
+  const [tokenContract, setTokenContract] = useState<any>();
+  const [flexStakingContract, setFlexStakingContract] = useState<any>();
   const [totalStaked, setTotalStaked] = useState(0);
   const [reward, setReward] = useState(0);
 
@@ -54,13 +55,13 @@ const BnbStake = () => {
     setAxle(axle);
   };
 
-  //   const setNetworkName = (chainId: number) => {
-  //     for (let i = 0; i < chainIds.length; i++) {
-  //       if (chainIds[i].chainId === chainId) {
-  //         setOnChain(chainIds[i].network);
-  //       }
-  //     }
-  //   };
+  const setNetworkName = (chainId: number) => {
+    for (let i = 0; i < chainIds.length; i++) {
+      if (chainIds[i].chainId === chainId) {
+        setOnChain(chainIds[i].network);
+      }
+    }
+  };
 
   const switchNetwork = async () => {
     try {
@@ -90,6 +91,157 @@ const BnbStake = () => {
     }
   };
 
+  const stakeFlexStaking = async () => {
+    try {
+      if (axle < 100000) {
+        return toast({
+          title: "Warning!",
+          description: `Min Stake is 100,000 AXLE`,
+          status: "warning",
+          duration: 5000,
+          isClosable: true,
+          position: "top",
+        });
+      }
+
+      if (axle > 20000000) {
+        return toast({
+          title: "Warning!",
+          description: `Max Stake is 20,000,000 AXLE`,
+          status: "warning",
+          duration: 5000,
+          isClosable: true,
+          position: "top",
+        });
+      }
+      const hash = await flexStakingContract.deposit(axle * 10 ** 9);
+      setSuccess(true);
+      setHash(hash.hash);
+      setAxle(axle);
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong, try again`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  const approveStakeFlexStaking = async () => {
+    try {
+      const hash = await tokenContract.approve(
+        creds.AXLE_FLEX_STAKING,
+        axle * e9
+      );
+      console.log(hash);
+      // setSuccess(true);
+      setHash(hash.hash);
+      return toast({
+        title: "Staking Enabled",
+        description: `${axle} AXLE approved for staking`,
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  const stakeRewardsFun = async () => {
+    try {
+      const hash = await flexStakingContract.stakeRewards();
+      console.log(hash);
+      // setSuccess(true);
+      setHash(hash.hash);
+      return toast({
+        title: "Success",
+        description: `Rewards Staked`,
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  const claimRewards = async () => {
+    try {
+      const hash = await flexStakingContract.claimRewards();
+      console.log(hash);
+      // setSuccess(true);
+      setHash(hash.hash);
+      return toast({
+        title: "Success",
+        description: `Rewards Claimed`,
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  const withdraw = async () => {
+    try {
+      const hash = await flexStakingContract.withdraw(axle * e9);
+      console.log(hash);
+      // setSuccess(true);
+      setHash(hash.hash);
+      return toast({
+        title: "Withdraw successful",
+        description: `${axle} AXLE has withdrawn`,
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    } catch (error) {
+      console.log(error);
+      return toast({
+        title: "Oops!",
+        description: `Something went wrong`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
   const connectWeb3Wallet = async () => {
     try {
       const e9 = 10 ** 9;
@@ -106,25 +258,31 @@ const BnbStake = () => {
         axleTokenABI,
         signer
       );
-      const stake = new ethers.Contract(AXLE_STAKING, axleStakingABI, signer);
+      const flexStaking = new ethers.Contract(
+        AXLE_FLEX_STAKING_BNB,
+        axleFlexStakingBnbAbi,
+        signer
+      );
+      console.log(flexStaking);
+      const tx = await flexStaking.getDepositInfo(web3Accounts[0]);
+      if (tx.length > 0) {
+        const t = ethers.utils.formatEther(tx[0]) as any;
+        const x1 = ethers.utils.formatEther(tx[1]) as any;
+        let pool = await flexStaking.total_staked();
+        pool = ethers.utils.formatEther(pool);
+        setTotalStaked(t * 10 ** 9);
+        setPool((pool * 10 ** 9).toString());
+        setReward(x1 * 10 ** 9);
+      }
       let bal = await token.balanceOf(web3Accounts[0]);
       bal = ethers.utils.formatEther(bal);
-      const totalStakeAmout: any = ethers.utils.formatEther(
-        await stake.totalstakedamount()
-      );
       setAddress(web3Accounts[0]);
-      //   setNetworkName(network.chainId);
-      //   setTokenContract(token);
-      //   setStakingContract(stake);
+      setNetworkName(network.chainId);
+      setTokenContract(token);
+      setFlexStakingContract(flexStaking);
       setAxleBalance(bal * e9);
-      setPool((totalStakeAmout * e9).toString());
       setBalance(bnbBal);
-      setReward(100 * 10 ** 9);
-      //   setTotalStaked(t * 10 ** 9);
-      //   setPool((pool * 10 ** 9).toString());
       localStorage.setItem("isWalletConnected", "true");
-      let tStaked: any = 0;
-      setTotalStaked(tStaked);
     } catch (error) {
       console.log(error);
     }
@@ -134,6 +292,27 @@ const BnbStake = () => {
     web3Modal.clearCachedProvider();
     if (!loaded) window.location.reload();
   };
+
+  useEffect(() => {
+    console.log(onChain);
+    disconnectWeb3Modal(true);
+    if (window.ethereum !== null && address !== "") {
+      window.ethereum.on("accountsChanged", function (accounts: string) {
+        connectWeb3Wallet();
+      });
+      window.ethereum.on("networkChanged", function (chainId: number) {
+        if (chainId !== 56) {
+          setTimeout(() => {
+            switchNetwork();
+            connectWeb3Wallet();
+          }, 5000);
+        }
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const toast = useToast();
 
   return (
     <Box
@@ -147,7 +326,7 @@ const BnbStake = () => {
         close={() => setSuccess(false)}
         children={
           <TransactionSuccessDialog
-            hash={""}
+            hash={hash}
             close={async () => {
               setSuccess(false);
             }}
@@ -194,15 +373,19 @@ const BnbStake = () => {
               width={{ base: "100%", md: "90%", lg: "80%", xl: "75%" }}
               mx="auto"
             >
-              <Stats toggle={true} pool={pool} totalStaked={totalStaked} />
+              <Stats
+                contractAddress={AXLE_FLEX_STAKING_BNB}
+                pool={pool}
+                totalStaked={totalStaked}
+              />
               <Flex justifyContent={"center"} alignItems="center">
                 <FlexStake
-                  approveStake={() => {}}
+                  approveStake={approveStakeFlexStaking}
                   axle={axle}
                   axleBalance={axleBalance}
                   onAxleChange={onAxleChange}
-                  stakeFlexStaking={() => {}}
-                  withdraw={() => {}}
+                  stakeFlexStaking={stakeFlexStaking}
+                  withdraw={withdraw}
                   hasStaked={totalStaked > 0 ? true : false}
                 />
               </Flex>
@@ -210,8 +393,8 @@ const BnbStake = () => {
             <Rewards
               totalRewards={reward}
               totalStakedAmount={totalStaked}
-              claimRewards={() => {}}
-              stakeRewards={() => {}}
+              claimRewards={claimRewards}
+              stakeRewards={stakeRewardsFun}
               hasStaked={totalStaked > 0 ? true : false}
             />
           </Box>
@@ -257,4 +440,4 @@ const BnbStake = () => {
   );
 };
 
-export default BnbStake;
+export default Stake;

@@ -1,11 +1,10 @@
 import { Box, Divider, Flex, Text } from "@chakra-ui/react";
-import creds from "../../abi/creds";
 import { brandingColors, brandingFonts } from "../../config/brandingColors";
 
 const Stats = (props: {
   totalStaked: number;
   pool: string;
-  toggle: boolean;
+  contractAddress: string;
 }) => {
   const strConverter = (str: string) => {
     return `${str.substring(0, 8)}....${str.substring(
@@ -54,9 +53,7 @@ const Stats = (props: {
         fontFamily={brandingFonts.subFont}
         fontSize={"xs"}
       >
-        {props.toggle
-          ? strConverter(creds.AXLE_FLEX_STAKING)
-          : strConverter(creds.AXLE_STAKING)}
+        {strConverter(props.contractAddress)}
       </Text>
       <Divider />
       <Flex

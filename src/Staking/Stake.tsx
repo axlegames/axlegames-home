@@ -571,7 +571,7 @@ const Stake = () => {
               mx="auto"
             >
               <Stats
-                toggle={togglePage}
+                contractAddress={togglePage ? AXLE_FLEX_STAKING : AXLE_STAKING}
                 pool={pool}
                 totalStaked={totalStaked}
               />

@@ -1,9 +1,10 @@
-// import env from "react-dotenv";
+import env from "react-dotenv";
 
 import TokenAbiMainnet from "./mainnet/AxleTokenMain.json";
 import PresaleAbiMainnet from "./mainnet/AxlePresaleMain.json";
 import StakingAbiMainnet from "./mainnet/AxleStakingMain.json";
 import FlexStakingMainnet from "./mainnet/AxleFlexStakingMain.json";
+import FlexStakingBnbMainnet from "./mainnet/AxleFlexBnbStaking.json";
 
 import TokenAbiTestnet from "../abi/testnet/AxleTokenTest.json";
 import PresaleAbiTestnet from "../abi/testnet/AxlePresaleTest.json";
@@ -26,10 +27,12 @@ interface Creds {
   AXLE_ZEUS_PRESALE: string;
   AXLE_STAKING: string;
   AXLE_FLEX_STAKING: string;
-  flexStakingAbi: any;
+  AXLE_BNB_FLEX_STAKING: string;
   tokenAbi: any;
   presaleAbi: any;
   stakingAbi: any;
+  flexStakingAbi: any;
+  flexStakingBnbAbi: any;
   isTestNet: boolean;
   chain: Chain;
 }
@@ -39,10 +42,12 @@ const mainnet: Creds = {
   AXLE_ZEUS_PRESALE: "0xeA29a0f11EaAF0f88DBf705b2b53A09767cDF305",
   AXLE_STAKING: "0x20A33C553dB0b4AAD04065A234999C9228183291",
   AXLE_FLEX_STAKING: "0xC2941D54E3ABB281983f565B8dF7249CBc5E7a0F",
+  AXLE_BNB_FLEX_STAKING: "0x6CF0e2F39bbB50E9d4D20DF1d560248CB5dA59b2",
   stakingAbi: StakingAbiMainnet,
   tokenAbi: TokenAbiMainnet,
   presaleAbi: PresaleAbiMainnet,
   flexStakingAbi: FlexStakingMainnet,
+  flexStakingBnbAbi: FlexStakingBnbMainnet,
   isTestNet: false,
   chain: {
     chainName: "Smart Chain",
@@ -61,10 +66,12 @@ const testnet: Creds = {
   AXLE_ZEUS_PRESALE: "0xaed66d62e70023762ba0977f5304116120706d84",
   AXLE_STAKING: "0xD996A74A3376D75812f07781EF22666323288B86",
   AXLE_FLEX_STAKING: "0xF637C152Be5aBcC7129F8E061938098604aa1507",
+  AXLE_BNB_FLEX_STAKING: "",
   stakingAbi: StakingAbiTestnet,
   tokenAbi: TokenAbiTestnet,
   presaleAbi: PresaleAbiTestnet,
   flexStakingAbi: FlexStakingTestnet,
+  flexStakingBnbAbi: null,
   isTestNet: true,
   chain: {
     chainName: "BSC Testnet",
@@ -78,9 +85,11 @@ const testnet: Creds = {
   },
 };
 
-// const isDevServer = env.IS_DEV_SERVER;
+const isDevServer = env.IS_DEV_SERVER;
 
 let creds: Creds = {
+  AXLE_BNB_FLEX_STAKING: "",
+  flexStakingBnbAbi: null,
   AXLE_CONTRACT: "",
   AXLE_ZEUS_PRESALE: "",
   AXLE_FLEX_STAKING: "",
@@ -94,10 +103,9 @@ let creds: Creds = {
 };
 
 creds = testnet;
-console.log(mainnet);
 
-// if (isDevServer === "true" || isDevServer === undefined || isDevServer === null)
-//   creds = testnet;
-// else creds = mainnet;
+if (isDevServer === "true" || isDevServer === undefined || isDevServer === null)
+  creds = testnet;
+else creds = mainnet;
 
 export default creds;
