@@ -107,7 +107,7 @@ const Rewards = (props: {
               transition="all 100ms ease-in"
               backgroundImage={`linear-gradient(to right top, #77cfa0, #5ba37c, #40795b, #27513b, #102d1e)`}
               borderRadius="xl"
-              color={brandingColors.bgColor}
+              color={brandingColors.highLightColor}
               cursor="pointer"
               _hover={{
                 bg: brandingColors.bgColor,

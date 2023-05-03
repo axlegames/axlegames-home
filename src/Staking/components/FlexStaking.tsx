@@ -122,7 +122,7 @@ const FlexStake = (props: {
           transition="all 100ms ease-in"
           backgroundImage={`linear-gradient(to right top, #77cfa0, #5ba37c, #40795b, #27513b, #102d1e)`}
           borderRadius="xl"
-          color={brandingColors.bgColor}
+          color={brandingColors.highLightColor}
           cursor="pointer"
           _hover={{
             bg: brandingColors.bgColor,
@@ -143,7 +143,7 @@ const FlexStake = (props: {
             p={4}
             transition="all 100ms ease-in"
             borderRadius="xl"
-            color={brandingColors.bgColor}
+            color={brandingColors.highLightColor}
             cursor="pointer"
             backgroundImage={`linear-gradient(to right top, #f291a2, #eb7788, #e15c6d, #d63f51, #c91835)`}
             _hover={{
