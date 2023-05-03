@@ -14,15 +14,15 @@ const LockedStaking = (props: {
   const stakeRewards = [
     {
       days: 30,
-      roi: 120,
+      roi: 60,
     },
     {
       days: 90,
-      roi: 160,
+      roi: 80,
     },
     {
       days: 180,
-      roi: 200,
+      roi: 100,
     },
   ];
 
@@ -123,13 +123,6 @@ const LockedStaking = (props: {
             fontFamily={brandingFonts.headingFont}
           >
             Locking APYs
-          </Text>
-          <Text
-            color={brandingColors.primaryTextColor}
-            fontFamily={brandingFonts.headingFont}
-            fontSize={{ base: "sm" }}
-          >
-            [Just for 24hours]
           </Text>
         </Box>
         <Grid

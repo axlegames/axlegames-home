@@ -2,21 +2,18 @@ import { Box, Text, Input, Flex, Divider } from "@chakra-ui/react";
 import { brandingFonts, brandingColors } from "../../config/brandingColors";
 
 const FlexStake = (props: {
-  hasStaked: boolean;
   axle: number;
   axleBalance: number;
   onAxleChange: Function;
   approveStake: Function;
   stakeFlexStaking: Function;
-  claimRewards: Function;
-  stakeRewards: Function;
   withdraw: Function;
+  hasStaked: boolean;
 }) => {
   return (
     <Box
-      minW={{ base: "80vw", md: "42vw" }}
+      minW={{ base: "80vw", md: "60vw", lg: "50vw", xl: "40vw", "2xl": "30vw" }}
       mx="auto"
-      width={"80%"}
       borderRadius="3xl"
       borderLeft={`2px solid ${brandingColors.newHighlightColor}`}
       borderRight={`2px solid ${brandingColors.newHighlightColor}`}
@@ -53,8 +50,10 @@ const FlexStake = (props: {
           justifyContent="space-between"
           fontSize={{ base: "xx-small", md: "sm" }}
         >
-          <Text fontFamily={brandingFonts.headingFont}>Amount</Text>
-          <Text fontFamily={brandingFonts.headingFont}>
+          <Text fontSize={"sm"} fontFamily={brandingFonts.subFont}>
+            Amount
+          </Text>
+          <Text fontSize={"sm"} fontFamily={brandingFonts.subFont}>
             ~My Balance {props.axleBalance} AXLE
           </Text>
         </Box>
@@ -68,7 +67,7 @@ const FlexStake = (props: {
           borderRadius="xl"
           fontSize={{ base: "xs", md: "md" }}
         >
-          <Box fontFamily={brandingFonts.headingFont}>$AXLE</Box>
+          <Box fontFamily={brandingFonts.subFont}>$AXLE</Box>
           <Input
             mx={4}
             fontWeight={"bold"}
@@ -78,7 +77,7 @@ const FlexStake = (props: {
             inputMode="decimal"
             borderRadius={"none"}
             fontSize="xl"
-            fontFamily={brandingFonts.headingFont}
+            fontFamily={brandingFonts.subFont}
             textAlign="right"
             value={props.axle}
             borderLeft={`2px solid ${brandingColors.fgColor}`}
@@ -99,52 +98,17 @@ const FlexStake = (props: {
               shadow: "none",
             }}
           ></Input>
-          <Box fontFamily={brandingFonts.headingFont} cursor={"pointer"}>
+          <Box fontFamily={brandingFonts.subFont} cursor={"pointer"}>
             MAX
           </Box>
         </Box>
-        {props.hasStaked ? (
-          <Box
-            justifyContent={"space-evenly"}
-            alignItems="center"
-            display={"flex"}
-          >
-            <Box
-              mt={4}
-              textAlign={"center"}
-              className="btnc"
-              fontFamily={brandingFonts.headingFont}
-              onClick={() => props.claimRewards()}
-            >
-              CLAIM REWARDS
-            </Box>
-            <Box
-              mt={4}
-              textAlign={"center"}
-              className="btnc"
-              fontFamily={brandingFonts.headingFont}
-              onClick={() => props.stakeRewards()}
-            >
-              STAKE REWARDS
-            </Box>
-            <Box
-              mt={4}
-              textAlign={"center"}
-              className="btnc"
-              fontFamily={brandingFonts.headingFont}
-              onClick={() => props.withdraw()}
-            >
-              WITHDRAW
-            </Box>
-          </Box>
-        ) : null}
 
         <Box
           mt={4}
           onClick={() => props.approveStake()}
           textAlign={"center"}
           className="btnc"
-          fontFamily={brandingFonts.headingFont}
+          fontFamily={brandingFonts.subFont}
         >
           Enable Stake
         </Box>
@@ -153,10 +117,31 @@ const FlexStake = (props: {
           onClick={() => props.stakeFlexStaking()}
           textAlign={"center"}
           className="btnc"
-          fontFamily={brandingFonts.headingFont}
+          fontFamily={brandingFonts.subFont}
         >
           Stake
         </Box>
+        {props.hasStaked ? (
+          <Box
+            mt={4}
+            textAlign={"center"}
+            onClick={() => props.withdraw()}
+            bg={brandingColors.dangerColor}
+            fontFamily={brandingFonts.subFont}
+            p={4}
+            transition="all 100ms ease-in"
+            borderRadius="xl"
+            color={brandingColors.bgColor}
+            cursor="pointer"
+            _hover={{
+              bg: brandingColors.bgColor,
+              boxShadow: `0px 0px 4px ${brandingColors.dangerColor}`,
+              color: brandingColors.dangerColor,
+            }}
+          >
+            WITHDRAW
+          </Box>
+        ) : null}
       </Box>
       <Flex flexDir={"column"} justifyContent={"center"} rowGap="1rem" pb={3}>
         <Divider />

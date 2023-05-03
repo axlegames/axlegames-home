@@ -29,6 +29,7 @@ import {
   web3Modal,
 } from "./components/utils";
 import Stats from "./components/Stats";
+import Rewards from "./components/Rewards";
 
 const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
 const axleTokenABI = creds.tokenAbi;
@@ -62,6 +63,7 @@ const Stake = () => {
   const [stakingContract, setStakingContract] = useState<any>();
   const [flexStakingContract, setFlexStakingContract] = useState<any>();
   const [totalStaked, setTotalStaked] = useState(0);
+  const [reward, setReward] = useState(0);
 
   const onAxleChange = (e: any) => {
     const axle = Number(e.target.value);
@@ -446,6 +448,8 @@ const Stake = () => {
     if (togglePage) {
       const tx = await flexStakingContract.getDepositInfo(address);
       const t = ethers.utils.formatEther(tx[0]) as any;
+      const x1 = ethers.utils.formatEther(tx[1]) as any;
+      setReward(x1 * 10 ** 9);
       let pool = await flexStakingContract.total_staked();
       pool = ethers.utils.formatEther(pool);
       setTotalStaked(t * 10 ** 9);
@@ -580,15 +584,13 @@ const Stake = () => {
               {togglePage ? (
                 <Flex justifyContent={"center"} alignItems="center">
                   <FlexStake
-                    claimRewards={claimRewards}
-                    withdraw={withdraw}
-                    stakeRewards={stakeRewardsFun}
-                    hasStaked={totalStaked > 0 ? true : false}
                     approveStake={approveStakeFlexStaking}
                     axle={axle}
                     axleBalance={axleBalance}
                     onAxleChange={onAxleChange}
                     stakeFlexStaking={stakeFlexStaking}
+                    withdraw={withdraw}
+                    hasStaked={totalStaked > 0 ? true : false}
                   />
                 </Flex>
               ) : (
@@ -611,7 +613,15 @@ const Stake = () => {
                 transactions={transactions}
                 toggle={togglePage}
               />
-            ) : null}
+            ) : (
+              <Rewards
+                totalRewards={reward}
+                totalStakedAmount={totalStaked}
+                claimRewards={claimRewards}
+                stakeRewards={stakeRewardsFun}
+                hasStaked={totalStaked > 0 ? true : false}
+              />
+            )}
           </Box>
         ) : (
           <ConnectModal connectWeb3Wallet={connectWeb3Wallet} />
