@@ -34,4 +34,5 @@ export const brandingColors = {
 export const brandingFonts = {
   headingFont: "Russo One",
   subFont: "Righteous",
+  readingFont: "Open Sans",
 };
