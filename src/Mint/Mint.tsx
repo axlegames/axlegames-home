@@ -16,13 +16,21 @@ const Header = (props: Props) => {
       display={"flex"}
       flexDir="column"
       px={8}
+      pb={props.number !== 3 ? 8 : 0}
+      borderLeft={
+        props.number === 0 || props.number === 1 ? "" : "1px dotted #ffffff"
+      }
     >
       <Text
         left={"-14px"}
         pos={"absolute"}
         color={brandingColors.primaryButtonColor}
         fontFamily={brandingFonts.headingFont}
-        bg={brandingColors.newHighlightColor}
+        bg={brandingColors.bgColor}
+        boxShadow="dark-lg"
+        border={
+          props.number !== 0 ? `1px solid ${brandingColors.neuPrimaryBg}` : ""
+        }
         px={2}
         borderRadius="xl"
         py={props.number !== 0 ? 1 : 0}
@@ -56,14 +64,13 @@ const Mint = () => {
         justifyContent="space-evenly"
       >
         <Box
-          rowGap={"3rem"}
           alignItems={"center"}
           display={"flex"}
           flexDir="column"
           justifyContent={"center"}
           pos="relative"
         >
-          <Box>
+          <Box borderLeft={"1px dotted #ffffff"}>
             <Header
               number={1}
               sub="Enter a ticket number between (000001 -999999) to reveal your
@@ -76,8 +83,9 @@ const Mint = () => {
               alignItems={"center"}
               pos={"relative"}
             >
-              <Divider my="8" mx="auto" width={"80%"} />
+              <Divider mb="8" mx="auto" width={"80%"} />
               <Text
+                top={"-24px"}
                 fontWeight={"bold"}
                 fontFamily={brandingFonts.headingFont}
                 color={brandingColors.primaryButtonColor}
