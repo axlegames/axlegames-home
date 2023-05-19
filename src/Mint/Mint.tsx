@@ -1,15 +1,15 @@
 import { brandingColors, brandingFonts } from "../config/brandingColors";
-import { Box, Flex, Image, Text, Button, Divider } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, Divider } from "@chakra-ui/react";
 
 import { ethers } from "ethers";
 
-import { web3Modal, chainIds } from "../Staking/components/utils";
-
-import creds from "../abi/creds";
 import { useState } from "react";
+import { web3Modal, chainIds } from "../Staking/components/utils";
 
 import Wallet from "../Staking/Wallet";
 import Logo from "../assets/logo.png";
+
+import creds from "../abi/creds";
 
 const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
 const axleTokenABI = creds.tokenAbi;
@@ -144,48 +144,19 @@ const Mint = () => {
           <Box borderLeft={"1px dotted #ffffff"}>
             <Header
               number={1}
-              sub="Enter a ticket number between (000001 -999999) to reveal your
-              ticket design."
-              title="Enter Ticket Number"
-            />
-            <Box
-              display={"flex"}
-              justifyContent="center"
-              alignItems={"center"}
-              pos={"relative"}
-            >
-              <Divider mb="8" mx="auto" width={"80%"} />
-              <Text
-                top={"-24px"}
-                fontWeight={"bold"}
-                fontFamily={brandingFonts.headingFont}
-                color={brandingColors.primaryButtonColor}
-                fontSize={"3xl"}
-                p={2}
-                boxShadow="dark-lg"
-                bg={brandingColors.bgColor}
-                pos={"absolute"}
-              >
-                or
-              </Text>
-            </Box>
-            <Header
-              number={0}
-              sub="Use our random generator to get a random ticket design and number."
-              title="Generate Random"
+              sub="Connect your supported DEX wallet - Metamask, Trust wallet, Coinbase Wallet etc"
+              title="Connect Wallet"
             />
           </Box>
           <Header
             number={2}
-            title="Purchase Ticket"
-            sub="Complete payment to purchase and own your one of a kind NFT ticket."
+            title="Check eligibility"
+            sub="If you are eligible for Zeus NFT, you can mint it at zero cost."
           />
           <Header
             number={3}
-            title="Own, Earn, Donate"
-            sub="Your tickets will be automatically enrolled in all weekly and Grand
-            Prize draws. For each purchased ticket we will donate part of the
-            ticket fees to charity organizations."
+            title="Free Mint or Buy"
+            sub="You can buy the NFT for 0.5 BNB or mint it for free if your wallet is  eligible or whitelisted. Zeus NFT is the most powerful NFT in the Axle Ecosystem"
           />
         </Box>
         <Box
@@ -206,6 +177,13 @@ const Mint = () => {
           >
             Mint your Zues NFT
           </Text>
+          <Divider
+            borderRadius={"xl"}
+            p={1}
+            outline="none"
+            border="none"
+            bg={brandingColors.primaryButtonColor}
+          />
           <video
             style={{ maxHeight: "420px" }}
             muted
@@ -214,12 +192,20 @@ const Mint = () => {
             autoPlay
           ></video>
 
+          <Divider
+            borderRadius={"xl"}
+            p={1}
+            outline="none"
+            border="none"
+            bg={brandingColors.primaryButtonColor}
+          />
+
           <Flex
             width={"100%"}
             p={{ base: 2 }}
             borderRadius="xl"
             justifyContent={"space-between"}
-            boxShadow={"dark-lg"}
+            boxShadow={`0px 0px 5px ${brandingColors.primaryButtonColor}`}
           >
             <Box>
               <Text
@@ -267,6 +253,7 @@ const Mint = () => {
               </Text>
             </Box>
           </Flex>
+
           <Box
             display={"flex"}
             justifyContent="center"
@@ -274,17 +261,14 @@ const Mint = () => {
             flexDir="column"
           >
             {address === "" ? (
-              <Button
-                fontWeight={"normal"}
+              <Box
+                className="btnc"
                 fontSize={{ base: "2xl" }}
                 fontFamily={brandingFonts.subFont}
-                color={brandingColors.primaryButtonColor}
-                bg={brandingColors.bgColor}
-                boxShadow="dark-lg"
                 onClick={connectWeb3Wallet}
               >
                 Connect wallet
-              </Button>
+              </Box>
             ) : null}
           </Box>
         </Box>
