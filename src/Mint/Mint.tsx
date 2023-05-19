@@ -137,6 +137,58 @@ const Mint = () => {
       >
         <Box
           display={"flex"}
+          rowGap="1.5rem"
+          flexDir={"column"}
+          borderRadius={"xl"}
+          px={2}
+          justifyContent="center"
+          alignItems={"center"}
+          width="100%"
+        >
+          <Text
+            textAlign={"center"}
+            fontSize={{ base: "2xl", sm: "4xl" }}
+            fontFamily={brandingFonts.headingFont}
+          >
+            Mint your Zues NFT
+          </Text>
+          <Divider
+            width={"70%"}
+            mx="auto"
+            borderRadius={"xl"}
+            p={0.5}
+            outline="none"
+            border="none"
+            bg={brandingColors.primaryButtonColor}
+          />
+          <video
+            style={{ maxHeight: "500px" }}
+            muted
+            loop
+            src={`https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`}
+            autoPlay
+          ></video>
+          <Box
+            display={"flex"}
+            justifyContent="center"
+            alignItems={"center"}
+            flexDir="column"
+          >
+            {address === "" ? (
+              <Box
+                className="btnc"
+                fontSize={{ base: "2xl" }}
+                fontFamily={brandingFonts.subFont}
+                onClick={connectWeb3Wallet}
+              >
+                MINT NFT
+              </Box>
+            ) : null}
+          </Box>
+        </Box>
+
+        <Box
+          display={"flex"}
           flexDir="column"
           justifyContent={"center"}
           pos="relative"
@@ -158,49 +210,9 @@ const Mint = () => {
             title="Free Mint or Buy"
             sub="You can buy the NFT for 0.5 BNB or mint it for free if your wallet is  eligible or whitelisted. Zeus NFT is the most powerful NFT in the Axle Ecosystem"
           />
-        </Box>
-        <Box
-          display={"flex"}
-          rowGap="2rem"
-          flexDir={"column"}
-          borderRadius={"xl"}
-          px={2}
-          py={8}
-          justifyContent="center"
-          alignItems={"center"}
-          width="100%"
-        >
-          <Text
-            textAlign={"center"}
-            fontSize={{ base: "2xl", sm: "4xl" }}
-            fontFamily={brandingFonts.headingFont}
-          >
-            Mint your Zues NFT
-          </Text>
-          <Divider
-            borderRadius={"xl"}
-            p={1}
-            outline="none"
-            border="none"
-            bg={brandingColors.primaryButtonColor}
-          />
-          <video
-            style={{ maxHeight: "420px" }}
-            muted
-            loop
-            src={`https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`}
-            autoPlay
-          ></video>
-
-          <Divider
-            borderRadius={"xl"}
-            p={1}
-            outline="none"
-            border="none"
-            bg={brandingColors.primaryButtonColor}
-          />
 
           <Flex
+            my={8}
             width={"100%"}
             p={{ base: 2 }}
             borderRadius="xl"
@@ -253,24 +265,6 @@ const Mint = () => {
               </Text>
             </Box>
           </Flex>
-
-          <Box
-            display={"flex"}
-            justifyContent="center"
-            alignItems={"center"}
-            flexDir="column"
-          >
-            {address === "" ? (
-              <Box
-                className="btnc"
-                fontSize={{ base: "2xl" }}
-                fontFamily={brandingFonts.subFont}
-                onClick={connectWeb3Wallet}
-              >
-                Connect wallet
-              </Box>
-            ) : null}
-          </Box>
         </Box>
       </Box>
     </Box>
