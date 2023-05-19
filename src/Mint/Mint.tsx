@@ -129,7 +129,7 @@ const Mint = () => {
         width={{ base: "100%", md: "90%" }}
         mx="auto"
         p={{ base: 8, lg: 12 }}
-        columnGap="6rem"
+        columnGap="1rem"
         rowGap={"3rem"}
         display={"flex"}
         justifyContent="space-evenly"
@@ -149,11 +149,12 @@ const Mint = () => {
             textAlign={"center"}
             fontSize={{ base: "2xl", sm: "4xl" }}
             fontFamily={brandingFonts.headingFont}
+            color={brandingColors.primaryButtonColor}
           >
             Mint your Zues NFT
           </Text>
           <Divider
-            width={"70%"}
+            width={"60%"}
             mx="auto"
             borderRadius={"xl"}
             p={0.5}
@@ -309,13 +310,14 @@ const Header = (props: Props) => {
         {props.number !== 0 ? props.number : null}
       </Text>
       <Text
-        fontSize={{ base: "lg", lg: "2xl" }}
+        fontSize={{ base: "lg", lg: "3xl" }}
         fontFamily={brandingFonts.headingFont}
+        color={brandingColors.primaryButtonColor}
       >
         {props.title}
       </Text>
       <Text
-        fontSize={{ base: "sm", lg: "md" }}
+        fontSize={{ base: "sm", lg: "lg" }}
         fontWeight={"bold"}
         fontFamily={brandingFonts.readingFont}
       >
