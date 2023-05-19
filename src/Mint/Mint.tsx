@@ -1,14 +1,6 @@
-import GIFI from "../assets/ticket.gif";
+import GIFI from "../assets/zues.png";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
-import {
-  Box,
-  Flex,
-  Image,
-  Text,
-  Button,
-  Divider,
-  Input,
-} from "@chakra-ui/react";
+import { Box, Flex, Image, Text, Button, Divider } from "@chakra-ui/react";
 
 import { ethers } from "ethers";
 
@@ -105,35 +97,14 @@ const Mint = () => {
     if (!loaded) window.location.reload();
   };
 
-  const [form, setForm] = useState([
-    { k: 0, v: "" },
-    { k: 1, v: "" },
-    { k: 2, v: "" },
-    { k: 3, v: "" },
-    { k: 4, v: "" },
-    { k: 5, v: "" },
-  ]);
-
-  const updateForm = (e: any, i: number) => {
-    let tform = form;
-    tform[i].v = e.target.value;
-    setForm([...tform]);
-  };
-
-  const generateNumber = () => {
-    const num = String(Math.floor(100000 + Math.random() * 900000));
-    let tform = form;
-    for (let i = 0; i < num.length; i++) tform[i].v = num[i];
-    console.log(tform);
-    setForm([...tform]);
-  };
-
   return (
     <Box
       bg={brandingColors.bgColor}
       backgroundImage={`https://axlegames.s3.ap-south-1.amazonaws.com/theme_assets/images/how-works-bg.png`}
       backgroundSize="contain"
       py={6}
+      backgroundRepeat="no-repeat"
+      backgroundPosition={"center"}
       minH="100vh"
     >
       <Box
@@ -191,7 +162,6 @@ const Mint = () => {
                 fontFamily={brandingFonts.headingFont}
                 color={brandingColors.primaryButtonColor}
                 fontSize={"3xl"}
-                zIndex={10000}
                 p={2}
                 boxShadow="dark-lg"
                 bg={brandingColors.bgColor}
@@ -232,15 +202,20 @@ const Mint = () => {
         >
           <Text
             textAlign={"center"}
-            fontSize={{ base: "xl", sm: "2xl" }}
-            fontFamily={brandingFonts.subFont}
+            fontSize={{ base: "2xl", sm: "4xl" }}
+            fontFamily={brandingFonts.headingFont}
           >
-            Mint your ticket to reveal your NFT
+            Mint your Zues NFT
           </Text>
-          <Image borderRadius={"xl"} src={GIFI} />
+          <Image
+            boxShadow={"dark-lg"}
+            maxH="360px"
+            borderRadius={"sm"}
+            src={GIFI}
+          />
           <Flex
             width={"100%"}
-            p={{ base: 2, lg: 6 }}
+            p={{ base: 2 }}
             borderRadius="xl"
             justifyContent={"space-between"}
             boxShadow={"dark-lg"}
@@ -250,15 +225,21 @@ const Mint = () => {
                 fontSize={{ base: "sm", md: "xl" }}
                 fontFamily={brandingFonts.subFont}
                 fontWeight="bold"
+                p={2}
               >
-                DCB World x BRITTO
+                Zues NFT
               </Text>
               <Text
-                fontWeight="bold"
                 fontSize={{ base: "sm", md: "xl" }}
-                fontFamily={brandingFonts.subFont}
+                fontFamily={brandingFonts.headingFont}
+                fontWeight="bold"
+                color={brandingColors.primaryButtonColor}
+                p={2}
+                borderRadius="xl"
+                boxShadow="dark-lg"
+                bg={brandingColors.bgColor}
               >
-                Edition #000001
+                200 AVAILABLE
               </Text>
             </Box>
             <Box>
@@ -266,19 +247,22 @@ const Mint = () => {
                 fontWeight="bold"
                 fontSize={{ base: "sm", md: "xl" }}
                 fontFamily={brandingFonts.subFont}
-                color={brandingColors.primaryButtonColor}
-                bg={brandingColors.bgColor}
-                boxShadow="dark-lg"
+                color={brandingColors.secondaryTextColor}
+                p={2}
               >
                 Price
               </Text>
               <Text
+                p={2}
+                borderRadius="xl"
+                boxShadow="dark-lg"
+                bg={brandingColors.bgColor}
                 fontWeight="bold"
                 fontSize={{ base: "sm", md: "xl" }}
-                fontFamily={brandingFonts.subFont}
+                fontFamily={brandingFonts.headingFont}
                 color={brandingColors.primaryButtonColor}
               >
-                0.2
+                0.5 BNB
               </Text>
             </Box>
           </Flex>
@@ -288,86 +272,6 @@ const Mint = () => {
             alignItems={"center"}
             flexDir="column"
           >
-            <Text
-              textAlign={"center"}
-              fontWeight={"normal"}
-              fontSize={{ base: "sm", md: "xl", lg: "md" }}
-              fontFamily={brandingFonts.subFont}
-              color={brandingColors.secondaryTwoTextColor}
-            >
-              Enter a 6 digits Ticket Number and click on Buy Now
-            </Text>
-            <Box>
-              <Flex my={3} columnGap={".5rem"}>
-                {form.map((m, i) => (
-                  <Input
-                    key={i}
-                    py={2}
-                    px={3}
-                    value={m.v}
-                    fontSize={"xl"}
-                    fontFamily={brandingFonts.subFont}
-                    color={brandingColors.primaryButtonColor}
-                    variant={"unstyled"}
-                    bg={brandingColors.bgColor}
-                    borderRadius={"xl"}
-                    outline="none"
-                    border="none"
-                    boxShadow={"dark-lg"}
-                    textAlign="center"
-                    maxW="12"
-                    maxLength={1}
-                    onChange={(e) => updateForm(e, i)}
-                  />
-                ))}
-              </Flex>
-            </Box>
-            <Text
-              fontWeight={"normal"}
-              textAlign="center"
-              fontSize={{ base: "sm", md: "xl", lg: "md" }}
-              fontFamily={brandingFonts.subFont}
-            >
-              This ticket number is already sold. Choose a different number.
-            </Text>
-            <Box
-              display={"flex"}
-              justifyContent="center"
-              alignItems={"center"}
-              pos={"relative"}
-            >
-              <Divider
-                h={2}
-                bg={brandingColors.bgColor}
-                my="8"
-                mx="auto"
-                width={"80%"}
-              />
-              <Text
-                fontWeight={"bold"}
-                fontFamily={brandingFonts.headingFont}
-                color={brandingColors.primaryButtonColor}
-                fontSize={"3xl"}
-                zIndex={10000}
-                p={2}
-                boxShadow="dark-lg"
-                bg={brandingColors.bgColor}
-                pos={"absolute"}
-                borderRadius="xl"
-              >
-                or
-              </Text>
-            </Box>
-            <Text
-              fontSize={{ base: "sm", md: "xl" }}
-              fontFamily={brandingFonts.subFont}
-              color={brandingColors.secondaryTextColor}
-              mb={4}
-              cursor="pointer"
-              onClick={generateNumber}
-            >
-              GENERATE RANDOM TICKET
-            </Text>
             {address === "" ? (
               <Button
                 fontWeight={"normal"}

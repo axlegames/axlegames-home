@@ -91,6 +91,7 @@ const Wallet = (props: Props) => {
       ></Flex>
       {props.address !== "" ? (
         <Box
+          boxShadow={`0px 0px 4px ${brandingColors.newHighlightColor}`}
           position="relative"
           display={{ base: "none", md: "flex" }}
           bg={brandingColors.bgColor}
