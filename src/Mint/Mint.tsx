@@ -1,4 +1,3 @@
-import GIFI from "../assets/zues.png";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 import { Box, Flex, Image, Text, Button, Divider } from "@chakra-ui/react";
 
@@ -207,12 +206,14 @@ const Mint = () => {
           >
             Mint your Zues NFT
           </Text>
-          <Image
-            boxShadow={"dark-lg"}
-            maxH="360px"
-            borderRadius={"sm"}
-            src={GIFI}
-          />
+          <video
+            style={{ maxHeight: "420px" }}
+            muted
+            loop
+            src={`https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`}
+            autoPlay
+          ></video>
+
           <Flex
             width={"100%"}
             p={{ base: 2 }}
