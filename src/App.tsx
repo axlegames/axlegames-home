@@ -23,6 +23,7 @@ const About = lazy(() => import("./screens/About"));
 const Giveaway1 = lazy(() => import("./Giveaway/Giveaway"));
 const Dashboard = lazy(() => import("./Staking/Dashboard"));
 const Mint = lazy(() => import("./Mint/Mint"));
+const NFTs = lazy(() => import("./Nfts/NFTs"));
 
 // const Giveaway2 = lazy(() => import("./Giveaway/Giveaway2"));
 // const TSupply = lazy(() => import("./screens/Tsupply"));
@@ -51,7 +52,8 @@ export const App = () => {
             <Route path="/" element={<Main />} />
             <Route path="/about" element={<About />} />
             <Route path="/giveaway1" element={<Giveaway1 />} />
-            <Route path="/mint" element={<Mint />} />
+            <Route path="/whitelist/mint" element={<Mint />} />
+            <Route path="/mint" element={<NFTs />} />
             {/* <Route path="/giveaway2" element={<Giveaway2 />} /> */}
             {/* <Route path="/tsupply" element={<TSupply />} /> */}
 
