@@ -296,7 +296,7 @@ const Mint = () => {
                       fontFamily={brandingFonts.subFont}
                       onClick={connectWeb3Wallet}
                     >
-                      Connect Wallet
+                      CLAIM YOUR FREE NFT
                     </Box>
                   )}
                 </Box>
