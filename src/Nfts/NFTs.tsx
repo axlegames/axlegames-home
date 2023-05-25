@@ -94,7 +94,6 @@ const NFTs = () => {
       const isMintedC = await zuesMintContractc.alreadyMintedList(
         web3Accounts[0]
       );
-      console.log(await zuesMintContractc.uri(1));
       setIsMinted(isMintedC);
       setAddress(web3Accounts[0]);
       setNetworkName(network.chainId);
@@ -184,7 +183,7 @@ const NFTs = () => {
         alignItems="center"
         gridTemplateColumns={{ base: "1fr" }}
         py={4}
-        width={{ base: "65%" }}
+        width={{ base: "90%", lg: "80%", xl: "75%", "2xl": "65%" }}
         mx="auto"
       >
         {nfts.map((nft, index) => (
@@ -232,7 +231,7 @@ const NFT = (props: Props) => {
       <Box
         alignItems="center"
         display="flex"
-        flexDirection="row"
+        flexDirection={{ base: "column", lg: "row" }}
         zIndex={300}
         height="100%"
         width={"100%"}
@@ -260,7 +259,7 @@ const NFT = (props: Props) => {
             <Text
               color={brandingColors.primaryTextColor}
               fontFamily={brandingFonts.headingFont}
-              fontSize={{ base: "2xl", lg: "4xl" }}
+              fontSize={{ base: "xl", lg: "2xl", "2xl": "4xl" }}
               textAlign={"left"}
               fontWeight="bold"
               mb={3}
@@ -270,7 +269,7 @@ const NFT = (props: Props) => {
             <Text
               color={brandingColors.secondaryTextColor}
               fontWeight={"bold"}
-              fontSize={{ base: "sm", md: "md" }}
+              fontSize={{ base: "xs", md: "sm", xl: "md" }}
               textAlign={"left"}
               fontFamily={brandingFonts.subFont}
             >
@@ -290,12 +289,16 @@ const NFT = (props: Props) => {
           >
             <Flex mb={4} justifyContent={"space-between"} alignItems={"center"}>
               <Text
+                fontSize={{ base: "xs", lg: "md", xl: "lg" }}
                 fontFamily={brandingFonts.subFont}
                 color={brandingColors.primaryButtonColor}
               >
                 You Secure
               </Text>
-              <Text fontFamily={brandingFonts.subFont}>
+              <Text
+                fontSize={{ base: "xs", lg: "md", xl: "lg" }}
+                fontFamily={brandingFonts.subFont}
+              >
                 Balance : 0 {props.title} NFT
               </Text>
             </Flex>
@@ -305,7 +308,11 @@ const NFT = (props: Props) => {
               borderRadius="md"
               bg={brandingColors.bgColor}
             >
-              <Flex my={4} justifyContent={"space-between"}>
+              <Flex
+                alignItems={"center"}
+                my={4}
+                justifyContent={"space-between"}
+              >
                 <Text
                   fontFamily={brandingFonts.subFont}
                   color={brandingColors.primaryButtonColor}
@@ -323,8 +330,13 @@ const NFT = (props: Props) => {
                   textAlign="center"
                 />
               </Flex>
-              <Flex justifyContent={"flex-end"}>
-                <Box fontFamily={brandingFonts.subFont} className="btnc">
+              <Flex justifyContent={{ base: "center", lg: "flex-end" }}>
+                <Box
+                  textAlign={"center"}
+                  minW="40"
+                  fontFamily={brandingFonts.subFont}
+                  className="btnc"
+                >
                   MINT
                 </Box>
               </Flex>

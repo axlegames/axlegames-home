@@ -219,22 +219,7 @@ const Mint = () => {
             src={`https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`}
             autoPlay
           ></video>
-          <Box>
-            {address !== "" ? (
-              <Box>
-                <Text
-                  fontFamily={brandingFonts.subFont}
-                  color={brandingColors.primaryButtonColor}
-                >
-                  {isMinted
-                    ? ""
-                    : isEligible
-                    ? `You are eligible to mint ${nft} NFTs`
-                    : `Your adress is not eligible to mint`}
-                </Text>
-              </Box>
-            ) : null}
-          </Box>
+          <Box>{address !== "" ? <Box></Box> : null}</Box>
         </Box>
         <Box
           display={"flex"}
@@ -271,30 +256,65 @@ const Mint = () => {
           />
           {!isMinted ? (
             <Box mt={8} justifyContent="center" display={"flex"}>
-              <Box
-                className="btnc"
-                fontSize={{ base: "2xl" }}
-                fontFamily={brandingFonts.subFont}
-                onClick={address !== "" ? mint : connectWeb3Wallet}
-              >
-                CLAIM YOUR FREE NFT
-              </Box>
+              {isEligible && address !== "" ? (
+                <Box>
+                  <Box
+                    className="btnc"
+                    fontSize={{ base: "2xl" }}
+                    fontFamily={brandingFonts.subFont}
+                    onClick={mint}
+                    textAlign="center"
+                  >
+                    CLAIM YOUR FREE NFT
+                  </Box>
+                  <Text
+                    textAlign={"center"}
+                    mt={4}
+                    fontSize="2xl"
+                    fontFamily={brandingFonts.subFont}
+                    color={brandingColors.primaryTwoTextColor}
+                  >
+                    {`You are eligible to mint ${nft} NFTs`}
+                  </Text>
+                </Box>
+              ) : (
+                <Box>
+                  {address !== "" ? (
+                    <Text
+                      textAlign={"center"}
+                      mt={4}
+                      fontSize="2xl"
+                      fontFamily={brandingFonts.subFont}
+                      color={brandingColors.secondaryTwoTextColor}
+                    >
+                      {`Your adress is not eligible to mint`}
+                    </Text>
+                  ) : (
+                    <Box
+                      className="btnc"
+                      fontSize={{ base: "2xl" }}
+                      fontFamily={brandingFonts.subFont}
+                      onClick={connectWeb3Wallet}
+                    >
+                      Connect Wallet
+                    </Box>
+                  )}
+                </Box>
+              )}
             </Box>
-          ) : null}
-          {isMinted ? (
-            <Box my={8}>
-              <Box>
-                <Text
-                  fontFamily={brandingFonts.subFont}
-                  color={brandingColors.secondaryTwoTextColor}
-                  fontSize={{ base: "2xl" }}
-                  textAlign={"center"}
-                  pb={4}
-                >
-                  You have already minted!
-                </Text>
-              </Box>
-              <Divider mb={4} mx="auto" width={"100%"} />
+          ) : (
+            <Box>
+              <Text
+                textAlign={"center"}
+                mt={4}
+                fontSize="3xl"
+                fontFamily={brandingFonts.subFont}
+                color={brandingColors.secondaryTwoTextColor}
+              >
+                {`your already minted your free nfts`}
+              </Text>
+
+              <Divider my={4} />
               <Flex flexDir={"column"} justifyContent={"space-between"}>
                 <Flex
                   alignItems={{ base: "start", lg: "center" }}
@@ -375,7 +395,7 @@ const Mint = () => {
                 </Flex>
               </Flex>
             </Box>
-          ) : null}
+          )}
         </Box>
       </Box>
     </Box>
