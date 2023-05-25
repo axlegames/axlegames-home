@@ -241,9 +241,9 @@ const NFT = (props: Props) => {
           muted
           loop
           src={props.img}
-          width="180"
+          width="260"
           autoPlay
-          height="90"
+          height="140"
         ></video>
         <Box
           borderRadius="xl"
@@ -296,7 +296,7 @@ const NFT = (props: Props) => {
                 You Secure
               </Text>
               <Text fontFamily={brandingFonts.subFont}>
-                Balance : 0 Zues NFT
+                Balance : 0 {props.title} NFT
               </Text>
             </Flex>
             <Box
@@ -310,7 +310,7 @@ const NFT = (props: Props) => {
                   fontFamily={brandingFonts.subFont}
                   color={brandingColors.primaryButtonColor}
                 >
-                  Zues NFTs
+                  {props.title} NFTs
                 </Text>
                 <Input
                   defaultValue={1}
@@ -323,9 +323,11 @@ const NFT = (props: Props) => {
                   textAlign="center"
                 />
               </Flex>
-              <Box fontFamily={brandingFonts.subFont} w="100%" className="btnc">
-                MINT
-              </Box>
+              <Flex justifyContent={"flex-end"}>
+                <Box fontFamily={brandingFonts.subFont} className="btnc">
+                  MINT
+                </Box>
+              </Flex>
             </Box>
           </Flex>
         </Box>

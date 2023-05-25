@@ -96,13 +96,11 @@ const Mint = () => {
       const isMintedC = await zuesMintContractc.alreadyMintedList(
         web3Accounts[0]
       );
-      console.log(await zuesMintContractc.uri(1));
       setIsMinted(isMintedC);
       setAddress(web3Accounts[0]);
       setNetworkName(network.chainId);
       setZuesMintContract(zuesMintContractc);
       setBalance(bnbBal);
-      console.log(zuesMintContractc, onChain);
       const eligibility = await zuesMintContractc.whitelist(web3Accounts[0]);
       setIsEligible(eligibility);
       for (let i = 0; i < whitelist.length; i++)
