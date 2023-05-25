@@ -33,6 +33,7 @@ const Mint = () => {
   const [nft, setNft] = useState(0);
   const [address, setAddress] = useState<string>("");
   const [onChain, setOnChain] = useState("");
+  console.log(onChain);
   const [openWallet, setOpenWallet] = useState(false);
   const [isEligible, setIsEligible] = useState(false);
   const [isMinted, setIsMinted] = useState(false);
