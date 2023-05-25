@@ -122,6 +122,4 @@ if (isDevServer === "true" || isDevServer === undefined || isDevServer === null)
   creds = testnet;
 else creds = mainnet;
 
-creds = testnet;
-
 export default creds;
