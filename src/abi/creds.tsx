@@ -118,8 +118,7 @@ let creds: Creds = {
 
 creds = mainnet;
 
-if (isDevServer === "true" || isDevServer === undefined || isDevServer === null)
-  creds = testnet;
+if (isDevServer === "true" || isDevServer === true) creds = testnet;
 else creds = mainnet;
 
 export default creds;
