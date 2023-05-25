@@ -52,8 +52,8 @@ export const App = () => {
             <Route path="/" element={<Main />} />
             <Route path="/about" element={<About />} />
             <Route path="/giveaway1" element={<Giveaway1 />} />
-            <Route path="/whitelist/mint" element={<Mint />} />
-            <Route path="/mint" element={<NFTs />} />
+            <Route path="/nftmint/whitelist" element={<Mint />} />
+            <Route path="/nftmint/public" element={<NFTs />} />
             {/* <Route path="/giveaway2" element={<Giveaway2 />} /> */}
             {/* <Route path="/tsupply" element={<TSupply />} /> */}
 

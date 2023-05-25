@@ -288,7 +288,7 @@ const NFT = (props: Props) => {
             borderRadius="md"
             flexDir={"column"}
           >
-            <Flex justifyContent={"space-between"} alignItems={"center"}>
+            <Flex mb={4} justifyContent={"space-between"} alignItems={"center"}>
               <Text
                 fontFamily={brandingFonts.subFont}
                 color={brandingColors.primaryButtonColor}
@@ -299,17 +299,30 @@ const NFT = (props: Props) => {
                 Balance : 0 Zues NFT
               </Text>
             </Flex>
-            <Box>
-              <Input
-                defaultValue={1}
-                fontWeight={"bold"}
-                fontFamily={brandingFonts.subFont}
-                color={brandingColors.primaryButtonColor}
-                maxW="48px"
-                type="text"
-                maxLength={1}
-                textAlign="center"
-              />
+            <Box
+              boxShadow={"dark-lg"}
+              p={4}
+              borderRadius="md"
+              bg={brandingColors.bgColor}
+            >
+              <Flex my={4} justifyContent={"space-between"}>
+                <Text
+                  fontFamily={brandingFonts.subFont}
+                  color={brandingColors.primaryButtonColor}
+                >
+                  Zues NFTs
+                </Text>
+                <Input
+                  defaultValue={1}
+                  fontWeight={"bold"}
+                  fontFamily={brandingFonts.subFont}
+                  color={brandingColors.primaryButtonColor}
+                  maxW="48px"
+                  type="text"
+                  maxLength={1}
+                  textAlign="center"
+                />
+              </Flex>
               <Box fontFamily={brandingFonts.subFont} w="100%" className="btnc">
                 MINT
               </Box>
