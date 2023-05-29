@@ -21,6 +21,7 @@ import { useState } from "react";
 import { chainIds, web3Modal } from "../Staking/components/utils";
 
 import Wallet from "../Staking/Wallet";
+import axios from "axios";
 
 const AXLE_ZUES_MINT_ADDRESS = creds.AXLE_ZUES_MINT;
 const axleZuesMintAbi = creds.axleZuesMintAbi;
@@ -80,6 +81,13 @@ const NFTs = () => {
 
   const connectWeb3Wallet = async () => {
     try {
+      const res = await axios.get("https://geolocation-db.com/json/");
+      console.log(res.data.IPv4);
+    } catch (error) {
+      console.log(error);
+    }
+
+    try {
       const web3Provider = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(web3Provider);
       const web3Accounts = await provider.listAccounts();
@@ -138,10 +146,10 @@ const NFTs = () => {
       });
     }
   };
-  const [inputs, setInputs] = useState(["", "", ""]);
+  const [inputs, setInputs] = useState([1, 1, 1]);
 
   const updateInput = (e: any, i: number) => {
-    const nft = e.target.value;
+    const nft = Number(e.target.value);
     if (nft > 5)
       return toast({
         title: "Oops!",
@@ -213,8 +221,10 @@ const NFTs = () => {
             key={index}
             type={nft.type}
             index={index}
-            value={inputs[index]}
-            mint={() => mint(index, nft.type)}
+            value={inputs[index].toString()}
+            mint={
+              address !== "" ? () => mint(index, nft.type) : connectWeb3Wallet
+            }
             updateInput={updateInput}
             slide={index % 2 === 0 ? `fade-down` : `fade-up`}
           />
