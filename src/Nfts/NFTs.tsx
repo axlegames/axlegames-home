@@ -7,6 +7,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
+
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 
 import Logo from "../assets/logo.png";
@@ -14,9 +15,11 @@ import creds from "../abi/creds";
 
 import AxleDialog from "../Staking/dialog/AxleDialog";
 import SuccessfulMintDialog from "../Mint/SuccessfulMintDialog";
+
+import { ethers } from "ethers";
 import { useState } from "react";
 import { chainIds, web3Modal } from "../Staking/components/utils";
-import { ethers } from "ethers";
+
 import Wallet from "../Staking/Wallet";
 
 const AXLE_ZUES_MINT_ADDRESS = creds.AXLE_ZUES_MINT;
@@ -26,14 +29,13 @@ const NFTs = () => {
   const toast = useToast();
   const [balance, setBalance] = useState(0);
 
-  const [nft, setNft] = useState(0);
   const [address, setAddress] = useState<string>("");
   const [onChain, setOnChain] = useState("");
   const [openWallet, setOpenWallet] = useState(false);
   const [isEligible, setIsEligible] = useState(false);
   const [isMinted, setIsMinted] = useState(false);
 
-  console.log(setNft, isEligible, isMinted);
+  console.log(isEligible, isMinted);
 
   const [hash, setHash] = useState("");
   const [success, setSuccess] = useState(false);
@@ -113,9 +115,12 @@ const NFTs = () => {
     if (!loaded) window.location.reload();
   };
 
-  const mint = async () => {
+  const mint = async (index: number, type: number) => {
     try {
-      const resp = await zuesMintContract.whiteListMint(1, nft);
+      const resp = await zuesMintContract.publicMint(
+        Number(type),
+        Number(inputs[index])
+      );
       console.log(resp);
       if (resp) {
         setHash(resp.hash);
@@ -133,8 +138,24 @@ const NFTs = () => {
       });
     }
   };
+  const [inputs, setInputs] = useState(["", "", ""]);
 
-  console.log(mint);
+  const updateInput = (e: any, i: number) => {
+    const nft = e.target.value;
+    if (nft > 5)
+      return toast({
+        title: "Oops!",
+        description: "max mint limit is only 5",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    let tempInputs = inputs;
+    tempInputs[i] = nft;
+    setInputs([...tempInputs]);
+  };
+
   return (
     <Box
       minH="100vh"
@@ -188,9 +209,14 @@ const NFTs = () => {
       >
         {nfts.map((nft, index) => (
           <NFT
-            slide={index % 2 === 0 ? `fade-down` : `fade-up`}
             {...nft}
             key={index}
+            type={nft.type}
+            index={index}
+            value={inputs[index]}
+            mint={() => mint(index, nft.type)}
+            updateInput={updateInput}
+            slide={index % 2 === 0 ? `fade-down` : `fade-up`}
           />
         ))}
       </Grid>
@@ -201,24 +227,32 @@ const NFTs = () => {
 export default NFTs;
 
 interface Props {
+  value: string;
   title: string;
   text: string;
   img: string;
   slide: string;
+  updateInput: Function;
+  index: number;
+  mint: Function;
+  type: number;
 }
 
 export const nfts = [
   {
+    type: 1,
     title: "Zeus",
     text: "Thunder NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`,
   },
   {
+    type: 2,
     title: "Poseidon",
     text: "Trident NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/poseidon.mp4`,
   },
   {
+    type: 3,
     title: "Hades",
     text: "Fire NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/hades.mp4`,
@@ -320,6 +354,8 @@ const NFT = (props: Props) => {
                   {props.title} NFTs
                 </Text>
                 <Input
+                  value={props.value}
+                  onChange={(e) => props.updateInput(e, props.index)}
                   defaultValue={1}
                   fontWeight={"bold"}
                   fontFamily={brandingFonts.subFont}
@@ -336,6 +372,7 @@ const NFT = (props: Props) => {
                   minW="40"
                   fontFamily={brandingFonts.subFont}
                   className="btnc"
+                  onClick={() => props.mint()}
                 >
                   MINT
                 </Box>
