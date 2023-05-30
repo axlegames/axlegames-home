@@ -30,7 +30,7 @@ interface Creds {
   AXLE_STAKING: string;
   AXLE_FLEX_STAKING: string;
   AXLE_BNB_FLEX_STAKING: string;
-  AXLE_ZUES_MINT: string;
+  AXLE_ZUES_MINT: string | never;
   tokenAbi: any;
   presaleAbi: any;
   stakingAbi: any;
@@ -104,7 +104,7 @@ let creds: Creds = {
   AXLE_CONTRACT: "",
   AXLE_ZEUS_PRESALE: "",
   AXLE_FLEX_STAKING: "",
-  AXLE_ZUES_MINT: "",
+  AXLE_ZUES_MINT: "0xdD430aB53a671C18941D3E70355224e141896fC4",
   flexStakingAbi: null,
   AXLE_STAKING: "",
   presaleAbi: null,

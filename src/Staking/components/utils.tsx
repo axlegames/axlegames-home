@@ -65,7 +65,7 @@ export const stakeRewards = [
 export const web3Modal = new Web3Modal({
   network: "mainnet",
   theme: "dark",
-  cacheProvider: false,
+  cacheProvider: true,
   disableInjectedProvider: false,
   providerOptions: {
     binancechainwallet: {

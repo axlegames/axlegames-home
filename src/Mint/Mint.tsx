@@ -9,122 +9,98 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import { ethers } from "ethers";
-
 import { useState } from "react";
-import { web3Modal, chainIds } from "../Staking/components/utils";
 
 import Wallet from "../Staking/Wallet";
 import Logo from "../assets/logo.png";
 
 import creds from "../abi/creds";
 import whitelist from "./whitelist.json";
+import axleZuesMintAbi from "../abi/testnet/AxleZuesMintTest.json";
 
 import AxleDialog from "../Staking/dialog/AxleDialog";
 import SuccessfulMintDialog from "./SuccessfulMintDialog";
 
-const AXLE_ZUES_MINT_ADDRESS = creds.AXLE_ZUES_MINT;
-const axleZuesMintAbi = creds.axleZuesMintAbi;
+import { useWeb3Modal } from "@web3modal/react";
+import { bsc, bscTestnet, mainnet } from "wagmi/chains";
+import { useDisconnect, useConnect, useAccount, useContractRead } from "wagmi";
+
+// const AXLE_ZUES_MINT_ADDRESS = creds.AXLE_ZUES_MINT;
+// const axleZuesMintAbi = creds.axleZuesMintAbi;
 
 const Mint = () => {
+  const { disconnect } = useDisconnect();
+
+  const { address, isConnected } = useAccount();
+  const { open, setDefaultChain, close, isOpen } = useWeb3Modal();
+
+  const { connect, connectors, error, isLoading, pendingConnector } =
+    useConnect();
+
+  const { data: isMinted } = useContractRead({
+    address: "0xdD430aB53a671C18941D3E70355224e141896fC4",
+    abi: axleZuesMintAbi,
+    functionName: "alreadyMintedList",
+    args: [address!],
+  });
+  const { data: isEligible } = useContractRead({
+    address: "0xdD430aB53a671C18941D3E70355224e141896fC4",
+    abi: axleZuesMintAbi,
+    functionName: "whitelist",
+    args: [address!],
+  });
+
   const toast = useToast();
+
   const [balance, setBalance] = useState(0);
-
   const [nft, setNft] = useState(0);
-  const [address, setAddress] = useState<string>("");
-  const [onChain, setOnChain] = useState("");
-  console.log(onChain);
   const [openWallet, setOpenWallet] = useState(false);
-  const [isEligible, setIsEligible] = useState(false);
-  const [isMinted, setIsMinted] = useState(false);
-
   const [hash, setHash] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const [zuesMintContract, setZuesMintContract] = useState<any>();
-
-  const setNetworkName = (chainId: number) => {
-    for (let i = 0; i < chainIds.length; i++) {
-      if (chainIds[i].chainId === chainId) {
-        setOnChain(chainIds[i].network);
-      }
-    }
-  };
-
-  const switchNetwork = async () => {
-    try {
-      await window.ethereum.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: ethers.utils.hexlify(creds.chain.chainId) }],
-      });
-    } catch (err: any) {
-      // This error code indicates that the chain has not been added to MetaMask
-      if (err.code === 4902) {
-        await window.ethereum.request({
-          method: "wallet_addEthereumChain",
-          params: [
-            {
-              chainName: creds.chain.chainName,
-              chainId: creds.chain.chainId,
-              nativeCurrency: {
-                name: creds.chain.nativeCurrency.name,
-                decimals: creds.chain.nativeCurrency.decimals,
-                symbol: creds.chain.nativeCurrency.symbol,
-              },
-              rpcUrls: creds.chain.rpcUrls,
-            },
-          ],
-        });
-      }
-    }
-  };
-
   const connectWeb3Wallet = async () => {
     try {
-      const web3Provider = await web3Modal.connect();
-      const provider = new ethers.providers.Web3Provider(web3Provider);
-      const web3Accounts = await provider.listAccounts();
-      const network = await provider.getNetwork();
-      if (network.chainId !== creds.chain.chainId) switchNetwork();
-      let bnbBal: any = await provider.getBalance(web3Accounts[0]);
-      bnbBal = Number(ethers.utils.formatEther(bnbBal));
-      const signer = provider.getSigner();
-      const zuesMintContractc = new ethers.Contract(
-        AXLE_ZUES_MINT_ADDRESS,
-        axleZuesMintAbi,
-        signer
-      );
-      const isMintedC = await zuesMintContractc.alreadyMintedList(
-        web3Accounts[0]
-      );
-      setIsMinted(isMintedC);
-      setAddress(web3Accounts[0]);
-      setNetworkName(network.chainId);
-      setZuesMintContract(zuesMintContractc);
-      setBalance(bnbBal);
-      const eligibility = await zuesMintContractc.whitelist(web3Accounts[0]);
-      setIsEligible(eligibility);
-      for (let i = 0; i < whitelist.length; i++)
-        if (whitelist[i].address === web3Accounts[0]) setNft(whitelist[i].nfts);
-      localStorage.setItem("isWalletConnected", "true");
+      open();
+      setDefaultChain(bscTestnet);
+
+      // const balance = await fetchBalance({
+      //   address,
+      // });
+      // console.log(balance);
+      // let bnbBal: any = await provider.getBalance(web3Accounts[0]);
+      // bnbBal = Number(ethers.utils.formatEther(bnbBal));
+      // const signer = provider.getSigner();
+      // const zuesMintContractc = new ethers.Contract(
+      //   AXLE_ZUES_MINT_ADDRESS,
+      //   axleZuesMintAbi,
+      //   signer
+      // );
+      // const isMintedC = await zuesMintContractc.alreadyMintedList(
+      //   web3Accounts[0]
+      // );
+      // setIsMinted(isMintedC);
+      // setAddress(web3Accounts[0]);
+      // setNetworkName(network.chainId);
+      // setZuesMintContract(zuesMintContractc);
+      // setBalance(bnbBal);
+      // const eligibility = await zuesMintContractc.whitelist(web3Accounts[0]);
+      // setIsEligible(eligibility);
+      // for (let i = 0; i < whitelist.length; i++)
+      //   if (whitelist[i].address === web3Accounts[0]) setNft(whitelist[i].nfts);
+      // localStorage.setItem("isWalletConnected", "true");
     } catch (error) {
       console.log(error);
     }
   };
 
-  const disconnectWeb3Modal = async (loaded: boolean = false) => {
-    web3Modal.clearCachedProvider();
-    if (!loaded) window.location.reload();
-  };
-
   const mint = async () => {
     try {
-      const resp = await zuesMintContract.whiteListMint(1, nft);
-      console.log(resp);
-      if (resp) {
-        setHash(resp.hash);
-        setSuccess(true);
-      }
+      // const resp = await zuesMintContract.whiteListMint(1, nft);
+      // console.log(resp);
+      // if (resp) {
+      //   setHash(resp.hash);
+      //   setSuccess(true);
+      // }
     } catch (err) {
       console.log(err);
       return toast({
@@ -171,8 +147,8 @@ const Mint = () => {
       >
         <Image maxH={"8vh"} src={Logo}></Image>
         <Wallet
-          address={address}
-          disconnect={disconnectWeb3Modal}
+          address={address ?? ""}
+          disconnect={() => disconnect()}
           balance={balance}
           connectWallet={connectWeb3Wallet}
           isLoading={false}
@@ -191,6 +167,25 @@ const Mint = () => {
         alignItems={"center"}
         flexDir={{ base: "column", lg: "row" }}
       >
+        <Box>
+          <div style={{ color: "white" }}>
+            {connectors.map((connector) => (
+              <button
+                disabled={!connector.ready}
+                key={connector.id}
+                onClick={() => connect({ connector })}
+              >
+                {connector.name}
+                {!connector.ready && " (unsupported)"}
+                {isLoading &&
+                  connector.id === pendingConnector?.id &&
+                  " (connecting)"}
+              </button>
+            ))}
+
+            {error && <div>{error.message}</div>}
+          </div>
+        </Box>
         <Box
           display={"flex"}
           rowGap="1.5rem"
@@ -219,7 +214,6 @@ const Mint = () => {
             src={`https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`}
             autoPlay
           ></video>
-          <Box>{address !== "" ? <Box></Box> : null}</Box>
         </Box>
         <Box
           display={"flex"}
@@ -256,7 +250,7 @@ const Mint = () => {
           />
           {!isMinted ? (
             <Box mt={8} justifyContent="center" display={"flex"}>
-              {isEligible && address !== "" ? (
+              {isEligible && isConnected ? (
                 <Box>
                   <Box
                     className="btnc"
@@ -279,7 +273,7 @@ const Mint = () => {
                 </Box>
               ) : (
                 <Box>
-                  {address !== "" ? (
+                  {isConnected ? (
                     <Text
                       textAlign={"center"}
                       mt={4}

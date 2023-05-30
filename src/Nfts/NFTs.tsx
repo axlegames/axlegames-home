@@ -7,6 +7,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
+import white from "../Mint/whitelist.json";
 
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 
@@ -17,7 +18,7 @@ import AxleDialog from "../Staking/dialog/AxleDialog";
 import SuccessfulMintDialog from "../Mint/SuccessfulMintDialog";
 
 import { ethers } from "ethers";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { chainIds, web3Modal } from "../Staking/components/utils";
 
 import Wallet from "../Staking/Wallet";
@@ -50,6 +51,13 @@ const NFTs = () => {
       }
     }
   };
+  useEffect(() => {
+    const add = [];
+    for (let i = 0; i < white.length; i++) {
+      add.push(white[i].address);
+    }
+    console.log(add);
+  }, []);
 
   const switchNetwork = async () => {
     try {
@@ -82,7 +90,7 @@ const NFTs = () => {
   const connectWeb3Wallet = async () => {
     try {
       const res = await axios.get("https://geolocation-db.com/json/");
-      console.log(res.data.IPv4);
+      console.log(res.data);
     } catch (error) {
       console.log(error);
     }
@@ -214,6 +222,7 @@ const NFTs = () => {
         py={4}
         width={{ base: "90%", lg: "80%", xl: "75%", "2xl": "65%" }}
         mx="auto"
+        rowGap={"2rem"}
       >
         {nfts.map((nft, index) => (
           <NFT
@@ -324,71 +333,68 @@ const NFT = (props: Props) => {
               esse inventore rerum veritatis.
             </Text>
           </Box>
-          <Flex
-            columnGap={"1rem"}
-            bg={brandingColors.bgColor}
-            p={4}
-            borderRadius="md"
-            flexDir={"column"}
-          >
-            <Flex mb={4} justifyContent={"space-between"} alignItems={"center"}>
+
+          <Flex justifyContent={"flex-end"}>
+            <Text
+              bg={brandingColors.bgColor}
+              p={2}
+              px={4}
+              color={brandingColors.primaryButtonColor}
+              borderRadius="md"
+              fontSize={{ base: "xs", lg: "md", xl: "lg" }}
+              fontFamily={brandingFonts.subFont}
+            >
+              Balance : 0 {props.title} NFT
+            </Text>
+          </Flex>
+          <Box borderRadius="md">
+            <Flex
+              alignItems={"center"}
+              justifyContent="center"
+              columnGap={"2rem"}
+              flexDirection="row"
+            >
               <Text
-                fontSize={{ base: "xs", lg: "md", xl: "lg" }}
+                fontSize={{ base: "3xl" }}
                 fontFamily={brandingFonts.subFont}
                 color={brandingColors.primaryButtonColor}
               >
-                You Secure
+                {props.title} NFTs
               </Text>
-              <Text
-                fontSize={{ base: "xs", lg: "md", xl: "lg" }}
+              <Input
+                bg={brandingColors.bgColor}
+                boxShadow={`0px 0px 4px ${brandingColors.primaryButtonColor}`}
+                outline="none"
+                border="none"
+                value={props.value}
+                onChange={(e) => props.updateInput(e, props.index)}
+                defaultValue={1}
+                fontWeight={"bold"}
                 fontFamily={brandingFonts.subFont}
-              >
-                Balance : 0 {props.title} NFT
-              </Text>
+                _hover={{
+                  bg: brandingColors.primaryButtonColor,
+                  color: brandingColors.bgColor,
+                }}
+                color={brandingColors.primaryButtonColor}
+                maxW="48px"
+                type="text"
+                maxLength={1}
+                textAlign="center"
+              />
             </Flex>
-            <Box
-              boxShadow={"dark-lg"}
-              p={4}
-              borderRadius="md"
-              bg={brandingColors.bgColor}
-            >
-              <Flex
-                alignItems={"center"}
-                my={4}
-                justifyContent={"space-between"}
+            <Flex mt={4} justifyContent={{ base: "center" }}>
+              <Box
+                boxShadow={"dark-lg"}
+                textAlign={"center"}
+                minW="40"
+                fontFamily={brandingFonts.subFont}
+                className="btnc"
+                onClick={() => props.mint()}
               >
-                <Text
-                  fontFamily={brandingFonts.subFont}
-                  color={brandingColors.primaryButtonColor}
-                >
-                  {props.title} NFTs
-                </Text>
-                <Input
-                  value={props.value}
-                  onChange={(e) => props.updateInput(e, props.index)}
-                  defaultValue={1}
-                  fontWeight={"bold"}
-                  fontFamily={brandingFonts.subFont}
-                  color={brandingColors.primaryButtonColor}
-                  maxW="48px"
-                  type="text"
-                  maxLength={1}
-                  textAlign="center"
-                />
-              </Flex>
-              <Flex justifyContent={{ base: "center", lg: "flex-end" }}>
-                <Box
-                  textAlign={"center"}
-                  minW="40"
-                  fontFamily={brandingFonts.subFont}
-                  className="btnc"
-                  onClick={() => props.mint()}
-                >
-                  MINT
-                </Box>
-              </Flex>
-            </Box>
-          </Flex>
+                MINT
+              </Box>
+            </Flex>
+          </Box>
         </Box>
       </Box>
     </Box>

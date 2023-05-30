@@ -20,8 +20,8 @@ const Heading = (props: Props) => {
       : brandingColors.highLightColor;
   };
   const team = props.isTeam ?? false;
-  let t = [];
-  if (props.isSub) t = props.subTitle.split(" ");
+  let t = [] as any;
+  if (props.isSub) t = props.subTitle?.split(" ");
 
   return (
     <Box
@@ -51,7 +51,7 @@ const Heading = (props: Props) => {
         rowGap=".22rem"
         flexDirection={{ base: "column", md: "row" }}
       >
-        {t.map((s, i) => (
+        {t.map((s: string, i: number) => (
           <Text
             fontSize={{ base: "xl", sm: "2xl", lg: "4xl" }}
             textAlign={"center"}

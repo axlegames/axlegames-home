@@ -413,7 +413,7 @@ const Stake = () => {
       localStorage.setItem("isWalletConnected", "true");
       const t = await stake.stakingTx(web3Accounts[0]);
       const totalTxns: any = ethers.utils.formatEther(t.txNo);
-      const txns = [];
+      const txns = [] as any;
       let tStaked: any = 0;
       for (let i = 1; i <= totalTxns * 10 ** 18; i++) {
         const txn = await stake.userTransactions(web3Accounts[0], i);
@@ -457,7 +457,7 @@ const Stake = () => {
     } else {
       const t = await stakingContract.stakingTx(address);
       const totalTxns: any = ethers.utils.formatEther(t.txNo);
-      const txns = [];
+      const txns = [] as any;
       let tStaked: any = 0;
       for (let i = 1; i <= totalTxns * 10 ** 18; i++) {
         const txn = await stakingContract.userTransactions(address, i);
