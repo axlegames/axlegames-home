@@ -121,6 +121,6 @@ creds = testnet;
 if (isDevServer === "true" || isDevServer === true) creds = testnet;
 else creds = mainnet;
 
-creds = testnet;
+creds = mainnet;
 
 export default creds;

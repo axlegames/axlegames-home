@@ -17,57 +17,26 @@ import StakingCategories from "./Staking/StakingCategories";
 import Stake from "./Staking/Stake";
 import BnbStake from "./Staking/components/bnb/bnbStaking";
 
-import { configureChains, createConfig, mainnet, WagmiConfig } from "wagmi";
-import { publicProvider } from "wagmi/providers/public";
+import {
+  EthereumClient,
+  w3mConnectors,
+  w3mProvider,
+} from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
-import { EthereumClient } from "@web3modal/ethereum";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { arbitrum, mainnet, polygon } from "wagmi/chains";
 
-import { bsc, bscTestnet } from "wagmi/chains";
+const chains = [arbitrum, mainnet, polygon];
+const projectId = "c19793208f8fa55631b6bbce3f0696ee";
 
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
-import { InjectedConnector } from "wagmi/connectors/injected";
-import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
-import { WalletConnectLegacyConnector } from "wagmi/connectors/walletConnectLegacy";
-import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
-
-const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [bsc, bscTestnet],
-  [publicProvider()]
-);
-
-const config = createConfig({
+const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
+const wagmiConfig = createConfig({
   autoConnect: true,
-  connectors: [
-    new MetaMaskConnector({
-      chains: [bsc, bscTestnet, mainnet],
-    }),
-    new InjectedConnector({
-      chains: [bsc, bscTestnet, mainnet],
-    }),
-    new CoinbaseWalletConnector({
-      options: {
-        appName: "",
-        jsonRpcUrl: "",
-      },
-    }),
-    new WalletConnectConnector({
-      chains: [bsc, bscTestnet, mainnet],
-      options: {
-        projectId: "...",
-      },
-    }),
-    new WalletConnectLegacyConnector({
-      chains: [bsc, bscTestnet, mainnet],
-      options: {
-        qrcode: true,
-      },
-    }),
-  ],
+  connectors: w3mConnectors({ projectId, version: 1, chains }),
   publicClient,
-  webSocketPublicClient,
 });
 
-const ethereumClient = new EthereumClient(config, chains);
+const ethereumClient = new EthereumClient(wagmiConfig, chains);
 
 const Main = lazy(() => import("./screens/Main"));
 const About = lazy(() => import("./screens/About"));
@@ -80,8 +49,6 @@ const NFTs = lazy(() => import("./Nfts/NFTs"));
 // const Giveaway2 = lazy(() => import("./Giveaway/Giveaway2"));
 // const TSupply = lazy(() => import("./screens/Tsupply"));
 // const StakeLayout = lazy(() => import("./Staking/StakeLayout"));
-
-const projectId = "81eed380d99e4944acb3a2fdebb6a7c4";
 
 export const App = () => {
   useEffect(() => {
@@ -99,7 +66,7 @@ export const App = () => {
 
   return (
     <Suspense fallback={<FallBack />}>
-      <WagmiConfig config={config}>
+      <WagmiConfig config={wagmiConfig}>
         <ChakraProvider theme={theme}>
           {/* <Banner close={() => setBanner(false)} isOpen={banner} size="xl" /> */}
           <Router>

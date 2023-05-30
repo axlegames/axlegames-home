@@ -16,7 +16,7 @@ import Logo from "../assets/logo.png";
 
 import creds from "../abi/creds";
 import whitelist from "./whitelist.json";
-import axleZuesMintAbi from "../abi/testnet/AxleZuesMintTest.json";
+import axleZuesMintAbi from "../abi/mainnet/AxleZuesMintMain.json";
 
 import AxleDialog from "../Staking/dialog/AxleDialog";
 import SuccessfulMintDialog from "./SuccessfulMintDialog";
@@ -24,6 +24,7 @@ import SuccessfulMintDialog from "./SuccessfulMintDialog";
 import { useWeb3Modal } from "@web3modal/react";
 import { bsc, bscTestnet, mainnet } from "wagmi/chains";
 import { useDisconnect, useConnect, useAccount, useContractRead } from "wagmi";
+import { useEffect } from "react";
 
 // const AXLE_ZUES_MINT_ADDRESS = creds.AXLE_ZUES_MINT;
 // const axleZuesMintAbi = creds.axleZuesMintAbi;
@@ -33,22 +34,25 @@ const Mint = () => {
 
   const { address, isConnected } = useAccount();
   const { open, setDefaultChain, close, isOpen } = useWeb3Modal();
-
   const { connect, connectors, error, isLoading, pendingConnector } =
     useConnect();
 
-  const { data: isMinted } = useContractRead({
-    address: "0xdD430aB53a671C18941D3E70355224e141896fC4",
+  const { data: isMinted, error: mintError } = useContractRead({
+    address: "0x0bF185598824Fb6160F6AC8Cb1a19f39C65453aa",
     abi: axleZuesMintAbi,
     functionName: "alreadyMintedList",
-    args: [address!],
+    args: [address],
   });
-  const { data: isEligible } = useContractRead({
-    address: "0xdD430aB53a671C18941D3E70355224e141896fC4",
-    abi: axleZuesMintAbi,
-    functionName: "whitelist",
-    args: [address!],
-  });
+
+  // const { data: isEligible } = useContractRead({
+  //   address: "0xdD430aB53a671C18941D3E70355224e141896fC4",
+  //   abi: axleZuesMintAbi,
+  //   functionName: "whitelist",
+  //   args: [address!],
+  // });
+  let isEligible = false;
+
+  console.log(isMinted, isEligible, mintError);
 
   const toast = useToast();
 
@@ -167,6 +171,9 @@ const Mint = () => {
         alignItems={"center"}
         flexDir={{ base: "column", lg: "row" }}
       >
+        <Box fontSize={"5xl"} color={brandingColors.primaryButtonColor}>
+          {!isMinted} {!isEligible}
+        </Box>
         <Box>
           <div style={{ color: "white" }}>
             {connectors.map((connector) => (
