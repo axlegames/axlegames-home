@@ -116,11 +116,9 @@ let creds: Creds = {
   blockChainUrl: "",
 };
 
-creds = testnet;
+creds = mainnet;
 
 if (isDevServer === "true" || isDevServer === true) creds = testnet;
 else creds = mainnet;
-
-creds = testnet;
 
 export default creds;
