@@ -46,7 +46,48 @@
         padding: 0;
         background-color: #0e063d;
       }
+      .shiner {
+        background-size: contain;
+        text-align: center;
+        color: black;
+      }
+      .shiner::before {
+        content: attr(data-heading);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0) 45%,
+          rgba(255, 255, 255, 0.8) 50%,
+          rgba(255, 255, 255, 0) 55%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        color: transparent;
+        animation: shine 1s infinite;
+        background-size: 200%;
+      }
+
+      @-webkit-keyframes shine {
+        0% {
+          background-position: -100%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
+
+      @keyframes shine {
+        0% {
+          background-position: -100%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
     </style>
+
     <script id="react-dotenv" src="https://axlegames.io//env.js"></script>
   </head>
   <body>

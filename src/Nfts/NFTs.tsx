@@ -1,9 +1,11 @@
 import {
   Box,
   Flex,
-  Grid,
   Image,
   Input,
+  List,
+  Progress,
+  Tag,
   Text,
   useToast,
 } from "@chakra-ui/react";
@@ -21,6 +23,7 @@ import { useState } from "react";
 import { chainIds, web3Modal } from "../Staking/components/utils";
 
 import Wallet from "../Staking/Wallet";
+import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
 const AXLE_ZUES_MINT_ADDRESS = creds.AXLE_ZUES_MINT;
 const axleZuesMintAbi = creds.axleZuesMintAbi;
@@ -34,11 +37,12 @@ const NFTs = () => {
   const [openWallet, setOpenWallet] = useState(false);
   const [isEligible, setIsEligible] = useState(false);
   const [isMinted, setIsMinted] = useState(false);
+  const [balances, setBalances] = useState(["0", "0", "0"]);
 
   console.log(isEligible, isMinted);
 
   const [hash, setHash] = useState("");
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   const [zuesMintContract, setZuesMintContract] = useState<any>();
 
@@ -96,6 +100,24 @@ const NFTs = () => {
       const isMintedC = await zuesMintContractc.alreadyMintedList(
         web3Accounts[0]
       );
+
+      const zuesBalance = Number(
+        ethers.utils.formatEther(
+          await zuesMintContractc.balanceOf(web3Accounts[0], 1)
+        )
+      ).toFixed(0);
+      const posBalance = Number(
+        ethers.utils.formatEther(
+          await zuesMintContractc.balanceOf(web3Accounts[0], 2)
+        )
+      ).toFixed(0);
+      const hadesBalance = Number(
+        ethers.utils.formatEther(
+          await zuesMintContractc.balanceOf(web3Accounts[0], 3)
+        )
+      ).toFixed(0);
+
+      setBalances([zuesBalance, posBalance, hadesBalance]);
       setIsMinted(isMintedC);
       setAddress(web3Accounts[0]);
       setNetworkName(network.chainId);
@@ -117,6 +139,7 @@ const NFTs = () => {
 
   const mint = async (index: number, type: number) => {
     try {
+      if (address === "") return connectWeb3Wallet();
       const resp = await zuesMintContract.publicMint(
         Number(type),
         Number(inputs[index])
@@ -140,9 +163,19 @@ const NFTs = () => {
   };
   const [inputs, setInputs] = useState([1, 1, 1]);
 
-  const updateInput = (e: any, i: number) => {
-    const nft = e.target.value;
-    if (nft > 5)
+  const updateInput = (e: number, i: number) => {
+    if (e <= 0) {
+      return toast({
+        title: "Oops!",
+        description: "min mint limit is 1",
+        status: "warning",
+        duration: 5000,
+        isClosable: true,
+        position: "top",
+      });
+    }
+
+    if (e > 5)
       return toast({
         title: "Oops!",
         description: "max mint limit is only 5",
@@ -152,7 +185,7 @@ const NFTs = () => {
         position: "top",
       });
     let tempInputs = inputs;
-    tempInputs[i] = nft;
+    tempInputs[i] = e;
     setInputs([...tempInputs]);
   };
 
@@ -198,13 +231,12 @@ const NFTs = () => {
         />
       </Box>
 
-      <Grid
+      <Flex
         columnGap={{ base: "1rem", xl: "1rem" }}
-        justifyContent={"space-evenly"}
+        justifyContent="center"
+        flexDir={{ base: "column", xl: "row" }}
         alignItems="center"
-        gridTemplateColumns={{ base: "1fr" }}
         py={4}
-        width={{ base: "90%", lg: "80%", xl: "75%", "2xl": "65%" }}
         mx="auto"
       >
         {nfts.map((nft, index) => (
@@ -212,14 +244,16 @@ const NFTs = () => {
             {...nft}
             key={index}
             type={nft.type}
+            balance={balances[index]}
             index={index}
             value={inputs[index].toString()}
             mint={() => mint(index, nft.type)}
             updateInput={updateInput}
+            price={nft.price}
             slide={index % 2 === 0 ? `fade-down` : `fade-up`}
           />
         ))}
-      </Grid>
+      </Flex>
     </Box>
   );
 };
@@ -236,6 +270,15 @@ interface Props {
   index: number;
   mint: Function;
   type: number;
+  price: number;
+  t: string;
+  attributes: {
+    power: number;
+    luck: number;
+    efficiency: number;
+    resilience: number;
+  };
+  balance: string;
 }
 
 export const nfts = [
@@ -244,141 +287,344 @@ export const nfts = [
     title: "Zeus",
     text: "Thunder NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/zeus.mp4`,
+    price: 1,
+    attributes: { power: 10, luck: 8, efficiency: 7, resilience: 6 },
+    t: "LEGENDARY",
   },
   {
     type: 2,
     title: "Poseidon",
     text: "Trident NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/poseidon.mp4`,
+    price: 0.5,
+    attributes: { power: 8, luck: 6, efficiency: 6, resilience: 7 },
+    t: "RARE",
   },
   {
     type: 3,
     title: "Hades",
     text: "Fire NFT",
     img: `https://axlegames.s3.ap-south-1.amazonaws.com/hades.mp4`,
+    price: 0.3,
+    attributes: { power: 7, luck: 5, efficiency: 5, resilience: 7 },
+    t: "EPIC",
   },
 ];
 
 const NFT = (props: Props) => {
+  let t = "";
+  if (props.t === "LEGENDARY") t = "yellow.400";
+  if (props.t === "RARE") t = "purple.400";
+  if (props.t === "EPIC") t = "cyan.400";
+
   return (
     <Box data-aos={props.slide}>
       <Box
         alignItems="center"
         display="flex"
-        flexDirection={{ base: "column", lg: "row" }}
+        flexDirection={{ base: "column" }}
         zIndex={300}
         height="100%"
         width={"100%"}
       >
-        <video
-          muted
-          loop
-          src={props.img}
-          width="260"
-          autoPlay
-          height="140"
-        ></video>
         <Box
           borderRadius="xl"
           backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
           display={"grid"}
-          minH="260px"
+          justifyContent={"center"}
+          alignItems={"center"}
           boxShadow={"dark-lg"}
           flexGrow={1}
-          p={8}
+          p={4}
           m={4}
           rowGap="1rem"
         >
-          <Box>
-            <Text
-              color={brandingColors.primaryTextColor}
-              fontFamily={brandingFonts.headingFont}
-              fontSize={{ base: "xl", lg: "2xl", "2xl": "4xl" }}
-              textAlign={"left"}
-              fontWeight="bold"
-              mb={3}
-            >
-              {props.title}
-            </Text>
-            <Text
-              color={brandingColors.secondaryTextColor}
-              fontWeight={"bold"}
-              fontSize={{ base: "xs", md: "sm", xl: "md" }}
-              textAlign={"left"}
-              fontFamily={brandingFonts.subFont}
-            >
-              {props.text}
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae,
-              debitis quis expedita rerum saepe sint reiciendis? Explicabo
-              fugiat provident ab laborum dolorem sit assumenda sapiente libero,
-              esse inventore rerum veritatis.
-            </Text>
-          </Box>
-          <Flex
-            columnGap={"1rem"}
-            bg={brandingColors.bgColor}
-            p={4}
-            borderRadius="md"
-            flexDir={"column"}
+          <Text
+            color={brandingColors.primaryTextColor}
+            fontFamily={brandingFonts.headingFont}
+            fontSize={{ base: "xl", lg: "2xl", "2xl": "3xl" }}
+            textAlign={"center"}
+            fontWeight="bold"
+            mb={3}
           >
-            <Flex mb={4} justifyContent={"space-between"} alignItems={"center"}>
+            {props.title}
+          </Text>
+          <Box display={"flex"} justifyContent="center">
+            <video
+              muted
+              loop
+              src={props.img}
+              width="260"
+              autoPlay
+              height="180"
+            ></video>
+          </Box>
+          <Text
+            color={brandingColors.secondaryTwoTextColor}
+            textShadow={`0px 0px 4px ${brandingColors.newHighlightColor}`}
+            fontWeight={"bold"}
+            fontSize={{ base: "2xl" }}
+            textAlign={"center"}
+            fontFamily={brandingFonts.subFont}
+          >
+            {props.text}
+          </Text>
+
+          <Flex columnGap={"1rem"} borderRadius="md" flexDir={"column"}>
+            <Flex justifyContent={"space-between"} alignItems={"center"}>
               <Text
-                fontSize={{ base: "xs", lg: "md", xl: "lg" }}
+                fontSize={{ base: "xs", lg: "sm" }}
                 fontFamily={brandingFonts.subFont}
-                color={brandingColors.primaryButtonColor}
               >
-                You Secure
+                Price :{" "}
+                <Box
+                  display={"inline"}
+                  color={brandingColors.primaryButtonColor}
+                  fontWeight="bold"
+                >
+                  {props.price} BNB
+                </Box>
               </Text>
+
               <Text
-                fontSize={{ base: "xs", lg: "md", xl: "lg" }}
+                fontSize={{ base: "xs", lg: "sm" }}
                 fontFamily={brandingFonts.subFont}
               >
-                Balance : 0 {props.title} NFT
+                Balance :{" "}
+                <Box
+                  display={"inline"}
+                  color={brandingColors.primaryButtonColor}
+                  fontWeight="bold"
+                >
+                  {props.balance} {props.title} NFT
+                </Box>
               </Text>
             </Flex>
-            <Box
-              boxShadow={"dark-lg"}
-              p={4}
-              borderRadius="md"
-              bg={brandingColors.bgColor}
-            >
+            <Box borderRadius="md">
               <Flex
                 alignItems={"center"}
                 my={4}
-                justifyContent={"space-between"}
+                justifyContent="space-between"
+                columnGap={"2rem"}
               >
-                <Text
-                  fontFamily={brandingFonts.subFont}
-                  color={brandingColors.primaryButtonColor}
+                <Flex justifyContent={{ base: "center" }}>
+                  <Box
+                    boxShadow={"dark-lg"}
+                    textAlign={"center"}
+                    minW="40"
+                    fontFamily={brandingFonts.subFont}
+                    className="btnc"
+                    onClick={() => props.mint()}
+                  >
+                    MINT
+                  </Box>
+                </Flex>
+                <Flex
+                  justifyContent={"space-evenly"}
+                  columnGap="1rem"
+                  alignItems={"center"}
                 >
-                  {props.title} NFTs
-                </Text>
-                <Input
-                  value={props.value}
-                  onChange={(e) => props.updateInput(e, props.index)}
-                  defaultValue={1}
-                  fontWeight={"bold"}
-                  fontFamily={brandingFonts.subFont}
-                  color={brandingColors.primaryButtonColor}
-                  maxW="48px"
-                  type="text"
-                  maxLength={1}
-                  textAlign="center"
-                />
-              </Flex>
-              <Flex justifyContent={{ base: "center", lg: "flex-end" }}>
-                <Box
-                  textAlign={"center"}
-                  minW="40"
-                  fontFamily={brandingFonts.subFont}
-                  className="btnc"
-                  onClick={() => props.mint()}
-                >
-                  MINT
-                </Box>
+                  <MinusIcon
+                    onClick={(e) =>
+                      props.updateInput(Number(props.value) - 1, props.index)
+                    }
+                    cursor={"pointer"}
+                    color={brandingColors.primaryButtonColor}
+                  />
+                  <Input
+                    value={props.value}
+                    onChange={(e) =>
+                      props.updateInput(Number(e.target?.value), props.index)
+                    }
+                    defaultValue={1}
+                    fontWeight={"bold"}
+                    fontFamily={brandingFonts.subFont}
+                    color={brandingColors.primaryButtonColor}
+                    maxW="48px"
+                    type="text"
+                    maxLength={1}
+                    textAlign="center"
+                  />
+
+                  <AddIcon
+                    onClick={(e) =>
+                      props.updateInput(Number(props.value) + 1, props.index)
+                    }
+                    cursor={"pointer"}
+                    color={brandingColors.primaryButtonColor}
+                  />
+                </Flex>
               </Flex>
             </Box>
           </Flex>
+
+          <List>
+            <Flex my={2} justifyContent={"space-between"}>
+              <Text
+                color={brandingColors.primaryButtonColor}
+                textShadow={`0px 0px 2px ${brandingColors.primaryButtonColor}`}
+                fontWeight={"bold"}
+                fontSize={{ base: "md" }}
+                textAlign={"left"}
+                fontFamily={brandingFonts.headingFont}
+              >
+                ATTRIBUTES
+              </Text>
+              <Tag boxShadow={"dark-lg"} bg={brandingColors.bgColor}>
+                <Box
+                  color={t}
+                  fontWeight={"bold"}
+                  fontSize={{ base: "md" }}
+                  textAlign={"left"}
+                  fontFamily={brandingFonts.headingFont}
+                >
+                  {props.t}
+                </Box>
+              </Tag>
+            </Flex>
+
+            <Box my={5}>
+              <Box
+                display={"grid"}
+                justifyContent="center"
+                alignItems={"center"}
+                columnGap="1rem"
+                my={4}
+                gridTemplateColumns={"3fr 5fr .5fr"}
+              >
+                <Text
+                  fontSize={{ base: "xs", lg: "sm" }}
+                  fontFamily={brandingFonts.subFont}
+                >
+                  POWER{" "}
+                </Text>
+                <Progress
+                  borderRadius={"xl"}
+                  hasStripe
+                  isAnimated
+                  max={10}
+                  min={0}
+                  bg={brandingColors.bgColor}
+                  height="32px"
+                  colorScheme="orange"
+                  value={props.attributes.power}
+                  pos="relative"
+                  width={"100%"}
+                />
+                <Text
+                  fontSize={{ base: "xs", lg: "sm" }}
+                  fontFamily={brandingFonts.subFont}
+                  color="orange"
+                >
+                  {props.attributes.power}/10
+                </Text>
+              </Box>
+              <Box
+                display={"grid"}
+                justifyContent="center"
+                alignItems={"center"}
+                columnGap="1rem"
+                my={4}
+                gridTemplateColumns={"3fr 5fr .5fr"}
+              >
+                <Text
+                  fontSize={{ base: "xs", lg: "sm" }}
+                  fontFamily={brandingFonts.subFont}
+                >
+                  LUCK
+                </Text>
+                <Progress
+                  borderRadius={"xl"}
+                  hasStripe
+                  isAnimated
+                  max={10}
+                  min={0}
+                  bg={brandingColors.bgColor}
+                  height="32px"
+                  width={"100%"}
+                  colorScheme="green"
+                  value={props.attributes.luck}
+                />
+                <Text
+                  fontSize={{ base: "xs", lg: "sm" }}
+                  fontFamily={brandingFonts.subFont}
+                  color="green"
+                >
+                  {props.attributes.luck}/10
+                </Text>
+              </Box>
+              <Box
+                display={"grid"}
+                justifyContent="center"
+                alignItems={"center"}
+                columnGap="1rem"
+                my={4}
+                gridTemplateColumns={"3fr 5fr .5fr"}
+              >
+                <Text
+                  fontSize={{ base: "xs", lg: "sm" }}
+                  fontFamily={brandingFonts.subFont}
+                  width="100%"
+                >
+                  EFFICIENCY
+                </Text>
+                <Progress
+                  borderRadius={"xl"}
+                  hasStripe
+                  isAnimated
+                  max={10}
+                  min={0}
+                  bg={brandingColors.bgColor}
+                  height="32px"
+                  width={"100%"}
+                  colorScheme="pink"
+                  value={props.attributes.efficiency}
+                />
+                <Text
+                  fontSize={{ base: "xs", lg: "sm" }}
+                  fontFamily={brandingFonts.subFont}
+                  color="pink"
+                >
+                  {props.attributes.efficiency}/10
+                </Text>
+              </Box>
+              <Box
+                display={"grid"}
+                justifyContent="center"
+                alignItems={"center"}
+                columnGap="1rem"
+                my={4}
+                gridTemplateColumns={"3fr 5fr .5fr"}
+              >
+                <Text
+                  fontSize={{ base: "xs", lg: "sm" }}
+                  fontFamily={brandingFonts.subFont}
+                  width="100%"
+                >
+                  RESILIENCE
+                </Text>
+                <Progress
+                  borderRadius={"xl"}
+                  hasStripe
+                  isAnimated
+                  max={10}
+                  min={0}
+                  bg={brandingColors.bgColor}
+                  height="32px"
+                  width={"100%"}
+                  colorScheme="blue"
+                  value={props.attributes.resilience}
+                />
+                <Text
+                  fontSize={{ base: "xs", lg: "sm" }}
+                  fontFamily={brandingFonts.subFont}
+                  color="blue.300"
+                >
+                  {props.attributes.resilience}/10
+                </Text>
+              </Box>
+            </Box>
+          </List>
         </Box>
       </Box>
     </Box>
