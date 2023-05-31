@@ -38,7 +38,7 @@ const NFTs = () => {
   console.log(isEligible, isMinted);
 
   const [hash, setHash] = useState("");
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(true);
 
   const [zuesMintContract, setZuesMintContract] = useState<any>();
 
@@ -138,7 +138,7 @@ const NFTs = () => {
       });
     }
   };
-  const [inputs, setInputs] = useState(["", "", ""]);
+  const [inputs, setInputs] = useState([1, 1, 1]);
 
   const updateInput = (e: any, i: number) => {
     const nft = e.target.value;
@@ -213,7 +213,7 @@ const NFTs = () => {
             key={index}
             type={nft.type}
             index={index}
-            value={inputs[index]}
+            value={inputs[index].toString()}
             mint={() => mint(index, nft.type)}
             updateInput={updateInput}
             slide={index % 2 === 0 ? `fade-down` : `fade-up`}

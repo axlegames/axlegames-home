@@ -21,7 +21,7 @@ const SuccessfulMintDialog = (props: any) => {
         </Text>{" "}
         <Text fontFamily={brandingFonts.headingFont} fontSize={"md"}>
           {" "}
-          You have minted free nfts
+          You have minted nfts
         </Text>
         <a
           href={creds.blockChainUrl + props.hash}
