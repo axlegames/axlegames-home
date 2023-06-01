@@ -148,15 +148,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "address", "name": "_rewardsToken", "type": "address" }
-    ],
-    "name": "setRewardsToken",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -174,6 +165,13 @@
     ],
     "name": "Staked",
     "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "stakeRewards",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [

@@ -1,5 +1,6 @@
-import { Box, Text, Divider, Grid, GridItem } from "@chakra-ui/react";
+import moment from "moment";
 import { brandingColors, brandingFonts } from "../../config/brandingColors";
+import { Box, Text, Divider, Grid, GridItem } from "@chakra-ui/react";
 
 const Rewards = (props: {
   totalStakedAmount: string;
@@ -7,7 +8,11 @@ const Rewards = (props: {
   claimRewards: Function;
   stakeRewards: Function;
   hasStaked: boolean;
+  lastUpdate: number;
 }) => {
+  const time = moment(props.lastUpdate).format("LTS");
+  const date = moment(props.lastUpdate).format("L");
+  const u = Number(props.totalRewards.replace(" BNB", ""));
   return (
     <Box
       my={8}
@@ -80,8 +85,37 @@ const Rewards = (props: {
             </Text>
           </GridItem>
         </Grid>
+        <Box>
+          {props.lastUpdate !== 0 ? (
+            <Box>
+              <Divider mb={4} />
+              <GridItem
+                display={"flex"}
+                justifyContent="center"
+                flexDirection={"column"}
+                alignItems={"center"}
+                pb={4}
+                px={8}
+              >
+                <Text fontFamily={brandingFonts.subFont}>
+                  {" "}
+                  Last Updated Time
+                </Text>
+                <Text
+                  fontSize={"2xl"}
+                  color={brandingColors.primaryTextColor}
+                  fontFamily={brandingFonts.subFont}
+                >
+                  {`${date}, ${time}`}
+                </Text>
+              </GridItem>
+            </Box>
+          ) : null}
+        </Box>
+
         <Divider mb={4} />
-        {props.hasStaked ? (
+
+        {props.hasStaked || u > 0 ? (
           <Box
             justifyContent={"space-evenly"}
             alignItems="center"
@@ -99,7 +133,7 @@ const Rewards = (props: {
             >
               CLAIM REWARDS
             </Box>
-            <Box
+            {/* <Box
               textAlign={"center"}
               width="100%"
               bg={brandingColors.successColor}
@@ -118,7 +152,7 @@ const Rewards = (props: {
               onClick={() => props.stakeRewards()}
             >
               STAKE REWARDS
-            </Box>
+            </Box> */}
           </Box>
         ) : null}
       </Box>

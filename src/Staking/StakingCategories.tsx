@@ -56,8 +56,8 @@ const StakingCategories = () => {
         <DashboardCard
           title="STAKE AXLE, GET BNB"
           img={StakeLogo}
-          //   stakePage={() => navigate("/staking/bnb-stake")}
-          comingSoon={true}
+          stakePage={() => navigate("/staking/bnb-stake")}
+          comingSoon={false}
         />
       </Box>
     </Box>

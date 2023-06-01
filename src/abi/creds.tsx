@@ -12,6 +12,7 @@ import PresaleAbiTestnet from "../abi/testnet/AxlePresaleTest.json";
 import StakingAbiTestnet from "../abi/testnet/AxleStakingTest.json";
 import FlexStakingTestnet from "../abi/testnet/AxleFlexStakingTest.json";
 import AxleZuesNFTMintTestnet from "../abi/testnet/AxleZuesMintTest.json";
+import FlexStakingBnbTestnet from "../abi/testnet/AxleFlexBnbStaking.json";
 
 interface Chain {
   chainName: string;
@@ -47,7 +48,7 @@ const mainnet: Creds = {
   AXLE_ZEUS_PRESALE: "0xeA29a0f11EaAF0f88DBf705b2b53A09767cDF305",
   AXLE_STAKING: "0x20A33C553dB0b4AAD04065A234999C9228183291",
   AXLE_FLEX_STAKING: "0xC2941D54E3ABB281983f565B8dF7249CBc5E7a0F",
-  AXLE_BNB_FLEX_STAKING: "0x6CF0e2F39bbB50E9d4D20DF1d560248CB5dA59b2",
+  AXLE_BNB_FLEX_STAKING: "0xF050672823E21296e8BA19944e557657ff72dAC7",
   AXLE_ZUES_MINT: "0x0bF185598824Fb6160F6AC8Cb1a19f39C65453aa",
   stakingAbi: StakingAbiMainnet,
   tokenAbi: TokenAbiMainnet,
@@ -74,14 +75,14 @@ const testnet: Creds = {
   AXLE_ZEUS_PRESALE: "0xaed66d62e70023762ba0977f5304116120706d84",
   AXLE_STAKING: "0xD996A74A3376D75812f07781EF22666323288B86",
   AXLE_FLEX_STAKING: "0xF637C152Be5aBcC7129F8E061938098604aa1507",
-  AXLE_BNB_FLEX_STAKING: "",
+  AXLE_BNB_FLEX_STAKING: "0xC414601c757316Ba3a3564594518e901Fd8ce836",
   AXLE_ZUES_MINT: "0xdD430aB53a671C18941D3E70355224e141896fC4",
   axleZuesMintAbi: AxleZuesNFTMintTestnet,
   stakingAbi: StakingAbiTestnet,
   tokenAbi: TokenAbiTestnet,
   presaleAbi: PresaleAbiTestnet,
   flexStakingAbi: FlexStakingTestnet,
-  flexStakingBnbAbi: null,
+  flexStakingBnbAbi: FlexStakingBnbTestnet,
   isTestNet: true,
   blockChainUrl: "https://testnet.bscscan.com/tx/",
   chain: {
@@ -98,25 +99,7 @@ const testnet: Creds = {
 
 const isDevServer = env.IS_DEV_SERVER;
 
-let creds: Creds = {
-  AXLE_BNB_FLEX_STAKING: "",
-  flexStakingBnbAbi: null,
-  AXLE_CONTRACT: "",
-  AXLE_ZEUS_PRESALE: "",
-  AXLE_FLEX_STAKING: "",
-  AXLE_ZUES_MINT: "",
-  flexStakingAbi: null,
-  AXLE_STAKING: "",
-  presaleAbi: null,
-  stakingAbi: null,
-  tokenAbi: null,
-  axleZuesMintAbi: null,
-  isTestNet: true,
-  chain: testnet.chain,
-  blockChainUrl: "",
-};
-
-creds = mainnet;
+let creds = mainnet;
 
 if (isDevServer === "true" || isDevServer === true) creds = testnet;
 else creds = mainnet;

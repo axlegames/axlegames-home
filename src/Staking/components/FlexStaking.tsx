@@ -1,4 +1,4 @@
-import { Box, Text, Input, Flex, Divider } from "@chakra-ui/react";
+import { Box, Text, Input } from "@chakra-ui/react";
 import { brandingFonts, brandingColors } from "../../config/brandingColors";
 
 const FlexStake = (props: {
@@ -72,7 +72,7 @@ const FlexStake = (props: {
             mx={4}
             fontWeight={"bold"}
             color={brandingColors.highLightColor}
-            onChange={(e) => props.onAxleChange(e)}
+            onChange={(e) => props.onAxleChange(e.target.value)}
             type={"text"}
             inputMode="decimal"
             borderRadius={"none"}
@@ -98,7 +98,11 @@ const FlexStake = (props: {
               shadow: "none",
             }}
           ></Input>
-          <Box fontFamily={brandingFonts.subFont} cursor={"pointer"}>
+          <Box
+            onClick={() => props.onAxleChange(props.axleBalance)}
+            fontFamily={brandingFonts.subFont}
+            cursor={"pointer"}
+          >
             MAX
           </Box>
         </Box>
@@ -156,16 +160,6 @@ const FlexStake = (props: {
           </Box>
         ) : null}
       </Box>
-      <Flex flexDir={"column"} justifyContent={"center"} rowGap="1rem" pb={3}>
-        <Divider />
-        <Text
-          color={brandingColors.primaryTextColor}
-          fontFamily={brandingFonts.subFont}
-          textAlign={"center"}
-        >
-          24% Fixed APY
-        </Text>
-      </Flex>
     </Box>
   );
 };

@@ -1,26 +1,22 @@
-import { Box, Flex, Image, Text, useToast } from "@chakra-ui/react";
-
-import { ethers } from "ethers";
-import { useState, useEffect } from "react";
-
 import creds from "../../../abi/creds";
-import Wallet from "../../Wallet";
-
-import { LinkIcon } from "@chakra-ui/icons";
-import { brandingColors } from "../../../config/brandingColors";
-
-import AxleDialog from "../../dialog/AxleDialog";
-import TransactionSuccessDialog from "../../dialog/TransactionSuccessDialog";
-
 import Logo from "../../../assets/logo.png";
 
-import "../../../components/navbar/Navbar.css";
+import { ethers } from "ethers";
+import { LinkIcon } from "@chakra-ui/icons";
+import { useState, useEffect } from "react";
+import { brandingColors } from "../../../config/brandingColors";
+import { e9, web3Modal } from "../../components/utils";
+import { Box, Flex, Image, Text, useToast } from "@chakra-ui/react";
 
-import FlexStake from "../../components/FlexStaking";
-import ConnectModal from "../../components/ConnectModal";
-import { chainIds, e9, web3Modal } from "../../components/utils";
+import Wallet from "../../Wallet";
 import Stats from "../../components/Stats";
 import Rewards from "../../components/Rewards";
+import FlexStake from "../../components/FlexStaking";
+import AxleDialog from "../../dialog/AxleDialog";
+import ConnectModal from "../../components/ConnectModal";
+import TransactionSuccessDialog from "../../dialog/TransactionSuccessDialog";
+
+import "../../../components/navbar/Navbar.css";
 
 const TOKEN_CONTRACT_ADDRESS = creds.AXLE_CONTRACT;
 const axleTokenABI = creds.tokenAbi;
@@ -34,34 +30,23 @@ declare global {
 }
 
 const Stake = () => {
+  const [pool, setPool] = useState("323,123,103");
   const [hash, setHash] = useState<string>("");
   const [success, setSuccess] = useState(false);
   const [balance, setBalance] = useState(0);
-  const [pool, setPool] = useState("323,123,103");
+  const [lastUpdate, setLastUpdate] = useState(0);
   const [axleBalance, setAxleBalance] = useState<any>("0");
   const [openWallet, setOpenWallet] = useState(false);
 
   const [address, setAddress] = useState<string>("");
-  const [onChain, setOnChain] = useState("");
 
-  const [axle, setAxle] = useState<any>(100000);
+  const [axle, setAxle] = useState(0);
+  const [reward, setReward] = useState(0);
+  const [totalStaked, setTotalStaked] = useState(0);
   const [tokenContract, setTokenContract] = useState<any>();
   const [flexStakingContract, setFlexStakingContract] = useState<any>();
-  const [totalStaked, setTotalStaked] = useState(0);
-  const [reward, setReward] = useState(0);
 
-  const onAxleChange = (e: any) => {
-    const axle = Number(e.target.value);
-    setAxle(axle);
-  };
-
-  const setNetworkName = (chainId: number) => {
-    for (let i = 0; i < chainIds.length; i++) {
-      if (chainIds[i].chainId === chainId) {
-        setOnChain(chainIds[i].network);
-      }
-    }
-  };
+  const onAxleChange = (e: number) => setAxle(e);
 
   const switchNetwork = async () => {
     try {
@@ -263,21 +248,23 @@ const Stake = () => {
         axleFlexStakingBnbAbi,
         signer
       );
-      console.log(flexStaking);
+
       const tx = await flexStaking.getDepositInfo(web3Accounts[0]);
       if (tx.length > 0) {
-        const t = ethers.utils.formatEther(tx[0]) as any;
-        const x1 = ethers.utils.formatEther(tx[1]) as any;
+        const _staked = ethers.utils.formatEther(tx[0]) as any;
+        const _reward = Number(ethers.utils.formatEther(tx[1]));
+        const _lastUpdate =
+          Number(ethers.utils.formatEther(tx[2])) * 10 ** 18 * 1000;
         let pool = await flexStaking.total_staked();
-        pool = ethers.utils.formatEther(pool);
-        setTotalStaked(t * 10 ** 9);
-        setPool((pool * 10 ** 9).toString());
-        setReward(x1 * 10 ** 9);
+        pool = Number(ethers.utils.formatEther(pool)) * e9;
+        setPool(pool);
+        setReward(_reward);
+        setLastUpdate(_lastUpdate);
+        setTotalStaked(_staked * e9);
       }
       let bal = await token.balanceOf(web3Accounts[0]);
       bal = ethers.utils.formatEther(bal);
       setAddress(web3Accounts[0]);
-      setNetworkName(network.chainId);
       setTokenContract(token);
       setFlexStakingContract(flexStaking);
       setAxleBalance(bal * e9);
@@ -294,7 +281,6 @@ const Stake = () => {
   };
 
   useEffect(() => {
-    console.log(onChain);
     disconnectWeb3Modal(true);
     if (window.ethereum !== null && address !== "") {
       window.ethereum.on("accountsChanged", function (accounts: string) {
@@ -391,7 +377,8 @@ const Stake = () => {
               </Flex>
             </Box>
             <Rewards
-              totalRewards={`${reward.toFixed(2)} BNB`}
+              lastUpdate={lastUpdate}
+              totalRewards={`${reward.toFixed(9)} BNB`}
               totalStakedAmount={`${totalStaked.toFixed(2)} AXLE`}
               claimRewards={claimRewards}
               stakeRewards={stakeRewardsFun}
