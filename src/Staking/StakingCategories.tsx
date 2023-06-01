@@ -48,12 +48,16 @@ const StakingCategories = () => {
         rowGap="1rem"
       >
         <DashboardCard
+          i={0}
+          imgSrc={Logo}
           title="STAKE AXLE, GET AXLE"
           img={StakeLogo}
           stakePage={() => navigate("/staking/axle-stake")}
           comingSoon={false}
         />
         <DashboardCard
+          i={1}
+          imgSrc="https://axlegames.s3.ap-south-1.amazonaws.com/bnb.png"
           title="STAKE AXLE, GET BNB"
           img={StakeLogo}
           stakePage={() => navigate("/staking/bnb-stake")}

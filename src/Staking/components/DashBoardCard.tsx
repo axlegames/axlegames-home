@@ -1,4 +1,4 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { brandingColors, brandingFonts } from "../../config/brandingColors";
 
 const DashboardCard = (props: any) => {
@@ -19,6 +19,9 @@ const DashboardCard = (props: any) => {
       rowGap={"1rem"}
       onClick={() => props.stakePage()}
     >
+      <Flex pos={"relative"}>
+        <Image width={props.i === 0 ? "128px" : "72px"} src={props.imgSrc} />
+      </Flex>
       <Image width={"52"} src={props.img} />
       <Text
         fontFamily={brandingFonts.subFont}
