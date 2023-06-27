@@ -260,43 +260,31 @@ export const team = [
     name: "Praneeth",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/praneeth.webp`,
     role: "Founder / Marketing Lead",
-    linkedIn: "https://www.linkedin.com/in/praneethnagu/",
-    email: "praneeth@artemisnetwork.io",
   },
   {
     name: "Leo Chakri",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/chakri.webp`,
     role: "Co-Founder / Project Lead",
-    linkedIn: "https://www.linkedin.com/in/chakravardhan/",
-    email: "dcr@artemisnetwork.io",
   },
   {
     name: "Akash",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/akash.webp`,
     role: "Product / Dev Lead",
-    linkedIn: "https://www.linkedin.com/in/akashmrc98/",
-    email: "akash@artemisnetwork.io",
   },
 
   {
     name: "Roney",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/roney.webp`,
     role: "Product / Design Lead",
-    linkedIn: "",
-    email: "roney@axlegames.io",
   },
   {
     name: "Prashanth",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/prashanth.webp`,
     role: "Game Developer",
-    linkedIn: "",
-    email: "prashanth@axlegames.io",
   },
   {
     name: "Lucas",
     avatar: `https://axlegames.s3.ap-south-1.amazonaws.com/assets/team/lucas.webp`,
     role: "Marketing",
-    linkedIn: "",
-    email: "lucas@axlegames.io",
   },
 ];

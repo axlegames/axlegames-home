@@ -1,5 +1,5 @@
 import { Box, Image, Link, Text } from "@chakra-ui/react";
-import { lazy, useRef } from "react";
+import { lazy } from "react";
 import Slider from "react-slick";
 import { brandingColors, brandingFonts } from "../config/brandingColors";
 import "./Slider.css";
@@ -17,47 +17,6 @@ const games = [
 const colors = ["color-2", "color-1", "color-9", "color-1", "color-3"];
 
 const Games = () => {
-  const slider = useRef() as any;
-  const PrevArrow = () => (
-    <button
-      onClick={() => slider.current.slickPrev()}
-      className="slide_button_c slide-arrow_c prev-arrow_c_games"
-    ></button>
-  );
-
-  const NextArrow = () => (
-    <button
-      onClick={() => slider.current.slickNext()}
-      className="slide_button_c slide-arrow_c next-arrow_c_games"
-    ></button>
-  );
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 720,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
   return (
     <Box overflowY={"hidden"} bg={brandingColors.bgColor}>
       <Box
@@ -111,7 +70,7 @@ const Games = () => {
                 </Box>
               </Box>
               <Box p={4}>
-                <Slider ref={slider} {...settings}>
+                <Slider>
                   {games.map((game, i) => (
                     <Box key={i} width={"100%"} px={2}>
                       <Link

@@ -14,7 +14,7 @@ const Footer = lazy(() => import("./Footer"));
 const Home = lazy(() => import("./Home"));
 const HowItWorks = lazy(() => import("./HowItWorks"));
 const EProfile = lazy(() => import("./EProfile"));
-const Games = lazy(() => import("./Games"));
+// const Games = lazy(() => import("./Games"));
 const Testimonials = lazy(() => import("./Testimonials"));
 
 const Main = () => {
@@ -22,7 +22,7 @@ const Main = () => {
     <Box position={"relative"}>
       <Element name="home">
         <Home />
-        <Games />
+        {/* <Games /> */}
         <HowItWorks />
         <EProfile />
       </Element>

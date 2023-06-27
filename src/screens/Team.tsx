@@ -12,9 +12,6 @@ import { brandingColors, brandingFonts } from "../config/brandingColors";
 import Tilt from "react-parallax-tilt";
 import { team } from "../config/data";
 
-import LinkedIn from "../assets/socials/linkedin.webp";
-import Email from "../assets/socials/email.webp";
-
 import Slider from "react-slick";
 import { useRef } from "react";
 
@@ -116,8 +113,6 @@ const Team = () => {
 interface Props {
   i: number;
   bottomAligner: Function;
-  email: string;
-  linkedIn?: string;
   avatar: string;
   name: string;
   role: string;
@@ -150,42 +145,6 @@ const TeamCard = (props: Props) => {
           backgroundImage={`radial-gradient(circle, #4609c3, #330fa0, #220f7e, #160d5d, #0e063d)`}
           p={4}
         >
-          <Box>
-            <Flex my={4} p={2} borderRadius="xl">
-              {props.i < 3 ? (
-                <a
-                  target={"_blank"}
-                  rel="noopener noreferrer"
-                  href={props.linkedIn}
-                >
-                  <Image
-                    width={"12"}
-                    _hover={{
-                      transform: "scale(1.2)",
-                      transition: "all 200ms ease-in",
-                      cursor: "pointer",
-                    }}
-                    src={LinkedIn}
-                  />
-                </a>
-              ) : null}
-              <a
-                target={"_blank"}
-                rel="noopener noreferrer"
-                href={`mailto:${props.email}`}
-              >
-                <Image
-                  width={"12"}
-                  _hover={{
-                    transform: "scale(1.2)",
-                    transition: "all 200ms ease-in",
-                    cursor: "pointer",
-                  }}
-                  src={Email}
-                />
-              </a>
-            </Flex>
-          </Box>
           <Box>
             <Image
               boxShadow={`0px 2px 2px ${brandingColors.newHighlightColor}`}
