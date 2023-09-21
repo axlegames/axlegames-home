@@ -1,5 +1,3 @@
-import env from "react-dotenv";
-
 import TokenAbiMainnet from "./mainnet/AxleTokenMain.json";
 import PresaleAbiMainnet from "./mainnet/AxlePresaleMain.json";
 import StakingAbiMainnet from "./mainnet/AxleStakingMain.json";
@@ -97,11 +95,11 @@ const testnet: Creds = {
   },
 };
 
-const isDevServer = env.IS_DEV_SERVER;
+const isDevServer = true;
 
 let creds = mainnet;
 
-if (isDevServer === "true" || isDevServer === true) creds = testnet;
+if (isDevServer === true) creds = testnet;
 else creds = mainnet;
 
 export default creds;
