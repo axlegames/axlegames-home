@@ -73,8 +73,8 @@
     "webpack": "^5.75.0"
   },
   "scripts": {
-    "start": "react-dotenv && GENERATE_SOURCEMAP=false react-app-rewired start",
-    "build": "react-dotenv && GENERATE_SOURCEMAP=false react-app-rewired build --prod",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build --prod",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
