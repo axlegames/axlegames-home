@@ -158,7 +158,7 @@ const Banner = () => {
                       className="btn-play d-flex justify-content-center align-items-center"
                     >
                       <a
-                        href="https://axlegames.io/staking"
+                        href="https://axle.games/staking"
                         target="_blank"
                         className="btnc"
                         rel="noopener noreferrer"

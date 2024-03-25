@@ -118,7 +118,7 @@ const Navbar = () => {
                 bg={brandingColors.bgColor}
               >
                 <a
-                  href={`https://whitepaper.axlegames.io/`}
+                  href={`https://whitepaper.axle.games/`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ width: "100%" }}
@@ -151,7 +151,7 @@ const Navbar = () => {
           <a
             className="btnc"
             style={{ fontFamily: brandingFonts.headingFont }}
-            href={`https://play.axlegames.io`}
+            href={`https://play.axle.games`}
             target="_blank"
             rel="noopener noreferrer"
           >

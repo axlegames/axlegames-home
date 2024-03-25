@@ -128,7 +128,7 @@ const HowItWorks = () => {
               >
                 <a
                   style={{ fontFamily: brandingFonts.subFont }}
-                  href="https://play.axlegames.io"
+                  href="https://play.axle.games"
                   target="_blank"
                   className="btnc"
                   rel="noopener noreferrer"

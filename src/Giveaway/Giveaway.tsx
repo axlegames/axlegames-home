@@ -40,7 +40,7 @@ const Giveaway = () => {
     if (walletForm !== "")
       return axios
         .post(
-          "https://api.axlegames.io/axlegames/api/v1/users/giveaway/check",
+          "https://api.axle.games/axlegames/api/v1/users/giveaway/check",
           {
             wallet: walletForm,
             giveAwayType: giveaway,
@@ -164,7 +164,7 @@ const Giveaway = () => {
       });
 
     axios
-      .post("https://api.axlegames.io/axlegames/api/v1/users/giveaway", {
+      .post("https://api.axle.games/axlegames/api/v1/users/giveaway", {
         ...form,
         type: giveaway,
       })

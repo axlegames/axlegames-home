@@ -30,7 +30,7 @@ const Banner = (props: Props) => {
           <Image
             cursor={"pointer"}
             onClick={() => {
-              window.open("https://axlegames.io/staking", "_blank");
+              window.open("https://axle.games/staking", "_blank");
               props.close();
             }}
             src={Ban}

@@ -8,7 +8,7 @@ const Footer = () => {
   const emailChange = (e: any) => setEmail(e.target.value);
   const toast = useToast();
   async function submitEmail() {
-    await fetch("https://api.axlegames.io/axlegames/api/v1/guest/email", {
+    await fetch("https://api.axle.games/axlegames/api/v1/guest/email", {
       method: "post",
       headers: {
         Accept: "application/json",
@@ -271,19 +271,19 @@ const links = [
     nav: [
       {
         name: "Axle Games",
-        url: "https://play.axlegames.io",
+        url: "https://play.axle.games",
       },
       {
         name: "Axle Staking",
-        url: "https://axlegames.io/dashboard",
+        url: "https://axle.games/dashboard",
       },
       {
         name: "Axle Swap",
-        url: "https://axlegames.io/dashboard",
+        url: "https://axle.games/dashboard",
       },
       {
         name: "Axle Dao",
-        url: "https://axlegames.io/dashboard",
+        url: "https://axle.games/dashboard",
       },
     ],
     isLocal: false,
@@ -293,7 +293,7 @@ const links = [
     nav: [
       {
         name: "White Paper",
-        url: "https://whitepaper.axlegames.io/",
+        url: "https://whitepaper.axle.games/",
       },
       {
         name: "Economics Paper",
@@ -305,7 +305,7 @@ const links = [
       },
       // {
       //   name: "Axle Presale",
-      //   url: "https://sale.axlegames.io",
+      //   url: "https://sale.axle.games",
       // },
     ],
     isLocal: false,

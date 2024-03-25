@@ -109,7 +109,7 @@ const Giveaway2 = () => {
       });
 
     axios
-      .post("https://api.axlegames.io/axlegames/api/v1/users/giveaway", {
+      .post("https://api.axle.games/axlegames/api/v1/users/giveaway", {
         ...form,
         type: giveaway,
       })
@@ -474,7 +474,7 @@ const Join = (props: FormInterface) => {
                   alignItems="center"
                 >
                   <Image width={"6"} src={Link} />
-                  <Text>sale.axlegames.io</Text>
+                  <Text>sale.axle.games</Text>
                 </Flex> */}
               </Flex>
             </Box>

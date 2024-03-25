@@ -81,7 +81,7 @@ const EProfile = () => {
                     fontFamily: brandingFonts.subFont,
                     textDecoration: "none",
                   }}
-                  href="https://play.axlegames.io"
+                  href="https://play.axle.games"
                   target="_blank"
                   className="btnc"
                   rel="noopener noreferrer"
@@ -93,7 +93,7 @@ const EProfile = () => {
                     fontFamily: brandingFonts.subFont,
                     textDecoration: "none",
                   }}
-                  href="https://sale.axlegames.io"
+                  href="https://sale.axle.games"
                   target="_blank"
                   className="btn-hover color-3"
                   rel="noopener noreferrer"

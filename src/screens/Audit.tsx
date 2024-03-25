@@ -144,7 +144,7 @@ const Audit = () => {
   const [profiles, setProfiles] = useState<Array<Profile>>([]);
 
   useEffect(() => {
-    fetch("https://api.axlegames.io/axlegames/api/v1/users/twitter/profiles")
+    fetch("https://api.axle.games/axlegames/api/v1/users/twitter/profiles")
       .then(async (res) => {
         const { data } = await res.json();
         setProfiles(data);

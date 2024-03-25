@@ -75,7 +75,7 @@ const Games = () => {
                     <Box key={i} width={"100%"} px={2}>
                       <Link
                         rel="noopener noreferrer"
-                        href="https://play.axlegames.io"
+                        href="https://play.axle.games"
                         target="_blank"
                         style={{ textDecoration: "none" }}
                       >

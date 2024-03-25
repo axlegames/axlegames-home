@@ -30,7 +30,7 @@ export const products = [
     text: " Metamorphosis AI games are popular web2 games revamped with AI to benefit web3 users. Our games range from virtual reality simulations to blockchain-based strategy games, where players can interact with intelligent agents, own and digital trade assets, and compete for rewards.",
     image: ProductGameIcon,
     mainImg: ProductGameImg,
-    function: () => window.open("https://play.axlegames.io", "_blank"),
+    function: () => window.open("https://play.axle.games", "_blank"),
   },
   {
     isLive: true,
@@ -171,7 +171,7 @@ export const phases = [
       "Business Model Validation",
       "SDE / Smart contracts Architecture",
       "LLD / HLD Design Mockups",
-      "axlegames.io - Live",
+      "axle.games - Live",
       "Wordle #5,#6,#7 - Practice",
       "Absurdle - Practice",
     ],
